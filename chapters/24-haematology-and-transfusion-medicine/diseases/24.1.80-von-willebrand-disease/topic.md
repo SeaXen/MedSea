@@ -307,3 +307,36 @@ mindmap
 - [[Transfusion Medicine/Platelet Transfusion|Platelet Transfusion]]
 - [[Transfusion Medicine/FFP/Cryoprecipitate|FFP/Cryoprecipitate]]
 - [[Obstetrics/Obstetric Haematology|Pregnancy in VWD]]
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (5 generated)
+
+- Q: What is the definition of Hematology?
+  A: Most Common Inherited Bleeding Disorder — Defect in VWF quantity (Type 1/3) or quality (Type 2)
+- Q: What is the epidemiology of Hematology?
+  A: ~1% population (Symptomatic ~0.1%)
+- Q: What is Inheritance of Hematology?
+  A: Type 1 & 2: Autosomal Dominant; Type 3: Autosomal Recessive
+- Q: What is Gender of Hematology?
+  A: Equal (though women present more due to menorrhagia)
+- Q: What is Key Role of VWF of Hematology?
+  A: Carrier for FVIII; Platelet adhesion to subendothelium (via GPIb)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **B -->|Quantitative Defect| T1[Type 1: Partial Quantitative Deficiency]**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Definition — Most Common Inherited Bleeding Disorder — Defect in VWF quantity (Type 1/3) or quality (Type 2); Prevalence — ~1% population (Symptomatic ~0.1%); Inheritance — Type 1 & 2: Autosomal Dominant; Type 3: Autosomal Recessive. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

@@ -384,3 +384,202 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Hip and trochanteric bursitis]] · [[Foot disorders]] · [[Shoulder disorders]] · [[Elbow disorders]]
+---
+
+> Auto-generated study sections for "Soft Tissue Rheumatism and Chronic Pain Syndromes" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (92 generated)
+
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Anterior, fluctuant swelling over patella
+- Q: What is Risk of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Kneeling occupations (carpet layers, plumbers, roofers, gardeners)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Anterior swelling, warm, tender, ROM usually preserved
+- Q: What is Septic of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Hot, erythematous, fever — emergency aspirate
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: US: fluid collection anterior to patella
+- Q: What is Anatomy of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Confluence of Sartorius, Gracilis, Semitendinosus (Pes anserinus = "goose foot")
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Anteromedial, 2-3cm below joint line
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Obesity, OA knee, diabetes, overuse, valgus deformity
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial knee pain, tenderness 2-3cm below joint line (medial), pain on stairs, night pain
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial meniscal tear (joint line tenderness), MCL sprain, medial compartment OA
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Synovial fluid-filled cyst in popliteal fossa, communicates with knee joint via valving mechanism
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Underlying knee pathology: OA (most common), RA, meniscal tears, ACL tears
+- Q: What is the mechanism of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Valving mechanism — fluid enters cyst during knee extension, trapped during flexion
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Popliteal fossa swelling, palpable fullness, may cause knee stiffness, calf pain if ruptured
+- Q: What is Rupture of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pseudothrombophlebitis — calf swelling, pain, erythema, Homan's sign +ve, mimics DVT
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: US/MRI: fluid collection in popliteal fossa, communication with joint
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Treat underlying cause (OA/RA/tear); aspiration + steroid if symptomatic; surgery rarely needed
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Inferior pole of patella (proximal patellar tendon)
+- Q: What is Demographics of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Jumping sports (basketball, volleyball), runners
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Inferior patellar pole tenderness, pain on loading (jumping, squatting, stairs)
+- Q: What is Staging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: 1: pain after activity; 2: pain during + after; 3: pain during, after, at rest
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: US/MRI: tendon thickening, hypoechoic areas, neovascularisation
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Eccentric decline squats (Alfredson protocol), shockwave, IA steroid (caution), surgery refractory
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Superior pole of patella (quadriceps tendon insertion)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Superior patellar pole tenderness, pain on resisted extension
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Similar to patellar — eccentric decline squats, shockwave, IA steroid (caution)
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: ITB friction over lateral femoral epicondyle at ~30° flexion
+- Q: What is Demographics of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Runners, cyclists, long-distance
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral knee pain, worse at 30° flexion, pain at Noble's compression test
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Compress lateral femoral epicondyle at 30° flexion → pain
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: MRI: ITB thickening, oedema over lateral femoral epicondyle
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: ITB stretch (Ober's), gluteal strengthening, foam rolling, gait retraining, IA steroid (bursa), shockwave, surgery (ITB release) refractory
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Anteromedial, 2-3cm below joint line (confluence of Sartorius, Gracilis, Semitendinosus)
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Obesity, OA knee, diabetes, valgus deformity, overuse
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial knee pain, tenderness 2-3cm below joint line (medial), pain on stairs, night pain
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial meniscal tear (joint line tenderness), MCL sprain, medial compartment OA
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Physiotherapy (quadriceps/hamstring strengthening, stretching), weight loss, IA steroid (pes anserine bursa), shockwave, surgery rare
+- Q: What is Popliteal swelling, communicates with joint of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Valving mechanism (fluid in on extension, trapped on flexion)
+- Q: What is Associated with of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: OA, RA, meniscal tears, ACL tears
+- Q: What is Rupture of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pseudothrombophlebitis — calf swelling, pain, erythema, Homan's sign +ve, mimics DVT
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: US/Doppler for DVT first — if negative, consider cyst rupture
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Treat underlying cause; aspiration + steroid if symptomatic; surgery rarely needed
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Anterior, fluctuant swelling over patella
+- Q: What is Risk of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Kneeling occupations (carpet layers, plumbers, roofers, gardeners)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Anterior swelling, warm, tender, ROM usually preserved
+- Q: What is Septic of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Hot, erythematous, fever — emergency aspirate
+- Q: What is Anatomy of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Confluence of Sartorius, Gracilis, Semitendinosus (Pes anserinus = "goose foot")
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Anteromedial, 2-3cm below joint line
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Obesity, OA knee, diabetes, overuse, valgus deformity
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial knee pain, tenderness 2-3cm below joint line (medial), pain on stairs, night pain
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial meniscal tear (joint line tenderness), MCL sprain, medial compartment OA
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Synovial fluid-filled cyst in popliteal fossa, communicates with knee joint via valving mechanism
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Underlying knee pathology: OA (most common), RA, meniscal tears, ACL tears
+- Q: What is the mechanism of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Valving mechanism — fluid enters cyst during knee extension, trapped during flexion
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Popliteal fossa swelling, palpable fullness, may cause knee stiffness, calf pain if ruptured
+- Q: What is Rupture of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pseudothrombophlebitis — calf swelling, pain, erythema, Homan's sign +ve, mimics DVT
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: US/MRI: fluid collection in popliteal fossa, communication with joint
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Treat underlying cause (OA/RA/tear); aspiration + steroid if symptomatic; surgery rarely needed
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Inferior pole of patella (proximal patellar tendon)
+- Q: What is Demographics of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Jumping sports (basketball, volleyball), runners
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Inferior patellar pole tenderness, pain on loading (jumping, squatting, stairs)
+- Q: What is Staging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: 1: pain after activity; 2: pain during + after; 3: pain during, after, at rest
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: US/MRI: tendon thickening, hypoechoic areas, neovascularisation
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Superior pole of patella (quadriceps tendon insertion)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Superior patellar pole tenderness, pain on resisted extension
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Similar to patellar — eccentric decline squats, shockwave, IA steroid (caution)
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: ITB friction over lateral femoral epicondyle at ~30° flexion
+- Q: What is Demographics of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Runners, cyclists, long-distance
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral knee pain, worse at 30° flexion, pain at Noble's compression test
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Compress lateral femoral epicondyle at 30° flexion → pain
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: MRI: ITB thickening, oedema over lateral femoral epicondyle
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: ITB stretch (Ober's), gluteal strengthening, foam rolling, gait retraining, IA steroid (bursa), shockwave, surgery (ITB release) refractory
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Anteromedial, 2-3cm below joint line (confluence of Sartorius, Gracilis, Semitendinosus)
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Obesity, OA knee, diabetes, valgus deformity, overuse
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial knee pain, tenderness 2-3cm below joint line (medial), pain on stairs, night pain
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial meniscal tear (joint line tenderness), MCL sprain, medial compartment OA
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Physiotherapy (quadriceps/hamstring strengthening, stretching), weight loss, IA steroid (pes anserine bursa), shockwave, surgery rare
+- Q: What is Popliteal swelling, communicates with joint of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Valving mechanism (fluid in on extension, trapped on flexion)
+- Q: What is Associated with of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: OA, RA, meniscal tears, ACL tears
+- Q: What is Rupture of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pseudothrombophlebitis — calf swelling, pain, erythema, Homan's sign +ve, mimics DVT
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: US/Doppler for DVT first — if negative, consider cyst rupture
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Treat underlying cause; aspiration + steroid if symptomatic; surgery rarely needed
+- Q: What is Prepatellar Bursitis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Anterior fluctuant swelling, kneeling occupation (housemaid's knee)
+- Q: What is Pes Anserine Bursitis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial, 2-3cm below joint line, obesity/OA/diabetes risk factors
+- Q: What is Baker's Cyst of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Popliteal swelling, communicates with joint, rupture = pseudothrombophlebitis (calf swelling, Homan's +ve)
+- Q: What is Patellar Tendinopathy of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Inferior pole tenderness, jumping/loading pain
+- Q: What is ITBS of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Runners, lateral knee pain at 30° flexion, Noble's test (compress lateral femoral epicondyle at 30°)
+- Q: What is Pes Anserine of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: 2-3cm below joint line medial, obesity/OA/diabetes risk factors
+- Q: What is Aspiration of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial approach (avoid infrapatellar fat pad), send for crystals, culture, cell count
+- Q: What is Synovial Fluid of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Septic: WBC >50k, >90% neutrophils; Gout: MSU needles (-ve birefringence); CPPD: rhomboids (+ve birefringence)
+- Q: What is Meniscal Tears of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: McMurray's, Apley's, joint line tenderness
+- Q: What is Ligament Injuries of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: ACL (Lachman, pivot shift), PCL (posterior drawer), MCL/LCL (valgus/varus stress)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Soft Tissue Rheumatism and Chronic Pain Syndromes?**
+   A. **Knee = most commonly affected joint in OA.**
+   B. An unrelated condition not matching the clinical picture of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   C. A complication seen late in the disease course of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   D. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but has a different underlying cause
+

@@ -344,3 +344,114 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Osteomyelitis]] · [[Septic arthritis]] · [[Lyme disease]]
+---
+
+> Auto-generated study sections for "Infectious Arthritis and Bone Infections" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (44 generated)
+
+- Q: What is the definition of Infectious Arthritis and Bone Infections?
+  A: Chronic granulomatous infection of joint/synovium/spine by Mycobacterium tuberculosis — haematogenous spread or contiguous from adjacent osteomyelitis
+- Q: What is Global Burden of Infectious Arthritis and Bone Infections?
+  A: 10 million new TB/year (WHO); 1-3% develop skeletal TB; 50% of skeletal TB = spinal (Pott's)
+- Q: What is Endemic Areas of Infectious Arthritis and Bone Infections?
+  A: High burden: India, China, Indonesia, Philippines, Pakistan, Nigeria, South Africa, Bangladesh
+- Q: What causes Infectious Arthritis and Bone Infections?
+  A: Immunocompromised (HIV, steroids, biologics), malnutrition, alcoholism, diabetes, endemic residence, close contact
+- Q: What is Age of Infectious Arthritis and Bone Infections?
+  A: All ages — children/young adults (spinal), adults (peripheral joints)
+- Q: What is Joint Distribution of Infectious Arthritis and Bone Infections?
+  A: Spine (Pott's) 50%, Hip > Knee > Ankle > Wrist > Elbow > Shoulder
+- Q: What is Onset of Infectious Arthritis and Bone Infections?
+  A: Insidious, weeks to months
+- Q: What is Joint of Infectious Arthritis and Bone Infections?
+  A: Monoarticular (hip > knee > ankle)
+- Q: What are the clinical features of Infectious Arthritis and Bone Infections?
+  A: Pain, swelling, stiffness, limited ROM
+- Q: What is Systemic of Infectious Arthritis and Bone Infections?
+  A: Low-grade fever, night sweats, weight loss, malaise (may be absent in early disease)
+- Q: What is Examination of Infectious Arthritis and Bone Infections?
+  A: Large effusion, warmth, muscle wasting (quadriceps if knee/hip), sinus formation (late)
+- Q: What is Site of Infectious Arthritis and Bone Infections?
+  A: Thoracic > Thoracolumbar > Lumbar (cervical rare)
+- Q: What is Pattern of Infectious Arthritis and Bone Infections?
+  A: Paradiscal destruction (two adjacent vertebral bodies + intervening disc)
+- Q: What is Key Radiological Signs of Infectious Arthritis and Bone Infections?
+  A: Disc space preserved early (unlike pyogenic), paravertebral abscess, vertebral collapse → gibbus deformity (kyphosis)
+- Q: What is Cold Abscess of Infectious Arthritis and Bone Infections?
+  A: Paravertebral/psoas — tracks along fascial planes; psoas abscess → groin/thigh swelling, hip flexion deformity
+- Q: What is Neurological of Infectious Arthritis and Bone Infections?
+  A: Cord compression → paraplegia; radiculopathy; sphincter disturbance
+- Q: What is Systemic of Infectious Arthritis and Bone Infections?
+  A: Fever, night sweats, weight loss, malaise (often prominent)
+- Q: What is Duration of Infectious Arthritis and Bone Infections?
+  A: 12-18 months (extend if neurological deficit)
+- Q: What is Infectious Arthritis and Bone Infections indicated for?
+  A: Neurological deficit (cord compression), spinal instability, large abscess causing compression, deformity progression (gibbus)
+- Q: What is Decompression of Infectious Arthritis and Bone Infections?
+  A: Anterior (corpectomy + fusion) or posterior; early decompression = better neurological recovery
+- Q: What is Cold Abscess of Infectious Arthritis and Bone Infections?
+  A: No routine drainage — resolves with anti-TB; aspirate if diagnostic uncertainty
+- Q: What is Onset of Infectious Arthritis and Bone Infections?
+  A: Insidious, weeks to months
+- Q: What is Joint of Infectious Arthritis and Bone Infections?
+  A: Monoarticular (hip > knee > ankle)
+- Q: What are the clinical features of Infectious Arthritis and Bone Infections?
+  A: Pain, swelling, stiffness, limited ROM
+- Q: What is Systemic of Infectious Arthritis and Bone Infections?
+  A: Low-grade fever, night sweats, weight loss, malaise (may be absent in early disease)
+- Q: What is Site of Infectious Arthritis and Bone Infections?
+  A: Thoracic > Thoracolumbar > Lumbar (cervical rare)
+- Q: What is Pattern of Infectious Arthritis and Bone Infections?
+  A: Paradiscal destruction (two adjacent vertebral bodies + intervening disc)
+- Q: What is Key Radiological Signs of Infectious Arthritis and Bone Infections?
+  A: Disc space preserved early (unlike pyogenic), paravertebral abscess, vertebral collapse → gibbus deformity (kyphosis)
+- Q: What is Cold Abscess of Infectious Arthritis and Bone Infections?
+  A: Paravertebral/psoas — tracks along fascial planes; psoas abscess → groin/thigh swelling, hip flexion deformity
+- Q: What is Neurological of Infectious Arthritis and Bone Infections?
+  A: Cord compression → paraplegia; radiculopathy; sphincter disturbance
+- Q: What is Systemic of Infectious Arthritis and Bone Infections?
+  A: Fever, night sweats, weight loss, malaise (often prominent)
+- Q: What is Duration of Infectious Arthritis and Bone Infections?
+  A: 12-18 months (extend if neurological deficit)
+- Q: What is Infectious Arthritis and Bone Infections indicated for?
+  A: Neurological deficit (cord compression), spinal instability, large abscess causing compression, deformity progression (gibbus)
+- Q: What is Decompression of Infectious Arthritis and Bone Infections?
+  A: Anterior (corpectomy + fusion) or posterior; early decompression = better neurological recovery
+- Q: What is Cold Abscess of Infectious Arthritis and Bone Infections?
+  A: No routine drainage — resolves with anti-TB; aspirate if diagnostic uncertainty
+- Q: What is the epidemiology of Infectious Arthritis and Bone Infections?
+  A: Endemic areas, HIV, immunocompromised; Spine 50% of skeletal TB
+- Q: What is Pott's Spine of Infectious Arthritis and Bone Infections?
+  A: Thoracic > Lumbar; Paradiscal destruction, disc preserved early, gibbus, cold abscess
+- Q: What is Cold Abscess of Infectious Arthritis and Bone Infections?
+  A: Sterile, tracks along fascial planes; psoas abscess → groin/thigh, hip flexion
+- Q: What is the investigation of choice for Infectious Arthritis and Bone Infections?
+  A: Xpert MTB/RIF (PCR) 1st line (2h); AFB culture 30-50%; MRI gold standard
+- Q: What is Peripheral TB of Infectious Arthritis and Bone Infections?
+  A: Hip > Knee; chronic monoarthritis, insidious, constitutional symptoms
+- Q: What is Synovial Fluid of Infectious Arthritis and Bone Infections?
+  A: Lymphocytic, low glucose, high protein, AFB smear negative 80%, culture 30-50%
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: 2HRZE/4HR = 6 months (peripheral); 12-18 months (spinal); Pyridoxine with INH
+- Q: What is Surgery of Infectious Arthritis and Bone Infections?
+  A: Neurological deficit, instability, large abscess, progressive deformity
+- Q: What is Pyridoxine of Infectious Arthritis and Bone Infections?
+  A: 10mg daily with Isoniazid — prevents neuropathy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Infectious Arthritis and Bone Infections?**
+   A. **TB arthritis = chronic monoarthritis in endemic areas.**
+   B. An unrelated condition not matching the clinical picture of Infectious Arthritis and Bone Infections
+   C. A complication seen late in the disease course of Infectious Arthritis and Bone Infections
+   D. A condition that mimics Infectious Arthritis and Bone Infections but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Infectious Arthritis and Bone Infections presents with: Definition — Chronic granulomatous infection of joint/synovium/spine by Mycobacterium tuberculosis — haematogenous spread or contiguous from adjacent osteomyelitis; Global Burden — 10 million new TB/year (WHO); 1-3% develop skeletal TB; 50% of skeletal TB = spinal (Pott's); Endemic Areas — High burden: India, China, Indonesia, Philippines, Pakistan, Nigeria, South Africa, Bangladesh. What is the most likely diagnosis?
+   A. **Infectious Arthritis and Bone Infections**
+   B. A condition that mimics Infectious Arthritis and Bone Infections but is not the same entity
+   C. A complication of Infectious Arthritis and Bone Infections rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Infectious Arthritis and Bone Infections
+

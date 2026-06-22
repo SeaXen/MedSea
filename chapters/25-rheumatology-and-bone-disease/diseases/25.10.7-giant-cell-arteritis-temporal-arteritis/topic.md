@@ -395,3 +395,66 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Polymyalgia rheumatica]] · [[Drugs in rheumatology]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: GCA = most common large vessel vasculitis, ophthalmic emergency.
+- Q: What are the clinical features of Vasculitis?
+  A: Arm claudication, diminished pulses, BP differential >10mmHg, aortic regurgitation murmur, back/chest pain (aortitis)
+- Q: What is the investigation of choice for Vasculitis?
+  A: PET-CT (gold standard for large vessel), MRI angiography, US axillary arteries
+- Q: How is Vasculitis managed?
+  A: Same steroids + tocilizumab; surgical intervention for aortic aneurysm/dissection
+- Q: What is Follow-up of Vasculitis?
+  A: Annual imaging (CT/MRI/PET) for aortic aneurysm surveillance
+- Q: What are the clinical features of Vasculitis?
+  A: Arm claudication, diminished pulses, BP differential >10mmHg, aortic regurgitation murmur, back/chest pain (aortitis)
+- Q: What is the investigation of choice for Vasculitis?
+  A: PET-CT (gold standard for large vessel), MRI angiography, US axillary arteries
+- Q: How is Vasculitis managed?
+  A: Same steroids + tocilizumab; surgical intervention for aortic aneurysm/dissection
+- Q: What is Follow-up of Vasculitis?
+  A: Annual imaging (CT/MRI/PET) for aortic aneurysm surveillance
+- Q: What is Emergency of Vasculitis?
+  A: Start steroids IMMEDIATELY — do not delay for biopsy
+- Q: What is Visual Threat of Vasculitis?
+  A: IV MP 500-1000mg ×3 days → pred 60-100mg
+- Q: What is No Visual Threat of Vasculitis?
+  A: Pred 60-100mg daily immediately
+- Q: What are the clinical features of Vasculitis?
+  A: New temporal headache, jaw claudication (specific), scalp tenderness, visual symptoms
+- Q: What is PMR Overlap of Vasculitis?
+  A: 40-50% GCA have PMR; 10-20% PMR have GCA — screen every visit
+- Q: What is ACR 1990 of Vasculitis?
+  A: ≥3/5: age ≥50, new headache, temporal artery abnormality, ESR ≥50, biopsy
+- Q: What is Biopsy of Vasculitis?
+  A: 2-3cm length (skip lesions); valid 2-4 weeks on steroids; negative ≠ exclude
+- Q: What is Large Vessel of Vasculitis?
+  A: Aortitis → aneurysm; subclavian stenosis → diminished pulses/BP diff
+- Q: What is Tocilizumab of Vasculitis?
+  A: 162mg SC weekly — steroid-sparing, FDA approved
+- Q: What is Aspirin of Vasculitis?
+  A: 75mg daily — consider for all
+- Q: What is Bone Protection of Vasculitis?
+  A: Ca/Vit D + bisphosphonate
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **GCA = most common large vessel vasculitis, ophthalmic emergency.**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Definition — Granulomatous large vessel vasculitis primarily affecting cranial branches of the carotid artery (especially temporal artery) — giant cells on histology; Incidence — 15-20/100,000/year >50y; Peak Age — >50 years (peak 70-80) — never <50. What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

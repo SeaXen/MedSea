@@ -439,3 +439,68 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Ankylosing spondylitis]] · [[Reactive arthritis]] · [[Enteropathic arthritis]] · [[Undifferentiated spondyloarthritis]]
+---
+
+> Auto-generated study sections for "Inflammatory Arthritis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Inflammatory Arthritis?
+  A: | Definition | Chronic inflammatory arthritis associated with psoriasis — seronegative spondyloarthritis with distinct clinical domains |
+- Q: What is IL-23/IL-17 axis of Inflammatory Arthritis?
+  A: Central to both skin and joint inflammation — anti-IL-17/23 highly effective
+- Q: What is Enthesitis as primary lesion of Inflammatory Arthritis?
+  A: Enthesis resident immune cells → inflammation → adjacent joint/synovium
+- Q: What is Koebner phenomenon of Inflammatory Arthritis?
+  A: Trauma triggers psoriatic lesions — applies to joints (dactylitis after injury)
+- Q: What is Skin-Joint discordance of Inflammatory Arthritis?
+  A: Skin and joint activity may not parallel — treat both domains
+- Q: What is IL-23/IL-17 axis of Inflammatory Arthritis?
+  A: Central to both skin and joint inflammation — anti-IL-17/23 highly effective
+- Q: What is Enthesitis as primary lesion of Inflammatory Arthritis?
+  A: Enthesis resident immune cells → inflammation → adjacent joint/synovium
+- Q: What is Koebner phenomenon of Inflammatory Arthritis?
+  A: Trauma triggers psoriatic lesions — applies to joints (dactylitis after injury)
+- Q: What is Skin-Joint discordance of Inflammatory Arthritis?
+  A: Skin and joint activity may not parallel — treat both domains
+- Q: What is the epidemiology of Inflammatory Arthritis?
+  A: 15-30% of psoriasis; peak 30-50y; M=F
+- Q: What is CASPAR Criteria of Inflammatory Arthritis?
+  A: ≥3 points: Current psoriasis (2), history (1), family (1), nail dystrophy (1), dactylitis (1), -RF (1), new bone (1)
+- Q: What is 6 Domains of Inflammatory Arthritis?
+  A: Peripheral, Axial, Dactylitis, Enthesitis, Skin/Nail, Extra-articular (uveitis)
+- Q: What is 5 Joint Patterns of Inflammatory Arthritis?
+  A: DIP predominant, Oligo asymmetrical, Poly RA-like, Axial, Mutilans (pencil-in-cup)
+- Q: What is Nail Signs of Inflammatory Arthritis?
+  A: Pitting (70%), onycholysis, oil spots, hyperkeratosis — correlate with DIP
+- Q: What is Dactylitis of Inflammatory Arthritis?
+  A: Sausage digit — flexor tenosynovitis + synovitis
+- Q: What is Enthesitis of Inflammatory Arthritis?
+  A: Achilles, plantar fascia, costochondral — SPARCC/MASES
+- Q: What is Imaging of Inflammatory Arthritis?
+  A: Pencil-in-cup, periostitis, asymmetric sacroiliitis
+- Q: How is Inflammatory Arthritis managed?
+  A: NSAID → MTX (peripheral) → Anti-TNF → Anti-IL-17/23 → JAKi
+- Q: What is csDMARDs of Inflammatory Arthritis?
+  A: Ineffective for axial/dactylitis/enthesitis
+- Q: What is Anti-IL-17 of Inflammatory Arthritis?
+  A: Superior skin; avoid in Crohn's IBD
+- Q: What is CV Risk of Inflammatory Arthritis?
+  A: 2x — aggressive prevention
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inflammatory Arthritis?**
+   A. **| Definition | Chronic inflammatory arthritis associated with psoriasis — seronegative spondyloarthritis with distinct clinical domains |**
+   B. An unrelated condition not matching the clinical picture of Inflammatory Arthritis
+   C. A complication seen late in the disease course of Inflammatory Arthritis
+   D. A condition that mimics Inflammatory Arthritis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inflammatory Arthritis presents with: Definition — Chronic inflammatory arthritis associated with psoriasis — seronegative spondyloarthritis with distinct clinical domains; Prevalence in Psoriasis — 15-30% of psoriasis patients develop PsA; Overall Prevalence — 0.1-0.3%. What is the most likely diagnosis?
+   A. **Inflammatory Arthritis**
+   B. A condition that mimics Inflammatory Arthritis but is not the same entity
+   C. A complication of Inflammatory Arthritis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inflammatory Arthritis
+

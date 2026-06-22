@@ -358,3 +358,46 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematology Investigations → Coagulation Assays
+- Q: What is PT/INR of Hematology?
+  A: Extrinsic + Common (VII, X, V, II, Fib) → Warfarin, Liver, Vit K Def
+- Q: What is APTT of Hematology?
+  A: Intrinsic + Common (XII, XI, IX, VIII, X, V, II, Fib) → Heparin, Haemophilia, VWD, Lupus
+- Q: What is TT vs Reptilase of Hematology?
+  A: TT ↑ + Reptilase Normal = Heparin; Both ↑ = Hypofibrinogenaemia/Dysfibrinogenaemia
+- Q: What is Fibrinogen (Clauss) of Hematology?
+  A: Functional; <1.0 = Severe Bleeding Risk; >7 = Thrombosis Risk
+- Q: What is D-dimer of Hematology?
+  A: High Sens, Low Spec; Age-adjusted Cutoff (Age×10); Negative = VTE Excluded (Low Prob)
+- Q: What is Mixing Study of Hematology?
+  A: Corrects = Factor Deficiency; No Correct = Inhibitor; Incubated Fail = Time-dependent Inhibitor
+- Q: What is Warfarin of Hematology?
+  A: PT/INR ↑, APTT Normal/↑, Fib Normal
+- Q: What is Heparin of Hematology?
+  A: APTT ↑, TT ↑, Reptilase Normal
+- Q: What is Liver Disease of Hematology?
+  A: PT↑, APTT↑, Fib Normal/↓, Plt↓, Factor VIII↑
+- Q: What is DIC of Hematology?
+  A: PT↑, APTT↑, Fib↓, D-dimer↑↑, Plt↓, Schistocytes
+- Q: What is Vit K Def of Hematology?
+  A: PT↑, APTT Normal (Early), Fib Normal, PIVKA-II↑
+- Q: What is Haemophilia of Hematology?
+  A: APTT↑, PT Normal, TT Normal, Mixing Corrects
+- Q: What is Factor VII Def of Hematology?
+  A: PT↑, APTT Normal
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematology Investigations → Coagulation Assays**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

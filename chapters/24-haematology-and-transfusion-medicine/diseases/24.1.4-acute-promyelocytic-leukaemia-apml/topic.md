@@ -382,3 +382,84 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (29 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Acute Leukaemias → APML (AML with t(15;17))
+- Q: What is Clinical of Hematology?
+  A: Bleeding (mucosal, intracranial), thrombosis, fever, pancytopenia
+- Q: What is CBC of Hematology?
+  A: Anaemia, thrombocytopenia (often severe), WBC variable (low/high)
+- Q: What is Blood Film of Hematology?
+  A: Abundant promyelocytes, Auer rods, Faggot cells (bundles of Auer rods)
+- Q: What is Coagulation of Hematology?
+  A: PT/APTT ↑, Fibrinogen ↓↓, D-dimer ↑↑, FDP ↑, Platelets ↓
+- Q: What is BM Aspirate of Hematology?
+  A: >20% promyelocytes, strong MPO+, CD117+, CD33+, CD34-, HLA-DR-
+- Q: What is Genetics of Hematology?
+  A: RT-PCR for PML::RARA (quantitative), FISH, Karyotype
+- Q: What is the epidemiology of Hematology?
+  A: 10-25% (usually days 7-21 of ATRA)
+- Q: What is the investigation of choice for Hematology?
+  A: Fever + Weight gain >5kg + Pulmonary infiltrates + Hypoxaemia + Pleural/pericardial effusion + Hypotension + Renal impairment
+- Q: What causes Hematology?
+  A: WBC >10, rapid WBC rise
+- Q: What is Prophylaxis of Hematology?
+  A: Dexamethasone 10 mg BD PO/IV × 14 days if WBC >10 or rising rapidly
+- Q: How is Hematology managed?
+  A: Dexamethasone 10 mg IV BD until resolution; hold ATRA if severe (hypoxia, hypotension, renal failure); resume after resolution
+- Q: What is Routine IT Chemo of Hematology?
+  A: NOT routinely required (ATO crosses BBB)
+- Q: What is High Risk (WBC≥10) of Hematology?
+  A: Some protocols give IT MTX during induction
+- Q: What is CNS Relapse of Hematology?
+  A: Rare (<2%); treated with IT MTX/Ara-C + systemic ATO
+- Q: What is Clinical of Hematology?
+  A: Bleeding (mucosal, intracranial), thrombosis, fever, pancytopenia
+- Q: What is CBC of Hematology?
+  A: Anaemia, thrombocytopenia (often severe), WBC variable (low/high)
+- Q: What is Blood Film of Hematology?
+  A: Abundant promyelocytes, Auer rods, Faggot cells (bundles of Auer rods)
+- Q: What is Coagulation of Hematology?
+  A: PT/APTT ↑, Fibrinogen ↓↓, D-dimer ↑↑, FDP ↑, Platelets ↓
+- Q: What is BM Aspirate of Hematology?
+  A: >20% promyelocytes, strong MPO+, CD117+, CD33+, CD34-, HLA-DR-
+- Q: What is Genetics of Hematology?
+  A: RT-PCR for PML::RARA (quantitative), FISH, Karyotype
+- Q: What is the epidemiology of Hematology?
+  A: 10-25% (usually days 7-21 of ATRA)
+- Q: What is the investigation of choice for Hematology?
+  A: Fever + Weight gain >5kg + Pulmonary infiltrates + Hypoxaemia + Pleural/pericardial effusion + Hypotension + Renal impairment
+- Q: What causes Hematology?
+  A: WBC >10, rapid WBC rise
+- Q: What is Prophylaxis of Hematology?
+  A: Dexamethasone 10 mg BD PO/IV × 14 days if WBC >10 or rising rapidly
+- Q: How is Hematology managed?
+  A: Dexamethasone 10 mg IV BD until resolution; hold ATRA if severe (hypoxia, hypotension, renal failure); resume after resolution
+- Q: What is Routine IT Chemo of Hematology?
+  A: NOT routinely required (ATO crosses BBB)
+- Q: What is High Risk (WBC≥10) of Hematology?
+  A: Some protocols give IT MTX during induction
+- Q: What is CNS Relapse of Hematology?
+  A: Rare (<2%); treated with IT MTX/Ara-C + systemic ATO
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Acute Leukaemias → APML (AML with t(15;17))**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: WHO/ICC — AML with t(15;17)(q24;q21); PML::RARA; FAB M3 — Hypergranular promyelocytes; FAB M3v (Microgranular) — Hypogranular, bilobed nuclei, may mimic monoblastic; WBC often higher. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

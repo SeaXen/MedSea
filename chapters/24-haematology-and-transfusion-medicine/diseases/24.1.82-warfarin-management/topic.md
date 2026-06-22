@@ -376,3 +376,38 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Anticoagulation → Warfarin
+- Q: What is INR Targets of Hematology?
+  A: AF/VTE = 2-3; Mechanical Mitral/APS = 2.5-3.5 to 3-4
+- Q: What is Initiation of Hematology?
+  A: 10mg Day 1-2, Check INR Day 3, Adjust Day 4; Elderly: 5mg Start
+- Q: How is Hematology monitored?
+  A: Daily x7d → 2-3×/wk → Weekly → Monthly (Max 12 weeks stable)
+- Q: What is the dose of Hematology?
+  A: INR <1.5: ↑20-30%; 1.5-1.9: ↑10-20%; 3.1-4.0: ↓10-20%; >4: Hold + Vit K
+- Q: What is Reversal of Hematology?
+  A: Minor: Vit K 1-2mg PO; Major: PCC 25-50 IU/kg + Vit K 10mg IV
+- Q: What is Interactions of Hematology?
+  A: ↑ INR: Macrolides, Quinolones, TMP-SMX, Amiodarone, Azoles, Allopurinol; ↓ INR: Rifampicin, Carbamazepine, Phenytoin, Barbiturates, Chronic Alcohol
+- Q: What is Bridging of Hematology?
+  A: LMWH 1mg/kg BD; High Risk Only (Mech Mitral, Recent VTE, CHA₂DS₂-VASc≥5); Start INR<2, Stop 24h Pre-op
+- Q: What is Peri-procedural of Hematology?
+  A: Low Risk: Continue; High Risk: Stop 5d, Bridge if High Risk
+- Q: What is Pregnancy of Hematology?
+  A: Contraindicated → Switch to LMWH Pre-conception
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Anticoagulation → Warfarin**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

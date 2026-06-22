@@ -353,3 +353,84 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (29 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Supportive Care in Haematology → Palliative Care
+- Q: What is Thrombocytopenia of Hematology?
+  A: Platelet transfusion if symptomatic (active bleed, high-risk activity)
+- Q: What is Coagulopathy of Hematology?
+  A: FFP/Cryoprecipitate if active bleed + INR>1.5/Fib<1.5
+- Q: What is Mucosal/Minor of Hematology?
+  A: Tranexamic acid (topical/oral/IV), Sucralfate mouthwash
+- Q: What is Massive/Terminal of Hematology?
+  A: Palliative sedation, Octreotide (GI bleed), Comfort measures
+- Q: What are the clinical features of Hematology?
+  A: Thirst, Polyuria, Confusion, Constipation, Nausea, Renal failure
+- Q: What is Acute of Hematology?
+  A: IV Fluids (Saline 2-3L/24h) → IV Bisphosphonate (Zoledronic acid 4mg) or Denosumab 120mg SC
+- Q: What is Palliative of Hematology?
+  A: Hydration as tolerated, Symptom control (anti-emetics, laxatives)
+- Q: What is Signs of Hematology?
+  A: Facial/arm swelling, Dyspnoea, Distended neck veins, Stridor
+- Q: What is Emergency of Hematology?
+  A: Head up, Oxygen, Dexamethasone 16mg IV → Urgent Radiotherapy (or Stenting/Chemo)
+- Q: What is Risk of Hematology?
+  A: High-grade lymphoma, Leukaemia, Rapidly proliferating tumours
+- Q: What is Prophylaxis of Hematology?
+  A: Allopurinol (all), Rasburicase (high risk: WBC>50, high LDH, renal impairment)
+- Q: What is Acute of Hematology?
+  A: Aggressive Hydration, Rasburicase, Monitor K/PO4/Ca/UA, Renal Replacement if needed
+- Q: What is Thrombocytopenia of Hematology?
+  A: Platelet transfusion if symptomatic (active bleed, high-risk activity)
+- Q: What is Coagulopathy of Hematology?
+  A: FFP/Cryoprecipitate if active bleed + INR>1.5/Fib<1.5
+- Q: What is Mucosal/Minor of Hematology?
+  A: Tranexamic acid (topical/oral/IV), Sucralfate mouthwash
+- Q: What are the clinical features of Hematology?
+  A: Thirst, Polyuria, Confusion, Constipation, Nausea, Renal failure
+- Q: What is Acute of Hematology?
+  A: IV Fluids (Saline 2-3L/24h) → IV Bisphosphonate (Zoledronic acid 4mg) or Denosumab 120mg SC
+- Q: What is Risk of Hematology?
+  A: High-grade lymphoma, Leukaemia, Rapidly proliferating tumours
+- Q: What is Prophylaxis of Hematology?
+  A: Allopurinol (all), Rasburicase (high risk: WBC>50, high LDH, renal impairment)
+- Q: What is Acute of Hematology?
+  A: Aggressive Hydration, Rasburicase, Monitor K/PO4/Ca/UA, Renal Replacement if needed
+- Q: What is Palliative Haematology of Hematology?
+  A: Early integration, Transfusion-dependent, Uncertainty, Curative options late
+- Q: What are the clinical features of Hematology?
+  A: Trial of Transfusion (1-2 units, assess 24h), WHO Pain Ladder, Tranexamic acid for bleeding
+- Q: What is Palliative Transfusion of Hematology?
+  A: Symptom relief > Count normalisation, 1-2 unit trial, Stop if no QoL benefit
+- Q: What is Advance Care Planning of Hematology?
+  A: Early DNACPR, Treatment ceilings, Preferred place, LPA
+- Q: What is Terminal Bleeding of Hematology?
+  A: Dark towels, Midazolam, Morphine, Octreotide, Tranexamic, Family support
+- Q: What is Hypercalcaemia of Hematology?
+  A: Saline + Zoledronic Acid/Denosumab
+- Q: What is SVCO of Hematology?
+  A: Head up, Oxygen, Dexamethasone 16mg IV, Urgent RT
+- Q: What is Communication of Hematology?
+  A: SPIKES, Reframe hope, Name emotions
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Supportive Care in Haematology → Palliative Care**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: DNACPR (Do Not Attempt CPR) — Discuss early; Not just "no CPR" - clarify what IS wanted; Treatment Ceilings — Level 1: Full active; Level 2: Ward-based care (no ICU); Level 3: Comfort only; Preferred Place of Care — Home, Hospice, Hospital - Document and review. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

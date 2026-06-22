@@ -339,3 +339,38 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Antiplatelet Therapy
+- Q: What is Aspirin of Hematology?
+  A: 75-100mg OD, Irreversible COX-1, Primary/Secondary Prevention, Loading 300mg ACS/Stroke
+- Q: What is Clopidogrel of Hematology?
+  A: 75mg OD, Irreversible, CYP2C19 Dependent, Resistance if LOF Alleles
+- Q: What is Ticagrelor of Hematology?
+  A: 90mg BD, Reversible, Faster Onset/Offset, Dyspnoea, CYP3A4, Preferred in ACS
+- Q: What is Prasugrel of Hematology?
+  A: 10mg OD (5mg if <60kg/>75), Contra: Stroke/TIA, Age>75, Wt<60kg, Stronger/Faster
+- Q: What is DAPT Duration of Hematology?
+  A: ACS/DES: 12mo; BMS: 1mo; Stroke: 21d; Elective PCI: 6mo DES
+- Q: What is Clopidogrel Resistance of Hematology?
+  A: CYP2C19 LOF Alleles (2,3) → Use Ticagrelor/Prasugrel
+- Q: What is Switching of Hematology?
+  A: Loading Dose of New Agent, No Washout, Continue Aspirin
+- Q: What is Bleeding of Hematology?
+  A: Platelet Transfusion = Only Effective Reversal; DDAVP for Dysfunction
+- Q: What is Hematology indicated for?
+  A: Prasugrel: Stroke/TIA, Age>75, Wt<60kg; Ticagrelor: Severe Hepatic, Active Bleed
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Antiplatelet Therapy**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

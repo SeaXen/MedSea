@@ -437,3 +437,92 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Chronic Leukaemias → CLL
+- Q: What is Absolute Lymphocyte Count of Hematology?
+  A: ≥5×10⁹/L monoclonal B-cells (sustained ≥3 months)
+- Q: How is Hematology classified?
+  A: CD5+, CD19+, CD23+, sIg dim, CD20 dim, CD10-, FMC7-, Cyclin D1-
+- Q: What is Clonality of Hematology?
+  A: Light chain restriction (κ or λ)
+- Q: What is Morphology of Hematology?
+  A: Mature small lymphocytes ± smudge cells ± prolymphocytes (<55%)
+- Q: What is the epidemiology of Hematology?
+  A: 5-10% lifetime risk; NOTCH1, TP53, MYC, CDKN2A mutations
+- Q: What is Clinical of Hematology?
+  A: Rapidly enlarging nodes, B-symptoms, ↑LDH, ↑Ca, extranodal sites
+- Q: What is Pathology of Hematology?
+  A: DLBCL (90%), Hodgkin-like (5-10%), other
+- Q: What is the investigation of choice for Hematology?
+  A: Excisional node biopsy + PET-CT
+- Q: How is Hematology managed?
+  A: R-CHOP (or DA-EPOCH-R) + BTKi continuation → Allo-HSCT in CR1 if fit
+- Q: What is the prognosis of Hematology?
+  A: Poor (median OS ~1-2 years); TP53 mutated = worse
+- Q: What is Absolute Lymphocyte Count of Hematology?
+  A: ≥5×10⁹/L monoclonal B-cells (sustained ≥3 months)
+- Q: How is Hematology classified?
+  A: CD5+, CD19+, CD23+, sIg dim, CD20 dim, CD10-, FMC7-, Cyclin D1-
+- Q: What is Clonality of Hematology?
+  A: Light chain restriction (κ or λ)
+- Q: What is the epidemiology of Hematology?
+  A: 5-10% lifetime risk; NOTCH1, TP53, MYC, CDKN2A mutations
+- Q: What is Clinical of Hematology?
+  A: Rapidly enlarging nodes, B-symptoms, ↑LDH, ↑Ca, extranodal sites
+- Q: What is Pathology of Hematology?
+  A: DLBCL (90%), Hodgkin-like (5-10%), other
+- Q: What is the investigation of choice for Hematology?
+  A: Excisional node biopsy + PET-CT
+- Q: How is Hematology managed?
+  A: R-CHOP (or DA-EPOCH-R) + BTKi continuation → Allo-HSCT in CR1 if fit
+- Q: What is the prognosis of Hematology?
+  A: Poor (median OS ~1-2 years); TP53 mutated = worse
+- Q: What is the investigation of choice for Hematology?
+  A: ≥5×10⁹/L CD5+CD19+CD23+ sIg dim CD20 dim B-cells ≥3 months
+- Q: What is CLL vs MBL of Hematology?
+  A: MBL = <5×10⁹/L, no nodes, observe; CLL = ≥5×10⁹/L + iWCLL criteria for treatment
+- Q: What is Staging of Hematology?
+  A: Rai (0-IV) or Binet (A-C); Binet C = Hb<10 or Plt<100
+- Q: What is Prognostic Markers of Hematology?
+  A: TP53/del17p (WORST); IGHV unmutated (poor); del13q sole = favourable
+- Q: What is Hematology indicated for?
+  A: iWCLL active disease (symptoms, cytopenias, rapid doubling, B-symptoms)
+- Q: What is TP53/del17p of Hematology?
+  A: BTKi indefinite OR Ven-O fixed (NO chemoimmunotherapy)
+- Q: What is IGHV Mutated of Hematology?
+  A: Ven-O fixed 12mo preferred (high uMRD rate)
+- Q: What is IGHV Unmutated/Unfit of Hematology?
+  A: BTKi indefinite (Acalabrutinib/Zanubrutinib preferred)
+- Q: What is BTKi Toxicities of Hematology?
+  A: AFib, Bleeding, HTN – Hold for surgery, DOAC not warfarin
+- Q: What is Ven-O TLS of Hematology?
+  A: Ramp-up 5-week + Allopurinol/Rasburicase per risk
+- Q: What is MRD Stop Rule of Hematology?
+  A: uMRD (<10⁻⁴ in blood+marrow) at 12mo → Stop
+- Q: What is Richter of Hematology?
+  A: DLBCL (90%) → Excisional biopsy + PET → R-CHOP + BTKi → Allo-HSCT
+- Q: What is Infection of Hematology?
+  A: IVIG if IgG<4 + recurrent infx; No live vaccines; ACV prophylaxis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Chronic Leukaemias → CLL**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Absolute Lymphocyte Count — ≥5×10⁹/L monoclonal B-cells (sustained ≥3 months); Immunophenotype — CD5+, CD19+, CD23+, sIg dim, CD20 dim, CD10-, FMC7-, Cyclin D1-; Clonality — Light chain restriction (κ or λ). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

@@ -375,3 +375,42 @@ mindmap
 - **Chapter MOC**: [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related**: [[Cirrhosis and Portal Hypertension]], [[Acute Liver Failure]], [[Autoimmune Liver Disease]], [[Liver Transplantation]], [[Viral Hepatitis]]
+---
+
+> Auto-generated study sections for "Inherited and Metabolic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Inherited and Metabolic Liver Disease?
+  A: Inherited & Metabolic Liver Disease — Wilson (ceruloplasmin, 24h urinary copper, ATP7B, penicillamine/trientine/zinc), Haemochromatosis (HFE C282Y/H63D, ferritin/TSAT, venesection), Alpha-1 AT deficiency (PiZZ, serum level <11 µmol/L, augmentation), Gilbert/Crigler-Najjar/Dubin-Johnson/Rotor, Porphyrias (AIP, VP, HCP, PCT).
+- Q: What is Wilson of Inherited and Metabolic Liver Disease?
+  A: Ceruloplasmin <20, 24h Cu >100µg, KF rings, ATP7B → Penicillamine/Trientine → Zinc maintenance; Neuro = trientine > penicillamine
+- Q: What is Haemochromatosis of Inherited and Metabolic Liver Disease?
+  A: HFE C282Y Homozygous, TSAT >45%, Ferritin >1000 → Venesection 500ml weekly → Ferritin <50
+- Q: What is Alpha-1 AT Deficiency of Inherited and Metabolic Liver Disease?
+  A: PiZZ, Serum <11 µmol/L → Augmentation (Prolastin 60mg/kg IV weekly) + Smoking cessation
+- Q: What is Gilbert of Inherited and Metabolic Liver Disease?
+  A: Unconjugated hyperbilirubinaemia, benign, fasting/stress induced, UGT1A128
+- Q: What is Crigler-Najjar of Inherited and Metabolic Liver Disease?
+  A: Type I: 0% UGT → Phototherapy → Transplant; Type II: Partial → Phenobarbital
+- Q: What is Dubin-Johnson vs Rotor of Inherited and Metabolic Liver Disease?
+  A: DJ: Conjugated bilirubin, black liver, ABCC2; Rotor: Conjugated, normal liver, SLCO1B1/3
+- Q: What is Porphyrias of Inherited and Metabolic Liver Disease?
+  A: Acute (AIP, VP, HCP): PBG↑↑, abdominal pain, neuropathy → IV Haemin 3-4mg/kg ×4d + Dextrose; Cutaneous (PCT, EPP, CEP): Photosensitivity; PCT: Phlebotomy/Chloroquine
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inherited and Metabolic Liver Disease?**
+   A. **Inherited & Metabolic Liver Disease — Wilson (ceruloplasmin, 24h urinary copper, ATP7B, penicillamine/trientine/zinc), Haemochromatosis (HFE C282Y/H63D, ferritin/TSAT, venesection), Alpha-1 AT deficie**
+   B. An unrelated condition not matching the clinical picture of Inherited and Metabolic Liver Disease
+   C. A complication seen late in the disease course of Inherited and Metabolic Liver Disease
+   D. A condition that mimics Inherited and Metabolic Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inherited and Metabolic Liver Disease presents with: Hepatic — 5-35 yrs; Neurological — 15-45 yrs; Mixed — 10-30 yrs. What is the most likely diagnosis?
+   A. **Inherited and Metabolic Liver Disease**
+   B. A condition that mimics Inherited and Metabolic Liver Disease but is not the same entity
+   C. A complication of Inherited and Metabolic Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inherited and Metabolic Liver Disease
+

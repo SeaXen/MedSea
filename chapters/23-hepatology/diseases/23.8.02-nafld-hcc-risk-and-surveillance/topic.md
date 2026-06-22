@@ -297,3 +297,36 @@ mindmap
 - [[Non-Alcoholic Fatty Liver Disease/NAFLD Diagnosis (FIB-4, NFS, ELF, FibroScan)|NAFLD Diagnosis]]
 - [[Non-Alcoholic Fatty Liver Disease/NAFLD Management (Lifestyle, Pharmacotherapy, Bariatric Surgery)|NAFLD Management]]
 - [[Liver Tumours/HCC (Hepatocellular Carcinoma)|HCC Full Topic]]
+---
+
+> Auto-generated study sections for "Non Alcoholic Fatty Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Non Alcoholic Fatty Liver Disease?
+  A: | Fibrosis Stage | Annual HCC Incidence | Surveillance Recommendation |
+- Q: What causes Non Alcoholic Fatty Liver Disease?
+  A: Now #1/#2 Indication for Transplant in West
+- Q: What is F4 (Cirrhosis) of Non Alcoholic Fatty Liver Disease?
+  A: Mandatory 6m US ± AFP (Lifelong)
+- Q: What is F3 (Advanced Fibrosis) of Non Alcoholic Fatty Liver Disease?
+  A: Consider 6m US ± AFP (EASL Strongest)
+- Q: What is Non-Cirrhotic HCC of Non Alcoholic Fatty Liver Disease?
+  A: ~30% of NAFLD HCC in F2-F3 (Diabetes, Obesity, Male, PNPLA3)
+- Q: What is F2 and Below of Non Alcoholic Fatty Liver Disease?
+  A: No Routine Surveillance (Unless High Risk Factors)
+- Q: What is Surveillance Modality of Non Alcoholic Fatty Liver Disease?
+  A: 6m US ± AFP; CT/MRI if US Inadequate
+- Q: What is AFP >200 + Imaging of Non Alcoholic Fatty Liver Disease?
+  A: = HCC Diagnosis (High Risk)
+- Q: What is Post-SVR HCV + NAFLD of Non Alcoholic Fatty Liver Disease?
+  A: F4 = Lifelong Surveillance; F3 Consider
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Non Alcoholic Fatty Liver Disease?**
+   A. **| Fibrosis Stage | Annual HCC Incidence | Surveillance Recommendation |**
+   B. An unrelated condition not matching the clinical picture of Non Alcoholic Fatty Liver Disease
+   C. A complication seen late in the disease course of Non Alcoholic Fatty Liver Disease
+   D. A condition that mimics Non Alcoholic Fatty Liver Disease but has a different underlying cause
+

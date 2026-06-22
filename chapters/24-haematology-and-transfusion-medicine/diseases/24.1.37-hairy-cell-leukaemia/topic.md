@@ -330,3 +330,74 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (24 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Hairy Cell Leukaemia
+- Q: What is Blood Film of Hematology?
+  A: "Hairy Cells" – spindle-shaped cytoplasmic projections
+- Q: What is Flow Cytometry of Hematology?
+  A: CD20+, CD25+, CD103+, CD123+, CD11c+, CD5-, CD10-, CD23-, FMC7+
+- Q: What is TRAP Stain of Hematology?
+  A: Strongly Positive (histochemical)
+- Q: What is BRAF V600E of Hematology?
+  A: >95% Positive (PCR/NGS)
+- Q: What is BM Aspirate of Hematology?
+  A: Dry Tap (common due to fibrosis/infiltration)
+- Q: What is BM Biopsy of Hematology?
+  A: Reticulin Fibrosis, Hairy cells in Splenic Red Pulp pattern
+- Q: What is CD25 (IL-2R) of Hematology?
+  A: Positive (Classic); Negative (HCL-v)
+- Q: What is Blood Film of Hematology?
+  A: "Hairy Cells" – spindle-shaped cytoplasmic projections
+- Q: What is Flow Cytometry of Hematology?
+  A: CD20+, CD25+, CD103+, CD123+, CD11c+, CD5-, CD10-, CD23-, FMC7+
+- Q: What is TRAP Stain of Hematology?
+  A: Strongly Positive (histochemical)
+- Q: What is BRAF V600E of Hematology?
+  A: >95% Positive (PCR/NGS)
+- Q: What is BM Aspirate of Hematology?
+  A: Dry Tap (common due to fibrosis/infiltration)
+- Q: What is BM Biopsy of Hematology?
+  A: Reticulin Fibrosis, Hairy cells in Splenic Red Pulp pattern
+- Q: What is CD25 (IL-2R) of Hematology?
+  A: Positive (Classic); Negative (HCL-v)
+- Q: What is the investigation of choice for Hematology?
+  A: BRAF V600E (>95%), TRAP+, CD25+, CD103+, CD123+, CD11c+, CD5-, CD10-, CD23-
+- Q: What is Clinical of Hematology?
+  A: Massive Splenomegaly, Pancytopenia, Dry Tap, Infections
+- Q: What is HCL-v of Hematology?
+  A: BRAF WT, CD25-, MAP2K1 mut, TRAP weak, Purine analogue resistant
+- Q: What is the first-line treatment for Hematology?
+  A: Cladribine (2-CdA) 0.14mg/kg × 5-7d OR Pentostatin 4mg/m² q2wk
+- Q: What is CR Rate of Hematology?
+  A: >85-90% with purine analogues
+- Q: What is Immunosuppression of Hematology?
+  A: Prolonged CD4+ depletion → ACV + PJP Prophylaxis × 12 months
+- Q: What is Relapsed of Hematology?
+  A: Vemurafenib (BRAF inhibitor) + Rituximab; Ibrutinib; Moxetumomab
+- Q: What is Splenectomy of Hematology?
+  A: Reserved for purine analogue failure
+- Q: What is Infections of Hematology?
+  A: Encapsulated organisms – Vaccinate, Penicillin prophylaxis post-splenectomy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Hairy Cell Leukaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Feature — Classic HCL; BRAF V600E — >95% Positive; MAP2K1 Mutation — Rare. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

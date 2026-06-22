@@ -248,3 +248,34 @@ mindmap
 - [[Biliary Tract Disease/Choledocholithiasis|Choledocholithiasis]]
 - [[Inherited and Metabolic Liver Disease/Gilbert Syndrome|Gilbert Syndrome]]
 - [[Inherited and Metabolic Liver Disease/Dubin-Johnson vs Rotor Syndrome|Dubin-Johnson vs Rotor]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (4 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: | ALT/AST | ↑↑↑ (often 10–100× ULN) |
+- Q: What is ALP of Jaundice and LFT Interpretation?
+  A: ↑↑ (>3× ULN)
+- Q: What is ALT/AST of Jaundice and LFT Interpretation?
+  A: Normal or mildly ↑ (<5× ULN)
+- Q: What is GGT of Jaundice and LFT Interpretation?
+  A: ↑↑ (confirms hepatic origin)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **| ALT/AST | ↑↑↑ (often 10–100× ULN) |**
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Jaundice and LFT Interpretation presents with: A[Abnormal LFTs] --> B{Calculate R Ratio}; B -->|R = ALT/ALP| C{R > 5}; C --> D[Hepatocellular Pattern]. What is the most likely diagnosis?
+   A. **Jaundice and LFT Interpretation**
+   B. A condition that mimics Jaundice and LFT Interpretation but is not the same entity
+   C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
+

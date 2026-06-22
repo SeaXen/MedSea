@@ -312,3 +312,54 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Hematology?
+  A: Apparent Polycythaemia in Obese, Hypertensive, Middle-aged White Males
+- Q: What is Synonyms of Hematology?
+  A: Stress Polycythemia, Pseudo-Polycythaemia, Gaisböck Syndrome
+- Q: What is Demographics of Hematology?
+  A: Male, 40-60 years, Obese (BMI >30), Hypertensive, Smoker, Stressed
+- Q: What is the pathogenesis of Hematology?
+  A: Unknown: ?Sympathetic overactivity, ?Renin-angiotensin, ?Plasma volume ↓ due to adipose tissue compression
+- Q: What is Associated of Hematology?
+  A: Metabolic Syndrome (Diabetes, Hyperlipidaemia), Coronary Artery Disease, Gout (Uric acid ↑)
+- Q: What is Lab of Hematology?
+  A: Hb/Hct ↑, Normal RCM, Plasma Volume ↓, Normal EPO
+- Q: What is the definition of Hematology?
+  A: Normal Red Cell Mass + Low Plasma Volume = Apparent Polycythaemia
+- Q: What is EPO of Hematology?
+  A: Normal (vs Low in PV, High in Secondary)
+- Q: What is JAK2 of Hematology?
+  A: Negative (vs Positive in PV)
+- Q: What causes Hematology?
+  A: Dehydration, Diuretics, Obesity (Gaisböck), Burns, Third-space losses
+- Q: What is Gaisböck Syndrome of Hematology?
+  A: Obese, Male, Hypertensive, Smoker → Apparent Polycythemia
+- Q: What is the investigation of choice for Hematology?
+  A: RCM Normal + Plasma Volume Low + EPO Normal + JAK2 Neg
+- Q: How is Hematology managed?
+  A: Volume Repletion (IV Fluids); Stop Diuretics; Treat Obesity/HTN; NO Phlebotomy
+- Q: What is Phlebotomy of Hematology?
+  A: CONTRAINDICATED → Causes Iron Deficiency
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Polycythaemia → Apparent/Relative Polycythaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Feature — Apparent Polycythaemia; Red Cell Mass — Normal; Plasma Volume — Decreased. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

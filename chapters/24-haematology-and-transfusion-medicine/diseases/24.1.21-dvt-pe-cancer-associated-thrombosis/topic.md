@@ -393,3 +393,80 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (27 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Venous Thromboembolism
+- Q: What is Rivaroxaban of Hematology?
+  A: 15 mg BD × 21 days → 20 mg OD
+- Q: What is Apixaban of Hematology?
+  A: 10 mg BD × 7 days → 5 mg BD
+- Q: What is Dabigatran of Hematology?
+  A: Heparin/LMWH 5d overlap → 150 mg BD
+- Q: What is Edoxaban of Hematology?
+  A: Heparin/LMWH 5d overlap → 60 mg OD
+- Q: What is Warfarin of Hematology?
+  A: LMWH overlap ≥5d + INR 2-3
+- Q: What is Hematology indicated for?
+  A: Active bleed, recent neurosurgery, high bleed risk
+- Q: What is Recurrent VTE on Therapeutic Anticoagulation of Hematology?
+  A: Confirmed adherence + therapeutic levels
+- Q: What is NOT for of Hematology?
+  A: Primary prophylaxis, routine CAT, transient risk factors
+- Q: What is Rivaroxaban of Hematology?
+  A: 15 mg BD × 21 days → 20 mg OD
+- Q: What is Apixaban of Hematology?
+  A: 10 mg BD × 7 days → 5 mg BD
+- Q: What is Dabigatran of Hematology?
+  A: Heparin/LMWH 5d overlap → 150 mg BD
+- Q: What is Edoxaban of Hematology?
+  A: Heparin/LMWH 5d overlap → 60 mg OD
+- Q: What is Warfarin of Hematology?
+  A: LMWH overlap ≥5d + INR 2-3
+- Q: What is Hematology indicated for?
+  A: Active bleed, recent neurosurgery, high bleed risk
+- Q: What is Recurrent VTE on Therapeutic Anticoagulation of Hematology?
+  A: Confirmed adherence + therapeutic levels
+- Q: What is NOT for of Hematology?
+  A: Primary prophylaxis, routine CAT, transient risk factors
+- Q: What is DVT Probability of Hematology?
+  A: Wells Score: Low/Moderate → D-dimer; High → US
+- Q: What is PE Probability of Hematology?
+  A: Wells/Geneva: Unlikely → D-dimer; Likely → CTPA
+- Q: What is D-dimer of Hematology?
+  A: Age-adjusted (Age × 10 if >50) for Low/Moderate prob
+- Q: What is the first-line treatment for Hematology?
+  A: DOACs (Rivaroxaban/Apixaban) – no LMWH overlap needed
+- Q: What is Hematology indicated for?
+  A: Mechanical valves, Pregnancy, AT Def, APS triple positive, CrCl <15-30
+- Q: What is Duration of Hematology?
+  A: Provoked 3mo; Unprovoked/CAT/APS = Indefinite
+- Q: How is Hematology managed?
+  A: LMWH standard (CLOT); Apixaban preferred DOAC (CARAVAGGIO); Avoid DOACs in GI/GU (SELECT-D)
+- Q: What is CAT Duration of Hematology?
+  A: Indefinite while cancer active
+- Q: What is Massive PE of Hematology?
+  A: Alteplase 100mg IV 2h (haemodynamic instability)
+- Q: What is IVC Filter of Hematology?
+  A: Anticoagulation contraindicated OR Recurrent VTE on therapeutic AC
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Venous Thromboembolism**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Active cancer (treatment ≤6mo/palliative) — 1; Paralysis/paresis/immobilisation >3d — 1; Recently bedridden >3d / surgery ≤4wks — 1. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

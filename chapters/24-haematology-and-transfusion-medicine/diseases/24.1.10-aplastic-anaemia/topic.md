@@ -403,3 +403,106 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (40 generated)
+
+- Q: What is BM Biopsy of Hematology?
+  A: Cellularity, exclude MDS/leukaemia/fibrosis, iron stores
+- Q: What is Flow Cytometry (PNH screen) of Hematology?
+  A: CD55/CD59 (GPI-anchored) on granulocytes/monocytes/RBCs – detect PNH clone
+- Q: What is Chromosomal Breakage (DEB/MMC) of Hematology?
+  A: Fanconi Anaemia diagnosis (gold standard)
+- Q: What is Telomere Length (Flow-FISH) of Hematology?
+  A: Dyskeratosis Congenita (short telomeres)
+- Q: How is Hematology classified?
+  A: Baseline for clonal evolution monitoring
+- Q: What is NGS Panel of Hematology?
+  A: Somatic mutations (ASXL1, DNMT3A, BCOR, PIGA) – predict evolution
+- Q: What is HLA Typing of Hematology?
+  A: For HSCT donor search
+- Q: What is Viral Serology of Hematology?
+  A: Hepatitis A/B/C/E, HIV, EBV, CMV, Parvovirus B19
+- Q: What is RBC Transfusion of Hematology?
+  A: Threshold Hb <7-8 (symptomatic); Irradiated + Leucodepleted (prevent TA-GVHD, alloimmunization); Avoid CMV+ if seronegative
+- Q: What is Platelet Transfusion of Hematology?
+  A: Threshold <10 (prophylactic); <20 (fever/sepsis); <50 (active bleed/procedure); Irradiated, HLA-matched if refractory
+- Q: What is Infection Prophylaxis of Hematology?
+  A: Ciprofloxacin (neutropenic prophylaxis), Posaconazole/Voriconazole (mould-active if prolonged neutropenia), Aciclovir (HSV/VZV), Co-trimoxazole (PCP)
+- Q: What is Growth Factors of Hematology?
+  A: G-CSF (controversial in AA – may stimulate clones); not routine
+- Q: What is Iron Chelation of Hematology?
+  A: If ferritin >1000 or >20 RBC units: Deferasirox (monitor renal)
+- Q: What is Vaccinations of Hematology?
+  A: Post-HSCT: re-immunisation schedule; IST: inactivated vaccines safe
+- Q: What is BM Biopsy of Hematology?
+  A: Cellularity, exclude MDS/leukaemia/fibrosis, iron stores
+- Q: What is Flow Cytometry (PNH screen) of Hematology?
+  A: CD55/CD59 (GPI-anchored) on granulocytes/monocytes/RBCs – detect PNH clone
+- Q: What is Chromosomal Breakage (DEB/MMC) of Hematology?
+  A: Fanconi Anaemia diagnosis (gold standard)
+- Q: What is Telomere Length (Flow-FISH) of Hematology?
+  A: Dyskeratosis Congenita (short telomeres)
+- Q: How is Hematology classified?
+  A: Baseline for clonal evolution monitoring
+- Q: What is NGS Panel of Hematology?
+  A: Somatic mutations (ASXL1, DNMT3A, BCOR, PIGA) – predict evolution
+- Q: What is HLA Typing of Hematology?
+  A: For HSCT donor search
+- Q: What is Viral Serology of Hematology?
+  A: Hepatitis A/B/C/E, HIV, EBV, CMV, Parvovirus B19
+- Q: What is RBC Transfusion of Hematology?
+  A: Threshold Hb <7-8 (symptomatic); Irradiated + Leucodepleted (prevent TA-GVHD, alloimmunization); Avoid CMV+ if seronegative
+- Q: What is Platelet Transfusion of Hematology?
+  A: Threshold <10 (prophylactic); <20 (fever/sepsis); <50 (active bleed/procedure); Irradiated, HLA-matched if refractory
+- Q: What is Infection Prophylaxis of Hematology?
+  A: Ciprofloxacin (neutropenic prophylaxis), Posaconazole/Voriconazole (mould-active if prolonged neutropenia), Aciclovir (HSV/VZV), Co-trimoxazole (PCP)
+- Q: What is Growth Factors of Hematology?
+  A: G-CSF (controversial in AA – may stimulate clones); not routine
+- Q: What is Iron Chelation of Hematology?
+  A: If ferritin >1000 or >20 RBC units: Deferasirox (monitor renal)
+- Q: What is Vaccinations of Hematology?
+  A: Post-HSCT: re-immunisation schedule; IST: inactivated vaccines safe
+- Q: What is the definition of Hematology?
+  A: Pancytopenia + Hypocellular marrow ≤25% + no abnormal cells
+- Q: What is Severity of Hematology?
+  A: SAA: ANC<0.5, Plt<20, Retic<60; VSAA: ANC<0.2
+- Q: What causes Hematology?
+  A: Acquired (immune-mediated) 80%; Inherited (Fanconi, DC)
+- Q: What is PNH Screen of Hematology?
+  A: Flow cytometry CD55/CD59 – mandatory at diagnosis
+- Q: What is the investigation of choice for Hematology?
+  A: Chromosomal breakage (DEB/MMC) – gold standard
+- Q: What is the first-line treatment for Hematology?
+  A: HSCT (Flu/Cy ± TBI)
+- Q: What is CsA Target of Hematology?
+  A: Trough 150-250 ng/mL
+- Q: What is Response of Hematology?
+  A: Assess at 3-6 months; CR = Hb≥12, ANC≥1, Plt≥100
+- Q: What is Relapse of Hematology?
+  A: ~30% → 2nd IST or HSCT
+- Q: What is Clonal Evolution of Hematology?
+  A: Annual BM + cytogenetics + NGS (MDS/AML/PNH)
+- Q: What is Transfusion of Hematology?
+  A: Irradiated + Leucodepleted; CMV-safe if negative
+- Q: What is Eltrombopag of Hematology?
+  A: Add to IST ↑ response rate; monitor LFT, cataracts
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bone Marrow Failure Syndromes → Aplastic Anaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Acquired (Immune-mediated) — Idiopathic (80%), Drugs (chloramphenicol, gold, carbamazepine), Viruses (Hepatitis, EBV, HIV, Parvovirus), Toxins (benzene), Pregnancy, Autoimmune (SLE); Inherited — Fanconi Anaemia (FA pathway genes), Dyskeratosis Congenita (DKC1, TERC, TERT), Shwachman-Diamond (SBDS), Cartilage-hair hypoplasia (RMRP); [!tip] FCPS/MRCP: Acquired AA is immune-mediated – T-cells destroy stem cells → responsive to IST. Inherited = chromosomal breakage (Fanconi) or telomere defects (DC).. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

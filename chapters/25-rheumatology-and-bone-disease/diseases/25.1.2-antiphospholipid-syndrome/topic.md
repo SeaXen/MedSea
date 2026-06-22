@@ -364,3 +364,102 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Systemic Lupus Erythematosus]] · [[Catastrophic APS]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (38 generated)
+
+- Q: What is Anti-β2GPI binding of Autoimmune Rheumatic Diseases?
+  A: β2GPI on endothelial cells, platelets, trophoblasts → conformational change exposes antigenic epitope
+- Q: What is Lupus Anticoagulant (LA) of Autoimmune Rheumatic Diseases?
+  A: In vitro prolongs phospholipid-dependent clotting (aPTT, dRVVT) — paradoxically pro-thrombotic in vivo
+- Q: What is Complement activation of Autoimmune Rheumatic Diseases?
+  A: C5a → neutrophil activation, NETosis
+- Q: What is Trophoblast dysfunction of Autoimmune Rheumatic Diseases?
+  A: Impaired placentation → pregnancy morbidity
+- Q: What is Neutrophil extracellular traps (NETs) of Autoimmune Rheumatic Diseases?
+  A: Promote thrombosis in APS
+- Q: What is Vascular Thrombosis of Autoimmune Rheumatic Diseases?
+  A: Arterial, venous, or small vessel — objectified by imaging/histology (DVT, PE, stroke, MI, limb ischaemia, retinal vein occlusion, etc.)
+- Q: What is Pregnancy Morbidity of Autoimmune Rheumatic Diseases?
+  A: ≥1 of: <br>• ≥1 unexplained fetal death ≥10 weeks (normal morphology) <br>• ≥1 premature birth <34 weeks due to eclampsia/pre-eclampsia/placental insufficiency <br>• ≥3 unexplained consecutive embryonic losses <10 weeks
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: Thrombosis in ≥3 organs/systems within 1 week + aPL positivity + histopathology: small vessel thrombosis
+- Q: What is the epidemiology of Autoimmune Rheumatic Diseases?
+  A: <1% of APS
+- Q: What is Mortality of Autoimmune Rheumatic Diseases?
+  A: ~50% (improved with early aggressive therapy)
+- Q: What is Triggers of Autoimmune Rheumatic Diseases?
+  A: Infection, surgery, trauma, malignancy, stopping anticoagulation, pregnancy/puerperium
+- Q: What is Common Organs of Autoimmune Rheumatic Diseases?
+  A: Kidneys (renal failure), lungs (ARDS/haemorrhage), brain (stroke), heart (MI), adrenals (haemorrhage), GI (ischaemia), skin (livedo, necrosis)
+- Q: What is Hydroxychloroquine of Autoimmune Rheumatic Diseases?
+  A: All SLE-APS patients — antithrombotic, improves pregnancy outcomes
+- Q: What is Aspirin 75mg of Autoimmune Rheumatic Diseases?
+  A: Consider in all APS (additive antithrombotic); mandatory in obstetric APS
+- Q: What is Statins of Autoimmune Rheumatic Diseases?
+  A: Emerging evidence for thromboprotection in APS
+- Q: What is Anti-β2GPI binding of Autoimmune Rheumatic Diseases?
+  A: β2GPI on endothelial cells, platelets, trophoblasts → conformational change exposes antigenic epitope
+- Q: What is Lupus Anticoagulant (LA) of Autoimmune Rheumatic Diseases?
+  A: In vitro prolongs phospholipid-dependent clotting (aPTT, dRVVT) — paradoxically pro-thrombotic in vivo
+- Q: What is Complement activation of Autoimmune Rheumatic Diseases?
+  A: C5a → neutrophil activation, NETosis
+- Q: What is Trophoblast dysfunction of Autoimmune Rheumatic Diseases?
+  A: Impaired placentation → pregnancy morbidity
+- Q: What is Neutrophil extracellular traps (NETs) of Autoimmune Rheumatic Diseases?
+  A: Promote thrombosis in APS
+- Q: What is Vascular Thrombosis of Autoimmune Rheumatic Diseases?
+  A: Arterial, venous, or small vessel — objectified by imaging/histology (DVT, PE, stroke, MI, limb ischaemia, retinal vein occlusion, etc.)
+- Q: What is Pregnancy Morbidity of Autoimmune Rheumatic Diseases?
+  A: ≥1 of: <br>• ≥1 unexplained fetal death ≥10 weeks (normal morphology) <br>• ≥1 premature birth <34 weeks due to eclampsia/pre-eclampsia/placental insufficiency <br>• ≥3 unexplained consecutive embryonic losses <10 weeks
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: Thrombosis in ≥3 organs/systems within 1 week + aPL positivity + histopathology: small vessel thrombosis
+- Q: What is the epidemiology of Autoimmune Rheumatic Diseases?
+  A: <1% of APS
+- Q: What is Mortality of Autoimmune Rheumatic Diseases?
+  A: ~50% (improved with early aggressive therapy)
+- Q: What is Triggers of Autoimmune Rheumatic Diseases?
+  A: Infection, surgery, trauma, malignancy, stopping anticoagulation, pregnancy/puerperium
+- Q: What is Hydroxychloroquine of Autoimmune Rheumatic Diseases?
+  A: All SLE-APS patients — antithrombotic, improves pregnancy outcomes
+- Q: What is Aspirin 75mg of Autoimmune Rheumatic Diseases?
+  A: Consider in all APS (additive antithrombotic); mandatory in obstetric APS
+- Q: What is Statins of Autoimmune Rheumatic Diseases?
+  A: Emerging evidence for thromboprotection in APS
+- Q: What is Sydney Criteria of Autoimmune Rheumatic Diseases?
+  A: 1 Clinical (thrombosis OR pregnancy morbidity) + 1 Lab (LA, aCL, anti-β2GPI ×2 ≥12wks apart)
+- Q: What is Triple Positivity of Autoimmune Rheumatic Diseases?
+  A: LA + aCL + anti-β2GPI = highest thrombosis risk
+- Q: What is Warfarin INR of Autoimmune Rheumatic Diseases?
+  A: Venous: 2.5-3.5 (target 3.0); Arterial: 3.0-4.0
+- Q: What is DOACs of Autoimmune Rheumatic Diseases?
+  A: INFERIOR in APS (TRAPS, ASTRO-APS) — avoid, especially triple positive
+- Q: What is Obstetric APS of Autoimmune Rheumatic Diseases?
+  A: Aspirin 75mg + LMWH throughout pregnancy + 6wks postpartum
+- Q: What is Warfarin in Pregnancy of Autoimmune Rheumatic Diseases?
+  A: TERATOGENIC (6-12wks) — switch to LMWH immediately
+- Q: What is CAPS of Autoimmune Rheumatic Diseases?
+  A: ≥3 organs thrombosis in 1 week → Anticoag + MP 1000mg IV ×3-5d + IVIG/PLEX ± CYC/RTX — mortality ~50%
+- Q: What is Libman-Sacks of Autoimmune Rheumatic Diseases?
+  A: Non-bacterial endocarditis (aortic > mitral) — APS/SLE
+- Q: What is Livedo Reticularis of Autoimmune Rheumatic Diseases?
+  A: Racemosa (branching, persistent) — >90% specific for APS
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **| Definition | Autoimmune syndrome characterised by arterial/venous/small vessel thrombosis and/or pregnancy morbidity in the presence of persistent antiphospholipid antibodies |**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: Definition — Autoimmune syndrome characterised by arterial/venous/small vessel thrombosis and/or pregnancy morbidity in the presence of persistent antiphospholipid antibodies; Primary APS — APS without associated autoimmune disease; Secondary APS — APS associated with SLE (most common), RA, SSc, Sjögren's, etc.. What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

@@ -36,3 +36,20 @@ modified: 2026-06-16
 
 ## Tags
 #medicine #davidson #ophthalmology #hub #cornea
+---
+
+> Auto-generated study sections for "05_Cornea" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of 05_Cornea?
+  A: | # | Topic | Priority | Status |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 05_Cornea?**
+   A. **| # | Topic | Priority | Status |**
+   B. An unrelated condition not matching the clinical picture of 05_Cornea
+   C. A complication seen late in the disease course of 05_Cornea
+   D. A condition that mimics 05_Cornea but has a different underlying cause
+

@@ -287,3 +287,84 @@ mindmap
 - [[Autoimmune Liver Disease/AIH diagnostic criteria (IAIHG simplified)|AIH Criteria]]
 - [[Hepatology in Special Situations/Viral Hepatitis in Pregnancy|Viral Hepatitis in Pregnancy]]
 - [[Hepatology in Special Situations/Hepatology in Special Situations|Special Situations Overview]]
+---
+
+> Auto-generated study sections for "Autoimmune Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Autoimmune Liver Disease?
+  A: | Drug | FDA Category | AIH Use in Pregnancy | Key Points |
+- Q: What is Prednisolone of Autoimmune Liver Disease?
+  A: No Change (Dose as per Disease Activity)
+- Q: What is Azathioprine of Autoimmune Liver Disease?
+  A: No Change (Standard Dose 1-2mg/kg); ↑ Clearance → Check 6-TGN
+- Q: What is Tacrolimus of Autoimmune Liver Disease?
+  A: Dose ↑ 30-50% (↑ Clearance, ↑ Vd); Monitor Trough Levels
+- Q: What is Budesonide of Autoimmune Liver Disease?
+  A: No Change (If Indicated)
+- Q: What is Timing of Autoimmune Liver Disease?
+  A: 4-12 Weeks Postpartum (Peak)
+- Q: What is the epidemiology of Autoimmune Liver Disease?
+  A: 30-50% if Remission Pre-Pregnancy
+- Q: What is the mechanism of Autoimmune Liver Disease?
+  A: Immune Reconstitution (↓ Estrogen/Progesterone → ↑ Th1)
+- Q: How is Autoimmune Liver Disease managed?
+  A: ↑ Prednisolone → Taper; Optimize Azathioprine Dose
+- Q: What is Mode of Autoimmune Liver Disease?
+  A: Vaginal Delivery Preferred (Unless Obstetric Indication)
+- Q: What is Anaesthesia of Autoimmune Liver Disease?
+  A: Epidural Safe (No Interaction with Immunosuppression)
+- Q: What is Caesarean of Autoimmune Liver Disease?
+  A: Only for Obstetric Indications
+- Q: What is Postpartum Hepatitis B of Autoimmune Liver Disease?
+  A: If Mother HBsAg+ → HBIG + Vaccine to Baby
+- Q: What is Prednisolone of Autoimmune Liver Disease?
+  A: No Change (Dose as per Disease Activity)
+- Q: What is Azathioprine of Autoimmune Liver Disease?
+  A: No Change (Standard Dose 1-2mg/kg); ↑ Clearance → Check 6-TGN
+- Q: What is Tacrolimus of Autoimmune Liver Disease?
+  A: Dose ↑ 30-50% (↑ Clearance, ↑ Vd); Monitor Trough Levels
+- Q: What is Budesonide of Autoimmune Liver Disease?
+  A: No Change (If Indicated)
+- Q: What is Timing of Autoimmune Liver Disease?
+  A: 4-12 Weeks Postpartum (Peak)
+- Q: What is the epidemiology of Autoimmune Liver Disease?
+  A: 30-50% if Remission Pre-Pregnancy
+- Q: What is the mechanism of Autoimmune Liver Disease?
+  A: Immune Reconstitution (↓ Estrogen/Progesterone → ↑ Th1)
+- Q: How is Autoimmune Liver Disease managed?
+  A: ↑ Prednisolone → Taper; Optimize Azathioprine Dose
+- Q: What is Mode of Autoimmune Liver Disease?
+  A: Vaginal Delivery Preferred (Unless Obstetric Indication)
+- Q: What is Anaesthesia of Autoimmune Liver Disease?
+  A: Epidural Safe (No Interaction with Immunosuppression)
+- Q: What is Caesarean of Autoimmune Liver Disease?
+  A: Only for Obstetric Indications
+- Q: What is Postpartum Hepatitis B of Autoimmune Liver Disease?
+  A: If Mother HBsAg+ → HBIG + Vaccine to Baby
+- Q: What is Pre-Conception of Autoimmune Liver Disease?
+  A: STOP MMF (6mo), MTX (3mo) → Switch to Pred + Aza
+- Q: What is Safe Drugs of Autoimmune Liver Disease?
+  A: Prednisolone, Azathioprine, Budesonide, UDCA
+- Q: What is Unsafe Drugs of Autoimmune Liver Disease?
+  A: MMF (Teratogenic), Methotrexate (Teratogenic)
+- Q: What is Tacrolimus of Autoimmune Liver Disease?
+  A: ↑ Dose Needed (↑ Clearance); Monitor Levels
+- Q: What is Postpartum Flare of Autoimmune Liver Disease?
+  A: 30-50% at 4-12 Weeks → Monitor LFTs Weekly ×4
+- Q: What is Breastfeeding of Autoimmune Liver Disease?
+  A: SAFE on Pred + Aza — Encourage
+- Q: What is Delivery of Autoimmune Liver Disease?
+  A: Vaginal Preferred; Epidural Safe
+- Q: What is Postpartum of Autoimmune Liver Disease?
+  A: Close LFT Monitoring ×8 Weeks
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Liver Disease?**
+   A. **| Drug | FDA Category | AIH Use in Pregnancy | Key Points |**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Liver Disease
+   C. A complication seen late in the disease course of Autoimmune Liver Disease
+   D. A condition that mimics Autoimmune Liver Disease but has a different underlying cause
+

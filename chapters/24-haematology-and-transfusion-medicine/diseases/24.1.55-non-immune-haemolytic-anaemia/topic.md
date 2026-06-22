@@ -339,3 +339,62 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (18 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haemolytic Anaemias → Non-immune Haemolytic Anaemia
+- Q: What is Prosthetic Heart Valve of Hematology?
+  A: Chronic low-grade haemolysis, LDH ↑, Haptoglobin ↓, Iron deficiency common
+- Q: What is March Haemoglobinuria of Hematology?
+  A: Repetitive foot impact (marathon, drumming) → Intravascular haemolysis
+- Q: What is Extracorporeal Circuits of Hematology?
+  A: ECMO, Dialysis, Cardiopulmonary bypass
+- Q: What is Defect of Hematology?
+  A: Acquired PIG-A mutation → GPI-anchor deficiency → CD55/CD59 negative
+- Q: What is Triad of Hematology?
+  A: Intravascular haemolysis, Thrombosis (abdominal veins), Bone marrow failure
+- Q: What is the investigation of choice for Hematology?
+  A: Flow cytometry: CD55/CD59 negative (Granulocytes > RBCs)
+- Q: What is Clone Size of Hematology?
+  A: >1% = Significant; >10% = Clinical PNH
+- Q: What are the complications of Hematology?
+  A: Thrombosis (Budd-Chiari, Cerebral venous), AA overlap, Transformation to MDS/AML
+- Q: How is Hematology managed?
+  A: Eculizumab/Ravulizumab (Anti-C5), Supportive (Folic acid, Iron, Anticoagulation)
+- Q: What is Prosthetic Heart Valve of Hematology?
+  A: Chronic low-grade haemolysis, LDH ↑, Haptoglobin ↓, Iron deficiency common
+- Q: What is March Haemoglobinuria of Hematology?
+  A: Repetitive foot impact (marathon, drumming) → Intravascular haemolysis
+- Q: What is Defect of Hematology?
+  A: Acquired PIG-A mutation → GPI-anchor deficiency → CD55/CD59 negative
+- Q: What is Triad of Hematology?
+  A: Intravascular haemolysis, Thrombosis (abdominal veins), Bone marrow failure
+- Q: What is the investigation of choice for Hematology?
+  A: Flow cytometry: CD55/CD59 negative (Granulocytes > RBCs)
+- Q: What is Clone Size of Hematology?
+  A: >1% = Significant; >10% = Clinical PNH
+- Q: What are the complications of Hematology?
+  A: Thrombosis (Budd-Chiari, Cerebral venous), AA overlap, Transformation to MDS/AML
+- Q: How is Hematology managed?
+  A: Eculizumab/Ravulizumab (Anti-C5), Supportive (Folic acid, Iron, Anticoagulation)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haemolytic Anaemias → Non-immune Haemolytic Anaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Microangiopathic (MAHA) — TTP, HUS, DIC, Malignant HTN, Scleroderma renal crisis, HELLP, Cancer; Mechanical Trauma — Prosthetic heart valves, March haemoglobinuria, Extracorporeal circuits; Membrane Defects (Hereditary) — Hereditary Spherocytosis, HCL, Elliptocytosis, Stomatocytosis, Southeast Asian Ovalocytosis. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

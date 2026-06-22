@@ -286,3 +286,42 @@ mindmap
 - [[Biliary Tract Disease/Acute cholangitis|Acute Cholangitis]]
 - [[Biliary Tract Disease/Gallstone disease|Gallstone Disease]]
 - [[Biliary Tract Disease/Gallstone pancreatitis|Gallstone Pancreatitis]]
+---
+
+> Auto-generated study sections for "Biliary Tract Disease" — Ch 23: Hepatology.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Biliary Tract Disease?
+  A: | Pain | RUQ/Epigastric, Colicky, Radiates to Back/Scapula |
+- Q: What is High Risk (ASGE) of Biliary Tract Disease?
+  A: US Stone in CBD, CBD>10mm+Bil>4, Cholangitis, Pancreatitis+Dilated CBD
+- Q: What is Intermediate Risk of Biliary Tract Disease?
+  A: Bil 1.8-4 + CBD 6-10mm, Age>55+Bil 1.8-4+CBD 6-10mm
+- Q: What is Low Risk of Biliary Tract Disease?
+  A: None of Above
+- Q: How is Biliary Tract Disease managed?
+  A: Direct to ERCP
+- Q: What is Biliary Tract Disease indicated for?
+  A: Confirmed Stones, Cholangitis, Gallstone Pancreatitis (Severe/With Cholangitis)
+- Q: What is Mirizzi Syndrome of Biliary Tract Disease?
+  A: Cystic Duct Stone Compressing CHD → Jaundice
+- Q: What is Post-ERCP of Biliary Tract Disease?
+  A: Cholecystectomy Same Admission or Interval
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Biliary Tract Disease?**
+   A. **| Pain | RUQ/Epigastric, Colicky, Radiates to Back/Scapula |**
+   B. An unrelated condition not matching the clinical picture of Biliary Tract Disease
+   C. A complication seen late in the disease course of Biliary Tract Disease
+   D. A condition that mimics Biliary Tract Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Biliary Tract Disease presents with: A[Gallstones in GB] --> B[Migration into Cystic Duct]; B --> C[Passage into CBD]; C --> D[Obstruction of CBD]. What is the most likely diagnosis?
+   A. **Biliary Tract Disease**
+   B. A condition that mimics Biliary Tract Disease but is not the same entity
+   C. A complication of Biliary Tract Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Biliary Tract Disease
+

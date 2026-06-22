@@ -389,3 +389,84 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (29 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Lymphomas → T-cell Lymphomas
+- Q: What is Age of Hematology?
+  A: Children, Young Adults (median 30)
+- Q: What are the clinical features of Hematology?
+  A: Lymphadenopathy, Skin involvement common, B-symptoms
+- Q: What is the prognosis of Hematology?
+  A: Excellent (5-yr OS >80-90% with CHOP)
+- Q: What is Age of Hematology?
+  A: Older (median 55-60)
+- Q: What is the prognosis of Hematology?
+  A: Intermediate/Poor (5-yr OS ~50-60%)
+- Q: What is Geography of Hematology?
+  A: Endemic: Japan, Caribbean, West Africa, South America
+- Q: What causes Hematology?
+  A: HTLV-1 (Mother-to-child, Sexual, Blood)
+- Q: What is Morphology of Hematology?
+  A: Flower cells (convoluted nuclei)
+- Q: What is Clinical of Hematology?
+  A: Hypercalcaemia, Lytic bone lesions, Skin infiltrates, Lymphadenopathy, Pulmonary infiltrates
+- Q: How is Hematology classified?
+  A: Acute, Lymphoma, Chronic, Smouldering
+- Q: What is Age of Hematology?
+  A: Children, Young Adults (median 30)
+- Q: What are the clinical features of Hematology?
+  A: Lymphadenopathy, Skin involvement common, B-symptoms
+- Q: What is Geography of Hematology?
+  A: Endemic: Japan, Caribbean, West Africa, South America
+- Q: What causes Hematology?
+  A: HTLV-1 (Mother-to-child, Sexual, Blood)
+- Q: What is Morphology of Hematology?
+  A: Flower cells (convoluted nuclei)
+- Q: What is Clinical of Hematology?
+  A: Hypercalcaemia, Lytic bone lesions, Skin infiltrates, Lymphadenopathy, Pulmonary infiltrates
+- Q: How is Hematology classified?
+  A: Acute, Lymphoma, Chronic, Smouldering
+- Q: What is T-cell NHL of Hematology?
+  A: ~10-15% of NHL; PTCL-NOS most common (30-40%)
+- Q: What is AITL of Hematology?
+  A: CD4+, CD10+, PD-1+, CXCL13+, TET2/RHOA/IDH2 mut, FDC meshwork
+- Q: What is ALK+ ALCL of Hematology?
+  A: CD30+, ALK+, Excellent prognosis (CHOP)
+- Q: What is ALK- ALCL of Hematology?
+  A: CD30+, ALK-, DUSP22/TP63, Auto-HSCT in CR1
+- Q: What is NK/T-cell of Hematology?
+  A: EBV+, CD56+, CD3ε+ (cyto), Asparaginase-based (SMILE), CRT
+- Q: What is ATLL of Hematology?
+  A: HTLV-1+, Flower cells, Hypercalcaemia, Zidovudine+IFN-α
+- Q: What is PTCL-NOS Rx of Hematology?
+  A: CHOP/CHOEP → Auto-HSCT in CR1
+- Q: What is AITL Rx of Hematology?
+  A: CHOP/CHOEP+Etoposide → Auto-HSCT; PD-1 inhibitors relapsed
+- Q: What is NK/T Rx of Hematology?
+  A: Asparaginase-based (SMILE/DeVIC) + CRT
+- Q: What is ATLL Rx of Hematology?
+  A: Zidovudine + IFN-α → Allo-HSCT in CR1
+- Q: What is the prognosis of Hematology?
+  A: ALK+ ALCL > ALK- ALCL > PTCL-NOS ≈ AITL > NK/T > ATLL
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Lymphomas → T-cell Lymphomas**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: PTCL-NOS — ~30-40% of T-cell lymphomas; ALCL, ALK+ — ~10-15%; ALCL, ALK- — ~5-10%. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

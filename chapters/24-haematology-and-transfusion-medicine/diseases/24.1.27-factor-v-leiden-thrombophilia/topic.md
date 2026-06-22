@@ -351,3 +351,46 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Thrombophilia → Inherited Thrombophilias
+- Q: What is Most Common of Hematology?
+  A: Factor V Leiden (FVL) – 5-8% het in Caucasians
+- Q: What is Highest Risk of Hematology?
+  A: Antithrombin Deficiency (10-20x risk)
+- Q: What is the investigation of choice for Hematology?
+  A: OFF Warfarin ≥2wk; OFF DOAC ≥48h; Defer 4-6wk post-VTE
+- Q: How is Hematology managed?
+  A: DOACs first-line (except AT def → Warfarin)
+- Q: What is Duration of Hematology?
+  A: Provoked = 3mo; Unprovoked = Indefinite
+- Q: What is AT Deficiency of Hematology?
+  A: Warfarin preferred (DOACs less evidence)
+- Q: What is Pregnancy of Hematology?
+  A: LMWH prophylaxis for high-risk (AT def, Hom FVL, Combined, Prior VTE)
+- Q: What are the clinical features of Hematology?
+  A: No routine anticoagulation; Avoid OCP, Prophylaxis for surgery/pregnancy
+- Q: What is Family Screening of Hematology?
+  A: Cascade testing if proband has high-risk defect
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Thrombophilia → Inherited Thrombophilias**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Factor V Leiden (FVL) — F5 (c.1691G>A); Prothrombin G20210A — F2 (c.97G>A); Protein C Deficiency — PROC. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

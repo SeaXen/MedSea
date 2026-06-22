@@ -415,3 +415,82 @@ mindmap
 - [[Transfusion Medicine/FFP/Cryoprecipitate|FFP/Cryoprecipitate]]
 - [[Transfusion Medicine/Platelet Transfusion|Platelet Transfusion]]
 - [[Obstetrics/Obstetric Haematology|Pregnancy in Haemophilia]]
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (28 generated)
+
+- Q: What is the definition of Hematology?
+  A: | Severity | Factor Level (% Normal) | Clinical Phenotype | Annual Bleeds |
+- Q: What is the epidemiology of Hematology?
+  A: HA: 20-30% (Severe); HB: 2-5%
+- Q: What causes Hematology?
+  A: Severe HA, Family History, Black Race, Intensive Early Treatment, High-Dose FVIII
+- Q: What is the investigation of choice for Hematology?
+  A: Bethesda Assay (Inhibitor Titre in BU/mL)
+- Q: What is Low Titre (<5 BU) of Hematology?
+  A: Bypass Often Works, ITI Possible
+- Q: What is High Titre (≥5 BU) of Hematology?
+  A: Bypass Agents Required
+- Q: What is rFVIIa (NovoSeven®) of Hematology?
+  A: 90 µg/kg q2-3h (Until Haemostasis)
+- Q: What is aPCC (FEIBA®) of Hematology?
+  A: 50-100 U/kg q8-12h (Max 200 U/kg/day)
+- Q: What is Standard Half-Life FVIII of Hematology?
+  A: 25-40 IU/kg 3x/Week
+- Q: What is EHL FVIII of Hematology?
+  A: 20-50 IU/kg 2x/Week
+- Q: What is FIX (SHL) of Hematology?
+  A: 40-60 IU/kg 2x/Week
+- Q: What is FIX (EHL) of Hematology?
+  A: 40-80 IU/kg Weekly/Biweekly
+- Q: What is Bleeding Risk of Hematology?
+  A: Symptomatic Carriers if FVIII/FIX <40% (Lyonization)
+- Q: How is Hematology managed?
+  A: Treat as Mild Haemophilia (DDAVP, Factor Concentrate)
+- Q: What is Pregnancy of Hematology?
+  A: Levels Rise (FVIII ↑↑, FIX ↑); Monitor Postpartum Drop
+- Q: What is the epidemiology of Hematology?
+  A: HA: 20-30% (Severe); HB: 2-5%
+- Q: What causes Hematology?
+  A: Severe HA, Family History, Black Race, Intensive Early Treatment, High-Dose FVIII
+- Q: What is the investigation of choice for Hematology?
+  A: Bethesda Assay (Inhibitor Titre in BU/mL)
+- Q: What is Low Titre (<5 BU) of Hematology?
+  A: Bypass Often Works, ITI Possible
+- Q: What is rFVIIa (NovoSeven®) of Hematology?
+  A: 90 µg/kg q2-3h (Until Haemostasis)
+- Q: What is aPCC (FEIBA®) of Hematology?
+  A: 50-100 U/kg q8-12h (Max 200 U/kg/day)
+- Q: What is Standard Half-Life FVIII of Hematology?
+  A: 25-40 IU/kg 3x/Week
+- Q: What is EHL FVIII of Hematology?
+  A: 20-50 IU/kg 2x/Week
+- Q: What is FIX (SHL) of Hematology?
+  A: 40-60 IU/kg 2x/Week
+- Q: What is FIX (EHL) of Hematology?
+  A: 40-80 IU/kg Weekly/Biweekly
+- Q: What is Bleeding Risk of Hematology?
+  A: Symptomatic Carriers if FVIII/FIX <40% (Lyonization)
+- Q: How is Hematology managed?
+  A: Treat as Mild Haemophilia (DDAVP, Factor Concentrate)
+- Q: What is Pregnancy of Hematology?
+  A: Levels Rise (FVIII ↑↑, FIX ↑); Monitor Postpartum Drop
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **| Severity | Factor Level (% Normal) | Clinical Phenotype | Annual Bleeds |**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Feature — Haemophilia A; Deficiency — Factor VIII; Inheritance — X-Linked Recessive. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

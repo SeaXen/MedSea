@@ -242,3 +242,116 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Viral Hepatitis]], [[Acute Liver Failure]], [[Hepatology in Special Situations]], [[Acute Liver Failure]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (45 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: Hepatitis A & E = Faecal-oral transmitted, acute self-limiting hepatitis — HAV: IgM anti-HAV, self-limiting, vaccine available; HEV: IgM anti-HEV, severe in pregnancy (mortality 15-25%), chronic in immunosuppressed, ribavirin for chronic HEV.
+- Q: What is Transmission of Viral Hepatitis?
+  A: Faecal-oral (contaminated food/water, person-to-person)
+- Q: What is Incubation of Viral Hepatitis?
+  A: 15-50 days (average 28 days)
+- Q: What is Endemicity of Viral Hepatitis?
+  A: High in developing countries; travel-related in developed
+- Q: What is Vaccine of Viral Hepatitis?
+  A: Inactivated HAV vaccine — 2 doses (0, 6-12 months); >95% efficacy
+- Q: What is IgM anti-HAV of Viral Hepatitis?
+  A: Diagnostic (appears early, persists 3-6 months)
+- Q: What is IgG anti-HAV of Viral Hepatitis?
+  A: Past infection/immunity (persists lifelong)
+- Q: What is LFTs of Viral Hepatitis?
+  A: ALT/AST ↑↑ (1000-3000), bilirubin ↑, ALP normal/mildly ↑
+- Q: How is Viral Hepatitis managed?
+  A: Supportive only — rest, hydration, avoid hepatotoxins (alcohol, paracetamol)
+- Q: What is Isolation of Viral Hepatitis?
+  A: Enteric precautions 1 week after jaundice onset
+- Q: What is Post-Exposure Prophylaxis of Viral Hepatitis?
+  A: HAV vaccine + IgG (if >40 or immunocompromised) within 2 weeks
+- Q: What is Vaccination of Viral Hepatitis?
+  A: 2 doses (0, 6-12mo) — pre-travel, high-risk groups, chronic liver disease
+- Q: What is Transmission of Viral Hepatitis?
+  A: Faecal-oral (contaminated water, undercooked pork/game), zoonotic (genotype 3/4)
+- Q: How is Viral Hepatitis classified?
+  A: 1 & 2: Human only, faecal-oral waterborne (Asia, Africa); 3 & 4: Zoonotic (pigs, deer), foodborne (developed countries)
+- Q: What is Incubation of Viral Hepatitis?
+  A: 15-60 days (average 40 days)
+- Q: What is Timing of Viral Hepatitis?
+  A: 3rd trimester (highest risk)
+- Q: What is Severity of Viral Hepatitis?
+  A: Fulminant hepatic failure in 10-25%
+- Q: What is Mortality of Viral Hepatitis?
+  A: 15-25% (vs <1% in non-pregnant)
+- Q: What is the mechanism of Viral Hepatitis?
+  A: Hormonal/immune modulation → ↑ viral replication
+- Q: What is Vertical Transmission of Viral Hepatitis?
+  A: ~30-50% — high risk of preterm labour, neonatal HEV
+- Q: How is Viral Hepatitis managed?
+  A: Supportive only — Ribavirin CONTRAINDICATED (teratogenic)
+- Q: What is Transmission of Viral Hepatitis?
+  A: Faecal-oral (contaminated food/water, person-to-person)
+- Q: What is Incubation of Viral Hepatitis?
+  A: 15-50 days (average 28 days)
+- Q: What is Endemicity of Viral Hepatitis?
+  A: High in developing countries; travel-related in developed
+- Q: What is IgM anti-HAV of Viral Hepatitis?
+  A: Diagnostic (appears early, persists 3-6 months)
+- Q: What is IgG anti-HAV of Viral Hepatitis?
+  A: Past infection/immunity (persists lifelong)
+- Q: How is Viral Hepatitis managed?
+  A: Supportive only — rest, hydration, avoid hepatotoxins (alcohol, paracetamol)
+- Q: What is Isolation of Viral Hepatitis?
+  A: Enteric precautions 1 week after jaundice onset
+- Q: What is Post-Exposure Prophylaxis of Viral Hepatitis?
+  A: HAV vaccine + IgG (if >40 or immunocompromised) within 2 weeks
+- Q: What is Transmission of Viral Hepatitis?
+  A: Faecal-oral (contaminated water, undercooked pork/game), zoonotic (genotype 3/4)
+- Q: How is Viral Hepatitis classified?
+  A: 1 & 2: Human only, faecal-oral waterborne (Asia, Africa); 3 & 4: Zoonotic (pigs, deer), foodborne (developed countries)
+- Q: What is Timing of Viral Hepatitis?
+  A: 3rd trimester (highest risk)
+- Q: What is Severity of Viral Hepatitis?
+  A: Fulminant hepatic failure in 10-25%
+- Q: What is Mortality of Viral Hepatitis?
+  A: 15-25% (vs <1% in non-pregnant)
+- Q: What is the mechanism of Viral Hepatitis?
+  A: Hormonal/immune modulation → ↑ viral replication
+- Q: What is Vertical Transmission of Viral Hepatitis?
+  A: ~30-50% — high risk of preterm labour, neonatal HEV
+- Q: What is HAV Transmission of Viral Hepatitis?
+  A: Faecal-oral (food, water, person-to-person)
+- Q: What is the investigation of choice for Viral Hepatitis?
+  A: IgM anti-HAV (diagnostic), IgG = immunity
+- Q: What is HAV Course of Viral Hepatitis?
+  A: Self-limiting (4-8 weeks), no chronicity, vaccine preventable
+- Q: What is HAV ALF of Viral Hepatitis?
+  A: <0.5% (higher in >50, pre-existing liver disease)
+- Q: How is Viral Hepatitis classified?
+  A: 1&2: Human, waterborne, endemic; 3&4: Zoonotic (pork), foodborne
+- Q: What is HEV in Pregnancy of Viral Hepatitis?
+  A: Genotype 1, 3rd trimester → Fulminant failure, mortality 15-25%; Ribavirin CONTRAINDICATED
+- Q: What is HEV Chronic of Viral Hepatitis?
+  A: Immunosuppressed (transplant, HIV) → Ribavirin 600-800mg ×3mo
+- Q: What is Prevention HAV of Viral Hepatitis?
+  A: Vaccine 2 doses (0, 6-12mo) — pre-travel, chronic liver disease
+- Q: What is Ribavirin in HEV of Viral Hepatitis?
+  A: Chronic HEV only (600-800mg/day ×3mo); CONTRAINDICATED in pregnancy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **Hepatitis A & E = Faecal-oral transmitted, acute self-limiting hepatitis — HAV: IgM anti-HAV, self-limiting, vaccine available; HEV: IgM anti-HEV, severe in pregnancy (mortality 15-25%), chronic in im**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Viral Hepatitis presents with: Prodromal — Fatigue, nausea, anorexia, low-grade fever, RUQ discomfort; Icteric — Jaundice, dark urine, pale stools, hepatomegaly, ALT/AST ↑↑ (1000-3000); Convalescent — Gradual resolution over 4-8 weeks. What is the most likely diagnosis?
+   A. **Viral Hepatitis**
+   B. A condition that mimics Viral Hepatitis but is not the same entity
+   C. A complication of Viral Hepatitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Viral Hepatitis
+

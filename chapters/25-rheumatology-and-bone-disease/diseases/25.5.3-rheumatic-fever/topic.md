@@ -376,3 +376,134 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Septic arthritis]] · [[Post-streptococcal reactive arthritis]]
+---
+
+> Auto-generated study sections for "Infectious Arthritis and Bone Infections" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (54 generated)
+
+- Q: What is the definition of Infectious Arthritis and Bone Infections?
+  A: Post-streptococcal autoimmune disease following Group A β-haemolytic Streptococcus (GAS) pharyngitis — molecular mimicry → cross-reactive antibodies attack heart, joints, skin, brain
+- Q: What is the epidemiology of Infectious Arthritis and Bone Infections?
+  A: Declining in developed countries; still high in developing/indigenous populations
+- Q: What is Peak Age of Infectious Arthritis and Bone Infections?
+  A: 5-15 years (rare <3 or >30)
+- Q: What is Sex Ratio of Infectious Arthritis and Bone Infections?
+  A: M = F
+- Q: What is Trigger of Infectious Arthritis and Bone Infections?
+  A: GAS pharyngitis (not skin infection — though anti-DNase B rises with skin)
+- Q: What is Latency of Infectious Arthritis and Bone Infections?
+  A: 2-4 weeks post-pharyngitis
+- Q: What is Molecular Mimicry of Infectious Arthritis and Bone Infections?
+  A: Anti-M-protein/Streptolysin O antibodies cross-react with cardiac myosin, laminin, vimentin
+- Q: How is Infectious Arthritis and Bone Infections classified?
+  A: Antibody-mediated damage + complement activation
+- Q: What is Genetic Susceptibility of Infectious Arthritis and Bone Infections?
+  A: HLA-DR7, HLA-DR4, TGF-β polymorphisms
+- Q: What is Environmental of Infectious Arthritis and Bone Infections?
+  A: Overcrowding, poor sanitation, inadequate antibiotic access
+- Q: What is Valvular of Infectious Arthritis and Bone Infections?
+  A: Mitral regurgitation (most common) → later mitral stenosis; Aortic regurgitation; Tricuspid rare
+- Q: What is Clinical of Infectious Arthritis and Bone Infections?
+  A: New murmurs (MR: apical pansystolic; AR: early diastolic at left sternal edge), cardiomegaly, pericarditis (friction rub, effusion), CHF
+- Q: What is ECG of Infectious Arthritis and Bone Infections?
+  A: Prolonged PR interval (1st degree AV block) — minor criterion if carditis not major
+- Q: What is Echo of Infectious Arthritis and Bone Infections?
+  A: Gold standard — valve thickening, regurgitation, ventricular dysfunction
+- Q: What is Pattern of Infectious Arthritis and Bone Infections?
+  A: Migratory (joint to joint over hours-days), large joints (knees, ankles, elbows, wrists)
+- Q: What is Response to Aspirin of Infectious Arthritis and Bone Infections?
+  A: Dramatic improvement within 24-48h — supports diagnosis
+- Q: What is Course of Infectious Arthritis and Bone Infections?
+  A: Self-limiting (weeks), no residual damage (unlike RA)
+- Q: What is Onset of Infectious Arthritis and Bone Infections?
+  A: Months after acute RF (1-6 months)
+- Q: What are the clinical features of Infectious Arthritis and Bone Infections?
+  A: Involuntary choreiform movements, emotional lability (crying, laughing), milkmaid's grip (inability to maintain squeeze), spooning of hands, darting tongue
+- Q: What is Demographics of Infectious Arthritis and Bone Infections?
+  A: Females > Males, 5-15 years
+- Q: What is Course of Infectious Arthritis and Bone Infections?
+  A: Self-limiting (months), but can recur
+- Q: What is Appearance of Infectious Arthritis and Bone Infections?
+  A: Non-pruritic, serpiginous/annular pink rings with pale centres, trunk/proximal limbs
+- Q: What is Behaviour of Infectious Arthritis and Bone Infections?
+  A: Evanescent (comes and goes), worse with heat (bathing)
+- Q: What is Significance of Infectious Arthritis and Bone Infections?
+  A: Specific but not sensitive (10-25%)
+- Q: What is Location of Infectious Arthritis and Bone Infections?
+  A: Bony prominences, extensor surfaces (elbows, knees, occiput, spine)
+- Q: What is Character of Infectious Arthritis and Bone Infections?
+  A: Firm, non-tender, mobile, 1-2 cm
+- Q: What is Timing of Infectious Arthritis and Bone Infections?
+  A: Late (2-3 weeks after onset)
+- Q: What is Association of Infectious Arthritis and Bone Infections?
+  A: Strongly associated with severe carditis
+- Q: What is Molecular Mimicry of Infectious Arthritis and Bone Infections?
+  A: Anti-M-protein/Streptolysin O antibodies cross-react with cardiac myosin, laminin, vimentin
+- Q: How is Infectious Arthritis and Bone Infections classified?
+  A: Antibody-mediated damage + complement activation
+- Q: What is Genetic Susceptibility of Infectious Arthritis and Bone Infections?
+  A: HLA-DR7, HLA-DR4, TGF-β polymorphisms
+- Q: What is Environmental of Infectious Arthritis and Bone Infections?
+  A: Overcrowding, poor sanitation, inadequate antibiotic access
+- Q: What is Valvular of Infectious Arthritis and Bone Infections?
+  A: Mitral regurgitation (most common) → later mitral stenosis; Aortic regurgitation; Tricuspid rare
+- Q: What is Clinical of Infectious Arthritis and Bone Infections?
+  A: New murmurs (MR: apical pansystolic; AR: early diastolic at left sternal edge), cardiomegaly, pericarditis (friction rub, effusion), CHF
+- Q: What is ECG of Infectious Arthritis and Bone Infections?
+  A: Prolonged PR interval (1st degree AV block) — minor criterion if carditis not major
+- Q: What is Pattern of Infectious Arthritis and Bone Infections?
+  A: Migratory (joint to joint over hours-days), large joints (knees, ankles, elbows, wrists)
+- Q: What is Response to Aspirin of Infectious Arthritis and Bone Infections?
+  A: Dramatic improvement within 24-48h — supports diagnosis
+- Q: What is Onset of Infectious Arthritis and Bone Infections?
+  A: Months after acute RF (1-6 months)
+- Q: What are the clinical features of Infectious Arthritis and Bone Infections?
+  A: Involuntary choreiform movements, emotional lability (crying, laughing), milkmaid's grip (inability to maintain squeeze), spooning of hands, darting tongue
+- Q: What is Demographics of Infectious Arthritis and Bone Infections?
+  A: Females > Males, 5-15 years
+- Q: What is Appearance of Infectious Arthritis and Bone Infections?
+  A: Non-pruritic, serpiginous/annular pink rings with pale centres, trunk/proximal limbs
+- Q: What is Behaviour of Infectious Arthritis and Bone Infections?
+  A: Evanescent (comes and goes), worse with heat (bathing)
+- Q: What is Location of Infectious Arthritis and Bone Infections?
+  A: Bony prominences, extensor surfaces (elbows, knees, occiput, spine)
+- Q: What is Character of Infectious Arthritis and Bone Infections?
+  A: Firm, non-tender, mobile, 1-2 cm
+- Q: What is Timing of Infectious Arthritis and Bone Infections?
+  A: Late (2-3 weeks after onset)
+- Q: What is Association of Infectious Arthritis and Bone Infections?
+  A: Strongly associated with severe carditis
+- Q: What is Jones Criteria (2015) of Infectious Arthritis and Bone Infections?
+  A: 2 Major OR 1 Major + 2 Minor + Evidence of GAS
+- Q: What is Major Criteria of Infectious Arthritis and Bone Infections?
+  A: Carditis (most important), Polyarthritis (migratory, aspirin-responsive), Chorea, Erythema Marginatum, Subcutaneous Nodules
+- Q: What is Minor Criteria of Infectious Arthritis and Bone Infections?
+  A: Fever, Arthralgia, ESR ≥60 / CRP ≥3.0, Prolonged PR (if carditis not major)
+- Q: What is Carditis of Infectious Arthritis and Bone Infections?
+  A: Most important major — predicts RHD; MR > AR; prolonged PR = minor if carditis not major
+- Q: What is ASO Titre of Infectious Arthritis and Bone Infections?
+  A: Peaks 3-6 weeks; rising titre diagnostic; anti-DNase B more sensitive for skin
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: 1) Penicillin (eradicate GAS) 2) Aspirin (arthritis) / Steroids (severe carditis) 3) Secondary prophylaxis
+- Q: What is Secondary Prophylaxis of Infectious Arthritis and Bone Infections?
+  A: Benzathine Penicillin G 1.2MU IM q4weeks — No carditis: age 21 or 5yr post-attack; Carditis: age 21 or 10yr; RHD: age 40 or 10yr (lifelong)
+- Q: What is RHD of Infectious Arthritis and Bone Infections?
+  A: Mitral stenosis (most common late); Aortic regurgitation; surgical intervention often needed
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Infectious Arthritis and Bone Infections?**
+   A. **| Definition | Post-streptococcal autoimmune disease following Group A β-haemolytic Streptococcus (GAS) pharyngitis — molecular mimicry → cross-reactive antibodies attack heart, joints, skin, brain |**
+   B. An unrelated condition not matching the clinical picture of Infectious Arthritis and Bone Infections
+   C. A complication seen late in the disease course of Infectious Arthritis and Bone Infections
+   D. A condition that mimics Infectious Arthritis and Bone Infections but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Infectious Arthritis and Bone Infections presents with: Definition — Post-streptococcal autoimmune disease following Group A β-haemolytic Streptococcus (GAS) pharyngitis — molecular mimicry → cross-reactive antibodies attack heart, joints, skin, brain; Incidence — Declining in developed countries; still high in developing/indigenous populations; Peak Age — 5-15 years (rare <3 or >30). What is the most likely diagnosis?
+   A. **Infectious Arthritis and Bone Infections**
+   B. A condition that mimics Infectious Arthritis and Bone Infections but is not the same entity
+   C. A complication of Infectious Arthritis and Bone Infections rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Infectious Arthritis and Bone Infections
+

@@ -279,3 +279,36 @@ mindmap
 - [[Portal Hypertension and Complications/Spontaneous bacterial peritonitis (SBP)|SBP]]
 - [[Portal Hypertension and Complications/Acute variceal bleeding management|Acute Variceal Bleed]]
 - [[Acute Liver Failure/ICU supportive care|ALF ICU Care]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: | Route | Dose | Target | Monitoring |
+- Q: What is Lactulose of Portal Hypertension and Complications?
+  A: 15-30ml BD → 2-3 soft stools/day; PR 300ml q4-6h for G3-4
+- Q: What is Rifaximin of Portal Hypertension and Complications?
+  A: 550mg BD add-on for recurrent/refractory (not monotherapy)
+- Q: What is LOLA of Portal Hypertension and Complications?
+  A: IV 5-10g q8h or Oral 6-9g/day adjunct
+- Q: What is Covert HE of Portal Hypertension and Complications?
+  A: Lactulose if symptomatic/impairs driving
+- Q: What is Overt G2 of Portal Hypertension and Complications?
+  A: Lactulose PO/PR → Rifaximin add-on if recurrent
+- Q: What is Grade 3-4 of Portal Hypertension and Complications?
+  A: ICU, Intubate (GCS<8), Lactulose PR, Rifaximin, Albumin
+- Q: What is Precipitants of Portal Hypertension and Complications?
+  A: SBCDE: Sepsis/SBP, Bleed, Constipation, Drugs, Electrolytes
+- Q: What is Post-TIPS HE of Portal Hypertension and Complications?
+  A: Rifaximin prophylaxis; Reduce shunt if refractory
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **| Route | Dose | Target | Monitoring |**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+

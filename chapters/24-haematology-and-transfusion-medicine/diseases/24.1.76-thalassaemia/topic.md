@@ -372,3 +372,60 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haemoglobinopathies → Thalassaemia syndromes
+- Q: What is Goal Hb of Hematology?
+  A: Pre-transfusion 9-10.5 g/dL (suppress ineffective erythropoiesis)
+- Q: What is Volume of Hematology?
+  A: 10-15 mL/kg RBCs every 2-4 weeks
+- Q: What is Product of Hematology?
+  A: Leukodepleted, irradiated, extended phenotype-matched (Kell, Duffy, Kidd)
+- Q: How is Hematology monitored?
+  A: Pre-transfusion Hb, ferritin q3mo, LIC/MRI T2 annually after age 10
+- Q: What is Goal Hb of Hematology?
+  A: Pre-transfusion 9-10.5 g/dL (suppress ineffective erythropoiesis)
+- Q: What is Volume of Hematology?
+  A: 10-15 mL/kg RBCs every 2-4 weeks
+- Q: What is Product of Hematology?
+  A: Leukodepleted, irradiated, extended phenotype-matched (Kell, Duffy, Kidd)
+- Q: What is Mentzer Index of Hematology?
+  A: MCV/RBC count: <13 = Thalassaemia, >13 = Iron Deficiency
+- Q: What is HbA2 of Hematology?
+  A: >3.5% = β-thal trait (diagnostic)
+- Q: What is HbF of Hematology?
+  A: >90% = β-thal major
+- Q: What is HbH inclusions of Hematology?
+  A: Brilliant cresyl blue stain → α-thal (3 gene deletion)
+- Q: How is Hematology monitored?
+  A: DFP = weekly ANC; DFX = monthly creatinine; DFO = annual audio/ophthal
+- Q: What is Cardiac iron of Hematology?
+  A: MRI T2 <10 ms = high risk; <6 ms = severe (start/intensify chelation)
+- Q: What is Transfusion goal of Hematology?
+  A: Pre-transfusion Hb 9-10.5 g/dL (suppress erythropoiesis)
+- Q: What is Curative of Hematology?
+  A: HSCT (matched sibling best); Gene therapy (lentiviral/CRISPR) emerging
+- Q: What is Prenatal of Hematology?
+  A: CVS 11-14 wks, amnio 15-18 wks, PGD with IVF
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haemoglobinopathies → Thalassaemia syndromes**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Feature — Alpha Thalassaemia; Genetic Defect — ↓/Absent α-globin chains (HBA1/HBA2 on chr 16); Gene Copies — 4 α-globin genes (2 per allele). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

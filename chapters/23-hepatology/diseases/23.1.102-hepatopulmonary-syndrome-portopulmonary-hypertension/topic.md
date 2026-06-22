@@ -243,3 +243,120 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Portal Hypertension and Complications]], [[Cirrhosis and Portal Hypertension]], [[Liver Transplantation]], [[Pulmonary Hypertension]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (47 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: HPS & PoPH = Pulmonary vascular complications of portal hypertension — HPS: Liver disease + hypoxaemia + intrapulmonary vasodilation (contrast echo delayed bubbles = hallmark); PoPH: mPAP >25mmHg, PVR >240 dyn·s·cm⁻⁵, PAWP ≤15mmHg.
+- Q: What is Contrast Echocardiography of Portal Hypertension and Complications?
+  A: Delayed bubbles in left atrium (3-6 cardiac cycles after RA) — hallmark
+- Q: What is ABG of Portal Hypertension and Complications?
+  A: PaO₂ <80mmHg (room air); A-a gradient ≥15mmHg (age-adjusted: <20 + age/4)
+- Q: What is Macroaggregated Albumin (MAA) Scan of Portal Hypertension and Complications?
+  A: Brain uptake >6% (quantitative, >6% = significant shunting)
+- Q: What is Pulmonary Function of Portal Hypertension and Complications?
+  A: ↓DLCO, normal spirometry
+- Q: What is Chest X-ray/CT of Portal Hypertension and Complications?
+  A: Normal or bibasal reticular changes
+- Q: What is mPAP of Portal Hypertension and Complications?
+  A: >25 mmHg (mean Pulmonary Artery Pressure)
+- Q: What is PVR of Portal Hypertension and Complications?
+  A: >240 dyn·s·cm⁻⁵ (Pulmonary Vascular Resistance)
+- Q: What is PAWP of Portal Hypertension and Complications?
+  A: ≤15 mmHg (Pulmonary Artery Wedge Pressure)
+- Q: What is CO of Portal Hypertension and Complications?
+  A: Normal or high (vs left heart disease)
+- Q: What is Portal Hypertension of Portal Hypertension and Complications?
+  A: Cirrhosis or non-cirrhotic PH
+- Q: What is Liver Transplantation of Portal Hypertension and Complications?
+  A: Only curative treatment — resolution of HPS in 80-90%
+- Q: What is Supplemental O₂ of Portal Hypertension and Complications?
+  A: Symptomatic relief (does not alter disease)
+- Q: What is TIPS of Portal Hypertension and Complications?
+  A: Contraindicated (worsens shunting, may worsen hypoxaemia)
+- Q: What is Post-Transplant of Portal Hypertension and Complications?
+  A: PaO₂ normalises over weeks-months
+- Q: What is Pulmonary Vasodilators (Bridge to Transplant) of Portal Hypertension and Complications?
+  A: Epoprostenol IV (prostacyclin), Bosentan (ERA), Sildenafil/Tadalafil (PDE5i)
+- Q: What is Target of Portal Hypertension and Complications?
+  A: mPAP <35mmHg, PVR <400 for transplant eligibility
+- Q: What is Anticoagulation of Portal Hypertension and Complications?
+  A: Consider (venous thrombosis risk) — controversial
+- Q: What is TIPS of Portal Hypertension and Complications?
+  A: Contraindicated (worsens PoPH)
+- Q: What is Liver Transplant of Portal Hypertension and Complications?
+  A: Definitive if mPAP <35mmHg on vasodilators; Contraindicated if mPAP >35mmHg unresponsive
+- Q: What is Platypnoea of Portal Hypertension and Complications?
+  A: Dyspnoea worse upright, better supine (gravity-dependent shunting)
+- Q: What is Orthodeoxia of Portal Hypertension and Complications?
+  A: PaO₂ drops >5mmHg or SpO₂ drops >5% on sitting/standing
+- Q: What is Spider Naevi, Clubbing of Portal Hypertension and Complications?
+  A: Common in chronic liver disease
+- Q: What is Contrast Echocardiography of Portal Hypertension and Complications?
+  A: Delayed bubbles in left atrium (3-6 cardiac cycles after RA) — hallmark
+- Q: What is ABG of Portal Hypertension and Complications?
+  A: PaO₂ <80mmHg (room air); A-a gradient ≥15mmHg (age-adjusted: <20 + age/4)
+- Q: What is Macroaggregated Albumin (MAA) Scan of Portal Hypertension and Complications?
+  A: Brain uptake >6% (quantitative, >6% = significant shunting)
+- Q: What is Pulmonary Function of Portal Hypertension and Complications?
+  A: ↓DLCO, normal spirometry
+- Q: What is mPAP of Portal Hypertension and Complications?
+  A: >25 mmHg (mean Pulmonary Artery Pressure)
+- Q: What is PVR of Portal Hypertension and Complications?
+  A: >240 dyn·s·cm⁻⁵ (Pulmonary Vascular Resistance)
+- Q: What is PAWP of Portal Hypertension and Complications?
+  A: ≤15 mmHg (Pulmonary Artery Wedge Pressure)
+- Q: What is CO of Portal Hypertension and Complications?
+  A: Normal or high (vs left heart disease)
+- Q: What is Liver Transplantation of Portal Hypertension and Complications?
+  A: Only curative treatment — resolution of HPS in 80-90%
+- Q: What is Supplemental O₂ of Portal Hypertension and Complications?
+  A: Symptomatic relief (does not alter disease)
+- Q: What is TIPS of Portal Hypertension and Complications?
+  A: Contraindicated (worsens shunting, may worsen hypoxaemia)
+- Q: What is Post-Transplant of Portal Hypertension and Complications?
+  A: PaO₂ normalises over weeks-months
+- Q: What is Pulmonary Vasodilators (Bridge to Transplant) of Portal Hypertension and Complications?
+  A: Epoprostenol IV (prostacyclin), Bosentan (ERA), Sildenafil/Tadalafil (PDE5i)
+- Q: What is Target of Portal Hypertension and Complications?
+  A: mPAP <35mmHg, PVR <400 for transplant eligibility
+- Q: What is Anticoagulation of Portal Hypertension and Complications?
+  A: Consider (venous thrombosis risk) — controversial
+- Q: What is TIPS of Portal Hypertension and Complications?
+  A: Contraindicated (worsens PoPH)
+- Q: What is Liver Transplant of Portal Hypertension and Complications?
+  A: Definitive if mPAP <35mmHg on vasodilators; Contraindicated if mPAP >35mmHg unresponsive
+- Q: What is HPS Triad of Portal Hypertension and Complications?
+  A: Liver disease + PaO₂ <80mmHg + Contrast echo delayed bubbles (3-6 cycles)
+- Q: What is HPS Hallmark of Portal Hypertension and Complications?
+  A: Platypnoea + Orthodeoxia (worse upright, better supine)
+- Q: What is the investigation of choice for Portal Hypertension and Complications?
+  A: Contrast echo delayed bubbles (3-6 cycles) + PaO₂ <80mmHg + liver disease
+- Q: How is Portal Hypertension and Complications managed?
+  A: Liver Transplant (curative); TIPS contraindicated; O₂ symptomatic
+- Q: What is PoPH Transplant Eligibility of Portal Hypertension and Complications?
+  A: mPAP <35mmHg on vasodilators = eligible; mPAP >35 unresponsive = contraindicated
+- Q: What is HPS vs PoPH of Portal Hypertension and Complications?
+  A: HPS: Vasodilation, hypoxaemia, delayed bubbles, transplant curative; PoPH: Vasoconstriction, high PVR, vasodilators bridge to transplant
+- Q: What is TIPS of Portal Hypertension and Complications?
+  A: Contraindicated in both (HPS: worsens shunting; PoPH: worsens pressure)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **HPS & PoPH = Pulmonary vascular complications of portal hypertension — HPS: Liver disease + hypoxaemia + intrapulmonary vasodilation (contrast echo delayed bubbles = hallmark); PoPH: mPAP >25mmHg, PVR**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Portal Hypertension and Complications presents with: Platypnoea — Dyspnoea worse upright, better supine (gravity-dependent shunting); Orthodeoxia — PaO₂ drops >5mmHg or SpO₂ drops >5% on sitting/standing; Spider Naevi, Clubbing — Common in chronic liver disease. What is the most likely diagnosis?
+   A. **Portal Hypertension and Complications**
+   B. A condition that mimics Portal Hypertension and Complications but is not the same entity
+   C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
+

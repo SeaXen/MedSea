@@ -368,3 +368,86 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (30 generated)
+
+- Q: What is the definition of Hematology?
+  A: # Myelodysplastic Syndromes (MDS) – Classification & Management
+- Q: What is Azacitidine (Aza) of Hematology?
+  A: 75 mg/m² SC/IV Days 1-7 q28d; Standard first-line (AZA-001 trial: OS benefit)
+- Q: What is Decitabine (Dec) of Hematology?
+  A: 20 mg/m² IV Days 1-5 q28d (or 10 mg/m² Days 1-10); Alternative
+- Q: What is Response Assessment of Hematology?
+  A: Minimum 4-6 cycles before failure; CR/PR/MR/SD/PD
+- Q: What is Bridge to Allo-HSCT of Hematology?
+  A: Aim for CR/CRi/MR → Allo-HSCT (only curative)
+- Q: What is TP53-mutated of Hematology?
+  A: Aza preferred (better than Dec); Clinical trials (e.g., APR-246/Aza, Magrolimab)
+- Q: What is IPSS-R High / Very High of Hematology?
+  A: Refer at diagnosis; Donor search ASAP
+- Q: What is IPSS-R Intermediate + Age <65-70 of Hematology?
+  A: Consider if fit, donor available
+- Q: What is TP53-mutated of Hematology?
+  A: HSCT if remission achieved (high relapse risk)
+- Q: What is Conditioning of Hematology?
+  A: RIC (Flu/Mel) preferred (age/comorbidities)
+- Q: What is Pre-HSCT of Hematology?
+  A: Aza/Dec → best response → proceed to transplant
+- Q: What is Azacitidine (Aza) of Hematology?
+  A: 75 mg/m² SC/IV Days 1-7 q28d; Standard first-line (AZA-001 trial: OS benefit)
+- Q: What is Decitabine (Dec) of Hematology?
+  A: 20 mg/m² IV Days 1-5 q28d (or 10 mg/m² Days 1-10); Alternative
+- Q: What is Response Assessment of Hematology?
+  A: Minimum 4-6 cycles before failure; CR/PR/MR/SD/PD
+- Q: What is Bridge to Allo-HSCT of Hematology?
+  A: Aim for CR/CRi/MR → Allo-HSCT (only curative)
+- Q: What is IPSS-R High / Very High of Hematology?
+  A: Refer at diagnosis; Donor search ASAP
+- Q: What is IPSS-R Intermediate + Age <65-70 of Hematology?
+  A: Consider if fit, donor available
+- Q: What is TP53-mutated of Hematology?
+  A: HSCT if remission achieved (high relapse risk)
+- Q: What is Conditioning of Hematology?
+  A: RIC (Flu/Mel) preferred (age/comorbidities)
+- Q: What is Pre-HSCT of Hematology?
+  A: Aza/Dec → best response → proceed to transplant
+- Q: What is the investigation of choice for Hematology?
+  A: Cytopenia + Dysplasia ≥10% + <20% blasts (or defining genetics)
+- Q: What is Key Mutations of Hematology?
+  A: SF3B1 (good, luspatercept), TP53 multi-hit (worst), del5q (lenalidomide), ASXL1/SRSF2/RUNX1 (poor)
+- Q: What is IPSS-R of Hematology?
+  A: Cytogenetics, Blasts, Hb, Plts, ANC → 5 risk groups
+- Q: What is IPSS-M of Hematology?
+  A: Adds 17 mutations; TP53 VAF>10% = Very High
+- Q: What is Lower-Risk of Hematology?
+  A: Luspatercept (SF3B1/RS+), ESA (EPO<500), Lenalidomide (del5q)
+- Q: What is Higher-Risk of Hematology?
+  A: Azacitidine (standard) → Bridge to Allo-HSCT
+- Q: What is Transplant of Hematology?
+  A: Curative; High/Very High IPSS-R → Refer early
+- Q: What is TP53 multi-hit of Hematology?
+  A: Worst prognosis; Aza preferred; Clinical trials (Eprenetapopt, Magrolimab)
+- Q: What is Luspatercept of Hematology?
+  A: SF3B1/ring sideroblasts; ActRIIB-Fc; MEDALIST trial
+- Q: What is Lenalidomide of Hematology?
+  A: Isolated del5q only; 10 mg daily; thrombosis risk
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **# Myelodysplastic Syndromes (MDS) – Classification & Management**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: WHO 2022 Category — Key Features; MDS with defining genetic abnormalities — SF3B1 mutation, del(5q), TP53 mutation (multi-hit); MDS, morphologically defined — MDS-LB (low blasts <5% PB, <10% BM), MDS-hypocellular. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

@@ -304,3 +304,46 @@ mindmap
 - [[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]
 - [[Liver Transplantation/Liver Transplantation|Liver Transplant]]
 - [[Acute Liver Failure/ICU supportive care|ICU Supportive Care]]
+---
+
+> Auto-generated study sections for "Hepatology" — Ch 23: Hepatology.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Hepatology?
+  A: | Abdominal Distension | Serial LVP (Albumin 8g/L if >5L; No Albumin if ≤5L) |
+- Q: What is Palliative Care ≠ End-of-Life of Hepatology?
+  A: Early Integration Improves QoL, Reduces Admissions
+- Q: What is Ascites of Hepatology?
+  A: LVP + Albumin; Indwelling Catheter for Home; Avoid Repeated Hospital Admissions
+- Q: What is Pain of Hepatology?
+  A: Low-Dose Morphine (2.5-5mg); Avoid NSAIDs/Codeine
+- Q: What is HE of Hepatology?
+  A: Lactulose + Rifaximin; Comfort Focus in Severe
+- Q: What is Pruritus of Hepatology?
+  A: Cholestyramine → Rifampicin → Naltrexone → Sertraline
+- Q: What is Opioids of Hepatology?
+  A: Morphine 2.5-5mg SC q4h PRN; Avoid Codeine/Tramadol
+- Q: What is ACP of Hepatology?
+  A: Early, Ongoing; Document DNACPR, Ceiling of Care, Preferred Place
+- Q: What is End-of-Life of Hepatology?
+  A: Syringe Driver (Morphine + Midazolam + Levomepromazine + Hyoscine)
+- Q: What is Ethics of Hepatology?
+  A: Autonomy, Beneficence, Non-Maleficence, Justice
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology?**
+   A. **| Abdominal Distension | Serial LVP (Albumin 8g/L if >5L; No Albumin if ≤5L) |**
+   B. An unrelated condition not matching the clinical picture of Hepatology
+   C. A complication seen late in the disease course of Hepatology
+   D. A condition that mimics Hepatology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hepatology presents with: Goals of Care Discussion — Early, Ongoing, Documented (Values, Preferences, Trade-offs); DNACPR — Discuss Early; Review Regularly; Document in Notes; Ceiling of Care — Define: Ward vs HDU vs ICU; Transplant vs Comfort. What is the most likely diagnosis?
+   A. **Hepatology**
+   B. A condition that mimics Hepatology but is not the same entity
+   C. A complication of Hepatology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hepatology
+

@@ -150,3 +150,92 @@ flowchart TD
 |----------|--------|
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Non Alcoholic Fatty Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (37 generated)
+
+- Q: What is the definition of Non Alcoholic Fatty Liver Disease?
+  A: | Weight Loss | 7-10% for histologic improvement (NASH resolution, fibrosis regression) |
+- Q: What is the dose of Non Alcoholic Fatty Liver Disease?
+  A: 30-45 mg daily (Start 15mg, titrate)
+- Q: What is the mechanism of Non Alcoholic Fatty Liver Disease?
+  A: PPAR-γ agonist → ↑ Insulin sensitivity, ↑ Adiponectin, ↓ Hepatic fat
+- Q: What is Benefits of Non Alcoholic Fatty Liver Disease?
+  A: NASH resolution, Fibrosis improvement, ↑ Insulin sensitivity
+- Q: What are the side effects of Non Alcoholic Fatty Liver Disease?
+  A: Weight Gain (3-5kg), Edema, Fracture Risk, Bladder Cancer Signal
+- Q: What is Non Alcoholic Fatty Liver Disease indicated for?
+  A: Heart Failure, Active Bladder Cancer, Macular Edema
+- Q: What is the dose of Non Alcoholic Fatty Liver Disease?
+  A: 0.25mg → 0.5mg → 1mg → 1.7mg → 2.4mg weekly (Titrate Monthly)
+- Q: What is the mechanism of Non Alcoholic Fatty Liver Disease?
+  A: GLP-1 receptor agonist → ↓ Appetite, ↑ Insulin, ↓ Glucagon, ↓ Hepatic fat
+- Q: What is Benefits of Non Alcoholic Fatty Liver Disease?
+  A: Weight Loss 15-20%, NASH resolution, CV Benefit
+- Q: What are the side effects of Non Alcoholic Fatty Liver Disease?
+  A: Nausea, Vomiting, Diarrhoea, Pancreatitis (Rare)
+- Q: What is Key of Non Alcoholic Fatty Liver Disease?
+  A: Semaglutide 2.4mg Approved for Obesity; NASH Indication Under Review
+- Q: What is the dose of Non Alcoholic Fatty Liver Disease?
+  A: 80 mg daily (if <100kg) / 100 mg daily (if ≥100kg)
+- Q: What is the mechanism of Non Alcoholic Fatty Liver Disease?
+  A: THR-β Agonist → Liver-selective → ↓ Lipogenesis, ↑ Mitochondrial β-oxidation
+- Q: What is Benefits of Non Alcoholic Fatty Liver Disease?
+  A: FDA Approved 2024 for NASH F2-F3; NASH resolution + Fibrosis improvement
+- Q: What are the side effects of Non Alcoholic Fatty Liver Disease?
+  A: Diarrhoea, Nausea, Gallstones, ↑ ALT (Transient)
+- Q: What is the dose of Non Alcoholic Fatty Liver Disease?
+  A: 800 IU daily
+- Q: What is Non Alcoholic Fatty Liver Disease indicated for?
+  A: Non-Diabetics Only with NASH F≥2
+- Q: What is Evidence of Non Alcoholic Fatty Liver Disease?
+  A: PIVENS: 43% NASH resolution vs 19% Placebo
+- Q: What is Concerns of Non Alcoholic Fatty Liver Disease?
+  A: Prostate Cancer Risk?, Hemorrhagic Stroke?
+- Q: What is the dose of Non Alcoholic Fatty Liver Disease?
+  A: 30-45 mg daily (Start 15mg, titrate)
+- Q: What is the mechanism of Non Alcoholic Fatty Liver Disease?
+  A: PPAR-γ agonist → ↑ Insulin sensitivity, ↑ Adiponectin, ↓ Hepatic fat
+- Q: What is Benefits of Non Alcoholic Fatty Liver Disease?
+  A: NASH resolution, Fibrosis improvement, ↑ Insulin sensitivity
+- Q: What are the side effects of Non Alcoholic Fatty Liver Disease?
+  A: Weight Gain (3-5kg), Edema, Fracture Risk, Bladder Cancer Signal
+- Q: What is Non Alcoholic Fatty Liver Disease indicated for?
+  A: Heart Failure, Active Bladder Cancer, Macular Edema
+- Q: What is the dose of Non Alcoholic Fatty Liver Disease?
+  A: 0.25mg → 0.5mg → 1mg → 1.7mg → 2.4mg weekly (Titrate Monthly)
+- Q: What is the mechanism of Non Alcoholic Fatty Liver Disease?
+  A: GLP-1 receptor agonist → ↓ Appetite, ↑ Insulin, ↓ Glucagon, ↓ Hepatic fat
+- Q: What is Benefits of Non Alcoholic Fatty Liver Disease?
+  A: Weight Loss 15-20%, NASH resolution, CV Benefit
+- Q: What are the side effects of Non Alcoholic Fatty Liver Disease?
+  A: Nausea, Vomiting, Diarrhoea, Pancreatitis (Rare)
+- Q: What is Key of Non Alcoholic Fatty Liver Disease?
+  A: Semaglutide 2.4mg Approved for Obesity; NASH Indication Under Review
+- Q: What is the dose of Non Alcoholic Fatty Liver Disease?
+  A: 80 mg daily (if <100kg) / 100 mg daily (if ≥100kg)
+- Q: What is the mechanism of Non Alcoholic Fatty Liver Disease?
+  A: THR-β Agonist → Liver-selective → ↓ Lipogenesis, ↑ Mitochondrial β-oxidation
+- Q: What is Benefits of Non Alcoholic Fatty Liver Disease?
+  A: FDA Approved 2024 for NASH F2-F3; NASH resolution + Fibrosis improvement
+- Q: What are the side effects of Non Alcoholic Fatty Liver Disease?
+  A: Diarrhoea, Nausea, Gallstones, ↑ ALT (Transient)
+- Q: What is the dose of Non Alcoholic Fatty Liver Disease?
+  A: 800 IU daily
+- Q: What is Non Alcoholic Fatty Liver Disease indicated for?
+  A: Non-Diabetics Only with NASH F≥2
+- Q: What is Evidence of Non Alcoholic Fatty Liver Disease?
+  A: PIVENS: 43% NASH resolution vs 19% Placebo
+- Q: What is Concerns of Non Alcoholic Fatty Liver Disease?
+  A: Prostate Cancer Risk?, Hemorrhagic Stroke?
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Non Alcoholic Fatty Liver Disease?**
+   A. **| Weight Loss | 7-10% for histologic improvement (NASH resolution, fibrosis regression) |**
+   B. An unrelated condition not matching the clinical picture of Non Alcoholic Fatty Liver Disease
+   C. A complication seen late in the disease course of Non Alcoholic Fatty Liver Disease
+   D. A condition that mimics Non Alcoholic Fatty Liver Disease but has a different underlying cause
+

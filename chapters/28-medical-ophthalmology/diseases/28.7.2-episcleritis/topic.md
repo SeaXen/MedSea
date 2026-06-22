@@ -575,3 +575,46 @@ D. Optic neuritis
 ## 26. Tags
 
 #medicine #davidson #ophthalmology #episcleritis #scleritis #red-eye #fcps #mrcp
+---
+
+> Auto-generated study sections for "07_Uveal_Tract" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of 07_Uveal_Tract?
+  A: [!info] FCPS/MRCP Priority: HIGH — Common, benign, but must be distinguished from scleritis
+- Q: What is Slit-lamp examination of 07_Uveal_Tract?
+  A: Confirm diagnosis, exclude other red eye causes
+- Q: What is the investigation of choice for 07_Uveal_Tract?
+  A: Differentiate from scleritis
+- Q: What is IOP of 07_Uveal_Tract?
+  A: Exclude secondary glaucoma
+- Q: What is ESR/CRP of 07_Uveal_Tract?
+  A: If recurrent or features suggest systemic disease
+- Q: What is Slit-lamp examination of 07_Uveal_Tract?
+  A: Confirm diagnosis, exclude other red eye causes
+- Q: What is the investigation of choice for 07_Uveal_Tract?
+  A: Differentiate from scleritis
+- Q: What is IOP of 07_Uveal_Tract?
+  A: Exclude secondary glaucoma
+- Q: What is ESR/CRP of 07_Uveal_Tract?
+  A: If recurrent or features suggest systemic disease
+- Q: What is RF, ANA, ANCA, ACE, urate of 07_Uveal_Tract?
+  A: If scleritis suspected or systemic features
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 07_Uveal_Tract?**
+   A. **[!info] FCPS/MRCP Priority: HIGH — Common, benign, but must be distinguished from scleritis**
+   B. An unrelated condition not matching the clinical picture of 07_Uveal_Tract
+   C. A complication seen late in the disease course of 07_Uveal_Tract
+   D. A condition that mimics 07_Uveal_Tract but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected 07_Uveal_Tract presents with: [!info] FCPS/MRCP Priority: HIGH — Common, benign, but must be distinguished from scleritis. What is the most likely diagnosis?
+   A. **07_Uveal_Tract**
+   B. A condition that mimics 07_Uveal_Tract but is not the same entity
+   C. A complication of 07_Uveal_Tract rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as 07_Uveal_Tract
+

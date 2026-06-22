@@ -646,3 +646,28 @@ CSMO requires ≥1 of:
 
 ## Tags
 #medicine #davidson #ophthalmology #diabetic-retinopathy #DMO #PDR #fcps #mrcp
+---
+
+> Auto-generated study sections for "08_Retina_and_Vitreous" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of 08_Retina_and_Vitreous?
+  A: Related: [[Diabetes Mellitus (Ocular)]], [[Age-related Macular Degeneration (AMD)]], [[Central Retinal Vein Occlusion (CRVO)]]
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 08_Retina_and_Vitreous?**
+   A. **Related: [[Diabetes Mellitus (Ocular)]], [[Age-related Macular Degeneration (AMD)]], [[Central Retinal Vein Occlusion (CRVO)]]**
+   B. An unrelated condition not matching the clinical picture of 08_Retina_and_Vitreous
+   C. A complication seen late in the disease course of 08_Retina_and_Vitreous
+   D. A condition that mimics 08_Retina_and_Vitreous but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected 08_Retina_and_Vitreous presents with: Diabetic retinopathy (DR): Retinal microvascular complications of diabetes mellitus; Microaneurysms, haemorrhages, exudates, ischaemia, neovascularisation; Leading cause of blindness in working-age adults (20–74 y) in developed countries. What is the most likely diagnosis?
+   A. **08_Retina_and_Vitreous**
+   B. A condition that mimics 08_Retina_and_Vitreous but is not the same entity
+   C. A complication of 08_Retina_and_Vitreous rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as 08_Retina_and_Vitreous
+

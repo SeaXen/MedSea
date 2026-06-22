@@ -215,3 +215,114 @@ mindmap
 - **Chapter MOC**: [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related**: [[Crigler-Najjar Syndrome]], [[Dubin-Johnson Syndrome]], [[Rotor Syndrome]], [[Inherited and Metabolic Liver Disease]], [[Jaundice and LFT Interpretation]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (44 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: Benign unconjugated hyperbilirubinaemia due to reduced UDP-glucuronosyltransferase (UGT1A1) activity
+- Q: What is Inheritance of Jaundice and LFT Interpretation?
+  A: Autosomal recessive (but heterozygotes may have mild elevation) — UGT1A128 promoter polymorphism (TA repeat expansion)
+- Q: What is the epidemiology of Jaundice and LFT Interpretation?
+  A: 5-10% of population (higher in males, usually diagnosed 2nd-3rd decade)
+- Q: What is Sex Ratio of Jaundice and LFT Interpretation?
+  A: M > F (2:1)
+- Q: What is Bilirubin Levels of Jaundice and LFT Interpretation?
+  A: Typically <80 µmol/L (usually 20-50 µmol/L), fluctuates
+- Q: What are the clinical features of Jaundice and LFT Interpretation?
+  A: Most cases — incidental finding on routine LFTs
+- Q: What is Jaundice of Jaundice and LFT Interpretation?
+  A: Mild, intermittent — scleral icterus only, worse with stress
+- Q: What is Precipitating Factors of Jaundice and LFT Interpretation?
+  A: Fasting (48-72h), Stress, Illness, Surgery, Alcohol, Menstruation
+- Q: What is No Pruritus of Jaundice and LFT Interpretation?
+  A: Unconjugated bilirubin not excreted in bile → no bile salts in skin
+- Q: What is No Hepatosplenomegaly of Jaundice and LFT Interpretation?
+  A: No liver disease
+- Q: What is Normal LFTs Otherwise of Jaundice and LFT Interpretation?
+  A: ALT, AST, ALP, GGT, Albumin, PT all normal
+- Q: What is Bilirubin of Jaundice and LFT Interpretation?
+  A: Unconjugated hyperbilirubinaemia (indirect >80% of total)
+- Q: What is Bilirubin Level of Jaundice and LFT Interpretation?
+  A: Usually <80 µmol/L (rarely >100 µmol/L)
+- Q: What is Other LFTs of Jaundice and LFT Interpretation?
+  A: ALT, AST, ALP, GGT, Albumin, PT — All Normal
+- Q: What is Haemolysis Screen of Jaundice and LFT Interpretation?
+  A: Normal Hb, Reticulocytes, LDH, Haptoglobin — exclude haemolysis
+- Q: What is the investigation of choice for Jaundice and LFT Interpretation?
+  A: UGT1A128 homozygosity (TA)₇/(TA)₇ — confirmatory if needed
+- Q: How is Jaundice and LFT Interpretation managed?
+  A: None required — benign condition, normal life expectancy
+- Q: What is Counselling of Jaundice and LFT Interpretation?
+  A: Reassurance — benign, no liver damage, no treatment needed
+- Q: What is Precautions of Jaundice and LFT Interpretation?
+  A: Avoid prolonged fasting, maintain hydration, inform anaesthetists
+- Q: What is Drugs of Jaundice and LFT Interpretation?
+  A: No drug restrictions (unlike Crigler-Najjar); paracetamol safe at normal doses
+- Q: How is Jaundice and LFT Interpretation monitored?
+  A: None required — no follow-up LFTs needed if asymptomatic
+- Q: What are the clinical features of Jaundice and LFT Interpretation?
+  A: Most cases — incidental finding on routine LFTs
+- Q: What is Jaundice of Jaundice and LFT Interpretation?
+  A: Mild, intermittent — scleral icterus only, worse with stress
+- Q: What is Precipitating Factors of Jaundice and LFT Interpretation?
+  A: Fasting (48-72h), Stress, Illness, Surgery, Alcohol, Menstruation
+- Q: What is No Pruritus of Jaundice and LFT Interpretation?
+  A: Unconjugated bilirubin not excreted in bile → no bile salts in skin
+- Q: What is No Hepatosplenomegaly of Jaundice and LFT Interpretation?
+  A: No liver disease
+- Q: What is Normal LFTs Otherwise of Jaundice and LFT Interpretation?
+  A: ALT, AST, ALP, GGT, Albumin, PT all normal
+- Q: What is Bilirubin of Jaundice and LFT Interpretation?
+  A: Unconjugated hyperbilirubinaemia (indirect >80% of total)
+- Q: What is Bilirubin Level of Jaundice and LFT Interpretation?
+  A: Usually <80 µmol/L (rarely >100 µmol/L)
+- Q: What is Other LFTs of Jaundice and LFT Interpretation?
+  A: ALT, AST, ALP, GGT, Albumin, PT — All Normal
+- Q: What is Haemolysis Screen of Jaundice and LFT Interpretation?
+  A: Normal Hb, Reticulocytes, LDH, Haptoglobin — exclude haemolysis
+- Q: How is Jaundice and LFT Interpretation managed?
+  A: None required — benign condition, normal life expectancy
+- Q: What is Counselling of Jaundice and LFT Interpretation?
+  A: Reassurance — benign, no liver damage, no treatment needed
+- Q: What is Precautions of Jaundice and LFT Interpretation?
+  A: Avoid prolonged fasting, maintain hydration, inform anaesthetists
+- Q: What is Drugs of Jaundice and LFT Interpretation?
+  A: No drug restrictions (unlike Crigler-Najjar); paracetamol safe at normal doses
+- Q: How is Jaundice and LFT Interpretation monitored?
+  A: None required — no follow-up LFTs needed if asymptomatic
+- Q: What is Inheritance of Jaundice and LFT Interpretation?
+  A: Autosomal recessive — UGT1A128 (TA)₇ promoter polymorphism
+- Q: What is Bilirubin of Jaundice and LFT Interpretation?
+  A: Unconjugated, usually <80 µmol/L, fluctuates
+- Q: What is Precipitants of Jaundice and LFT Interpretation?
+  A: Fasting, stress, illness, alcohol, menstruation
+- Q: What is LFTs of Jaundice and LFT Interpretation?
+  A: Isolated unconjugated hyperbilirubinaemia — all else normal
+- Q: What is No Haemolysis of Jaundice and LFT Interpretation?
+  A: Normal Hb, retics, LDH, haptoglobin
+- Q: What is Genetics of Jaundice and LFT Interpretation?
+  A: UGT1A128 (TA)₇/(TA)₇ homozygosity
+- Q: How is Jaundice and LFT Interpretation managed?
+  A: None — benign, reassure patient
+- Q: What is the prognosis of Jaundice and LFT Interpretation?
+  A: Normal life expectancy, no liver disease
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **Gilbert Syndrome = Most common inherited cause of unconjugated hyperbilirubinaemia — UGT1A128 promoter polymorphism → reduced bilirubin conjugation, benign, precipitated by fasting/stress/illness, no **
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Jaundice and LFT Interpretation presents with: Definition — Benign unconjugated hyperbilirubinaemia due to reduced UDP-glucuronosyltransferase (UGT1A1) activity; Inheritance — Autosomal recessive (but heterozygotes may have mild elevation) — UGT1A128 promoter polymorphism (TA repeat expansion); Prevalence — 5-10% of population (higher in males, usually diagnosed 2nd-3rd decade). What is the most likely diagnosis?
+   A. **Jaundice and LFT Interpretation**
+   B. A condition that mimics Jaundice and LFT Interpretation but is not the same entity
+   C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
+

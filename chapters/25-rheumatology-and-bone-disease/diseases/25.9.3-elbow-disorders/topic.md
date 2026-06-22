@@ -334,3 +334,148 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Shoulder disorders]] · [[Hip and trochanteric bursitis]] · [[Knee disorders]] · [[Wrist/Hand disorders]]
+---
+
+> Auto-generated study sections for "Soft Tissue Rheumatism and Chronic Pain Syndromes" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (61 generated)
+
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tendinopathy of common extensor origin (ECRB most common) at lateral epicondyle
+- Q: What is the epidemiology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: 1-3% population, 30-50 years, manual workers, tennis players
+- Q: What is Pathology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Degenerative tendinosis (angiofibroblastic hyperplasia) — not inflammatory
+- Q: What is Pain of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral elbow, radiates to forearm, worse with gripping/lifting
+- Q: What is Tenderness of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral epicondyle (ECRB origin)
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Cozen's test, Maudsley's test, Mill's test, Chair test
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tendinopathy of common flexor origin (FCR, PT) at medial epicondyle
+- Q: What is the epidemiology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Less common than lateral, golfers, throwers, manual workers
+- Q: What is Pain of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial elbow, radiates to forearm, worse with gripping/flexion
+- Q: What is Tenderness of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial epicondyle (common flexor origin)
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Resisted wrist flexion, resisted pronation, golf swing test
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Compression of PIN (Posterior Interosseous Nerve) in radial tunnel (arcade of Frohse)
+- Q: What is Key Differentiator from Tennis Elbow of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: NO MOTOR DEFICIT (PIN injury = wrist/finger drop); pain only
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Deep aching dorsal forearm pain, resisted middle finger extension (pain), resisted supination (pain)
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tenderness 4-5cm distal to lateral epicondyle (over radial tunnel), NO weakness
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Resisted middle finger extension (pain in radial tunnel), resisted supination
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tennis elbow: lateral epicondyle tenderness, Cozen's/Maudsley +ve; Radial tunnel: deep forearm pain, motor intact
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Ulnar nerve compression at cubital tunnel (retrocondylar groove)
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Prolonged elbow flexion, trauma, arthritis, cubitus valgus
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Numbness/tingling ulnar 1.5 digits, Tinel's at elbow, worsens with elbow flexion, nocturnal symptoms
+- Q: What is Motor (Late) of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Thenar wasting, Froment's sign +ve (adductor pollicis weakness), weakness finger abduction/adduction, claw hand
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tinel's at elbow +ve, elbow flexion test +ve, Froment's sign (paper pull → thumb IP flexion)
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Median nerve compression at pronator teres (between two heads)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Proximal forearm pain, numbness median nerve distribution (sparing thenar — AIN variant), weakness pronation, thumb opposition
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tinel's at proximal forearm, resisted pronation painful/weak, PT tenderness
+- Q: What is AIN Syndrome of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pure motor (branch to FPL, FDP index, pronator quadratus) — thenar wasting, pinch weakness, "OK sign" abnormal
+- Q: What is the mechanism of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: FOOSH (fall on outstretched hand)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral elbow pain, limited pronation/supination, swelling
+- Q: What is X-ray of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Fat pad sign (anterior sail, posterior = fracture), radial head fracture line
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes classified?
+  A: I: non-displaced; II: displaced >2mm; III: comminuted
+- Q: What is Pain of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral elbow, radiates to forearm, worse with gripping/lifting
+- Q: What is Tenderness of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral epicondyle (ECRB origin)
+- Q: What is Pain of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial elbow, radiates to forearm, worse with gripping/flexion
+- Q: What is Tenderness of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial epicondyle (common flexor origin)
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Resisted wrist flexion, resisted pronation, golf swing test
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Compression of PIN (Posterior Interosseous Nerve) in radial tunnel (arcade of Frohse)
+- Q: What is Key Differentiator from Tennis Elbow of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: NO MOTOR DEFICIT (PIN injury = wrist/finger drop); pain only
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Deep aching dorsal forearm pain, resisted middle finger extension (pain), resisted supination (pain)
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tenderness 4-5cm distal to lateral epicondyle (over radial tunnel), NO weakness
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Resisted middle finger extension (pain in radial tunnel), resisted supination
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tennis elbow: lateral epicondyle tenderness, Cozen's/Maudsley +ve; Radial tunnel: deep forearm pain, motor intact
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Ulnar nerve compression at cubital tunnel (retrocondylar groove)
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Prolonged elbow flexion, trauma, arthritis, cubitus valgus
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Numbness/tingling ulnar 1.5 digits, Tinel's at elbow, worsens with elbow flexion, nocturnal symptoms
+- Q: What is Motor (Late) of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Thenar wasting, Froment's sign +ve (adductor pollicis weakness), weakness finger abduction/adduction, claw hand
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Median nerve compression at pronator teres (between two heads)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Proximal forearm pain, numbness median nerve distribution (sparing thenar — AIN variant), weakness pronation, thumb opposition
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tinel's at proximal forearm, resisted pronation painful/weak, PT tenderness
+- Q: What is AIN Syndrome of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pure motor (branch to FPL, FDP index, pronator quadratus) — thenar wasting, pinch weakness, "OK sign" abnormal
+- Q: What is the mechanism of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: FOOSH (fall on outstretched hand)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral elbow pain, limited pronation/supination, swelling
+- Q: What is X-ray of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Fat pad sign (anterior sail, posterior = fracture), radial head fracture line
+- Q: What is Tennis Elbow of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral epicondylitis, Cozen's test (resisted wrist extension + radial deviation), Maudsley (resisted middle finger extension)
+- Q: What is Golfer's Elbow of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial epicondylitis, resisted wrist flexion/pronation, medial epicondyle tenderness
+- Q: What is Olecranon Bursitis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Fluctuant posterior swelling, aspirate if hot/erythematous (septic/gout/RA/CPPD)
+- Q: What is Radial Tunnel Syndrome of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Deep dorsal forearm pain, resisted middle finger extension, NO motor deficit (vs PIN palsy)
+- Q: What is Cubital Tunnel of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Ulnar nerve at elbow, Tinel's at elbow, numbness ulnar 1.5 digits, Froment's sign
+- Q: What is Pronator Teres of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Median nerve at pronator teres, proximal forearm pain, Tinel's proximal forearm
+- Q: What is Differential: Radial Tunnel vs Tennis Elbow of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Radial tunnel = motor intact, deep forearm pain, resisted middle finger extension pain; Tennis elbow = lateral epicondyle tenderness, Cozen's/Maudsley
+- Q: What is Emergency of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Septic olecranon bursitis → aspirate, IV antibiotics, surgical drainage
+- Q: What is X-ray of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Fat pad sign (posterior = radial head fracture), Mason classification for radial head fractures
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Soft Tissue Rheumatism and Chronic Pain Syndromes?**
+   A. **Lateral epicondylitis (tennis elbow) = Cozen's test +ve.**
+   B. An unrelated condition not matching the clinical picture of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   C. A complication seen late in the disease course of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   D. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Soft Tissue Rheumatism and Chronic Pain Syndromes presents with: Pain — Lateral elbow, radiates to forearm, worse with gripping/lifting; Tenderness — Lateral epicondyle (ECRB origin); Provocative Tests — Cozen's test, Maudsley's test, Mill's test, Chair test. What is the most likely diagnosis?
+   A. **Soft Tissue Rheumatism and Chronic Pain Syndromes**
+   B. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but is not the same entity
+   C. A complication of Soft Tissue Rheumatism and Chronic Pain Syndromes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Soft Tissue Rheumatism and Chronic Pain Syndromes
+

@@ -338,3 +338,58 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Transfusion Medicine → Red Cell Transfusion
+- Q: What is Volume per Unit of Hematology?
+  A: ~300 mL (Hct ~0.55-0.65)
+- Q: What is Hb Rise of Hematology?
+  A: 1 unit ≈ 10 g/L rise in 70 kg adult (no active bleeding)
+- Q: What is the dose of Hematology?
+  A: 10-15 mL/kg (Hb rise ~20 g/L per 10 mL/kg)
+- Q: What is Maximum Rate of Hematology?
+  A: 4 hours max per unit (bacterial growth risk)
+- Q: What is Volume per Unit of Hematology?
+  A: ~300 mL (Hct ~0.55-0.65)
+- Q: What is Hb Rise of Hematology?
+  A: 1 unit ≈ 10 g/L rise in 70 kg adult (no active bleeding)
+- Q: What is the dose of Hematology?
+  A: 10-15 mL/kg (Hb rise ~20 g/L per 10 mL/kg)
+- Q: What is Transfusion Threshold of Hematology?
+  A: Hb <70 g/L (Restrictive, stable); <80 g/L (Cardiac disease/ACS)
+- Q: What is the dose of Hematology?
+  A: 1 Unit ≈ 300 mL ≈ Hb ↑10 g/L (70kg adult)
+- Q: What is ABO Compatibility of Hematology?
+  A: O→All, A→A/AB, B→B/AB, AB→AB only; Rh Neg only for Rh Neg
+- Q: What is Crossmatch of Hematology?
+  A: Electronic (valid type+screen); IS (emergency); AHG (antibodies)
+- Q: What is Irradiated of Hematology?
+  A: TA-GVHD prevention: HSCT, chemo, congenital, directed, intrauterine
+- Q: What is CMV of Hematology?
+  A: Leucodepletion = CMV-safe; CMV PCR-neg for highest risk
+- Q: How is Hematology classified?
+  A: Sickle Cell, Thalassaemia, AIHA, Regular Transfusion (Kell, Duffy, Kidd)
+- Q: What is Washed of Hematology?
+  A: IgA deficiency, Severe allergic, Hyperkalaemia (neonates)
+- Q: What is Storage Lesion of Hematology?
+  A: 2,3-DPG ↓ (O₂ affinity), K⁺ ↑, pH ↓, Microaggregates, Bacterial risk
+- Q: What is Acute Reactions of Hematology?
+  A: AHTR (ABO mismatch), FNHTR (Cytokines), TRALI (Anti-HLA), TACO (Volume), Anaphylaxis
+- Q: What is Delayed of Hematology?
+  A: DHTR (3-10d), TA-GVHD (10-14d, FATAL - irradiate), PTP (5-10d)
+- Q: What is TTI of Hematology?
+  A: NAT Window: HIV 9d, HCV 7d, HBV 20d
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Transfusion Medicine → Red Cell Transfusion**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

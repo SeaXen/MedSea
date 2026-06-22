@@ -327,3 +327,44 @@ mindmap
 - [[Biliary Tract Disease/Acute cholecystitis detailed|Acute Cholecystitis]]
 - [[Biliary Tract Disease/Acute cholangitis|Acute Cholangitis]]
 - [[Biliary Tract Disease/Gallstone disease|Gallstone Disease]]
+---
+
+> Auto-generated study sections for "Biliary Tract Disease" — Ch 23: Hepatology.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Biliary Tract Disease?
+  A: | Pain | Epigastric, Radiates to Back, Constant, Severe |
+- Q: How is Biliary Tract Disease classified?
+  A: Mild (No OF/Comp), Mod-Severe (Transient OF/Local Comp), Severe (Persistent OF>48h)
+- Q: What is BISAP Score of Biliary Tract Disease?
+  A: BUN>25, Impaired Mental Status, SBP<90, Age>60, Pleural Effusion (0-5)
+- Q: What is CTSI of Biliary Tract Disease?
+  A: Day 3-5; 0-3 Mild, 4-6 Mod, 7-10 Severe
+- Q: What is ERCP Timing of Biliary Tract Disease?
+  A: Cholangitis: <24h/12h; Severe Predicted: <48-72h; Mild: No Routine ERCP
+- Q: What is Cholecystectomy of Biliary Tract Disease?
+  A: Same Admission (Mild/Mod-Severe); Delayed 6-12w (Severe)
+- Q: What are the complications of Biliary Tract Disease?
+  A: APFC (<4w, No Capsule), Pseudocyst (>4w, Capsule), ANC (<4w), WON (>4w, Capsule)
+- Q: What is Infected Necrosis of Biliary Tract Disease?
+  A: Step-Up: Endo → Percutaneous → Surgery; Antibiotics (Carbapenem/Pip-Taz)
+- Q: What is Antibiotics of Biliary Tract Disease?
+  A: No Prophylaxis in Mild; Carbapenem/Pip-Taz for Infected Necrosis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Biliary Tract Disease?**
+   A. **| Pain | Epigastric, Radiates to Back, Constant, Severe |**
+   B. An unrelated condition not matching the clinical picture of Biliary Tract Disease
+   C. A complication seen late in the disease course of Biliary Tract Disease
+   D. A condition that mimics Biliary Tract Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Biliary Tract Disease presents with: Feature — Gallstone Pancreatitis; Pain — Epigastric, Radiates to Back, Constant, Severe; Nausea/Vomiting — Prominent (≥90%). What is the most likely diagnosis?
+   A. **Biliary Tract Disease**
+   B. A condition that mimics Biliary Tract Disease but is not the same entity
+   C. A complication of Biliary Tract Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Biliary Tract Disease
+

@@ -38,3 +38,20 @@ Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - 
 - [[Crystal Arthropathies/Gout|Gout]] | [[Pseudogout (CPPD deposition disease)]] | [[Basic calcium phosphate crystal deposition]]
 - Parent MOC: [[../Rheumatology MOC|Rheumatology MOC]]
 - Chapter map: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
+---
+
+> Auto-generated study sections for "Rheumatology" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Rheumatology?
+  A: Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]] · [[../Chapter 26 Rheumatology Roadmap|Roadmap]]
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Rheumatology?**
+   A. **Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]] · [[../Chapter 26 Rheumatology Roadmap|Roadmap]]**
+   B. An unrelated condition not matching the clinical picture of Rheumatology
+   C. A complication seen late in the disease course of Rheumatology
+   D. A condition that mimics Rheumatology but has a different underlying cause
+

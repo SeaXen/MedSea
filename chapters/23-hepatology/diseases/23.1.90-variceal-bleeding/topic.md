@@ -277,3 +277,52 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Portal Hypertension and Complications]], [[Ascites]], [[Hepatic Encephalopathy]], [[TIPS]], [[Liver Transplantation]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: Variceal Bleed = Portal hypertension complication — TG18 protocol: Terlipressin + Ceftriaxone + Endoscopy ≤12h → EVL; Secondary prophylaxis = NSBB + EVL; Gastric varices = cyanoacrylate glue; TIPS for refractory bleeding.
+- Q: What is New/worsening HE of Portal Hypertension and Complications?
+  A: Lactulose, rifaximin; consider TIPS revision/reduction
+- Q: What is Stent stenosis/occlusion of Portal Hypertension and Complications?
+  A: Surveillance Doppler US q3-6mo; re-intervention
+- Q: What is Renal dysfunction of Portal Hypertension and Complications?
+  A: Monitor creatinine; adjust diuretics
+- Q: What is New/worsening HE of Portal Hypertension and Complications?
+  A: Lactulose, rifaximin; consider TIPS revision/reduction
+- Q: What is Stent stenosis/occlusion of Portal Hypertension and Complications?
+  A: Surveillance Doppler US q3-6mo; re-intervention
+- Q: What is Renal dysfunction of Portal Hypertension and Complications?
+  A: Monitor creatinine; adjust diuretics
+- Q: What is Acute Variceal Bleed Protocol of Portal Hypertension and Complications?
+  A: Terlipressin 2mg q4h + Ceftriaxone 1g OD + Endoscopy ≤12h → EVL
+- Q: What is Vasoactive Drug of Portal Hypertension and Complications?
+  A: Terlipressin 2mg IV q4h (first-line) or Octreotide 50mcg bolus + 50mcg/h
+- Q: What is Antibiotic of Portal Hypertension and Complications?
+  A: Ceftriaxone 1g IV OD ×7 days (reduces infection, rebleeding, mortality)
+- Q: What is Endoscopy Timing of Portal Hypertension and Complications?
+  A: ≤12h (ideally <6h for active bleed)
+- Q: What is Oesophageal Varices of Portal Hypertension and Complications?
+  A: EVL (band ligation) — gold standard; repeat q2-4wks
+- Q: What is Gastric Varices of Portal Hypertension and Complications?
+  A: Cyanoacrylate glue injection (N-butyl-2-cyanoacrylate + lipiodol)
+- Q: What is Primary Prophylaxis of Portal Hypertension and Complications?
+  A: Medium/large varices: NSBB (HR 55-60) OR EVL; Small varices + red signs/Child C → NSBB
+- Q: What is Secondary Prophylaxis of Portal Hypertension and Complications?
+  A: NSBB + EVL combined (gold standard) — lifelong
+- Q: What is Rescue TIPS of Portal Hypertension and Complications?
+  A: Child B/C, HVPG>20, refractory bleed → Early TIPS within 72h
+- Q: What is HVPG Target of Portal Hypertension and Complications?
+  A: <12 mmHg or ≥20% reduction from baseline
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **Variceal Bleed = Portal hypertension complication — TG18 protocol: Terlipressin + Ceftriaxone + Endoscopy ≤12h → EVL; Secondary prophylaxis = NSBB + EVL; Gastric varices = cyanoacrylate glue; TIPS for**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+

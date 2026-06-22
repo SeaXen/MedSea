@@ -310,3 +310,110 @@ mindmap
 - **Chapter MOC**: [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related**: [[Acute Liver Failure]], [[Alcoholic Liver Disease]], [[Autoimmune Liver Disease]], [[Viral Hepatitis]], [[Cirrhosis and Portal Hypertension]]
+---
+
+> Auto-generated study sections for "Drug Induced Liver Injury" — Ch 23: Hepatology.
+
+## Flashcards (42 generated)
+
+- Q: What is the definition of Drug Induced Liver Injury?
+  A: DILI = Major cause of acute liver injury — Classification: Intrinsic (dose-dependent) vs Idiosyncratic (unpredictable); Patterns: Hepatocellular, Cholestatic, Mixed; Common culprits: Paracetamol, Anti-TB, Antibiotics (amoxicillin-clavulanate, flucloxacillin), NSAIDs, ART, Immune checkpoint inhibitors; RUCAM scoring; Management: Withdraw drug, NAC for paracetamol, supportive, rechallenge principles
+- Q: What is Paracetamol of Drug Induced Liver Injury?
+  A: Dose-dependent; CYP2E1 → NAPQI → glutathione depletion → centrilobular necrosis; NAC antidote
+- Q: What is Isoniazid (INH) of Drug Induced Liver Injury?
+  A: Dose-independent idiosyncratic but dose-related risk; latency 1-6 months; slow acetylator risk
+- Q: What is Valproate of Drug Induced Liver Injury?
+  A: Dose-related (children <3y polytherapy); mitochondrial toxicity; hyperammonaemic encephalopathy
+- Q: What is Methotrexate of Drug Induced Liver Injury?
+  A: Dose-dependent (cumulative); fibrosis/cirrhosis; monitor LFTs, FBC, albumin
+- Q: What is the dose of Drug Induced Liver Injury?
+  A: Sustained-release > time-release; hepatotoxicity
+- Q: What is Co-amoxiclav of Drug Induced Liver Injury?
+  A: Most common cause of antibiotic DILI; latency 1-3 weeks; typically cholestatic; re-exposure = rapid recurrence
+- Q: What is Flucloxacillin of Drug Induced Liver Injury?
+  A: Latency 2-4 weeks; cholestatic; elderly >50y at higher risk; re-exposure = rapid
+- Q: What is Erythromycin (estolate) of Drug Induced Liver Injury?
+  A: Children/young adults; cholestatic; hypersensitivity
+- Q: What is Chlorpromazine of Drug Induced Liver Injury?
+  A: Phenothiazine; typically 2-4 weeks; cholestatic + eosinophilia; cross-reactivity with other phenothiazines
+- Q: What is Azathioprine/6-MP of Drug Induced Liver Injury?
+  A: Cholestatic; rare; NUDT15/TPMT variants
+- Q: What is Oral Contraceptives of Drug Induced Liver Injury?
+  A: Oestrogen component; benign cholestasis; disappear after stopping
+- Q: What is Anti-TB (Rifampicin, Pyrazinamide, INH) of Drug Induced Liver Injury?
+  A: Pyrazinamide = most hepatotoxic; Rifampicin = cholestatic + enzyme inducer; INH = hepatocellular; monitor LFTs q2wks ×2mo then monthly
+- Q: What is Co-amoxiclav of Drug Induced Liver Injury?
+  A: Often mixed; latency 1-3 weeks
+- Q: What is Carbamazepine of Drug Induced Liver Injury?
+  A: Hypersensitivity (DRESS); latency 2-8 weeks; HLA-B15:02 (Asians)
+- Q: What is Phenytoin of Drug Induced Liver Injury?
+  A: Hypersensitivity; latency 2-8 weeks; HLA-B15:02
+- Q: What is Trimethoprim-Sulfamethoxazole of Drug Induced Liver Injury?
+  A: Idiosyncratic, latency 1-3 weeks; mixed/cholestatic
+- Q: What is Allopurinol of Drug Induced Liver Injury?
+  A: DRESS/Stevens-Johnson; HLA-B58:01 (Asians); allopurinol hypersensitivity syndrome
+- Q: What is Paracetamol of Drug Induced Liver Injury?
+  A: Dose-dependent; CYP2E1 → NAPQI → glutathione depletion → centrilobular necrosis; NAC antidote
+- Q: What is Isoniazid (INH) of Drug Induced Liver Injury?
+  A: Dose-independent idiosyncratic but dose-related risk; latency 1-6 months; slow acetylator risk
+- Q: What is Valproate of Drug Induced Liver Injury?
+  A: Dose-related (children <3y polytherapy); mitochondrial toxicity; hyperammonaemic encephalopathy
+- Q: What is Methotrexate of Drug Induced Liver Injury?
+  A: Dose-dependent (cumulative); fibrosis/cirrhosis; monitor LFTs, FBC, albumin
+- Q: What is Co-amoxiclav of Drug Induced Liver Injury?
+  A: Most common cause of antibiotic DILI; latency 1-3 weeks; typically cholestatic; re-exposure = rapid recurrence
+- Q: What is Flucloxacillin of Drug Induced Liver Injury?
+  A: Latency 2-4 weeks; cholestatic; elderly >50y at higher risk; re-exposure = rapid
+- Q: What is Erythromycin (estolate) of Drug Induced Liver Injury?
+  A: Children/young adults; cholestatic; hypersensitivity
+- Q: What is Chlorpromazine of Drug Induced Liver Injury?
+  A: Phenothiazine; typically 2-4 weeks; cholestatic + eosinophilia; cross-reactivity with other phenothiazines
+- Q: What is Azathioprine/6-MP of Drug Induced Liver Injury?
+  A: Cholestatic; rare; NUDT15/TPMT variants
+- Q: What is Anti-TB (Rifampicin, Pyrazinamide, INH) of Drug Induced Liver Injury?
+  A: Pyrazinamide = most hepatotoxic; Rifampicin = cholestatic + enzyme inducer; INH = hepatocellular; monitor LFTs q2wks ×2mo then monthly
+- Q: What is Co-amoxiclav of Drug Induced Liver Injury?
+  A: Often mixed; latency 1-3 weeks
+- Q: What is Carbamazepine of Drug Induced Liver Injury?
+  A: Hypersensitivity (DRESS); latency 2-8 weeks; HLA-B15:02 (Asians)
+- Q: What is Phenytoin of Drug Induced Liver Injury?
+  A: Hypersensitivity; latency 2-8 weeks; HLA-B15:02
+- Q: What is Trimethoprim-Sulfamethoxazole of Drug Induced Liver Injury?
+  A: Idiosyncratic, latency 1-3 weeks; mixed/cholestatic
+- Q: How is Drug Induced Liver Injury classified?
+  A: Intrinsic (dose-dependent, e.g. paracetamol) vs Idiosyncratic (unpredictable, immune, e.g. co-amoxiclav, INH)
+- Q: What is R-Value Patterns of Drug Induced Liver Injury?
+  A: Hepatocellular (R≥5): Paracetamol, INH, valproate; Cholestatic (R≤2): Co-amoxiclav, flucloxacillin, OCP; Mixed (2<R<5): Anti-TB, carbamazepine
+- Q: What is RUCAM of Drug Induced Liver Injury?
+  A: ≥8 Highly probable, 6-7 Probable, 3-5 Possible
+- Q: What is Paracetamol of Drug Induced Liver Injury?
+  A: >150mg/kg (7.5g) toxic; NAC 150mg/kg/1h → 50mg/kg/4h → 100mg/kg/16h (total 300mg/kg/21h)
+- Q: What is Co-amoxiclav/Flucloxacillin of Drug Induced Liver Injury?
+  A: Latency 1-3wks / 2-4wks, cholestatic; re-exposure = rapid recurrence
+- Q: What is Anti-TB of Drug Induced Liver Injury?
+  A: Pyrazinamide most hepatotoxic; monitor LFTs monthly ×2mo; INH hepatocellular, Rifampicin cholestatic
+- Q: What is ICI Hepatitis of Drug Induced Liver Injury?
+  A: Grade 2 (ALT 3-5x): Hold ICI + pred 0.5-1mg/kg; Grade 3-4 (ALT>5x): Pred 1-2mg/kg + hold ICI
+- Q: How is Drug Induced Liver Injury monitored?
+  A: Baseline LFTs → q2wks ×2mo → monthly; stop if ALT >3xULN (symptomatic) or >5xULN (asymptomatic)
+- Q: What is VALPROATE of Drug Induced Liver Injury?
+  A: Children <3y + polytherapy; hyperammonaemic encephalopathy
+- Q: What is Rechallenge of Drug Induced Liver Injury?
+  A: Definite/Probable DILI: NEVER; Possible: avoid or different class
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug Induced Liver Injury?**
+   A. **DILI = Major cause of acute liver injury — Classification: Intrinsic (dose-dependent) vs Idiosyncratic (unpredictable); Patterns: Hepatocellular, Cholestatic, Mixed; Common culprits: Paracetamol, Anti**
+   B. An unrelated condition not matching the clinical picture of Drug Induced Liver Injury
+   C. A complication seen late in the disease course of Drug Induced Liver Injury
+   D. A condition that mimics Drug Induced Liver Injury but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Drug Induced Liver Injury presents with: Intrinsic (Type A) — Dose-dependent, predictable, direct toxin/metabolite; Idiosyncratic (Type B) — Unpredictable, immune-mediated (hapten, P-i concept). What is the most likely diagnosis?
+   A. **Drug Induced Liver Injury**
+   B. A condition that mimics Drug Induced Liver Injury but is not the same entity
+   C. A complication of Drug Induced Liver Injury rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Drug Induced Liver Injury
+

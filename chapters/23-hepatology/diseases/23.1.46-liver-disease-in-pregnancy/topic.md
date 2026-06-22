@@ -431,3 +431,108 @@ mindmap
 - [[Hepatology in Special Situations/HELLP Syndrome|HELLP]]
 - [[Hepatology in Special Situations/Acute Fatty Liver of Pregnancy|AFLP]]
 - [[Portal Hypertension and Complications/Hepatic Encephalopathy|HE in Pregnancy]]
+---
+
+> Auto-generated study sections for "Hepatology in Special Situations" — Ch 23: Hepatology.
+
+## Flashcards (41 generated)
+
+- Q: What is the definition of Hepatology in Special Situations?
+  A: Pruritus + Elevated Bile Acids (>10-14 μmol/L) in 2nd/3rd trimester
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 0.1-2% (High in Chile, Scandinavia, South Asia)
+- Q: What causes Hepatology in Special Situations?
+  A: Twin pregnancy, IVF, Family history, Previous ICP, Hepatitis C
+- Q: What is Genetics of Hepatology in Special Situations?
+  A: ABCB4 (MDR3), ABCB11 (BSEP), ATP8B1 (FIC1) mutations
+- Q: What is Pruritus of Hepatology in Special Situations?
+  A: Hallmark; Palms/soles, worse at night, No Rash
+- Q: What is Timing of Hepatology in Special Situations?
+  A: Typically 3rd Trimester (≥28 weeks)
+- Q: What is Jaundice of Hepatology in Special Situations?
+  A: 10-20% (mild, bilirubin <5 mg/dL)
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: Bile Acids ↑↑ (>40 μmol/L diagnostic); AST/ALT ↑ (2-10x); ALP ↑ (physiological)
+- Q: What is Serum Bile Acids of Hepatology in Special Situations?
+  A: >10-14 μmol/L (Fasting)
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: ALT/AST ↑ (usually <1000); Bilirubin usually normal/mild
+- Q: What is Exclusion of Hepatology in Special Situations?
+  A: Viral hepatitis, Drug-induced, Obstruction, PBC
+- Q: What is Ursodeoxycholic Acid (UDCA) of Hepatology in Special Situations?
+  A: 15-20 mg/kg/day (1st line); ↓ Bile acids, improves pruritus, ↓ fetal risk
+- Q: What is Cholestyramine of Hepatology in Special Situations?
+  A: 4g QID (2nd line for pruritus); Give 4h apart from UDCA
+- Q: What is Vitamin K of Hepatology in Special Situations?
+  A: 10mg IM at delivery (if prolonged PT)
+- Q: What is Antihistamines of Hepatology in Special Situations?
+  A: Sedating (chlorpheniramine) for sleep
+- Q: What is Delivery Timing of Hepatology in Special Situations?
+  A: 37-38 weeks (if BA >40 μmol/L); 38-39 weeks (if BA 10-40)
+- Q: What is Postpartum of Hepatology in Special Situations?
+  A: Resolves within 48h; Recheck LFTs at 6-12 weeks
+- Q: What is the definition of Hepatology in Special Situations?
+  A: Severe nausea/vomiting → Weight loss >5%, Ketonuria, Electrolyte imbalance
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 0.5-2% of pregnancies
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: ALT/AST mild-moderate ↑ (starvation hepatosis); ALP normal/physiological
+- Q: What is Amylase/Lipase of Hepatology in Special Situations?
+  A: May be ↑ (pancreatitis risk)
+- Q: How is Hepatology in Special Situations managed?
+  A: IV fluids, thiamine, antiemetics (ondansetron), correct electrolytes; Trophoblastic disease exclusion (β-hCG)
+- Q: What is the definition of Hepatology in Special Situations?
+  A: Pruritus + Elevated Bile Acids (>10-14 μmol/L) in 2nd/3rd trimester
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 0.1-2% (High in Chile, Scandinavia, South Asia)
+- Q: What causes Hepatology in Special Situations?
+  A: Twin pregnancy, IVF, Family history, Previous ICP, Hepatitis C
+- Q: What is Pruritus of Hepatology in Special Situations?
+  A: Hallmark; Palms/soles, worse at night, No Rash
+- Q: What is Timing of Hepatology in Special Situations?
+  A: Typically 3rd Trimester (≥28 weeks)
+- Q: What is Jaundice of Hepatology in Special Situations?
+  A: 10-20% (mild, bilirubin <5 mg/dL)
+- Q: What is Serum Bile Acids of Hepatology in Special Situations?
+  A: >10-14 μmol/L (Fasting)
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: ALT/AST ↑ (usually <1000); Bilirubin usually normal/mild
+- Q: What is Ursodeoxycholic Acid (UDCA) of Hepatology in Special Situations?
+  A: 15-20 mg/kg/day (1st line); ↓ Bile acids, improves pruritus, ↓ fetal risk
+- Q: What is Cholestyramine of Hepatology in Special Situations?
+  A: 4g QID (2nd line for pruritus); Give 4h apart from UDCA
+- Q: What is Vitamin K of Hepatology in Special Situations?
+  A: 10mg IM at delivery (if prolonged PT)
+- Q: What is Antihistamines of Hepatology in Special Situations?
+  A: Sedating (chlorpheniramine) for sleep
+- Q: What is Delivery Timing of Hepatology in Special Situations?
+  A: 37-38 weeks (if BA >40 μmol/L); 38-39 weeks (if BA 10-40)
+- Q: What is Postpartum of Hepatology in Special Situations?
+  A: Resolves within 48h; Recheck LFTs at 6-12 weeks
+- Q: What is the definition of Hepatology in Special Situations?
+  A: Severe nausea/vomiting → Weight loss >5%, Ketonuria, Electrolyte imbalance
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 0.5-2% of pregnancies
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: ALT/AST mild-moderate ↑ (starvation hepatosis); ALP normal/physiological
+- Q: What is Amylase/Lipase of Hepatology in Special Situations?
+  A: May be ↑ (pancreatitis risk)
+- Q: How is Hepatology in Special Situations managed?
+  A: IV fluids, thiamine, antiemetics (ondansetron), correct electrolytes; Trophoblastic disease exclusion (β-hCG)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology in Special Situations?**
+   A. **B --> B3[Acute Fatty Liver of Pregnancy (AFLP)]**
+   B. An unrelated condition not matching the clinical picture of Hepatology in Special Situations
+   C. A complication seen late in the disease course of Hepatology in Special Situations
+   D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hepatology in Special Situations presents with: Pruritus — Hallmark; Palms/soles, worse at night, No Rash; Timing — Typically 3rd Trimester (≥28 weeks); Jaundice — 10-20% (mild, bilirubin <5 mg/dL). What is the most likely diagnosis?
+   A. **Hepatology in Special Situations**
+   B. A condition that mimics Hepatology in Special Situations but is not the same entity
+   C. A complication of Hepatology in Special Situations rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hepatology in Special Situations
+

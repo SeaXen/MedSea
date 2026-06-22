@@ -150,3 +150,70 @@ gantt
     section Early (0-30 Days)
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Liver Transplantation" — Ch 23: Hepatology.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Liver Transplantation?
+  A: MELD = 3.78 × ln(Bilirubin mg/dL) + 11.2 × ln(INR) + 9.57 × ln(Creatinine mg/dL) + 6.43
+- Q: What is Decompensated Cirrhosis of Liver Transplantation?
+  A: MELD ≥15 (or ≥12 in Some Regions)
+- Q: What is Refractory Ascites of Liver Transplantation?
+  A: Despite LVP + Albumin + Diuretics
+- Q: What is Recurrent Variceal Bleed of Liver Transplantation?
+  A: Despite NSBB + EVL + TIPS
+- Q: What is Recurrent HE of Liver Transplantation?
+  A: Despite Lactulose + Rifaximin
+- Q: What is HRS of Liver Transplantation?
+  A: Type 1 or Refractory Type 2
+- Q: What is HPS / PoPH of Liver Transplantation?
+  A: Severe (PaO₂ <60 / mPAP >35)
+- Q: What is King's College Criteria of Liver Transplantation?
+  A: pH <7.3 OR (PT >100s + Cr >300 + Grade III/IV HE)
+- Q: What is Non-Paracetamol of Liver Transplantation?
+  A: Any 3 of: Age <10 or >40, Aetiology Unknown/Drug, Jaundice >7d Before HE, PT >50s, PT >100s
+- Q: What is Basiliximab (IL-2 Receptor Antagonist) of Liver Transplantation?
+  A: Standard Induction (2 Doses: Day 0, Day 4)
+- Q: What is Thymoglobulin (ATG) of Liver Transplantation?
+  A: High Immunologic Risk (Retransplant, High PRA)
+- Q: What is Steroids of Liver Transplantation?
+  A: IV Methylprednisolone Intra-op + Taper
+- Q: What is Standard of Liver Transplantation?
+  A: Tacrolimus + MMF + Steroids (Taper to Off by 3-6mo)
+- Q: What is CNI-Sparing of Liver Transplantation?
+  A: Tacrolimus + mTOR (Sirolimus/Everolimus) — If Renal Impairment
+- Q: What is Steroid-Free of Liver Transplantation?
+  A: Tacrolimus + MMF (No Steroids from Day 1)
+- Q: What is HCC/Malignancy of Liver Transplantation?
+  A: mTOR-Based (Sirolimus/Everolimus) — Anti-Proliferative
+- Q: What is Decompensated Cirrhosis of Liver Transplantation?
+  A: MELD ≥15 (or ≥12 in Some Regions)
+- Q: What is Refractory Ascites of Liver Transplantation?
+  A: Despite LVP + Albumin + Diuretics
+- Q: What is Recurrent Variceal Bleed of Liver Transplantation?
+  A: Despite NSBB + EVL + TIPS
+- Q: What is Recurrent HE of Liver Transplantation?
+  A: Despite Lactulose + Rifaximin
+- Q: What is HRS of Liver Transplantation?
+  A: Type 1 or Refractory Type 2
+- Q: What is Basiliximab (IL-2 Receptor Antagonist) of Liver Transplantation?
+  A: Standard Induction (2 Doses: Day 0, Day 4)
+- Q: What is Thymoglobulin (ATG) of Liver Transplantation?
+  A: High Immunologic Risk (Retransplant, High PRA)
+- Q: What is Standard of Liver Transplantation?
+  A: Tacrolimus + MMF + Steroids (Taper to Off by 3-6mo)
+- Q: What is CNI-Sparing of Liver Transplantation?
+  A: Tacrolimus + mTOR (Sirolimus/Everolimus) — If Renal Impairment
+- Q: What is Steroid-Free of Liver Transplantation?
+  A: Tacrolimus + MMF (No Steroids from Day 1)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Liver Transplantation?**
+   A. **MELD = 3.78 × ln(Bilirubin mg/dL) + 11.2 × ln(INR) + 9.57 × ln(Creatinine mg/dL) + 6.43**
+   B. An unrelated condition not matching the clinical picture of Liver Transplantation
+   C. A complication seen late in the disease course of Liver Transplantation
+   D. A condition that mimics Liver Transplantation but has a different underlying cause
+

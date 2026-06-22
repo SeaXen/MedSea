@@ -381,3 +381,70 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Systemic Lupus Erythematosus]] · [[Systemic sclerosis (scleroderma)]] · [[Polymyositis and dermatomyositis]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (22 generated)
+
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: MCTD = overlap syndrome with features of SLE + SSc + PM/DM + HIGH-TITRE anti-U1-RNP (defining).
+- Q: What is Frequency of Autoimmune Rheumatic Diseases?
+  A: 15-30% (higher than SLE/SSc)
+- Q: What is Screening of Autoimmune Rheumatic Diseases?
+  A: Annual Echo (RVSP) + PFTs (DLCO) — DLCO <60% + FVC/DLCO >1.6 = high risk
+- Q: What is Confirmation of Autoimmune Rheumatic Diseases?
+  A: Right Heart Catheterisation (RHC) — mPAP >20mmHg, PAWP ≤15mmHg, PVR >3WU
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: ERA (Bosentan, Ambrisentan, Macitentan) + PDE5i (Sildenafil, Tadalafil) ± Prostacyclin analogues — as per SSc-PAH
+- Q: What is Pattern of Autoimmune Rheumatic Diseases?
+  A: NSIP (most common), UIP less common
+- Q: What is Screening of Autoimmune Rheumatic Diseases?
+  A: HRCT + PFTs (FVC, DLCO) annually
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: MMF 2-3g/day (1st line); CYC, RTX, Nintedanib, Tocilizumab (as per SSc-ILD)
+- Q: What is Frequency of Autoimmune Rheumatic Diseases?
+  A: 15-30% (higher than SLE/SSc)
+- Q: What is Screening of Autoimmune Rheumatic Diseases?
+  A: Annual Echo (RVSP) + PFTs (DLCO) — DLCO <60% + FVC/DLCO >1.6 = high risk
+- Q: What is Confirmation of Autoimmune Rheumatic Diseases?
+  A: Right Heart Catheterisation (RHC) — mPAP >20mmHg, PAWP ≤15mmHg, PVR >3WU
+- Q: What is Pattern of Autoimmune Rheumatic Diseases?
+  A: NSIP (most common), UIP less common
+- Q: What is Screening of Autoimmune Rheumatic Diseases?
+  A: HRCT + PFTs (FVC, DLCO) annually
+- Q: What is Defining Antibody of Autoimmune Rheumatic Diseases?
+  A: High-titre anti-U1-RNP (speckled ANA) — essential for diagnosis
+- Q: What are the clinical features of Autoimmune Rheumatic Diseases?
+  A: SLE (arthritis, serositis, rash), SSc (Raynaud's, puffy fingers, sclerodactyly, ILD, oesophageal dysmotility), PM (myositis, CK elevation)
+- Q: What is Puffy Fingers of Autoimmune Rheumatic Diseases?
+  A: Early sign (oedematous, reversible) vs sclerodactyly (late, fibrotic, irreversible)
+- Q: What is Trigeminal Neuropathy of Autoimmune Rheumatic Diseases?
+  A: Specific for MCTD (sensory V1/V2)
+- Q: What is Anti-U1-RNP of Autoimmune Rheumatic Diseases?
+  A: High titre = defining; NO anti-dsDNA, anti-Sm, anti-Scl-70, anti-Jo1 (differentiates)
+- Q: What is PAH of Autoimmune Rheumatic Diseases?
+  A: 15-30% — LEADING CAUSE OF DEATH; screen annually (Echo + PFTs/DLCO)
+- Q: What is ILD of Autoimmune Rheumatic Diseases?
+  A: NSIP pattern; MMF 1st line; screen annually (HRCT, PFTs)
+- Q: What is Renal of Autoimmune Rheumatic Diseases?
+  A: Mild (mesangioproliferative) — rarely severe (unlike SLE)
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: HCQ baseline; steroid-sparing (MMF/AZA/MTX) for organ involvement; PAH = ERA+PDE5i
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **MCTD = overlap syndrome with features of SLE + SSc + PM/DM + HIGH-TITRE anti-U1-RNP (defining).**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: Definition — Overlap syndrome with clinical features of SLE, systemic sclerosis (SSc), and polymyositis/dermatomyositis (PM/DM) plus high-titre anti-U1-RNP antibody; Peak Onset — 20-40 years; Sex Ratio — F:M = 3:1. What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

@@ -234,3 +234,30 @@ mindmap
 - [[Viral Hepatitis/Hepatitis C treatment endpoints|SVR12]]
 - [[Viral Hepatitis/Hepatitis C decompensated cirrhosis management|HCV Decompensated]]
 - [[Viral Hepatitis/Hepatitis C post-SVR follow-up|Post-SVR]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: | eGFR Category | Preferred Regimen | Alternative | Notes |
+- Q: What is Regimen of Viral Hepatitis?
+  A: Glecaprevir/Pibrentasvir 300/120mg daily (3 tablets)
+- Q: What is Duration of Viral Hepatitis?
+  A: 12 weeks (Treatment-naive & Non-cirrhotic: 8 weeks possible; Cirrhotic/Experienced: 12 weeks)
+- Q: What is the dose of Viral Hepatitis?
+  A: None Required (Any eGFR, Including Dialysis)
+- Q: What is Dialysis Timing of Viral Hepatitis?
+  A: Can Dose After Dialysis (Avoid Dose Removal) — Or Any Time
+- Q: How is Viral Hepatitis monitored?
+  A: LFTs, CBC, Renal Function (Pre/Post Dialysis), Hb
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **| eGFR Category | Preferred Regimen | Alternative | Notes |**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+

@@ -368,3 +368,86 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
+---
+
+> Auto-generated study sections for "Polymyalgia Rheumatica and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (30 generated)
+
+- Q: What is the definition of Polymyalgia Rheumatica and Related Disorders?
+  A: PMR = bilateral shoulder/pelvic girdle pain + stiffness in elderly + markedly elevated ESR/CRP + dramatic steroid response.
+- Q: What is IL-6 driven of Polymyalgia Rheumatica and Related Disorders?
+  A: Central cytokine → explains tocilizumab efficacy
+- Q: What is Proximal synovitis/bursitis of Polymyalgia Rheumatica and Related Disorders?
+  A: Subdeltoid/subacromial bursitis, biceps tenosynovitis, hip trochanteric bursitis (US/MRI)
+- Q: What is No true vasculitis of Polymyalgia Rheumatica and Related Disorders?
+  A: Distinct from GCA (though overlap exists)
+- Q: What is Acute phase response of Polymyalgia Rheumatica and Related Disorders?
+  A: IL-6 → hepatic CRP/fibrinogen → ESR/CRP markedly elevated
+- Q: What is Core of Polymyalgia Rheumatica and Related Disorders?
+  A: Bilateral shoulder + pelvic girdle pain/stiffness, worse morning, >45 minutes duration
+- Q: What is Onset of Polymyalgia Rheumatica and Related Disorders?
+  A: Subacute (weeks-months) or acute
+- Q: What is Functional Impact of Polymyalgia Rheumatica and Related Disorders?
+  A: Difficulty dressing, combing hair, rising from chair, climbing stairs
+- Q: What is Constitutional of Polymyalgia Rheumatica and Related Disorders?
+  A: Fatigue, low-grade fever, weight loss, anorexia, malaise (40-50%)
+- Q: What is Peripheral of Polymyalgia Rheumatica and Related Disorders?
+  A: Mild distal joint swelling (wrists, MCPs, knees) in 10-30% — not true synovitis
+- Q: What is Examination of Polymyalgia Rheumatica and Related Disorders?
+  A: Limited active ROM (pain) > passive ROM; no true synovitis; tenderness over girdles
+- Q: What is IL-6 driven of Polymyalgia Rheumatica and Related Disorders?
+  A: Central cytokine → explains tocilizumab efficacy
+- Q: What is Proximal synovitis/bursitis of Polymyalgia Rheumatica and Related Disorders?
+  A: Subdeltoid/subacromial bursitis, biceps tenosynovitis, hip trochanteric bursitis (US/MRI)
+- Q: What is No true vasculitis of Polymyalgia Rheumatica and Related Disorders?
+  A: Distinct from GCA (though overlap exists)
+- Q: What is Acute phase response of Polymyalgia Rheumatica and Related Disorders?
+  A: IL-6 → hepatic CRP/fibrinogen → ESR/CRP markedly elevated
+- Q: What is Core of Polymyalgia Rheumatica and Related Disorders?
+  A: Bilateral shoulder + pelvic girdle pain/stiffness, worse morning, >45 minutes duration
+- Q: What is Onset of Polymyalgia Rheumatica and Related Disorders?
+  A: Subacute (weeks-months) or acute
+- Q: What is Functional Impact of Polymyalgia Rheumatica and Related Disorders?
+  A: Difficulty dressing, combing hair, rising from chair, climbing stairs
+- Q: What is Constitutional of Polymyalgia Rheumatica and Related Disorders?
+  A: Fatigue, low-grade fever, weight loss, anorexia, malaise (40-50%)
+- Q: What is Peripheral of Polymyalgia Rheumatica and Related Disorders?
+  A: Mild distal joint swelling (wrists, MCPs, knees) in 10-30% — not true synovitis
+- Q: What is Examination of Polymyalgia Rheumatica and Related Disorders?
+  A: Limited active ROM (pain) > passive ROM; no true synovitis; tenderness over girdles
+- Q: What is Core Triad of Polymyalgia Rheumatica and Related Disorders?
+  A: Age >50 + bilateral girdle pain/stiffness >45min AM + markedly elevated ESR/CRP
+- Q: What is Diagnostic Response of Polymyalgia Rheumatica and Related Disorders?
+  A: Pred 15-20mg → dramatic improvement in 48-72h
+- Q: What is EULAR/ACR 2012 of Polymyalgia Rheumatica and Related Disorders?
+  A: ≥4/6 clinical (≥5/7 with US); exclusion criteria mandatory
+- Q: What is GCA Overlap of Polymyalgia Rheumatica and Related Disorders?
+  A: 40-50% GCA have PMR; 10-20% PMR have GCA — screen every visit
+- Q: What is Taper of Polymyalgia Rheumatica and Related Disorders?
+  A: 2.5mg q2-4wk to 10mg → 1mg/month; monitor ESR/CRP + symptoms
+- Q: What is Bone Protection of Polymyalgia Rheumatica and Related Disorders?
+  A: Ca/Vit D + bisphosphonate (all >7.5mg pred >3mo)
+- Q: What is No Response in 1 Week of Polymyalgia Rheumatica and Related Disorders?
+  A: Reconsider: LORA, malignancy, infection, GCA
+- Q: What is Relapse of Polymyalgia Rheumatica and Related Disorders?
+  A: 30-50%; return to previous effective dose
+- Q: What is Exclusion of Polymyalgia Rheumatica and Related Disorders?
+  A: RF/CCP negative, no other joint involvement, no malignancy/infection
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Polymyalgia Rheumatica and Related Disorders?**
+   A. **PMR = bilateral shoulder/pelvic girdle pain + stiffness in elderly + markedly elevated ESR/CRP + dramatic steroid response.**
+   B. An unrelated condition not matching the clinical picture of Polymyalgia Rheumatica and Related Disorders
+   C. A complication seen late in the disease course of Polymyalgia Rheumatica and Related Disorders
+   D. A condition that mimics Polymyalgia Rheumatica and Related Disorders but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Polymyalgia Rheumatica and Related Disorders presents with: Definition — Inflammatory condition causing bilateral shoulder and pelvic girdle pain/stiffness in adults >50, with marked acute phase response and rapid response to low-dose glucocorticoids; Incidence — 50-60/100,000/year >50y; Peak Age — >50 years (mean 70-75). What is the most likely diagnosis?
+   A. **Polymyalgia Rheumatica and Related Disorders**
+   B. A condition that mimics Polymyalgia Rheumatica and Related Disorders but is not the same entity
+   C. A complication of Polymyalgia Rheumatica and Related Disorders rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Polymyalgia Rheumatica and Related Disorders
+

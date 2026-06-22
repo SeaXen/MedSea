@@ -291,3 +291,40 @@ mindmap
 - [[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]
 - [[Portal Hypertension and Complications/Acute variceal bleeding management|Variceal Bleed]]
 - [[Acute Liver Failure/King's College Criteria|King's College Criteria]]
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (7 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: Cirrhosis + acute decompensation + organ failure(s)
+- Q: What is Organ Failure (CLIF-SOFA) of Acute Liver Failure?
+  A: Liver: Bil ≥12; Kidney: Cr ≥2 or RRT; Brain: HE G3-4; Coag: INR ≥2.5; Circ: Vasopressors; Resp: PaO₂/FiO₂ ≤200
+- Q: What is Grades of Acute Liver Failure?
+  A: ACLF-1: 1 OF (22% 28d mort); ACLF-2: 2 OF (32%); ACLF-3: ≥3 OF (77%)
+- Q: What is Precipitants of Acute Liver Failure?
+  A: Infection #1, Alcohol #2, Bleed #3
+- Q: What is Prognostic Score of Acute Liver Failure?
+  A: CLIF-C ACLF (Days 3-5); >60 = >70% 28d mort
+- Q: How is Acute Liver Failure managed?
+  A: ICU, treat precipitant, organ support, early transplant eval for Grade 2-3
+- Q: What is Antibiotics of Acute Liver Failure?
+  A: Empirical ceftriaxone for ALL ACLF
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **| Organ System | Variable | Cut-off for Failure |**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Acute Liver Failure presents with: Acute decompensation of cirrhosis + organ failure(s) + high 28-day mortality; 1. Cirrhosis (previously diagnosed or diagnosed at presentation); 2. Acute decompensation: Ascites, GI bleed, HE, bacterial infection. What is the most likely diagnosis?
+   A. **Acute Liver Failure**
+   B. A condition that mimics Acute Liver Failure but is not the same entity
+   C. A complication of Acute Liver Failure rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Acute Liver Failure
+

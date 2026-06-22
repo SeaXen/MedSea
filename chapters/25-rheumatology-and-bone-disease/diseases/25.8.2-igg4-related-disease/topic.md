@@ -438,3 +438,172 @@ mindmap
 - **Chapter MOC": [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Sarcoidosis]] · [[Drugs in rheumatology]] · [[Autoimmune Pancreatitis]]
+---
+
+> Auto-generated study sections for "Polymyalgia Rheumatica and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (73 generated)
+
+- Q: What is Th2 Polarisation of Polymyalgia Rheumatica and Related Disorders?
+  A: IL-4, IL-13, IL-10, IL-21 → B-cell class switch to IgG4
+- Q: What is Tfh/Tfr Dysregulation of Polymyalgia Rheumatica and Related Disorders?
+  A: Follicular helper T-cells promote IgG4; follicular regulatory T-cells deficient
+- Q: What is IgG4 Properties of Polymyalgia Rheumatica and Related Disorders?
+  A: Poor complement activation, Fab-arm exchange (bispecific, anti-inflammatory?)
+- Q: What is Fibrosis of Polymyalgia Rheumatica and Related Disorders?
+  A: Storiform (whorled), obliterative phlebitis (vein occlusion)
+- Q: What is Organ Involvement of Polymyalgia Rheumatica and Related Disorders?
+  A: Multi-organ — pancreas, salivary, lacrimal, retroperitoneum, thyroid, kidney, lung, aorta
+- Q: What is the definition of Polymyalgia Rheumatica and Related Disorders?
+  A: IgG4-RD of pancreas — obstructive jaundice, pancreatic mass, weight loss
+- Q: What is Imaging (CT/MRI) of Polymyalgia Rheumatica and Related Disorders?
+  A: Diffuse enlargement ("sausage pancreas"), rim sign (capsular-like rim), delayed enhancement
+- Q: What is ERCP/MRCP of Polymyalgia Rheumatica and Related Disorders?
+  A: Long strictures (pancreatic/bile duct), diffuse irregular narrowing
+- Q: What is Serology of Polymyalgia Rheumatica and Related Disorders?
+  A: IgG4 >135 mg/dL (90%), elevated IgG, elevated CA19-9 (can mimic cancer)
+- Q: What is Histology of Polymyalgia Rheumatica and Related Disorders?
+  A: Lymphoplasmacytic sclerosing pancreatitis (LPSP) — storiform fibrosis, obliterative phlebitis, IgG4+ cells
+- Q: What is Differs from Pancreatic Cancer of Polymyalgia Rheumatica and Related Disorders?
+  A: No weight loss/cachexia (or less severe), steroid responsive, no vascular invasion
+- Q: What is the definition of Polymyalgia Rheumatica and Related Disorders?
+  A: Bilateral lacrimal + salivary gland enlargement (IgG4-RD related)
+- Q: What is Classic of Polymyalgia Rheumatica and Related Disorders?
+  A: Painless, bilateral, symmetrical enlargement of lacrimal, parotid, submandibular glands
+- Q: What is Dryness of Polymyalgia Rheumatica and Related Disorders?
+  A: Keratoconjunctivitis sicca, xerostomia
+- Q: What is Differential of Polymyalgia Rheumatica and Related Disorders?
+  A: Sjögren's (anti-Ro/La+, focus score, usually RF+), lymphoma, sarcoidosis
+- Q: What are the clinical features of Polymyalgia Rheumatica and Related Disorders?
+  A: Flank/back pain, hydronephrosis (ureteric obstruction), aortic encasement
+- Q: What is Imaging of Polymyalgia Rheumatica and Related Disorders?
+  A: CT/MRI: soft tissue mass encasing aorta/ureters, "candle wax" aorta
+- Q: What is IgG4-Related of Polymyalgia Rheumatica and Related Disorders?
+  A: ~30-50% of idiopathic retroperitoneal fibrosis
+- Q: How is Polymyalgia Rheumatica and Related Disorders managed?
+  A: Steroids + stenting (ureteric stents)
+- Q: What are the clinical features of Polymyalgia Rheumatica and Related Disorders?
+  A: Woody, fixed, hard thyroid — compressive symptoms (dysphagia, dyspnoea, hoarseness)
+- Q: What is Histology of Polymyalgia Rheumatica and Related Disorders?
+  A: Dense fibrosis extending beyond thyroid, IgG4+ plasma cells
+- Q: What is Differential of Polymyalgia Rheumatica and Related Disorders?
+  A: Anaplastic thyroid cancer, Hashimoto's, sarcoidosis
+- Q: What are the clinical features of Polymyalgia Rheumatica and Related Disorders?
+  A: AKI/CKD, sterile pyuria, eosinophilia, normal/high IgE
+- Q: What is Biopsy of Polymyalgia Rheumatica and Related Disorders?
+  A: Tubulointerstitial nephritis with IgG4+ plasma cells, storiform fibrosis
+- Q: What is Urine of Polymyalgia Rheumatica and Related Disorders?
+  A: Eosinophiluria, low-grade proteinuria
+- Q: What is Storiform Fibrosis of Polymyalgia Rheumatica and Related Disorders?
+  A: Whorled/cartwheel pattern of fibroblasts
+- Q: What is Obliterative Phlebitis of Polymyalgia Rheumatica and Related Disorders?
+  A: Venous occlusion by inflammatory infiltrate
+- Q: What is IgG4+ Plasma Cells of Polymyalgia Rheumatica and Related Disorders?
+  A: >10 IgG4+ cells/HPF (in most involved tissue)
+- Q: What is IgG4+/IgG Ratio of Polymyalgia Rheumatica and Related Disorders?
+  A: >40% (highly specific)
+- Q: What is Serum IgG4 of Polymyalgia Rheumatica and Related Disorders?
+  A: Every 3 months during taper, then 6-monthly
+- Q: What is Organ Imaging of Polymyalgia Rheumatica and Related Disorders?
+  A: CT/MRI every 6-12 months (organ-dependent)
+- Q: What is Renal Function of Polymyalgia Rheumatica and Related Disorders?
+  A: Every 3 months if renal involvement
+- Q: What is Eosinophilia of Polymyalgia Rheumatica and Related Disorders?
+  A: Monitor if present initially
+- Q: What is Relapse of Polymyalgia Rheumatica and Related Disorders?
+  A: IgG4 rise often precedes clinical relapse
+- Q: What is Th2 Polarisation of Polymyalgia Rheumatica and Related Disorders?
+  A: IL-4, IL-13, IL-10, IL-21 → B-cell class switch to IgG4
+- Q: What is Tfh/Tfr Dysregulation of Polymyalgia Rheumatica and Related Disorders?
+  A: Follicular helper T-cells promote IgG4; follicular regulatory T-cells deficient
+- Q: What is IgG4 Properties of Polymyalgia Rheumatica and Related Disorders?
+  A: Poor complement activation, Fab-arm exchange (bispecific, anti-inflammatory?)
+- Q: What is Fibrosis of Polymyalgia Rheumatica and Related Disorders?
+  A: Storiform (whorled), obliterative phlebitis (vein occlusion)
+- Q: What is Organ Involvement of Polymyalgia Rheumatica and Related Disorders?
+  A: Multi-organ — pancreas, salivary, lacrimal, retroperitoneum, thyroid, kidney, lung, aorta
+- Q: What is the definition of Polymyalgia Rheumatica and Related Disorders?
+  A: IgG4-RD of pancreas — obstructive jaundice, pancreatic mass, weight loss
+- Q: What is Imaging (CT/MRI) of Polymyalgia Rheumatica and Related Disorders?
+  A: Diffuse enlargement ("sausage pancreas"), rim sign (capsular-like rim), delayed enhancement
+- Q: What is ERCP/MRCP of Polymyalgia Rheumatica and Related Disorders?
+  A: Long strictures (pancreatic/bile duct), diffuse irregular narrowing
+- Q: What is Serology of Polymyalgia Rheumatica and Related Disorders?
+  A: IgG4 >135 mg/dL (90%), elevated IgG, elevated CA19-9 (can mimic cancer)
+- Q: What is Histology of Polymyalgia Rheumatica and Related Disorders?
+  A: Lymphoplasmacytic sclerosing pancreatitis (LPSP) — storiform fibrosis, obliterative phlebitis, IgG4+ cells
+- Q: What is the definition of Polymyalgia Rheumatica and Related Disorders?
+  A: Bilateral lacrimal + salivary gland enlargement (IgG4-RD related)
+- Q: What is Classic of Polymyalgia Rheumatica and Related Disorders?
+  A: Painless, bilateral, symmetrical enlargement of lacrimal, parotid, submandibular glands
+- Q: What is Dryness of Polymyalgia Rheumatica and Related Disorders?
+  A: Keratoconjunctivitis sicca, xerostomia
+- Q: What are the clinical features of Polymyalgia Rheumatica and Related Disorders?
+  A: Flank/back pain, hydronephrosis (ureteric obstruction), aortic encasement
+- Q: What is Imaging of Polymyalgia Rheumatica and Related Disorders?
+  A: CT/MRI: soft tissue mass encasing aorta/ureters, "candle wax" aorta
+- Q: What is IgG4-Related of Polymyalgia Rheumatica and Related Disorders?
+  A: ~30-50% of idiopathic retroperitoneal fibrosis
+- Q: What are the clinical features of Polymyalgia Rheumatica and Related Disorders?
+  A: Woody, fixed, hard thyroid — compressive symptoms (dysphagia, dyspnoea, hoarseness)
+- Q: What is Histology of Polymyalgia Rheumatica and Related Disorders?
+  A: Dense fibrosis extending beyond thyroid, IgG4+ plasma cells
+- Q: What are the clinical features of Polymyalgia Rheumatica and Related Disorders?
+  A: AKI/CKD, sterile pyuria, eosinophilia, normal/high IgE
+- Q: What is Biopsy of Polymyalgia Rheumatica and Related Disorders?
+  A: Tubulointerstitial nephritis with IgG4+ plasma cells, storiform fibrosis
+- Q: What is Urine of Polymyalgia Rheumatica and Related Disorders?
+  A: Eosinophiluria, low-grade proteinuria
+- Q: What is Storiform Fibrosis of Polymyalgia Rheumatica and Related Disorders?
+  A: Whorled/cartwheel pattern of fibroblasts
+- Q: What is Obliterative Phlebitis of Polymyalgia Rheumatica and Related Disorders?
+  A: Venous occlusion by inflammatory infiltrate
+- Q: What is IgG4+ Plasma Cells of Polymyalgia Rheumatica and Related Disorders?
+  A: >10 IgG4+ cells/HPF (in most involved tissue)
+- Q: What is IgG4+/IgG Ratio of Polymyalgia Rheumatica and Related Disorders?
+  A: >40% (highly specific)
+- Q: What is Serum IgG4 of Polymyalgia Rheumatica and Related Disorders?
+  A: Every 3 months during taper, then 6-monthly
+- Q: What is Organ Imaging of Polymyalgia Rheumatica and Related Disorders?
+  A: CT/MRI every 6-12 months (organ-dependent)
+- Q: What is Renal Function of Polymyalgia Rheumatica and Related Disorders?
+  A: Every 3 months if renal involvement
+- Q: What is Eosinophilia of Polymyalgia Rheumatica and Related Disorders?
+  A: Monitor if present initially
+- Q: What is Relapse of Polymyalgia Rheumatica and Related Disorders?
+  A: IgG4 rise often precedes clinical relapse
+- Q: What is the definition of Polymyalgia Rheumatica and Related Disorders?
+  A: IgG4+ plasma cell infiltration + storiform fibrosis + obliterative phlebitis + elevated serum IgG4
+- Q: What is Diagnostic Criteria of Polymyalgia Rheumatica and Related Disorders?
+  A: ACR/EULAR 2019: ≥20 points (clinical + serological + histopathological)
+- Q: What is Serum IgG4 of Polymyalgia Rheumatica and Related Disorders?
+  A: >135 mg/dL (or >2x ULN) — supportive, NOT diagnostic (30% normal in active disease)
+- Q: What is Histology (Gold Standard) of Polymyalgia Rheumatica and Related Disorders?
+  A: Storiform fibrosis + obliterative phlebitis + >10 IgG4+ cells/HPF + IgG4/IgG >40%
+- Q: What is Classic Organ Involvement of Polymyalgia Rheumatica and Related Disorders?
+  A: Pancreas (AIP type 1), Salivary/Lacrimal (Mikulicz), Retroperitoneal fibrosis, Riedel's thyroiditis, Tubulointerstitial nephritis
+- Q: What is Exclusions of Polymyalgia Rheumatica and Related Disorders?
+  A: Malignancy, ANCA vasculitis, Sarcoidosis, Sjögren's, PSC, Infection, Drug-induced
+- Q: What is Serum IgG4 Caveats of Polymyalgia Rheumatica and Related Disorders?
+  A: >135 mg/dL supportive only; normal in 30% active disease; elevated in cancer, PSC, allergic disease
+- Q: How is Polymyalgia Rheumatica and Related Disorders managed?
+  A: Steroids 1st line (0.6-1mg/kg/day → taper); Rituximab 1st line steroid-sparing; AZA/MTX/MMF alternatives
+- Q: What is Relapse of Polymyalgia Rheumatica and Related Disorders?
+  A: Common — monitor IgG4; Rituximab preferred for relapse
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Polymyalgia Rheumatica and Related Disorders?**
+   A. **IgG4-RD = immune-mediated fibroinflammatory condition with IgG4+ plasma cell infiltration.**
+   B. An unrelated condition not matching the clinical picture of Polymyalgia Rheumatica and Related Disorders
+   C. A complication seen late in the disease course of Polymyalgia Rheumatica and Related Disorders
+   D. A condition that mimics Polymyalgia Rheumatica and Related Disorders but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Polymyalgia Rheumatica and Related Disorders presents with: Definition — Immune-mediated fibroinflammatory condition characterised by IgG4+ plasma cell infiltration, storiform fibrosis, obliterative phlebitis, and elevated serum IgG4; Incidence — 0.5-1.5/100,000/year (increasing recognition); Peak Age — 50-70 years. What is the most likely diagnosis?
+   A. **Polymyalgia Rheumatica and Related Disorders**
+   B. A condition that mimics Polymyalgia Rheumatica and Related Disorders but is not the same entity
+   C. A complication of Polymyalgia Rheumatica and Related Disorders rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Polymyalgia Rheumatica and Related Disorders
+

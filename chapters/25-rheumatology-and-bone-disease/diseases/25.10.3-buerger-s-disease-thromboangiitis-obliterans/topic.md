@@ -460,3 +460,174 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[Drugs in rheumatology]] · [[Investigations in rheumatology]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (74 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: Non-atherosclerotic segmental inflammatory vasculitis of small/medium arteries and veins, with highly cellular intraluminal thrombosis
+- Q: What is Synonym of Vasculitis?
+  A: Thromboangiitis obliterans (TAO), Winiwarter-Buerger disease
+- Q: What is the epidemiology of Vasculitis?
+  A: 1-10/100,000 (varies with smoking prevalence); 0.5-5% of all PAD
+- Q: What is Age of Vasculitis?
+  A: <45 years (peak 20-40y)
+- Q: What is Sex of Vasculitis?
+  A: Male 75-90% (increasing in women with smoking)
+- Q: What is Ethnicity of Vasculitis?
+  A: Middle East, Asia, India, SE Asia (high smoking populations); rare in African/European
+- Q: What is Genetics of Vasculitis?
+  A: HLA-A9, HLA-B5 associations
+- Q: What causes Vasculitis?
+  A: TOBACCO SMOKING (cigarettes, bidi, hookah, cannabis) — almost universal
+- Q: How is Vasculitis classified?
+  A: Segmental (skip lesions, intervening normal)
+- Q: What is Vessels of Vasculitis?
+  A: Small + medium arteries AND veins (pan-vasculitis)
+- Q: What is Wall of Vasculitis?
+  A: Relatively preserved (unlike atherosclerosis/other vasculitis)
+- Q: What is Thrombus of Vasculitis?
+  A: Highly cellular with neutrophil microabscesses (pathognomonic)
+- Q: What is Claudication of Vasculitis?
+  A: "In-step" (sole of foot, arch) — unusual in atherosclerosis; also calf, forearm, hand
+- Q: What is Raynaud's phenomenon of Vasculitis?
+  A: 40-50% — cold-induced digital ischaemia
+- Q: What is Migratory superficial thrombophlebitis of Vasculitis?
+  A: 30-40% — recurrent, segmental, in unusual sites (chest, abdominal wall)
+- Q: What is Rest pain of Vasculitis?
+  A: Critical ischaemia, worse at night, dependent position
+- Q: What is Ulceration of Vasculitis?
+  A: Distal (toes, fingers, dorsum of foot); painful; slow to heal
+- Q: What is Gangrene of Vasculitis?
+  A: Digital (toes, fingers); >40% require amputation (in continued smokers)
+- Q: What is Cold sensitivity of Vasculitis?
+  A: Severe — even mild cold worsens
+- Q: What is Trophic changes of Vasculitis?
+  A: Shiny, hairless, atrophic skin; thickened, brittle nails
+- Q: What is the investigation of choice for Vasculitis?
+  A: Strongly positive — delayed refill from radial/ulnar
+- Q: What is Pulse of Vasculitis?
+  A: Distal pulses (DP, PT, radial, ulnar) absent/diminished; femoral/brachial preserved
+- Q: What is Sensory of Vasculitis?
+  A: Paraesthesia, burning (chronic ischaemia)
+- Q: What is Joint of Vasculitis?
+  A: Migratory arthralgia, sometimes inflammatory
+- Q: What is FBC, ESR, CRP of Vasculitis?
+  A: Baseline inflammation (often normal between flares)
+- Q: What is ANA, RF, anti-CCP, ANCA of Vasculitis?
+  A: Exclusion of autoimmune vasculitis
+- Q: What is Thrombophilia screen of Vasculitis?
+  A: Exclusion (factor V Leiden, PT/proc, ACLA, lupus anticoagulant, homocysteine, antithrombin, protein C/S)
+- Q: What is Lipid profile, HbA1c of Vasculitis?
+  A: Exclusion of atherosclerotic risk
+- Q: What is ECG, echo of Vasculitis?
+  A: Exclude cardiac source of embolism
+- Q: What is Failure of medical Rx of Vasculitis?
+  A: Surgical sympathectomy (lumbar for lower limb, cervico-dorsal for upper)
+- Q: What is Critical ischaemia with tissue loss of Vasculitis?
+  A: Distal bypass (limited role — distal vessels poor)
+- Q: What is Digital gangrene of Vasculitis?
+  A: Amputation (last resort) — but only if extensive
+- Q: What is Refractory pain of Vasculitis?
+  A: Sympathectomy, spinal cord stimulation
+- Q: What is Revascularisation of Vasculitis?
+  A: Often impossible — distal vessels involved
+- Q: What is Therapeutic angiogenesis of Vasculitis?
+  A: VEGF gene therapy, stem cells (investigational)
+- Q: How is Vasculitis classified?
+  A: Segmental (skip lesions, intervening normal)
+- Q: What is Vessels of Vasculitis?
+  A: Small + medium arteries AND veins (pan-vasculitis)
+- Q: What is Wall of Vasculitis?
+  A: Relatively preserved (unlike atherosclerosis/other vasculitis)
+- Q: What is Thrombus of Vasculitis?
+  A: Highly cellular with neutrophil microabscesses (pathognomonic)
+- Q: What is Claudication of Vasculitis?
+  A: "In-step" (sole of foot, arch) — unusual in atherosclerosis; also calf, forearm, hand
+- Q: What is Raynaud's phenomenon of Vasculitis?
+  A: 40-50% — cold-induced digital ischaemia
+- Q: What is Rest pain of Vasculitis?
+  A: Critical ischaemia, worse at night, dependent position
+- Q: What is Ulceration of Vasculitis?
+  A: Distal (toes, fingers, dorsum of foot); painful; slow to heal
+- Q: What is Gangrene of Vasculitis?
+  A: Digital (toes, fingers); >40% require amputation (in continued smokers)
+- Q: What is Cold sensitivity of Vasculitis?
+  A: Severe — even mild cold worsens
+- Q: What is Trophic changes of Vasculitis?
+  A: Shiny, hairless, atrophic skin; thickened, brittle nails
+- Q: What is the investigation of choice for Vasculitis?
+  A: Strongly positive — delayed refill from radial/ulnar
+- Q: What is Pulse of Vasculitis?
+  A: Distal pulses (DP, PT, radial, ulnar) absent/diminished; femoral/brachial preserved
+- Q: What is Sensory of Vasculitis?
+  A: Paraesthesia, burning (chronic ischaemia)
+- Q: What is FBC, ESR, CRP of Vasculitis?
+  A: Baseline inflammation (often normal between flares)
+- Q: What is ANA, RF, anti-CCP, ANCA of Vasculitis?
+  A: Exclusion of autoimmune vasculitis
+- Q: What is Thrombophilia screen of Vasculitis?
+  A: Exclusion (factor V Leiden, PT/proc, ACLA, lupus anticoagulant, homocysteine, antithrombin, protein C/S)
+- Q: What is Lipid profile, HbA1c of Vasculitis?
+  A: Exclusion of atherosclerotic risk
+- Q: What is Failure of medical Rx of Vasculitis?
+  A: Surgical sympathectomy (lumbar for lower limb, cervico-dorsal for upper)
+- Q: What is Critical ischaemia with tissue loss of Vasculitis?
+  A: Distal bypass (limited role — distal vessels poor)
+- Q: What is Digital gangrene of Vasculitis?
+  A: Amputation (last resort) — but only if extensive
+- Q: What is Refractory pain of Vasculitis?
+  A: Sympathectomy, spinal cord stimulation
+- Q: What is Revascularisation of Vasculitis?
+  A: Often impossible — distal vessels involved
+- Q: What is the definition of Vasculitis?
+  A: Non-atherosclerotic segmental vasculitis; small/medium arteries + veins; intraluminal cellular thrombus with microabscesses
+- Q: What is Demographics of Vasculitis?
+  A: <45y, M (75-90%), smoker (99%); Middle East/Asia/India
+- Q: What causes Vasculitis?
+  A: Tobacco smoking (cigarettes, bidi, hookah, cannabis) — only proven cause
+- Q: What is Clinical triad of Vasculitis?
+  A: Claudication + Raynaud's + migratory thrombophlebitis
+- Q: What is "In-step" claudication of Vasculitis?
+  A: Sole of foot/arch — unusual in atherosclerosis, suggests Buerger's
+- Q: What is the investigation of choice for Vasculitis?
+  A: Strongly positive (delayed refill)
+- Q: What is Pulses of Vasculitis?
+  A: Distal absent (DP, PT, radial, ulnar); proximal preserved (femoral, brachial)
+- Q: What is Olin criteria of Vasculitis?
+  A: <45y + smoker + distal ischaemia + exclude autoimmune/hypercoagulable/atherosclerotic
+- Q: What is Angiography of Vasculitis?
+  A: "Corkscrew" collaterals (Martorell sign); segmental; distal; smooth
+- Q: What is Pathology of Vasculitis?
+  A: Cellular intraluminal thrombus with microabscesses (pathognomonic)
+- Q: How is Vasculitis managed?
+  A: SMOKING CESSATION (50% → 5% amputation)
+- Q: What is Iloprost of Vasculitis?
+  A: Best-evidenced drug for critical ischaemia
+- Q: What is Cilostazol of Vasculitis?
+  A: Improve walking distance
+- Q: What is Surgical of Vasculitis?
+  A: Lumbar sympathectomy; bypass (limited role); amputation last resort
+- Q: What is Differentiate from of Vasculitis?
+  A: Atherosclerosis, Takayasu, GCA, ANCA-vasculitis, APS, embolism, TOS
+- Q: What is No visceral disease of Vasculitis?
+  A: Stays in extremities (key differentiator)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **Buerger's disease = non-atherosclerotic segmental inflammatory vasculitis + thrombosis of small/medium arteries and veins in young male smokers (<45y).**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Definition — Non-atherosclerotic segmental inflammatory vasculitis of small/medium arteries and veins, with highly cellular intraluminal thrombosis; Synonym — Thromboangiitis obliterans (TAO), Winiwarter-Buerger disease; Prevalence — 1-10/100,000 (varies with smoking prevalence); 0.5-5% of all PAD. What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

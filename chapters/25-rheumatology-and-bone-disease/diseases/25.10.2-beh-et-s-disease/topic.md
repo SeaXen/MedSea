@@ -386,3 +386,78 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[IgA vasculitis (Henoch-Schönlein purpura)]] · [[Polyarteritis nodosa (PAN)]] · [[Drugs in rheumatology]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: Behçet's = variable vessel vasculitis with oral/genital ulcers + uveitis + skin + pathergy.
+- Q: What is Neutrophil Hyperreactivity of Vasculitis?
+  A: Chemotaxis, ROS production, NETosis — enhanced
+- Q: What is Th1/Th17 Polarisation of Vasculitis?
+  A: IL-12/IL-23 → IL-17, IFN-γ — drives inflammation
+- Q: What is Pathergy of Vasculitis?
+  A: Needle prick → sterile pustule — neutrophil exaggerated response
+- Q: What is Variable Vessel Vasculitis of Vasculitis?
+  A: All sizes (arteries + veins) — unique among vasculitides
+- Q: What is Ileocaecal Ulcers of Vasculitis?
+  A: Most common — mimics Crohn's; single, punched-out, deep
+- Q: What are the clinical features of Vasculitis?
+  A: Abdominal pain, diarrhoea, bleeding, intussusception
+- Q: What is Differentiation from Crohn's of Vasculitis?
+  A: Single ulcer (vs multiple), no granulomas, perianal disease rare
+- Q: What is Neutrophil Hyperreactivity of Vasculitis?
+  A: Chemotaxis, ROS production, NETosis — enhanced
+- Q: What is Th1/Th17 Polarisation of Vasculitis?
+  A: IL-12/IL-23 → IL-17, IFN-γ — drives inflammation
+- Q: What is Pathergy of Vasculitis?
+  A: Needle prick → sterile pustule — neutrophil exaggerated response
+- Q: What is Variable Vessel Vasculitis of Vasculitis?
+  A: All sizes (arteries + veins) — unique among vasculitides
+- Q: What is Ileocaecal Ulcers of Vasculitis?
+  A: Most common — mimics Crohn's; single, punched-out, deep
+- Q: What are the clinical features of Vasculitis?
+  A: Abdominal pain, diarrhoea, bleeding, intussusception
+- Q: What is Distribution of Vasculitis?
+  A: Silk Road (Turkey, Iran, Japan, China) — Highest in Turkey
+- Q: What is Classic Tetrad of Vasculitis?
+  A: Oral ulcers, Genital ulcers, Uveitis, Skin lesions
+- Q: What is ICBD 2014 Criteria of Vasculitis?
+  A: ≥4 points: Oral (2), Genital (2), Ocular (2), Skin (1), Vascular (1), Pathergy (1)
+- Q: What is the investigation of choice for Vasculitis?
+  A: Needle prick → pustule 24-48h; 60-70% Turkey/Japan, <10% West
+- Q: What is HLA-B51 of Vasculitis?
+  A: OR 5-10 — strong association, Silk Road populations
+- Q: What is Ocular of Vasculitis?
+  A: Anterior uveitis (hypopyon), Posterior uveitis, Retinal vasculitis — vision threat
+- Q: What is Vascular of Vasculitis?
+  A: Venous > Arterial; DVT, CVST, Pulmonary artery aneurysm (characteristic)
+- Q: What is Neuro-Behçet's of Vasculitis?
+  A: Parenchymal (brainstem) + Vascular (CVST, aneurysm)
+- Q: What is GI of Vasculitis?
+  A: Ileocaecal ulcers (single, deep) — mimics Crohn's
+- Q: What is Pathergy of Vasculitis?
+  A: Needle prick → pustule 24-48h; high in Silk Road, low in West
+- Q: How is Vasculitis managed?
+  A: Colchicine (mucocutaneous) → Apremilast (oral ulcers) → Steroids + AZA/CSA (organ-threatening) → Anti-TNF (refractory)
+- Q: What is Anticoagulation of Vasculitis?
+  A: Venous thrombosis = anticoagulation + immunosuppression
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **Behçet's = variable vessel vasculitis with oral/genital ulcers + uveitis + skin + pathergy.**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Definition — Variable vessel vasculitis (arteries + veins, all sizes) — recurrent oral/genital ulcers + uveitis + skin lesions + pathergy; Distribution — Silk Road: Turkey, Iran, Japan, China, Korea, Mediterranean — highest in Turkey (80-370/100,000); Incidence — 0.5-15/100,000/year (varies by region). What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

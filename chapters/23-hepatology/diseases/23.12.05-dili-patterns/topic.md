@@ -254,3 +254,44 @@ mindmap
 - [[Acute Liver Failure/Non-paracetamol drug-induced liver injury|Non-PCM DILI ALF]]
 - [[Jaundice and LFT Interpretation/Hepatocellular vs Cholestatic Pattern|LFT Patterns]]
 - [[Acute Liver Failure/Paracetamol-induced hepatotoxicity|Paracetamol ALF]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: | Pattern | R Ratio | ALT/AST | ALP | Common Culprits |
+- Q: What is Hepatocellular of Jaundice and LFT Interpretation?
+  A: R>5, ALT↑↑↑ — Paracetamol, INH, Anticonvulsants
+- Q: What is Cholestatic of Jaundice and LFT Interpretation?
+  A: R<2, ALP↑↑ — Amox-Clav, Flucloxacillin, OCP, Chlorpromazine
+- Q: What is Mixed of Jaundice and LFT Interpretation?
+  A: R 2-5 — Rifampicin, Cotrimoxazole, Tricyclics
+- Q: What is Paracetamol of Jaundice and LFT Interpretation?
+  A: ALT >5000, NAC within 8h
+- Q: What is Amox-Clav of Jaundice and LFT Interpretation?
+  A: Cholestatic, Male >55, Post-course onset
+- Q: What is Flucloxacillin of Jaundice and LFT Interpretation?
+  A: Cholestatic, >55y, >14d use
+- Q: What is RUCAM of Jaundice and LFT Interpretation?
+  A: ≥9 Definite, 6-8 Probable, 3-5 Possible
+- Q: What is Latency of Jaundice and LFT Interpretation?
+  A: Paracetamol: hours; Others: weeks-months
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **| Pattern | R Ratio | ALT/AST | ALP | Common Culprits |**
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Jaundice and LFT Interpretation presents with: Pattern — R Ratio; FCPS/MRCP: Paracetamol = Hepatocellular (ALT>5000); Amox-Clav = Cholestatic (Male>55); Flucloxacillin = Cholestatic (>55, >14d). What is the most likely diagnosis?
+   A. **Jaundice and LFT Interpretation**
+   B. A condition that mimics Jaundice and LFT Interpretation but is not the same entity
+   C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
+

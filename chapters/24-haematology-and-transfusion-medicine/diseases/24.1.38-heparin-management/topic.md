@@ -360,3 +360,52 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Anticoagulation → Heparin
+- Q: What is VTE Prophylaxis (History VTE, Thrombophilia, Obesity, etc.) of Hematology?
+  A: Enoxaparin 40mg OD (20mg if CrCl<30); Anti-Xa once per Trimester
+- Q: What is Therapeutic Anticoagulation (Acute VTE, Mechanical Valve) of Hematology?
+  A: Enoxaparin 1mg/kg BD; Anti-Xa q4wk (Target 0.6-1.0 IU/mL 4h post-dose)
+- Q: What is Mechanical Valve of Hematology?
+  A: LMWH 1mg/kg BD 1st Trimester → Warfarin 2nd/3rd Trimester (if INR Target Met) → LMWH 36w+
+- Q: What is Anti-D Prophylaxis of Hematology?
+  A: 500 IU IM at 28w + 34w + Post-delivery (RhD Neg Mother)
+- Q: What is VTE Prophylaxis (History VTE, Thrombophilia, Obesity, etc.) of Hematology?
+  A: Enoxaparin 40mg OD (20mg if CrCl<30); Anti-Xa once per Trimester
+- Q: What is Therapeutic Anticoagulation (Acute VTE, Mechanical Valve) of Hematology?
+  A: Enoxaparin 1mg/kg BD; Anti-Xa q4wk (Target 0.6-1.0 IU/mL 4h post-dose)
+- Q: What is Mechanical Valve of Hematology?
+  A: LMWH 1mg/kg BD 1st Trimester → Warfarin 2nd/3rd Trimester (if INR Target Met) → LMWH 36w+
+- Q: What is Anti-D Prophylaxis of Hematology?
+  A: 500 IU IM at 28w + 34w + Post-delivery (RhD Neg Mother)
+- Q: What is UFH vs LMWH of Hematology?
+  A: UFH: IV, APTT Monitor, Protamine Full Reversal, Higher HIT; LMWH: SC, Anti-Xa Monitor, Protamine Partial, Lower HIT, Renal Adjust
+- Q: What is Therapeutic LMWH of Hematology?
+  A: Enoxaparin 1mg/kg BD; Dalteparin 200IU/kg OD; Anti-Xa 0.6-1.0 (BD), 1.0-2.0 (OD)
+- Q: What is Prophylactic LMWH of Hematology?
+  A: Enoxaparin 40mg OD; Renal: 20mg OD; Obesity: 0.5mg/kg BD
+- Q: What is HIT of Hematology?
+  A: UFH > LMWH; 4Ts Score → PF4 ELISA → SRA; STOP HEPARIN → Argatroban/Bivalirudin/Fondaparinux
+- Q: What is Reversal of Hematology?
+  A: UFH: Protamine 1mg/100U; LMWH: Protamine Partial (1mg/1mg Enoxaparin)
+- Q: What is Pregnancy of Hematology?
+  A: LMWH Preferred; Therapeutic 1mg/kg BD; Anti-Xa Monitoring; Warfarin Contraindicated (Weeks 6-12)
+- Q: What is Renal Adjustment of Hematology?
+  A: Enoxaparin CrCl<30: 20mg OD Prophylactic; Fondaparinux Contraindicated CrCl<20
+- Q: What is Bridging of Hematology?
+  A: High Risk Only (Mech Mitral, VTE<3mo, CHA₂DS₂-VASc≥5); LMWH 1mg/kg BD, Stop 24h Pre-op
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Anticoagulation → Heparin**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

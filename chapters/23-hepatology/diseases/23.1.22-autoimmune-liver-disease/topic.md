@@ -150,3 +150,82 @@ By the end of this note you should be able to:
 
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Autoimmune Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (32 generated)
+
+- Q: What is the definition of Autoimmune Liver Disease?
+  A: Autoimmune Liver Disease = AIH, PBC, PSC + Overlap Syndromes — AIH simplified criteria (ANA/SMA/LKM1, IgG, histology), PBC (AMA, ALP, UDCA 13-15mg/kg, OCA, response criteria), PSC (MRCP beading, IBD link, cholangiocarcinoma surveillance), Overlap syndromes (Paris criteria), IgG4-related cholangitis.
+- Q: What is 1. Biochemistry of Autoimmune Liver Disease?
+  A: ALP >1.5× ULN (persistent >6 months)
+- Q: What is 2. Autoantibody of Autoimmune Liver Disease?
+  A: AMA positive (M2 subtype, ≥1:40)
+- Q: What is 3. Histology (if needed) of Autoimmune Liver Disease?
+  A: Florid duct lesion (non-suppurative destructive cholangitis)
+- Q: What is Osteoporosis of Autoimmune Liver Disease?
+  A: DEXA scan at diagnosis, then q2-3yrs; Calcium 1g + Vit D 800-1000IU daily
+- Q: What is Fat-soluble vitamin deficiency of Autoimmune Liver Disease?
+  A: Check A, D, E, K annually; supplement if deficient
+- Q: What is HCC Surveillance of Autoimmune Liver Disease?
+  A: If cirrhosis: 6-monthly US ± AFP
+- Q: What is Portal Hypertension of Autoimmune Liver Disease?
+  A: Screen for varices if cirrhosis; SBP risk if ascites
+- Q: How is Autoimmune Liver Disease classified?
+  A: Ulcerative Colitis (80-90%), Crohn's (5-10%)
+- Q: What is PSC ↑ Risk of of Autoimmune Liver Disease?
+  A: Colorectal Cancer (if UC extent >left colon)
+- Q: What is Surveillance of Autoimmune Liver Disease?
+  A: Colonoscopy q1-2yrs (chromoendoscopy + targeted biopsies)
+- Q: What is Liver Disease of Autoimmune Liver Disease?
+  A: PSC may precede IBD diagnosis by years
+- Q: What is UDCA of Autoimmune Liver Disease?
+  A: High-dose (28-30mg/kg) — No mortality benefit (may worsen outcomes in some studies); not routinely recommended
+- Q: What is ERCP of Autoimmune Liver Disease?
+  A: Dominant stricture dilation/stenting (symptomatic, cholangitis, abnormal LFTs)
+- Q: What is Cholangiocarcinoma (CCA) Surveillance of Autoimmune Liver Disease?
+  A: Annual MRI/MRCP + CA19-9 (sensitivity limited); ERCP + brush cytology if dominant stricture
+- Q: What is Liver Transplant of Autoimmune Liver Disease?
+  A: Only curative option; 5-yr survival ~85%; Recurrence ~20-30%
+- Q: What is IBD Surveillance of Autoimmune Liver Disease?
+  A: Colonoscopy q1-2yr chromoendoscopy if UC >left colon
+- Q: What is 1. Biochemistry of Autoimmune Liver Disease?
+  A: ALP >1.5× ULN (persistent >6 months)
+- Q: What is 2. Autoantibody of Autoimmune Liver Disease?
+  A: AMA positive (M2 subtype, ≥1:40)
+- Q: What is 3. Histology (if needed) of Autoimmune Liver Disease?
+  A: Florid duct lesion (non-suppurative destructive cholangitis)
+- Q: What is Osteoporosis of Autoimmune Liver Disease?
+  A: DEXA scan at diagnosis, then q2-3yrs; Calcium 1g + Vit D 800-1000IU daily
+- Q: What is Fat-soluble vitamin deficiency of Autoimmune Liver Disease?
+  A: Check A, D, E, K annually; supplement if deficient
+- Q: What is HCC Surveillance of Autoimmune Liver Disease?
+  A: If cirrhosis: 6-monthly US ± AFP
+- Q: What is Portal Hypertension of Autoimmune Liver Disease?
+  A: Screen for varices if cirrhosis; SBP risk if ascites
+- Q: How is Autoimmune Liver Disease classified?
+  A: Ulcerative Colitis (80-90%), Crohn's (5-10%)
+- Q: What is PSC ↑ Risk of of Autoimmune Liver Disease?
+  A: Colorectal Cancer (if UC extent >left colon)
+- Q: What is Surveillance of Autoimmune Liver Disease?
+  A: Colonoscopy q1-2yrs (chromoendoscopy + targeted biopsies)
+- Q: What is UDCA of Autoimmune Liver Disease?
+  A: High-dose (28-30mg/kg) — No mortality benefit (may worsen outcomes in some studies); not routinely recommended
+- Q: What is ERCP of Autoimmune Liver Disease?
+  A: Dominant stricture dilation/stenting (symptomatic, cholangitis, abnormal LFTs)
+- Q: What is Cholangiocarcinoma (CCA) Surveillance of Autoimmune Liver Disease?
+  A: Annual MRI/MRCP + CA19-9 (sensitivity limited); ERCP + brush cytology if dominant stricture
+- Q: What is Liver Transplant of Autoimmune Liver Disease?
+  A: Only curative option; 5-yr survival ~85%; Recurrence ~20-30%
+- Q: What is IBD Surveillance of Autoimmune Liver Disease?
+  A: Colonoscopy q1-2yr chromoendoscopy if UC >left colon
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Liver Disease?**
+   A. **Autoimmune Liver Disease = AIH, PBC, PSC + Overlap Syndromes — AIH simplified criteria (ANA/SMA/LKM1, IgG, histology), PBC (AMA, ALP, UDCA 13-15mg/kg, OCA, response criteria), PSC (MRCP beading, IBD l**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Liver Disease
+   C. A complication seen late in the disease course of Autoimmune Liver Disease
+   D. A condition that mimics Autoimmune Liver Disease but has a different underlying cause
+

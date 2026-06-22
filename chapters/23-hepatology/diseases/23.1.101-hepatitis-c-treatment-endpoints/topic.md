@@ -274,3 +274,44 @@ mindmap
 - [[Viral Hepatitis/Hepatitis C decompensated cirrhosis management|HCV Decompensated]]
 - [[Viral Hepatitis/Hepatitis C renal impairment|HCV Renal]]
 - [[Viral Hepatitis/Hepatitis C post-SVR follow-up|Post-SVR]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: # HCV Treatment Endpoints: SVR12, SVR24, Relapse & Failure
+- Q: What is SVR12 of Viral Hepatitis?
+  A: HCV RNA undetectable 12w post-treatment = CURE
+- Q: What is SVR24 of Viral Hepatitis?
+  A: Historical; SVR12 sufficient (>99% concordance)
+- Q: How is Viral Hepatitis classified?
+  A: Non-response (never neg), Breakthrough (reappears on-tx), Relapse (reappears post-tx)
+- Q: How is Viral Hepatitis monitored?
+  A: Baseline RNA, Week 4 (optional), EOT RNA, SVR12 RNA (Primary Endpoint)
+- Q: What is Relapse Rate of Viral Hepatitis?
+  A: 1-3% with modern pan-genotypic DAAs
+- Q: How is Viral Hepatitis managed?
+  A: SOF/VEL/VOX 12w for most DAA failures
+- Q: What is the investigation of choice for Viral Hepatitis?
+  A: Not routine; Only for retreatment failures
+- Q: What is Late Relapse vs Reinfection of Viral Hepatitis?
+  A: Reinfection = New exposure (PWID, Dialysis); Late Relapse = Same strain (<1%)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **# HCV Treatment Endpoints: SVR12, SVR24, Relapse & Failure**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Viral Hepatitis presents with: SVR12 — HCV RNA undetectable 12 weeks post-treatment; SVR24 — HCV RNA undetectable 24 weeks post-treatment; RVR (Rapid Virologic Response) — HCV RNA undetectable at Week 4 on-treatment. What is the most likely diagnosis?
+   A. **Viral Hepatitis**
+   B. A condition that mimics Viral Hepatitis but is not the same entity
+   C. A complication of Viral Hepatitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Viral Hepatitis
+

@@ -272,3 +272,72 @@ mindmap
 - [[Portal Hypertension and Complications/Gastric varices (glue injection)|Gastric Varices]]
 - [[Portal Hypertension and Complications/Varices|Varices Overview]]
 - [[Portal Hypertension and Complications/Screening endoscopy|Screening Endoscopy]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (27 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: A[Survived Acute Variceal Bleed] --> B[Day 5-7: Start NSBB]
+- Q: How is Portal Hypertension and Complications managed?
+  A: Rebleeding despite NSBB + EVL (2+ episodes)
+- Q: What is Failed EVL eradication of Portal Hypertension and Complications?
+  A: Unable to eradicate after 4-6 sessions
+- Q: What is NSBB intolerance of Portal Hypertension and Complications?
+  A: Cannot tolerate NSBB + EVL failed
+- Q: What is Child-Pugh B/C of Portal Hypertension and Complications?
+  A: High rebleeding risk, transplant candidate
+- Q: What is Early TIPS (in acute bleed) of Portal Hypertension and Complications?
+  A: Already covered in acute bleed — these patients already have TIPS
+- Q: What is Fatigue / Exercise intolerance of Portal Hypertension and Complications?
+  A: Reduce dose; switch to carvedilol
+- Q: What is Hypotension / Dizziness of Portal Hypertension and Complications?
+  A: Reduce dose; ensure euvolemia
+- Q: What is Erectile dysfunction of Portal Hypertension and Complications?
+  A: Counsel; consider switch
+- Q: What is Bronchospasm of Portal Hypertension and Complications?
+  A: Stop NSBB → EVL alone or TIPS
+- Q: What is Bradycardia (HR<50) of Portal Hypertension and Complications?
+  A: Reduce dose; stop if persistent
+- Q: How is Portal Hypertension and Complications managed?
+  A: Rebleeding despite NSBB + EVL (2+ episodes)
+- Q: What is Failed EVL eradication of Portal Hypertension and Complications?
+  A: Unable to eradicate after 4-6 sessions
+- Q: What is NSBB intolerance of Portal Hypertension and Complications?
+  A: Cannot tolerate NSBB + EVL failed
+- Q: What is Child-Pugh B/C of Portal Hypertension and Complications?
+  A: High rebleeding risk, transplant candidate
+- Q: What is Fatigue / Exercise intolerance of Portal Hypertension and Complications?
+  A: Reduce dose; switch to carvedilol
+- Q: What is Hypotension / Dizziness of Portal Hypertension and Complications?
+  A: Reduce dose; ensure euvolemia
+- Q: What is Erectile dysfunction of Portal Hypertension and Complications?
+  A: Counsel; consider switch
+- Q: What is Bronchospasm of Portal Hypertension and Complications?
+  A: Stop NSBB → EVL alone or TIPS
+- Q: What is Standard of care of Portal Hypertension and Complications?
+  A: NSBB + EVL combination (not monotherapy)
+- Q: What is the dose of Portal Hypertension and Complications?
+  A: Propranolol → HR 55-60
+- Q: What is EVL schedule of Portal Hypertension and Complications?
+  A: q2-4 weeks until eradication
+- Q: What is Surveillance of Portal Hypertension and Complications?
+  A: 6-12 monthly after eradication
+- Q: What is Portal Hypertension and Complications indicated for?
+  A: Rebleed on combo therapy / Failed eradication / NSBB intolerance
+- Q: What is TIPS vs EVL of Portal Hypertension and Complications?
+  A: TIPS: lower rebleed, higher HE
+- Q: What is NSBB intolerance of Portal Hypertension and Complications?
+  A: Reduce dose → switch to carvedilol → stop → EVL alone/TIPS
+- Q: What is Gastric varices of Portal Hypertension and Complications?
+  A: Glue primary for GOV2/IGV1
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **A[Survived Acute Variceal Bleed] --> B[Day 5-7: Start NSBB]**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+

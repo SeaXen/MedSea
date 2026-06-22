@@ -343,3 +343,28 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Hip and trochanteric bursitis]] · [[Elbow disorders]] · [[Knee disorders]] · [[Regional soft tissue rheumatism]]
+---
+
+> Auto-generated study sections for "Soft Tissue Rheumatism and Chronic Pain Syndromes" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Shoulder pain = 3rd most common MSK complaint.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Soft Tissue Rheumatism and Chronic Pain Syndromes?**
+   A. **Shoulder pain = 3rd most common MSK complaint.**
+   B. An unrelated condition not matching the clinical picture of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   C. A complication seen late in the disease course of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   D. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Soft Tissue Rheumatism and Chronic Pain Syndromes presents with: Subacromial Bursa — Reduce friction; Long Head of Biceps — Elbow flexion, shoulder stabilisation; AC Joint — Scapular rotation, force transmission. What is the most likely diagnosis?
+   A. **Soft Tissue Rheumatism and Chronic Pain Syndromes**
+   B. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but is not the same entity
+   C. A complication of Soft Tissue Rheumatism and Chronic Pain Syndromes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Soft Tissue Rheumatism and Chronic Pain Syndromes
+

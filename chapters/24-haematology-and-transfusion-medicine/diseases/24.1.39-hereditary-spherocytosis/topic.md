@@ -320,3 +320,54 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haemolytic Anaemias → Hereditary Spherocytosis
+- Q: What is Inheritance of Hematology?
+  A: AD 75% (mild-moderate), AR 25% (severe)
+- Q: What is Protein Defects of Hematology?
+  A: Spectrin (α/β) 40-50%, Ankyrin 40-50%, Band 3 (SLC4A1) 15-20%, Protein 4.2 (EPB42) 5%
+- Q: What is the pathogenesis of Hematology?
+  A: Loss of membrane surface area → spherical shape → splenic trapping → haemolysis
+- Q: What is Clinical Spectrum of Hematology?
+  A: Silent carrier → Mild (Hb 11-15) → Moderate (Hb 8-11) → Severe (Hb <8, transfusion-dependent)
+- Q: What is Hematology indicated for?
+  A: Moderate-Severe HS, symptomatic anaemia, gallstones, growth failure, quality of life
+- Q: What is Timing of Hematology?
+  A: Elective age ≥6 years (immune maturity); Delay if possible (OPSI risk highest <5yr)
+- Q: What is Pre-op of Hematology?
+  A: Vaccines 2 weeks before; Pneumococcal, Meningococcal, Hib; Penicillin prophylaxis post-op
+- Q: What is Procedure of Hematology?
+  A: Laparoscopic preferred; Total splenectomy (partial preserves some immune function)
+- Q: What is the prognosis of Hematology?
+  A: Normal Hb, retics, bilirubin; Spherocytes persist (but no splenic trapping)
+- Q: What is Hematology indicated for?
+  A: Moderate-Severe HS, symptomatic anaemia, gallstones, growth failure, quality of life
+- Q: What is Timing of Hematology?
+  A: Elective age ≥6 years (immune maturity); Delay if possible (OPSI risk highest <5yr)
+- Q: What is Pre-op of Hematology?
+  A: Vaccines 2 weeks before; Pneumococcal, Meningococcal, Hib; Penicillin prophylaxis post-op
+- Q: What is Procedure of Hematology?
+  A: Laparoscopic preferred; Total splenectomy (partial preserves some immune function)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haemolytic Anaemias → Hereditary Spherocytosis**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Inheritance — AD 75% (mild-moderate), AR 25% (severe); Protein Defects — Spectrin (α/β) 40-50%, Ankyrin 40-50%, Band 3 (SLC4A1) 15-20%, Protein 4.2 (EPB42) 5%; Pathophysiology — Loss of membrane surface area → spherical shape → splenic trapping → haemolysis. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

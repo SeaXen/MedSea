@@ -479,3 +479,50 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[Drugs in rheumatology]] · [[Investigations in rheumatology]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: Cryoglobulinemic vasculitis = small-to-medium vessel immune complex vasculitis caused by cryoglobulins (immunoglobulins that precipitate at <37°C and redissolve on warming).
+- Q: What is Cryoglobulins of Vasculitis?
+  A: Immunoglobulins that precipitate at <37°C and redissolve on warming
+- Q: How is Vasculitis classified?
+  A: Monoclonal Ig; no HCV, no complement; hyperviscosity; haematological disease (WM, MM)
+- Q: What is Meltzer's triad of Vasculitis?
+  A: Purpura + arthralgia + weakness (mixed cryoglobulinemia)
+- Q: What is HCV → mixed cryoglobulinemia → vasculitis of Vasculitis?
+  A: Most common pathway
+- Q: What is Lab hallmark of Vasculitis?
+  A: Low C4 (classical complement consumption); positive RF; low C3 mild
+- Q: What is Cryocrit of Vasculitis?
+  A: Draw blood warm (37°C); do not refrigerate; transport warm
+- Q: What is Renal of Vasculitis?
+  A: MPGN type I (50%); proteinuria, slowly progressive; subendothelial deposits, IgM/IgG/C3
+- Q: What is Skin of Vasculitis?
+  A: Leukocytoclastic vasculitis (palpable purpura, lower legs)
+- Q: What is Nerve of Vasculitis?
+  A: Mononeuritis multiplex (most common), sensory polyneuropathy
+- Q: How is Vasculitis managed?
+  A: DAAs (sofosbuvir-based, 12 weeks) = first-line; >95% SVR
+- Q: What is the prognosis of Vasculitis?
+  A: 5y survival 90% (DAAs era); lymphoma risk ↑35×
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **Cryoglobulinemic vasculitis = small-to-medium vessel immune complex vasculitis caused by cryoglobulins (immunoglobulins that precipitate at <37°C and redissolve on warming).**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Cryoglobulins = immunoglobulins (or immunoglobulin complexes) that precipitate in vitro at temperatures below 37°C and redissolve on warming. In vivo, they deposit in small/medium vessels, fix complement, and cause immune-complex vasculitis.; Type I (monoclonal) — Single monoclonal Ig (IgM, IgG, or IgA); Type II (mixed, monoclonal) — Monoclonal IgM (with RF activity) + polyclonal IgG. What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

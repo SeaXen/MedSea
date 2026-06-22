@@ -333,3 +333,114 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (44 generated)
+
+- Q: What is Temporal of Hematology?
+  A: Onset 5-14 days after drug start (or hours if re-exposure)
+- Q: What is Response of Hematology?
+  A: Platelet recovery within 7-10 days of drug cessation
+- Q: What is Exclusion of Hematology?
+  A: No other cause (ITP, TTP, HIT, DIC, Sepsis, Malignancy)
+- Q: What is Rechallenge of Hematology?
+  A: Recurrence on re-exposure (if ethically feasible)
+- Q: What is the mechanism of Hematology?
+  A: Anti-PF4/Heparin IgG → Platelet activation
+- Q: What is 4Ts Score of Hematology?
+  A: Thrombocytopenia, Timing, Thrombosis, oTher
+- Q: What is the investigation of choice for Hematology?
+  A: PF4/Heparin ELISA → SRA
+- Q: How is Hematology managed?
+  A: STOP ALL Heparin → Argatroban/Bivalirudin/Fondaparinux/DOAC
+- Q: What is the mechanism of Hematology?
+  A: Immune complex (Drug-Ab binds FcγRIIa on platelets)
+- Q: What is Onset of Hematology?
+  A: Hours (re-exposure); 5-10 days (first exposure)
+- Q: What is Severity of Hematology?
+  A: Profound thrombocytopenia (<10), Often Pancytopenia
+- Q: How is Hematology managed?
+  A: STOP DRUG, Platelet transfusion if bleeding, Avoid forever
+- Q: What is the mechanism of Hematology?
+  A: Myelosuppression (Mitochondrial protein synthesis inhibition)
+- Q: What is Onset of Hematology?
+  A: >2 weeks (dose/duration dependent)
+- Q: What are the clinical features of Hematology?
+  A: Reversible thrombocytopenia, Also Anaemia, Neutropenia
+- Q: How is Hematology managed?
+  A: Stop or Reduce dose, Platelets recover in 1-2 weeks
+- Q: What is the mechanism of Hematology?
+  A: Autoantibody induction (IgG against GPIIb/IIIa)
+- Q: What is Onset of Hematology?
+  A: Months (Cumulative dose)
+- Q: How is Hematology managed?
+  A: STOP DRUG, Platelets recover in 2-4 weeks
+- Q: What is Temporal of Hematology?
+  A: Onset 5-14 days after drug start (or hours if re-exposure)
+- Q: What is Response of Hematology?
+  A: Platelet recovery within 7-10 days of drug cessation
+- Q: What is Exclusion of Hematology?
+  A: No other cause (ITP, TTP, HIT, DIC, Sepsis, Malignancy)
+- Q: What is Rechallenge of Hematology?
+  A: Recurrence on re-exposure (if ethically feasible)
+- Q: What is the mechanism of Hematology?
+  A: Anti-PF4/Heparin IgG → Platelet activation
+- Q: What is 4Ts Score of Hematology?
+  A: Thrombocytopenia, Timing, Thrombosis, oTher
+- Q: What is the investigation of choice for Hematology?
+  A: PF4/Heparin ELISA → SRA
+- Q: What is the mechanism of Hematology?
+  A: Immune complex (Drug-Ab binds FcγRIIa on platelets)
+- Q: What is Onset of Hematology?
+  A: Hours (re-exposure); 5-10 days (first exposure)
+- Q: What is Severity of Hematology?
+  A: Profound thrombocytopenia (<10), Often Pancytopenia
+- Q: What is the mechanism of Hematology?
+  A: Myelosuppression (Mitochondrial protein synthesis inhibition)
+- Q: What is Onset of Hematology?
+  A: >2 weeks (dose/duration dependent)
+- Q: What are the clinical features of Hematology?
+  A: Reversible thrombocytopenia, Also Anaemia, Neutropenia
+- Q: What is the mechanism of Hematology?
+  A: Autoantibody induction (IgG against GPIIb/IIIa)
+- Q: What is Onset of Hematology?
+  A: Months (Cumulative dose)
+- Q: How is Hematology managed?
+  A: STOP DRUG, Platelets recover in 2-4 weeks
+- Q: What is the definition of Hematology?
+  A: Thrombocytopenia + Temporal drug relationship (5-14d) + Recovery on withdrawal
+- Q: What is the mechanism of Hematology?
+  A: Immune (Hapten, Autoantibody, Immune complex) vs Myelosuppression
+- Q: What is Top Drugs of Hematology?
+  A: Heparin (HIT), Quinine, Vancomycin, Linezolid, Sulfonamides, Gold, Penicillamine, Rifampicin, Ticlopidine
+- Q: What is the investigation of choice for Hematology?
+  A: Temporal (5-14d), Exclusion, Recovery on withdrawal (7-10d)
+- Q: How is Hematology managed?
+  A: STOP DRUG → Monitor → Platelets if bleeding → Avoid forever
+- Q: What is HIT of Hematology?
+  A: Special category → PF4/heparin Ab, Thrombosis, STOP Heparin, Argatroban
+- Q: What is Quinine of Hematology?
+  A: Immune complex, Profound thrombocytopenia, Avoid re-exposure
+- Q: What is Linezolid of Hematology?
+  A: Myelosuppression (>2wks), Reversible, Also anaemia/neutropenia
+- Q: What is Rechallenge of Hematology?
+  A: CONTRAINDICATED (Rapid, severe recurrence)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Platelet Disorders → Drug-induced Thrombocytopenia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Immune-mediated — Drug-dependent antibody binds platelet GP → Destruction; Hapten — Drug binds platelet membrane → Neoantigen → Antibody; Autoantibody Induction — Drug induces true autoantibody against platelet GP. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

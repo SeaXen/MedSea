@@ -278,3 +278,50 @@ mindmap
 - [[Acute Liver Failure/Paracetamol-induced hepatotoxicity|Paracetamol ALF]]
 - [[Acute Liver Failure/Non-paracetamol drug-induced liver injury|Non-PCM DILI ALF]]
 - [[Liver Transplantation/Liver Transplantation|Liver Transplant]]
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: ### Original (1989) — Still Used for Transplant Listing
+- Q: What is Factor V of Acute Liver Failure?
+  A: <20% of normal (if <30y)
+- Q: What is AND of Acute Liver Failure?
+  A: Hepatic Encephalopathy Grade III/IV
+- Q: What is Factor V of Acute Liver Failure?
+  A: <20% of normal (if <30y)
+- Q: What is AND of Acute Liver Failure?
+  A: Hepatic Encephalopathy Grade III/IV
+- Q: What is Paracetamol KCC of Acute Liver Failure?
+  A: pH <7.30 OR (PT>100s + Cr>300 + HE Grade III/IV)
+- Q: What is Non-Paracetamol KCC of Acute Liver Failure?
+  A: PT>100s OR Any 3 of: Age<10/>40, Aetiology, Interval>7d, PT>50s, Bil>300
+- Q: What is Memory Aid (PCM) of Acute Liver Failure?
+  A: "pH or PT/Cr/HE"
+- Q: What is Memory Aid (Non-PCM) of Acute Liver Failure?
+  A: "PT or AAIII" (Age, Aetiology, Interval, INR, Icterus)
+- Q: What is Action if Met of Acute Liver Failure?
+  A: Urgent Transplant Referral (Super-urgent listing)
+- Q: What is Limitation of Acute Liver Failure?
+  A: High NPV (>90%), Low PPV (~50-60%)
+- Q: What is Modern Alternative of Acute Liver Failure?
+  A: CLIF-C ACLF for ACLF; MELD for chronic
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **### Original (1989) — Still Used for Transplant Listing**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Acute Liver Failure presents with: Arterial pH — <7.30; Prothrombin Time — >100 seconds; Creatinine — >300 μmol/L (3.4 mg/dL). What is the most likely diagnosis?
+   A. **Acute Liver Failure**
+   B. A condition that mimics Acute Liver Failure but is not the same entity
+   C. A complication of Acute Liver Failure rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Acute Liver Failure
+

@@ -90,3 +90,50 @@ flowchart TD
 - **Chapter MOC**: [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related**: [[Jaundice and LFT Interpretation]], [[Drug-Induced Liver Injury]], [[Viral Hepatitis]], [[Autoimmune Liver Disease]], [[Liver Transplantation]], [[Hepatology in Special Situations/Acute fatty liver of pregnancy|Acute fatty liver of pregnancy]], [[Inherited and Metabolic Liver Disease/Wilson disease|Wilson disease]]
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (16 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: INR ≥1.5 + any degree of encephalopathy in patient without pre-existing liver disease, illness <26 weeks
+- Q: What is ALF vs ACLF of Acute Liver Failure?
+  A: ALF: no prior liver disease, illness <26 weeks; ACLF: chronic liver disease + acute decompensation + organ failure(s)
+- Q: What is Common aetiologies of Acute Liver Failure?
+  A: Paracetamol (UK #1), Idiopathic, Drug-induced (non-paracetamol), Viral (A, B, E), Autoimmune, Wilson, AFLP
+- Q: What is King's College Criteria (Paracetamol) of Acute Liver Failure?
+  A: pH <7.30 (arterial) OR ALL THREE: PT >100s (INR >6.5) + Cr >300 µmol/L + Grade III/IV HE
+- Q: What is King's College Criteria (Non-paracetamol) of Acute Liver Failure?
+  A: PT >100s (INR >6.5) OR ANY THREE: Age <10 or >40 + Aetiology (non-A, non-B hepatitis, halothane, idiosyncratic drugs) + Jaundice to encephalopathy >7 days + PT >50s (INR >3.5) + Bilirubin >300 µmol/L
+- Q: What is CLIF-C ACLF Score of Acute Liver Failure?
+  A: Organ failures: Liver (bil >12), Kidney (Cr >2 or RRT), Brain (HE grade III/IV), Coagulation (INR >2.5), Circulation (vasopressors), Respiration (PaO2/FiO2 <200 or SpO2/FiO2 <214 or MV)
+- Q: What is ACLF Grades of Acute Liver Failure?
+  A: Grade 1: 1 OF (kidney) or 1 OF (non-kidney) + Cr 1.5-1.9 or HE I-II; Grade 2: 2 OFs; Grade 3: ≥3 OFs
+- Q: What is Paracetamol NAC of Acute Liver Failure?
+  A: IV 3-bag regimen: 150mg/kg/1h → 50mg/kg/4h → 100mg/kg/16h (total 300mg/kg/21h); continue if INR improving/hepatic encephalopathy
+- Q: What is the definition of Acute Liver Failure?
+  A: INR ≥1.5 + encephalopathy, no prior liver disease, illness <26 weeks
+- Q: What causes Acute Liver Failure?
+  A: Paracetamol (UK #1), Idiopathic, Non-paracetamol DILI, Viral (A, B, E), Autoimmune, Wilson, AFLP
+- Q: What is King's College (Paracetamol) of Acute Liver Failure?
+  A: pH <7.30 OR (PT >100s + Cr >300 + Grade III/IV HE)
+- Q: What is King's College (Non-paracetamol) of Acute Liver Failure?
+  A: PT >100s OR any 3 of: age <10/>40, non-A non-B aetiology, jaundice-HE >7d, PT >50s, bilirubin >300
+- Q: What is NAC Regimen of Acute Liver Failure?
+  A: 150mg/kg/1h → 50mg/kg/4h → 100mg/kg/16h = 300mg/kg/21h (continue if INR/HE not improving)
+- Q: What is CLIF-C ACLF of Acute Liver Failure?
+  A: 6 organ systems (liver, kidney, brain, coagulation, circulation, respiration); score predicts 28-day mortality
+- Q: What is ACLF Grades of Acute Liver Failure?
+  A: Grade 1: 1 OF (kidney) or 1 OF + Cr 1.5-1.9/HE I-II; Grade 2: 2 OFs; Grade 3: ≥3 OFs
+- Q: What is Transplant referral of Acute Liver Failure?
+  A: Early if King's College met, CLIF-C ACLF ≥2, lactate >3.5, sepsis, renal failure
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **[!tip] FCPS/MRCP Priority: HIGH — ICU emergency; King's College Criteria, CLIF-C ACLF, transplant referral are core viva topics.**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+

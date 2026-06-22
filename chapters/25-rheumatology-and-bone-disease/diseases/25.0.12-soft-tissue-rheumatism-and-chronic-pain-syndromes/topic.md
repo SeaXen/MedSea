@@ -45,3 +45,20 @@ Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - 
 - [[Regional soft tissue rheumatism]] | [[Shoulder disorders]] | [[Elbow disorders]] | [[Hip bursitis]] | [[Knee disorders]] | [[Foot disorders]] | [[Fibromyalgia]] | [[Chronic widespread pain]] | [[CRPS]]
 - Parent MOC: [[../Rheumatology MOC|Rheumatology MOC]]
 - Chapter map: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
+---
+
+> Auto-generated study sections for "Rheumatology" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Rheumatology?
+  A: # Soft Tissue Rheumatism and Chronic Pain Syndromes
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Rheumatology?**
+   A. **# Soft Tissue Rheumatism and Chronic Pain Syndromes**
+   B. An unrelated condition not matching the clinical picture of Rheumatology
+   C. A complication seen late in the disease course of Rheumatology
+   D. A condition that mimics Rheumatology but has a different underlying cause
+

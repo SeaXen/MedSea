@@ -434,3 +434,136 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Pseudogout (CPPD deposition disease)]] · [[Urate-lowering therapy]]
+---
+
+> Auto-generated study sections for "Crystal Arthropathies" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (55 generated)
+
+- Q: What is the definition of Crystal Arthropathies?
+  A: Crystal deposition disease — monosodium urate (MSU) crystals in joints/soft tissues → acute flares + chronic tophaceous gout if untreated
+- Q: What is the epidemiology of Crystal Arthropathies?
+  A: 1-4% adults (rising); most common inflammatory arthritis in men
+- Q: What is Peak Onset of Crystal Arthropathies?
+  A: Men: 40-60 years; Women: postmenopausal (60+) — oestrogen is uricosuric
+- Q: What is Sex Ratio of Crystal Arthropathies?
+  A: M:F = 4:1 (pre-menopausal); equalises post-menopause
+- Q: What causes Crystal Arthropathies?
+  A: Hyperuricaemia (>360 µmol/L), metabolic syndrome (obesity, HTN, DM, dyslipidaemia), CKD, diuretics (thiazide, loop), alcohol (beer > spirits > wine), high-purine diet (red meat, seafood, fructose), genetics (SLC2A9, ABCG2, SLC22A12)
+- Q: What is Solubility threshold of Crystal Arthropathies?
+  A: ~360 µmol/L (6 mg/dL) at 37°C, pH 7.4 — lower in cooler joints (1st MTP, ear)
+- Q: What is MSU crystals of Crystal Arthropathies?
+  A: Negatively birefringent needles (yellow parallel to compensator)
+- Q: What is NLRP3 inflammasome of Crystal Arthropathies?
+  A: MSU → phagocytosis → lysosomal damage → K+ efflux → NLRP3 activation → caspase-1 → IL-1β maturation
+- Q: What is IL-1β of Crystal Arthropathies?
+  A: Master cytokine of gout flare → neutrophil recruitment, vasodilation, pain
+- Q: What is Tophi of Crystal Arthropathies?
+  A: Chronic MSU deposits + foreign body reaction (macrophages, giant cells, fibrosis)
+- Q: What is Onset of Crystal Arthropathies?
+  A: Explosive — maximal severity within 6-12 hours (often wakes at night)
+- Q: What is Joint of Crystal Arthropathies?
+  A: Monoarticular (90%) — 1st MTP (podagra) 50-70%, ankle, knee, wrist, elbow, fingers
+- Q: What is Signs of Crystal Arthropathies?
+  A: Intense pain, erythema (shiny, dusky red), swelling, warmth, exquisite tenderness — can mimic cellulitis/sepsis
+- Q: What is Systemic of Crystal Arthropathies?
+  A: Low-grade fever, leukocytosis, elevated CRP (inflammatory response)
+- Q: What is Duration of Crystal Arthropathies?
+  A: Self-limiting — 5-14 days untreated; resolves with "desquamation" of overlying skin
+- Q: What is Trigger of Crystal Arthropathies?
+  A: Trauma, surgery, illness, alcohol binge, large purine meal, start/change ULT, diuretic initiation
+- Q: What is Tophi of Crystal Arthropathies?
+  A: Chalky white deposits — helix of ear, olecranon, Achilles, prepatellar, finger pulps, 1st MTP
+- Q: What is Chronic arthritis of Crystal Arthropathies?
+  A: Persistent pain, stiffness, joint damage from tophi + erosions
+- Q: What is Erosions of Crystal Arthropathies?
+  A: "Punched-out" with overhanging edges (rat-bite), sclerotic margins, preserved joint space until late
+- Q: What are the complications of Crystal Arthropathies?
+  A: Joint destruction, nerve compression (carpal tunnel), skin ulceration/infection, renal stones (uric acid), CKD
+- Q: What is Uric acid nephrolithiasis of Crystal Arthropathies?
+  A: 10-25% gout; radiolucent stones; alkalinisation (urine pH >6.5) + hydration
+- Q: What is Chronic kidney disease of Crystal Arthropathies?
+  A: Urate crystal deposition in interstitium (urate nephropathy) — controversial contribution
+- Q: What are the complications of Crystal Arthropathies?
+  A: Nerve compression (carpal tunnel), skin ulceration, infection, tendon rupture
+- Q: What is Joint destruction of Crystal Arthropathies?
+  A: Chronic erosive arthropathy → disability
+- Q: What is Cardiovascular disease of Crystal Arthropathies?
+  A: Independent risk factor (inflammation, metabolic syndrome)
+- Q: What is Solubility threshold of Crystal Arthropathies?
+  A: ~360 µmol/L (6 mg/dL) at 37°C, pH 7.4 — lower in cooler joints (1st MTP, ear)
+- Q: What is MSU crystals of Crystal Arthropathies?
+  A: Negatively birefringent needles (yellow parallel to compensator)
+- Q: What is NLRP3 inflammasome of Crystal Arthropathies?
+  A: MSU → phagocytosis → lysosomal damage → K+ efflux → NLRP3 activation → caspase-1 → IL-1β maturation
+- Q: What is IL-1β of Crystal Arthropathies?
+  A: Master cytokine of gout flare → neutrophil recruitment, vasodilation, pain
+- Q: What is Tophi of Crystal Arthropathies?
+  A: Chronic MSU deposits + foreign body reaction (macrophages, giant cells, fibrosis)
+- Q: What is Onset of Crystal Arthropathies?
+  A: Explosive — maximal severity within 6-12 hours (often wakes at night)
+- Q: What is Joint of Crystal Arthropathies?
+  A: Monoarticular (90%) — 1st MTP (podagra) 50-70%, ankle, knee, wrist, elbow, fingers
+- Q: What is Signs of Crystal Arthropathies?
+  A: Intense pain, erythema (shiny, dusky red), swelling, warmth, exquisite tenderness — can mimic cellulitis/sepsis
+- Q: What is Systemic of Crystal Arthropathies?
+  A: Low-grade fever, leukocytosis, elevated CRP (inflammatory response)
+- Q: What is Duration of Crystal Arthropathies?
+  A: Self-limiting — 5-14 days untreated; resolves with "desquamation" of overlying skin
+- Q: What is Tophi of Crystal Arthropathies?
+  A: Chalky white deposits — helix of ear, olecranon, Achilles, prepatellar, finger pulps, 1st MTP
+- Q: What is Chronic arthritis of Crystal Arthropathies?
+  A: Persistent pain, stiffness, joint damage from tophi + erosions
+- Q: What is Erosions of Crystal Arthropathies?
+  A: "Punched-out" with overhanging edges (rat-bite), sclerotic margins, preserved joint space until late
+- Q: What is Uric acid nephrolithiasis of Crystal Arthropathies?
+  A: 10-25% gout; radiolucent stones; alkalinisation (urine pH >6.5) + hydration
+- Q: What is Chronic kidney disease of Crystal Arthropathies?
+  A: Urate crystal deposition in interstitium (urate nephropathy) — controversial contribution
+- Q: What are the complications of Crystal Arthropathies?
+  A: Nerve compression (carpal tunnel), skin ulceration, infection, tendon rupture
+- Q: What is Joint destruction of Crystal Arthropathies?
+  A: Chronic erosive arthropathy → disability
+- Q: What is Cardiovascular disease of Crystal Arthropathies?
+  A: Independent risk factor (inflammation, metabolic syndrome)
+- Q: What is Demographics of Crystal Arthropathies?
+  A: Men 40-60, women postmenopausal, M:F 4:1
+- Q: What is Acute Flare of Crystal Arthropathies?
+  A: Explosive onset (6-12h), 1st MTP (podagra) 50-70%, intense pain/erythema/warmth
+- Q: What is Gold Standard of Crystal Arthropathies?
+  A: Synovial fluid: MSU negatively birefringent needles (YELLOW parallel)
+- Q: What is Serum Urate of Crystal Arthropathies?
+  A: Target <300 µmol/L for ULT; normal during flare ≠ no gout (check later)
+- Q: What is X-ray (Chronic) of Crystal Arthropathies?
+  A: Punched-out erosions with overhanging edges (rat-bite), preserved JSN, tophi
+- Q: How is Crystal Arthropathies managed?
+  A: Colchicine low-dose (500mcg stat→1h→BD) OR NSAID OR Pred 30-35mg OR IA steroid
+- Q: What is Crystal Arthropathies indicated for?
+  A: ≥2 flares/yr, tophi, erosions, CKD, stones, young onset
+- Q: What is ULT Target of Crystal Arthropathies?
+  A: <300 µmol/L (5 mg/dL); <360 µmol/L if tophi
+- Q: What is Allopurinol of Crystal Arthropathies?
+  A: Start low (100mg) → go slow ↑ 100mg q2-4wk; HLA-B5801 screen high-risk; continue during flare
+- Q: What is Prophylaxis of Crystal Arthropathies?
+  A: Colchicine 500mcg BD ×6 months with ULT initiation
+- Q: What is Febuxostat of Crystal Arthropathies?
+  A: 2nd line (CV risk CARES trial); non-purine (OK in CKD)
+- Q: What is CPPD vs Gout Crystals of Crystal Arthropathies?
+  A: Gout = Yellow Needles (Negative); CPPD = Blue Rhomboids (Positive)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Crystal Arthropathies?**
+   A. **Gout is the most common inflammatory arthritis in men — acute monoarthritis (1st MTP), hyperuricaemia, MSU crystals, treat-to-target urate lowering.**
+   B. An unrelated condition not matching the clinical picture of Crystal Arthropathies
+   C. A complication seen late in the disease course of Crystal Arthropathies
+   D. A condition that mimics Crystal Arthropathies but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Crystal Arthropathies presents with: Definition — Crystal deposition disease — monosodium urate (MSU) crystals in joints/soft tissues → acute flares + chronic tophaceous gout if untreated; Prevalence — 1-4% adults (rising); most common inflammatory arthritis in men; Incidence — Increasing globally (ageing, obesity, metabolic syndrome, diuretics). What is the most likely diagnosis?
+   A. **Crystal Arthropathies**
+   B. A condition that mimics Crystal Arthropathies but is not the same entity
+   C. A complication of Crystal Arthropathies rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Crystal Arthropathies
+

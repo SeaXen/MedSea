@@ -567,3 +567,176 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[../Clinical Approach to Musculoskeletal Disease/Joint examination (GALS)|Joint examination (GALS)]] · [[../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]] · [[../Soft Tissue Rheumatism and Chronic Pain Syndromes/Complex regional pain syndrome|Complex regional pain syndrome]]
+---
+
+> Auto-generated study sections for "Soft Tissue Rheumatism and Chronic Pain Syndromes" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (79 generated)
+
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: # Regional Soft Tissue Rheumatism — Integrated Overview
+- Q: What is Demographics of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: F > M 3:1, 40-60y, diabetes (5×), thyroid disease, post-stroke/MI, post-mastectomy
+- Q: What is Phases of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Painful (2-9mo) → adhesive (4-12mo) → resolution (5-24mo); total 12-36mo
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Active = passive restriction; ER most limited (capsular pattern)
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Plain X-ray normal; MRI: capsular thickening, no rotator cuff tear
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: NSAIDs, intra-articular steroid (early, hydrodilatation), gentle mobilisation; arthrolysis (refractory)
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Rotator cuff tear (active < passive), OA (loss of passive + crepitus), septic (red, hot, fever)
+- Q: What is Pathology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Common extensor origin (ECRB) tendinopathy; degenerative, not inflammatory
+- Q: What is the epidemiology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: 30-50y; dominant arm; 1-3% adults; not just racquet sports (repetitive gripping, computer use)
+- Q: What are the clinical features of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral elbow pain radiating to forearm; weak grip
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Cozen's (resisted wrist extension + radial deviation → pain), Maudsley's (resisted middle finger extension)
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Usually clinical; ultrasound shows ECRB thickening/neovessels; MRI if unclear
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Physiotherapy (eccentric exercises); counterforce brace; activity modification; NSAIDs short-term; corticosteroid injection (short-term benefit only, avoid repeated); PRP (controversial); surgical release (refractory, 5%)
+- Q: What is the prognosis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Self-limiting in 80-90% over 6-24 months
+- Q: What is Pathology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tendinopathy of gluteus medius/minimus at trochanteric insertion + trochanteric bursitis
+- Q: What is the epidemiology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: F > M, 40-60y, obesity, OA, ITB tightness
+- Q: What are the clinical features of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral hip pain, worse lying on side, walking, stairs; referred down lateral thigh (pseudo-sciatica)
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tenderness over greater trochanter; pain on resisted abduction; FABER (may be uncomfortable); Ober's (ITB tightness)
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Hip OA (groin pain, limited IR), referred L4-5 radiculopathy, referred from lumbar spine (40% have lumbar pathology)
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Physiotherapy (gluteal strengthening, ITB stretching), weight loss, NSAIDs; corticosteroid injection (GTPS bursa, image-guided); shockwave (refractory)
+- Q: What is Pathology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Plantar fascia origin at medial calcaneal tubercle — repetitive microtrauma, degenerative
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Obesity, prolonged standing, pes planus/cavus, tight Achilles, runners
+- Q: What are the clinical features of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Worst first steps in morning (post-static dyskinesia), after prolonged sitting
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tenderness at medial calcaneal tubercle; windlass test (passive dorsiflexion of toes → pain)
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: X-ray: heel spur (incidental); US: thickened fascia (>4mm); MRI: oedema at origin
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Plantar fascia and Achilles stretching (gold standard), night splints, heel cups, ice, NSAIDs; shockwave (refractory); surgery (last resort, plantar fascia release)
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Fat pad contusion (deep, central heel), calcaneal stress fracture (focal, antalgic gait, MRI), tarsal tunnel (burning sole, Tinel), seronegative SpA enthesitis (Achilles/plantar in young)
+- Q: What is Pathology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Median nerve compression under flexor retinaculum at wrist
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pregnancy, hypothyroidism, RA, diabetes, obesity, acromegaly, vibration, amyloidosis
+- Q: What are the clinical features of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Numbness/tingling in thumb, index, middle, radial half of ring; nocturnal symptoms (shake hand — "flick sign"); pain radiates to forearm
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tinel's (tinel wrist → symptoms), Phalen's (wrist flexion 60s → symptoms); thenar wasting (late, severe); abductor pollicis brevis weakness
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Nerve conduction study (gold standard, also rules out proximal lesion — cervical radiculopathy, diabetic neuropathy)
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: C6 radiculopathy (neck pain, all of radial forearm), diabetic neuropathy, proximal median neuropathy (pronator syndrome)
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Night splint (neutral), activity modification, corticosteroid injection (carpal tunnel), treat underlying cause; surgical release (refractory, thenar wasting, NCS-confirmed)
+- Q: What is Demographics of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: F > M 3:1, 40-60y, diabetes (5×), thyroid disease, post-stroke/MI, post-mastectomy
+- Q: What is Phases of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Painful (2-9mo) → adhesive (4-12mo) → resolution (5-24mo); total 12-36mo
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Active = passive restriction; ER most limited (capsular pattern)
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Plain X-ray normal; MRI: capsular thickening, no rotator cuff tear
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: NSAIDs, intra-articular steroid (early, hydrodilatation), gentle mobilisation; arthrolysis (refractory)
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Rotator cuff tear (active < passive), OA (loss of passive + crepitus), septic (red, hot, fever)
+- Q: What is Pathology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Common extensor origin (ECRB) tendinopathy; degenerative, not inflammatory
+- Q: What is the epidemiology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: 30-50y; dominant arm; 1-3% adults; not just racquet sports (repetitive gripping, computer use)
+- Q: What are the clinical features of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral elbow pain radiating to forearm; weak grip
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Cozen's (resisted wrist extension + radial deviation → pain), Maudsley's (resisted middle finger extension)
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Usually clinical; ultrasound shows ECRB thickening/neovessels; MRI if unclear
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Physiotherapy (eccentric exercises); counterforce brace; activity modification; NSAIDs short-term; corticosteroid injection (short-term benefit only, avoid repeated); PRP (controversial); surgical release (refractory, 5%)
+- Q: What is Pathology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tendinopathy of gluteus medius/minimus at trochanteric insertion + trochanteric bursitis
+- Q: What is the epidemiology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: F > M, 40-60y, obesity, OA, ITB tightness
+- Q: What are the clinical features of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral hip pain, worse lying on side, walking, stairs; referred down lateral thigh (pseudo-sciatica)
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tenderness over greater trochanter; pain on resisted abduction; FABER (may be uncomfortable); Ober's (ITB tightness)
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Hip OA (groin pain, limited IR), referred L4-5 radiculopathy, referred from lumbar spine (40% have lumbar pathology)
+- Q: What is Pathology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Plantar fascia origin at medial calcaneal tubercle — repetitive microtrauma, degenerative
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Obesity, prolonged standing, pes planus/cavus, tight Achilles, runners
+- Q: What are the clinical features of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Worst first steps in morning (post-static dyskinesia), after prolonged sitting
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tenderness at medial calcaneal tubercle; windlass test (passive dorsiflexion of toes → pain)
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: X-ray: heel spur (incidental); US: thickened fascia (>4mm); MRI: oedema at origin
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Plantar fascia and Achilles stretching (gold standard), night splints, heel cups, ice, NSAIDs; shockwave (refractory); surgery (last resort, plantar fascia release)
+- Q: What is Pathology of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Median nerve compression under flexor retinaculum at wrist
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pregnancy, hypothyroidism, RA, diabetes, obesity, acromegaly, vibration, amyloidosis
+- Q: What are the clinical features of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Numbness/tingling in thumb, index, middle, radial half of ring; nocturnal symptoms (shake hand — "flick sign"); pain radiates to forearm
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tinel's (tinel wrist → symptoms), Phalen's (wrist flexion 60s → symptoms); thenar wasting (late, severe); abductor pollicis brevis weakness
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Nerve conduction study (gold standard, also rules out proximal lesion — cervical radiculopathy, diabetic neuropathy)
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: C6 radiculopathy (neck pain, all of radial forearm), diabetic neuropathy, proximal median neuropathy (pronator syndrome)
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Night splint (neutral), activity modification, corticosteroid injection (carpal tunnel), treat underlying cause; surgical release (refractory, thenar wasting, NCS-confirmed)
+- Q: What is Tendinopathy (not "tendinitis") of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Degenerative, not inflammatory; load management is curative; avoid repeated steroid in weight-bearing tendons
+- Q: What is Rotator cuff of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Painful arc (60-120°), Hawkins-Kennedy, Neer; full-thickness tear → surgery in young/traumatic; PT first in chronic
+- Q: What is Frozen shoulder of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: F:M 3:1, 40-60y, diabetes (5×), ER most limited, self-limiting 12-36mo
+- Q: What is Tennis elbow of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: ECRB tendinopathy; Cozen's test; eccentric exercises, avoid steroid (long-term worse)
+- Q: What is Olecranon bursitis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Septic until proven otherwise if hot/red/fever; aspirate
+- Q: What is GTPS (trochanteric bursitis) of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral hip pain, gluteus medius tendinopathy + bursa; obesity association; 40% have lumbar pathology
+- Q: What is Pes anserine bursitis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Medial knee pain below joint line, obese, OA
+- Q: What is Baker's cyst of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Popliteal swelling; rupture mimics DVT (pseudothrombophlebitis); treat underlying effusion
+- Q: What is Plantar fasciitis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Worst first steps in morning, medial calcaneal tenderness, stretching is gold standard
+- Q: What is Achilles tendinopathy of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Eccentric loading (Alfredson protocol) gold standard; avoid steroid; rupture → Simmonds positive
+- Q: What is CTS of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Median nerve compression; nocturnal symptoms, thenar wasting; night splint, steroid, surgical release; bilateral thenar wasting → amyloid
+- Q: What is Cubital tunnel of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Ulnar nerve; 4th/5th finger numbness, intrinsic weakness; night splint, surgical transposition
+- Q: What is Referred pain of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Hip → knee, lumbar → lateral hip, C-spine → shoulder, S1 → heel, gallbladder → shoulder tip
+- Q: What is Steroid caution of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Avoid in weight-bearing tendons (Achilles, patellar, PT) — rupture risk
+- Q: What is Red flags of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Septic, fracture, malignancy, cauda equina, neuro deficit, SpA in young
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Soft Tissue Rheumatism and Chronic Pain Syndromes?**
+   A. **# Regional Soft Tissue Rheumatism — Integrated Overview**
+   B. An unrelated condition not matching the clinical picture of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   C. A complication seen late in the disease course of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   D. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but has a different underlying cause
+

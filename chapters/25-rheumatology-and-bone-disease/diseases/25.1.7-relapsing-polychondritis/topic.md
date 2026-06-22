@@ -410,3 +410,124 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Granulomatosis with polyangiitis (GPA)]] · [[Drugs in rheumatology]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (49 generated)
+
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: RP = recurrent autoimmune inflammation of cartilage — ear (sparing lobules), nose (saddle nose), airway (laryngotracheal → stridor/airway emergency), joints, eyes, audiovestibular.
+- Q: What is Target of Autoimmune Rheumatic Diseases?
+  A: Type II collagen (major cartilage component) + matrilin-1
+- Q: What is the mechanism of Autoimmune Rheumatic Diseases?
+  A: T-cell mediated + anti-collagen antibodies → complement activation → chondrolysis
+- Q: What is Airway of Autoimmune Rheumatic Diseases?
+  A: Subglottic/tracheal chondritis → fibrosis, stenosis, collapse → life-threatening
+- Q: What is Associations of Autoimmune Rheumatic Diseases?
+  A: GPA (c-ANCA), MPA, Behçet's, SLE, RA, MDS — screen accordingly
+- Q: What is A of Autoimmune Rheumatic Diseases?
+  A: ≥3 McAdam features
+- Q: What is B of Autoimmune Rheumatic Diseases?
+  A: 1 McAdam feature + histological confirmation (cartilage biopsy: perichondral inflammation, chondrolysis)
+- Q: What is C of Autoimmune Rheumatic Diseases?
+  A: ≥2 McAdam features + response to steroids
+- Q: What is Appearance of Autoimmune Rheumatic Diseases?
+  A: Painful, red, swollen, tender — "cauliflower ear" late
+- Q: What is Key Differentiator of Autoimmune Rheumatic Diseases?
+  A: EARLOBES SPARED (no cartilage) — pathognomonic
+- Q: What is Course of Autoimmune Rheumatic Diseases?
+  A: Recurrent attacks → cartilage destruction → floppy ear
+- Q: What is Bilateral of Autoimmune Rheumatic Diseases?
+  A: Usually bilateral (asymmetric)
+- Q: What is Sites of Autoimmune Rheumatic Diseases?
+  A: Larynx (subglottic) > Trachea > Bronchi
+- Q: What are the clinical features of Autoimmune Rheumatic Diseases?
+  A: Hoarseness, dysphonia, cough, stridor, dyspnoea
+- Q: What are the complications of Autoimmune Rheumatic Diseases?
+  A: Airway stenosis/collapse — life-threatening
+- Q: What is PFTs of Autoimmune Rheumatic Diseases?
+  A: Fixed airflow obstruction (flow-volume loop truncation)
+- Q: What is CT of Autoimmune Rheumatic Diseases?
+  A: Circumferential mural thickening of trachea/bronchi
+- Q: What is Pattern of Autoimmune Rheumatic Diseases?
+  A: Non-erosive, polyarticular, migratory, seronegative (RF/CCP -ve)
+- Q: What is Joints of Autoimmune Rheumatic Diseases?
+  A: MCPs, PIPs, wrists, knees, ankles
+- Q: What is Sensorineural Hearing Loss of Autoimmune Rheumatic Diseases?
+  A: High-frequency, often permanent
+- Q: What is Tinnitus, Vertigo of Autoimmune Rheumatic Diseases?
+  A: Inner ear cartilage involvement
+- Q: What is Target of Autoimmune Rheumatic Diseases?
+  A: Type II collagen (major cartilage component) + matrilin-1
+- Q: What is the mechanism of Autoimmune Rheumatic Diseases?
+  A: T-cell mediated + anti-collagen antibodies → complement activation → chondrolysis
+- Q: What is Airway of Autoimmune Rheumatic Diseases?
+  A: Subglottic/tracheal chondritis → fibrosis, stenosis, collapse → life-threatening
+- Q: What is Associations of Autoimmune Rheumatic Diseases?
+  A: GPA (c-ANCA), MPA, Behçet's, SLE, RA, MDS — screen accordingly
+- Q: What is A of Autoimmune Rheumatic Diseases?
+  A: ≥3 McAdam features
+- Q: What is B of Autoimmune Rheumatic Diseases?
+  A: 1 McAdam feature + histological confirmation (cartilage biopsy: perichondral inflammation, chondrolysis)
+- Q: What is C of Autoimmune Rheumatic Diseases?
+  A: ≥2 McAdam features + response to steroids
+- Q: What is Appearance of Autoimmune Rheumatic Diseases?
+  A: Painful, red, swollen, tender — "cauliflower ear" late
+- Q: What is Key Differentiator of Autoimmune Rheumatic Diseases?
+  A: EARLOBES SPARED (no cartilage) — pathognomonic
+- Q: What is Course of Autoimmune Rheumatic Diseases?
+  A: Recurrent attacks → cartilage destruction → floppy ear
+- Q: What are the clinical features of Autoimmune Rheumatic Diseases?
+  A: Pain, tenderness, epistaxis, crusting
+- Q: What are the complications of Autoimmune Rheumatic Diseases?
+  A: Saddle nose deformity (cartilage collapse, dorsum depression)
+- Q: What is Sites of Autoimmune Rheumatic Diseases?
+  A: Larynx (subglottic) > Trachea > Bronchi
+- Q: What are the clinical features of Autoimmune Rheumatic Diseases?
+  A: Hoarseness, dysphonia, cough, stridor, dyspnoea
+- Q: What are the complications of Autoimmune Rheumatic Diseases?
+  A: Airway stenosis/collapse — life-threatening
+- Q: What is PFTs of Autoimmune Rheumatic Diseases?
+  A: Fixed airflow obstruction (flow-volume loop truncation)
+- Q: What is CT of Autoimmune Rheumatic Diseases?
+  A: Circumferential mural thickening of trachea/bronchi
+- Q: What is Sensorineural Hearing Loss of Autoimmune Rheumatic Diseases?
+  A: High-frequency, often permanent
+- Q: What is Tinnitus, Vertigo of Autoimmune Rheumatic Diseases?
+  A: Inner ear cartilage involvement
+- Q: What is Classic Triad of Autoimmune Rheumatic Diseases?
+  A: Auricular chondritis (lobules spared) + Nasal chondritis (saddle nose) + Respiratory chondritis (stridor/airway)
+- Q: What is Auricular Chondritis of Autoimmune Rheumatic Diseases?
+  A: Painful, red, swollen ears — LOBULES SPARED (no cartilage) = pathognomonic
+- Q: What is Nasal Chondritis of Autoimmune Rheumatic Diseases?
+  A: Saddle nose deformity (cartilage collapse)
+- Q: What is Airway of Autoimmune Rheumatic Diseases?
+  A: Laryngotracheobronchial chondritis → stridor, hoarseness, airway collapse = EMERGENCY
+- Q: What is McAdam Criteria of Autoimmune Rheumatic Diseases?
+  A: ≥3 of 6: auricular, nasal, respiratory, ocular, polyarthritis, audiovestibular
+- Q: What is Damiani Criteria of Autoimmune Rheumatic Diseases?
+  A: ≥3 McAdam OR 1 feature + biopsy OR 2 features + steroid response
+- Q: What is Associations of Autoimmune Rheumatic Diseases?
+  A: GPA (c-ANCA), MPA (p-ANCA), Behçet's, SLE, RA, MDS
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: Stridor = ENT emergency → fibreoptic laryngoscopy → tracheostomy/stenting + pulse MP + CYC
+- Q: What is Histology of Autoimmune Rheumatic Diseases?
+  A: Perichondritis, lymphoplasmacytic infiltrate, chondrolysis, basophilic degeneration
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **RP = recurrent autoimmune inflammation of cartilage — ear (sparing lobules), nose (saddle nose), airway (laryngotracheal → stridor/airway emergency), joints, eyes, audiovestibular.**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: Definition — Recurrent autoimmune inflammation of cartilage — auricular, nasal, laryngotracheobronchial, costal, articular, ocular, audiovestibular; Incidence — 3-5/1,000,000/year (very rare); Peak Onset — 40-60 years. What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

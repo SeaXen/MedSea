@@ -307,3 +307,36 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (5 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → DIC
+- Q: What is Platelet Count of Hematology?
+  A: >100 = 0; 50-100 = 1; <50 = 2
+- Q: What is Fibrinogen (g/L) of Hematology?
+  A: >1.0 = 0; <1.0 = 1
+- Q: What is PT (sec prolonged) of Hematology?
+  A: <3 = 0; 3-6 = 1; >6 = 2
+- Q: What is D-dimer / FDP of Hematology?
+  A: No increase = 0; Moderate = 2; Strong = 3
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → DIC**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: A[Trigger: Sepsis, Trauma, Obstetric, Cancer] --> B[Tissue Factor (TF) Exposure]; B --> C[Extrinsic Pathway Activation]; C --> D[Thrombin Generation]. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

@@ -369,3 +369,70 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (22 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematology Investigations → Cytogenetics & Molecular Diagnostics
+- Q: What is Sample of Hematology?
+  A: Bone Marrow (Heparin) or Peripheral Blood (if high blast count)
+- Q: What is Culture of Hematology?
+  A: 24-48h (Unstimulated) + PHA Stimulation (72h) for Lymphocytes
+- Q: What is Banding of Hematology?
+  A: G-banding (Trypsin/Giemsa) - Standard; Q/R-banding (Alternative)
+- Q: What is Resolution of Hematology?
+  A: 400-550 Bands (Standard); High-resolution (850+) for Subtle Abnormalities
+- Q: What is Analysis of Hematology?
+  A: 20 Metaphases (Standard); 50 (If Mosaicism Suspected)
+- Q: What is Reporting of Hematology?
+  A: ISCN 2020 Nomenclature
+- Q: What is Sample of Hematology?
+  A: Bone Marrow (Heparin) or Peripheral Blood (if high blast count)
+- Q: What is Culture of Hematology?
+  A: 24-48h (Unstimulated) + PHA Stimulation (72h) for Lymphocytes
+- Q: What is Banding of Hematology?
+  A: G-banding (Trypsin/Giemsa) - Standard; Q/R-banding (Alternative)
+- Q: What is Resolution of Hematology?
+  A: 400-550 Bands (Standard); High-resolution (850+) for Subtle Abnormalities
+- Q: What is Analysis of Hematology?
+  A: 20 Metaphases (Standard); 50 (If Mosaicism Suspected)
+- Q: How is Hematology classified?
+  A: ISCN, 20 Metaphases, t(9;22), t(15;17), t(8;21), inv(16), -5/-7, Complex/Monosomal = Adverse
+- Q: What is FISH of Hematology?
+  A: Dual-Fusion (BCR::ABL1, PML::RARA), Break-Apart (KMT2A, ALK), Deletion (17p, 5q, 7q), Fast, Targeted, Sensitive
+- Q: What is PCR of Hematology?
+  A: qRT-PCR for MRD (BCR::ABL1 IS, NPM1, PML::RARA), Digital PCR for Absolute Quant
+- Q: What is NGS of Hematology?
+  A: Targeted Panels (50-100 genes), VAF, Pathogenicity (ACMG), ELN 2022 / IPSS-M / R-ISS Integration
+- Q: What is ELN 2022 AML of Hematology?
+  A: Favourable (t8;21, inv16, NPM1/FLT3low, CEBPAbi), Adverse (TP53, Complex, Mono, -5/-7)
+- Q: What is IPSS-M of Hematology?
+  A: IPSS-R + 17 Mutations = Molecular IPSS
+- Q: What is R-ISS Myeloma of Hematology?
+  A: ISS + FISH (17p, 4;14, 14;16) + LDH
+- Q: What is MRD of Hematology?
+  A: qRT-PCR (10⁻⁴-10⁻⁶), NGS (10⁻⁴-10⁻⁶), Flow (10⁻⁴-10⁻⁵)
+- Q: What is CML of Hematology?
+  A: BCR::ABL1 IS → MR4.5 (0.0032%) → TFR
+- Q: What is t(9;22) of Hematology?
+  A: CML/ALL → BCR::ABL1 → TKI Target
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematology Investigations → Cytogenetics & Molecular Diagnostics**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Favourable — t(8;21), inv(16), NPM1mut (no FLT3-ITD or low AR), CEBPAbiallelic; Intermediate — NPM1mut + FLT3-ITDhigh, Normal Karyotype, Other; Adverse — TP53mut, Complex Karyotype, Monosomal Karyotype, -5/del5q, -7/del7q, inv(3)/t(3;3), KMT2A-r (non-t(9;11)), FLT3-ITDhigh + Adverse Cytogenetics. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

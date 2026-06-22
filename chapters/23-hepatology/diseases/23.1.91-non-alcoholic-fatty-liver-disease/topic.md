@@ -150,3 +150,28 @@ flowchart TD
 |------|------|----------|--------|
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Non Alcoholic Fatty Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Non Alcoholic Fatty Liver Disease?
+  A: | Obesity (BMI >30) | 70-90% NAFLD |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Non Alcoholic Fatty Liver Disease?**
+   A. **| Obesity (BMI >30) | 70-90% NAFLD |**
+   B. An unrelated condition not matching the clinical picture of Non Alcoholic Fatty Liver Disease
+   C. A complication seen late in the disease course of Non Alcoholic Fatty Liver Disease
+   D. A condition that mimics Non Alcoholic Fatty Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Non Alcoholic Fatty Liver Disease presents with: A[NAFLD: Hepatic Steatosis >5% without significant alcohol] --> B{Histology}; B --> C[NAFL: Simple Steatosis\n>5% fat, NO ballooning, NO inflammation]; B --> D[NASH: Steatohepatitis\n>5% fat + Ballooning + Lobular inflammation ± Fibrosis]. What is the most likely diagnosis?
+   A. **Non Alcoholic Fatty Liver Disease**
+   B. A condition that mimics Non Alcoholic Fatty Liver Disease but is not the same entity
+   C. A complication of Non Alcoholic Fatty Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Non Alcoholic Fatty Liver Disease
+

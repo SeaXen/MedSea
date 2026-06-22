@@ -319,3 +319,62 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (18 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haemolytic Anaemias → G6PD Deficiency
+- Q: What is Trigger Avoidance of Hematology?
+  A: Drug list (see below); No fava beans; Mothballs
+- Q: What is Folic Acid of Hematology?
+  A: 5 mg daily lifelong
+- Q: What is Screening of Hematology?
+  A: Before primaquine/dapsone/rasburicase/sulphonamides in endemic populations
+- Q: What is Neonatal of Hematology?
+  A: Phototherapy, exchange transfusion if severe; Screen at birth in high-prevalence areas
+- Q: What is Trigger Avoidance of Hematology?
+  A: Drug list (see below); No fava beans; Mothballs
+- Q: What is Folic Acid of Hematology?
+  A: 5 mg daily lifelong
+- Q: What is Screening of Hematology?
+  A: Before primaquine/dapsone/rasburicase/sulphonamides in endemic populations
+- Q: What is Neonatal of Hematology?
+  A: Phototherapy, exchange transfusion if severe; Screen at birth in high-prevalence areas
+- Q: What is Inheritance of Hematology?
+  A: X-linked recessive (males affected, females mosaic)
+- Q: What is Variants of Hematology?
+  A: Mediterranean (Class II, severe), African A- (Class III, moderate)
+- Q: What is Triggers of Hematology?
+  A: Primaquine, Dapsone, Sulphonamides, Rasburicase, Fava beans, Infection
+- Q: What is Blood Film of Hematology?
+  A: Heinz bodies (supravital), Bite cells (blister cells)
+- Q: What is G6PD Assay Timing of Hematology?
+  A: FALSE NORMAL during acute episode (retics normal); test 3-4 weeks later
+- Q: What is Neonatal Jaundice of Hematology?
+  A: Kernicterus risk (esp. Mediterranean); screen high-prevalence populations
+- Q: What is Rasburicase of Hematology?
+  A: CONTRAINDICATED in G6PD deficiency
+- Q: What is Screening of Hematology?
+  A: Before oxidative drugs (primaquine, dapsone, rasburicase)
+- Q: What is Folic Acid of Hematology?
+  A: 5 mg daily
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haemolytic Anaemias → G6PD Deficiency**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Class — Enzyme Activity; [!tip] FCPS/MRCP: G6PD = X-linked recessive (males affected, females carriers/mosaic). Mediterranean (Class II) = severe; African A- (Class III) = moderate. Test AFTER acute episode resolves (retics have normal G6PD → false negative).. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

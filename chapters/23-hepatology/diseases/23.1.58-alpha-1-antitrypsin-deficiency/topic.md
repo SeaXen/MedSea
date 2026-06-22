@@ -271,3 +271,58 @@ mindmap
 - [[Inherited and Metabolic Liver Disease/Haemochromatosis|Haemochromatosis]]
 - [[Inherited and Metabolic Liver Disease/Porphyrias|Porphyrias]]
 - [[Inherited and Metometric Liver Disease/Gilbert Syndrome|Gilbert Syndrome]]
+---
+
+> Auto-generated study sections for "Inherited and Metabolic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (16 generated)
+
+- Q: What is the definition of Inherited and Metabolic Liver Disease?
+  A: | Allele | Level | Clinical Significance |
+- Q: What is Serum A1AT Level of Inherited and Metabolic Liver Disease?
+  A: <11 μM (or <50-60 mg/dL)
+- Q: What is Phenotyping (IEF) of Inherited and Metabolic Liver Disease?
+  A: PiZZ, PiSZ, PiNull
+- Q: What is Genotyping of Inherited and Metabolic Liver Disease?
+  A: Z allele (Glu342Lys) — targeted PCR
+- Q: What is Serum A1AT Level of Inherited and Metabolic Liver Disease?
+  A: <11 μM (or <50-60 mg/dL)
+- Q: What is Phenotyping (IEF) of Inherited and Metabolic Liver Disease?
+  A: PiZZ, PiSZ, PiNull
+- Q: What is Gene of Inherited and Metabolic Liver Disease?
+  A: SERPINA1 (autosomal co-dominant)
+- Q: What is Classic severe of Inherited and Metabolic Liver Disease?
+  A: PiZZ (10-15% level)
+- Q: What is Liver disease of Inherited and Metabolic Liver Disease?
+  A: Gain-of-toxic-function (polymer retention → neonatal hepatitis, cirrhosis, HCC)
+- Q: What is Lung disease of Inherited and Metabolic Liver Disease?
+  A: Loss-of-function (low A1AT → panacinar emphysema, basal)
+- Q: What is the investigation of choice for Inherited and Metabolic Liver Disease?
+  A: Serum A1AT <11 μM → Phenotype/Genotype (PiZZ)
+- Q: What is Biopsy of Inherited and Metabolic Liver Disease?
+  A: PAS+ diastase-resistant globules in periportal hepatocytes
+- Q: What is Augmentation of Inherited and Metabolic Liver Disease?
+  A: IV A1AT 60mg/kg weekly — for LUNG only (FEV1 35-65%)
+- Q: What is Liver transplant of Inherited and Metabolic Liver Disease?
+  A: Cures metabolic defect (donor liver makes normal A1AT)
+- Q: What is Smoking of Inherited and Metabolic Liver Disease?
+  A: Absolute contraindication — accelerates emphysema 10-20y
+- Q: What is Neonatal hepatitis of Inherited and Metabolic Liver Disease?
+  A: 10-20% of PiZZ present in infancy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inherited and Metabolic Liver Disease?**
+   A. **| Allele | Level | Clinical Significance |**
+   B. An unrelated condition not matching the clinical picture of Inherited and Metabolic Liver Disease
+   C. A complication seen late in the disease course of Inherited and Metabolic Liver Disease
+   D. A condition that mimics Inherited and Metabolic Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inherited and Metabolic Liver Disease presents with: Feature — Alpha-1 Antitrypsin Deficiency; Gene — SERPINA1 (chromosome 14); Inheritance — Autosomal co-dominant. What is the most likely diagnosis?
+   A. **Inherited and Metabolic Liver Disease**
+   B. A condition that mimics Inherited and Metabolic Liver Disease but is not the same entity
+   C. A complication of Inherited and Metabolic Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inherited and Metabolic Liver Disease
+

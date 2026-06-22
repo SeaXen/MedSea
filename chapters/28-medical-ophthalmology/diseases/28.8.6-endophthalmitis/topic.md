@@ -629,3 +629,50 @@ D. Bone-spicule pigmentation
 ## 24. Tags
 
 #medicine #davidson #ophthalmology #endophthalmitis #vitreous #cataract-surgery #EVS #fcps #mrcp #emergency
+---
+
+> Auto-generated study sections for "08_Retina_and_Vitreous" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of 08_Retina_and_Vitreous?
+  A: Inflammation of intraocular cavities (aqueous + vitreous)
+- Q: What causes 08_Retina_and_Vitreous?
+  A: Post-cataract surgery (coagulase-negative Staph)
+- Q: What are the clinical features of 08_Retina_and_Vitreous?
+  A: Pain, ↓VA, red eye, hypopyon, vitritis
+- Q: What is "Headlight in the fog" of 08_Retina_and_Vitreous?
+  A: Fundus view obscured by vitreous opacity
+- Q: What is First step of 08_Retina_and_Vitreous?
+  A: Vitreous tap + intravitreal antibiotics (within 1 h)
+- Q: What is Intravitreal antibiotics of 08_Retina_and_Vitreous?
+  A: Vancomycin 1 mg + Ceftazidime 2.25 mg
+- Q: What is Vitrectomy (EVS criteria) of 08_Retina_and_Vitreous?
+  A: LP only OR VA not improving after IOAB
+- Q: What is B-scan of 08_Retina_and_Vitreous?
+  A: Always — rule out RD, choroidal detachment
+- Q: What is Hypopyon absent in of 08_Retina_and_Vitreous?
+  A: Fungal endophthalmitis (often)
+- Q: What is the prognosis of 08_Retina_and_Vitreous?
+  A: Bacillus cereus (traumatic); Aspergillus (endogenous)
+- Q: What is Systemic antibiotics of 08_Retina_and_Vitreous?
+  A: NOT routine in post-op (EVS); YES in endogenous/traumatic
+- Q: What is Chronic low-grade of 08_Retina_and_Vitreous?
+  A: P. acnes; vitrectomy + capsulectomy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 08_Retina_and_Vitreous?**
+   A. **Related: [[Vitreous Haemorrhage]], [[Panuveitis]], [[Retinal Detachment]], [[Acute Visual Loss (Approach)]]**
+   B. An unrelated condition not matching the clinical picture of 08_Retina_and_Vitreous
+   C. A complication seen late in the disease course of 08_Retina_and_Vitreous
+   D. A condition that mimics 08_Retina_and_Vitreous but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected 08_Retina_and_Vitreous presents with: Related: [[Vitreous Haemorrhage]], [[Panuveitis]], [[Retinal Detachment]], [[Acute Visual Loss (Approach)]]. What is the most likely diagnosis?
+   A. **08_Retina_and_Vitreous**
+   B. A condition that mimics 08_Retina_and_Vitreous but is not the same entity
+   C. A complication of 08_Retina_and_Vitreous rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as 08_Retina_and_Vitreous
+

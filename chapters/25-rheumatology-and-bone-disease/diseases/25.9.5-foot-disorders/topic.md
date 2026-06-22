@@ -371,3 +371,102 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Hip and trochanteric bursitis]] · [[Knee disorders]] · [[Shoulder disorders]] · [[Regional soft tissue rheumatism]]
+---
+
+> Auto-generated study sections for "Soft Tissue Rheumatism and Chronic Pain Syndromes" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (38 generated)
+
+- Q: What causes Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Repetitive microtrauma → degenerative fasciosis (not true inflammation)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Worst first steps morning/after rest, tenderness medial calcaneal tubercle, windlass test +ve
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Passive dorsiflexion of toes → tightens plantar fascia → reproduces heel pain
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: US: fascial thickening >4mm, hypoechoic, loss of fibrillar pattern; MRI: thickening, oedema
+- Q: What is X-ray of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Heel spur (inferior calcaneus) — incidental, not cause of pain
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Perineural fibrosis of common plantar digital nerve (not true neuroma)
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: 3rd webspace (most common) > 2nd webspace
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Interdigital burning/neuropathic pain, radiates to toes, Mulder's click (palpable click on transverse compression), relieved by removing shoes
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Webspace tenderness, Mulder's click (thumb dorsally, index plantarly, compress), Tinel's at webspace
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: US: hypoechoic mass in webspace; MRI: neuroma (T1/T2 intermediate)
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Metatarsalgia, MTP synovitis, stress fracture, tarsal tunnel
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Compression of posterior tibial nerve under flexor retinaculum (tarsal tunnel)
+- Q: What is Anatomy of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Posterior tibial nerve, artery, vein, tibialis posterior, flexor digitorum longus, flexor hallucis longus (Tom, Dick, And Very Nervous Harry)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Burning/tingling sole, Tinel's at medial malleolus, numbness plantar foot, weakness toe flexion (late)
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tinel's at medial malleolus, dorsiflexion-eversion (increases tunnel pressure)
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: MRI: nerve thickening, oedema; US: nerve cross-sectional area
+- Q: What is Nerve Conduction of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Prolonged distal latency, slowed conduction velocity
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Plantar fasciitis, Baxter's neuropathy, L5/S1 radiculopathy, diabetic neuropathy
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Perineural fibrosis of common plantar digital nerve (not true neuroma)
+- Q: What is Location of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: 3rd webspace (most common) > 2nd webspace
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Interdigital burning/neuropathic pain, radiates to toes, Mulder's click (palpable click on transverse compression), relieved by removing shoes
+- Q: What is Exam of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Webspace tenderness, Mulder's click (thumb dorsally, index plantarly, compress), Tinel's at webspace
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: US: hypoechoic mass in webspace; MRI: neuroma (T1/T2 intermediate)
+- Q: What is Differential of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Metatarsalgia, MTP synovitis, stress fracture, tarsal tunnel
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Compression of posterior tibial nerve under flexor retinaculum (tarsal tunnel)
+- Q: What is Anatomy of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Posterior tibial nerve, artery, vein, tibialis posterior, flexor digitorum longus, flexor hallucis longus (Tom, Dick, And Very Nervous Harry)
+- Q: What is Clinical of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Burning/tingling sole, Tinel's at medial malleolus, numbness plantar foot, weakness toe flexion (late)
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Tinel's at medial malleolus, dorsiflexion-eversion (increases tunnel pressure)
+- Q: What is Imaging of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: MRI: nerve thickening, oedema; US: nerve cross-sectional area
+- Q: What is Nerve Conduction of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Prolonged distal latency, slowed conduction velocity
+- Q: What is Plantar Fasciitis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Most common heel pain; worst first steps morning; medial calcaneal tenderness; windlass test +ve; tight Achilles
+- Q: What is Achilles Tendinopathy of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: 2-6cm above insertion; morning stiffness; eccentric loading pain; thickening/nodules
+- Q: What is Retrocalcaneal Bursitis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pain above insertion; Haglund's deformity; pain on dorsiflexion
+- Q: What is Morton's Neuroma of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Interdigital (3rd webspace) burning; Mulder's click; relieved by removing shoes
+- Q: What is Tarsal Tunnel of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Sole burning/tingling; Tinel's at medial malleolus; Tibial nerve compression
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Passive toe dorsiflexion → reproduces heel pain = plantar fasciitis
+- Q: What is Eccentric Loading of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Alfredson's protocol (heel drops off step, 3×15×2/day, 12 weeks) = gold standard for Achilles tendinopathy
+- Q: What is Tibialis Posterior Dysfunction of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Adult acquired flatfoot, too many toes sign, single heel raise unable
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Soft Tissue Rheumatism and Chronic Pain Syndromes?**
+   A. **| Condition | Location | Key Features |**
+   B. An unrelated condition not matching the clinical picture of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   C. A complication seen late in the disease course of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   D. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Soft Tissue Rheumatism and Chronic Pain Syndromes presents with: Plantar Fasciitis — Medial calcaneal tubercle; Achilles Tendinopathy — 2-6cm above insertion; Retrocalcaneal Bursitis — Posterior heel, above insertion. What is the most likely diagnosis?
+   A. **Soft Tissue Rheumatism and Chronic Pain Syndromes**
+   B. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but is not the same entity
+   C. A complication of Soft Tissue Rheumatism and Chronic Pain Syndromes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Soft Tissue Rheumatism and Chronic Pain Syndromes
+

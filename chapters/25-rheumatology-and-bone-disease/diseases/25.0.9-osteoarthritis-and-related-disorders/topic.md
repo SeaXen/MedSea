@@ -43,3 +43,20 @@ Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - 
 - [[Common regional musculoskeletal problems]] | [[Chronic pain syndromes and fibromyalgia]]
 - Parent MOC: [[../Rheumatology MOC|Rheumatology MOC]]
 - Chapter map: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
+---
+
+> Auto-generated study sections for "Osteoarthritis and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Osteoarthritis and Related Disorders?
+  A: Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]] · [[../Chapter 26 Rheumatology Roadmap|Roadmap]]
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Osteoarthritis and Related Disorders?**
+   A. **Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]] · [[../Chapter 26 Rheumatology Roadmap|Roadmap]]**
+   B. An unrelated condition not matching the clinical picture of Osteoarthritis and Related Disorders
+   C. A complication seen late in the disease course of Osteoarthritis and Related Disorders
+   D. A condition that mimics Osteoarthritis and Related Disorders but has a different underlying cause
+

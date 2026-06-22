@@ -258,3 +258,38 @@ mindmap
 - [[Alcoholic Liver Disease/Corticosteroid therapy (prednisolone)|Corticosteroid Therapy]]
 - [[Alcoholic Liver Disease/Alcoholic hepatitis scoring (Maddrey DF, Glasgow, ABIC, Lille)|Scoring Systems]]
 - [[Alcoholic Liver Disease/Alcohol relapse prevention|Relapse Prevention]]
+---
+
+> Auto-generated study sections for "Alcoholic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Alcoholic Liver Disease?
+  A: # Abstinence and Nutritional Support in Alcoholic Liver Disease
+- Q: What is Abstinence of Alcoholic Liver Disease?
+  A: Most Effective Intervention — Improves Survival at All Stages
+- Q: What is Calories of Alcoholic Liver Disease?
+  A: 35-40 kcal/kg/day (Dry Weight)
+- Q: What is Protein of Alcoholic Liver Disease?
+  A: 1.2-1.5 g/kg/day — NO Restriction (Even in HE)
+- Q: What is Thiamine of Alcoholic Liver Disease?
+  A: 100mg IV TDS — Before Glucose (Prevents Wernicke's)
+- Q: What is Wernicke's of Alcoholic Liver Disease?
+  A: 500mg IV TDS — Medical Emergency (Confusion + Ophthalmoplegia + Ataxia)
+- Q: What is Folic Acid of Alcoholic Liver Disease?
+  A: 5mg Daily — All ALD
+- Q: What is Refeeding Syndrome of Alcoholic Liver Disease?
+  A: Start 10-20 kcal/kg; Thiamine First; Monitor Phosphate/K/Mg Q6H
+- Q: What is Protein in HE of Alcoholic Liver Disease?
+  A: Do NOT Restrict — Malnutrition Worsens Outcome
+- Q: What is BCAA Supplements of Alcoholic Liver Disease?
+  A: Limited Evidence; Not Routine
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Alcoholic Liver Disease?**
+   A. **# Abstinence and Nutritional Support in Alcoholic Liver Disease**
+   B. An unrelated condition not matching the clinical picture of Alcoholic Liver Disease
+   C. A complication seen late in the disease course of Alcoholic Liver Disease
+   D. A condition that mimics Alcoholic Liver Disease but has a different underlying cause
+

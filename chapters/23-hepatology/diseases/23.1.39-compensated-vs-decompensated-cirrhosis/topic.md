@@ -282,3 +282,44 @@ mindmap
 - [[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]
 - [[Portal Hypertension and Complications/Acute variceal bleeding management|Variceal Bleed]]
 - [[Liver Transplantation/Liver Transplantation|Liver Transplant]]
+---
+
+> Auto-generated study sections for "Chronic Liver Disease and Cirrhosis" — Ch 23: Hepatology.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Chronic Liver Disease and Cirrhosis?
+  A: | Decompensation Event | Definition | Typical Presentation |
+- Q: What is Compensated of Chronic Liver Disease and Cirrhosis?
+  A: No Ascites, Bleed, HE, Jaundice — Survival 12+ yr
+- Q: What is Decompensated of Chronic Liver Disease and Cirrhosis?
+  A: Any 1: Ascites, Bleed, HE, Jaundice — Survival 2-5 yr
+- Q: What is First Decompensation of Chronic Liver Disease and Cirrhosis?
+  A: Major Prognostic Threshold
+- Q: What is Survival Drop of Chronic Liver Disease and Cirrhosis?
+  A: 12+ yr → 2-5 yr
+- Q: What is Transplant Urgency of Chronic Liver Disease and Cirrhosis?
+  A: Compensated: Elective; Decompensated: Urgent (MELD≥15)
+- Q: What is 4 Decompensation Events of Chronic Liver Disease and Cirrhosis?
+  A: Ascites, Variceal Bleed, HE, Jaundice
+- Q: What is Re-compensation Possible of Chronic Liver Disease and Cirrhosis?
+  A: If Aetiology Treated (Alcohol, Viral, AIH, NAFLD)
+- Q: What is Scoring of Chronic Liver Disease and Cirrhosis?
+  A: Compensated: Child A/MELD Low; Decompensated: Child B/C, MELD≥15
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Chronic Liver Disease and Cirrhosis?**
+   A. **| Decompensation Event | Definition | Typical Presentation |**
+   B. An unrelated condition not matching the clinical picture of Chronic Liver Disease and Cirrhosis
+   C. A complication seen late in the disease course of Chronic Liver Disease and Cirrhosis
+   D. A condition that mimics Chronic Liver Disease and Cirrhosis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Chronic Liver Disease and Cirrhosis presents with: Compensated Cirrhosis — Cirrhosis without history of: Ascites, Variceal Bleed, Hepatic Encephalopathy, or Jaundice (Bilirubin >2-3 mg/dL); Decompensated Cirrhosis — Cirrhosis with current or past: Ascites, Variceal Bleed, Hepatic Encephalopathy, or Jaundice (Bilirubin >2-3 mg/dL); FCPS/MRCP: First Decompensation Event = Transition from Compensated → Decompensated — Major Prognostic Threshold. What is the most likely diagnosis?
+   A. **Chronic Liver Disease and Cirrhosis**
+   B. A condition that mimics Chronic Liver Disease and Cirrhosis but is not the same entity
+   C. A complication of Chronic Liver Disease and Cirrhosis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Chronic Liver Disease and Cirrhosis
+

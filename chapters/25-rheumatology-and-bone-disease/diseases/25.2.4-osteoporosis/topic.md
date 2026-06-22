@@ -481,3 +481,120 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Glucocorticoid-induced osteoporosis]] · [[Paget's disease of bone]] · [[Osteomalacia and rickets]]
+---
+
+> Auto-generated study sections for "Bone Metabolic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (47 generated)
+
+- Q: What is the definition of Bone Metabolic Diseases?
+  A: Systemic skeletal disease — low bone mass + microarchitectural deterioration → bone fragility + increased fracture risk
+- Q: What is the epidemiology of Bone Metabolic Diseases?
+  A: Women >50y: 1 in 3; Men >50y: 1 in 5 will sustain osteoporotic fracture
+- Q: What is Peak Bone Mass of Bone Metabolic Diseases?
+  A: Achieved age 25-30 — critical window for prevention
+- Q: What is Postmenopausal Loss of Bone Metabolic Diseases?
+  A: Rapid: 2-3%/year × 5-7 years (oestrogen loss) → then slow 0.5-1%/year
+- Q: What is Male Loss of Bone Metabolic Diseases?
+  A: Gradual from ~40y; accelerated with hypogonadism
+- Q: What is Mortality of Bone Metabolic Diseases?
+  A: Hip fracture: 20-30% 1-year mortality; vertebral fracture: ↑ mortality, ↓ QoL
+- Q: What are the clinical features of Bone Metabolic Diseases?
+  A: Until fracture occurs — "silent disease"
+- Q: What is Vertebral Fracture of Bone Metabolic Diseases?
+  A: Most common — often asymptomatic (2/3); back pain, height loss, kyphosis ("dowager's hump")
+- Q: What is Hip Fracture of Bone Metabolic Diseases?
+  A: Most devastating — fall → groin pain, shortened/externally rotated leg, unable to weight bear
+- Q: What is Distal Radius (Colles') of Bone Metabolic Diseases?
+  A: Fall on outstretched hand (FOOSH) — dinner fork deformity
+- Q: What is Other of Bone Metabolic Diseases?
+  A: Proximal humerus, pelvis, ribs, sacral insufficiency fractures
+- Q: What causes Bone Metabolic Diseases?
+  A: Calculate 10-year major osteoporotic fracture probability + hip fracture probability
+- Q: What is Prior fragility fracture of Bone Metabolic Diseases?
+  A: Automatic high risk — treat
+- Q: What is Glucocorticoids ≥7.5mg pred >3mo of Bone Metabolic Diseases?
+  A: FRAX with "secondary osteoporosis" + "glucocorticoid" ticked
+- Q: How is Bone Metabolic Diseases managed?
+  A: Major osteoporotic ≥10-20% or Hip ≥3% (age-dependent)
+- Q: What is the dose of Bone Metabolic Diseases?
+  A: 60mg SC every 6 months
+- Q: What is the mechanism of Bone Metabolic Diseases?
+  A: Anti-RANKL mAb → inhibits osteoclast formation
+- Q: What is Advantages of Bone Metabolic Diseases?
+  A: No renal clearance (OK CKD), no GI SE, convenient
+- Q: How is Bone Metabolic Diseases monitored?
+  A: Ca/Vit D MANDATORY pre-dose (hypocalcaemia risk); Cr, ALP
+- Q: What is Critical Risk of Bone Metabolic Diseases?
+  A: Rebound vertebral fractures if stopped → must transition to bisphosphonate after last dose
+- Q: What is ONJ Risk of Bone Metabolic Diseases?
+  A: Similar to BP (~0.01-0.1%)
+- Q: What are the clinical features of Bone Metabolic Diseases?
+  A: Until fracture occurs — "silent disease"
+- Q: What is Vertebral Fracture of Bone Metabolic Diseases?
+  A: Most common — often asymptomatic (2/3); back pain, height loss, kyphosis ("dowager's hump")
+- Q: What is Hip Fracture of Bone Metabolic Diseases?
+  A: Most devastating — fall → groin pain, shortened/externally rotated leg, unable to weight bear
+- Q: What is Distal Radius (Colles') of Bone Metabolic Diseases?
+  A: Fall on outstretched hand (FOOSH) — dinner fork deformity
+- Q: What is Other of Bone Metabolic Diseases?
+  A: Proximal humerus, pelvis, ribs, sacral insufficiency fractures
+- Q: What causes Bone Metabolic Diseases?
+  A: Calculate 10-year major osteoporotic fracture probability + hip fracture probability
+- Q: What is Prior fragility fracture of Bone Metabolic Diseases?
+  A: Automatic high risk — treat
+- Q: What is Glucocorticoids ≥7.5mg pred >3mo of Bone Metabolic Diseases?
+  A: FRAX with "secondary osteoporosis" + "glucocorticoid" ticked
+- Q: How is Bone Metabolic Diseases managed?
+  A: Major osteoporotic ≥10-20% or Hip ≥3% (age-dependent)
+- Q: What is the dose of Bone Metabolic Diseases?
+  A: 60mg SC every 6 months
+- Q: What is the mechanism of Bone Metabolic Diseases?
+  A: Anti-RANKL mAb → inhibits osteoclast formation
+- Q: What is Advantages of Bone Metabolic Diseases?
+  A: No renal clearance (OK CKD), no GI SE, convenient
+- Q: How is Bone Metabolic Diseases monitored?
+  A: Ca/Vit D MANDATORY pre-dose (hypocalcaemia risk); Cr, ALP
+- Q: What is Critical Risk of Bone Metabolic Diseases?
+  A: Rebound vertebral fractures if stopped → must transition to bisphosphonate after last dose
+- Q: What is the definition of Bone Metabolic Diseases?
+  A: T-score ≤-2.5 at hip/spine = osteoporosis; ≤-2.5 + fracture = severe
+- Q: What is DEXA Sites of Bone Metabolic Diseases?
+  A: Femoral neck (FRAX reference), total hip, lumbar spine (L1-L4)
+- Q: What is T-score vs Z-score of Bone Metabolic Diseases?
+  A: T-score = vs young adult (≥50y); Z-score = vs age-matched (<50y)
+- Q: What is Bone Metabolic Diseases indicated for?
+  A: Osteopenia + risk factors; prior fracture; glucocorticoids
+- Q: What is 1st Line of Bone Metabolic Diseases?
+  A: Alendronate 70mg weekly (upright 30min, water 200ml, fast 30min)
+- Q: What is Renal Adjust of Bone Metabolic Diseases?
+  A: eGFR <35: avoid oral BP → IV Zoledronate 5mg yearly or Denosumab
+- Q: What is Denosumab of Bone Metabolic Diseases?
+  A: 60mg SC q6mo; Ca/Vit D mandatory; NO drug holiday (rebound Fx)
+- Q: What is Anabolics of Bone Metabolic Diseases?
+  A: Teriparatide 20µg daily ×24mo; Romosozumab 210mg monthly ×12mo; SEVERE only; follow with antiresorptive
+- Q: What is GIOP of Bone Metabolic Diseases?
+  A: Start bisphosphonate DAY 1 if ≥7.5mg pred ≥3mo + Ca/Vit D
+- Q: What is ONJ of Bone Metabolic Diseases?
+  A: Dental review BEFORE starting; good hygiene; drug holiday if develops
+- Q: What is AFF of Bone Metabolic Diseases?
+  A: Prodromal thigh pain → X-ray femur → stop BP
+- Q: What is Vitamin D of Bone Metabolic Diseases?
+  A: Deficiency <30 nmol/L; Insufficiency <50 nmol/L; target >50 nmol/L
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Bone Metabolic Diseases?**
+   A. **| Definition | Systemic skeletal disease — low bone mass + microarchitectural deterioration → bone fragility + increased fracture risk |**
+   B. An unrelated condition not matching the clinical picture of Bone Metabolic Diseases
+   C. A complication seen late in the disease course of Bone Metabolic Diseases
+   D. A condition that mimics Bone Metabolic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Bone Metabolic Diseases presents with: Definition — Systemic skeletal disease — low bone mass + microarchitectural deterioration → bone fragility + increased fracture risk; Prevalence — Women >50y: 1 in 3; Men >50y: 1 in 5 will sustain osteoporotic fracture; Incidence — Increases exponentially with age. What is the most likely diagnosis?
+   A. **Bone Metabolic Diseases**
+   B. A condition that mimics Bone Metabolic Diseases but is not the same entity
+   C. A complication of Bone Metabolic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Bone Metabolic Diseases
+

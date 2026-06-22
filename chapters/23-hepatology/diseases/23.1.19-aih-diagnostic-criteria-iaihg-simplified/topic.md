@@ -278,3 +278,20 @@ mindmap
 - [[Autoimmune Liver Disease/AIH in pregnancy|AIH Pregnancy]]
 - [[Autoimmune Liver Disease/Overlap syndromes|Overlap Syndromes]]
 - [[Acute Liver Failure/Autoimmune hepatitis presenting as ALF|AIH ALF]]
+---
+
+> Auto-generated study sections for "Autoimmune Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Autoimmune Liver Disease?
+  A: | Parameter | Points (Pre-treatment) | Points (Post-treatment) |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Liver Disease?**
+   A. **| Parameter | Points (Pre-treatment) | Points (Post-treatment) |**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Liver Disease
+   C. A complication seen late in the disease course of Autoimmune Liver Disease
+   D. A condition that mimics Autoimmune Liver Disease but has a different underlying cause
+

@@ -236,3 +236,98 @@ mindmap
 - [[Inherited and Metabolic Liver Disease/Paget's Disease|Paget's (if applicable)]]
 - [[Portal Hypertension and Complications/Ascites|Ascites]]
 - [[Hepatology in Special Situations/ICP|ICP]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (36 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: | Test | Hepatic Origin | Bone Origin |
+- Q: What is Early PBC of Jaundice and LFT Interpretation?
+  A: Middle-aged women, ALP ↑↑, GGT ↑, AMA+, pruritus may be absent initially
+- Q: What is Early PSC of Jaundice and LFT Interpretation?
+  A: Young men, IBD, ALP ↑, GGT ↑, MRCP beading (may be normal early)
+- Q: What is Drug-induced of Jaundice and LFT Interpretation?
+  A: Amox-Clav, Flucloxacillin, OCP, Carbamazepine, Allopurinol, Statins; latency 1-4 weeks
+- Q: What is Infiltrative of Jaundice and LFT Interpretation?
+  A: Sarcoidosis (ACE ↑, hilar lymphadenopathy), TB, Lymphoma, Amyloid, Metastases
+- Q: What is Post-Transplant of Jaundice and LFT Interpretation?
+  A: Biliary stricture (anastomotic/ischaemic), Rejection, Recurrent PBC/PSC
+- Q: What is Pregnancy of Jaundice and LFT Interpretation?
+  A: 3rd trimester (placental ALP), resolves postpartum; also ICP (see AFLP note)
+- Q: What is Paget's Disease of Jaundice and LFT Interpretation?
+  A: ALP markedly ↑↑ (often >1000), bone pain, deformities, skull enlargement, "cotton wool" skull on X-ray
+- Q: What is Osteomalacia / Rickets of Jaundice and LFT Interpretation?
+  A: Low Vitamin D, Low Calcium/Low Phosphate, ALP ↑, Looser's zones, pseudofractures
+- Q: What is Bone Metastases of Jaundice and LFT Interpretation?
+  A: Prostate (blastic → ALP ↑↑), Breast, Lung, Thyroid; PSA for prostate
+- Q: What is Primary Bone Tumours of Jaundice and LFT Interpretation?
+  A: Osteosarcoma (ALP ↑), Ewing's sarcoma
+- Q: What is Hyperparathyroidism of Jaundice and LFT Interpretation?
+  A: Primary/Secondary/Renal; High turnover → ALP ↑; Calcium ↑, PTH ↑
+- Q: What is Renal Osteodystrophy of Jaundice and LFT Interpretation?
+  A: CKD, Secondary hyperparathyroidism, ALP ↑ (bone-specific)
+- Q: What is Fracture Healing of Jaundice and LFT Interpretation?
+  A: Transient ALP ↑ during callus formation
+- Q: What is Growth / Children of Jaundice and LFT Interpretation?
+  A: Physiological — high bone turnover
+- Q: What is Pregnancy of Jaundice and LFT Interpretation?
+  A: Placental ALP (but usually hepatic fraction also ↑)
+- Q: What is Early PBC of Jaundice and LFT Interpretation?
+  A: Middle-aged women, ALP ↑↑, GGT ↑, AMA+, pruritus may be absent initially
+- Q: What is Early PSC of Jaundice and LFT Interpretation?
+  A: Young men, IBD, ALP ↑, GGT ↑, MRCP beading (may be normal early)
+- Q: What is Drug-induced of Jaundice and LFT Interpretation?
+  A: Amox-Clav, Flucloxacillin, OCP, Carbamazepine, Allopurinol, Statins; latency 1-4 weeks
+- Q: What is Infiltrative of Jaundice and LFT Interpretation?
+  A: Sarcoidosis (ACE ↑, hilar lymphadenopathy), TB, Lymphoma, Amyloid, Metastases
+- Q: What is Post-Transplant of Jaundice and LFT Interpretation?
+  A: Biliary stricture (anastomotic/ischaemic), Rejection, Recurrent PBC/PSC
+- Q: What is Pregnancy of Jaundice and LFT Interpretation?
+  A: 3rd trimester (placental ALP), resolves postpartum; also ICP (see AFLP note)
+- Q: What is Paget's Disease of Jaundice and LFT Interpretation?
+  A: ALP markedly ↑↑ (often >1000), bone pain, deformities, skull enlargement, "cotton wool" skull on X-ray
+- Q: What is Osteomalacia / Rickets of Jaundice and LFT Interpretation?
+  A: Low Vitamin D, Low Calcium/Low Phosphate, ALP ↑, Looser's zones, pseudofractures
+- Q: What is Bone Metastases of Jaundice and LFT Interpretation?
+  A: Prostate (blastic → ALP ↑↑), Breast, Lung, Thyroid; PSA for prostate
+- Q: What is Primary Bone Tumours of Jaundice and LFT Interpretation?
+  A: Osteosarcoma (ALP ↑), Ewing's sarcoma
+- Q: What is Hyperparathyroidism of Jaundice and LFT Interpretation?
+  A: Primary/Secondary/Renal; High turnover → ALP ↑; Calcium ↑, PTH ↑
+- Q: What is Renal Osteodystrophy of Jaundice and LFT Interpretation?
+  A: CKD, Secondary hyperparathyroidism, ALP ↑ (bone-specific)
+- Q: What is Fracture Healing of Jaundice and LFT Interpretation?
+  A: Transient ALP ↑ during callus formation
+- Q: What is Growth / Children of Jaundice and LFT Interpretation?
+  A: Physiological — high bone turnover
+- Q: What is Pregnancy of Jaundice and LFT Interpretation?
+  A: Placental ALP (but usually hepatic fraction also ↑)
+- Q: What is Isolated ALP of Jaundice and LFT Interpretation?
+  A: ALP ↑, Normal AST, ALT, Bilirubin, GGT (if bone)
+- Q: What is Hepatic vs Bone of Jaundice and LFT Interpretation?
+  A: GGT ↑ = Hepatic; GGT Normal = Bone (confirm with 5'-nucleotidase)
+- Q: What causes Jaundice and LFT Interpretation?
+  A: Early PBC/PSC, Drugs (Amox-clav, Fluclox, OCP, Statins), Infiltrative, Post-transplant
+- Q: What is Pregnancy of Jaundice and LFT Interpretation?
+  A: 3rd trimester = Placental ALP (Normal GGT); ICP = Pruritus + ALP↑ + GGT↑ + Bile acids↑
+- Q: What is Children of Jaundice and LFT Interpretation?
+  A: Physiological growth = Normal GGT; Rickets = Low Vit D + ALP↑
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **| Test | Hepatic Origin | Bone Origin |**
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Jaundice and LFT Interpretation presents with: Isolated ALP Elevation = ALP ↑ with normal AST, ALT, GGT, Bilirubin, Albumin, PT; A[Isolated ALP ↑] --> B{GGT / 5'-Nucleotidase}; B -->|Normal| C[Bone Origin]. What is the most likely diagnosis?
+   A. **Jaundice and LFT Interpretation**
+   B. A condition that mimics Jaundice and LFT Interpretation but is not the same entity
+   C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
+

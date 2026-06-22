@@ -347,3 +347,92 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Plasma Cell Disorders → Waldenström Macroglobulinaemia
+- Q: What is IgM Paraprotein of Hematology?
+  A: Any level (typically >30 g/L)
+- Q: What is Bone Marrow of Hematology?
+  A: Lymphoplasmacytic infiltration (≥10% usually); CD20+, CD19+, CD23-, CD5-, CD10-, Cyclin D1-
+- Q: What is MYD88 Mutation of Hematology?
+  A: L265P >90% (diagnostic hallmark)
+- Q: What is CXCR4 Mutation of Hematology?
+  A: ~30-40% (WHIM-like; associated with lower IgM, higher BM involvement, BTKi resistance)
+- Q: What is SPEP + Immunofixation of Hematology?
+  A: IgM κ/λ Paraprotein (often >30 g/L)
+- Q: What is sFLC of Hematology?
+  A: κ/λ ratio abnormal (involved light chain)
+- Q: What is BM Biopsy of Hematology?
+  A: Lymphoplasmacytic infiltration (interstitial/nodular)
+- Q: What is Flow Cytometry of Hematology?
+  A: CD20+, CD19+, FMC7+, CD23-, CD5-, CD10-, Cyclin D1-
+- Q: What is MYD88 L265P of Hematology?
+  A: >90% positive (diagnostic)
+- Q: What is CXCR4 of Hematology?
+  A: ~30-40% mutated (WHIM-like)
+- Q: What is Viscosity of Hematology?
+  A: Correlates with IgM level (hyperviscosity if >40-50 g/L)
+- Q: What is Cryoglobulins of Hematology?
+  A: Type I (IgM) – cold-induced precipitation
+- Q: What is Anti-MAG Antibodies of Hematology?
+  A: Peripheral neuropathy (demyelinating)
+- Q: What is SPEP + Immunofixation of Hematology?
+  A: IgM κ/λ Paraprotein (often >30 g/L)
+- Q: What is sFLC of Hematology?
+  A: κ/λ ratio abnormal (involved light chain)
+- Q: What is BM Biopsy of Hematology?
+  A: Lymphoplasmacytic infiltration (interstitial/nodular)
+- Q: What is Flow Cytometry of Hematology?
+  A: CD20+, CD19+, FMC7+, CD23-, CD5-, CD10-, Cyclin D1-
+- Q: What is MYD88 L265P of Hematology?
+  A: >90% positive (diagnostic)
+- Q: What is CXCR4 of Hematology?
+  A: ~30-40% mutated (WHIM-like)
+- Q: What is Viscosity of Hematology?
+  A: Correlates with IgM level (hyperviscosity if >40-50 g/L)
+- Q: What is Cryoglobulins of Hematology?
+  A: Type I (IgM) – cold-induced precipitation
+- Q: What is Anti-MAG Antibodies of Hematology?
+  A: Peripheral neuropathy (demyelinating)
+- Q: What is the investigation of choice for Hematology?
+  A: IgM Paraprotein + Lymphoplasmacytic BM + MYD88 L265P (>90%)
+- Q: What is CXCR4 Mutation of Hematology?
+  A: ~30-40%; WHIM-like → Lower IgM, Higher BM, BTKi Resistance
+- Q: What is Hyperviscosity of Hematology?
+  A: IgM >40-50 g/L → Visual, Neuro, Bleeding → Emergency Plasmapheresis
+- Q: What is Anti-MAG Neuropathy of Hematology?
+  A: Demyelinating, IgM anti-MAG antibodies; treat WM
+- Q: What is the first-line treatment for Hematology?
+  A: BTK Inhibitor: Zanubrutinib (preferred) / Ibrutinib ± Rituximab
+- Q: What is BTKi Resistance of Hematology?
+  A: CXCR4 Mutation → Consider Venetoclax/PI3Ki/Proteasome Inhibitors
+- Q: What is Rituximab Flare of Hematology?
+  A: Avoid if IgM >40 g/L (hyperviscosity risk); Combine with BTKi
+- Q: What is IPSSWM of Hematology?
+  A: Age>65, Hb≤11.5, Plt≤100, β2M>3, IgM>70
+- Q: What is Bing-Neel of Hematology?
+  A: CNS WM – CSF flow, MRI, treat with BTKi/CNS-penetrant chemo
+- Q: What is Cryoglobulinaemia of Hematology?
+  A: Type I IgM – Raynaud's, purpura, GN; Treat WM
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Plasma Cell Disorders → Waldenström Macroglobulinaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: IgM Paraprotein — Any level (typically >30 g/L); Bone Marrow — Lymphoplasmacytic infiltration (≥10% usually); CD20+, CD19+, CD23-, CD5-, CD10-, Cyclin D1-; MYD88 Mutation — L265P >90% (diagnostic hallmark). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

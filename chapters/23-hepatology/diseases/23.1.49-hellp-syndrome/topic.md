@@ -260,3 +260,110 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Hepatology in Special Situations]], [[AFLP]], [[ICP]], [[Pre-eclampsia]], [[Viral Hepatitis in Pregnancy]]
+---
+
+> Auto-generated study sections for "Hepatology in Special Situations" — Ch 23: Hepatology.
+
+## Flashcards (42 generated)
+
+- Q: What are the clinical features of Hepatology in Special Situations?
+  A: RUQ/epigastric pain, nausea, vomiting, malaise, headache
+- Q: What is Hypertension of Hepatology in Special Situations?
+  A: Present in ~80% (but not required for diagnosis)
+- Q: What is Proteinuria of Hepatology in Special Situations?
+  A: Common (but not required)
+- Q: What is Signs of Hepatology in Special Situations?
+  A: RUQ tenderness, hepatomegaly, hypertension, oedema
+- Q: What is Platelets of Hepatology in Special Situations?
+  A: <100 ×10⁹/L (Class I: <50, II: 50-100, III: 100-150)
+- Q: What is AST/ALT of Hepatology in Special Situations?
+  A: >120 U/L (typically 2-10× ULN)
+- Q: What is LDH of Hepatology in Special Situations?
+  A: >600 U/L (haemolysis marker)
+- Q: What is Bilirubin of Hepatology in Special Situations?
+  A: Indirect ↑ (haemolysis), may have direct ↑ if cholestasis
+- Q: What is Haptoglobin of Hepatology in Special Situations?
+  A: Low (consumed by haemolysis)
+- Q: What is Schistocytes of Hepatology in Special Situations?
+  A: Present on blood film
+- Q: What is PT/INR of Hepatology in Special Situations?
+  A: Normal or mildly prolonged (unless DIC)
+- Q: What is Fibrinogen of Hepatology in Special Situations?
+  A: Normal (unless DIC)
+- Q: What is Magnesium Sulphate of Hepatology in Special Situations?
+  A: 24 hours post-delivery (or 24h post-last seizure)
+- Q: What is Antihypertensives of Hepatology in Special Situations?
+  A: Continue until BP controlled <140/90 postpartum
+- Q: How is Hepatology in Special Situations monitored?
+  A: Daily until >150 ×10⁹/L
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: Daily until improving; may worsen 24-48h post-delivery then improve
+- Q: What is Discharge Criteria of Hepatology in Special Situations?
+  A: Platelets >100, normalising LFTs, BP controlled off IV meds
+- Q: What are the clinical features of Hepatology in Special Situations?
+  A: RUQ/epigastric pain, nausea, vomiting, malaise, headache
+- Q: What is Hypertension of Hepatology in Special Situations?
+  A: Present in ~80% (but not required for diagnosis)
+- Q: What is Proteinuria of Hepatology in Special Situations?
+  A: Common (but not required)
+- Q: What is Platelets of Hepatology in Special Situations?
+  A: <100 ×10⁹/L (Class I: <50, II: 50-100, III: 100-150)
+- Q: What is AST/ALT of Hepatology in Special Situations?
+  A: >120 U/L (typically 2-10× ULN)
+- Q: What is LDH of Hepatology in Special Situations?
+  A: >600 U/L (haemolysis marker)
+- Q: What is Bilirubin of Hepatology in Special Situations?
+  A: Indirect ↑ (haemolysis), may have direct ↑ if cholestasis
+- Q: What is Haptoglobin of Hepatology in Special Situations?
+  A: Low (consumed by haemolysis)
+- Q: What is Schistocytes of Hepatology in Special Situations?
+  A: Present on blood film
+- Q: What is PT/INR of Hepatology in Special Situations?
+  A: Normal or mildly prolonged (unless DIC)
+- Q: What is Fibrinogen of Hepatology in Special Situations?
+  A: Normal (unless DIC)
+- Q: What is Magnesium Sulphate of Hepatology in Special Situations?
+  A: 24 hours post-delivery (or 24h post-last seizure)
+- Q: What is Antihypertensives of Hepatology in Special Situations?
+  A: Continue until BP controlled <140/90 postpartum
+- Q: How is Hepatology in Special Situations monitored?
+  A: Daily until >150 ×10⁹/L
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: Daily until improving; may worsen 24-48h post-delivery then improve
+- Q: What is Discharge Criteria of Hepatology in Special Situations?
+  A: Platelets >100, normalising LFTs, BP controlled off IV meds
+- Q: What is the definition of Hepatology in Special Situations?
+  A: Haemolysis (LDH>600, schistocytes), Elevated LFTs (AST/ALT>120), Low Platelets (<100)
+- Q: How is Hepatology in Special Situations classified?
+  A: Class I: Plt<50, Class II: Plt 50-100, Class III: Plt 100-150
+- Q: What is Key Labs of Hepatology in Special Situations?
+  A: LDH>600, Schistocytes, ↓Haptoglobin, AST/ALT>120, Platelets<100
+- Q: What is Delivery Timing of Hepatology in Special Situations?
+  A: <34wks + Class I or Compromise → Urgent Delivery; ≥34wks → Delivery; <34wks Class II/III Stable → Expectant + Steroids
+- Q: How is Hepatology in Special Situations managed?
+  A: MgSO4 4g IV + 1g/h, Antihypertensives (Target BP<160/110), Steroids (Betamethasone 12mg×2) if <34wks
+- Q: What is Corticosteroids of Hepatology in Special Situations?
+  A: Betamethasone 12mg IM ×2 doses 24h apart (if <34wks — fetal lung maturity)
+- Q: What is Platelet Transfusion of Hepatology in Special Situations?
+  A: If <50×10⁹/L and active bleeding / C-section / invasive procedure
+- Q: What are the complications of Hepatology in Special Situations?
+  A: DIC (10-20% Class I), Renal Failure, ARDS, Placental Abruption, Subcapsular Haematoma, PRES
+- Q: What is Postpartum of Hepatology in Special Situations?
+  A: MgSO4 24h post-delivery, BP control, platelet monitoring
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology in Special Situations?**
+   A. **HELLP = Haemolysis, Elevated Liver enzymes, Low Platelets — Mississippi Classification (Class I: Plt<50; Class II: Plt 50-100; Class III: Plt 100-150); Delivery ≥34wks or if maternal/fetal compromise;**
+   B. An unrelated condition not matching the clinical picture of Hepatology in Special Situations
+   C. A complication seen late in the disease course of Hepatology in Special Situations
+   D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hepatology in Special Situations presents with: EL — Elevated Liver Enzymes; LP — Low Platelets; Class I — <50 ×10⁹/L. What is the most likely diagnosis?
+   A. **Hepatology in Special Situations**
+   B. A condition that mimics Hepatology in Special Situations but is not the same entity
+   C. A complication of Hepatology in Special Situations rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hepatology in Special Situations
+

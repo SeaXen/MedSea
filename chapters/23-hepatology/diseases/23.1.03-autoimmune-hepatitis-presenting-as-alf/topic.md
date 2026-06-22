@@ -243,3 +243,28 @@ mindmap
 - [[Acute Liver Failure/Definition and Aetiology|ALF Definition]]
 - [[Acute Liver Failure/King's College Criteria|King's College Criteria]]
 - [[Acute Liver Failure/Wilson disease presenting as ALF|Wilson ALF]]
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: | ANA or SMA | ≥1:40 | +1 |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **| ANA or SMA | ≥1:40 | +1 |**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Acute Liver Failure presents with: % of non-PCM ALF — 5-10%; Demographic — Women 70%, age 15-50 (bimodal: young & perimenopausal); Precipitants — Infection, drugs, pregnancy, surgery, withdrawal of immunosuppression. What is the most likely diagnosis?
+   A. **Acute Liver Failure**
+   B. A condition that mimics Acute Liver Failure but is not the same entity
+   C. A complication of Acute Liver Failure rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Acute Liver Failure
+

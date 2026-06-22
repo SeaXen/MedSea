@@ -333,3 +333,88 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (31 generated)
+
+- Q: What is the definition of Hematology?
+  A: # Renal Anaemia (Anaemia of Chronic Kidney Disease)
+- Q: What is EPO Deficiency of Hematology?
+  A: Primary driver – peritubular fibroblasts fail to produce EPO as GFR declines
+- Q: What is Iron Restriction of Hematology?
+  A: Functional (hepcidin↑ blocks absorption/release) + Absolute (blood loss, dialysis)
+- Q: What is Uraemic Toxins of Hematology?
+  A: Inhibit erythropoiesis, shorten RBC survival
+- Q: What is Chronic Inflammation of Hematology?
+  A: ↑ Hepcidin, ↓ EPO response, ↓ iron availability
+- Q: What is Blood Loss of Hematology?
+  A: Dialysis circuit, GI angiodysplasia, platelet dysfunction
+- Q: What is Folate/B12 Deficiency of Hematology?
+  A: Dialysis losses, poor intake
+- Q: What is Hb of Hematology?
+  A: <13 (men) / <12 (women) = Anaemia in CKD G3+
+- Q: What is Ferritin of Hematology?
+  A: >100 ng/mL (CKD/ESRD); >500 → assess inflammation
+- Q: What is TSAT of Hematology?
+  A: >20% (functional iron sufficiency)
+- Q: What is CRP of Hematology?
+  A: If high → ferritin unreliable (acute phase reactant)
+- Q: What is Reticulocytes of Hematology?
+  A: Low/inappropriately normal (↓ production)
+- Q: What is iPTH of Hematology?
+  A: If high → assess for aluminium toxicity (historical) / bone disease
+- Q: What is EPO Level of Hematology?
+  A: Not routinely measured (low in CKD, but not diagnostic)
+- Q: What is Hb of Hematology?
+  A: <13 (men) / <12 (women) = Anaemia in CKD G3+
+- Q: What is Ferritin of Hematology?
+  A: >100 ng/mL (CKD/ESRD); >500 → assess inflammation
+- Q: What is TSAT of Hematology?
+  A: >20% (functional iron sufficiency)
+- Q: What is CRP of Hematology?
+  A: If high → ferritin unreliable (acute phase reactant)
+- Q: What is Reticulocytes of Hematology?
+  A: Low/inappropriately normal (↓ production)
+- Q: What is iPTH of Hematology?
+  A: If high → assess for aluminium toxicity (historical) / bone disease
+- Q: What is EPO Level of Hematology?
+  A: Not routinely measured (low in CKD, but not diagnostic)
+- Q: What is the mechanism of Hematology?
+  A: EPO deficiency + Hepcidin-mediated functional iron deficiency
+- Q: What is the investigation of choice for Hematology?
+  A: CKD + Anaemia + Exclude other causes
+- Q: What is Iron of Hematology?
+  A: IV Iron preferred (CKD G4-5/ESRD); Ferritin >100, TSAT >20%
+- Q: What is ESA of Hematology?
+  A: Darbepoetin preferred (q2-4wk); Target Hb 10-11 g/dL
+- Q: What is Hb Target of Hematology?
+  A: DO NOT EXCEED 11.5 g/dL (↑ CV events, stroke, death)
+- Q: What is ESA Resistance of Hematology?
+  A: Iron deficiency #1 cause → IV iron; then inflammation, iPTH, blood loss
+- Q: What is HIF-PH Inhibitors of Hematology?
+  A: Roxadustat/Daprodustat/Vadadustat – oral, ↑ EPO + ↓ hepcidin + ↑ iron
+- Q: What is Pre-dialysis of Hematology?
+  A: Correct iron first; ESA if Hb <10 symptomatic
+- Q: What is Dialysis of Hematology?
+  A: IV iron routine; ESA/HIF-PH per protocol
+- Q: What is Transplant of Hematology?
+  A: Anaemia common early (immunosuppression); usually resolves by 6-12mo
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **# Renal Anaemia (Anaemia of Chronic Kidney Disease)**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: EPO Deficiency — Primary driver – peritubular fibroblasts fail to produce EPO as GFR declines; Iron Restriction — Functional (hepcidin↑ blocks absorption/release) + Absolute (blood loss, dialysis); Uraemic Toxins — Inhibit erythropoiesis, shorten RBC survival. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

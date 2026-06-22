@@ -35,3 +35,20 @@ modified: 2026-06-16
 
 ## Tags
 #medicine #davidson #ophthalmology #hub #lids #lacrimal
+---
+
+> Auto-generated study sections for "03_Lids_and_Lacrimal" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of 03_Lids_and_Lacrimal?
+  A: # Section 3: Lids & Lacrimal Apparatus — Hub
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 03_Lids_and_Lacrimal?**
+   A. **# Section 3: Lids & Lacrimal Apparatus — Hub**
+   B. An unrelated condition not matching the clinical picture of 03_Lids_and_Lacrimal
+   C. A complication seen late in the disease course of 03_Lids_and_Lacrimal
+   D. A condition that mimics 03_Lids_and_Lacrimal but has a different underlying cause
+

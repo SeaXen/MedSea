@@ -284,3 +284,42 @@ mindmap
 - [[Portal Hypertension and Complications/Refractory ascites|Refractory Ascites]]
 - [[Portal Hypertension and Complications/Hepatorenal Syndrome|HRS]]
 - [[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: SAAG = Serum Albumin − Ascitic Fluid Albumin
+- Q: What is SAAG ≥1.1 of Portal Hypertension and Complications?
+  A: Portal hypertension (cirrhosis, cardiac, Budd-Chiari)
+- Q: What is SAAG <1.1 of Portal Hypertension and Complications?
+  A: Non-portal hypertensive (TB, carcinomatosis, pancreatic)
+- Q: What is PMN ≥250 of Portal Hypertension and Complications?
+  A: SBP (culture-negative = still SBP)
+- Q: What is Diagnostic paracentesis of Portal Hypertension and Complications?
+  A: New onset, admission, deterioration
+- Q: What is Therapeutic LVP of Portal Hypertension and Complications?
+  A: Albumin 8g/L if >5L removed
+- Q: What is Refractory ascites of Portal Hypertension and Complications?
+  A: No response to spiro 400 + furo 160 + salt restriction
+- Q: What is TIPS for refractory of Portal Hypertension and Complications?
+  A: Child A/B, no severe HE, age<70
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **SAAG = Serum Albumin − Ascitic Fluid Albumin**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Portal Hypertension and Complications presents with: Ascites unresponsive to sodium restriction (88 mmol/day) + high-dose diuretics (spironolactone 400mg + furosemide 160mg) OR diuretic-intolerant (renal, electrolytes, HE); Diuretic-resistant — No response to max diuretics + salt restriction; Diuretic-intractable — Complications prevent diuretic use (AKI, hyponatremia, HE). What is the most likely diagnosis?
+   A. **Portal Hypertension and Complications**
+   B. A condition that mimics Portal Hypertension and Complications but is not the same entity
+   C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
+

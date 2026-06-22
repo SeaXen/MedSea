@@ -321,3 +321,62 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (18 generated)
+
+- Q: What is the definition of Hematology?
+  A: AIHA + ITP (± Immune neutropenia)
+- Q: What is Associations of Hematology?
+  A: ALPS (FAS mutation), CTLA4 haploinsufficiency, LRBA deficiency, SLE, CLL, Lymphoma
+- Q: What is Workup of Hematology?
+  A: FAS-mediated apoptosis assay, CTLA4/LRBA genetics, immunophenotype (DNT cells for ALPS)
+- Q: How is Hematology managed?
+  A: Rituximab preferred; Steroids; Sirolimus (ALPS); Splenectomy (caution: sepsis risk)
+- Q: What is the prognosis of Hematology?
+  A: Relapsing/remitting; higher malignancy risk
+- Q: What is the definition of Hematology?
+  A: AIHA + ITP (± Immune neutropenia)
+- Q: What is Associations of Hematology?
+  A: ALPS (FAS mutation), CTLA4 haploinsufficiency, LRBA deficiency, SLE, CLL, Lymphoma
+- Q: What is Workup of Hematology?
+  A: FAS-mediated apoptosis assay, CTLA4/LRBA genetics, immunophenotype (DNT cells for ALPS)
+- Q: How is Hematology managed?
+  A: Rituximab preferred; Steroids; Sirolimus (ALPS); Splenectomy (caution: sepsis risk)
+- Q: What is the prognosis of Hematology?
+  A: Relapsing/remitting; higher malignancy risk
+- Q: What is Warm AIHA of Hematology?
+  A: IgG DAT+, Prednisolone 1-1.5 mg/kg 1st line, Rituximab 2nd, Splenectomy 3rd
+- Q: What is Cold AIHA (CAD) of Hematology?
+  A: C3d only DAT+, IgM, Steroids INEFFECTIVE, Rituximab ± Bendamustine, Avoid cold
+- Q: What is PCH of Hematology?
+  A: Donath-Landsteiner test +, Post-viral, Self-limiting
+- Q: What is Drug-induced of Hematology?
+  A: Methyldopa (classic), Cephalosporins, Penicillins → Stop drug
+- Q: What is Evans Syndrome of Hematology?
+  A: AIHA + ITP → Screen ALPS (FAS), CTLA4, LRBA
+- Q: What is DAT Patterns of Hematology?
+  A: IgG = Warm; C3d = Cold; IgG+C3d = Mixed
+- Q: What is Cold Agglutinin Titre of Hematology?
+  A: >1:64 = significant
+- Q: What is Sutimlimab of Hematology?
+  A: Anti-C1s – new complement inhibitor for CAD
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haemolytic Anaemias → Immune Haemolytic Anaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Warm AIHA — IgG (↔ C3); Cold AIHA — IgM (κ/λ); Mixed AIHA — IgG + IgM. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

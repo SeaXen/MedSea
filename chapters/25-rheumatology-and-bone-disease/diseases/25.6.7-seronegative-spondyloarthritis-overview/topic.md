@@ -620,3 +620,220 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]] · [[Drugs in rheumatology]]
+---
+
+> Auto-generated study sections for "Inflammatory Arthritis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (97 generated)
+
+- Q: What is the definition of Inflammatory Arthritis?
+  A: Family of interrelated inflammatory disorders sharing axial skeleton involvement, enthesitis, dactylitis, seronegativity, HLA-B27 association
+- Q: What is Common themes of Inflammatory Arthritis?
+  A: Enthesitis, sacroiliitis, dactylitis, uveitis, psoriasis, IBD, family history
+- Q: What is Seronegative of Inflammatory Arthritis?
+  A: RF negative, anti-CCP negative (anti-CCP differentiates from RA)
+- Q: What is Spectrum of Inflammatory Arthritis?
+  A: Ankylosing spondylitis (AS), Psoriatic arthritis (PsA), Reactive arthritis (ReA), Enteropathic arthritis, Undifferentiated SpA, Juvenile SpA
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: Class I MHC; misfolded protein → IL-23 production → Th17 activation; population prevalence 8% (Western); >90% AS; 20% of carriers develop SpA
+- Q: What is IL-23/IL-17 axis of Inflammatory Arthritis?
+  A: Master cytokine pathway in SpA; target of ustekinumab (anti-IL-12/23), risankizumab (anti-IL-23), secukinumab/ixekizumab (anti-IL-17)
+- Q: What is Enthesitis of Inflammatory Arthritis?
+  A: Insertion of tendon/ligament into bone; IL-23-expressing cells at enthesis → IL-17 → inflammation + bone oedema
+- Q: What is Gut-joint axis of Inflammatory Arthritis?
+  A: Subclinical gut inflammation in 60% of SpA; IBD increases SpA risk; HLA-B27+ rats develop both gut and joint disease
+- Q: What is Mucosal immunity of Inflammatory Arthritis?
+  A: ReA follows GU/GI infection; PsA follows psoriasis; common mucosal immune dysregulation
+- Q: What is Inflammatory back pain of Inflammatory Arthritis?
+  A: Age <45, insidious, >3 months, improves with exercise, worse with rest, night pain, AM stiffness >30 min
+- Q: What is Sacroiliitis of Inflammatory Arthritis?
+  A: Buttock pain (often alternating), positive FABER / Patrick's test, Mennel, direct pressure; imaging: X-ray (subchondral sclerosis, erosions, ankylosis) or MRI (bone marrow oedema)
+- Q: What is Enthesitis of Inflammatory Arthritis?
+  A: Achilles, plantar fascia, lateral epicondyle, costochondral; MASES index (Maastricht Ankylosing Spondylitis Enthesitis Score)
+- Q: What is Dactylitis of Inflammatory Arthritis?
+  A: "Sausage digit" — flexor tenosynovitis + enthesitis + synovitis
+- Q: What is Uveitis of Inflammatory Arthritis?
+  A: Acute anterior uveitis (AAU); HLA-B27+; unilateral, painful, photophobic, red eye — emergency ophthalmology
+- Q: What is Psoriasis of Inflammatory Arthritis?
+  A: Skin (often occult) or nail changes (pitting, onycholysis)
+- Q: What is IBD of Inflammatory Arthritis?
+  A: Crohn's, UC; can be subclinical
+- Q: What is Family history of Inflammatory Arthritis?
+  A: SpA, psoriasis, IBD, AAU in 1st-degree relatives
+- Q: What is Synovitis pattern of Inflammatory Arthritis?
+  A: Asymmetrical, oligoarticular, lower limb predominant (vs RA: symmetrical, small joints)
+- Q: What is Axial skeleton of Inflammatory Arthritis?
+  A: Spine (spondylitis), chest wall (costovertebral, manubriosternal)
+- Q: What is ESR, CRP of Inflammatory Arthritis?
+  A: Inflammatory markers (may be normal despite active disease)
+- Q: What is FBC of Inflammatory Arthritis?
+  A: Anaemia of chronic disease; leucocytosis (acute)
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: Supportive; high pre-test probability needed (positive in 8% normal population)
+- Q: What is RF, anti-CCP of Inflammatory Arthritis?
+  A: NEGATIVE (seronegative); anti-CCP differentiates from RA
+- Q: What is U&E, LFT of Inflammatory Arthritis?
+  A: Baseline for monitoring (NSAID, biologic)
+- Q: What is Urinalysis of Inflammatory Arthritis?
+  A: Baseline (NSAID nephrotoxicity, secondary amyloidosis)
+- Q: What is CXR of Inflammatory Arthritis?
+  A: Chest wall, cardiac (aortitis rare)
+- Q: What is Pelvis X-ray (AP) of Inflammatory Arthritis?
+  A: Sacroiliitis (modified New York criteria); spine X-ray (bamboo spine)
+- Q: What is MRI SI joints of Inflammatory Arthritis?
+  A: Gold standard for early sacroiliitis (bone marrow oedema, enthesitis) — when X-ray normal
+- Q: What is Ultrasound of Inflammatory Arthritis?
+  A: Enthesitis (Doppler), dactylitis, peripheral synovitis
+- Q: What is Clinical of Inflammatory Arthritis?
+  A: Low back pain ≥3 months, improved by exercise, not relieved by rest; limitation of lumbar spine; limitation of chest expansion
+- Q: What is Radiographic of Inflammatory Arthritis?
+  A: Bilateral sacroiliitis grade ≥2 OR unilateral sacroiliitis grade ≥3-4
+- Q: What is Definite AS of Inflammatory Arthritis?
+  A: Radiographic criterion + ≥1 clinical criterion
+- Q: What is Method of Inflammatory Arthritis?
+  A: Flow cytometry or PCR; not a "screening" test
+- Q: What is the investigation of choice for Inflammatory Arthritis?
+  A: Symptomatic patient with inflammatory back pain → post-test probability high
+- Q: What is the epidemiology of Inflammatory Arthritis?
+  A: 8% in West; up to 50% in Haida, indigenous populations
+- Q: How is Inflammatory Arthritis classified?
+  A: AS 90%, ReA 60-80%, PsA axial 20-50%, IBD 30-50%, acute anterior uveitis 50%
+- Q: What is Positive in healthy of Inflammatory Arthritis?
+  A: 8% → lifetime SpA risk 2-5%; HLA-B27 alone does not diagnose SpA
+- Q: What is Negative result of Inflammatory Arthritis?
+  A: Does not exclude SpA (10-20% of AS, 50% of PsA are HLA-B27−)
+- Q: What is the epidemiology of Inflammatory Arthritis?
+  A: 25-40% of AS; 50% of HLA-B27+ SpA
+- Q: What is Clinical of Inflammatory Arthritis?
+  A: Unilateral, painful, red eye, photophobia, blurred vision, miosis; acute onset
+- Q: What is Pathology of Inflammatory Arthritis?
+  A: Non-granulomatous iritis; HLA-B27 strongly associated
+- Q: What is Course of Inflammatory Arthritis?
+  A: Acute (weeks); recurrent in 50% (often alternating eyes)
+- Q: What are the complications of Inflammatory Arthritis?
+  A: Posterior synechiae, cataract, glaucoma, macular oedema
+- Q: How is Inflammatory Arthritis managed?
+  A: Emergency ophthalmology; topical steroid + cycloplegic; systemic steroid for severe; anti-TNF (especially adalimumab) reduces recurrence
+- Q: What is Differential of Inflammatory Arthritis?
+  A: Conjunctivitis (no pain, no photophobia), episcleritis, scleritis, keratitis
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: Class I MHC; misfolded protein → IL-23 production → Th17 activation; population prevalence 8% (Western); >90% AS; 20% of carriers develop SpA
+- Q: What is IL-23/IL-17 axis of Inflammatory Arthritis?
+  A: Master cytokine pathway in SpA; target of ustekinumab (anti-IL-12/23), risankizumab (anti-IL-23), secukinumab/ixekizumab (anti-IL-17)
+- Q: What is Enthesitis of Inflammatory Arthritis?
+  A: Insertion of tendon/ligament into bone; IL-23-expressing cells at enthesis → IL-17 → inflammation + bone oedema
+- Q: What is Gut-joint axis of Inflammatory Arthritis?
+  A: Subclinical gut inflammation in 60% of SpA; IBD increases SpA risk; HLA-B27+ rats develop both gut and joint disease
+- Q: What is Mucosal immunity of Inflammatory Arthritis?
+  A: ReA follows GU/GI infection; PsA follows psoriasis; common mucosal immune dysregulation
+- Q: What is Inflammatory back pain of Inflammatory Arthritis?
+  A: Age <45, insidious, >3 months, improves with exercise, worse with rest, night pain, AM stiffness >30 min
+- Q: What is Sacroiliitis of Inflammatory Arthritis?
+  A: Buttock pain (often alternating), positive FABER / Patrick's test, Mennel, direct pressure; imaging: X-ray (subchondral sclerosis, erosions, ankylosis) or MRI (bone marrow oedema)
+- Q: What is Enthesitis of Inflammatory Arthritis?
+  A: Achilles, plantar fascia, lateral epicondyle, costochondral; MASES index (Maastricht Ankylosing Spondylitis Enthesitis Score)
+- Q: What is Dactylitis of Inflammatory Arthritis?
+  A: "Sausage digit" — flexor tenosynovitis + enthesitis + synovitis
+- Q: What is Uveitis of Inflammatory Arthritis?
+  A: Acute anterior uveitis (AAU); HLA-B27+; unilateral, painful, photophobic, red eye — emergency ophthalmology
+- Q: What is Psoriasis of Inflammatory Arthritis?
+  A: Skin (often occult) or nail changes (pitting, onycholysis)
+- Q: What is IBD of Inflammatory Arthritis?
+  A: Crohn's, UC; can be subclinical
+- Q: What is Family history of Inflammatory Arthritis?
+  A: SpA, psoriasis, IBD, AAU in 1st-degree relatives
+- Q: What is Synovitis pattern of Inflammatory Arthritis?
+  A: Asymmetrical, oligoarticular, lower limb predominant (vs RA: symmetrical, small joints)
+- Q: What is ESR, CRP of Inflammatory Arthritis?
+  A: Inflammatory markers (may be normal despite active disease)
+- Q: What is FBC of Inflammatory Arthritis?
+  A: Anaemia of chronic disease; leucocytosis (acute)
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: Supportive; high pre-test probability needed (positive in 8% normal population)
+- Q: What is RF, anti-CCP of Inflammatory Arthritis?
+  A: NEGATIVE (seronegative); anti-CCP differentiates from RA
+- Q: What is U&E, LFT of Inflammatory Arthritis?
+  A: Baseline for monitoring (NSAID, biologic)
+- Q: What is Urinalysis of Inflammatory Arthritis?
+  A: Baseline (NSAID nephrotoxicity, secondary amyloidosis)
+- Q: What is CXR of Inflammatory Arthritis?
+  A: Chest wall, cardiac (aortitis rare)
+- Q: What is Pelvis X-ray (AP) of Inflammatory Arthritis?
+  A: Sacroiliitis (modified New York criteria); spine X-ray (bamboo spine)
+- Q: What is MRI SI joints of Inflammatory Arthritis?
+  A: Gold standard for early sacroiliitis (bone marrow oedema, enthesitis) — when X-ray normal
+- Q: What is Clinical of Inflammatory Arthritis?
+  A: Low back pain ≥3 months, improved by exercise, not relieved by rest; limitation of lumbar spine; limitation of chest expansion
+- Q: What is Radiographic of Inflammatory Arthritis?
+  A: Bilateral sacroiliitis grade ≥2 OR unilateral sacroiliitis grade ≥3-4
+- Q: What is Method of Inflammatory Arthritis?
+  A: Flow cytometry or PCR; not a "screening" test
+- Q: What is the investigation of choice for Inflammatory Arthritis?
+  A: Symptomatic patient with inflammatory back pain → post-test probability high
+- Q: What is the epidemiology of Inflammatory Arthritis?
+  A: 8% in West; up to 50% in Haida, indigenous populations
+- Q: How is Inflammatory Arthritis classified?
+  A: AS 90%, ReA 60-80%, PsA axial 20-50%, IBD 30-50%, acute anterior uveitis 50%
+- Q: What is Positive in healthy of Inflammatory Arthritis?
+  A: 8% → lifetime SpA risk 2-5%; HLA-B27 alone does not diagnose SpA
+- Q: What is Negative result of Inflammatory Arthritis?
+  A: Does not exclude SpA (10-20% of AS, 50% of PsA are HLA-B27−)
+- Q: What is the epidemiology of Inflammatory Arthritis?
+  A: 25-40% of AS; 50% of HLA-B27+ SpA
+- Q: What is Clinical of Inflammatory Arthritis?
+  A: Unilateral, painful, red eye, photophobia, blurred vision, miosis; acute onset
+- Q: What is Pathology of Inflammatory Arthritis?
+  A: Non-granulomatous iritis; HLA-B27 strongly associated
+- Q: What is Course of Inflammatory Arthritis?
+  A: Acute (weeks); recurrent in 50% (often alternating eyes)
+- Q: What are the complications of Inflammatory Arthritis?
+  A: Posterior synechiae, cataract, glaucoma, macular oedema
+- Q: How is Inflammatory Arthritis managed?
+  A: Emergency ophthalmology; topical steroid + cycloplegic; systemic steroid for severe; anti-TNF (especially adalimumab) reduces recurrence
+- Q: What are the clinical features of Inflammatory Arthritis?
+  A: HLA-B27, enthesitis, dactylitis, sacroiliitis, uveitis, psoriasis, IBD, family hx, seronegative
+- Q: What is Inflammatory back pain of Inflammatory Arthritis?
+  A: <45y, insidious, >3 months, improves with exercise, worse with rest, night pain, AM stiffness >30 min
+- Q: What is ASAS axial SpA of Inflammatory Arthritis?
+  A: Back pain ≥3 months, <45y: imaging arm (sacroiliitis on MRI/X-ray + ≥1 feature) OR clinical arm (HLA-B27 + ≥2 features)
+- Q: What is ASAS peripheral SpA of Inflammatory Arthritis?
+  A: Arthritis OR enthesitis OR dactylitis + ≥1 feature (OR all 3 + ≥2 features)
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: 90% AS, 60-80% ReA, 20-50% PsA, 30-50% IBD; don't screen in non-specific back pain
+- Q: What is CASPAR for PsA of Inflammatory Arthritis?
+  A: Current psoriasis +2, hx psoriasis +1, nail dystrophy +1, RF neg +1, dactylitis +1, juxta-articular new bone +1; ≥3 = PsA
+- Q: What is AS mNY criteria of Inflammatory Arthritis?
+  A: Radiographic sacroiliitis (bilateral ≥2 or unilateral ≥3) + ≥1 clinical
+- Q: What is MRI vs X-ray of Inflammatory Arthritis?
+  A: MRI for early active inflammation (bone marrow oedema); X-ray for late structural damage (years)
+- Q: What is Uveitis of Inflammatory Arthritis?
+  A: Acute anterior uveitis; HLA-B27; unilateral, painful, red; emergency; adalimumab reduces recurrence
+- Q: What is the first-line treatment for Inflammatory Arthritis?
+  A: Naproxen 500 BD or celecoxib 200 BD; continuous for axial SpA; GI + CV protection
+- Q: What is Biologics (axial) of Inflammatory Arthritis?
+  A: Anti-TNF (ADA, IFX, ETA, CZP, GOL) or anti-IL-17 (SEC, IXE, BIM); csDMARDs no efficacy in axial
+- Q: What is Anti-TNF for uveitis/IBD of Inflammatory Arthritis?
+  A: Adalimumab (best for both); etanercept does NOT work for IBD/uveitis (decoy receptor)
+- Q: What is JAKi of Inflammatory Arthritis?
+  A: Tofacitinib (PsA), upadacitinib (AS, PsA); boxed warning MACE/VTE/malignancy
+- Q: What is Pregnancy safe of Inflammatory Arthritis?
+  A: NSAIDs (1st/2nd tri), paracetamol, certolizumab, sulfasalazine; avoid MTX, LEF
+- Q: What are the complications of Inflammatory Arthritis?
+  A: AA amyloidosis (chronic inflammation), AAU (uveitis), aortitis (AS), CVD (↑ risk), fractures (osteoporosis)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inflammatory Arthritis?**
+   A. **SpA is a family of related disorders sharing HLA-B27, axial involvement (sacroiliitis, spondylitis), enthesitis, and seronegativity (RF/CCP negative).**
+   B. An unrelated condition not matching the clinical picture of Inflammatory Arthritis
+   C. A complication seen late in the disease course of Inflammatory Arthritis
+   D. A condition that mimics Inflammatory Arthritis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inflammatory Arthritis presents with: Feature — Spondyloarthritis Spectrum; Definition — Family of interrelated inflammatory disorders sharing axial skeleton involvement, enthesitis, dactylitis, seronegativity, HLA-B27 association; Common themes — Enthesitis, sacroiliitis, dactylitis, uveitis, psoriasis, IBD, family history. What is the most likely diagnosis?
+   A. **Inflammatory Arthritis**
+   B. A condition that mimics Inflammatory Arthritis but is not the same entity
+   C. A complication of Inflammatory Arthritis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inflammatory Arthritis
+

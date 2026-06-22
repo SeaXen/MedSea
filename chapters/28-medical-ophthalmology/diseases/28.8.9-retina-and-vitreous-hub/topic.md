@@ -38,3 +38,20 @@ modified: 2026-06-16
 
 ## Tags
 #medicine #davidson #ophthalmology #hub #retina #vitreous
+---
+
+> Auto-generated study sections for "08_Retina_and_Vitreous" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of 08_Retina_and_Vitreous?
+  A: # Section 8: Retina & Vitreous — Hub
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 08_Retina_and_Vitreous?**
+   A. **# Section 8: Retina & Vitreous — Hub**
+   B. An unrelated condition not matching the clinical picture of 08_Retina_and_Vitreous
+   C. A complication seen late in the disease course of 08_Retina_and_Vitreous
+   D. A condition that mimics 08_Retina_and_Vitreous but has a different underlying cause
+

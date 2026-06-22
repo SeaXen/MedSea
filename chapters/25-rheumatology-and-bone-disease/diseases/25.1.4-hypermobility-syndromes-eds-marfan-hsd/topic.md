@@ -551,3 +551,86 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[Drugs in rheumatology]] · [[Investigations in rheumatology]] · [[Joint examination (GALS)]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (30 generated)
+
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: Hypermobility syndromes are a spectrum of heritable connective tissue disorders, from asymptomatic hypermobility through hypermobility spectrum disorder (HSD) to Ehlers-Danlos syndromes (EDS) and Marfan syndrome.
+- Q: What are the clinical features of Autoimmune Rheumatic Diseases?
+  A: Beighton ≥5/9; no symptoms
+- Q: What is Generalised joint laxity of Autoimmune Rheumatic Diseases?
+  A: Multi-joint laxity; mild symptoms
+- Q: What is Hypermobility Spectrum Disorder (HSD) of Autoimmune Rheumatic Diseases?
+  A: Hypermobility + symptoms; does not meet EDS criteria
+- Q: What is Hypermobile EDS (hEDS) of Autoimmune Rheumatic Diseases?
+  A: Most common EDS; hypermobility + skin hyperextensibility + chronic pain + systemic features
+- Q: How is Autoimmune Rheumatic Diseases classified?
+  A: Classical, vascular, kyphoscoliotic, arthrochalasia, dermatosparaxis, brittle cornea, spondylodysplastic, musculocontractural, myopathic, periodontal, cardiac-valvular (13 total)
+- Q: What is Marfan syndrome of Autoimmune Rheumatic Diseases?
+  A: FBN1 mutation; cardiovascular (aortic root), skeletal, ocular
+- Q: What are the clinical features of Autoimmune Rheumatic Diseases?
+  A: Beighton ≥5/9; no symptoms
+- Q: What is Generalised joint laxity of Autoimmune Rheumatic Diseases?
+  A: Multi-joint laxity; mild symptoms
+- Q: What is Hypermobility Spectrum Disorder (HSD) of Autoimmune Rheumatic Diseases?
+  A: Hypermobility + symptoms; does not meet EDS criteria
+- Q: What is Hypermobile EDS (hEDS) of Autoimmune Rheumatic Diseases?
+  A: Most common EDS; hypermobility + skin hyperextensibility + chronic pain + systemic features
+- Q: How is Autoimmune Rheumatic Diseases classified?
+  A: Classical, vascular, kyphoscoliotic, arthrochalasia, dermatosparaxis, brittle cornea, spondylodysplastic, musculocontractural, myopathic, periodontal, cardiac-valvular (13 total)
+- Q: What is Spectrum of Autoimmune Rheumatic Diseases?
+  A: Asymptomatic hypermobility → HSD → hEDS → Marfan → vEDS
+- Q: What is Beighton score of Autoimmune Rheumatic Diseases?
+  A: ≥5/9 (children), ≥4/9 (puberty-50y), ≥3/9 (>50y) — 9 = bilateral 5th finger, thumb, elbow, knee, trunk
+- Q: What is hEDS (most common) of Autoimmune Rheumatic Diseases?
+  A: No genetic test; clinical 2017 criteria; hypermobility + systemic + no other cause
+- Q: What is vEDS (most dangerous) of Autoimmune Rheumatic Diseases?
+  A: COL3A1; arterial/organ rupture; thin translucent skin; median survival 48-54y
+- Q: What is Marfan of Autoimmune Rheumatic Diseases?
+  A: FBN1; aortic root dilatation + ectopia lentis; tall, arachnodactyly
+- Q: How is Autoimmune Rheumatic Diseases classified?
+  A: 13 types: classical, classical-like, cardiac-valvular, vascular, hypermobile (most common), arthrochalasia, dermatosparaxis, kyphoscoliotic, brittle cornea, spondylodysplastic, musculocontractural, myopathic, periodontal
+- Q: What is Skin of Autoimmune Rheumatic Diseases?
+  A: Hyperextensibility, atrophic scars, easy bruising
+- Q: What is Joint of Autoimmune Rheumatic Diseases?
+  A: Subluxation, dislocation, chronic pain, early OA
+- Q: What is Autonomic of Autoimmune Rheumatic Diseases?
+  A: POTS (postural tachycardia)
+- Q: What is GI of Autoimmune Rheumatic Diseases?
+  A: GERD, IBS-like, dysmotility
+- Q: What is Cardiovascular of Autoimmune Rheumatic Diseases?
+  A: MVP (hEDS), aortic root (Marfan, vEDS), dissection
+- Q: What is Echocardiogram of Autoimmune Rheumatic Diseases?
+  A: Essential (all HCT)
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: Multidisciplinary; PT, OT, pain, cardiology, genetics, psychology
+- Q: What is Celiprolol of Autoimmune Rheumatic Diseases?
+  A: vEDS (↓ arterial events); off-label in Marfan
+- Q: What is Marfan Rx of Autoimmune Rheumatic Diseases?
+  A: β-blocker + ARB (losartan); aortic surgery at 4.5-5.0 cm
+- Q: What is Surgery of Autoimmune Rheumatic Diseases?
+  A: High risk in vEDS; tissue fragility
+- Q: What is Pregnancy of Autoimmune Rheumatic Diseases?
+  A: Marfan: continue β-blocker, monitor aortic root; vEDS: elective C-section, celiprolol
+- Q: What is Avoid of Autoimmune Rheumatic Diseases?
+  A: Contact sports, heavy lifting (Marfan), arteriography (vEDS)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **Hypermobility syndromes are a spectrum of heritable connective tissue disorders, from asymptomatic hypermobility through hypermobility spectrum disorder (HSD) to Ehlers-Danlos syndromes (EDS) and Marf**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: Asymptomatic hypermobility — Beighton ≥5/9; no symptoms; Generalised joint laxity — Multi-joint laxity; mild symptoms; Hypermobility Spectrum Disorder (HSD) — Hypermobility + symptoms; does not meet EDS criteria. What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

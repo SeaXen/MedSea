@@ -58,3 +58,20 @@ Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - 
 - [[Vasculitis/Primary systemic vasculitides overview|Primary vasculitides]] | [[Giant cell arteritis]] | [[ANCA-associated vasculitis overview]] | [[Polyarteritis nodosa]] | [[Kawasaki disease]] | [[IgA vasculitis (HSP)]] | [[Behçet's disease]] | [[Secondary vasculitides]]
 - Parent MOC: [[../Rheumatology MOC|Rheumatology MOC]]
 - Chapter map: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]] · [[../Chapter 26 Rheumatology Roadmap|Roadmap]]
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]] · [[../Chapter 26 Rheumatology Roadmap|Roadmap]]**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+

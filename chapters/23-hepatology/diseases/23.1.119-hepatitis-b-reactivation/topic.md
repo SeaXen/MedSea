@@ -283,3 +283,54 @@ mindmap
 - [[Viral Hepatitis/Hepatitis B treatment indications|HBV Treatment]]
 - [[Viral Hepatitis/Hepatitis B pregnancy and vertical transmission|HBV Pregnancy]]
 - [[Viral Hepatitis/Hepatitis B serology interpretation|HBV Serology]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (14 generated)
+
+- Q: What is Anti-TNF of Viral Hepatitis?
+  A: Infliximab, Adalimumab, Etanercept, Certolizumab, Golimumab
+- Q: What is TYK2/JAK Inhibitors of Viral Hepatitis?
+  A: Tofacitinib, Upadacitinib, Baricitinib
+- Q: How is Viral Hepatitis managed?
+  A: Methotrexate, Cyclophosphamide, 5-FU
+- Q: What is Solid Organ Transplant of Viral Hepatitis?
+  A: Kidney, Heart, Lung (non-liver)
+- Q: What is Anti-TNF of Viral Hepatitis?
+  A: Infliximab, Adalimumab, Etanercept, Certolizumab, Golimumab
+- Q: What is TYK2/JAK Inhibitors of Viral Hepatitis?
+  A: Tofacitinib, Upadacitinib, Baricitinib
+- Q: How is Viral Hepatitis managed?
+  A: Methotrexate, Cyclophosphamide, 5-FU
+- Q: What is HBsAg+ of Viral Hepatitis?
+  A: Prophylaxis ALWAYS (Entecavir/Tenofovir) → ≥12mo after immunosuppression stops
+- Q: What is Resolved (Anti-HBc+) of Viral Hepatitis?
+  A: Risk by Immunosuppression: High (Rituximab, SCT, High-Dose Steroids) → Prophylaxis; Moderate (Anti-TNF, Chemo) → Prophylaxis/Monitor; Low (MTX, AZA, Low Steroids) → Monitor
+- Q: What is Drug of Choice of Viral Hepatitis?
+  A: Entecavir 0.5mg or Tenofovir 245mg (High Barrier)
+- Q: What is Prophylaxis Duration of Viral Hepatitis?
+  A: ≥12 months AFTER stopping immunosuppression
+- Q: What is Rituximab of Viral Hepatitis?
+  A: Always Prophylaxis (High Risk); ≥12mo after last dose
+- Q: How is Viral Hepatitis monitored?
+  A: HBV DNA q3mo on prophylaxis; ALT q1-3mo off prophylaxis
+- Q: What is the definition of Viral Hepatitis?
+  A: HBsAg+ → HBV DNA ↑1 log; Resolved → HBsAg Seroreversion
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **B -->|HBsAg+ (Chronic HBV)| C[HIGH RISK for ALL Immunosuppression]**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Viral Hepatitis presents with: HBV Reactivation = Reappearance of HBV DNA or HBsAg seroreversion in a patient with previous or current HBV infection triggered by immunosuppression; Scenario — Reactivation Definition; HBsAg+ (Chronic) — HBV DNA ↑ >1 log10 IU/mL from baseline (or reappearance if undetectable). What is the most likely diagnosis?
+   A. **Viral Hepatitis**
+   B. A condition that mimics Viral Hepatitis but is not the same entity
+   C. A complication of Viral Hepatitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Viral Hepatitis
+

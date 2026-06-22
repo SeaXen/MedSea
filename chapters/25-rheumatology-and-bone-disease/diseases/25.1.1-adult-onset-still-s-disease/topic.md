@@ -385,3 +385,78 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Macrophage activation syndrome]] · [[Systemic lupus erythematosus]] · [[Reactive arthritis]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: AOSD = systemic autoinflammatory disease: quotidian fever + salmon-pink rash + arthritis.
+- Q: What is 1. Quotidian Fever of Autoimmune Rheumatic Diseases?
+  A: Spiking once or twice daily (>39°C, often >40°C), afebrile between spikes, no rigors
+- Q: What is 2. Salmon-Pink Rash of Autoimmune Rheumatic Diseases?
+  A: Evanescent, salmon-pink maculopapular, trunk/proximal limbs, heat-induced (worsens with fever/warmth), non-pruritic, Kobner phenomenon
+- Q: What is 3. Arthritis of Autoimmune Rheumatic Diseases?
+  A: Polyarticular (wrists, knees, ankles, shoulders), can be destructive (carpal destruction), may precede fever
+- Q: What is Ferritin of Autoimmune Rheumatic Diseases?
+  A: >10,000 µg/L (often >50,000)
+- Q: What is Cytopenias of Autoimmune Rheumatic Diseases?
+  A: ≥2 lineages (Hb <90, WBC <4, Platelets <100)
+- Q: What is Triglycerides of Autoimmune Rheumatic Diseases?
+  A: >265 mg/dL (3 mmol/L) or Fibrinogen <1.5 g/L
+- Q: What is Liver of Autoimmune Rheumatic Diseases?
+  A: AST >ULN, Bilirubin elevated
+- Q: What is CNS of Autoimmune Rheumatic Diseases?
+  A: Altered mental status, seizures
+- Q: What is Hemophagocytosis of Autoimmune Rheumatic Diseases?
+  A: Bone marrow/ spleen/ lymph node (not mandatory)
+- Q: What is 1. Quotidian Fever of Autoimmune Rheumatic Diseases?
+  A: Spiking once or twice daily (>39°C, often >40°C), afebrile between spikes, no rigors
+- Q: What is 2. Salmon-Pink Rash of Autoimmune Rheumatic Diseases?
+  A: Evanescent, salmon-pink maculopapular, trunk/proximal limbs, heat-induced (worsens with fever/warmth), non-pruritic, Kobner phenomenon
+- Q: What is Ferritin of Autoimmune Rheumatic Diseases?
+  A: >10,000 µg/L (often >50,000)
+- Q: What is Cytopenias of Autoimmune Rheumatic Diseases?
+  A: ≥2 lineages (Hb <90, WBC <4, Platelets <100)
+- Q: What is Triglycerides of Autoimmune Rheumatic Diseases?
+  A: >265 mg/dL (3 mmol/L) or Fibrinogen <1.5 g/L
+- Q: What is Liver of Autoimmune Rheumatic Diseases?
+  A: AST >ULN, Bilirubin elevated
+- Q: What is CNS of Autoimmune Rheumatic Diseases?
+  A: Altered mental status, seizures
+- Q: What is Hemophagocytosis of Autoimmune Rheumatic Diseases?
+  A: Bone marrow/ spleen/ lymph node (not mandatory)
+- Q: What is Triad of Autoimmune Rheumatic Diseases?
+  A: Quotidian fever (spiking >39°C daily) + Salmon-pink evanescent rash (heat-induced) + Polyarthritis
+- Q: What is Ferritin of Autoimmune Rheumatic Diseases?
+  A: >>1000 (often 2000-20,000); Glycosylated fraction <20% = highly specific
+- Q: What is Yamaguchi Criteria of Autoimmune Rheumatic Diseases?
+  A: ≥5 criteria (≥2 major) + exclusions; Major: fever ≥1w, arthralgia ≥2w, rash, leukocytosis ≥10k/80% neutrophils
+- Q: What is Fautrel Criteria of Autoimmune Rheumatic Diseases?
+  A: Includes glycosylated ferritin <20% as major — higher specificity
+- Q: What is MAS of Autoimmune Rheumatic Diseases?
+  A: Ferritin >10,000, cytopenias (≥2), hypertriglyceridaemia, coagulopathy, CNS dysfunction — Emergency!
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: NSAIDs → Steroids (0.5-1mg/kg) → Anakinra (IL-1Ra) 1st biologic → Tocilizumab (IL-6R) → MTX/Cyclosporine
+- Q: What is Exclusions of Autoimmune Rheumatic Diseases?
+  A: Infections, Malignancies (lymphoma), Other rheumatic diseases (must exclude)
+- Q: What is ANA/RF of Autoimmune Rheumatic Diseases?
+  A: Negative (essential for diagnosis)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **AOSD = systemic autoinflammatory disease: quotidian fever + salmon-pink rash + arthritis.**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: Definition — Rare systemic autoinflammatory disease of unknown aetiology — dysregulated innate immunity (IL-1, IL-6, IL-18 overexpression); Incidence — 0.16-0.4/100,000/year (rare); Peak Onset — 16-35 years (bimodal: 15-25, 35-45). What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

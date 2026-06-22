@@ -426,3 +426,90 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[IgG4-related disease]] · [[Drugs in rheumatology]] · [[Tuberculous arthritis]]
+---
+
+> Auto-generated study sections for "Polymyalgia Rheumatica and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (32 generated)
+
+- Q: What is the definition of Polymyalgia Rheumatica and Related Disorders?
+  A: Sarcoidosis = multisystem granulomatous disease (non-caseating), bilateral hilar lymphadenopathy (BHL) hallmark.
+- Q: What is Non-caseating granuloma of Polymyalgia Rheumatica and Related Disorders?
+  A: Epithelioid macrophages + multinucleated giant cells + CD4+ T-cells — no necrosis (vs TB)
+- Q: What is Th1 polarisation of Polymyalgia Rheumatica and Related Disorders?
+  A: IFN-γ, IL-2, TNF-α, IL-12, IL-18 drive granuloma formation
+- Q: What is Vitamin D dysregulation of Polymyalgia Rheumatica and Related Disorders?
+  A: Granuloma 1α-hydroxylase → ↑1,25-(OH)2 Vit D → hypercalcaemia/hypercalciuria
+- Q: What is ACE production of Polymyalgia Rheumatica and Related Disorders?
+  A: Granuloma macrophages produce ACE → elevated serum ACE (non-specific)
+- Q: What is Löfgren Arthritis of Polymyalgia Rheumatica and Related Disorders?
+  A: Acute, symmetric ankle/ankle + knee — EN + BHL = good prognosis
+- Q: What is Chronic Arthritis of Polymyalgia Rheumatica and Related Disorders?
+  A: Rare — mimics RA, erosive
+- Q: What is Triad of Polymyalgia Rheumatica and Related Disorders?
+  A: Erythema Nodosum + Bilateral Hilar Lymphadenopathy + Ankle Arthritis
+- Q: What is Demographics of Polymyalgia Rheumatica and Related Disorders?
+  A: Young adults, F > M, spring/summer peak
+- Q: What is Course of Polymyalgia Rheumatica and Related Disorders?
+  A: Acute, self-limiting (6-24 months), excellent prognosis
+- Q: What is Labs of Polymyalgia Rheumatica and Related Disorders?
+  A: ACE elevated, ESR/CRP ↑, hypercalcaemia rare
+- Q: What is Non-caseating granuloma of Polymyalgia Rheumatica and Related Disorders?
+  A: Epithelioid macrophages + multinucleated giant cells + CD4+ T-cells — no necrosis (vs TB)
+- Q: What is Th1 polarisation of Polymyalgia Rheumatica and Related Disorders?
+  A: IFN-γ, IL-2, TNF-α, IL-12, IL-18 drive granuloma formation
+- Q: What is Vitamin D dysregulation of Polymyalgia Rheumatica and Related Disorders?
+  A: Granuloma 1α-hydroxylase → ↑1,25-(OH)2 Vit D → hypercalcaemia/hypercalciuria
+- Q: What is ACE production of Polymyalgia Rheumatica and Related Disorders?
+  A: Granuloma macrophages produce ACE → elevated serum ACE (non-specific)
+- Q: What is Hypercalciuria of Polymyalgia Rheumatica and Related Disorders?
+  A: ↑1,25 Vit D → ↑Ca absorption → stones, nephrocalcinosis
+- Q: What is Hypercalcaemia of Polymyalgia Rheumatica and Related Disorders?
+  A: Severe — confusion, polyuria, renal impairment
+- Q: What is Triad of Polymyalgia Rheumatica and Related Disorders?
+  A: Erythema Nodosum + Bilateral Hilar Lymphadenopathy + Ankle Arthritis
+- Q: What is Demographics of Polymyalgia Rheumatica and Related Disorders?
+  A: Young adults, F > M, spring/summer peak
+- Q: What is Course of Polymyalgia Rheumatica and Related Disorders?
+  A: Acute, self-limiting (6-24 months), excellent prognosis
+- Q: What is Labs of Polymyalgia Rheumatica and Related Disorders?
+  A: ACE elevated, ESR/CRP ↑, hypercalcaemia rare
+- Q: What is Hallmark of Polymyalgia Rheumatica and Related Disorders?
+  A: Bilateral Hilar Lymphadenopathy (BHL) — symmetrical, "potato nodes", Stage I
+- Q: What is Löfgren Syndrome of Polymyalgia Rheumatica and Related Disorders?
+  A: EN + BHL + Ankle Arthritis — acute, young F, excellent prognosis
+- Q: What is Hypercalcaemia of Polymyalgia Rheumatica and Related Disorders?
+  A: Granuloma 1α-hydroxylase → ↑1,25 Vit D → hypercalcaemia/hypercalciuria
+- Q: What is ACE of Polymyalgia Rheumatica and Related Disorders?
+  A: Elevated 60% (active disease) — non-specific (TB, leprosy, Gaucher, hyperthyroidism)
+- Q: What is Biopsy of Polymyalgia Rheumatica and Related Disorders?
+  A: Non-caseating granulomas — no necrosis (vs TB = caseating)
+- Q: What is Staging (Scadding) of Polymyalgia Rheumatica and Related Disorders?
+  A: 0=normal, I=BHL, II=BHL+infiltrates, III=infiltrates, IV=fibrosis
+- Q: How is Polymyalgia Rheumatica and Related Disorders managed?
+  A: Asymptomatic Stage I/II = observe; Symptomatic = pred 0.5mg/kg → steroid-sparing (MTX 1st); Refractory = Anti-TNF
+- Q: What is Cardiac of Polymyalgia Rheumatica and Related Disorders?
+  A: Conduction defects (AV block) — most common; screen with ECG
+- Q: What is Ocular of Polymyalgia Rheumatica and Related Disorders?
+  A: Anterior uveitis — mutton-fat KPs, iris nodules; slit-lamp screen
+- Q: What is Differential TB of Polymyalgia Rheumatica and Related Disorders?
+  A: Non-caseating = sarcoid; Caseating = TB (but early TB can be non-caseating)
+- Q: What is IgG4-RD of Polymyalgia Rheumatica and Related Disorders?
+  A: Serum IgG4 >135, storiform fibrosis, obliterative phlebitis — pancreas, salivary (Mikulicz), retroperitoneal fibrosis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Polymyalgia Rheumatica and Related Disorders?**
+   A. **Sarcoidosis = multisystem granulomatous disease (non-caseating), bilateral hilar lymphadenopathy (BHL) hallmark.**
+   B. An unrelated condition not matching the clinical picture of Polymyalgia Rheumatica and Related Disorders
+   C. A complication seen late in the disease course of Polymyalgia Rheumatica and Related Disorders
+   D. A condition that mimics Polymyalgia Rheumatica and Related Disorders but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Polymyalgia Rheumatica and Related Disorders presents with: Peak Onset — 20-40 years (bimodal: 20-29, 50-60 in women); Sex Ratio — F > M (1.5:1); Ethnicity — African-Caribbean > Caucasian (2-3x higher, more severe). What is the most likely diagnosis?
+   A. **Polymyalgia Rheumatica and Related Disorders**
+   B. A condition that mimics Polymyalgia Rheumatica and Related Disorders but is not the same entity
+   C. A complication of Polymyalgia Rheumatica and Related Disorders rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Polymyalgia Rheumatica and Related Disorders
+

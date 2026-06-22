@@ -299,3 +299,42 @@ mindmap
 - [[Portal Hypertension and Complications/Ascites|Ascites]]
 - [[Portal Hypertension and Complications/Varices|Varices]]
 - [[Liver Transplantation/Liver Transplantation|Liver Transplant]]
+---
+
+> Auto-generated study sections for "Chronic Liver Disease and Cirrhosis" — Ch 23: Hepatology.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Chronic Liver Disease and Cirrhosis?
+  A: Diffuse Fibrosis + Nodules + Architectural Distortion
+- Q: What is Compensated vs Decompensated of Chronic Liver Disease and Cirrhosis?
+  A: Decompensated = Ascites/Bleed/HE/Jaundice
+- Q: What is Child-Pugh of Chronic Liver Disease and Cirrhosis?
+  A: 5 Parameters (Bil, Alb, INR, Ascites, HE); A:5-6, B:7-9, C:10-15
+- Q: What is MELD of Chronic Liver Disease and Cirrhosis?
+  A: Bil, INR, Cr (+ Na for MELD-Na); Range 6-40
+- Q: What is Transplant Threshold of Chronic Liver Disease and Cirrhosis?
+  A: MELD ≥15 (or Child B/C with Complications)
+- Q: What is 1-Year Survival of Chronic Liver Disease and Cirrhosis?
+  A: Child A: 100%, B: 80%, C: 45%
+- Q: What is Decompensation Events of Chronic Liver Disease and Cirrhosis?
+  A: Ascites, Variceal Bleed, HE, Jaundice
+- Q: What is HCC Surveillance of Chronic Liver Disease and Cirrhosis?
+  A: Cirrhosis: 6m US ± AFP (All Aetiologies)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Chronic Liver Disease and Cirrhosis?**
+   A. **# Chronic Liver Disease and Cirrhosis: Definition & Classification**
+   B. An unrelated condition not matching the clinical picture of Chronic Liver Disease and Cirrhosis
+   C. A complication seen late in the disease course of Chronic Liver Disease and Cirrhosis
+   D. A condition that mimics Chronic Liver Disease and Cirrhosis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Chronic Liver Disease and Cirrhosis presents with: Bridging Fibrosis connecting portal tracts; Regenerative Nodules (surrounded by fibrosis); Architectural Distortion (vascular, biliary). What is the most likely diagnosis?
+   A. **Chronic Liver Disease and Cirrhosis**
+   B. A condition that mimics Chronic Liver Disease and Cirrhosis but is not the same entity
+   C. A complication of Chronic Liver Disease and Cirrhosis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Chronic Liver Disease and Cirrhosis
+

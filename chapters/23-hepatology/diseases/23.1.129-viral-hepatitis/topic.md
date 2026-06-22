@@ -274,3 +274,40 @@ mindmap
 - **Chapter MOC**: [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related**: [[Acute Liver Failure]], [[Chronic Liver Disease and Cirrhosis]], [[Autoimmune Liver Disease]], [[Hepatology in Special Situations]], [[Liver Transplantation]], [[Liver Tumours]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: Viral Hepatitis B & C = Core hepatology viva topics — Serology interpretation (8 HBV combinations), DAA regimens by genotype/cirrhosis/renal function, HCC surveillance criteria, SVR12, reactivation prophylaxis, genotype-specific vs pan-genotypic DAAs.
+- Q: What is HBV Serology of Viral Hepatitis?
+  A: 8 combinations; key: HBsAg+anti-HBcIgM = acute; HBsAg+anti-HBcIgG = chronic; anti-HBc alone = occult
+- Q: What is Phases of Viral Hepatitis?
+  A: Immune tolerant (HBeAg+, normal ALT, high DNA) → Immune active (HBeAg±, ALT↑) → Inactive carrier (HBeAg–, normal ALT, DNA <2000)
+- Q: What is Treat HBV if of Viral Hepatitis?
+  A: Immune active (ALT>2xULN+DNA threshold), Cirrhosis (any DNA), Decompensated (any DNA), HCC, Immunosuppression
+- Q: What is 1L HBV of Viral Hepatitis?
+  A: Entecavir 0.5mg or TDF 245mg (TAF if renal/bone risk); lifelong if cirrhosis/HBeAg–
+- Q: What is HCC Surveillance of Viral Hepatitis?
+  A: Cirrhosis q6mo US±AFP; Asian males>40/females>50; family history; inactive carrier >40
+- Q: What is Reactivation of Viral Hepatitis?
+  A: HBsAg+: ENT/TDF prophylaxis; anti-HBc+: high risk=prophylaxis, moderate=monitor
+- Q: What is HCV 1L of Viral Hepatitis?
+  A: GLE/PIB 8wks (non-cirr) or SOF/VEL 12wks (+RBV if cirr); SVR12 = cure
+- Q: What is HCV Renal of Viral Hepatitis?
+  A: GLE/PIB (safe); SOF-based avoid if eGFR<30
+- Q: What is HDV of Viral Hepatitis?
+  A: Bulevirtide + PEG-IFN; superinfection = severe
+- Q: What is HEV Chronic of Viral Hepatitis?
+  A: Immunosuppressed; Ribavirin 600-800mg ×3mo + reduce immunosuppression
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **Viral Hepatitis B & C = Core hepatology viva topics — Serology interpretation (8 HBV combinations), DAA regimens by genotype/cirrhosis/renal function, HCC surveillance criteria, SVR12, reactivation pr**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+

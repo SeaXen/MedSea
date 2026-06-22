@@ -329,3 +329,88 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (31 generated)
+
+- Q: What is 1. Biopsy of Hematology?
+  A: Clonal plasma cell infiltrate (monotypic κ or λ)
+- Q: What is 2. Single Lesion of Hematology?
+  A: Bone (SBP) OR Soft tissue (EMP) on PET-CT / MRI
+- Q: What is 3. Bone Marrow of Hematology?
+  A: <10% clonal plasma cells (no dysplasia)
+- Q: What is 4. No CRAB/SLiM of Hematology?
+  A: No: Hypercalcaemia, Renal insufficiency, Anaemia, Bone lesions (other), SLiM criteria
+- Q: What is 5. Normal Imaging of Hematology?
+  A: PET-CT / Whole-body MRI / Skeletal survey = No other lesions
+- Q: What is Biopsy + IHC of Hematology?
+  A: Clonal plasma cells (CD38+, CD138+, CD19-, CD56+, κ/λ restriction)
+- Q: What is SPEP + Immunofixation of Hematology?
+  A: M-protein (often small, <30 g/L); Absent in ~30%
+- Q: What is sFLC of Hematology?
+  A: Abnormal κ/λ ratio; Involved FLC elevated
+- Q: What is BM Aspirate/Biopsy of Hematology?
+  A: <10% plasma cells (required for SBP/EMP diagnosis)
+- Q: What is PET-CT / WBLD-CT of Hematology?
+  A: Single lesion; No other metabolically active sites
+- Q: What is Skeletal Survey of Hematology?
+  A: Single lytic lesion (SBP); No lesions (EMP)
+- Q: What is MRI Spine of Hematology?
+  A: If paraspinal/solitary vertebra lesion (cord compression)
+- Q: What is 1. Biopsy of Hematology?
+  A: Clonal plasma cell infiltrate (monotypic κ or λ)
+- Q: What is 2. Single Lesion of Hematology?
+  A: Bone (SBP) OR Soft tissue (EMP) on PET-CT / MRI
+- Q: What is 3. Bone Marrow of Hematology?
+  A: <10% clonal plasma cells (no dysplasia)
+- Q: What is 4. No CRAB/SLiM of Hematology?
+  A: No: Hypercalcaemia, Renal insufficiency, Anaemia, Bone lesions (other), SLiM criteria
+- Q: What is 5. Normal Imaging of Hematology?
+  A: PET-CT / Whole-body MRI / Skeletal survey = No other lesions
+- Q: What is Biopsy + IHC of Hematology?
+  A: Clonal plasma cells (CD38+, CD138+, CD19-, CD56+, κ/λ restriction)
+- Q: What is SPEP + Immunofixation of Hematology?
+  A: M-protein (often small, <30 g/L); Absent in ~30%
+- Q: What is sFLC of Hematology?
+  A: Abnormal κ/λ ratio; Involved FLC elevated
+- Q: What is BM Aspirate/Biopsy of Hematology?
+  A: <10% plasma cells (required for SBP/EMP diagnosis)
+- Q: What is PET-CT / WBLD-CT of Hematology?
+  A: Single lesion; No other metabolically active sites
+- Q: What is Skeletal Survey of Hematology?
+  A: Single lytic lesion (SBP); No lesions (EMP)
+- Q: What is MRI Spine of Hematology?
+  A: If paraspinal/solitary vertebra lesion (cord compression)
+- Q: What is the definition of Hematology?
+  A: Single clonal plasma cell lesion + BM <10% + NO CRAB/SLiM + Single lesion on PET-CT
+- Q: What is SBP vs EMP of Hematology?
+  A: SBP = Bone (70%), EMP = Soft tissue (Upper aerodigestive 80%)
+- Q: How is Hematology managed?
+  A: 40-50 Gy (Curative); Local control >80-90%
+- Q: What is Progression Risk of Hematology?
+  A: SBP: 50-60% at 10yr; EMP: 15-30%
+- Q: What is Surveillance of Hematology?
+  A: SPEP, sFLC, CBC, Renal, Ca, PET-CT q6mo × 5yr
+- Q: What is Progression of Hematology?
+  A: Treat as Multiple Myeloma (Induction + ASCT)
+- Q: What causes Hematology?
+  A: M-spike ≥10, BMPC ≥5%, Abnormal FLC, Size >5cm
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Plasma Cell Disorders → Solitary Plasmacytoma**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Solitary Bone Plasmacytoma (SBP) — Single bone lesion (vertebrae, ribs, femur, skull); Extramedullary Plasmacytoma (EMP) — Soft tissue (Upper aerodigestive tract ~80%: Nasopharynx, Sinus, Larynx); Multiple Solitary Plasmacytomas — 2-3 lesions (No BM involvement). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

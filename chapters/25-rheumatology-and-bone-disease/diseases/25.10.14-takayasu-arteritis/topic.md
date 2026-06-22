@@ -453,3 +453,100 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[Polymyalgia rheumatica]] · [[Drugs in rheumatology]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (37 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: Granulomatous large-vessel vasculitis affecting aorta, its major branches, and pulmonary arteries
+- Q: What is Synonym of Vasculitis?
+  A: "Pulseless disease" (asymmetric pulses, occlusion of subclavian/carotid)
+- Q: What is the epidemiology of Vasculitis?
+  A: 1-3/million (varies geographically); highest in East Asia (Japan ~40/million)
+- Q: What is Age of onset of Vasculitis?
+  A: <40 years (typically 15-30y); >40y = unlikely
+- Q: What is Sex of Vasculitis?
+  A: F:M = 8-9:1 (overwhelmingly women)
+- Q: What is Ethnicity of Vasculitis?
+  A: Asian > Caucasian, African
+- Q: What is Genetics of Vasculitis?
+  A: HLA-B52, HLA-B67 (Japanese); HLA-DRB1
+- Q: What is Geography of Vasculitis?
+  A: Japan, SE Asia, India, Mexico, Brazil
+- Q: How is Vasculitis classified?
+  A: Granulomatous (identical to GCA)
+- Q: What is Layers of Vasculitis?
+  A: Panarteritis — adventitia, media, intima
+- Q: What is Cells of Vasculitis?
+  A: T cells, macrophages, giant cells, granulomas
+- Q: What is Medial of Vasculitis?
+  A: Elastic fibre fragmentation → aneurysm
+- Q: What is Intima of Vasculitis?
+  A: Hyperplasia → stenosis
+- Q: What is ESR, CRP of Vasculitis?
+  A: Active inflammation (often disproportionately low in late disease despite active vascular damage)
+- Q: What is FBC of Vasculitis?
+  A: Anaemia of chronic disease, thrombocytosis
+- Q: What is U&E, LFT, urinalysis of Vasculitis?
+  A: Baseline, monitor for renal involvement
+- Q: What is BP — both arms + legs of Vasculitis?
+  A: Asymmetric BP >10 mmHg = key clinical sign
+- Q: What is CXR of Vasculitis?
+  A: Widened mediastinum, rib notching, calcified aortic wall
+- Q: What is ECG of Vasculitis?
+  A: LVH (HTN), ischaemia, conduction defects
+- Q: What is Critical stenosis (cerebral, coronary, renal) of Vasculitis?
+  A: Revascularisation (angioplasty ± stent, bypass) — ideally in remission
+- Q: What is Severe AR of Vasculitis?
+  A: Aortic valve replacement (mechanical in young)
+- Q: What is Aortic aneurysm of Vasculitis?
+  A: Surgical repair if >5 cm or expanding
+- Q: What is Renal artery stenosis of Vasculitis?
+  A: Angioplasty ± stent (after disease control)
+- Q: How is Vasculitis classified?
+  A: Granulomatous (identical to GCA)
+- Q: What is Layers of Vasculitis?
+  A: Panarteritis — adventitia, media, intima
+- Q: What is Cells of Vasculitis?
+  A: T cells, macrophages, giant cells, granulomas
+- Q: What is Medial of Vasculitis?
+  A: Elastic fibre fragmentation → aneurysm
+- Q: What is Intima of Vasculitis?
+  A: Hyperplasia → stenosis
+- Q: What is ESR, CRP of Vasculitis?
+  A: Active inflammation (often disproportionately low in late disease despite active vascular damage)
+- Q: What is FBC of Vasculitis?
+  A: Anaemia of chronic disease, thrombocytosis
+- Q: What is U&E, LFT, urinalysis of Vasculitis?
+  A: Baseline, monitor for renal involvement
+- Q: What is BP — both arms + legs of Vasculitis?
+  A: Asymmetric BP >10 mmHg = key clinical sign
+- Q: What is CXR of Vasculitis?
+  A: Widened mediastinum, rib notching, calcified aortic wall
+- Q: What is Critical stenosis (cerebral, coronary, renal) of Vasculitis?
+  A: Revascularisation (angioplasty ± stent, bypass) — ideally in remission
+- Q: What is Severe AR of Vasculitis?
+  A: Aortic valve replacement (mechanical in young)
+- Q: What is Aortic aneurysm of Vasculitis?
+  A: Surgical repair if >5 cm or expanding
+- Q: What is Renal artery stenosis of Vasculitis?
+  A: Angioplasty ± stent (after disease control)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **Takayasu arteritis = granulomatous large-vessel vasculitis of the aorta and its major branches, primarily in women <40 years of Asian origin.**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Definition — Granulomatous large-vessel vasculitis affecting aorta, its major branches, and pulmonary arteries; Synonym — "Pulseless disease" (asymmetric pulses, occlusion of subclavian/carotid); Prevalence — 1-3/million (varies geographically); highest in East Asia (Japan ~40/million). What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

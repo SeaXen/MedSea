@@ -319,3 +319,40 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Hematology?
+  A: # Bone Marrow Examination (Aspiration & Trephine Biopsy)
+- Q: What is Hematology indicated for?
+  A: Unexplained Cytopenias, Staging (Lymphoma/Myeloma), Leukaemia/MDS/MPN/MF, Unexplained Splenomegaly/PUO
+- Q: What is Site of Hematology?
+  A: Posterior Iliac Crest (Preferred), Sternum (Aspirate Only)
+- Q: What is Aspirate vs Trephine of Hematology?
+  A: Aspirate = Cytology (Blasts, Dysplasia); Trephine = Architecture (Fibrosis, Infiltration Pattern, Iron)
+- Q: What is Cellularity of Hematology?
+  A: Age-adjusted: Child >70%, Adult 40-70%, Elderly <40%
+- Q: What is M:E Ratio of Hematology?
+  A: Normal 1.5-3:1; Reversed = Erythroid Hyperplasia; Increased = Myeloid Proliferation
+- Q: What is Blasts of Hematology?
+  A: <5% Normal; ≥20% = Acute Leukaemia; 10-19% = MDS-EB
+- Q: What is Fibrosis of Hematology?
+  A: Grade 0-3 (Reticulin); Grade 2-3 = Overt MF
+- Q: What is Iron Stores of Hematology?
+  A: Perls' Prussian Blue; Grade 0-4
+- Q: What is Flow Cytometry of Hematology?
+  A: Essential for Leukaemia/Lymphoma/CLL/PNH/MRD
+- Q: What is Cytogenetics of Hematology?
+  A: Essential for AML/ALL/MDS/MPN (Prognosis, Therapy)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **# Bone Marrow Examination (Aspiration & Trephine Biopsy)**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

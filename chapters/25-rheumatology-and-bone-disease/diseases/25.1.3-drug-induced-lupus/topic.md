@@ -483,3 +483,106 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[Drugs in rheumatology]] · [[Investigations in rheumatology]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (40 generated)
+
+- Q: What is Procainamide, hydralazine of Autoimmune Rheumatic Diseases?
+  A: Classical DILE; arthralgia, serositis, anti-histone
+- Q: What is TNF inhibitor-induced of Autoimmune Rheumatic Diseases?
+  A: Anti-dsDNA +ve (50-60%); often cutaneous (malar rash, discoid); can flare lupus
+- Q: What is Minocycline of Autoimmune Rheumatic Diseases?
+  A: Hepatic involvement (hepatitis, hyperbilirubinaemia)
+- Q: What is Anti-PD1/PDL1, anti-CTLA4 (immune checkpoint) of Autoimmune Rheumatic Diseases?
+  A: irAE (immune-related adverse event); lupus-like, vasculitis, encephalitis
+- Q: What is Acetylation of Autoimmune Rheumatic Diseases?
+  A: Procainamide and hydralazine metabolised by N-acetyltransferase 2 (NAT2); slow acetylators (autosomal recessive, ~50% Caucasians) have higher DILE risk
+- Q: What is Hapten hypothesis of Autoimmune Rheumatic Diseases?
+  A: Drug binds self-protein → neoantigen → immune response
+- Q: What is TNF inhibitor-specific of Autoimmune Rheumatic Diseases?
+  A: TNF blockade → excess IFN-α (loss of TNF-driven suppression); anti-dsDNA +ve more often; cutaneous lupus
+- Q: What is Anti-histone of Autoimmune Rheumatic Diseases?
+  A: Found in 95% of DILE (not specific — also in 50-70% of SLE)
+- Q: What is Complement of Autoimmune Rheumatic Diseases?
+  A: Usually normal in DILE (vs low in active SLE)
+- Q: What is Minocycline of Autoimmune Rheumatic Diseases?
+  A: Hepatic involvement (hepatitis, hyperbilirubinaemia), eosinophilia, pulmonary infiltrates
+- Q: What is TNF inhibitors of Autoimmune Rheumatic Diseases?
+  A: Anti-dsDNA +ve (50-60%); cutaneous (malar rash, discoid); high rate of flare if used in SLE
+- Q: What is Anti-PD1/PDL1, anti-CTLA4 (cancer) of Autoimmune Rheumatic Diseases?
+  A: Multi-organ irAE: lupus-like, vasculitis, encephalitis, colitis, hepatitis, pneumonitis, thyroiditis
+- Q: What is Procainamide, hydralazine of Autoimmune Rheumatic Diseases?
+  A: Classic DILE; serositis prominent
+- Q: What is Procainamide, hydralazine of Autoimmune Rheumatic Diseases?
+  A: Classical DILE; arthralgia, serositis, anti-histone
+- Q: What is TNF inhibitor-induced of Autoimmune Rheumatic Diseases?
+  A: Anti-dsDNA +ve (50-60%); often cutaneous (malar rash, discoid); can flare lupus
+- Q: What is Minocycline of Autoimmune Rheumatic Diseases?
+  A: Hepatic involvement (hepatitis, hyperbilirubinaemia)
+- Q: What is Anti-PD1/PDL1, anti-CTLA4 (immune checkpoint) of Autoimmune Rheumatic Diseases?
+  A: irAE (immune-related adverse event); lupus-like, vasculitis, encephalitis
+- Q: What is Acetylation of Autoimmune Rheumatic Diseases?
+  A: Procainamide and hydralazine metabolised by N-acetyltransferase 2 (NAT2); slow acetylators (autosomal recessive, ~50% Caucasians) have higher DILE risk
+- Q: What is Hapten hypothesis of Autoimmune Rheumatic Diseases?
+  A: Drug binds self-protein → neoantigen → immune response
+- Q: What is TNF inhibitor-specific of Autoimmune Rheumatic Diseases?
+  A: TNF blockade → excess IFN-α (loss of TNF-driven suppression); anti-dsDNA +ve more often; cutaneous lupus
+- Q: What is Anti-histone of Autoimmune Rheumatic Diseases?
+  A: Found in 95% of DILE (not specific — also in 50-70% of SLE)
+- Q: What is Complement of Autoimmune Rheumatic Diseases?
+  A: Usually normal in DILE (vs low in active SLE)
+- Q: What is Minocycline of Autoimmune Rheumatic Diseases?
+  A: Hepatic involvement (hepatitis, hyperbilirubinaemia), eosinophilia, pulmonary infiltrates
+- Q: What is TNF inhibitors of Autoimmune Rheumatic Diseases?
+  A: Anti-dsDNA +ve (50-60%); cutaneous (malar rash, discoid); high rate of flare if used in SLE
+- Q: What is Anti-PD1/PDL1, anti-CTLA4 (cancer) of Autoimmune Rheumatic Diseases?
+  A: Multi-organ irAE: lupus-like, vasculitis, encephalitis, colitis, hepatitis, pneumonitis, thyroiditis
+- Q: What is Procainamide, hydralazine of Autoimmune Rheumatic Diseases?
+  A: Classic DILE; serositis prominent
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: Lupus-like syndrome triggered by specific drugs; resolves on D/C
+- Q: What is Demographics of Autoimmune Rheumatic Diseases?
+  A: Older (50-60y), M = F (vs SLE F:M 9:1)
+- Q: What is High-risk drugs of Autoimmune Rheumatic Diseases?
+  A: PHIMT: Procainamide, Hydralazine, Isoniazid, Minocycline, TNF inhibitors
+- Q: What is Genetics of Autoimmune Rheumatic Diseases?
+  A: Slow acetylators (NAT2 polymorphism) — higher risk
+- Q: What is Clinical of Autoimmune Rheumatic Diseases?
+  A: Arthralgia (80-90%), myalgia, serositis, fever
+- Q: What is Rare in DILE of Autoimmune Rheumatic Diseases?
+  A: Renal, CNS, photosensitivity, malar rash
+- Q: What is Anti-histone of Autoimmune Rheumatic Diseases?
+  A: 95% positive (key feature)
+- Q: What is Anti-dsDNA of Autoimmune Rheumatic Diseases?
+  A: Negative in classic DILE; positive in TNF-i-induced
+- Q: What is Complement of Autoimmune Rheumatic Diseases?
+  A: Normal in DILE (vs low in SLE)
+- Q: What is Resolution of Autoimmune Rheumatic Diseases?
+  A: On drug withdrawal — days to weeks
+- Q: What is HCQ of Autoimmune Rheumatic Diseases?
+  A: For persistent symptoms
+- Q: What is TNF-i DILE of Autoimmune Rheumatic Diseases?
+  A: Anti-dsDNA +ve, often cutaneous, can flare lupus
+- Q: What is Checkpoint inhibitor of Autoimmune Rheumatic Diseases?
+  A: New category; irAE; high-dose steroids, may need to stop ICI
+- Q: What is the prognosis of Autoimmune Rheumatic Diseases?
+  A: Excellent after D/C; very low mortality
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **Drug-induced lupus (DILE) = lupus-like syndrome triggered by specific drugs in genetically susceptible individuals.**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: Definition — Lupus-like syndrome that resolves on drug withdrawal, caused by specific drugs in susceptible individuals; Incidence — 15,000-30,000 cases/year (US, decreasing with modern drug use); Age — Older than SLE (mean 50-60y vs SLE 30-40y). What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

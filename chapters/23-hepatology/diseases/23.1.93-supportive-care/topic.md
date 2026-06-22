@@ -290,3 +290,26 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Cancer Pain Management]], [[Nausea Vomiting]], [[Constipation]], [[Dyspnoea]], [[Malignant Ascites]], [[Pleural Effusion]], [[Fatigue]], [[Cachexia]], [[End of Life Care]]
+---
+
+> Auto-generated study sections for "Palliative Care" — Ch 23: Hepatology.
+
+## Flashcards (4 generated)
+
+- Q: What is the definition of Palliative Care?
+  A: Ascites in Cirrhosis = Portal hypertension + hypoalbuminaemia — SAAG ≥11 g/L = portal hypertension; SBP = PMNs ≥250/mm³ → ceftriaxone 2g IV + albumin; Refractory ascites → LVP + albumin 8g/L removed → TIPS/transplant.
+- Q: What is Portal Hypertension of Palliative Care?
+  A: ↑ Hydrostatic pressure → transudation
+- Q: What is Hypoalbuminaemia of Palliative Care?
+  A: ↓ Oncotic pressure → ↓ plasma colloid osmotic pressure
+- Q: What is Splanchnic Vasodilation of Palliative Care?
+  A: NO-mediated → ↓ effective arterial volume → RAAS/SNS activation → Na/H₂O retention
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Palliative Care?**
+   A. **Ascites in Cirrhosis = Portal hypertension + hypoalbuminaemia — SAAG ≥11 g/L = portal hypertension; SBP = PMNs ≥250/mm³ → ceftriaxone 2g IV + albumin; Refractory ascites → LVP + albumin 8g/L removed →**
+   B. An unrelated condition not matching the clinical picture of Palliative Care
+   C. A complication seen late in the disease course of Palliative Care
+   D. A condition that mimics Palliative Care but has a different underlying cause
+

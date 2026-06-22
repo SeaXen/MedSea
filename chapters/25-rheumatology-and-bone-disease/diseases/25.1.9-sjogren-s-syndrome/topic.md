@@ -366,3 +366,112 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Systemic Lupus Erythematosus]] · [[Systemic sclerosis (scleroderma)]] · [[Mixed connective tissue disease (MCTD)]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (43 generated)
+
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: Sjögren's = sicca syndrome (dry eyes + dry mouth) + systemic extraglandular features.
+- Q: What is Lymphocytic infiltration of Autoimmune Rheumatic Diseases?
+  A: Focal lymphocytic sialadenitis (focus score ≥1 = diagnostic)
+- Q: How is Autoimmune Rheumatic Diseases classified?
+  A: Drives autoimmunity — similar to SLE
+- Q: What is Anti-Ro/SSA of Autoimmune Rheumatic Diseases?
+  A: Targets Ro60/Ro52 — associates with photosensitivity, neonatal lupus
+- Q: What is Anti-La/SSB of Autoimmune Rheumatic Diseases?
+  A: Almost always with Ro — highly specific
+- Q: What is Germinal centre formation of Autoimmune Rheumatic Diseases?
+  A: In salivary glands — lymphoma precursor
+- Q: What is Dry Eyes (Keratoconjunctivitis Sicca) of Autoimmune Rheumatic Diseases?
+  A: Gritty, burning, foreign body sensation, blurred vision, photophobia, corneal ulceration (severe)
+- Q: What is Dry Mouth (Xerostomia) of Autoimmune Rheumatic Diseases?
+  A: Difficulty swallowing dry food, dysphagia, dental caries (rampant), oral candidiasis, altered taste, difficulty speaking
+- Q: What is Parotid Enlargement of Autoimmune Rheumatic Diseases?
+  A: Bilateral, painless, persistent — lymphoma risk if persistent/unilateral
+- Q: What is Other Glands of Autoimmune Rheumatic Diseases?
+  A: Dry nose (epistaxis), dry throat (cough), dry skin, vaginal dryness (dyspareunia)
+- Q: What is Fatigue/Arthralgia of Autoimmune Rheumatic Diseases?
+  A: Hydroxychloroquine 200-400mg daily (improves fatigue, mild arthralgia)
+- Q: What is Arthritis of Autoimmune Rheumatic Diseases?
+  A: HCQ first; MTX/SSZ if persistent
+- Q: What is Vasculitis of Autoimmune Rheumatic Diseases?
+  A: Steroids + steroid-sparing (MMF, AZA, MTX); RTX for severe
+- Q: What is ILD of Autoimmune Rheumatic Diseases?
+  A: MMF 2-3g/day or AZA/MTX; RTX if progressive
+- Q: What is Peripheral Neuropathy of Autoimmune Rheumatic Diseases?
+  A: Steroids + immunosuppression (MMF, AZA, IVIG for severe)
+- Q: How is Autoimmune Rheumatic Diseases classified?
+  A: Potassium citrate (alkalinisation), K+ replacement
+- Q: What is Cryoglobulinaemic Vasculitis of Autoimmune Rheumatic Diseases?
+  A: Rituximab (depletes B-cells producing cryoglobulins) + steroids
+- Q: What is Lymphoma (MALT) of Autoimmune Rheumatic Diseases?
+  A: H. pylori eradication (if gastric); RTX ± chlorambucil; surgery/radiation (localised)
+- Q: What is Lymphocytic infiltration of Autoimmune Rheumatic Diseases?
+  A: Focal lymphocytic sialadenitis (focus score ≥1 = diagnostic)
+- Q: How is Autoimmune Rheumatic Diseases classified?
+  A: Drives autoimmunity — similar to SLE
+- Q: What is Anti-Ro/SSA of Autoimmune Rheumatic Diseases?
+  A: Targets Ro60/Ro52 — associates with photosensitivity, neonatal lupus
+- Q: What is Anti-La/SSB of Autoimmune Rheumatic Diseases?
+  A: Almost always with Ro — highly specific
+- Q: What is Germinal centre formation of Autoimmune Rheumatic Diseases?
+  A: In salivary glands — lymphoma precursor
+- Q: What is Dry Eyes (Keratoconjunctivitis Sicca) of Autoimmune Rheumatic Diseases?
+  A: Gritty, burning, foreign body sensation, blurred vision, photophobia, corneal ulceration (severe)
+- Q: What is Dry Mouth (Xerostomia) of Autoimmune Rheumatic Diseases?
+  A: Difficulty swallowing dry food, dysphagia, dental caries (rampant), oral candidiasis, altered taste, difficulty speaking
+- Q: What is Parotid Enlargement of Autoimmune Rheumatic Diseases?
+  A: Bilateral, painless, persistent — lymphoma risk if persistent/unilateral
+- Q: What is Fatigue/Arthralgia of Autoimmune Rheumatic Diseases?
+  A: Hydroxychloroquine 200-400mg daily (improves fatigue, mild arthralgia)
+- Q: What is Arthritis of Autoimmune Rheumatic Diseases?
+  A: HCQ first; MTX/SSZ if persistent
+- Q: What is Vasculitis of Autoimmune Rheumatic Diseases?
+  A: Steroids + steroid-sparing (MMF, AZA, MTX); RTX for severe
+- Q: What is ILD of Autoimmune Rheumatic Diseases?
+  A: MMF 2-3g/day or AZA/MTX; RTX if progressive
+- Q: What is Peripheral Neuropathy of Autoimmune Rheumatic Diseases?
+  A: Steroids + immunosuppression (MMF, AZA, IVIG for severe)
+- Q: How is Autoimmune Rheumatic Diseases classified?
+  A: Potassium citrate (alkalinisation), K+ replacement
+- Q: What is Cryoglobulinaemic Vasculitis of Autoimmune Rheumatic Diseases?
+  A: Rituximab (depletes B-cells producing cryoglobulins) + steroids
+- Q: What is Lymphoma (MALT) of Autoimmune Rheumatic Diseases?
+  A: H. pylori eradication (if gastric); RTX ± chlorambucil; surgery/radiation (localised)
+- Q: What is Core Triad of Autoimmune Rheumatic Diseases?
+  A: Dry eyes + Dry mouth + Parotid swelling (sicca)
+- Q: What is Autoantibodies of Autoimmune Rheumatic Diseases?
+  A: Anti-Ro/SSA 70%, Anti-La/SSB 40% (highly specific), ANA+, RF+
+- Q: What is ACR/EULAR 2016 of Autoimmune Rheumatic Diseases?
+  A: Weighted score ≥4: Anti-Ro (3), Focus score ≥1 (3), Ocular staining ≥5 (2), Schirmer's ≤5mm (1), Salivary flow ≤0.1ml/min (1)
+- Q: What is the investigation of choice for Autoimmune Rheumatic Diseases?
+  A: ≤5mm in 5 min (abnormal)
+- Q: What is Salivary Gland Biopsy of Autoimmune Rheumatic Diseases?
+  A: Focus score ≥1 (lymphocytic foci/4mm²) = diagnostic
+- Q: What is Extraglandular of Autoimmune Rheumatic Diseases?
+  A: Arthralgia, Raynaud's, vasculitis (palpable purpura), ILD, neuropathy, RTA Type I, cryoglobulins
+- Q: What is Lymphoma of Autoimmune Rheumatic Diseases?
+  A: 5-10% lifetime (MALT); red flags: parotid swelling, low C4, cryoglobulins, purpura, monoclonal gammopathy
+- Q: What is Renal of Autoimmune Rheumatic Diseases?
+  A: Distal RTA (Type I) — hypokalaemia, nephrocalcinosis, metabolic acidosis
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: Symptomatic (tears, saliva substitutes, pilocarpine/cevimeline), HCQ (fatigue/arthralgia), MMF/AZA/RTX for severe organ involvement
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **Sjögren's = sicca syndrome (dry eyes + dry mouth) + systemic extraglandular features.**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: Definition — Chronic autoimmune exocrinopathy → keratoconjunctivitis sicca (dry eyes) + xerostomia (dry mouth) ± systemic extraglandular involvement; Primary vs Secondary — Primary: isolated; Secondary: associated with RA, SLE, SSc, PBC, etc.; Peak Onset — 4th-6th decade. What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

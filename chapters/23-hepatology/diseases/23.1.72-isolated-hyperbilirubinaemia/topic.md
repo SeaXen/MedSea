@@ -207,3 +207,42 @@ mindmap
 - [[Inherited and Metabolic Liver Disease/Gilbert Syndrome|Gilbert Syndrome]]
 - [[Inherited and Metabolic Liver Disease/Crigler-Najjar Syndrome|Crigler-Najjar]]
 - [[Inherited and Metabolic Liver Disease/Dubin-Johnson vs Rotor Syndrome|Dubin-Johnson vs Rotor]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: | Condition | Bilirubin Level | Key Features | Genetics |
+- Q: What is Isolated Unconjugated of Jaundice and LFT Interpretation?
+  A: Think Gilbert (benign, 20-80), Crigler-Najjar (severe, >100), Haemolysis (retic↑)
+- Q: What is Gilbert of Jaundice and LFT Interpretation?
+  A: Most common (5-10%), benign, no treatment, fasting ↑ bilirubin
+- Q: How is Jaundice and LFT Interpretation classified?
+  A: Bilirubin >340, kernicterus, no phenobarbital response, transplant
+- Q: What is Isolated Conjugated of Jaundice and LFT Interpretation?
+  A: Dubin-Johnson (Black liver, Copro I >80%), Rotor (Normal liver, Total copro ↑↑)
+- Q: What is Dubin-Johnson of Jaundice and LFT Interpretation?
+  A: ABCC2/MRP2 defect, black liver, benign
+- Q: What is Rotor of Jaundice and LFT Interpretation?
+  A: SLCO1B1/1B3 defect, normal liver, benign
+- Q: What is Early Obstruction of Jaundice and LFT Interpretation?
+  A: Rule out with US if conjugated bilirubin isolated
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **| Condition | Bilirubin Level | Key Features | Genetics |**
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Jaundice and LFT Interpretation presents with: Isolated hyperbilirubinaemia = Elevated bilirubin with otherwise normal LFTs (AST, ALT, ALP, GGT, Albumin, PT normal); A[Isolated Hyperbilirubinaemia] --> B{Conjugated or Unconjugated?}; B -->|Unconjugated| C[Isolated Unconjugated Hyperbilirubinaemia]. What is the most likely diagnosis?
+   A. **Jaundice and LFT Interpretation**
+   B. A condition that mimics Jaundice and LFT Interpretation but is not the same entity
+   C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
+

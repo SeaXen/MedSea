@@ -314,3 +314,100 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (37 generated)
+
+- Q: What is CBC of Hematology?
+  A: Anaemia (variable severity), Dimorphic RBC population (low + normal/high MCV)
+- Q: What is Blood Film of Hematology?
+  A: Dimorphic (microcytic hypochromic + normocytic), Basophilic stippling, Pappenheimer bodies (siderotic granules)
+- Q: What is Iron Studies of Hematology?
+  A: ↑ Ferritin, ↑ TSAT (iron overload pattern despite anaemia)
+- Q: What is Prussian Blue Stain of Hematology?
+  A: Ring sideroblasts ≥15% (WHO); mitochondrial iron granules encircling ≥1/3 nucleus
+- Q: What is SF3B1 Mutation of Hematology?
+  A: Present in 80% MDS-RS → defines MDS with ring sideroblasts
+- Q: What is Lead Level of Hematology?
+  A: Elevated if lead poisoning
+- Q: What is Copper Level of Hematology?
+  A: Low if copper deficiency (from zinc excess, malabsorption, post-bariatric)
+- Q: What is B6 Level of Hematology?
+  A: Low if pyridoxine deficiency
+- Q: What is Alcohol of Hematology?
+  A: Abstinence ± Pyridoxine 50-100 mg/day
+- Q: What is Lead Poisoning of Hematology?
+  A: Chelation (DMSA, EDTA, D-penicillamine) + remove source
+- Q: What is Isoniazid of Hematology?
+  A: Pyridoxine 10-50 mg/day prophylaxis/treatment
+- Q: What is Linezolid of Hematology?
+  A: Stop drug (usually reversible in 1-2 weeks)
+- Q: What is B6 Deficiency of Hematology?
+  A: Pyridoxine 50-100 mg/day
+- Q: What is Copper Deficiency of Hematology?
+  A: Copper replacement (IV/oral), stop zinc supplements
+- Q: What is CBC of Hematology?
+  A: Anaemia (variable severity), Dimorphic RBC population (low + normal/high MCV)
+- Q: What is Blood Film of Hematology?
+  A: Dimorphic (microcytic hypochromic + normocytic), Basophilic stippling, Pappenheimer bodies (siderotic granules)
+- Q: What is Iron Studies of Hematology?
+  A: ↑ Ferritin, ↑ TSAT (iron overload pattern despite anaemia)
+- Q: What is Prussian Blue Stain of Hematology?
+  A: Ring sideroblasts ≥15% (WHO); mitochondrial iron granules encircling ≥1/3 nucleus
+- Q: What is SF3B1 Mutation of Hematology?
+  A: Present in 80% MDS-RS → defines MDS with ring sideroblasts
+- Q: What is Lead Level of Hematology?
+  A: Elevated if lead poisoning
+- Q: What is Copper Level of Hematology?
+  A: Low if copper deficiency (from zinc excess, malabsorption, post-bariatric)
+- Q: What is B6 Level of Hematology?
+  A: Low if pyridoxine deficiency
+- Q: What is Alcohol of Hematology?
+  A: Abstinence ± Pyridoxine 50-100 mg/day
+- Q: What is Lead Poisoning of Hematology?
+  A: Chelation (DMSA, EDTA, D-penicillamine) + remove source
+- Q: What is Isoniazid of Hematology?
+  A: Pyridoxine 10-50 mg/day prophylaxis/treatment
+- Q: What is Linezolid of Hematology?
+  A: Stop drug (usually reversible in 1-2 weeks)
+- Q: What is B6 Deficiency of Hematology?
+  A: Pyridoxine 50-100 mg/day
+- Q: What is the definition of Hematology?
+  A: Ring sideroblasts ≥15% (Prussian blue) of erythroblasts
+- Q: What is Blood Film of Hematology?
+  A: Dimorphic (two populations), basophilic stippling, Pappenheimer bodies
+- Q: What is Iron Studies of Hematology?
+  A: Paradoxical iron overload: High ferritin, high TSAT despite anaemia
+- Q: What is SF3B1 Mutation of Hematology?
+  A: 80% MDS-RS; good prognosis, luspatercept indication
+- Q: What causes Hematology?
+  A: Alcohol (commonest), Lead, INH, Linezolid, B6 deficiency, Copper deficiency
+- Q: What is Lead Poisoning of Hematology?
+  A: Basophilic stippling + abdominal colic + wrist drop + Burton's line
+- Q: What is Copper Deficiency of Hematology?
+  A: Neutropenia + Anaemia + Neuropathy (B12 mimic); zinc excess history
+- Q: What is Pyridoxine Trial of Hematology?
+  A: 100-200 mg/day × 3-6mo – diagnostic & therapeutic
+- Q: What is Luspatercept of Hematology?
+  A: MDS-RS + SF3B1 mut + transfusion-dependent
+- Q: What is Congenital ALAS2 of Hematology?
+  A: X-linked, pyridoxine-responsive, iron overload
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Sideroblastic Anaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Congenital — X-linked ALAS2 (δ-ALA synthase), SLC25A38, ABCB7 (XLSA/A); Acquired - MDS — SF3B1 mutation (80% MDS-RS), MDS-RS, MDS/MPN-RS-T; Acquired - Reversible — Alcohol (commonest), Lead, Isoniazid, Chloramphenicol, Cycloserine, Linezolid, B6 deficiency, Copper deficiency (zinc excess). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

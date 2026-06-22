@@ -432,3 +432,52 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: All individual vasculitis notes linked above
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: # Primary Systemic Vasculitides — Overview & Classification
+- Q: What is CHCC 2012 of Vasculitis?
+  A: Classify by vessel size: Large (GCA, Takayasu), Medium (PAN, Kawasaki), Small ANCA (GPA c-ANCA, MPA p-ANCA, EGPA p-ANCA), Small IC (IgA/HSP, Cryo), Variable (Behçet's)
+- Q: What is ANCA of Vasculitis?
+  A: c-ANCA/PR3 = GPA (granulomas, ENT); p-ANCA/MPO = MPA (no granulomas, no ENT) or EGPA (asthma+eos)
+- Q: What is GPA of Vasculitis?
+  A: c-ANCA/PR3, granulomas, ENT (saddle nose, subglottic), pulmonary-renal
+- Q: What is MPA of Vasculitis?
+  A: p-ANCA/MPO, no granulomas, no ENT, renal-limited 30-40%, pulmonary-renal
+- Q: What is EGPA of Vasculitis?
+  A: p-ANCA/MPO (40-60%), asthma + eosinophilia, allergic rhinitis, mononeuritis
+- Q: What is PAN of Vasculitis?
+  A: Medium vessel, ANCA-negative, NO lung, renal artery aneurysms "string of beads", Hep B association
+- Q: What is Kawasaki of Vasculitis?
+  A: <5y, fever ≥5d + 4/5 criteria, coronary aneurysms, IVIG 2g/kg <10d
+- Q: What is GCA of Vasculitis?
+  A: >50, headache, jaw claudication, visual loss, emergency steroids, temporal artery biopsy
+- Q: What is Takayasu of Vasculitis?
+  A: Young women, aortic arch, pulseless, hypertension, aortitis
+- Q: What is IgA Vasculitis (HSP) of Vasculitis?
+  A: Children, palpable purpura (gravity-dependent), arthritis, abdominal pain, IgA nephropathy; platelets normal
+- Q: What is Behçet's of Vasculitis?
+  A: Oral/genital ulcers + uveitis + skin + pathergy; HLA-B51; Silk Road; vascular thrombosis
+- Q: How is Vasculitis managed?
+  A: Induction: CYC/RTX + steroids → Maintenance: RTX q6mo > AZA; PLEX for severe
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **# Primary Systemic Vasculitides — Overview & Classification**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: A[Primary Systemic Vasculitis] --> B{Vessel Size}; B -->|Large| C[GCA, Takayasu]; B -->|Medium| D[PAN, Kawasaki]. What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

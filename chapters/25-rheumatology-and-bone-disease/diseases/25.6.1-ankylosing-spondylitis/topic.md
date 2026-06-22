@@ -427,3 +427,70 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Psoriatic arthritis]] · [[Reactive arthritis]] · [[Enteropathic arthritis]] · [[Undifferentiated spondyloarthritis]]
+---
+
+> Auto-generated study sections for "Inflammatory Arthritis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (22 generated)
+
+- Q: What is the definition of Inflammatory Arthritis?
+  A: | Definition | Chronic inflammatory disease primarily affecting axial skeleton (sacroiliac joints → spine) → sacroiliitis, syndesmophytes, ankylosis ("bamboo spine") |
+- Q: What is Bone Marrow Oedema (BME) of Inflammatory Arthritis?
+  A: Active inflammation (STIR/T2 hyperintense) — ASAS imaging criterion
+- Q: What is Fat metaplasia of Inflammatory Arthritis?
+  A: Chronic/post-inflammatory (T1 hyperintense)
+- Q: What is Erosions of Inflammatory Arthritis?
+  A: Structural damage (T1)
+- Q: What is Sclerosis/Ankylosis of Inflammatory Arthritis?
+  A: Late structural (T1)
+- Q: What is Bone Marrow Oedema (BME) of Inflammatory Arthritis?
+  A: Active inflammation (STIR/T2 hyperintense) — ASAS imaging criterion
+- Q: What is Fat metaplasia of Inflammatory Arthritis?
+  A: Chronic/post-inflammatory (T1 hyperintense)
+- Q: What is Erosions of Inflammatory Arthritis?
+  A: Structural damage (T1)
+- Q: What is Sclerosis/Ankylosis of Inflammatory Arthritis?
+  A: Late structural (T1)
+- Q: What is Demographics of Inflammatory Arthritis?
+  A: M:F 2-3:1, onset <45 (peak 20-30)
+- Q: What is Inflammatory Back Pain of Inflammatory Arthritis?
+  A: Age <45, insidious, >3mo, improves exercise, night pain, AM stiffness >30min
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: 90-95% AS; 8% population — supportive, not diagnostic
+- Q: What is Modified NY Criteria of Inflammatory Arthritis?
+  A: Sacroiliitis grade ≥2 bilateral OR ≥3 unilateral + ≥1 clinical criterion
+- Q: What is ASAS Criteria of Inflammatory Arthritis?
+  A: Imaging arm (sacroiliitis on X-ray/MRI + ≥1 SpA feature) OR Clinical arm (HLA-B27 + ≥2 SpA features)
+- Q: What is Sacroiliitis Grading of Inflammatory Arthritis?
+  A: 0=normal, 1=suspicious, 2=minimal, 3=moderate, 4=ankylosis
+- Q: What is MRI of Inflammatory Arthritis?
+  A: Bone marrow oedema (STIR) = active inflammation — ASAS imaging criterion
+- Q: What is Uveitis of Inflammatory Arthritis?
+  A: 25-30%, acute anterior, painful red eye + photophobia — urgent ophthalmology
+- Q: What is NSAIDs of Inflammatory Arthritis?
+  A: 1st line; continuous > PRN; COX-2 + PPI; response supports diagnosis
+- Q: What is Biologics of Inflammatory Arthritis?
+  A: Anti-TNF 1st line → Anti-IL-17 if fail; anti-IL-17 avoid in IBD
+- Q: What is csDMARDs of Inflammatory Arthritis?
+  A: Ineffective for axial disease (SSZ only for peripheral)
+- Q: How is Inflammatory Arthritis monitored?
+  A: BASDAI (<4 inactive), ASDAS (<1.3 inactive), BASFI, BASMI
+- Q: What is Surgery of Inflammatory Arthritis?
+  A: THR for hip; spinal osteotomy for fixed deformity
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inflammatory Arthritis?**
+   A. **| Definition | Chronic inflammatory disease primarily affecting axial skeleton (sacroiliac joints → spine) → sacroiliitis, syndesmophytes, ankylosis ("bamboo spine") |**
+   B. An unrelated condition not matching the clinical picture of Inflammatory Arthritis
+   C. A complication seen late in the disease course of Inflammatory Arthritis
+   D. A condition that mimics Inflammatory Arthritis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inflammatory Arthritis presents with: Definition — Chronic inflammatory disease primarily affecting axial skeleton (sacroiliac joints → spine) → sacroiliitis, syndesmophytes, ankylosis ("bamboo spine"); Prevalence — 0.1-0.5% (varies with HLA-B27 frequency); Peak Onset — <45 years (typically 20-30); rare >45. What is the most likely diagnosis?
+   A. **Inflammatory Arthritis**
+   B. A condition that mimics Inflammatory Arthritis but is not the same entity
+   C. A complication of Inflammatory Arthritis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inflammatory Arthritis
+

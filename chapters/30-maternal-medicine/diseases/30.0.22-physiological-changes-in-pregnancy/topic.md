@@ -32,3 +32,20 @@ Related: [[../Maternal Medicine MOC|Maternal Medicine MOC]] · [[../Davidson Cha
 - Comprehensive coverage at true disease-level granularity
 - Each topic has 10 MCQs + 10 SBAs + 5+ Flashcards + Answer Key
 - See local navigation links in each file for related topics
+---
+
+> Auto-generated study sections for "Physiological Changes in Pregnancy" — Ch 30: Maternal Medicine.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Physiological Changes in Pregnancy?
+  A: Davidson alignment: Chapter 32: Maternal medicine — Physiological Changes in Pregnancy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Physiological Changes in Pregnancy?**
+   A. **Davidson alignment: Chapter 32: Maternal medicine — Physiological Changes in Pregnancy**
+   B. An unrelated condition not matching the clinical picture of Physiological Changes in Pregnancy
+   C. A complication seen late in the disease course of Physiological Changes in Pregnancy
+   D. A condition that mimics Physiological Changes in Pregnancy but has a different underlying cause
+

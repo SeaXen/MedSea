@@ -319,3 +319,52 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Coagulation Disorders → Vitamin K Deficiency
+- Q: What is Essential Nutrient of Hematology?
+  A: Vitamin K1 (Phylloquinone) – dietary (green leafy vegetables); Vitamin K2 (Menaquinone) – gut bacterial synthesis
+- Q: What is Function of Hematology?
+  A: Co-factor for γ-glutamyl carboxylase → γ-carboxylation of Glu residues on Factors II, VII, IX, X, Protein C, Protein S, Factor Z
+- Q: What is γ-Carboxylation of Hematology?
+  A: Enables Ca²⁺ binding → Factor activation on phospholipid surfaces
+- Q: What is Deficiency Effect of Hematology?
+  A: Under-carboxylated proteins (PIVKAs) → Impaired coagulation → Prolonged PT/INR
+- Q: What is γ-Carboxylation of Hematology?
+  A: Vit K-dependent: Factors II, VII, IX, X, Protein C, S, Z
+- Q: What is Factor VII of Hematology?
+  A: Shortest t½ (4-6h) → PT/INR rises FIRST in Vit K deficiency
+- Q: What is PT/INR of Hematology?
+  A: ↑↑, APTT Normal (Early) → Key differentiator from Liver/DIC
+- Q: What is PIVKA-II of Hematology?
+  A: Des-γ-carboxy Prothrombin → Elevated (Sensitive marker)
+- Q: What is the dose of Hematology?
+  A: IV 5-10mg (Urgent), PO 5-10mg (Non-urgent), Avoid SC
+- Q: What is Warfarin Reversal of Hematology?
+  A: INR 5-9: 1-2mg PO; INR >10: 3-5mg PO; Bleed: 5-10mg IV + PCC
+- Q: What is Neonatal VKDB of Hematology?
+  A: 1mg IM at birth (Standard); Late VKDB: Oral 2mg weekly × 12wks if breastfed
+- Q: What is Differentiation of Hematology?
+  A: Vit K Def: PT↑, APTT Normal, Plt/Fib Normal; Liver: APTT↑, Plt↓; DIC: Plt↓, Fib↓, D-dimer↑↑
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Coagulation Disorders → Vitamin K Deficiency**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Essential Nutrient — Vitamin K1 (Phylloquinone) – dietary (green leafy vegetables); Vitamin K2 (Menaquinone) – gut bacterial synthesis; Function — Co-factor for γ-glutamyl carboxylase → γ-carboxylation of Glu residues on Factors II, VII, IX, X, Protein C, Protein S, Factor Z; γ-Carboxylation — Enables Ca²⁺ binding → Factor activation on phospholipid surfaces. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

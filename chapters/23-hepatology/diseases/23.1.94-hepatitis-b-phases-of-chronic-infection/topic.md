@@ -278,3 +278,20 @@ mindmap
 - [[Viral Hepatitis/Hepatitis B HCC surveillance|HCC Surveillance]]
 - [[Viral Hepatitis/Hepatitis B reactivation|HBV Reactivation]]
 - [[Viral Hepatitis/Hepatitis B pregnancy and vertical transmission|HBV in Pregnancy]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: | Typical age | Children, young adults (perinatal acquisition) |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **| Typical age | Children, young adults (perinatal acquisition) |**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+

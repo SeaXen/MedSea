@@ -294,3 +294,106 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Granulomatosis with polyangiitis (GPA)]] · [[Eosinophilic granulomatosis with polyangiitis (EPA)]] · [[ANCA-associated vasculitis overview]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (40 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: MPA = p-ANCA/MPO+ pauci-immune necrotising vasculitis WITHOUT granulomas or ENT involvement.
+- Q: What is Pauci-immune Necrotising Crescentic GN of Vasculitis?
+  A: RPGN — haematuria, proteinuria, RBC casts, rising Cr
+- Q: What is Renal-Limited MPA of Vasculitis?
+  A: Pauci-immune GN WITHOUT systemic features — 30-40% of MPA
+- Q: What is Severity of Vasculitis?
+  A: Often more severe/frequent renal involvement than GPA
+- Q: What is Alveolar Haemorrhage of Vasculitis?
+  A: Haemoptysis, dyspnoea, anaemia, diffuse ground-glass on CT — emergency
+- Q: What is Interstitial Fibrosis of Vasculitis?
+  A: Chronic dyspnoea, restrictive PFTs, reticulation on HRCT
+- Q: What is Pleural Effusion of Vasculitis?
+  A: Exudative, less common
+- Q: What is p-ANCA / MPO ELISA of Vasculitis?
+  A: Positive 70-80% (negative in 20-30%)
+- Q: What is c-ANCA / PR3 of Vasculitis?
+  A: Negative (if +ve, think GPA)
+- Q: What is Renal Biopsy of Vasculitis?
+  A: Pauci-immune necrotising crescentic GN (no immune complexes on IF) — same as GPA
+- Q: What is CXR / CT Chest of Vasculitis?
+  A: Alveolar haemorrhage (ground-glass), interstitial fibrosis
+- Q: What is FBC, ESR, CRP of Vasculitis?
+  A: Leukocytosis, anaemia, markedly elevated inflammatory markers
+- Q: What is Urine of Vasculitis?
+  A: Haematuria, proteinuria, RBC casts
+- Q: What is Nerve Conduction of Vasculitis?
+  A: Axonal neuropathy (mononeuritis multiplex)
+- Q: What is Relapse Rate of Vasculitis?
+  A: Lower than GPA (~30% at 5 years vs 50% in GPA)
+- Q: What is Renal Survival of Vasculitis?
+  A: Better if treated early — less chronic damage
+- Q: What is Common Relapse Sites of Vasculitis?
+  A: Renal, pulmonary, cutaneous
+- Q: What is Re-induction of Vasculitis?
+  A: RTX preferred (cumulative CYC dose limit)
+- Q: What is Pauci-immune Necrotising Crescentic GN of Vasculitis?
+  A: RPGN — haematuria, proteinuria, RBC casts, rising Cr
+- Q: What is Renal-Limited MPA of Vasculitis?
+  A: Pauci-immune GN WITHOUT systemic features — 30-40% of MPA
+- Q: What is Alveolar Haemorrhage of Vasculitis?
+  A: Haemoptysis, dyspnoea, anaemia, diffuse ground-glass on CT — emergency
+- Q: What is Interstitial Fibrosis of Vasculitis?
+  A: Chronic dyspnoea, restrictive PFTs, reticulation on HRCT
+- Q: What is p-ANCA / MPO ELISA of Vasculitis?
+  A: Positive 70-80% (negative in 20-30%)
+- Q: What is c-ANCA / PR3 of Vasculitis?
+  A: Negative (if +ve, think GPA)
+- Q: What is Renal Biopsy of Vasculitis?
+  A: Pauci-immune necrotising crescentic GN (no immune complexes on IF) — same as GPA
+- Q: What is CXR / CT Chest of Vasculitis?
+  A: Alveolar haemorrhage (ground-glass), interstitial fibrosis
+- Q: What is FBC, ESR, CRP of Vasculitis?
+  A: Leukocytosis, anaemia, markedly elevated inflammatory markers
+- Q: What is Urine of Vasculitis?
+  A: Haematuria, proteinuria, RBC casts
+- Q: What is Nerve Conduction of Vasculitis?
+  A: Axonal neuropathy (mononeuritis multiplex)
+- Q: What is Relapse Rate of Vasculitis?
+  A: Lower than GPA (~30% at 5 years vs 50% in GPA)
+- Q: What is Renal Survival of Vasculitis?
+  A: Better if treated early — less chronic damage
+- Q: What is Common Relapse Sites of Vasculitis?
+  A: Renal, pulmonary, cutaneous
+- Q: What is Re-induction of Vasculitis?
+  A: RTX preferred (cumulative CYC dose limit)
+- Q: What is ANCA of Vasculitis?
+  A: p-ANCA/MPO (70-80%); c-ANCA/PR3 negative
+- Q: What is Key Differentiator from GPA of Vasculitis?
+  A: NO granulomas, NO ENT involvement, NO saddle nose
+- Q: What is Renal of Vasculitis?
+  A: Pauci-immune necrotising crescentic GN; often more severe than GPA; renal-limited MPA = 30-40%
+- Q: What is Lung of Vasculitis?
+  A: Alveolar haemorrhage (emergency), interstitial fibrosis (not nodules/cavities)
+- Q: How is Vasculitis managed?
+  A: Same as GPA: Induction CYC/RTX + steroids; Maintenance RTX q6mo > AZA
+- Q: What is Relapse of Vasculitis?
+  A: Less frequent than GPA (~30% at 5yr); re-induce with RTX
+- Q: What is ANCA-Negative MPA of Vasculitis?
+  A: ~20-30% — biopsy if high suspicion (pauci-immune GN)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **MPA = p-ANCA/MPO+ pauci-immune necrotising vasculitis WITHOUT granulomas or ENT involvement.**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Peak Onset — 50-70 years (older than GPA); Sex Ratio — M = F; Genetics — HLA-DQ, SERPINA1 (α1-antitrypsin). What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

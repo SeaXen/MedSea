@@ -223,3 +223,46 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Biliary Tract Disease]], [[Choledocholithiasis]], [[Ascending Cholangitis]], [[Gallstone Pancreatitis]], [[Mirizzi Syndrome]]
+---
+
+> Auto-generated study sections for "Biliary Tract Disease" — Ch 23: Hepatology.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Biliary Tract Disease?
+  A: Acute inflammation of gallbladder wall, usually from cystic duct obstruction by gallstone
+- Q: What is the pathogenesis of Biliary Tract Disease?
+  A: Stone impacts in cystic duct/neck → distension → ischaemia → inflammation → bacterial superinfection (E. coli, Klebsiella, Enterobacter)
+- Q: What causes Biliary Tract Disease?
+  A: Female, >40, obese, multiparity, rapid weight loss, TPN, critical illness (acalculous)
+- Q: What is the investigation of choice for Biliary Tract Disease?
+  A: 1 item from A + 1 from B = suspected; + imaging (C) = definite
+- Q: What is TG18 Grades of Biliary Tract Disease?
+  A: Grade I/II: Early cholecystectomy ≤72h; Grade III: PTGBD → delayed cholecystectomy
+- Q: What is Grade I of Biliary Tract Disease?
+  A: No organ dysfunction, mild inflammation
+- Q: What is Grade II of Biliary Tract Disease?
+  A: WBC>18k, palpable GB, >72h symptoms, marked inflammation
+- Q: What is Grade III of Biliary Tract Disease?
+  A: Organ dysfunction (CV/Neuro/Resp/Renal/Hepatic/Haematological)
+- Q: How is Biliary Tract Disease classified?
+  A: I: CHD compression; II: Cholecystocholedochal fistula; III: CHD fistula; IV: CHD destruction
+- Q: What is Differential: Cholecystitis vs Cholangitis of Biliary Tract Disease?
+  A: Cholecystitis: GB wall thickening, Murphy's sign; Cholangitis: Fever+Jaundice+RUQ pain, dilated CBD
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Biliary Tract Disease?**
+   A. **Acute Cholecystitis = Gallbladder inflammation from cystic duct obstruction — Tokyo Guidelines 2018 (TG18): Grade I/II → early cholecystectomy ≤72h; Grade III → PTGBD for Grade III; Mirizzi syndrome =**
+   B. An unrelated condition not matching the clinical picture of Biliary Tract Disease
+   C. A complication seen late in the disease course of Biliary Tract Disease
+   D. A condition that mimics Biliary Tract Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Biliary Tract Disease presents with: Definition — Acute inflammation of gallbladder wall, usually from cystic duct obstruction by gallstone; Pathophysiology — Stone impacts in cystic duct/neck → distension → ischaemia → inflammation → bacterial superinfection (E. coli, Klebsiella, Enterobacter); Risk Factors — Female, >40, obese, multiparity, rapid weight loss, TPN, critical illness (acalculous). What is the most likely diagnosis?
+   A. **Biliary Tract Disease**
+   B. A condition that mimics Biliary Tract Disease but is not the same entity
+   C. A complication of Biliary Tract Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Biliary Tract Disease
+

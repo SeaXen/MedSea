@@ -339,3 +339,64 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (19 generated)
+
+- Q: What is Transfusion Dependence of Hematology?
+  A: Leucodepleted, irradiated RBCs; Iron Chelation if ferritin >1000
+- Q: What is Iron Overload of Hematology?
+  A: Annual LIC/MRI T2, ferritin q3mo; Deferasirox/Deferiprone/Deferoxamine
+- Q: What is Infection of Hematology?
+  A: Pneumococcal/Hib/MenACWY vaccines; ACV prophylaxis if on IST
+- Q: What is Malignant Transformation (DBA) of Hematology?
+  A: MDS/AML risk ~20% by age 40; solid tumours (osteosarcoma, breast); Annual BM surveillance
+- Q: What is Relapse after IST of Hematology?
+  A: ~30-40% after CsA taper; Re-treat with CsA/Rituximab
+- Q: What is Transfusion Dependence of Hematology?
+  A: Leucodepleted, irradiated RBCs; Iron Chelation if ferritin >1000
+- Q: What is Iron Overload of Hematology?
+  A: Annual LIC/MRI T2, ferritin q3mo; Deferasirox/Deferiprone/Deferoxamine
+- Q: What is Infection of Hematology?
+  A: Pneumococcal/Hib/MenACWY vaccines; ACV prophylaxis if on IST
+- Q: What is Malignant Transformation (DBA) of Hematology?
+  A: MDS/AML risk ~20% by age 40; solid tumours (osteosarcoma, breast); Annual BM surveillance
+- Q: What is Relapse after IST of Hematology?
+  A: ~30-40% after CsA taper; Re-treat with CsA/Rituximab
+- Q: What is the definition of Hematology?
+  A: Isolated anaemia + reticulocytopenia + absent erythroid precursors (normal myeloid/megakaryocytic)
+- Q: What is vs Aplastic Anaemia of Hematology?
+  A: PRCA = single lineage; AA = pancytopenia + hypocellular all lineages
+- Q: What is Thymoma Association of Hematology?
+  A: 5-10% of thymomas → PRCA; Thymectomy = 30-50% remission
+- Q: What is T-LGL Leukaemia of Hematology?
+  A: CD3+CD8+CD57+ clonal T-cells; neutropenia, splenomegaly, RA; CsA first-line
+- Q: What is Parvovirus B19 of Hematology?
+  A: Immunocompromised; persistent infection; IVIG 400 mg/kg × 5 days
+- Q: What is Drugs of Hematology?
+  A: Phenytoin, Carbamazepine, Azathioprine, INH, D-penicillamine
+- Q: What is Diamond-Blackfan (DBA) of Hematology?
+  A: RPS19 ribosomal gene; infancy, macrocytosis, anomalies, eADA↑; steroids → transfusion → HSCT
+- Q: What is the first-line treatment for Hematology?
+  A: Cyclosporine (trough 150-250); Rituximab second-line
+- Q: What is eADA of Hematology?
+  A: Erythrocyte adenosine deaminase elevated in DBA (diagnostic)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Pure Red Cell Aplasia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Acquired (Immune-mediated) — Idiopathic, Thymoma, T-LGL Leukaemia, Drugs, Viral (Parvovirus B19), Autoimmune, Pregnancy; Congenital (Diamond-Blackfan Anaemia - DBA) — RPS19, RPL5, RPL11, RPL35A, GATA1 (ribosomal protein genes); Transient Erythroblastopenia of Childhood (TEC) — Post-viral, self-limiting. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

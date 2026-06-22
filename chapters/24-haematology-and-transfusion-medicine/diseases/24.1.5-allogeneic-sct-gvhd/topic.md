@@ -378,3 +378,44 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies / Supportive Care → Allogeneic Stem Cell Transplantation
+- Q: What is Donor Preference of Hematology?
+  A: MSD > MUD > Haplo (PTCy) > Cord Blood
+- Q: What is Conditioning of Hematology?
+  A: MAC (Young/Fit/High Risk), RIC (Older/Comorbid), NMA (Elderly/Frail)
+- Q: What is aGVHD Prophylaxis of Hematology?
+  A: Tacrolimus + MTX (MAC), Tac + MMF (RIC), PTCy (Haplo)
+- Q: What is aGVHD Grading of Hematology?
+  A: Skin, Liver, Gut → Grade I-IV → Overall = Highest Organ Grade
+- Q: How is Hematology managed?
+  A: 1st: Steroids (MP 2mg/kg); 2nd: Ruxolitinib (10mg BD)
+- Q: What is cGVHD of Hematology?
+  A: NIH Criteria: Sclerotic Skin, Sicca, BOS, Fasciitis, Oesophageal Web
+- Q: What is Engraftment of Hematology?
+  A: ANC ≥0.5 Day +14-21, Plt ≥20 Day +18-28
+- Q: What is Infections of Hematology?
+  A: Pre-Engraft: Bacteria/Candida/HSV; Post-Engraft: CMV, PJP, Fungi; Late: Encapsulated
+- Q: What is CMV of Hematology?
+  A: Weekly PCR × 100d; Pre-emptive at Threshold
+- Q: What is VOD/SOS of Hematology?
+  A: Day +10-20: Weight Gain, Hepatomegaly, Jaundice, Ascites → Defibrotide
+- Q: What is TA-TMA of Hematology?
+  A: Schistocytes, Thrombocytopenia, Renal, HTN → Eculizumab
+- Q: What is DLI of Hematology?
+  A: Molecular Relapse → 10⁶ CD3+/kg; Haematological Relapse → 10⁷-10⁸
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies / Supportive Care → Allogeneic Stem Cell Transplantation**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

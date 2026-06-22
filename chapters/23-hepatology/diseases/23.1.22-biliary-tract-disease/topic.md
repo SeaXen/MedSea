@@ -375,3 +375,102 @@ mindmap
 - **Chapter MOC**: [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related**: [[Acute Liver Failure]], [[Autoimmune Liver Disease (PSC)|Autoimmune Liver Disease]], [[Liver Tumours]], [[Pancreatic Disorders]], [[Cirrhosis and Portal Hypertension]], [[Inherited and Metabolic Liver Disease]]
+---
+
+> Auto-generated study sections for "Biliary Tract Disease" — Ch 23: Hepatology.
+
+## Flashcards (38 generated)
+
+- Q: What is the definition of Biliary Tract Disease?
+  A: Biliary Tract Disease = Gallstone disease (colic, cholecystitis, choledocholithiasis, cholangitis, pancreatitis) + Biliary strictures + Biliary tumours — Acute cholecystitis (Tokyo Guidelines), Choledocholithiasis (ERCP indications), Ascending cholangitis (Charcot's triad, Reynolds' pentad, Tokyo Guidelines), Gallstone pancreatitis, Mirizzi syndrome, Biliary strictures (benign vs malignant), Bilia
+- Q: What are the clinical features of Biliary Tract Disease?
+  A: RUQ pain, jaundice, cholangitis, pancreatitis
+- Q: What is LFTs of Biliary Tract Disease?
+  A: Cholestatic pattern (ALP ↑↑, GGT ↑↑, bilirubin ↑)
+- Q: What is Imaging of Biliary Tract Disease?
+  A: MRCP (non-invasive, 95% sensitivity) / ERCP (therapeutic) / EUS (if MRCP equivocal)
+- Q: What is Predictors (ASGE) of Biliary Tract Disease?
+  A: High probability: CBD stone on imaging, cholangitis, bilirubin >4.3 mg/dL (73 µmol/L), dilated CBD >6mm + stones
+- Q: What is the epidemiology of Biliary Tract Disease?
+  A: Rare; 6th most common GI cancer; Female > Male
+- Q: What causes Biliary Tract Disease?
+  A: Gallstones (70-90%), Porcelain GB, Chronic typhoid carrier, Congenital anomalies, Obesity, Age >65
+- Q: What are the clinical features of Biliary Tract Disease?
+  A: Incidental (on cholecystectomy for stones), RUQ pain, jaundice, weight loss, Palpable mass
+- Q: What is Staging (TNM) of Biliary Tract Disease?
+  A: T1: Mucosa/submucosa; T2: Muscularis; T3: Perimuscular/serosa; T4: Adjacent organ invasion
+- Q: How is Biliary Tract Disease managed?
+  A: T1a (mucosa): Simple cholecystectomy; T1b (submucosa): Extended cholecystectomy + LND; T2+: Radical cholecystectomy (segments IVb/V + LND); Unresectable: GemCis
+- Q: What is Location of Biliary Tract Disease?
+  A: Ampulla of Vater (within 2cm)
+- Q: What are the clinical features of Biliary Tract Disease?
+  A: Early jaundice (obstructive), Pancreatitis, Occult GI bleed
+- Q: How is Biliary Tract Disease managed?
+  A: Whipple (PD) / PPPD (standard); Local excision if Tis/T1 small
+- Q: What is the prognosis of Biliary Tract Disease?
+  A: Better than pancreatic/CCA (5-yr OS 30-50% if resected)
+- Q: What are the clinical features of Biliary Tract Disease?
+  A: RUQ pain, jaundice, cholangitis, pancreatitis
+- Q: What is LFTs of Biliary Tract Disease?
+  A: Cholestatic pattern (ALP ↑↑, GGT ↑↑, bilirubin ↑)
+- Q: What is Imaging of Biliary Tract Disease?
+  A: MRCP (non-invasive, 95% sensitivity) / ERCP (therapeutic) / EUS (if MRCP equivocal)
+- Q: What is the epidemiology of Biliary Tract Disease?
+  A: Rare; 6th most common GI cancer; Female > Male
+- Q: What causes Biliary Tract Disease?
+  A: Gallstones (70-90%), Porcelain GB, Chronic typhoid carrier, Congenital anomalies, Obesity, Age >65
+- Q: What are the clinical features of Biliary Tract Disease?
+  A: Incidental (on cholecystectomy for stones), RUQ pain, jaundice, weight loss, Palpable mass
+- Q: What is Staging (TNM) of Biliary Tract Disease?
+  A: T1: Mucosa/submucosa; T2: Muscularis; T3: Perimuscular/serosa; T4: Adjacent organ invasion
+- Q: How is Biliary Tract Disease managed?
+  A: T1a (mucosa): Simple cholecystectomy; T1b (submucosa): Extended cholecystectomy + LND; T2+: Radical cholecystectomy (segments IVb/V + LND); Unresectable: GemCis
+- Q: What is Location of Biliary Tract Disease?
+  A: Ampulla of Vater (within 2cm)
+- Q: What are the clinical features of Biliary Tract Disease?
+  A: Early jaundice (obstructive), Pancreatitis, Occult GI bleed
+- Q: How is Biliary Tract Disease managed?
+  A: Whipple (PD) / PPPD (standard); Local excision if Tis/T1 small
+- Q: What is the prognosis of Biliary Tract Disease?
+  A: Better than pancreatic/CCA (5-yr OS 30-50% if resected)
+- Q: What are the clinical features of Biliary Tract Disease?
+  A: Observe (no cholecystectomy)
+- Q: What is Biliary Colic of Biliary Tract Disease?
+  A: RUQ pain, post-prandial, no fever/LFT abnormality → Elective cholecystectomy
+- Q: What is Acute Cholecystitis of Biliary Tract Disease?
+  A: Tokyo Guidelines: Grade I/II → Early cholecystectomy ≤72h; Grade III → PTGBD → delayed
+- Q: What is Mirizzi Syndrome of Biliary Tract Disease?
+  A: Stone in Hartmann's pouch → CHD compression; Type I/II/III/IV; Cholecystectomy + repair
+- Q: What is Choledocholithiasis of Biliary Tract Disease?
+  A: ASGE High probability: CBD stone on imaging, cholangitis, bilirubin >4.3, dilated CBD>6mm+stones
+- Q: What is Acute Cholangitis of Biliary Tract Disease?
+  A: Charcot's Triad (fever, pain, jaundice); Reynolds' Pentad (add AMS, hypotension); TG18 Grade III → Emergency ERCP <12h
+- Q: What is Antibiotics of Biliary Tract Disease?
+  A: Piptaz 4.5g q6h or Ceftriaxone 2g + Metronidazole (Grade I/II); Meropenem (Grade III)
+- Q: What is Gallstone Pancreatitis of Biliary Tract Disease?
+  A: Cholecystectomy same admission (mild); ERCP if cholangitis/severe
+- Q: What is Biliary Strictures of Biliary Tract Disease?
+  A: Benign (post-cholecystectomy, PSC) vs Malignant (CCA, pancreas, GB); ERCP stent/dilation
+- Q: What is Cholangiocarcinoma of Biliary Tract Disease?
+  A: Perihilar (Klatskin) 50-60%; Bismuth Type I-IV; GemCis 1L systemic
+- Q: What is Gallbladder Cancer of Biliary Tract Disease?
+  A: T1a: Simple cholecystectomy; T1b+: Radical cholecystectomy + LND
+- Q: What is Ampullary Cancer of Biliary Tract Disease?
+  A: Early jaundice; Whipple/PPPD; Better prognosis than pancreatic/CCA
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Biliary Tract Disease?**
+   A. **Biliary Tract Disease = Gallstone disease (colic, cholecystitis, choledocholithiasis, cholangitis, pancreatitis) + Biliary strictures + Biliary tumours — Acute cholecystitis (Tokyo Guidelines), Choled**
+   B. An unrelated condition not matching the clinical picture of Biliary Tract Disease
+   C. A complication seen late in the disease course of Biliary Tract Disease
+   D. A condition that mimics Biliary Tract Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Biliary Tract Disease presents with: Symptoms — RUQ pain, jaundice, cholangitis, pancreatitis; LFTs — Cholestatic pattern (ALP ↑↑, GGT ↑↑, bilirubin ↑); Imaging — MRCP (non-invasive, 95% sensitivity) / ERCP (therapeutic) / EUS (if MRCP equivocal). What is the most likely diagnosis?
+   A. **Biliary Tract Disease**
+   B. A condition that mimics Biliary Tract Disease but is not the same entity
+   C. A complication of Biliary Tract Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Biliary Tract Disease
+

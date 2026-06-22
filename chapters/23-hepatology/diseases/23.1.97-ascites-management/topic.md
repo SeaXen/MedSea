@@ -270,3 +270,64 @@ mindmap
 - [[Portal Hypertension and Complications/Spontaneous bacterial peritonitis (SBP)|SBP]]
 - [[Portal Hypertension and Complications/Hepatorenal Syndrome|HRS]]
 - [[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: - Mechanism: Blocks aldosterone in collecting duct → Na⁺ excretion, K⁺ retention
+- Q: What is Tense ascites (resp compromise, pain, renal impairment) of Portal Hypertension and Complications?
+  A: Remove all ascites (large-volume)
+- Q: What is Refractory ascites of Portal Hypertension and Complications?
+  A: Serial LVP every 2-4 weeks
+- Q: What is Albumin replacement of Portal Hypertension and Complications?
+  A: 8 g per liter removed if >5L (e.g., 8L → 64g = 200mL 20% or 400mL 5%)
+- Q: What is No albumin needed of Portal Hypertension and Complications?
+  A: If ≤5L removed
+- Q: What is Tense ascites (resp compromise, pain, renal impairment) of Portal Hypertension and Complications?
+  A: Remove all ascites (large-volume)
+- Q: What is Refractory ascites of Portal Hypertension and Complications?
+  A: Serial LVP every 2-4 weeks
+- Q: What is Albumin replacement of Portal Hypertension and Complications?
+  A: 8 g per liter removed if >5L (e.g., 8L → 64g = 200mL 20% or 400mL 5%)
+- Q: What is Salt restriction of Portal Hypertension and Complications?
+  A: 88 mmol/day (2g NaCl)
+- Q: What is Diuretic ratio of Portal Hypertension and Complications?
+  A: Spironolactone : Furosemide = 100 : 40
+- Q: What is the dose of Portal Hypertension and Complications?
+  A: Spiro 400mg, Furo 160mg
+- Q: What is Weight loss target of Portal Hypertension and Complications?
+  A: 0.5 kg/day (no edema), 1 kg/day (with edema)
+- Q: How is Portal Hypertension and Complications monitored?
+  A: Na, K, Cr, Urea weekly initially
+- Q: What is Hyponatremia of Portal Hypertension and Complications?
+  A: Na<130 → fluid restrict, reduce/stop furo
+- Q: What is Hyperkalemia of Portal Hypertension and Complications?
+  A: K>5.5 → hold spiro
+- Q: What is AKI of Portal Hypertension and Complications?
+  A: Cr↑50% → hold both
+- Q: What is LVP albumin of Portal Hypertension and Complications?
+  A: 8g/L if >5L removed
+- Q: What is Refractory ascites of Portal Hypertension and Complications?
+  A: Failed max diuretics + salt restriction
+- Q: What is TIPS criteria of Portal Hypertension and Complications?
+  A: Child A/B, no severe HE, age<70
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **- Mechanism: Blocks aldosterone in collecting duct → Na⁺ excretion, K⁺ retention**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Portal Hypertension and Complications presents with: Failure to mobilize ascites despite:; 1. Salt restriction 88 mmol/day; 2. Maximum diuretics (Spironolactone 400mg + Furosemide 160mg) OR. What is the most likely diagnosis?
+   A. **Portal Hypertension and Complications**
+   B. A condition that mimics Portal Hypertension and Complications but is not the same entity
+   C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
+

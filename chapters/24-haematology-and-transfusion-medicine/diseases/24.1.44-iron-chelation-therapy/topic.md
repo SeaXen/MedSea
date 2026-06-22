@@ -313,3 +313,110 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (46 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Transfusion Medicine / Supportive Care → Iron Chelation Therapy
+- Q: What is Serum Ferritin of Hematology?
+  A: >1000 µg/L (on 2 occasions, 4-6 weeks apart)
+- Q: What is Transfusion Burden of Hematology?
+  A: >20-30 RBC Units lifetime
+- Q: What is Liver Iron Concentration (LIC) of Hematology?
+  A: >7 mg/g dry weight (MRI R2/FerriScan)
+- Q: What is Cardiac Iron of Hematology?
+  A: MRI T2 <20 ms (High Risk <10 ms)
+- Q: What is Clinical of Hematology?
+  A: Symptomatic Iron Overload (Cardiac, Endocrine, Hepatic)
+- Q: What is Route of Hematology?
+  A: Subcutaneous (SC) Infusion 8-12 hours/night, 5-7 days/week (Pump)
+- Q: What is the dose of Hematology?
+  A: 20-40 mg/kg/day (Max 50 mg/kg)
+- Q: What is the mechanism of Hematology?
+  A: Hexadentate, 1:1 Fe³⁺ binding, Excreted in Urine (vincent red) + Faeces
+- Q: How is Hematology monitored?
+  A: Ferritin q3mo, Annual Audio/Ophthalmology, Growth (Children), LIC/MRI T2 Annually
+- Q: What are the side effects of Hematology?
+  A: Local Reactions (Induration, Pain), Ototoxicity (High-frequency hearing loss), Ocular Toxicity (Retinopathy, Cataract), Growth Retardation (Children), Yersinia Sepsis (Risk ↑ with high dose)
+- Q: What is Pregnancy of Hematology?
+  A: Category C – Safe to Continue (Decades of Experience), Dose Adjust if Needed
+- Q: What is Route of Hematology?
+  A: Oral, 75-100 mg/kg/day in 3 Divided Doses (TDS)
+- Q: What is the mechanism of Hematology?
+  A: Bidentate, 3:1 Fe³⁺ binding, Excreted in Urine (Red/Orange)
+- Q: How is Hematology monitored?
+  A: NEUTROPHIL COUNT WEEKLY (Agranulocytosis Risk), Ferritin q3mo, LIC/MRI Annually, Joints
+- Q: What are the side effects of Hematology?
+  A: AGRANULOCYTOSIS (1-2%) – NEUTROPENIA, Arthralgia/Arthritis (Zinc Chelation), GI Upset, Zinc Deficiency, Neurological (Rare)
+- Q: What is Pregnancy of Hematology?
+  A: CONTRAINDICATED (Teratogenic in Animals)
+- Q: What is Formulations of Hematology?
+  A: Dispersible Tablets (Older), Film-Coated Tablets (JADENU) – Higher Bioavailability (30% Less Dose)
+- Q: What is the dose of Hematology?
+  A: Dispersible: 20-40 mg/kg/day; Film-Coated: 14-28 mg/kg/day (Once Daily, Empty Stomach)
+- Q: What is the mechanism of Hematology?
+  A: Tridentate, 2:1 Fe³⁺ binding, Excreted in Faeces (Biliary)
+- Q: How is Hematology monitored?
+  A: MONTHLY RENAL FUNCTION (Creatinine, eGFR, Proteinuria), Ferritin q3mo, LFT, LIC/MRI Annually, Ophthalmology
+- Q: What are the side effects of Hematology?
+  A: RENAL TUBULAR DYSFUNCTION (Fanconi-like – Proteinuria, Glycosuria, Aminoaciduria), GI Ulceration/Haemorrhage, Rash, Hepatic Toxicity
+- Q: What is Pregnancy of Hematology?
+  A: CONTRAINDICATED (Animal Teratogenicity)
+- Q: What is Route of Hematology?
+  A: Subcutaneous (SC) Infusion 8-12 hours/night, 5-7 days/week (Pump)
+- Q: What is the dose of Hematology?
+  A: 20-40 mg/kg/day (Max 50 mg/kg)
+- Q: What is the mechanism of Hematology?
+  A: Hexadentate, 1:1 Fe³⁺ binding, Excreted in Urine (vincent red) + Faeces
+- Q: How is Hematology monitored?
+  A: Ferritin q3mo, Annual Audio/Ophthalmology, Growth (Children), LIC/MRI T2 Annually
+- Q: What are the side effects of Hematology?
+  A: Local Reactions (Induration, Pain), Ototoxicity (High-frequency hearing loss), Ocular Toxicity (Retinopathy, Cataract), Growth Retardation (Children), Yersinia Sepsis (Risk ↑ with high dose)
+- Q: What is Route of Hematology?
+  A: Oral, 75-100 mg/kg/day in 3 Divided Doses (TDS)
+- Q: What is the mechanism of Hematology?
+  A: Bidentate, 3:1 Fe³⁺ binding, Excreted in Urine (Red/Orange)
+- Q: How is Hematology monitored?
+  A: NEUTROPHIL COUNT WEEKLY (Agranulocytosis Risk), Ferritin q3mo, LIC/MRI Annually, Joints
+- Q: What are the side effects of Hematology?
+  A: AGRANULOCYTOSIS (1-2%) – NEUTROPENIA, Arthralgia/Arthritis (Zinc Chelation), GI Upset, Zinc Deficiency, Neurological (Rare)
+- Q: What is Formulations of Hematology?
+  A: Dispersible Tablets (Older), Film-Coated Tablets (JADENU) – Higher Bioavailability (30% Less Dose)
+- Q: What is the dose of Hematology?
+  A: Dispersible: 20-40 mg/kg/day; Film-Coated: 14-28 mg/kg/day (Once Daily, Empty Stomach)
+- Q: What is the mechanism of Hematology?
+  A: Tridentate, 2:1 Fe³⁺ binding, Excreted in Faeces (Biliary)
+- Q: How is Hematology monitored?
+  A: MONTHLY RENAL FUNCTION (Creatinine, eGFR, Proteinuria), Ferritin q3mo, LFT, LIC/MRI Annually, Ophthalmology
+- Q: What are the side effects of Hematology?
+  A: RENAL TUBULAR DYSFUNCTION (Fanconi-like – Proteinuria, Glycosuria, Aminoaciduria), GI Ulceration/Haemorrhage, Rash, Hepatic Toxicity
+- Q: What is Pregnancy of Hematology?
+  A: CONTRAINDICATED (Animal Teratogenicity)
+- Q: What is Hematology indicated for?
+  A: Ferritin >1000, >20 RBC Units, LIC >7 mg/g, Cardiac T2 <20 ms
+- Q: What is DFO of Hematology?
+  A: SC Infusion 8-12h, 20-40 mg/kg; Audio/Ophtho Annual; Yersinia Risk
+- Q: What is DFP of Hematology?
+  A: Oral TDS 75-100 mg/kg; WEEKLY ANC (Agranulocytosis); Arthralgia
+- Q: What is DFX of Hematology?
+  A: Oral OD, Monthly Renal Function; GI Ulcers, Fanconi-like Renal
+- Q: What is Combination of Hematology?
+  A: DFO+DFP = Best for Cardiac Iron (T2 <10ms)
+- Q: How is Hematology monitored?
+  A: Ferritin q3mo, LIC Annual (MRI), Cardiac T2 Annual (>10y), DFP: Weekly ANC, DFX: Monthly Creatinine
+- Q: What is Targets of Hematology?
+  A: Ferritin <1000, LIC <7 mg/g, Cardiac T2 >20 ms
+- Q: What is Pregnancy of Hematology?
+  A: DFO Safe, DFP/DFX Contraindicated
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Transfusion Medicine / Supportive Care → Iron Chelation Therapy**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

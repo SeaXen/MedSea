@@ -322,3 +322,72 @@ mindmap
 - [[Viral Hepatitis/Hepatitis B reactivation|HBV Reactivation]]
 - [[Viral Hepatitis/Hepatitis B pregnancy and vertical transmission|HBV Pregnancy]]
 - [[Autoimmune Liver Disease/AIH in pregnancy|AIH Pregnancy]]
+---
+
+> Auto-generated study sections for "Hepatology in Special Situations" — Ch 23: Hepatology.
+
+## Flashcards (27 generated)
+
+- Q: What is the definition of Hepatology in Special Situations?
+  A: | Maternal HBV DNA | Gestation Start | Recommendation |
+- Q: What is Drug of Hepatology in Special Situations?
+  A: Tenofovir DF (TDF) 245mg Daily
+- Q: What is Start of Hepatology in Special Situations?
+  A: 24-28 Weeks Gestation
+- Q: What is Stop of Hepatology in Special Situations?
+  A: 4-12 Weeks Postpartum (After HBIG/Vaccine to Baby)
+- Q: What is Safety of Hepatology in Special Situations?
+  A: Category B — No Teratogenicity; Safe in Pregnancy
+- Q: How is Hepatology in Special Situations monitored?
+  A: Renal Function, LFTs, HBV DNA q4-6 Weeks
+- Q: What is Maternal ALT Flare of Hepatology in Special Situations?
+  A: Common 4-12w Postpartum — Monitor LFTs Monthly ×3mo; Usually Self-Limited
+- Q: What is Antiviral Continuation of Hepatology in Special Situations?
+  A: Stop at 4-12w Postpartum (Unless Cirrhosis/Indication Persists)
+- Q: What is HBeAg Seroconversion of Hepatology in Special Situations?
+  A: More Common Postpartum — Monitor HBV DNA, HBeAg
+- Q: What is Contraception of Hepatology in Special Situations?
+  A: Discuss Postpartum — TDF/ETV/TAF Safe with All Methods
+- Q: What is Course of Hepatology in Special Situations?
+  A: Self-Limited; No Increased Severity
+- Q: What is Vertical Transmission of Hepatology in Special Situations?
+  A: Rare (Transplacental <1%)
+- Q: How is Hepatology in Special Situations managed?
+  A: Supportive; Vaccine Post-Exposure if Exposed
+- Q: What is Vaccine of Hepatology in Special Situations?
+  A: Safe in Pregnancy (Inactivated)
+- Q: What is Drug of Hepatology in Special Situations?
+  A: Tenofovir DF (TDF) 245mg Daily
+- Q: What is Start of Hepatology in Special Situations?
+  A: 24-28 Weeks Gestation
+- Q: What is Stop of Hepatology in Special Situations?
+  A: 4-12 Weeks Postpartum (After HBIG/Vaccine to Baby)
+- Q: What is Safety of Hepatology in Special Situations?
+  A: Category B — No Teratogenicity; Safe in Pregnancy
+- Q: How is Hepatology in Special Situations monitored?
+  A: Renal Function, LFTs, HBV DNA q4-6 Weeks
+- Q: What is Maternal ALT Flare of Hepatology in Special Situations?
+  A: Common 4-12w Postpartum — Monitor LFTs Monthly ×3mo; Usually Self-Limited
+- Q: What is Antiviral Continuation of Hepatology in Special Situations?
+  A: Stop at 4-12w Postpartum (Unless Cirrhosis/Indication Persists)
+- Q: What is HBeAg Seroconversion of Hepatology in Special Situations?
+  A: More Common Postpartum — Monitor HBV DNA, HBeAg
+- Q: What is Contraception of Hepatology in Special Situations?
+  A: Discuss Postpartum — TDF/ETV/TAF Safe with All Methods
+- Q: What is Course of Hepatology in Special Situations?
+  A: Self-Limited; No Increased Severity
+- Q: What is Vertical Transmission of Hepatology in Special Situations?
+  A: Rare (Transplacental <1%)
+- Q: How is Hepatology in Special Situations managed?
+  A: Supportive; Vaccine Post-Exposure if Exposed
+- Q: What is Vaccine of Hepatology in Special Situations?
+  A: Safe in Pregnancy (Inactivated)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology in Special Situations?**
+   A. **| Maternal HBV DNA | Gestation Start | Recommendation |**
+   B. An unrelated condition not matching the clinical picture of Hepatology in Special Situations
+   C. A complication seen late in the disease course of Hepatology in Special Situations
+   D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
+

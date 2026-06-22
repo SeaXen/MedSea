@@ -150,3 +150,96 @@ flowchart TD
 | **Clinical** | ALT Flares, Jaundice, Hepatic Decompensation |
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Hepatology in Special Situations" — Ch 23: Hepatology.
+
+## Flashcards (35 generated)
+
+- Q: What is Global Coinfection of Hepatology in Special Situations?
+  A: ~2.7 Million (7-10% of PLHIV)
+- Q: What is High-Risk of Hepatology in Special Situations?
+  A: Sub-Saharan Africa, Asia, PWID, MSM
+- Q: What is Impact of Hepatology in Special Situations?
+  A: Accelerated Fibrosis, ↓ Spontaneous Clearance, ↑ HCC Risk
+- Q: What is TDF of Hepatology in Special Situations?
+  A: ↑ Tenofovir Levels with Boosted PI; Monitor Renal
+- Q: What is TAF of Hepatology in Special Situations?
+  A: ↑ Levels with Strong CYP3A4 Inhibitors (Boosted PI)
+- Q: What is ETV of Hepatology in Special Situations?
+  A: No Significant HIV Drug Interactions
+- Q: What is Regimen of Hepatology in Special Situations?
+  A: SOF 400mg / VEL 100mg Once Daily
+- Q: What is Duration of Hepatology in Special Situations?
+  A: 12 Weeks (All Genotypes, All Fibrosis)
+- Q: What is Key Advantage of Hepatology in Special Situations?
+  A: Minimal ART Interactions — Fewest Drug Interactions
+- Q: What is ART Compatibility of Hepatology in Special Situations?
+  A: Compatible with Most ART (INSTI, NNRTI, Some PIs)
+- Q: What is eGFR <30 of Hepatology in Special Situations?
+  A: Avoid (Sofosbuvir Accumulation)
+- Q: What is Regimen of Hepatology in Special Situations?
+  A: 3 Tablets (300/120mg) Once Daily
+- Q: What is Duration of Hepatology in Special Situations?
+  A: 8 Weeks (Naive, Non-Cirrhotic); 12 Weeks (Cirrhotic/Experienced)
+- Q: What is Key Caveat of Hepatology in Special Situations?
+  A: Drug Interactions with Boosted PIs (Ritonavir/Cobicistat-Boosted) — ↑ GLE/PIB Levels
+- Q: What is eGFR <30 of Hepatology in Special Situations?
+  A: Safe (Preferred in Renal Impairment)
+- Q: What is ART Compatibility of Hepatology in Special Situations?
+  A: Check Interactions (Avoid with Boosted DRV/ATV/LPV/r)
+- Q: What is the definition of Hepatology in Special Situations?
+  A: Paradoxical Worsening of Liver Inflammation After Starting ART (or HCV Treatment)
+- Q: What is Timing of Hepatology in Special Situations?
+  A: 4-12 Weeks After ART Initiation (or HCV DAA Start)
+- Q: What is Clinical of Hepatology in Special Situations?
+  A: ALT Flares, Jaundice, Hepatic Decompensation
+- Q: What is Global Coinfection of Hepatology in Special Situations?
+  A: ~2.7 Million (7-10% of PLHIV)
+- Q: What is High-Risk of Hepatology in Special Situations?
+  A: Sub-Saharan Africa, Asia, PWID, MSM
+- Q: What is TDF of Hepatology in Special Situations?
+  A: ↑ Tenofovir Levels with Boosted PI; Monitor Renal
+- Q: What is TAF of Hepatology in Special Situations?
+  A: ↑ Levels with Strong CYP3A4 Inhibitors (Boosted PI)
+- Q: What is ETV of Hepatology in Special Situations?
+  A: No Significant HIV Drug Interactions
+- Q: What is Regimen of Hepatology in Special Situations?
+  A: SOF 400mg / VEL 100mg Once Daily
+- Q: What is Duration of Hepatology in Special Situations?
+  A: 12 Weeks (All Genotypes, All Fibrosis)
+- Q: What is Key Advantage of Hepatology in Special Situations?
+  A: Minimal ART Interactions — Fewest Drug Interactions
+- Q: What is ART Compatibility of Hepatology in Special Situations?
+  A: Compatible with Most ART (INSTI, NNRTI, Some PIs)
+- Q: What is Regimen of Hepatology in Special Situations?
+  A: 3 Tablets (300/120mg) Once Daily
+- Q: What is Duration of Hepatology in Special Situations?
+  A: 8 Weeks (Naive, Non-Cirrhotic); 12 Weeks (Cirrhotic/Experienced)
+- Q: What is Key Caveat of Hepatology in Special Situations?
+  A: Drug Interactions with Boosted PIs (Ritonavir/Cobicistat-Boosted) — ↑ GLE/PIB Levels
+- Q: What is eGFR <30 of Hepatology in Special Situations?
+  A: Safe (Preferred in Renal Impairment)
+- Q: What is the definition of Hepatology in Special Situations?
+  A: Paradoxical Worsening of Liver Inflammation After Starting ART (or HCV Treatment)
+- Q: What is Timing of Hepatology in Special Situations?
+  A: 4-12 Weeks After ART Initiation (or HCV DAA Start)
+- Q: What is Clinical of Hepatology in Special Situations?
+  A: ALT Flares, Jaundice, Hepatic Decompensation
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology in Special Situations?**
+   A. **| Global Coinfection | ~2.7 Million (7-10% of PLHIV) |**
+   B. An unrelated condition not matching the clinical picture of Hepatology in Special Situations
+   C. A complication seen late in the disease course of Hepatology in Special Situations
+   D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hepatology in Special Situations presents with: TDF — ↑ Tenofovir Levels with Boosted PI; Monitor Renal; TAF — ↑ Levels with Strong CYP3A4 Inhibitors (Boosted PI); ETV — No Significant HIV Drug Interactions. What is the most likely diagnosis?
+   A. **Hepatology in Special Situations**
+   B. A condition that mimics Hepatology in Special Situations but is not the same entity
+   C. A complication of Hepatology in Special Situations rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hepatology in Special Situations
+

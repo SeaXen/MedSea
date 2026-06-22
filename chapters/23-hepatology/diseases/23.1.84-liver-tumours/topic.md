@@ -260,3 +260,50 @@ mindmap
 - **Chapter MOC**: [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related**: [[Cirrhosis and Portal Hypertension]], [[Viral Hepatitis]], [[Alcoholic Liver Disease]], [[NAFLD]], [[Liver Transplantation]], [[Inherited and Metabolic Liver Disease]]
+---
+
+> Auto-generated study sections for "Liver Tumours" — Ch 23: Hepatology.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Liver Tumours?
+  A: Liver Tumours = HCC (primary) + Metastases + Benign tumours — HCC surveillance (US±AFP q6mo in cirrhosis), LI-RADS (LR-1 to LR-5/LR-M/LR-TIV), BCLC Staging (0-A curative, B TACE, C systemic, D BSC), Treatment algorithm, Metastases workup, Benign tumours (haemangioma, FNH, adenoma).
+- Q: What is HCC Surveillance of Liver Tumours?
+  A: Cirrhosis q6mo US±AFP; HBV high-risk groups (Asian M>40/F>50, African>20, family hx); AFP >200 + mass = HCC
+- Q: What is LI-RADS of Liver Tumours?
+  A: LR-5 = Definite HCC (treat); LR-4 probable; LR-3 follow-up; LR-M = malignant non-HCC; LR-TIV = tumour in vein
+- Q: What is BCLC Staging of Liver Tumours?
+  A: 0/A: Curative (ablate/resect/transplant); B: TACE; C: Systemic (Atezo/Bev); D: BSC
+- Q: What is Milan Criteria of Liver Tumours?
+  A: Single ≤5cm OR ≤3 nodules ≤3cm; no vascular invasion; transplant eligible
+- Q: How is Liver Tumours managed?
+  A: Ablation (RFA/MWA <3cm) > Resection (Child A, no PH) > Transplant (Milan)
+- Q: What is BCLC B of Liver Tumours?
+  A: TACE (cTACE/DEB-TACE) q4-12wks
+- Q: What is BCLC C of Liver Tumours?
+  A: Atezolizumab+Bevacizumab 1L; Sorafenib/Lenvatinib 2L
+- Q: What is Metastases Workup of Liver Tumours?
+  A: CT CAP, Endoscopy, IHC Panel (CK7/20, CDX2, TTF-1, etc.)
+- Q: What is Haemangioma of Liver Tumours?
+  A: T2 bright, flash fill, observe
+- Q: What is FNH of Liver Tumours?
+  A: Central scar, spoke-wheel enhancement, hepatobiliary retention, observe
+- Q: What is Adenoma of Liver Tumours?
+  A: OCP association, haemorrhage risk, β-catenin = HCC risk; stop OCP, resect if >5cm/β-catenin mut
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Liver Tumours?**
+   A. **Liver Tumours = HCC (primary) + Metastases + Benign tumours — HCC surveillance (US±AFP q6mo in cirrhosis), LI-RADS (LR-1 to LR-5/LR-M/LR-TIV), BCLC Staging (0-A curative, B TACE, C systemic, D BSC), T**
+   B. An unrelated condition not matching the clinical picture of Liver Tumours
+   C. A complication seen late in the disease course of Liver Tumours
+   D. A condition that mimics Liver Tumours but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Liver Tumours presents with: Feature — LR-5 (Definite HCC); Arterial Phase Hyperenhancement (APHE) — Present; Washout (Portal Venous/Delayed) — Present. What is the most likely diagnosis?
+   A. **Liver Tumours**
+   B. A condition that mimics Liver Tumours but is not the same entity
+   C. A complication of Liver Tumours rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Liver Tumours
+

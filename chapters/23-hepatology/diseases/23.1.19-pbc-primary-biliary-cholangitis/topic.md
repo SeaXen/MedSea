@@ -282,3 +282,92 @@ mindmap
 - [[Autoimmune Liver Disease/Overlap syndromes|Overlap Syndromes]]
 - [[Autoimmune Liver Disease/IgG4-related sclerosing cholangitis|IgG4-SC]]
 - [[Autoimmune Liver Disease/AIH diagnostic criteria (IAIHG simplified)|AIH Criteria]]
+---
+
+> Auto-generated study sections for "Autoimmune Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Autoimmune Liver Disease?
+  A: Chronic autoimmune cholestatic liver disease targeting small intrahepatic bile ducts
+- Q: What is Demographics of Autoimmune Liver Disease?
+  A: Women 90%, age 40-60 at diagnosis
+- Q: What is Autoantibody of Autoimmune Liver Disease?
+  A: AMA positive in 95%
+- Q: What is Associated conditions of Autoimmune Liver Disease?
+  A: Thyroiditis (20%), Sjögren's (30%), CREST, RA, Celiac
+- Q: What is Progression of Autoimmune Liver Disease?
+  A: Variable: years to decades; without treatment → cirrhosis
+- Q: What is 1. Biochemical of Autoimmune Liver Disease?
+  A: ALP >1.5 × ULN (cholestatic pattern)
+- Q: What is 2. Serological of Autoimmune Liver Disease?
+  A: AMA ≥1:40 (highly specific 95-98%)
+- Q: What is 3. Histological of Autoimmune Liver Disease?
+  A: Florid duct lesion: Granulomatous destruction of interlobular bile ducts
+- Q: What is Pruritus of Autoimmune Liver Disease?
+  A: Cholestyramine 4g QID (1st line) → Rifampicin 150mg BD → Naltrexone 50mg → Sertraline → OCA (dose-reduce/stop)
+- Q: What is Fatigue of Autoimmune Liver Disease?
+  A: Exclude anaemia, thyroid, depression; Modafinil (off-label)
+- Q: What is Osteoporosis of Autoimmune Liver Disease?
+  A: DEXA at diagnosis; Calcium 1g + Vit D 800-1000 IU; Bisphosphonate if T-score <-2.5 or fracture
+- Q: What is Fat-soluble vitamin deficiency of Autoimmune Liver Disease?
+  A: Check A, D, E, K annually; Replace if low
+- Q: What is Hyperlipidaemia of Autoimmune Liver Disease?
+  A: Usually no treatment needed (high HDL); Statins safe if indicated
+- Q: What is HCC surveillance of Autoimmune Liver Disease?
+  A: Cirrhosis: 6-monthly US ± AFP; Non-cirrhotic: consider if high risk (male, older)
+- Q: What is the dose of Autoimmune Liver Disease?
+  A: 13-15 mg/kg/day (typically 500-750 mg BD or TDS)
+- Q: What is the mechanism of Autoimmune Liver Disease?
+  A: Hydrophilic bile acid → stabilizes hepatocyte membranes, stimulates bile flow, immunomodulation
+- Q: What is Target of Autoimmune Liver Disease?
+  A: Normalize ALP (or <1.5×ULN), normalize bilirubin
+- Q: What is Pruritus of Autoimmune Liver Disease?
+  A: Cholestyramine 4g QID (1st line) → Rifampicin 150mg BD → Naltrexone 50mg → Sertraline → OCA (dose-reduce/stop)
+- Q: What is Fatigue of Autoimmune Liver Disease?
+  A: Exclude anaemia, thyroid, depression; Modafinil (off-label)
+- Q: What is Osteoporosis of Autoimmune Liver Disease?
+  A: DEXA at diagnosis; Calcium 1g + Vit D 800-1000 IU; Bisphosphonate if T-score <-2.5 or fracture
+- Q: What is Fat-soluble vitamin deficiency of Autoimmune Liver Disease?
+  A: Check A, D, E, K annually; Replace if low
+- Q: What is Hyperlipidaemia of Autoimmune Liver Disease?
+  A: Usually no treatment needed (high HDL); Statins safe if indicated
+- Q: What is HCC surveillance of Autoimmune Liver Disease?
+  A: Cirrhosis: 6-monthly US ± AFP; Non-cirrhotic: consider if high risk (male, older)
+- Q: What is Demographics of Autoimmune Liver Disease?
+  A: Women 90%, age 40-60
+- Q: What is the investigation of choice for Autoimmune Liver Disease?
+  A: ALP >1.5×ULN + AMA ≥1:40 (+/- biopsy)
+- Q: What is AMA of Autoimmune Liver Disease?
+  A: M2 subtype = diagnostic
+- Q: What is 1st line of Autoimmune Liver Disease?
+  A: UDCA 13-15 mg/kg/day lifelong
+- Q: What is Response criteria of Autoimmune Liver Disease?
+  A: Paris I: ALP ≤3×ULN, AST ≤2×ULN, Bil ≤1 mg/dL at 12mo
+- Q: What is 2nd line of Autoimmune Liver Disease?
+  A: Obeticholic acid 5-10mg if incomplete response
+- Q: What is Pruritus of Autoimmune Liver Disease?
+  A: Cholestyramine → Rifampicin → Naltrexone
+- Q: What is Osteoporosis of Autoimmune Liver Disease?
+  A: DEXA at diagnosis; Bisphosphonate if T<-2.5
+- Q: What is HCC surveillance of Autoimmune Liver Disease?
+  A: Cirrhosis: 6m US ± AFP
+- Q: What is Fat-soluble vitamins of Autoimmune Liver Disease?
+  A: Check A, D, E, K annually
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Liver Disease?**
+   A. **A[Suspect PBC: Middle-aged woman, fatigue, pruritus, ↑ALP] --> B{Criteria 1: ALP >1.5x ULN}**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Liver Disease
+   C. A complication seen late in the disease course of Autoimmune Liver Disease
+   D. A condition that mimics Autoimmune Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Liver Disease presents with: Definition — Chronic autoimmune cholestatic liver disease targeting small intrahepatic bile ducts; Demographics — Women 90%, age 40-60 at diagnosis; Autoantibody — AMA positive in 95%. What is the most likely diagnosis?
+   A. **Autoimmune Liver Disease**
+   B. A condition that mimics Autoimmune Liver Disease but is not the same entity
+   C. A complication of Autoimmune Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Liver Disease
+

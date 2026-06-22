@@ -305,3 +305,20 @@ mindmap
 - [[Liver Tumours/Benign liver tumours|Benign Liver Tumours]]
 - [[Liver Transplantation/Liver Transplantation|Liver Transplant]]
 - [[Cirrhosis Complications/HCC surveillance|HCC Surveillance in Cirrhosis]]
+---
+
+> Auto-generated study sections for "Liver Tumours" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Liver Tumours?
+  A: ## LI-RADS (Liver Imaging Reporting and Data System) v2018
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Liver Tumours?**
+   A. **## LI-RADS (Liver Imaging Reporting and Data System) v2018**
+   B. An unrelated condition not matching the clinical picture of Liver Tumours
+   C. A complication seen late in the disease course of Liver Tumours
+   D. A condition that mimics Liver Tumours but has a different underlying cause
+

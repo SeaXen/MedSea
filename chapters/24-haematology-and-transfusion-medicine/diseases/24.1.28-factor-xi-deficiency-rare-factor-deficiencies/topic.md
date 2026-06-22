@@ -362,3 +362,78 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Hematology?
+  A: # Factor XI Deficiency & Rare Factor Deficiencies
+- Q: What is Inheritance of Hematology?
+  A: Autosomal Recessive (homozygous) / Incomplete Dominant (heterozygous bleeding)
+- Q: What is the epidemiology of Hematology?
+  A: 1 in 1,000,000 (general); ~8% carrier in Ashkenazi Jews
+- Q: What is Gene of Hematology?
+  A: F11 (Chromosome 4)
+- Q: How is Hematology classified?
+  A: Variable - Not correlated with FXI level; Some severe, some asymptomatic
+- Q: How is Hematology classified?
+  A: Mucosal (epistaxis, menorrhagia, GI), Post-surgical/traumatic (delayed, often 24-48h)
+- Q: What is Spontaneous of Hematology?
+  A: Rare (unlike Haemophilia)
+- Q: What is Joint/Muscle Bleeds of Hematology?
+  A: Uncommon (unlike Haemophilia A/B)
+- Q: What is Pregnancy/Childbirth of Hematology?
+  A: High risk of postpartum haemorrhage
+- Q: What is Dental Extraction of Hematology?
+  A: High risk of delayed bleeding
+- Q: What is Lab of Hematology?
+  A: Markedly prolonged APTT, Normal PT, TT
+- Q: What is Clinical of Hematology?
+  A: NO BLEEDING (paradoxical)
+- Q: What is Significance of Hematology?
+  A: Thrombosis risk? (controversial)
+- Q: How is Hematology managed?
+  A: NO treatment needed; Distinguish from heparin/lupus anticoagulant
+- Q: What is Inheritance of Hematology?
+  A: Autosomal Recessive (homozygous) / Incomplete Dominant (heterozygous bleeding)
+- Q: What is the epidemiology of Hematology?
+  A: 1 in 1,000,000 (general); ~8% carrier in Ashkenazi Jews
+- Q: What is Gene of Hematology?
+  A: F11 (Chromosome 4)
+- Q: How is Hematology classified?
+  A: Mucosal (epistaxis, menorrhagia, GI), Post-surgical/traumatic (delayed, often 24-48h)
+- Q: What is Spontaneous of Hematology?
+  A: Rare (unlike Haemophilia)
+- Q: What is Joint/Muscle Bleeds of Hematology?
+  A: Uncommon (unlike Haemophilia A/B)
+- Q: What is Pregnancy/Childbirth of Hematology?
+  A: High risk of postpartum haemorrhage
+- Q: What is Dental Extraction of Hematology?
+  A: High risk of delayed bleeding
+- Q: What is Lab of Hematology?
+  A: Markedly prolonged APTT, Normal PT, TT
+- Q: What is Clinical of Hematology?
+  A: NO BLEEDING (paradoxical)
+- Q: What is Significance of Hematology?
+  A: Thrombosis risk? (controversial)
+- Q: How is Hematology managed?
+  A: NO treatment needed; Distinguish from heparin/lupus anticoagulant
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **# Factor XI Deficiency & Rare Factor Deficiencies**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Bleeding Type — Mucosal (epistaxis, menorrhagia, GI), Post-surgical/traumatic (delayed, often 24-48h); Spontaneous — Rare (unlike Haemophilia); Joint/Muscle Bleeds — Uncommon (unlike Haemophilia A/B). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

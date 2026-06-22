@@ -150,3 +150,40 @@ flowchart TD
 | **LR-4** | Probably HCC | Treat as HCC (MDT) |
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Chronic Liver Disease and Cirrhosis" — Ch 23: Hepatology.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Chronic Liver Disease and Cirrhosis?
+  A: | Pathophysiology | Portal HTN + Splanchnic Vasodilation → Effective Hypovolaemia → RAAS/SNS/ADH → Na/Water Retention |
+- Q: What is the pathogenesis of Chronic Liver Disease and Cirrhosis?
+  A: Portal HTN + Splanchnic Vasodilation → Effective Hypovolaemia → RAAS/SNS/ADH → Na/Water Retention
+- Q: What is the investigation of choice for Chronic Liver Disease and Cirrhosis?
+  A: SAAG ≥1.1 g/dL = Portal Hypertensive; PMN ≥250 = SBP
+- Q: How is Chronic Liver Disease and Cirrhosis managed?
+  A: Salt 88mmol + Spiro 400 + Furo 160 → LVP + Albumin 8g/L → TIPS → Transplant
+- Q: What is Refractory of Chronic Liver Disease and Cirrhosis?
+  A: Failed Max Diuretics + Salt Restriction OR Diuretic-Intractable
+- Q: What is Chronic Kidney Damage (eGFR<60) of Chronic Liver Disease and Cirrhosis?
+  A: Albumin 40g 2x/week (Long-term)
+- Q: What is Refractory Ascites Association of Chronic Liver Disease and Cirrhosis?
+  A: TIPS (Selected Child A/B)
+- Q: What is eGFR <30 for >8 Weeks of Chronic Liver Disease and Cirrhosis?
+  A: Combined Liver-Kidney Transplant
+- Q: What is Chronic Kidney Damage (eGFR<60) of Chronic Liver Disease and Cirrhosis?
+  A: Albumin 40g 2x/week (Long-term)
+- Q: What is Refractory Ascites Association of Chronic Liver Disease and Cirrhosis?
+  A: TIPS (Selected Child A/B)
+- Q: What is eGFR <30 for >8 Weeks of Chronic Liver Disease and Cirrhosis?
+  A: Combined Liver-Kidney Transplant
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Chronic Liver Disease and Cirrhosis?**
+   A. **| Pathophysiology | Portal HTN + Splanchnic Vasodilation → Effective Hypovolaemia → RAAS/SNS/ADH → Na/Water Retention |**
+   B. An unrelated condition not matching the clinical picture of Chronic Liver Disease and Cirrhosis
+   C. A complication seen late in the disease course of Chronic Liver Disease and Cirrhosis
+   D. A condition that mimics Chronic Liver Disease and Cirrhosis but has a different underlying cause
+

@@ -268,3 +268,72 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Hepatology in Special Situations]], [[AFLP]], [[HELLP Syndrome]], [[Pre-eclampsia]], [[Viral Hepatitis in Pregnancy]]
+---
+
+> Auto-generated study sections for "Hepatology in Special Situations" — Ch 23: Hepatology.
+
+## Flashcards (23 generated)
+
+- Q: What is the definition of Hepatology in Special Situations?
+  A: ICP = Pruritus + Bile Acids >40 µmol/L (3rd trimester) — UDCA 15-20mg/kg/day, Delivery 36-37 wks (BA>40), >100 µmol/L → deliver 35-36 wks; no rash (excoriations only); fetal risk: stillbirth (BA>100), preterm, meconium, RDS; recurrence 60-90%.
+- Q: What is Pruritus of Hepatology in Special Situations?
+  A: Typical (palms/soles, nocturnal, no rash)
+- Q: What is Serum Bile Acids of Hepatology in Special Situations?
+  A: >40 µmol/L (fasting) — Diagnostic
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: ALT/AST mildly ↑ (2-10× ULN), Bilirubin normal/mild ↑
+- Q: What is Exclusion of Hepatology in Special Situations?
+  A: No other cause (viral hepatitis, drugs, biliary obstruction)
+- Q: What is Prolonged PT / INR >1.5 of Hepatology in Special Situations?
+  A: Vitamin K 10mg IV/PO daily until delivery
+- Q: What is Prophylactic of Hepatology in Special Situations?
+  A: Some give 10mg PO daily from diagnosis
+- Q: What is Antihistamines of Hepatology in Special Situations?
+  A: Sedating (chlorphenamine) for nocturnal pruritus — symptomatic only
+- Q: What is Cholestyramine of Hepatology in Special Situations?
+  A: Second-line (binds bile acids in gut) — constipation risk, separate from UDCA by 4h
+- Q: What is Pruritus of Hepatology in Special Situations?
+  A: Typical (palms/soles, nocturnal, no rash)
+- Q: What is Serum Bile Acids of Hepatology in Special Situations?
+  A: >40 µmol/L (fasting) — Diagnostic
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: ALT/AST mildly ↑ (2-10× ULN), Bilirubin normal/mild ↑
+- Q: What is Antihistamines of Hepatology in Special Situations?
+  A: Sedating (chlorphenamine) for nocturnal pruritus — symptomatic only
+- Q: What is Cholestyramine of Hepatology in Special Situations?
+  A: Second-line (binds bile acids in gut) — constipation risk, separate from UDCA by 4h
+- Q: What is the investigation of choice for Hepatology in Special Situations?
+  A: Pruritus (palms/soles, nocturnal) + Bile Acids >40 µmol/L (3rd trimester)
+- Q: How is Hepatology in Special Situations managed?
+  A: UDCA 15-20mg/kg/day, Vitamin K if PT prolonged, Antihistamines for pruritus
+- Q: What is Delivery Timing of Hepatology in Special Situations?
+  A: BA 40-100: 36-37 wks; BA >100: 35-36 wks
+- Q: What is Fetal Risk of Hepatology in Special Situations?
+  A: Stillbirth (BA>100), Preterm, Meconium, RDS
+- Q: What is Postpartum of Hepatology in Special Situations?
+  A: Resolution 2-4 weeks, Recurrence 60-90%
+- Q: What is Differential of Hepatology in Special Situations?
+  A: AFLP (hypoglycaemia, hyperuricaemia), HELLP (haemolysis/thrombocytopenia), Pre-eclampsia (HTN/proteinuria), Viral Hepatitis (IgM+)
+- Q: What is the dose of Hepatology in Special Situations?
+  A: 15-20mg/kg/day — improves pruritus, lowers bile acids
+- Q: What is Vitamin K of Hepatology in Special Situations?
+  A: If PT prolonged (10mg IV/PO daily)
+- Q: What is Recurrence of Hepatology in Special Situations?
+  A: 60-90% in subsequent pregnancies
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology in Special Situations?**
+   A. **ICP = Pruritus + Bile Acids >40 µmol/L (3rd trimester) — UDCA 15-20mg/kg/day, Delivery 36-37 wks (BA>40), >100 µmol/L → deliver 35-36 wks; no rash (excoriations only); fetal risk: stillbirth (BA>100),**
+   B. An unrelated condition not matching the clinical picture of Hepatology in Special Situations
+   C. A complication seen late in the disease course of Hepatology in Special Situations
+   D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hepatology in Special Situations presents with: Definition — Reversible cholestasis of pregnancy with pruritus and elevated bile acids; Incidence — 0.5-1% pregnancies (higher in South Asian, South American, Scandinavian); Timing — Late 2nd / 3rd trimester (pruritus → LFTs). What is the most likely diagnosis?
+   A. **Hepatology in Special Situations**
+   B. A condition that mimics Hepatology in Special Situations but is not the same entity
+   C. A complication of Hepatology in Special Situations rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hepatology in Special Situations
+

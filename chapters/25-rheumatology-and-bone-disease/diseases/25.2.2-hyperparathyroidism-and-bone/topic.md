@@ -340,3 +340,102 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Osteoporosis]] · [[Renal osteodystrophy]] · [[Osteomalacia and rickets]]
+---
+
+> Auto-generated study sections for "Bone Metabolic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (38 generated)
+
+- Q: What is the definition of Bone Metabolic Diseases?
+  A: Primary Hyperparathyroidism (PHPT) = high Ca + inappropriately high/normal PTH.
+- Q: What is Osteitis Fibrosa Cystica of Bone Metabolic Diseases?
+  A: High-turnover bone disease — subperiosteal resorption, brown tumours, pathological fractures
+- Q: What is Subperiosteal Resorption of Bone Metabolic Diseases?
+  A: Radial aspect of middle phalanges — pathognomonic X-ray sign
+- Q: What is Brown Tumours of Bone Metabolic Diseases?
+  A: Giant cell lesions — osteoclast-rich, not true malignancy; regress after parathyroidectomy
+- Q: What is Osteoporosis of Bone Metabolic Diseases?
+  A: Cortical thinning > trabecular; forearm (cortical) > spine (trabecular)
+- Q: What is Chondrocalcinosis of Bone Metabolic Diseases?
+  A: CPPD deposition — pseudogout association
+- Q: What is Corrected Calcium of Bone Metabolic Diseases?
+  A: High (>2.6 mmol/L)
+- Q: What is PTH (Intact) of Bone Metabolic Diseases?
+  A: High or Inappropriately Normal (should be suppressed)
+- Q: What is Phosphate of Bone Metabolic Diseases?
+  A: Low (PTH phosphaturia)
+- Q: What is ALP of Bone Metabolic Diseases?
+  A: High (if bone disease)
+- Q: What is 25-OH Vit D of Bone Metabolic Diseases?
+  A: Often low (consumed) — replete before surgery
+- Q: What is 24h Urine Calcium of Bone Metabolic Diseases?
+  A: >250 mg/24h (excludes FHH)
+- Q: What is the mechanism of Bone Metabolic Diseases?
+  A: Positive allosteric modulator of CaSR → ↓ PTH, ↓ Ca
+- Q: What is Bone Metabolic Diseases indicated for?
+  A: Non-surgical candidates with symptomatic hypercalcaemia; refractory PHPT
+- Q: What is the dose of Bone Metabolic Diseases?
+  A: 30-180mg daily (titrate to Ca/PTH)
+- Q: How is Bone Metabolic Diseases monitored?
+  A: Hypocalcaemia risk — monitor Ca, PTH
+- Q: What is Osteitis Fibrosa Cystica of Bone Metabolic Diseases?
+  A: High-turnover bone disease — subperiosteal resorption, brown tumours, pathological fractures
+- Q: What is Subperiosteal Resorption of Bone Metabolic Diseases?
+  A: Radial aspect of middle phalanges — pathognomonic X-ray sign
+- Q: What is Brown Tumours of Bone Metabolic Diseases?
+  A: Giant cell lesions — osteoclast-rich, not true malignancy; regress after parathyroidectomy
+- Q: What is Osteoporosis of Bone Metabolic Diseases?
+  A: Cortical thinning > trabecular; forearm (cortical) > spine (trabecular)
+- Q: What is Corrected Calcium of Bone Metabolic Diseases?
+  A: High (>2.6 mmol/L)
+- Q: What is PTH (Intact) of Bone Metabolic Diseases?
+  A: High or Inappropriately Normal (should be suppressed)
+- Q: What is Phosphate of Bone Metabolic Diseases?
+  A: Low (PTH phosphaturia)
+- Q: What is ALP of Bone Metabolic Diseases?
+  A: High (if bone disease)
+- Q: What is 25-OH Vit D of Bone Metabolic Diseases?
+  A: Often low (consumed) — replete before surgery
+- Q: What is 24h Urine Calcium of Bone Metabolic Diseases?
+  A: >250 mg/24h (excludes FHH)
+- Q: What is the mechanism of Bone Metabolic Diseases?
+  A: Positive allosteric modulator of CaSR → ↓ PTH, ↓ Ca
+- Q: What is Bone Metabolic Diseases indicated for?
+  A: Non-surgical candidates with symptomatic hypercalcaemia; refractory PHPT
+- Q: What is the dose of Bone Metabolic Diseases?
+  A: 30-180mg daily (titrate to Ca/PTH)
+- Q: What is the investigation of choice for Bone Metabolic Diseases?
+  A: High Ca + Inappropriately High/Normal PTH (should be suppressed)
+- Q: What is Adenoma of Bone Metabolic Diseases?
+  A: 85% (solitary); Hyperplasia 15%; Carcinoma <1%
+- Q: What is Bone Signs of Bone Metabolic Diseases?
+  A: Subperiosteal resorption (radial middle phalanges) — classic; Brown tumours (giant cell lesions); Osteoporosis (cortical > trabecular)
+- Q: What is NIH Surgical Criteria of Bone Metabolic Diseases?
+  A: Age <50, Ca >2.85, Osteoporosis/Fracture, Stones, >50 with organ damage
+- Q: What is FHH of Bone Metabolic Diseases?
+  A: CaSR mutation, Urine Ca <250mg/24h, No surgery
+- Q: What is Brown Tumours of Bone Metabolic Diseases?
+  A: Giant cell lesions (osteoclast-rich) — regress after parathyroidectomy
+- Q: What is Cinacalcet of Bone Metabolic Diseases?
+  A: Calcimimetic (CaSR sensitiser) → ↓ PTH, ↓ Ca; if not surgical candidate
+- Q: What is MEN1 of Bone Metabolic Diseases?
+  A: MEN1 gene; Parathyroid, Pituitary, Pancreas — 100% HPT (hyperplasia)
+- Q: What is Hungry Bone Syndrome of Bone Metabolic Diseases?
+  A: Post-parathyroidectomy — rapid Ca/PO4 uptake → prolonged hypocalcaemia
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Bone Metabolic Diseases?**
+   A. **Primary Hyperparathyroidism (PHPT) = high Ca + inappropriately high/normal PTH.**
+   B. An unrelated condition not matching the clinical picture of Bone Metabolic Diseases
+   C. A complication seen late in the disease course of Bone Metabolic Diseases
+   D. A condition that mimics Bone Metabolic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Bone Metabolic Diseases presents with: Primary (PHPT) — High Ca, High/Inappropriate PTH; Secondary — Low/Normal Ca, High PTH; Tertiary — High Ca, High PTH. What is the most likely diagnosis?
+   A. **Bone Metabolic Diseases**
+   B. A condition that mimics Bone Metabolic Diseases but is not the same entity
+   C. A complication of Bone Metabolic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Bone Metabolic Diseases
+

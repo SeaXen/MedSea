@@ -297,3 +297,56 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Osteoarthritis]] · [[Psoriatic arthritis]] · [[Rheumatoid Arthritis]]
+---
+
+> Auto-generated study sections for "Osteoarthritis and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Osteoarthritis and Related Disorders?
+  A: Inflammatory subset of hand OA — DIP/PIP erosions + inflammation, distinct from typical OA
+- Q: What is the epidemiology of Osteoarthritis and Related Disorders?
+  A: ~2-3% of OA patients; rare overall
+- Q: What is Peak Onset of Osteoarthritis and Related Disorders?
+  A: 50-60 years (postmenopausal)
+- Q: What is Sex Ratio of Osteoarthritis and Related Disorders?
+  A: F:M = 10:1 (strong female predominance)
+- Q: What is Genetics of Osteoarthritis and Related Disorders?
+  A: Familial clustering; ERG, IL-1β polymorphisms
+- Q: What is Joints of Osteoarthritis and Related Disorders?
+  A: DIP > PIP (bilateral, symmetrical); 1st CMC often involved; MCP/wrist spared
+- Q: What are the clinical features of Osteoarthritis and Related Disorders?
+  A: Pain, stiffness, swelling — inflammatory (worse morning, >30min stiffness) + mechanical
+- Q: What is Signs of Osteoarthritis and Related Disorders?
+  A: Erythema, warmth, soft tissue swelling + bony enlargement (Heberden's/Bouchard's)
+- Q: What is Function of Osteoarthritis and Related Disorders?
+  A: Reduced grip, difficulty with fine motor tasks
+- Q: What is Systemic of Osteoarthritis and Related Disorders?
+  A: None (no fever, weight loss, fatigue)
+- Q: What is 1. OA criteria met of Osteoarthritis and Related Disorders?
+  A: Clinical + radiographic OA
+- Q: What are the clinical features of Osteoarthritis and Related Disorders?
+  A: ≥1: erythema, warmth, swelling, morning stiffness >30min
+- Q: What is 3. Erosions on X-ray of Osteoarthritis and Related Disorders?
+  A: Central erosions (gull-wing/saw-tooth) in ≥2 DIP/PIP joints
+- Q: What is 4. Negative serology of Osteoarthritis and Related Disorders?
+  A: RF negative, Anti-CCP negative
+- Q: What is 5. Exclusion of Osteoarthritis and Related Disorders?
+  A: No psoriasis, no IBD, no gout/CPPD, no RA
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Osteoarthritis and Related Disorders?**
+   A. **EOA = inflammatory variant of hand OA in postmenopausal women.**
+   B. An unrelated condition not matching the clinical picture of Osteoarthritis and Related Disorders
+   C. A complication seen late in the disease course of Osteoarthritis and Related Disorders
+   D. A condition that mimics Osteoarthritis and Related Disorders but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Osteoarthritis and Related Disorders presents with: Definition — Inflammatory subset of hand OA — DIP/PIP erosions + inflammation, distinct from typical OA; Prevalence — ~2-3% of OA patients; rare overall; Peak Onset — 50-60 years (postmenopausal). What is the most likely diagnosis?
+   A. **Osteoarthritis and Related Disorders**
+   B. A condition that mimics Osteoarthritis and Related Disorders but is not the same entity
+   C. A complication of Osteoarthritis and Related Disorders rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Osteoarthritis and Related Disorders
+

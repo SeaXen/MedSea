@@ -292,3 +292,40 @@ mindmap
 - [[Biliary Tract Disease/Biliary tract tumours|Biliary Tumours]]
 - [[Liver Transplantation/Liver Transplant Complications|Post-Tx Biliary Complications]]
 - [[Autoimmune Liver Disease/Primary sclerosing cholangitis (PSC) Detailed|PSC]]
+---
+
+> Auto-generated study sections for "Biliary Tract Disease" — Ch 23: Hepatology.
+
+## Flashcards (7 generated)
+
+- Q: What is the definition of Biliary Tract Disease?
+  A: | Iatrogenic (Post-Surgical) | Bile Duct Injury (Cholecystectomy) | Immediate to Years |
+- Q: What causes Biliary Tract Disease?
+  A: Iatrogenic (Post-Cholecystectomy), PSC, Chronic Pancreatitis, IgG4-SC, Mirizzi
+- Q: What is Differentiation of Biliary Tract Disease?
+  A: Progressive Painless Jaundice + Weight Loss = Malignant
+- Q: What is the investigation of choice for Biliary Tract Disease?
+  A: US → MRCP → EUS/ERCP
+- Q: How is Biliary Tract Disease managed?
+  A: ERCP Dilatation + Multiple Plastic Stents (6-12mo)
+- Q: What is Post-Transplant of Biliary Tract Disease?
+  A: Anastomotic: ERCP; Non-Anastomotic: Harder, Surgery Often
+- Q: What is Mirizzi of Biliary Tract Disease?
+  A: Cystic Duct Stone → CHD Compression → Type I-IV
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Biliary Tract Disease?**
+   A. **| Iatrogenic (Post-Surgical) | Bile Duct Injury (Cholecystectomy) | Immediate to Years |**
+   B. An unrelated condition not matching the clinical picture of Biliary Tract Disease
+   C. A complication seen late in the disease course of Biliary Tract Disease
+   D. A condition that mimics Biliary Tract Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Biliary Tract Disease presents with: A[Biliary Stricture] --> B{Malignant?}; B -->|Yes| C[Malignant Stricture]; B -->|No| D[Benign Stricture]. What is the most likely diagnosis?
+   A. **Biliary Tract Disease**
+   B. A condition that mimics Biliary Tract Disease but is not the same entity
+   C. A complication of Biliary Tract Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Biliary Tract Disease
+

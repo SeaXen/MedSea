@@ -331,3 +331,94 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (34 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haemolytic Anaemias → Paroxysmal Nocturnal Haemoglobinuria
+- Q: What is Flow Cytometry (Gold Standard) of Hematology?
+  A: CD55 (DAF) & CD59 (MIRL) ABSENT/DECREASED on granulocytes, monocytes, RBCs
+- Q: How is Hematology classified?
+  A: Type I (Normal), Type II (Partial loss, 10-70%), Type III (Complete loss, <10% normal)
+- Q: What is Granulocyte Clone of Hematology?
+  A: Most stable (lifespan days); preferred for monitoring
+- Q: What is RBC Clone of Hematology?
+  A: Underestimates (haemolysed); Type III lost fastest
+- Q: What is the investigation of choice for Hematology?
+  A: Historical (positive in PNH); replaced by flow
+- Q: What is PIGA Sequencing of Hematology?
+  A: Confirms somatic mutation
+- Q: What is FLAER (Fluorescent AER) of Hematology?
+  A: High sensitivity for GPI deficiency (binds GPI anchor directly)
+- Q: What is Risk of Hematology?
+  A: 40-50% lifetime (untreated); Highest in first 1-2 years
+- Q: What is Sites of Hematology?
+  A: Budd-Chiari (hepatic vein), Cerebral venous sinus, Portal/splanchnic, DVT/PE, Dermal necrosis
+- Q: What is Prophylaxis of Hematology?
+  A: Anticoagulation if large clone (>50%) or prior thrombosis; C5 inhibitor reduces risk by >90%
+- Q: How is Hematology managed?
+  A: Full anticoagulation; C5 inhibitor; Thrombolysis for acute venous thrombosis
+- Q: What is Flow Cytometry (Gold Standard) of Hematology?
+  A: CD55 (DAF) & CD59 (MIRL) ABSENT/DECREASED on granulocytes, monocytes, RBCs
+- Q: How is Hematology classified?
+  A: Type I (Normal), Type II (Partial loss, 10-70%), Type III (Complete loss, <10% normal)
+- Q: What is Granulocyte Clone of Hematology?
+  A: Most stable (lifespan days); preferred for monitoring
+- Q: What is RBC Clone of Hematology?
+  A: Underestimates (haemolysed); Type III lost fastest
+- Q: What is the investigation of choice for Hematology?
+  A: Historical (positive in PNH); replaced by flow
+- Q: What is PIGA Sequencing of Hematology?
+  A: Confirms somatic mutation
+- Q: What is FLAER (Fluorescent AER) of Hematology?
+  A: High sensitivity for GPI deficiency (binds GPI anchor directly)
+- Q: What is Risk of Hematology?
+  A: 40-50% lifetime (untreated); Highest in first 1-2 years
+- Q: What is Sites of Hematology?
+  A: Budd-Chiari (hepatic vein), Cerebral venous sinus, Portal/splanchnic, DVT/PE, Dermal necrosis
+- Q: What is Prophylaxis of Hematology?
+  A: Anticoagulation if large clone (>50%) or prior thrombosis; C5 inhibitor reduces risk by >90%
+- Q: How is Hematology managed?
+  A: Full anticoagulation; C5 inhibitor; Thrombolysis for acute venous thrombosis
+- Q: What is Mutation of Hematology?
+  A: Somatic PIGA (Xp22) → GPI anchor defect
+- Q: What is Key Defect of Hematology?
+  A: Loss of CD55 (DAF) & CD59 (MIRL) → uncontrolled complement
+- Q: What is the investigation of choice for Hematology?
+  A: Flow cytometry CD55/CD59 (granulocytes best); FLAER
+- Q: What is Haemolysis of Hematology?
+  A: Intravascular → haemoglobinuria (nocturnal), haemosiderinuria
+- Q: What is Thrombosis of Hematology?
+  A: 40-50% risk; Budd-Chiari, cerebral sinus, splanchnic veins
+- Q: How is Hematology managed?
+  A: Eculizumab (q2wk IV) / Ravulizumab (q8wk IV) / Pegcetacoplan (q2wk SC)
+- Q: What is Vaccination of Hematology?
+  A: MenACWY + MenB 2 WEEKS BEFORE starting C5 inhibitor
+- Q: What is Prophylaxis of Hematology?
+  A: Penicillin during C5 inhibitor therapy
+- Q: What is Folic Acid of Hematology?
+  A: 5 mg daily
+- Q: What is Iron of Hematology?
+  A: Chronicloss → iron deficiency → replace
+- Q: What is BM Failure Overlap of Hematology?
+  A: PNH clone in AA/MDS; IST/HSCT per BM failure guidelines
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haemolytic Anaemias → Paroxysmal Nocturnal Haemoglobinuria**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Category — Clone Size; Classic PNH — Large (>50% granulocytes); Subclinical PNH — Small (<10-20%). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

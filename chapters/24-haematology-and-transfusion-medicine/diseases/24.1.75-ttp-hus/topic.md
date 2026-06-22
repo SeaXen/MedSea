@@ -328,3 +328,62 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (18 generated)
+
+- Q: What is the definition of Hematology?
+  A: # Thrombotic Thrombocytopenic Purpura (TTP) & Haemolytic Uraemic Syndrome (HUS)
+- Q: What is Eculizumab of Hematology?
+  A: 900 mg weekly × 4 → 1200 mg q2wk; Meningococcal vaccine 2wks before
+- Q: What is Ravulizumab of Hematology?
+  A: Weight-based LD → q8wk; same vaccine/prophylaxis
+- Q: What is the investigation of choice for Hematology?
+  A: CFH, CFI, MCP (CD46), C3, CFB, THBD, DGKE; guides duration (lifelong if mutation)
+- Q: What is Plasma Exchange of Hematology?
+  A: Bridge to eculizumab if delay; not definitive
+- Q: What is Eculizumab of Hematology?
+  A: 900 mg weekly × 4 → 1200 mg q2wk; Meningococcal vaccine 2wks before
+- Q: What is Ravulizumab of Hematology?
+  A: Weight-based LD → q8wk; same vaccine/prophylaxis
+- Q: What is the investigation of choice for Hematology?
+  A: CFH, CFI, MCP (CD46), C3, CFB, THBD, DGKE; guides duration (lifelong if mutation)
+- Q: What is Plasma Exchange of Hematology?
+  A: Bridge to eculizumab if delay; not definitive
+- Q: What is TTP Pentad of Hematology?
+  A: MAHA, Thrombocytopenia, Neuro, Renal, Fever (classic but incomplete at presentation)
+- Q: What is TTP Diagnostic of Hematology?
+  A: ADAMTS13 <10%; Anti-ADAMTS13 Ab+ (immune)
+- Q: How is Hematology managed?
+  A: PEX + Methylprednisolone 1g IV × 3d + Caplacizumab + Rituximab (all ASAP)
+- Q: What is Caplacizumab of Hematology?
+  A: Anti-vWF; 10 mg IV with PEX → 10 mg SC daily × 30d post-PEX
+- Q: What is STEC-HUS of Hematology?
+  A: O157:H7, bloody diarrhoea, children, Supportive ONLY (NO PEX)
+- Q: What is aHUS of Hematology?
+  A: Complement mutation (CFH, CFI, MCP, C3...), Eculizumab/Ravulizumab
+- Q: What is Pregnancy TMA of Hematology?
+  A: TTP: PEX safe; HELLP: Delivery; AFLP: Delivery; aHUS: Eculizumab safe
+- Q: What is DIC vs TTP of Hematology?
+  A: DIC: PT/APTT↑, Fibrinogen↓, D-dimer↑; TTP: Normal coagulation
+- Q: What is HIT vs TTP of Hematology?
+  A: HIT: Heparin 5-14d, PF4 Ab+, thrombosis; TTP: ADAMTS13<10%
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **# Thrombotic Thrombocytopenic Purpura (TTP) & Haemolytic Uraemic Syndrome (HUS)**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Immune TTP (iTTP) — Anti-ADAMTS13 autoantibodies → ADAMTS13 <10%; Congenital TTP (cTTP / Upshaw-Schulman) — ADAMTS13 gene mutation (autosomal recessive); STEC-HUS (Typical HUS) — Shiga toxin (E. coli O157:H7) → endothelial damage. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

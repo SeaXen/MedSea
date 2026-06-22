@@ -309,3 +309,54 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Shoulder disorders]] · [[Knee disorders]] · [[Foot disorders]] · [[Regional soft tissue rheumatism]]
+---
+
+> Auto-generated study sections for "Soft Tissue Rheumatism and Chronic Pain Syndromes" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: # Hip and Trochanteric Bursitis (Greater Trochanteric Pain Syndrome)
+- Q: What is GTPS (Greater Trochanteric Pain Syndrome) of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Umbrella term for lateral hip pain — includes trochanteric bursitis, gluteal tendinopathy, ITB friction syndrome
+- Q: What is Trochanteric Bursitis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Inflammation of the trochanteric bursa (subgluteus maximus, subgluteus medius, subgluteus minimus bursae)
+- Q: What is Gluteal Tendinopathy of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Primary pathology — degenerative tendinopathy of gluteus medius/minimus tendons at greater trochanter insertion
+- Q: What is ITB Syndrome of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Iliotibial band friction over greater trochanter → lateral knee/hip pain
+- Q: What is GTPS of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Lateral hip pain, GT tenderness, side-lying pain, Ober's +ve (ITB tightness), Trendelenburg (gluteal weakness)
+- Q: What is Gluteal Tendinopathy of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Primary pathology; resisted abduction pain, Ober's +ve, MRI/US tendinopathy
+- Q: What is Hip OA of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Groin pain (C sign), limited internal rotation (earliest), referred knee pain, log roll +ve
+- Q: What is Iliopsoas Bursitis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Groin pain, snapping hip, pain on resisted flexion
+- Q: What is Meralgia Paresthetica of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Anterolateral thigh burning/numbness, no motor deficit, Tinel's at ASIS
+- Q: What is FAI of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Young active, groin pain, limited flexion + IR, CAM/PINCER on imaging
+- Q: What is AVN of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Steroid/alcohol/sickle cell, groin/thigh pain, crescent sign X-ray, MRI double line sign
+- Q: What is Differentiation of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: GTPS = lateral hip, GT tenderness, side-lying; Hip OA = groin, C sign, limited IR
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Physio first (gluteal strengthening, ITB stretch); IA steroid diagnostic/therapeutic; shockwave evidence; surgery refractory
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Soft Tissue Rheumatism and Chronic Pain Syndromes?**
+   A. **# Hip and Trochanteric Bursitis (Greater Trochanteric Pain Syndrome)**
+   B. An unrelated condition not matching the clinical picture of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   C. A complication seen late in the disease course of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   D. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Soft Tissue Rheumatism and Chronic Pain Syndromes presents with: GTPS (Greater Trochanteric Pain Syndrome) — Umbrella term for lateral hip pain — includes trochanteric bursitis, gluteal tendinopathy, ITB friction syndrome; Trochanteric Bursitis — Inflammation of the trochanteric bursa (subgluteus maximus, subgluteus medius, subgluteus minimus bursae); Gluteal Tendinopathy — Primary pathology — degenerative tendinopathy of gluteus medius/minimus tendons at greater trochanter insertion. What is the most likely diagnosis?
+   A. **Soft Tissue Rheumatism and Chronic Pain Syndromes**
+   B. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but is not the same entity
+   C. A complication of Soft Tissue Rheumatism and Chronic Pain Syndromes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Soft Tissue Rheumatism and Chronic Pain Syndromes
+

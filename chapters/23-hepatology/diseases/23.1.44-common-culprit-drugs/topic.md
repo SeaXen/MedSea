@@ -150,3 +150,24 @@ flowchart TD
 | **Niacin** | Hepatocellular | High Dose (>2g/day), Time-Release Formulations |
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Drug Induced Liver Injury" — Ch 23: Hepatology.
+
+## Flashcards (3 generated)
+
+- Q: What is the definition of Drug Induced Liver Injury?
+  A: | ALF Rank | #1 Cause of ALF in UK/USA (50-70%) |
+- Q: What is Historical of Drug Induced Liver Injury?
+  A: Most Hepatotoxic (High-Dose Regimens)
+- Q: What is Current of Drug Induced Liver Injury?
+  A: Low-Dose (25 mg/kg) → Lower Hepatotoxicity
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug Induced Liver Injury?**
+   A. **| ALF Rank | #1 Cause of ALF in UK/USA (50-70%) |**
+   B. An unrelated condition not matching the clinical picture of Drug Induced Liver Injury
+   C. A complication seen late in the disease course of Drug Induced Liver Injury
+   D. A condition that mimics Drug Induced Liver Injury but has a different underlying cause
+

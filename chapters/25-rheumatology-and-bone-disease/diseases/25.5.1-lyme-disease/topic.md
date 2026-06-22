@@ -356,3 +356,102 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Septic arthritis]] · [[Viral arthritis]]
+---
+
+> Auto-generated study sections for "Infectious Arthritis and Bone Infections" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (38 generated)
+
+- Q: What is the definition of Infectious Arthritis and Bone Infections?
+  A: Multi-system tick-borne infection caused by Borrelia burgdorferi sensu lato (B. burgdorferi s.s., B. afzelii, B. garinii) transmitted by Ixodes ticks
+- Q: What is Vector of Infectious Arthritis and Bone Infections?
+  A: Ixodes scapularis (NE/Midwest US), I. pacificus (West US), I. ricinus (Europe), I. persulcatus (Asia)
+- Q: What is the epidemiology of Infectious Arthritis and Bone Infections?
+  A: ~30,000 reported/year US (actual ~476,000); Europe ~85,000/year
+- Q: What is Peak Season of Infectious Arthritis and Bone Infections?
+  A: Spring-Summer (nymphal tick activity May-July)
+- Q: What is Endemic Areas of Infectious Arthritis and Bone Infections?
+  A: NE/Mid-Atlantic/North-Central US; Central/Eastern Europe; UK (Scotland, South England)
+- Q: What causes Infectious Arthritis and Bone Infections?
+  A: Outdoor activity in endemic areas, gardening, hiking, pet ownership
+- Q: What is Transmission Time of Infectious Arthritis and Bone Infections?
+  A: ≥24-48 hours of tick attachment required
+- Q: What is Antigenic Variation of Infectious Arthritis and Bone Infections?
+  A: VlsE system — immune evasion, persistence
+- Q: What is Tissue Tropism of Infectious Arthritis and Bone Infections?
+  A: Skin, joints, nervous system, heart
+- Q: What is Immune Response of Infectious Arthritis and Bone Infections?
+  A: IgM (early), IgG (late); cross-reactive antibodies
+- Q: What is Erythema Migrans (EM) of Infectious Arthritis and Bone Infections?
+  A: 70-80% — expanding annular erythema, central clearing → "target/bull's-eye", ≥5 cm, centrifugal expansion, non-pruritic, non-painful
+- Q: What is Site of Infectious Arthritis and Bone Infections?
+  A: Often thigh, groin, axilla, trunk (tick bite site)
+- Q: What is Systemic of Infectious Arthritis and Bone Infections?
+  A: Flu-like: fever, fatigue, headache, myalgia, arthralgia, lymphadenopathy
+- Q: What is Timing of Infectious Arthritis and Bone Infections?
+  A: 3-30 days post-tick bite (median 7 days)
+- Q: What is the definition of Infectious Arthritis and Bone Infections?
+  A: Persistent fatigue, pain, cognitive difficulties ≥6 months after adequate antibiotic treatment
+- Q: What is the epidemiology of Infectious Arthritis and Bone Infections?
+  A: 10-20% of treated Lyme
+- Q: What is the pathogenesis of Infectious Arthritis and Bone Infections?
+  A: Not active infection — immune dysregulation, central sensitisation
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: Symptomatic — CBT, graded exercise, pain management; NO further antibiotics
+- Q: What is Transmission Time of Infectious Arthritis and Bone Infections?
+  A: ≥24-48 hours of tick attachment required
+- Q: What is Antigenic Variation of Infectious Arthritis and Bone Infections?
+  A: VlsE system — immune evasion, persistence
+- Q: What is Tissue Tropism of Infectious Arthritis and Bone Infections?
+  A: Skin, joints, nervous system, heart
+- Q: What is Immune Response of Infectious Arthritis and Bone Infections?
+  A: IgM (early), IgG (late); cross-reactive antibodies
+- Q: What is Erythema Migrans (EM) of Infectious Arthritis and Bone Infections?
+  A: 70-80% — expanding annular erythema, central clearing → "target/bull's-eye", ≥5 cm, centrifugal expansion, non-pruritic, non-painful
+- Q: What is Site of Infectious Arthritis and Bone Infections?
+  A: Often thigh, groin, axilla, trunk (tick bite site)
+- Q: What is Systemic of Infectious Arthritis and Bone Infections?
+  A: Flu-like: fever, fatigue, headache, myalgia, arthralgia, lymphadenopathy
+- Q: What is Timing of Infectious Arthritis and Bone Infections?
+  A: 3-30 days post-tick bite (median 7 days)
+- Q: What is the definition of Infectious Arthritis and Bone Infections?
+  A: Persistent fatigue, pain, cognitive difficulties ≥6 months after adequate antibiotic treatment
+- Q: What is the epidemiology of Infectious Arthritis and Bone Infections?
+  A: 10-20% of treated Lyme
+- Q: What is the pathogenesis of Infectious Arthritis and Bone Infections?
+  A: Not active infection — immune dysregulation, central sensitisation
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: Symptomatic — CBT, graded exercise, pain management; NO further antibiotics
+- Q: What is Vector of Infectious Arthritis and Bone Infections?
+  A: Ixodes tick (nymph = main vector); ≥24-48h attachment
+- Q: How is Infectious Arthritis and Bone Infections classified?
+  A: EM rash (target lesion, ≥5cm, centrifugal expansion) — clinical diagnosis, treat immediately
+- Q: What is Facial Palsy of Infectious Arthritis and Bone Infections?
+  A: Bilateral in Lyme (25-30%) vs unilateral Bell's; CSF lymphocytic pleocytosis
+- Q: What is Carditis of Infectious Arthritis and Bone Infections?
+  A: AV block (1st-3rd degree) — reversible with treatment
+- Q: What is Serology of Infectious Arthritis and Bone Infections?
+  A: Two-tier: ELISA → Western blot; IgM early (<4w), IgG late (>4w); don't screen asymptomatic
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: Doxycycline 100mg BD 10-21d (early, no CNS); Ceftriaxone 2g IV OD 14-28d (CNS/arthritis/carditis)
+- Q: What is PTLDS of Infectious Arthritis and Bone Infections?
+  A: Post-treatment fatigue/pain/cognitive — NOT active infection, no further antibiotics
+- Q: What is Antibiotic-Refractory Arthritis of Infectious Arthritis and Bone Infections?
+  A: Persistent synovitis after adequate abx → DMARDs/synovectomy, not more abx
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Infectious Arthritis and Bone Infections?**
+   A. **| Definition | Multi-system tick-borne infection caused by Borrelia burgdorferi sensu lato (B.**
+   B. An unrelated condition not matching the clinical picture of Infectious Arthritis and Bone Infections
+   C. A complication seen late in the disease course of Infectious Arthritis and Bone Infections
+   D. A condition that mimics Infectious Arthritis and Bone Infections but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Infectious Arthritis and Bone Infections presents with: Definition — Multi-system tick-borne infection caused by Borrelia burgdorferi sensu lato (B. burgdorferi s.s., B. afzelii, B. garinii) transmitted by Ixodes ticks; Vector — Ixodes scapularis (NE/Midwest US), I. pacificus (West US), I. ricinus (Europe), I. persulcatus (Asia); Incidence — ~30,000 reported/year US (actual ~476,000); Europe ~85,000/year. What is the most likely diagnosis?
+   A. **Infectious Arthritis and Bone Infections**
+   B. A condition that mimics Infectious Arthritis and Bone Infections but is not the same entity
+   C. A complication of Infectious Arthritis and Bone Infections rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Infectious Arthritis and Bone Infections
+

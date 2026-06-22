@@ -344,3 +344,40 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Anticoagulation → DOACs
+- Q: What is the mechanism of Hematology?
+  A: Riva/Apx/Edo = Factor Xa Inhibitors; Dabi = Thrombin (IIa) Inhibitor
+- Q: What is Renal Clearance of Hematology?
+  A: Dabi 80% > Edo 50% > Riva 66% > Apx 27% → Apx Safest in CKD
+- Q: What is AF Dosing of Hematology?
+  A: Riva 20mg OD (15mg if CrCl 15-49); Apx 5mg BD (2.5mg if ≥2 Criteria); Dabi 150mg BD (110mg if ≥80/High Bleed); Edo 60mg OD (30mg if Criteria)
+- Q: What is VTE Loading of Hematology?
+  A: Riva 15mg BD×21d → 20mg; Apx 10mg BD×7d → 5mg BD; Dabi 5d LMWH → 150mg BD
+- Q: What is Reversal of Hematology?
+  A: Dabi = Idarucizumab 5g IV; Riva/Apx/Edo = Andexanet Alfa; All = PCC 4-Factor
+- Q: What is Peri-procedural of Hematology?
+  A: Low Risk: Skip 1 Dose; High Risk: 48h Hold (Riva/Apx/Edo), 48-72h (Dabi)
+- Q: What is Renal Impairment of Hematology?
+  A: Apx Safest (2.5mg BD down to CrCl 15); Dabi Contraindicated <30; Riva/Edo Avoid <15
+- Q: What is Reversal Agents of Hematology?
+  A: Idarucizumab = Dabi Only (5g IV); Andexanet = Factor Xa Inhibitors
+- Q: What is Switching of Hematology?
+  A: Warfarin→DOAC: Start DOAC when INR<2.0 (Apx/Dabi) / <2.5 (Riva/Edo)
+- Q: What is Hematology indicated for?
+  A: Mechanical Valve, Pregnancy, Triple Positive APS, Severe Hepatic (Child-Pugh C)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Anticoagulation → DOACs**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

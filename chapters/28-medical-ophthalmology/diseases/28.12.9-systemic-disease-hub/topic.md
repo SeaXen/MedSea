@@ -34,3 +34,20 @@ modified: 2026-06-16
 
 ## Tags
 #medicine #davidson #ophthalmology #hub #systemic-disease
+---
+
+> Auto-generated study sections for "12_Systemic_Disease_Manifestations" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of 12_Systemic_Disease_Manifestations?
+  A: # Section 12: Ocular Manifestations of Systemic Disease — Hub
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 12_Systemic_Disease_Manifestations?**
+   A. **# Section 12: Ocular Manifestations of Systemic Disease — Hub**
+   B. An unrelated condition not matching the clinical picture of 12_Systemic_Disease_Manifestations
+   C. A complication seen late in the disease course of 12_Systemic_Disease_Manifestations
+   D. A condition that mimics 12_Systemic_Disease_Manifestations but has a different underlying cause
+

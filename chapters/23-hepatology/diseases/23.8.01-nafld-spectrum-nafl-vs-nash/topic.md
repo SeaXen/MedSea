@@ -213,3 +213,28 @@ mindmap
 - [[Non-Alcoholic Fatty Liver Disease/NAFLD Risk Factors and Pathophysiology|NAFLD Risk Factors]]
 - [[Non-Alcoholic Fatty Liver Disease/NAFLD Diagnosis (FIB-4, NFS, ELF, FibroScan)|NAFLD Diagnosis]]
 - [[Non-Alcoholic Fatty Liver Disease/NAFLD Management (Lifestyle, Pharmacotherapy, Bariatric Surgery)|NAFLD Management]]
+---
+
+> Auto-generated study sections for "Non Alcoholic Fatty Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Non Alcoholic Fatty Liver Disease?
+  A: | Stage | Definition | Histology | Progression Risk |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Non Alcoholic Fatty Liver Disease?**
+   A. **| Stage | Definition | Histology | Progression Risk |**
+   B. An unrelated condition not matching the clinical picture of Non Alcoholic Fatty Liver Disease
+   C. A complication seen late in the disease course of Non Alcoholic Fatty Liver Disease
+   D. A condition that mimics Non Alcoholic Fatty Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Non Alcoholic Fatty Liver Disease presents with: NAFLD (Non-Alcoholic Fatty Liver Disease) = Hepatic steatosis >5% in the absence of significant alcohol consumption (<30g/day men, <20g/day women) and other causes of steatosis; A[Hepatic Steatosis >5%] --> B{Alcohol <30g/day M, <20g/day F?}; B -->|Yes| C{Other Causes Excluded?}. What is the most likely diagnosis?
+   A. **Non Alcoholic Fatty Liver Disease**
+   B. A condition that mimics Non Alcoholic Fatty Liver Disease but is not the same entity
+   C. A complication of Non Alcoholic Fatty Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Non Alcoholic Fatty Liver Disease
+

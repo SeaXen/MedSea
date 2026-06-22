@@ -275,3 +275,110 @@ mindmap
 - [[Biliary Tract Disease/Gallbladder cancer|GB Cancer]]
 - [[Autoimmune Liver Disease/PBC (Primary Biliary Cholangitis)|PBC]]
 - [[Autoimmune Liver Disease/Primary sclerosing cholangitis (PSC)|PSC]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (42 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: A[Obstructive Jaundice: Conjugated Bilirubin ↑, ALP ↑↑] --> B{Ultrasound: Dilated Bile Ducts?}
+- Q: What is Bilirubin of Jaundice and LFT Interpretation?
+  A: Conjugated (Direct) ↑↑
+- Q: What is Urine Bilirubin of Jaundice and LFT Interpretation?
+  A: Positive (conjugated = water-soluble)
+- Q: What is Urine Urobilinogen of Jaundice and LFT Interpretation?
+  A: ↓/Absent (no bile → no urobilinogen)
+- Q: What is Stool Colour of Jaundice and LFT Interpretation?
+  A: Pale/Acholic (no stercobilin)
+- Q: What is ALP / GGT of Jaundice and LFT Interpretation?
+  A: ↑↑ (cholestatic pattern)
+- Q: What is ALT / AST of Jaundice and LFT Interpretation?
+  A: Mild-moderate ↑ (if acute)
+- Q: What is Pruritus of Jaundice and LFT Interpretation?
+  A: Common (bile salt deposition)
+- Q: What is Choledocholithiasis of Jaundice and LFT Interpretation?
+  A: Most common; Pain, intermittent jaundice, cholangitis risk
+- Q: What is Pancreatic Head Cancer of Jaundice and LFT Interpretation?
+  A: Painless jaundice, weight loss, Courvoisier's sign, ≥60y
+- Q: What is Cholangiocarcinoma of Jaundice and LFT Interpretation?
+  A: Hilar (Klatskin) → early jaundice; Distal → like pancreatic cancer
+- Q: What is Gallbladder Cancer of Jaundice and LFT Interpretation?
+  A: Often incidental; porcelain GB, thickened wall
+- Q: What is Ampullary Carcinoma of Jaundice and LFT Interpretation?
+  A: Early jaundice, GI bleed, better prognosis
+- Q: What is Mirizzi Syndrome of Jaundice and LFT Interpretation?
+  A: Stone in cystic duct compressing CHD → obstruction
+- Q: What is Parasites of Jaundice and LFT Interpretation?
+  A: Ascaris, Fasciola (endemic areas)
+- Q: What is PBC of Jaundice and LFT Interpretation?
+  A: Middle-aged women, AMA+, pruritus, ALP ↑↑
+- Q: What is PSC of Jaundice and LFT Interpretation?
+  A: Young men, IBD, beading on MRCP
+- Q: What is Drug-induced of Jaundice and LFT Interpretation?
+  A: Amox-clav, flucloxacillin, OCP, chlorpromazine
+- Q: What is Infiltrative of Jaundice and LFT Interpretation?
+  A: Sarcoidosis, TB, Amyloid, Lymphoma, Secondaries
+- Q: What is Sepsis/Cholangitis of Jaundice and LFT Interpretation?
+  A: Fever, RUQ pain, cholestasis
+- Q: What is Benign Recurrent Intrahepatic Cholestasis (BRIC) of Jaundice and LFT Interpretation?
+  A: Genetic, recurrent episodes, benign
+- Q: What is Choledocholithiasis of Jaundice and LFT Interpretation?
+  A: Most common; Pain, intermittent jaundice, cholangitis risk
+- Q: What is Pancreatic Head Cancer of Jaundice and LFT Interpretation?
+  A: Painless jaundice, weight loss, Courvoisier's sign, ≥60y
+- Q: What is Cholangiocarcinoma of Jaundice and LFT Interpretation?
+  A: Hilar (Klatskin) → early jaundice; Distal → like pancreatic cancer
+- Q: What is Gallbladder Cancer of Jaundice and LFT Interpretation?
+  A: Often incidental; porcelain GB, thickened wall
+- Q: What is Ampullary Carcinoma of Jaundice and LFT Interpretation?
+  A: Early jaundice, GI bleed, better prognosis
+- Q: What is Mirizzi Syndrome of Jaundice and LFT Interpretation?
+  A: Stone in cystic duct compressing CHD → obstruction
+- Q: What is PBC of Jaundice and LFT Interpretation?
+  A: Middle-aged women, AMA+, pruritus, ALP ↑↑
+- Q: What is PSC of Jaundice and LFT Interpretation?
+  A: Young men, IBD, beading on MRCP
+- Q: What is Drug-induced of Jaundice and LFT Interpretation?
+  A: Amox-clav, flucloxacillin, OCP, chlorpromazine
+- Q: What is Infiltrative of Jaundice and LFT Interpretation?
+  A: Sarcoidosis, TB, Amyloid, Lymphoma, Secondaries
+- Q: What is Sepsis/Cholangitis of Jaundice and LFT Interpretation?
+  A: Fever, RUQ pain, cholestasis
+- Q: What is Benign Recurrent Intrahepatic Cholestasis (BRIC) of Jaundice and LFT Interpretation?
+  A: Genetic, recurrent episodes, benign
+- Q: What is Obstructive jaundice of Jaundice and LFT Interpretation?
+  A: Conjugated bilirubin ↑, Bilirubinuria +, Pale stools, ALP/GGT ↑↑, Pruritus
+- Q: What is Extrahepatic of Jaundice and LFT Interpretation?
+  A: Dilated ducts on US → CT/MRCP/ERCP
+- Q: What is Intrahepatic of Jaundice and LFT Interpretation?
+  A: Normal ducts on US → PBC, PSC, Drugs, Infiltrative
+- Q: What is Courvoisier's Law of Jaundice and LFT Interpretation?
+  A: Palpable GB + Jaundice = Malignancy (not stones)
+- Q: What is Mirizzi Syndrome of Jaundice and LFT Interpretation?
+  A: Cystic duct stone compressing CHD
+- Q: What is Double Duct Sign of Jaundice and LFT Interpretation?
+  A: CBD + Pancreatic duct dilation = Periampullary tumour
+- Q: What is ERCP of Jaundice and LFT Interpretation?
+  A: Therapeutic (stones, stents); Pancreatitis risk
+- Q: What is MRCP of Jaundice and LFT Interpretation?
+  A: Best non-invasive diagnostic
+- Q: What is Cholangitis of Jaundice and LFT Interpretation?
+  A: Charcot's triad (Pain, Fever, Jaundice) + Reynolds' pentad (Shock, Confusion)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **A[Obstructive Jaundice: Conjugated Bilirubin ↑, ALP ↑↑] --> B{Ultrasound: Dilated Bile Ducts?}**
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Jaundice and LFT Interpretation presents with: A[Biliary Obstruction] --> B[Impaired Bile Flow]; B --> C[↑ Conjugated Bilirubin in Blood]; C --> D[Conjugated Bilirubinuria (Dark Urine)]. What is the most likely diagnosis?
+   A. **Jaundice and LFT Interpretation**
+   B. A condition that mimics Jaundice and LFT Interpretation but is not the same entity
+   C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
+

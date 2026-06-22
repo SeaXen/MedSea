@@ -330,3 +330,84 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Osteoporosis]] · [[Osteomalacia and rickets]] · [[Glucocorticoid-induced osteoporosis]]
+---
+
+> Auto-generated study sections for "Bone Metabolic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (29 generated)
+
+- Q: What is the definition of Bone Metabolic Diseases?
+  A: Chronic focal disorder of bone remodelling → excessive osteoclast-mediated resorption followed by disorganised osteoblast-mediated formation → structurally abnormal, mechanically weak bone
+- Q: What is the epidemiology of Bone Metabolic Diseases?
+  A: Declining globally; 1-2% of whites >55y (UK highest)
+- Q: What is Peak Onset of Bone Metabolic Diseases?
+  A: >55 years (rare <40)
+- Q: What is Sex Ratio of Bone Metabolic Diseases?
+  A: M > F (1.5:1)
+- Q: What is Geography of Bone Metabolic Diseases?
+  A: UK, Europe, Australia, NZ, North America (high in UK); rare in Scandinavia, Asia, Africa
+- Q: What is Genetics of Bone Metabolic Diseases?
+  A: SQSTM1 (p62) mutation — 20-30% familial; TNFRSF11A (RANK); viral (paramyxovirus) hypothesis
+- Q: What are the clinical features of Bone Metabolic Diseases?
+  A: >70% — incidental X-ray/ALP finding
+- Q: What is Bone Pain of Bone Metabolic Diseases?
+  A: Dull, aching, deep, worse at night, mechanical (worse with weight-bearing), unrelieved by rest
+- Q: What is Deformity of Bone Metabolic Diseases?
+  A: Bowing of femur/tibia (saber shin), enlarged skull (hat size ↑), kyphosis, waddling gait
+- Q: What is Fractures of Bone Metabolic Diseases?
+  A: Insufficiency fractures — transverse (chalkstick) in long bones, vertebral
+- Q: What is Nerve Compression of Bone Metabolic Diseases?
+  A: Basilar invagination → cranial nerve palsies, spinal stenosis → radiculopathy, deafness (VIIIth nerve)
+- Q: What is Joint Involvement of Bone Metabolic Diseases?
+  A: Secondary OA adjacent to pagetic bone (hip, knee)
+- Q: What is High-Output Cardiac Failure of Bone Metabolic Diseases?
+  A: Vascular steal from highly vascular pagetic bone (rare, extensive disease)
+- Q: What are the clinical features of Bone Metabolic Diseases?
+  A: >70% — incidental X-ray/ALP finding
+- Q: What is Bone Pain of Bone Metabolic Diseases?
+  A: Dull, aching, deep, worse at night, mechanical (worse with weight-bearing), unrelieved by rest
+- Q: What is Deformity of Bone Metabolic Diseases?
+  A: Bowing of femur/tibia (saber shin), enlarged skull (hat size ↑), kyphosis, waddling gait
+- Q: What is Fractures of Bone Metabolic Diseases?
+  A: Insufficiency fractures — transverse (chalkstick) in long bones, vertebral
+- Q: What is Nerve Compression of Bone Metabolic Diseases?
+  A: Basilar invagination → cranial nerve palsies, spinal stenosis → radiculopathy, deafness (VIIIth nerve)
+- Q: What is Joint Involvement of Bone Metabolic Diseases?
+  A: Secondary OA adjacent to pagetic bone (hip, knee)
+- Q: What is High-Output Cardiac Failure of Bone Metabolic Diseases?
+  A: Vascular steal from highly vascular pagetic bone (rare, extensive disease)
+- Q: What is Demographics of Bone Metabolic Diseases?
+  A: >55y, M>F, UK highest, SQSTM1 mutation (20-30% familial)
+- Q: What is Three Phases of Bone Metabolic Diseases?
+  A: 1) Osteolytic (ALP↑↑, lytic wedge) → 2) Mixed (ALP↑↑↑, cotton wool) → 3) Sclerotic (ALP normal, ivory vertebra)
+- Q: What is ALP of Bone Metabolic Diseases?
+  A: Markedly elevated (bone isoform) — diagnosis + monitoring; normal in sclerotic phase
+- Q: What is Bone Scan of Bone Metabolic Diseases?
+  A: Most sensitive — defines extent (polyostotic 80%)
+- Q: What is Common Sites of Bone Metabolic Diseases?
+  A: Pelvis > Lumbar spine > Femur > Thoracic spine > Skull
+- Q: How is Bone Metabolic Diseases managed?
+  A: Zoledronate 5mg IV single dose (1st line, 90%+ remission); oral risedronate/alendronate if IV not possible
+- Q: What is Bone Metabolic Diseases indicated for?
+  A: Pain, high-risk site (skull base, spine), pre-op, nerve compression
+- Q: What are the complications of Bone Metabolic Diseases?
+  A: Fractures, OA, nerve compression (deafness), osteosarcoma (1%), high-output HF
+- Q: What is Osteosarcoma of Bone Metabolic Diseases?
+  A: ~1%; pain worsening, ALP rising despite Rx; biopsy mandatory
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Bone Metabolic Diseases?**
+   A. **Paget's = focal disordered bone remodelling → ↑ ALP (bone isoform), mixed lytic/sclerotic bone, bone pain, deformity, fractures.**
+   B. An unrelated condition not matching the clinical picture of Bone Metabolic Diseases
+   C. A complication seen late in the disease course of Bone Metabolic Diseases
+   D. A condition that mimics Bone Metabolic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Bone Metabolic Diseases presents with: Definition — Chronic focal disorder of bone remodelling → excessive osteoclast-mediated resorption followed by disorganised osteoblast-mediated formation → structurally abnormal, mechanically weak bone; Incidence — Declining globally; 1-2% of whites >55y (UK highest); Prevalence — Increases with age; >3% at age 85. What is the most likely diagnosis?
+   A. **Bone Metabolic Diseases**
+   B. A condition that mimics Bone Metabolic Diseases but is not the same entity
+   C. A complication of Bone Metabolic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Bone Metabolic Diseases
+

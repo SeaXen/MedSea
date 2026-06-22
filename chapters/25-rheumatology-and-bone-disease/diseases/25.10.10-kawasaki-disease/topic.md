@@ -385,3 +385,46 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[IgA vasculitis (Henoch-Schönlein purpura)]] · [[Polyarteritis nodosa (PAN)]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: | Definition | Acute medium vessel vasculitis of childhood — systemic inflammation → coronary artery aneurysms (major morbidity/mortality) |
+- Q: What is the investigation of choice for Vasculitis?
+  A: Fever ≥5 days + ≥4/5 principal criteria (conjunctivitis, oral, rash, extremities, lymphadenopathy)
+- Q: What is Incomplete Kawasaki of Vasculitis?
+  A: Fever ≥5d + 2-3 criteria + ≥3 lab criteria OR echo z-score ≥2.5
+- Q: What is Principal Criteria of Vasculitis?
+  A: 1) Bilateral non-purulent conjunctivitis (limbal sparing) 2) Oral changes (strawberry tongue, cracked lips) 3) Polymorphous rash 4) Extremity changes (erythema/desquamation) 5) Cervical lymphadenopathy ≥1.5cm
+- Q: What is IVIG of Vasculitis?
+  A: 2g/kg single infusion WITHIN 10 DAYS — 3-5% aneurysms; >10 days = 15-25%
+- Q: What is Aspirin of Vasculitis?
+  A: High-dose 30-50mg/kg/day (anti-inflammatory) → Low-dose 3-5mg/kg (antiplatelet)
+- Q: What is Coronary Aneurysms of Vasculitis?
+  A: 20-25% untreated; 3-5% with IVIG <10d; z-score surveillance
+- Q: What is Echo Surveillance of Vasculitis?
+  A: 2w, 6w, 1y; z-score stratification
+- Q: What is Refractory of Vasculitis?
+  A: Fever >36h post-IVIG → 2nd IVIG / Pulse MP / Infliximab / Anakinra
+- Q: What is Incomplete Criteria Labs of Vasculitis?
+  A: CRP ≥3, ESR ≥40, Albumin ≤30, Platelets ≥450, WBC ≥15, Anaemia, Urine WBC ≥10
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **| Definition | Acute medium vessel vasculitis of childhood — systemic inflammation → coronary artery aneurysms (major morbidity/mortality) |**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Definition — Acute medium vessel vasculitis of childhood — systemic inflammation → coronary artery aneurysms (major morbidity/mortality); Incidence — 10-30/100,000 <5y (highest in Japan, Korea, Taiwan); increasing globally; Peak Age — <5 years (peak 1-2 years); rare <3 months or >8 years. What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

@@ -271,3 +271,56 @@ mindmap
 - [[Portal Hypertension and Complications/Spontaneous bacterial peritonitis (SBP)|SBP]]
 - [[Portal Hypertension and Complications/Acute variceal bleeding management|Acute Variceal Bleed]]
 - [[Portal Hypertension and Complications/Hepatorenal Syndrome|HRS]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: | Precipitant | Frequency | Key Features |
+- Q: What is Bleeding of Portal Hypertension and Complications?
+  A: Vasoactives (Terlipressin/Octreotide) + Endoscopy + Antibiotics
+- Q: What is Protein Load of Portal Hypertension and Complications?
+  A: ↑Urea → ↑Ammonia → HE
+- Q: How is Portal Hypertension and Complications managed?
+  A: Lactulose (Promotes Excretion), Rifaximin, Protein Restriction (Temporary)
+- Q: What is the mechanism of Portal Hypertension and Complications?
+  A: Stasis → ↑Ammonia Production/Absorption
+- Q: How is Portal Hypertension and Complications managed?
+  A: Lactulose (First-Line: 15-30ml BD → 2-3 Soft Stools/Day)
+- Q: What is Adjunct of Portal Hypertension and Complications?
+  A: Lactulose Enema (If Severe), Fibre, Hydration, Mobility
+- Q: What is ↓Renal Ammonia Clearance of Portal Hypertension and Complications?
+  A: Lactulose, Rifaximin, Treat HRS (Terlipressin + Albumin)
+- Q: What is ↑Cerebral Oedema Risk of Portal Hypertension and Complications?
+  A: Control ICP, Avoid Hypoxia
+- Q: What is Signs of Portal Hypertension and Complications?
+  A: Recurrent Ascites, HE, Variceal Bleed
+- Q: What is the investigation of choice for Portal Hypertension and Complications?
+  A: Doppler US (PSV <60 or >250 cm/s)
+- Q: How is Portal Hypertension and Complications managed?
+  A: Balloon Dilatation ± Stent Revision
+- Q: What is Bleeding of Portal Hypertension and Complications?
+  A: Vasoactives (Terlipressin/Octreotide) + Endoscopy + Antibiotics
+- Q: What is Protein Load of Portal Hypertension and Complications?
+  A: ↑Urea → ↑Ammonia → HE
+- Q: What is the mechanism of Portal Hypertension and Complications?
+  A: Stasis → ↑Ammonia Production/Absorption
+- Q: How is Portal Hypertension and Complications managed?
+  A: Lactulose (First-Line: 15-30ml BD → 2-3 Soft Stools/Day)
+- Q: What is Signs of Portal Hypertension and Complications?
+  A: Recurrent Ascites, HE, Variceal Bleed
+- Q: What is the investigation of choice for Portal Hypertension and Complications?
+  A: Doppler US (PSV <60 or >250 cm/s)
+- Q: How is Portal Hypertension and Complications managed?
+  A: Balloon Dilatation ± Stent Revision
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **| Precipitant | Frequency | Key Features |**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+

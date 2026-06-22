@@ -348,3 +348,70 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Transfusion Medicine → Platelet Transfusion
+- Q: What is Refractory of Hematology?
+  A: Failed 2 consecutive ABO-compatible transfusions (1-hour or 24-hour CCI below threshold)
+- Q: What is 1-hour CCI of Hematology?
+  A: <(7.5 ×10⁹/L) per (10¹¹ platelets transfused) per L body weight
+- Q: What is 24-hour CCI of Hematology?
+  A: <(4.5 ×10⁹/L) per (10¹¹ platelets transfused) per L body weight
+- Q: What is Temperature of Hematology?
+  A: 20-24°C (Room Temperature)
+- Q: What is Agitation of Hematology?
+  A: Continuous Gentle Agitation (prevents clumping)
+- Q: What is Shelf Life of Hematology?
+  A: 5-7 Days (depending on bag/collection system)
+- Q: What is Bacterial Screening of Hematology?
+  A: Culture Day 1-2 or Rapid test Day 1, Pathogen Reduction optional
+- Q: How is Hematology monitored?
+  A: >6.2 (bacterial growth indicator)
+- Q: What is Refractory of Hematology?
+  A: Failed 2 consecutive ABO-compatible transfusions (1-hour or 24-hour CCI below threshold)
+- Q: What is 1-hour CCI of Hematology?
+  A: <(7.5 ×10⁹/L) per (10¹¹ platelets transfused) per L body weight
+- Q: What is 24-hour CCI of Hematology?
+  A: <(4.5 ×10⁹/L) per (10¹¹ platelets transfused) per L body weight
+- Q: What is Temperature of Hematology?
+  A: 20-24°C (Room Temperature)
+- Q: What is Agitation of Hematology?
+  A: Continuous Gentle Agitation (prevents clumping)
+- Q: What is Shelf Life of Hematology?
+  A: 5-7 Days (depending on bag/collection system)
+- Q: What is Bacterial Screening of Hematology?
+  A: Culture Day 1-2 or Rapid test Day 1, Pathogen Reduction optional
+- Q: How is Hematology monitored?
+  A: >6.2 (bacterial growth indicator)
+- Q: What is Prophylactic Threshold of Hematology?
+  A: <10 (Standard); <20 (Fever/Sepsis/DIC); <50 (Procedure/Bleeding); <100 (CNS/Neurosurgery)
+- Q: What is Therapeutic of Hematology?
+  A: Active Bleeding regardless of count
+- Q: What is the dose of Hematology?
+  A: 1 Apheresis Unit = 3×10¹¹ platelets = 20-40×10⁹/L rise
+- Q: What is ABO of Hematology?
+  A: Identical preferred; Compatible acceptable; Group O → Any (plasma diluted)
+- Q: What is Rh of Hematology?
+  A: Rh Negative Female → Rh Neg Preferred; If Rh Pos given → Anti-D Ig
+- Q: What is Refractoriness of Hematology?
+  A: CCI <7.5 (1h) or <4.5 (24h); HLA-matched if immune; Treat non-immune causes
+- Q: What is Storage of Hematology?
+  A: 20-24°C with Agitation, 5-7 days, Bacterial risk high
+- Q: What is DDAVP of Hematology?
+  A: 0.3 µg/kg IV for Uraemia/VWD Type 1; Contra: Type 2B, TTP, CAD
+- Q: What are the complications of Hematology?
+  A: FNHTR, TRALI, TACO, Allergic, Bacterial Sepsis, PTP, TA-GVHD (Irradiate)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Transfusion Medicine → Platelet Transfusion**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

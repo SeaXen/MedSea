@@ -330,3 +330,46 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (10 generated)
+
+- Q: What is MTP Activation of Hematology?
+  A: ABC Score ≥2 (Penetrating, SBP≤90, HR≥120, FAST+)
+- Q: What is the definition of Hematology?
+  A: ≥4 RBC/1h OR ≥10 RBC/24h OR >1 Blood Vol/24h
+- Q: What is Ratio of Hematology?
+  A: 1:1:1 (RBC:FFP:Platelets) – PROMMTT/PROPPR
+- Q: What is TXA of Hematology?
+  A: 1g Bolus + 1g/8h IV within 3h (CRASH-2)
+- Q: What is Calcium of Hematology?
+  A: iCa²⁺ >1.0 mmol/L → CaCl₂ 10% 5-10mL per 4-6 FFP
+- Q: What is Lethal Triad of Hematology?
+  A: Hypothermia, Acidosis, Coagulopathy – Prevent/Correct
+- Q: How is Hematology monitored?
+  A: TEG/ROTEM (Goal-Directed) or Standard Labs (PT, APTT, Fib, Plts, Ca²⁺, ABG)
+- Q: What is Fibrinogen Target of Hematology?
+  A: >1.5-2.0 g/L → Cryoprecipitate / Fibrinogen Concentrate
+- Q: What are the complications of Hematology?
+  A: Dilutional Coagulopathy, Citrate Toxicity (Ca²⁺), Hyperkalaemia, Hypothermia, TACO, TRALI
+- Q: What is DCS of Hematology?
+  A: Phase 1: Haemostasis, Phase 2: ICU Resuscitation, Phase 3: Definitive Repair
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Transfusion Medicine → Massive Transfusion Protocol**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Acute Rate — ≥4 Units RBC in 1 Hour; 24-Hour Volume — ≥10 Units RBC in 24 Hours; Blood Volume Replacement — >1 Blood Volume (70 mL/kg) in 24 Hours. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

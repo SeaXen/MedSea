@@ -150,3 +150,28 @@ flowchart TD
 | Feature | Detail |
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Biliary Tract Disease" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Biliary Tract Disease?
+  A: B -->|Confined to Common Hepatic Duct| B1[Type I]
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Biliary Tract Disease?**
+   A. **B -->|Confined to Common Hepatic Duct| B1[Type I]**
+   B. An unrelated condition not matching the clinical picture of Biliary Tract Disease
+   C. A complication seen late in the disease course of Biliary Tract Disease
+   D. A condition that mimics Biliary Tract Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Biliary Tract Disease presents with: A[Klatskin Tumour] --> B{Extent}; B -->|Confined to Common Hepatic Duct| B1[Type I]; B -->|Extending to Right/Left Hepatic Duct| B2[Type II]. What is the most likely diagnosis?
+   A. **Biliary Tract Disease**
+   B. A condition that mimics Biliary Tract Disease but is not the same entity
+   C. A complication of Biliary Tract Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Biliary Tract Disease
+

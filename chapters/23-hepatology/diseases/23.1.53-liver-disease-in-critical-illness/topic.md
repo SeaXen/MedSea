@@ -150,3 +150,94 @@ flowchart TD
 
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Hepatology in Special Situations" — Ch 23: Hepatology.
+
+## Flashcards (34 generated)
+
+- Q: What is the definition of Hepatology in Special Situations?
+  A: A[Systemic Hypotension / Shock] --> B[↓ Splanchnic Blood Flow]
+- Q: What is Shock Liver of Hepatology in Special Situations?
+  A: Acute hepatocellular injury due to hepatic hypoperfusion (hypoxia/ischaemia) in critically ill patients
+- Q: What is Ischaemic Hepatitis of Hepatology in Special Situations?
+  A: Synonym for Shock Liver — Histological Evidence of Centrilobular Necrosis
+- Q: What is Hypoxic Hepatitis of Hepatology in Special Situations?
+  A: Same Entity — Emphasises Hypoxia as Mechanism
+- Q: What is Context of Hepatology in Special Situations?
+  A: Shock, Sepsis, Cardiac Surgery, Major Trauma, Cardiac Arrest
+- Q: What is Onset of Hepatology in Special Situations?
+  A: Within 24-48 Hours of Hypotensive Event
+- Q: What are the clinical features of Hepatology in Special Situations?
+  A: Often Asymptomatic (Sedated/Intubated); Jaundice (Late)
+- Q: What is Key Lab of Hepatology in Special Situations?
+  A: AST/ALT >2000 U/L (Often >5000-10,000)
+- Q: What is Pattern of Hepatology in Special Situations?
+  A: Rapid Rise (24-48h) → Rapid Fall (3-7 Days)
+- Q: What is AST:ALT Ratio of Hepatology in Special Situations?
+  A: Often >1 (AST > ALT) — Mitochondrial Damage
+- Q: What is Bilirubin of Hepatology in Special Situations?
+  A: Rises Later (Peak Day 3-5)
+- Q: What is INR of Hepatology in Special Situations?
+  A: May Rise (Synthetic Dysfunction)
+- Q: What is Lactate of Hepatology in Special Situations?
+  A: Markedly Elevated (Marker of Hypoperfusion)
+- Q: What is AST/ALT Peak of Hepatology in Special Situations?
+  A: Day 2-3 (Often 5000-10,000+)
+- Q: What is Normalisation of Hepatology in Special Situations?
+  A: 3-7 Days (Rapid Fall)
+- Q: What is Bilirubin Peak of Hepatology in Special Situations?
+  A: Day 3-5 (Then Falls)
+- Q: What is INR Peak of Hepatology in Special Situations?
+  A: Day 3-5 (If Synthetic Impairment)
+- Q: What is Mortality of Hepatology in Special Situations?
+  A: 50-70% (Driven by Underlying Shock, Not Liver Itself)
+- Q: What is Recovery of Hepatology in Special Situations?
+  A: Complete in Survivors (No Chronic Sequelae)
+- Q: What is Context of Hepatology in Special Situations?
+  A: Shock, Sepsis, Cardiac Surgery, Major Trauma, Cardiac Arrest
+- Q: What is Onset of Hepatology in Special Situations?
+  A: Within 24-48 Hours of Hypotensive Event
+- Q: What are the clinical features of Hepatology in Special Situations?
+  A: Often Asymptomatic (Sedated/Intubated); Jaundice (Late)
+- Q: What is Key Lab of Hepatology in Special Situations?
+  A: AST/ALT >2000 U/L (Often >5000-10,000)
+- Q: What is Pattern of Hepatology in Special Situations?
+  A: Rapid Rise (24-48h) → Rapid Fall (3-7 Days)
+- Q: What is AST:ALT Ratio of Hepatology in Special Situations?
+  A: Often >1 (AST > ALT) — Mitochondrial Damage
+- Q: What is Bilirubin of Hepatology in Special Situations?
+  A: Rises Later (Peak Day 3-5)
+- Q: What is INR of Hepatology in Special Situations?
+  A: May Rise (Synthetic Dysfunction)
+- Q: What is Lactate of Hepatology in Special Situations?
+  A: Markedly Elevated (Marker of Hypoperfusion)
+- Q: What is AST/ALT Peak of Hepatology in Special Situations?
+  A: Day 2-3 (Often 5000-10,000+)
+- Q: What is Normalisation of Hepatology in Special Situations?
+  A: 3-7 Days (Rapid Fall)
+- Q: What is Bilirubin Peak of Hepatology in Special Situations?
+  A: Day 3-5 (Then Falls)
+- Q: What is INR Peak of Hepatology in Special Situations?
+  A: Day 3-5 (If Synthetic Impairment)
+- Q: What is Mortality of Hepatology in Special Situations?
+  A: 50-70% (Driven by Underlying Shock, Not Liver Itself)
+- Q: What is Recovery of Hepatology in Special Situations?
+  A: Complete in Survivors (No Chronic Sequelae)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology in Special Situations?**
+   A. **A[Systemic Hypotension / Shock] --> B[↓ Splanchnic Blood Flow]**
+   B. An unrelated condition not matching the clinical picture of Hepatology in Special Situations
+   C. A complication seen late in the disease course of Hepatology in Special Situations
+   D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hepatology in Special Situations presents with: Shock Liver — Acute hepatocellular injury due to hepatic hypoperfusion (hypoxia/ischaemia) in critically ill patients; Ischaemic Hepatitis — Synonym for Shock Liver — Histological Evidence of Centrilobular Necrosis; Hypoxic Hepatitis — Same Entity — Emphasises Hypoxia as Mechanism. What is the most likely diagnosis?
+   A. **Hepatology in Special Situations**
+   B. A condition that mimics Hepatology in Special Situations but is not the same entity
+   C. A complication of Hepatology in Special Situations rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hepatology in Special Situations
+

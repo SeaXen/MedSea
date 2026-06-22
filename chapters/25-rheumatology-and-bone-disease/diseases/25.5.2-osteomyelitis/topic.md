@@ -398,3 +398,162 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Septic arthritis]] · [[Tuberculous arthritis]]
+---
+
+> Auto-generated study sections for "Infectious Arthritis and Bone Infections" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (68 generated)
+
+- Q: What is the definition of Infectious Arthritis and Bone Infections?
+  A: Bone infection — acute vs chronic, haematogenous vs contiguous, diabetic foot overlap.
+- Q: What is Fever of Infectious Arthritis and Bone Infections?
+  A: High, systemic toxicity (children often toxic)
+- Q: What is Bone Pain of Infectious Arthritis and Bone Infections?
+  A: Deep, severe, worse with movement
+- Q: What is Local Signs of Infectious Arthritis and Bone Infections?
+  A: Tenderness, swelling, warmth, erythema over affected bone
+- Q: What is Functional Impairment of Infectious Arthritis and Bone Infections?
+  A: Refusal to move limb (pseudoparalysis in children), antalgic gait
+- Q: What is Inflammatory Markers of Infectious Arthritis and Bone Infections?
+  A: CRP/ESR markedly elevated; WBC elevated
+- Q: What is Draining Sinus of Infectious Arthritis and Bone Infections?
+  A: Pathognomonic — purulent discharge, may communicate with bone
+- Q: What is Sequestrum of Infectious Arthritis and Bone Infections?
+  A: Dead bone (devitalised, separated from living bone)
+- Q: What is Involucrum of Infectious Arthritis and Bone Infections?
+  A: New living bone forming around sequestrum
+- Q: What are the clinical features of Infectious Arthritis and Bone Infections?
+  A: Intermittent pain, discharge, low-grade fever, less toxic
+- Q: What is Bone Deformity of Infectious Arthritis and Bone Infections?
+  A: Chronic inflammation → fibrosis, shortening, angulation
+- Q: What is the investigation of choice for Infectious Arthritis and Bone Infections?
+  A: High PPV (85-95%) — sterile probe touches bone through ulcer = osteomyelitis likely
+- Q: What is ESR >70 mm/hr of Infectious Arthritis and Bone Infections?
+  A: High sensitivity for osteomyelitis
+- Q: What is CRP of Infectious Arthritis and Bone Infections?
+  A: Less specific alone
+- Q: What is MRI of Infectious Arthritis and Bone Infections?
+  A: Gold standard — marrow oedema, cortical breach
+- Q: What is Plain X-ray of Infectious Arthritis and Bone Infections?
+  A: Baseline; look for osteolysis, periosteal reaction
+- Q: What is Organism of Infectious Arthritis and Bone Infections?
+  A: Mycobacterium tuberculosis (classic); S. aureus, Brucella
+- Q: What is Site of Infectious Arthritis and Bone Infections?
+  A: Thoracic > Lumbar (paradiscal)
+- Q: What is Pattern of Infectious Arthritis and Bone Infections?
+  A: Paradiscal destruction (two adjacent vertebrae + disc)
+- Q: What is Cold Abscess of Infectious Arthritis and Bone Infections?
+  A: Paravertebral, psoas, extended → no fever (unlike pyogenic)
+- Q: What is Gibbus Deformity of Infectious Arthritis and Bone Infections?
+  A: Kyphotic angulation from vertebral collapse
+- Q: What is Neurological of Infectious Arthritis and Bone Infections?
+  A: Cord compression (paraplegia) — emergency
+- Q: What is Imaging of Infectious Arthritis and Bone Infections?
+  A: MRI: marrow oedema, disc destruction, paravertebral abscess; CT: bony detail
+- Q: What is the investigation of choice for Infectious Arthritis and Bone Infections?
+  A: Image-guided biopsy (AFB, culture, PCR/Xpert MTB/RIF), blood for IGRA
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: Standard 4-drug TB regimen (RHZE ×2mo → RH ×4mo) — 9-12 months total; surgery if cord compression/deformity
+- Q: What is Sequestrum of Infectious Arthritis and Bone Infections?
+  A: Sequestrectomy (remove dead bone)
+- Q: What is Abscess of Infectious Arthritis and Bone Infections?
+  A: Incision & drainage
+- Q: How is Infectious Arthritis and Bone Infections classified?
+  A: Resection + reconstruction (Ilizarov, vascularised graft)
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: Debridement + antibiotics
+- Q: What is Spinal cord compression (Pott's) of Infectious Arthritis and Bone Infections?
+  A: Urgent decompression ± stabilisation
+- Q: What is Limb-threatening ischaemia of Infectious Arthritis and Bone Infections?
+  A: Amputation (last resort)
+- Q: What is Fever of Infectious Arthritis and Bone Infections?
+  A: High, systemic toxicity (children often toxic)
+- Q: What is Bone Pain of Infectious Arthritis and Bone Infections?
+  A: Deep, severe, worse with movement
+- Q: What is Local Signs of Infectious Arthritis and Bone Infections?
+  A: Tenderness, swelling, warmth, erythema over affected bone
+- Q: What is Functional Impairment of Infectious Arthritis and Bone Infections?
+  A: Refusal to move limb (pseudoparalysis in children), antalgic gait
+- Q: What is Draining Sinus of Infectious Arthritis and Bone Infections?
+  A: Pathognomonic — purulent discharge, may communicate with bone
+- Q: What is Sequestrum of Infectious Arthritis and Bone Infections?
+  A: Dead bone (devitalised, separated from living bone)
+- Q: What is Involucrum of Infectious Arthritis and Bone Infections?
+  A: New living bone forming around sequestrum
+- Q: What are the clinical features of Infectious Arthritis and Bone Infections?
+  A: Intermittent pain, discharge, low-grade fever, less toxic
+- Q: What is Bone Deformity of Infectious Arthritis and Bone Infections?
+  A: Chronic inflammation → fibrosis, shortening, angulation
+- Q: What is the investigation of choice for Infectious Arthritis and Bone Infections?
+  A: High PPV (85-95%) — sterile probe touches bone through ulcer = osteomyelitis likely
+- Q: What is ESR >70 mm/hr of Infectious Arthritis and Bone Infections?
+  A: High sensitivity for osteomyelitis
+- Q: What is CRP of Infectious Arthritis and Bone Infections?
+  A: Less specific alone
+- Q: What is MRI of Infectious Arthritis and Bone Infections?
+  A: Gold standard — marrow oedema, cortical breach
+- Q: What is Organism of Infectious Arthritis and Bone Infections?
+  A: Mycobacterium tuberculosis (classic); S. aureus, Brucella
+- Q: What is Site of Infectious Arthritis and Bone Infections?
+  A: Thoracic > Lumbar (paradiscal)
+- Q: What is Pattern of Infectious Arthritis and Bone Infections?
+  A: Paradiscal destruction (two adjacent vertebrae + disc)
+- Q: What is Cold Abscess of Infectious Arthritis and Bone Infections?
+  A: Paravertebral, psoas, extended → no fever (unlike pyogenic)
+- Q: What is Gibbus Deformity of Infectious Arthritis and Bone Infections?
+  A: Kyphotic angulation from vertebral collapse
+- Q: What is Neurological of Infectious Arthritis and Bone Infections?
+  A: Cord compression (paraplegia) — emergency
+- Q: What is Imaging of Infectious Arthritis and Bone Infections?
+  A: MRI: marrow oedema, disc destruction, paravertebral abscess; CT: bony detail
+- Q: What is the investigation of choice for Infectious Arthritis and Bone Infections?
+  A: Image-guided biopsy (AFB, culture, PCR/Xpert MTB/RIF), blood for IGRA
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: Standard 4-drug TB regimen (RHZE ×2mo → RH ×4mo) — 9-12 months total; surgery if cord compression/deformity
+- Q: What is Sequestrum of Infectious Arthritis and Bone Infections?
+  A: Sequestrectomy (remove dead bone)
+- Q: What is Abscess of Infectious Arthritis and Bone Infections?
+  A: Incision & drainage
+- Q: How is Infectious Arthritis and Bone Infections classified?
+  A: Resection + reconstruction (Ilizarov, vascularised graft)
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: Debridement + antibiotics
+- Q: What is Spinal cord compression (Pott's) of Infectious Arthritis and Bone Infections?
+  A: Urgent decompression ± stabilisation
+- Q: What is Limb-threatening ischaemia of Infectious Arthritis and Bone Infections?
+  A: Amputation (last resort)
+- Q: What is Routes of Infectious Arthritis and Bone Infections?
+  A: Haematogenous (kids, metaphysis), Contiguous (diabetic foot, post-op), Direct inoculation
+- Q: What is S. aureus of Infectious Arthritis and Bone Infections?
+  A: #1 overall (acute haematogenous, contiguous, prosthetic)
+- Q: What is Sickle Cell of Infectious Arthritis and Bone Infections?
+  A: Salmonella > S. aureus — classic association
+- Q: What is Pott's Spine (TB) of Infectious Arthritis and Bone Infections?
+  A: Thoracic > lumbar, paradiscal, cold abscess, gibbus, cord compression
+- Q: What is Imaging of Infectious Arthritis and Bone Infections?
+  A: X-ray late (2wk); MRI gold standard (marrow oedema, abscess); Bone scan sensitive not specific
+- Q: What is Diabetic Foot of Infectious Arthritis and Bone Infections?
+  A: Probe-to-bone test (high PPV); Wagner grade 3 = osteomyelitis; MRI definitive
+- Q: What is Cierny-Mader of Infectious Arthritis and Bone Infections?
+  A: Type I-IV (anatomic) + Host A/B/C (physiology) — guides surgery
+- Q: What is Antibiotic Duration of Infectious Arthritis and Bone Infections?
+  A: Acute: IV 2wk → PO 4-6wk total; Chronic: longer + surgery; TB: 9-12mo
+- Q: What is Sequestrum/Involucrum of Infectious Arthritis and Bone Infections?
+  A: Chronic: dead bone (sequestrum) + living shell (involucrum) + cloaca (sinus)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Infectious Arthritis and Bone Infections?**
+   A. **Bone infection — acute vs chronic, haematogenous vs contiguous, diabetic foot overlap.**
+   B. An unrelated condition not matching the clinical picture of Infectious Arthritis and Bone Infections
+   C. A complication seen late in the disease course of Infectious Arthritis and Bone Infections
+   D. A condition that mimics Infectious Arthritis and Bone Infections but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Infectious Arthritis and Bone Infections presents with: By Route — Haematogenous (bacteraemia → bone metaphysis), Contiguous spread (adjacent infection/trauma/surgery), Direct inoculation (trauma, surgery); By Duration — Acute (<2 weeks), Subacute (2-6 weeks), Chronic (>6 weeks — sequestrum, involucrum, draining sinus); By Cierny-Mader — Anatomic Type: Medullary, Superficial, Localised, Diffuse + Host Class: A (healthy), B (compromised), C (treatment worse than disease). What is the most likely diagnosis?
+   A. **Infectious Arthritis and Bone Infections**
+   B. A condition that mimics Infectious Arthritis and Bone Infections but is not the same entity
+   C. A complication of Infectious Arthritis and Bone Infections rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Infectious Arthritis and Bone Infections
+

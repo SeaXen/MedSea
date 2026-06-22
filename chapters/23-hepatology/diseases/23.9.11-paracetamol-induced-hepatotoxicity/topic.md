@@ -258,3 +258,36 @@ mindmap
 - [[Acute Liver Failure/N-acetylcysteine therapy|NAC Therapy]]
 - [[Acute Liver Failure/Clinical assessment and prognosis|ALF Assessment]]
 - [[Drug-Induced Liver Injury/Paracetamol|DILI Paracetamol]]
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: | Chronic Alcohol Use | CYP2E1 induction → ↑ NAPQI; ↓ Glutathione |
+- Q: What is the mechanism of Acute Liver Failure?
+  A: CYP2E1 → NAPQI → Glutathione depletion → Centrilobular necrosis
+- Q: What causes Acute Liver Failure?
+  A: Alcohol, Fasting, Enzyme Inducers (Carbamazepine, Phenytoin, Rifampicin), Isoniazid, HIV
+- Q: What is Nomogram of Acute Liver Failure?
+  A: Single acute OD only; 150 mg/L at 4h (standard); 75 mg/L (high-risk)
+- Q: What is IV NAC of Acute Liver Failure?
+  A: 150mg/kg/1h → 50mg/kg/4h → 100mg/kg/16h = 300mg/kg/21h
+- Q: What is Staggered/Unknown Time of Acute Liver Failure?
+  A: Empiric NAC (nomogram invalid)
+- Q: What is KCC Paracetamol of Acute Liver Failure?
+  A: pH<7.30 OR (PT>100s + Cr>300 + HE III/IV)
+- Q: What is Anaphylactoid Reaction of Acute Liver Failure?
+  A: Slow infusion, antihistamine, don't stop NAC
+- Q: What are the clinical features of Acute Liver Failure?
+  A: Still give NAC (benefit up to 48h+)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **| Chronic Alcohol Use | CYP2E1 induction → ↑ NAPQI; ↓ Glutathione |**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+

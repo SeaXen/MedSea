@@ -259,3 +259,34 @@ mindmap
 - [[Viral Hepatitis/Hepatitis B HCC surveillance|HCC Surveillance]]
 - [[Viral Hepatitis/Hepatitis B reactivation|Reactivation]]
 - [[Viral Hepatitis/Hepatitis B pregnancy and vertical transmission|Pregnancy]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: | Drug | Dose | Resistance Barrier | Renal Adjustment | Key Advantages |
+- Q: What is Cirrhosis (compensated or decompensated) of Viral Hepatitis?
+  A: Any detectable HBV DNA
+- Q: What is Acute Liver Failure (HBV-related) of Viral Hepatitis?
+  A: Urgent NA therapy
+- Q: What is Extrahepatic manifestations of Viral Hepatitis?
+  A: Vasculitis, glomerulonephritis, polyarteritis nodosa
+- Q: What is Immunosuppression planned/ongoing of Viral Hepatitis?
+  A: Prophylaxis against reactivation
+- Q: What is Cirrhosis (compensated or decompensated) of Viral Hepatitis?
+  A: Any detectable HBV DNA
+- Q: What is Acute Liver Failure (HBV-related) of Viral Hepatitis?
+  A: Urgent NA therapy
+- Q: What is Extrahepatic manifestations of Viral Hepatitis?
+  A: Vasculitis, glomerulonephritis, polyarteritis nodosa
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **| Drug | Dose | Resistance Barrier | Renal Adjustment | Key Advantages |**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+

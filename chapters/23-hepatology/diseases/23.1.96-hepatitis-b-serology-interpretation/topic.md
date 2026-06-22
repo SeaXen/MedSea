@@ -262,3 +262,42 @@ mindmap
 - [[Viral Hepatitis/Hepatitis B treatment indications|HBV Treatment]]
 - [[Viral Hepatitis/Hepatitis B reactivation|HBV Reactivation]]
 - [[Viral Hepatitis/Hepatitis B pregnancy and vertical transmission|HBV Pregnancy]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: | # | Scenario | HBsAg | Anti-HBs | Anti-HBc Total | Anti-HBc IgM | HBeAg | Anti-HBe | HBV DNA | Clinical Meaning |
+- Q: What is 8 Scenarios of Viral Hepatitis?
+  A: Acute, Chronic, Resolved, Vaccinated, Window, Occult, Susceptible, Immune Escape
+- Q: What is Acute vs Chronic of Viral Hepatitis?
+  A: Anti-HBc IgM + = Acute; Anti-HBc IgM - + HBsAg + = Chronic
+- Q: What is Resolved vs Vaccinated of Viral Hepatitis?
+  A: Anti-HBc + = Resolved; Anti-HBc - = Vaccinated
+- Q: What is Window Period of Viral Hepatitis?
+  A: HBsAg -, Anti-HBc IgM +, Anti-HBs -; Only IgM positive
+- Q: What is Occult HBV of Viral Hepatitis?
+  A: HBsAg -, Anti-HBc +, HBV DNA + (liver); Reactivation risk with immunosuppression
+- Q: What is Immune Escape of Viral Hepatitis?
+  A: HBsAg false negative due to S-gene mutation; Check HBV DNA
+- Q: What is Reactivation Prophylaxis of Viral Hepatitis?
+  A: Anti-HBc + (resolved/occult) + Immunosuppression → Prophylactic NUC
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **| # | Scenario | HBsAg | Anti-HBs | Anti-HBc Total | Anti-HBc IgM | HBeAg | Anti-HBe | HBV DNA | Clinical Meaning |**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Viral Hepatitis presents with: A[HBV Serology Result] --> B{Scenario}; B -->|Acute HBV| C[Supportive; No NUC Unless ALF; Monitor for Chronicity]; B -->|Chronic HBV| D[Assess Phase: Immune Tolerant, Active, Inactive, Reactivation]. What is the most likely diagnosis?
+   A. **Viral Hepatitis**
+   B. A condition that mimics Viral Hepatitis but is not the same entity
+   C. A complication of Viral Hepatitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Viral Hepatitis
+

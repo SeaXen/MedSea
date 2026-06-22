@@ -150,3 +150,38 @@ flowchart TD
 | **F3** | Numerous Septa Without Cirrhosis |
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Chronic Liver Disease and Cirrhosis" — Ch 23: Hepatology.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Chronic Liver Disease and Cirrhosis?
+  A: FIB-4 = (Age × AST) / (Platelets × √ALT)
+- Q: What is the investigation of choice for Chronic Liver Disease and Cirrhosis?
+  A: FIB-4 1.3-2.67 + FibroScan Discordant/Unavailable
+- Q: What are the clinical features of Chronic Liver Disease and Cirrhosis?
+  A: Suspected Alternative Diagnosis (AIH, DILI, Wilson, Drug)
+- Q: What is Clinical Trial Enrollment of Chronic Liver Disease and Cirrhosis?
+  A: Histologic Endpoints Required
+- Q: How is Chronic Liver Disease and Cirrhosis managed?
+  A: Some Guidelines (Optional for DAA)
+- Q: What is Post-Transplant of Chronic Liver Disease and Cirrhosis?
+  A: Rejection, Recurrence, Protocol Biopsies
+- Q: What is the investigation of choice for Chronic Liver Disease and Cirrhosis?
+  A: FIB-4 1.3-2.67 + FibroScan Discordant/Unavailable
+- Q: What are the clinical features of Chronic Liver Disease and Cirrhosis?
+  A: Suspected Alternative Diagnosis (AIH, DILI, Wilson, Drug)
+- Q: What is Clinical Trial Enrollment of Chronic Liver Disease and Cirrhosis?
+  A: Histologic Endpoints Required
+- Q: How is Chronic Liver Disease and Cirrhosis managed?
+  A: Some Guidelines (Optional for DAA)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Chronic Liver Disease and Cirrhosis?**
+   A. **FIB-4 = (Age × AST) / (Platelets × √ALT)**
+   B. An unrelated condition not matching the clinical picture of Chronic Liver Disease and Cirrhosis
+   C. A complication seen late in the disease course of Chronic Liver Disease and Cirrhosis
+   D. A condition that mimics Chronic Liver Disease and Cirrhosis but has a different underlying cause
+

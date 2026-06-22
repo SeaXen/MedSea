@@ -349,3 +349,60 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematology Investigations → Flow Cytometry
+- Q: What is Sensitivity of Hematology?
+  A: 10⁻⁴ to 10⁻⁵ (1 in 10,000 to 100,000)
+- Q: What is Cells Acquired of Hematology?
+  A: ≥1,000,000 events (≥500,000 target cells)
+- Q: What is Controls of Hematology?
+  A: Normal BM, FMO, Isotype
+- Q: What is Blast Gate of Hematology?
+  A: CD34+CD38+, CD34+CD38- (LSC), CD34+CD117+
+- Q: What is Reporting of Hematology?
+  A: % Blasts of Total Nucleated Cells, % Blasts of CD34+
+- Q: What is Sensitivity of Hematology?
+  A: 10⁻⁴ to 10⁻⁵ (1 in 10,000 to 100,000)
+- Q: What is Cells Acquired of Hematology?
+  A: ≥1,000,000 events (≥500,000 target cells)
+- Q: What is Controls of Hematology?
+  A: Normal BM, FMO, Isotype
+- Q: What is Blast Gate of Hematology?
+  A: CD34+CD38+, CD34+CD38- (LSC), CD34+CD117+
+- Q: What is Reporting of Hematology?
+  A: % Blasts of Total Nucleated Cells, % Blasts of CD34+
+- Q: What is Principles of Hematology?
+  A: FSC = Size, SSC = Granularity, Fluorescence = Antigen Density
+- Q: What is Fluorochromes of Hematology?
+  A: PE/APC/BV = Bright for Low-density antigens (CD34, CD117); FITC/PerCP for High-density (CD45, CD3)
+- Q: What is Gating of Hematology?
+  A: FSC/SSC → Singlets → Live → CD45+ → Lineage → Maturation
+- Q: What is AML Panel of Hematology?
+  A: CD45, CD34, CD117, HLA-DR, CD13, CD33, MPO, CD11b (+ CD19/CD3 for MPAL)
+- Q: What is ALL Panel of Hematology?
+  A: CD45, CD34, CD19, CD10, TdT, CD3, CD7
+- Q: What is CLL of Hematology?
+  A: CD5+, CD23+, CD20 dim, sIg dim, CD10-, FMC7-, CD38/ZAP-70 prognostic
+- Q: What is PNH of Hematology?
+  A: CD55/CD59- (GPI-anchor), FLAER, Granulocytes > RBCs
+- Q: What is MPAL of Hematology?
+  A: Both Myeloid (MPO+) AND Lymphoid (CD19+/CD3+) criteria
+- Q: What is MRD of Hematology?
+  A: Sensitivity 10⁻⁴ - 10⁻⁵, ≥1M events, LAIP (Leukaemia-Associated Immunophenotype)
+- Q: What is QC of Hematology?
+  A: Daily Calibration, Compensation, Isotype/FMO Controls
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematology Investigations → Flow Cytometry**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

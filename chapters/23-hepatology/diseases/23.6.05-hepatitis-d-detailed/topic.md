@@ -150,3 +150,94 @@ flowchart TD
 
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (34 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: | Transmission | Percutaneous, Sexual, Vertical (Same as HBV) |
+- Q: How is Viral Hepatitis classified?
+  A: Defective RNA Virus (Delta Agent)
+- Q: What is Dependence of Viral Hepatitis?
+  A: Requires HBsAg from HBV for Assembly/Propagation
+- Q: What is Genome of Viral Hepatitis?
+  A: Circular, Single-Stranded RNA (~1.7 kb)
+- Q: What is Protein of Viral Hepatitis?
+  A: HDAg (Small & Large Delta Antigen)
+- Q: What is Envelope of Viral Hepatitis?
+  A: HBsAg (Provided by HBV)
+- Q: What is the mechanism of Viral Hepatitis?
+  A: Simultaneous Acquisition of HBV + HDV
+- Q: What is Clinical of Viral Hepatitis?
+  A: Acute Hepatitis (Often Biphasic)
+- Q: What is the prognosis of Viral Hepatitis?
+  A: 90% Clear Both Viruses; <5% Chronic HDV
+- Q: What is Severity of Viral Hepatitis?
+  A: More Severe Than HBV Alone
+- Q: What is HBsAg of Viral Hepatitis?
+  A: Cleared with HBV
+- Q: What is the mechanism of Viral Hepatitis?
+  A: HDV Superinfects Chronic HBV Carrier
+- Q: What is Clinical of Viral Hepatitis?
+  A: Severe Acute Hepatitis (Often Mistaken for HBV Flare)
+- Q: What is the prognosis of Viral Hepatitis?
+  A: 90% Progress to Chronic HDV
+- Q: What is Progression of Viral Hepatitis?
+  A: Accelerated Fibrosis → Cirrhosis (2-3x Faster)
+- Q: What is HBsAg of Viral Hepatitis?
+  A: Persists (Chronic HBV)
+- Q: What is the mechanism of Viral Hepatitis?
+  A: NTCP (Sodium Taurocholate Cotransporting Polypeptide) Inhibitor → Blocks HBV/HDV Entry
+- Q: What is the dose of Viral Hepatitis?
+  A: 2 mg SC Daily
+- Q: What is Duration of Viral Hepatitis?
+  A: 48 Weeks (Longer if Response)
+- Q: What is Combination of Viral Hepatitis?
+  A: With PEG-IFN (Synergistic) — Under Investigation
+- Q: What is Response of Viral Hepatitis?
+  A: HDV RNA Decline ≥2 log at 24w; HBV DNA Suppression Also
+- Q: What is the mechanism of Viral Hepatitis?
+  A: Simultaneous Acquisition of HBV + HDV
+- Q: What is Clinical of Viral Hepatitis?
+  A: Acute Hepatitis (Often Biphasic)
+- Q: What is the prognosis of Viral Hepatitis?
+  A: 90% Clear Both Viruses; <5% Chronic HDV
+- Q: What is Severity of Viral Hepatitis?
+  A: More Severe Than HBV Alone
+- Q: What is the mechanism of Viral Hepatitis?
+  A: HDV Superinfects Chronic HBV Carrier
+- Q: What is Clinical of Viral Hepatitis?
+  A: Severe Acute Hepatitis (Often Mistaken for HBV Flare)
+- Q: What is the prognosis of Viral Hepatitis?
+  A: 90% Progress to Chronic HDV
+- Q: What is Progression of Viral Hepatitis?
+  A: Accelerated Fibrosis → Cirrhosis (2-3x Faster)
+- Q: What is HBsAg of Viral Hepatitis?
+  A: Persists (Chronic HBV)
+- Q: What is the mechanism of Viral Hepatitis?
+  A: NTCP (Sodium Taurocholate Cotransporting Polypeptide) Inhibitor → Blocks HBV/HDV Entry
+- Q: What is the dose of Viral Hepatitis?
+  A: 2 mg SC Daily
+- Q: What is Duration of Viral Hepatitis?
+  A: 48 Weeks (Longer if Response)
+- Q: What is Combination of Viral Hepatitis?
+  A: With PEG-IFN (Synergistic) — Under Investigation
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **| Transmission | Percutaneous, Sexual, Vertical (Same as HBV) |**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Viral Hepatitis presents with: Acute Co-infection — Biphasic ALT Rise; Symptoms Like Acute HBV; Self-Limited; Superinfection — Severe Acute on Chronic; Rapid Progression to Cirrhosis; Chronic HDV — Accelerated Fibrosis; Early Decompensation; HCC Risk ↑. What is the most likely diagnosis?
+   A. **Viral Hepatitis**
+   B. A condition that mimics Viral Hepatitis but is not the same entity
+   C. A complication of Viral Hepatitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Viral Hepatitis
+

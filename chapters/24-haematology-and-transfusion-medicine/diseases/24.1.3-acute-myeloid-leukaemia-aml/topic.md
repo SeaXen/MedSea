@@ -387,3 +387,106 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (40 generated)
+
+- Q: What is BM Aspirate of Hematology?
+  A: Blast %, morphology, Auer rods, flow cytometry
+- Q: What is BM Biopsy of Hematology?
+  A: Cellularity, fibrosis, infiltration pattern
+- Q: What is Flow Cytometry of Hematology?
+  A: Lineage assignment (MPO for myeloid), CD34, CD117, aberrant markers
+- Q: How is Hematology classified?
+  A: Mandatory: t(8;21), inv(16), t(15;17), -5, -7, complex, monosomal
+- Q: What is NGS Molecular Panel of Hematology?
+  A: Mandatory: FLT3-ITD/TKD (allelic ratio), NPM1, CEBPA, IDH1/2, DNMT3A, TP53, KIT, WT1, RAS, splicing factors
+- Q: What is FISH of Hematology?
+  A: Rapid detection of CBF fusions, PML::RARA, KMT2A
+- Q: What is LP + CSF Flow of Hematology?
+  A: If WBC >50×10⁹/L or neurological symptoms
+- Q: What is Tumour Lysis Syndrome (TLS) of Hematology?
+  A: Allopurinol (prophylaxis), Rasburicase (high risk: WBC>50, high LDH, renal impairment); Hydration 3L/day, monitor K/PO₄/UA/Ca
+- Q: What is Febrile Neutropenia of Hematology?
+  A: Piperacillin-tazobactam or Meropenem empirical; add Vancomycin if catheter/skin/hemodynamic instability; Posaconazole prophylaxis (mould)
+- Q: What is Bleeding of Hematology?
+  A: Platelet threshold <10 prophylactic; <20 if fever/sepsis; <50 for procedures; Irradiated, HLA-matched if refractory
+- Q: What is DIC of Hematology?
+  A: Common in APML; treat underlying + replace fibrinogen/cryo/platelets
+- Q: What is ATRA Syndrome (APML) of Hematology?
+  A: Dex 10mg BD if WBC>10 or rising; pulmonary infiltrates, fever, weight gain, hypotension
+- Q: What is Differentiation Syndrome (IDH inhibitors, Venetoclax) of Hematology?
+  A: Similar to ATRA syndrome; steroids
+- Q: What is CNS Leukaemia of Hematology?
+  A: Prophylaxis: Intrathecal MTX/Ara-C (induction/consolidation); High-dose systemic (HiDAC)
+- Q: What is BM Aspirate of Hematology?
+  A: Blast %, morphology, Auer rods, flow cytometry
+- Q: What is BM Biopsy of Hematology?
+  A: Cellularity, fibrosis, infiltration pattern
+- Q: What is Flow Cytometry of Hematology?
+  A: Lineage assignment (MPO for myeloid), CD34, CD117, aberrant markers
+- Q: How is Hematology classified?
+  A: Mandatory: t(8;21), inv(16), t(15;17), -5, -7, complex, monosomal
+- Q: What is NGS Molecular Panel of Hematology?
+  A: Mandatory: FLT3-ITD/TKD (allelic ratio), NPM1, CEBPA, IDH1/2, DNMT3A, TP53, KIT, WT1, RAS, splicing factors
+- Q: What is FISH of Hematology?
+  A: Rapid detection of CBF fusions, PML::RARA, KMT2A
+- Q: What is LP + CSF Flow of Hematology?
+  A: If WBC >50×10⁹/L or neurological symptoms
+- Q: What is Tumour Lysis Syndrome (TLS) of Hematology?
+  A: Allopurinol (prophylaxis), Rasburicase (high risk: WBC>50, high LDH, renal impairment); Hydration 3L/day, monitor K/PO₄/UA/Ca
+- Q: What is Febrile Neutropenia of Hematology?
+  A: Piperacillin-tazobactam or Meropenem empirical; add Vancomycin if catheter/skin/hemodynamic instability; Posaconazole prophylaxis (mould)
+- Q: What is Bleeding of Hematology?
+  A: Platelet threshold <10 prophylactic; <20 if fever/sepsis; <50 for procedures; Irradiated, HLA-matched if refractory
+- Q: What is DIC of Hematology?
+  A: Common in APML; treat underlying + replace fibrinogen/cryo/platelets
+- Q: What is ATRA Syndrome (APML) of Hematology?
+  A: Dex 10mg BD if WBC>10 or rising; pulmonary infiltrates, fever, weight gain, hypotension
+- Q: What is Differentiation Syndrome (IDH inhibitors, Venetoclax) of Hematology?
+  A: Similar to ATRA syndrome; steroids
+- Q: What is CNS Leukaemia of Hematology?
+  A: Prophylaxis: Intrathecal MTX/Ara-C (induction/consolidation); High-dose systemic (HiDAC)
+- Q: What is the definition of Hematology?
+  A: ≥20% blasts (except defining genetic abnormalities: t(8;21), inv16, t(15;17), t(9;11), NPM1mut, CEBPAbiallelic)
+- Q: What is Induction of Hematology?
+  A: "7+3": Ara-C 100-200 mg/m² CI ×7d + Dauno 90 mg/m² ×3d (if <60y)
+- Q: What is FLT3mut of Hematology?
+  A: Add Midostaurin days 8-21 (RATIFY)
+- Q: What is CD33+ of Hematology?
+  A: Add Gemtuzumab fractionated days 1,4,7
+- Q: What is Unfit/≥75y of Hematology?
+  A: Venetoclax + Azacitidine (VIALE-A)
+- Q: What is t-AML/AML-MRC of Hematology?
+  A: CPX-351 (liposomal 5:1)
+- Q: What is APML of Hematology?
+  A: ATRA + ATO (not 7+3); Dex if WBC>10; monitor DIC
+- Q: What is Risk Stratification of Hematology?
+  A: ELN 2022: Favourable (t(8;21), inv16, NPM1mut/FLT3-ITDlow, CEBPAbiallelic), Adverse (TP53, complex/monosomy, -5/-7)
+- Q: What is Consolidation of Hematology?
+  A: Favourable: HiDAC ×3-4; Intermediate/Adverse: Allo-HSCT in CR1
+- Q: What is MRD of Hematology?
+  A: Flow (10⁻⁴), NGS (10⁻⁵), RT-qPCR (NPM1, CBF)
+- Q: What is TLS Prophylaxis of Hematology?
+  A: Allopurinol (all); Rasburicase if high risk (WBC>50, high LDH)
+- Q: What is Febrile Neutropenia of Hematology?
+  A: Pip-Tazo or Meropenem empirical; Posaconazole mould prophylaxis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Acute Leukaemias → AML**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Category — Defining Features; AML with defining genetic abnormalities — Specific recurrent translocations/mutations; AML with myelodysplasia-related changes (AML-MRC) — Prior MDS, MDS cytogenetics, multilineage dysplasia. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

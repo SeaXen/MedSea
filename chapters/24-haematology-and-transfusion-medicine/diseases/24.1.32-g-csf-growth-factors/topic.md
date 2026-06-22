@@ -304,3 +304,68 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Supportive Care in Haematology → Growth Factors
+- Q: What is Primary Prophylaxis (Febrile Neutropenia Risk >20%) of Hematology?
+  A: Pegfilgrastim 6mg SC once per cycle (Day 2-3 post-chemo) OR Filgrastim 5 µg/kg/day SC from Day 2 until ANC >10×10⁹/L
+- Q: What is Secondary Prophylaxis (Prior FN) of Hematology?
+  A: Same as Primary
+- Q: What is Stem Cell Mobilisation (Autologous HSCT) of Hematology?
+  A: Filgrastim 10 µg/kg/day SC × 4-5 days ± Plerixafor (If Poor Mobiliser)
+- Q: What is Stem Cell Mobilisation (Allogeneic Donor) of Hematology?
+  A: Filgrastim 10 µg/kg/day SC × 4-5 days
+- Q: What is Congenital Neutropenia (Kostmann) of Hematology?
+  A: Filgrastim 5-10 µg/kg/day SC Long-term
+- Q: What is Aplastic Anaemia of Hematology?
+  A: Not Routine (May Stimulate Clones); Consider If Severe Infection
+- Q: What is Primary Prophylaxis (Febrile Neutropenia Risk >20%) of Hematology?
+  A: Pegfilgrastim 6mg SC once per cycle (Day 2-3 post-chemo) OR Filgrastim 5 µg/kg/day SC from Day 2 until ANC >10×10⁹/L
+- Q: What is Secondary Prophylaxis (Prior FN) of Hematology?
+  A: Same as Primary
+- Q: What is Stem Cell Mobilisation (Autologous HSCT) of Hematology?
+  A: Filgrastim 10 µg/kg/day SC × 4-5 days ± Plerixafor (If Poor Mobiliser)
+- Q: What is Stem Cell Mobilisation (Allogeneic Donor) of Hematology?
+  A: Filgrastim 10 µg/kg/day SC × 4-5 days
+- Q: What is Congenital Neutropenia (Kostmann) of Hematology?
+  A: Filgrastim 5-10 µg/kg/day SC Long-term
+- Q: What is G-CSF (Filgrastim) of Hematology?
+  A: Daily SC; Pegfilgrastim = Single Dose/Cycle; Indications: Chemo FN Prophylaxis, HSCT Mobilisation, Congenital Neutropenia
+- Q: What is Pegfilgrastim Timing of Hematology?
+  A: 24-72h POST Chemo (NOT same day)
+- Q: What are the side effects of Hematology?
+  A: Bone Pain (Loratadine helps), Splenic Rupture (Rare, LUQ Pain → Emergency)
+- Q: What is EPO/Darbepoetin of Hematology?
+  A: Target Hb 10-11 g/dL; Max 11.5 g/dL; Iron First (Ferritin >100, TSAT >20%)
+- Q: What is ESA Risks of Hematology?
+  A: Thrombosis, HTN, PRCA (Anti-EPO Ab), Tumour Progression
+- Q: What is TPO-RA (Eltrombopag/Romiplostim) of Hematology?
+  A: ITP 2nd Line, AA Add-on, HCV Thrombocytopenia; Target Plt 50-200
+- Q: What is Eltrombopag of Hematology?
+  A: Oral, Empty Stomach, LFT Monthly, Cataract Annual, Fibrosis Risk
+- Q: What is Romiplostim of Hematology?
+  A: SC Weekly, No Food Restriction, No LFT Monitoring, Fibrosis Risk
+- Q: What is Plerixafor of Hematology?
+  A: CXCR4 Antagonist + G-CSF for Poor Mobilisers
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Supportive Care in Haematology → Growth Factors**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: CBC (ANC) — Daily during mobilisation; q1-2wk during prophylaxis; Bone Pain — Common (70-80%); Splenic Rupture — Rare (<0.1%). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

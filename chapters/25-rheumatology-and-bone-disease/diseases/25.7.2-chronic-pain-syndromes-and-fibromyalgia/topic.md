@@ -494,3 +494,68 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[Common regional musculoskeletal problems]] · [[Drugs in rheumatology]]
+---
+
+> Auto-generated study sections for "Osteoarthritis and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (21 generated)
+
+- Q: What is Old name of Osteoarthritis and Related Disorders?
+  A: Reflex sympathetic dystrophy (type 1), causalgia (type 2)
+- Q: What is Trigger of Osteoarthritis and Related Disorders?
+  A: Trauma (fracture, sprain, surgery) — sometimes minor or no clear injury
+- Q: What is the pathogenesis of Osteoarthritis and Related Disorders?
+  A: Peripheral + central sensitisation, neurogenic inflammation, sympathetic dysregulation, small fibre neuropathy
+- Q: How is Osteoarthritis and Related Disorders classified?
+  A: No identifiable nerve lesion (most common)
+- Q: What is Old name of Osteoarthritis and Related Disorders?
+  A: Reflex sympathetic dystrophy (type 1), causalgia (type 2)
+- Q: What is Trigger of Osteoarthritis and Related Disorders?
+  A: Trauma (fracture, sprain, surgery) — sometimes minor or no clear injury
+- Q: What is the pathogenesis of Osteoarthritis and Related Disorders?
+  A: Peripheral + central sensitisation, neurogenic inflammation, sympathetic dysregulation, small fibre neuropathy
+- Q: How is Osteoarthritis and Related Disorders classified?
+  A: No identifiable nerve lesion (most common)
+- Q: What is the mechanism of Osteoarthritis and Related Disorders?
+  A: Central sensitisation = ↑ facilitation (NMDA wind-up) + ↓ inhibition (5-HT/NA, opioid)
+- Q: What is the definition of Osteoarthritis and Related Disorders?
+  A: Widespread pain + fatigue + cognitive + sleep symptoms ≥3 months; no tissue damage
+- Q: What is ACR 2016 criteria of Osteoarthritis and Related Disorders?
+  A: WPI ≥7 + SSS ≥5, OR WPI 4-6 + SSS ≥9; no tender points; self-report
+- Q: What is SSS of Osteoarthritis and Related Disorders?
+  A: Fatigue + unrefreshing sleep + cognitive symptoms (0-3 each) + somatic count
+- Q: What is CWP of Osteoarthritis and Related Disorders?
+  A: Pain in ≥4/5 body regions ≥3 months (axial + 3 quadrants); same spectrum as FM
+- Q: What is Differential of Osteoarthritis and Related Disorders?
+  A: RA/AS/PsA, PMR, hypothyroid, hyperparathyroidism, osteomalacia, myositis, malignancy, depression
+- Q: What is the investigation of choice for Osteoarthritis and Related Disorders?
+  A: ESR, CRP, FBC, TSH, vitamin D, Ca, PO4, ALP, CK, LFT, glucose, ferritin
+- Q: How is Osteoarthritis and Related Disorders managed?
+  A: Education + graded aerobic exercise; avoid opioids and steroids
+- Q: What is Drugs of Osteoarthritis and Related Disorders?
+  A: Duloxetine, pregabalin, amitriptyline (low-dose); tramadol last-line
+- Q: What is Avoid of Osteoarthritis and Related Disorders?
+  A: Opioids, steroids, benzodiazepines, antipsychotics
+- Q: What is CRPS of Osteoarthritis and Related Disorders?
+  A: Pain disproportionate to injury; Budapest criteria (4 categories); early rehab + vitamin C 500 mg (prevention post-fracture)
+- Q: What is Central sensitivity syndromes of Osteoarthritis and Related Disorders?
+  A: FM + IBS + migraine + TMD + CFS + IC = overlapping central mechanisms
+- Q: What is Comorbid RA of Osteoarthritis and Related Disorders?
+  A: 30% of RA patients have FM; use CDAI/SDAI not DAS28-Pt global
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Osteoarthritis and Related Disorders?**
+   A. **# Chronic Pain Syndromes and Fibromyalgia — Integrated Overview**
+   B. An unrelated condition not matching the clinical picture of Osteoarthritis and Related Disorders
+   C. A complication seen late in the disease course of Osteoarthritis and Related Disorders
+   D. A condition that mimics Osteoarthritis and Related Disorders but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Osteoarthritis and Related Disorders presents with: Definition — Chronic widespread pain + fatigue + sleep/cognitive dysfunction; no tissue damage; Prevalence — 2-8% of adults; F:M 3:1; Age — 30-60y peak. What is the most likely diagnosis?
+   A. **Osteoarthritis and Related Disorders**
+   B. A condition that mimics Osteoarthritis and Related Disorders but is not the same entity
+   C. A complication of Osteoarthritis and Related Disorders rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Osteoarthritis and Related Disorders
+

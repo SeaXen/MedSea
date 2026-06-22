@@ -307,3 +307,90 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (32 generated)
+
+- Q: What is SPEP + Immunofixation of Hematology?
+  A: Identify & quantify M-protein (IgG, IgA, IgM, κ, λ)
+- Q: What is sFLC (κ/λ ratio) of Hematology?
+  A: Risk stratification; detect light chain MGUS
+- Q: What is CBC, Creatinine, Ca of Hematology?
+  A: Exclude CRAB (Anaemia, Renal, Hypercalcaemia)
+- Q: What is β2-Microglobulin, Albumin of Hematology?
+  A: ISS staging (if progression)
+- Q: What is BM Biopsy of Hematology?
+  A: Only if: M-spike ≥15 g/L, Non-IgG, Abnormal FLC ratio, Unexplained anaemia/renal/bone
+- Q: What is M-protein of Hematology?
+  A: ≥25% increase from baseline → Repeat BM
+- Q: What is sFLC Ratio of Hematology?
+  A: Becomes abnormal (<0.26 or >1.65) → Repeat BM
+- Q: What is Haemoglobin of Hematology?
+  A: ↓ >2 g/dL below baseline → Exclude progression
+- Q: What is Creatinine of Hematology?
+  A: ↑ >30% or >177 μmol/L → Exclude myeloma kidney/amyloidosis
+- Q: What is Calcium of Hematology?
+  A: >2.75 mmol/L → Exclude myeloma
+- Q: What is Bone Pain of Hematology?
+  A: New onset → Imaging (WBLD-CT/PET-CT)
+- Q: What is SPEP + Immunofixation of Hematology?
+  A: Identify & quantify M-protein (IgG, IgA, IgM, κ, λ)
+- Q: What is sFLC (κ/λ ratio) of Hematology?
+  A: Risk stratification; detect light chain MGUS
+- Q: What is CBC, Creatinine, Ca of Hematology?
+  A: Exclude CRAB (Anaemia, Renal, Hypercalcaemia)
+- Q: What is β2-Microglobulin, Albumin of Hematology?
+  A: ISS staging (if progression)
+- Q: What is BM Biopsy of Hematology?
+  A: Only if: M-spike ≥15 g/L, Non-IgG, Abnormal FLC ratio, Unexplained anaemia/renal/bone
+- Q: What is M-protein of Hematology?
+  A: ≥25% increase from baseline → Repeat BM
+- Q: What is sFLC Ratio of Hematology?
+  A: Becomes abnormal (<0.26 or >1.65) → Repeat BM
+- Q: What is Haemoglobin of Hematology?
+  A: ↓ >2 g/dL below baseline → Exclude progression
+- Q: What is Creatinine of Hematology?
+  A: ↑ >30% or >177 μmol/L → Exclude myeloma kidney/amyloidosis
+- Q: What is Calcium of Hematology?
+  A: >2.75 mmol/L → Exclude myeloma
+- Q: What is Bone Pain of Hematology?
+  A: New onset → Imaging (WBLD-CT/PET-CT)
+- Q: What is the definition of Hematology?
+  A: M-protein <30 g/L + BMPC <10% + NO CRAB/SLiM
+- Q: What is Progression Risk of Hematology?
+  A: ~1%/yr to Myeloma/Lymphoma/WM/AL Amyloidosis
+- Q: What causes Hematology?
+  A: Non-IgG, M-spike ≥15 g/L, Abnormal FLC ratio (Mayo 3-factor model)
+- Q: What is Low Risk of Hematology?
+  A: IgG, <15 g/L, normal FLC ratio → 2% at 20yr
+- Q: What is High Risk of Hematology?
+  A: All 3 factors → 58% at 20yr
+- Q: What is Follow-up of Hematology?
+  A: Low risk: Annual; High risk: q6mo × 5yr
+- Q: What is BM Biopsy of Hematology?
+  A: Only if M-spike ≥15, Non-IgG, abnormal FLC, unexplained cytopenia/renal
+- Q: What is Action Threshold of Hematology?
+  A: M-spike ↑ ≥25%, FLC ratio abnormal, Hb↓, Cr↑, Ca↑, bone pain
+- Q: What is SMM vs MGUS of Hematology?
+  A: SMM = BMPC ≥10% OR M-spike ≥30, NO CRAB (10%/yr progression)
+- Q: What is MGRS of Hematology?
+  A: Renal damage from M-protein despite low tumour burden
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Plasma Cell Disorders → MGUS**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: M-protein — <30 g/L; BM Plasma Cells — <10%; Progression Risk — ~1%/yr. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

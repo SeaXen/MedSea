@@ -37,3 +37,20 @@ Related: [[../Maternal Medicine MOC|Maternal Medicine MOC]] · [[../Davidson Cha
 - Comprehensive coverage at true disease-level granularity
 - Each topic has 10 MCQs + 10 SBAs + 5+ Flashcards + Answer Key
 - See local navigation links in each file for related topics
+---
+
+> Auto-generated study sections for "Maternal Medicine" — Ch 30: Maternal Medicine.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Maternal Medicine?
+  A: Davidson alignment: Chapter 32: Maternal medicine — Labour, Delivery and Postpartum
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Maternal Medicine?**
+   A. **Davidson alignment: Chapter 32: Maternal medicine — Labour, Delivery and Postpartum**
+   B. An unrelated condition not matching the clinical picture of Maternal Medicine
+   C. A complication seen late in the disease course of Maternal Medicine
+   D. A condition that mimics Maternal Medicine but has a different underlying cause
+

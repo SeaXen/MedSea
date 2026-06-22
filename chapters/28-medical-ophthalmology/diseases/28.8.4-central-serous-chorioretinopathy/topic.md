@@ -598,3 +598,70 @@ D. Optic neuritis
 ## 25. Tags
 
 #medicine #davidson #ophthalmology #CSCR #macula #RPE #corticosteroid #micropsia #PDT #fcps #mrcp
+---
+
+> Auto-generated study sections for "08_Retina_and_Vitreous" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (22 generated)
+
+- Q: What is the definition of 08_Retina_and_Vitreous?
+  A: Related: [[AMD]], [[Diabetic Retinopathy]], [[Hypertensive Retinopathy]], [[Chronic Visual Loss]]
+- Q: What is Visual acuity of 08_Retina_and_Vitreous?
+  A: Often 6/9 to 6/24; may be near-normal in early/mild cases
+- Q: What is Amsler grid of 08_Retina_and_Vitreous?
+  A: Metamorphopsia (wavy lines), central relative scotoma
+- Q: What is Fundus (early) of 08_Retina_and_Vitreous?
+  A: Subtle macular elevation, loss of foveal reflex; may appear normal
+- Q: What is Fundus (later) of 08_Retina_and_Vitreous?
+  A: Well-circumscribed, dome-shaped serous detachment of neurosensory retina at macula
+- Q: What is OCT of 08_Retina_and_Vitreous?
+  A: Subretinal fluid (SRF), thickened choroid (pachychoroid), RPE irregularity
+- Q: What is FFA of 08_Retina_and_Vitreous?
+  A: "Smokestack" leak (10%) or "inkblot" leak (70-90%) at RPE defect
+- Q: What is ICGA of 08_Retina_and_Vitreous?
+  A: Choroidal hyperpermeability in mid-late phase
+- Q: What is OCT (essential) of 08_Retina_and_Vitreous?
+  A: Subretinal fluid; dome-shaped serous detachment; thickened choroid (pachychoroid); RPE irregularity; sometimes small pigment epithelial detachment (PED)
+- Q: What is Fundus fluorescein angiography (FFA) of 08_Retina_and_Vitreous?
+  A: Early hyperfluorescent spot; expands as "inkblot" (70-90%) or vertical "smokestack" (10%) leak in late phase
+- Q: What is Indocyanine green angiography (ICGA) of 08_Retina_and_Vitreous?
+  A: Choroidal hyperpermeability (mid-late phase); pachychoroid
+- Q: What is Autofluorescence of 08_Retina_and_Vitreous?
+  A: Hyperautofluorescent area of subretinal fluid
+- Q: What is OCT-angiography (OCTA) of 08_Retina_and_Vitreous?
+  A: Excludes CNV; may show choroidal neovascular network in chronic cases
+- Q: What is Visual fields of 08_Retina_and_Vitreous?
+  A: Central relative scotoma
+- Q: What is Visual acuity of 08_Retina_and_Vitreous?
+  A: Often 6/9 to 6/24; may be near-normal in early/mild cases
+- Q: What is Amsler grid of 08_Retina_and_Vitreous?
+  A: Metamorphopsia (wavy lines), central relative scotoma
+- Q: What is Fundus (early) of 08_Retina_and_Vitreous?
+  A: Subtle macular elevation, loss of foveal reflex; may appear normal
+- Q: What is Fundus (later) of 08_Retina_and_Vitreous?
+  A: Well-circumscribed, dome-shaped serous detachment of neurosensory retina at macula
+- Q: What is OCT of 08_Retina_and_Vitreous?
+  A: Subretinal fluid (SRF), thickened choroid (pachychoroid), RPE irregularity
+- Q: What is FFA of 08_Retina_and_Vitreous?
+  A: "Smokestack" leak (10%) or "inkblot" leak (70-90%) at RPE defect
+- Q: What is ICGA of 08_Retina_and_Vitreous?
+  A: Choroidal hyperpermeability in mid-late phase
+- Q: What is Autofluorescence of 08_Retina_and_Vitreous?
+  A: Hyperautofluorescent area of subretinal fluid
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 08_Retina_and_Vitreous?**
+   A. **Related: [[AMD]], [[Diabetic Retinopathy]], [[Hypertensive Retinopathy]], [[Chronic Visual Loss]]**
+   B. An unrelated condition not matching the clinical picture of 08_Retina_and_Vitreous
+   C. A complication seen late in the disease course of 08_Retina_and_Vitreous
+   D. A condition that mimics 08_Retina_and_Vitreous but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected 08_Retina_and_Vitreous presents with: Related: [[AMD]], [[Diabetic Retinopathy]], [[Hypertensive Retinopathy]], [[Chronic Visual Loss]]. What is the most likely diagnosis?
+   A. **08_Retina_and_Vitreous**
+   B. A condition that mimics 08_Retina_and_Vitreous but is not the same entity
+   C. A complication of 08_Retina_and_Vitreous rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as 08_Retina_and_Vitreous
+

@@ -281,3 +281,96 @@ mindmap
 - [[Biliary Tract Disease/Gallstone pancreatitis|Gallstone Pancreatitis]]
 - [[Biliary Tract Disease/Biliary strictures|Biliary Strictures]]
 - [[Biliary Tract Disease/Biliary tract tumours|Biliary Tumours]]
+---
+
+> Auto-generated study sections for "Biliary Tract Disease" — Ch 23: Hepatology.
+
+## Flashcards (39 generated)
+
+- Q: What is the definition of Biliary Tract Disease?
+  A: | Mechanism | Transient Cystic Duct Obstruction by Stone |
+- Q: What is the epidemiology of Biliary Tract Disease?
+  A: 10-15% Adults (Western Countries)
+- Q: What is Composition of Biliary Tract Disease?
+  A: Cholesterol (80%), Pigment (15%), Mixed (5%)
+- Q: What causes Biliary Tract Disease?
+  A: 4 F's: Female, Forty, Fertile, Fat; Also: Rapid Weight Loss, TPN, Crohn's, Haemolysis
+- Q: What are the clinical features of Biliary Tract Disease?
+  A: 80% of Gallstones
+- Q: What is Incidental Finding of Biliary Tract Disease?
+  A: US for Other Reason
+- Q: How is Biliary Tract Disease managed?
+  A: Observation — No Surgery
+- Q: What is Exception: Prophylactic Cholecystectomy of Biliary Tract Disease?
+  A: Porcelain GB, Giant Stones (>3cm), Sickle Cell, Transplant Candidates, Diabetics (Some Guidelines)
+- Q: What is the mechanism of Biliary Tract Disease?
+  A: Transient Cystic Duct Obstruction by Stone
+- Q: What is Pain of Biliary Tract Disease?
+  A: RUQ/Epigastric, Colicky, Radiates to Right Scapula/Shoulder
+- Q: What is Duration of Biliary Tract Disease?
+  A: 15 Min - 6 Hours (Resolves Spontaneously)
+- Q: What is Associated of Biliary Tract Disease?
+  A: Nausea, Vomiting, No Fever
+- Q: What is Exam of Biliary Tract Disease?
+  A: RUQ Tenderness, No Rebound/Guarding, Murphy's Sign Negative
+- Q: What is Labs of Biliary Tract Disease?
+  A: Normal (LFTs, Amylase, Lipase, WCC)
+- Q: What is Imaging of Biliary Tract Disease?
+  A: US: Stones in GB, No Wall Thickening, No Pericholecystic Fluid
+- Q: What is the mechanism of Biliary Tract Disease?
+  A: Stone Migration from GB → CBD
+- Q: What are the clinical features of Biliary Tract Disease?
+  A: Intermittent Jaundice, RUQ Pain, Cholangitis, Pancreatitis
+- Q: What is the investigation of choice for Biliary Tract Disease?
+  A: ASGE Risk Stratification (High/Intermediate/Low Risk)
+- Q: What is High Risk of Biliary Tract Disease?
+  A: CBD Stone on US, CBD >10mm + Bil >4mg/dL, Cholangitis, Pancreatitis
+- Q: What is Intermediate of Biliary Tract Disease?
+  A: Bil 1.8-4mg/dL + CBD 6-10mm
+- Q: What is Triad (Charcot) of Biliary Tract Disease?
+  A: Fever + RUQ Pain + Jaundice
+- Q: What is Pentad (Reynolds) of Biliary Tract Disease?
+  A: Charcot + Shock + AMS
+- Q: What is TG18 Severity of Biliary Tract Disease?
+  A: Grade I (Mild), II (Moderate), III (Severe/Organ Failure)
+- Q: What is Organisms of Biliary Tract Disease?
+  A: E. coli, Klebsiella, Enterococcus
+- Q: What is the mechanism of Biliary Tract Disease?
+  A: Transient Ampullary Obstruction → Pancreatic Duct Obstruction
+- Q: How is Biliary Tract Disease classified?
+  A: Mild / Moderately Severe / Severe
+- Q: What is ERCP Timing of Biliary Tract Disease?
+  A: Cholangitis: <24h; Predicted Severe: <48-72h; Mild: No Routine ERCP
+- Q: What is Cholecystectomy of Biliary Tract Disease?
+  A: Same Admission (Mild/Moderate); Delayed 6-12w (Severe)
+- Q: What is the mechanism of Biliary Tract Disease?
+  A: Stone Migration from GB → CBD
+- Q: What are the clinical features of Biliary Tract Disease?
+  A: Intermittent Jaundice, RUQ Pain, Cholangitis, Pancreatitis
+- Q: What is the investigation of choice for Biliary Tract Disease?
+  A: ASGE Risk Stratification (High/Intermediate/Low Risk)
+- Q: What is High Risk of Biliary Tract Disease?
+  A: CBD Stone on US, CBD >10mm + Bil >4mg/dL, Cholangitis, Pancreatitis
+- Q: What is Triad (Charcot) of Biliary Tract Disease?
+  A: Fever + RUQ Pain + Jaundice
+- Q: What is Pentad (Reynolds) of Biliary Tract Disease?
+  A: Charcot + Shock + AMS
+- Q: What is TG18 Severity of Biliary Tract Disease?
+  A: Grade I (Mild), II (Moderate), III (Severe/Organ Failure)
+- Q: What is the mechanism of Biliary Tract Disease?
+  A: Transient Ampullary Obstruction → Pancreatic Duct Obstruction
+- Q: How is Biliary Tract Disease classified?
+  A: Mild / Moderately Severe / Severe
+- Q: What is ERCP Timing of Biliary Tract Disease?
+  A: Cholangitis: <24h; Predicted Severe: <48-72h; Mild: No Routine ERCP
+- Q: What is Cholecystectomy of Biliary Tract Disease?
+  A: Same Admission (Mild/Moderate); Delayed 6-12w (Severe)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Biliary Tract Disease?**
+   A. **| Mechanism | Transient Cystic Duct Obstruction by Stone |**
+   B. An unrelated condition not matching the clinical picture of Biliary Tract Disease
+   C. A complication seen late in the disease course of Biliary Tract Disease
+   D. A condition that mimics Biliary Tract Disease but has a different underlying cause
+

@@ -321,3 +321,82 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (28 generated)
+
+- Q: What is High Altitude of Hematology?
+  A: ↓ pO₂ → ↑ EPO
+- Q: What is COPD of Hematology?
+  A: Chronic hypoxaemia → ↑ EPO
+- Q: What is Cyanotic Congenital Heart Disease of Hematology?
+  A: Right-to-left shunt → Hypoxaemia
+- Q: What is Obstructive Sleep Apnoea (OSA) of Hematology?
+  A: Intermittent nocturnal hypoxia → ↑ EPO
+- Q: What is Heavy Smoking of Hematology?
+  A: CO binds Hb → Functional anaemia → ↑ EPO
+- Q: What is High Affinity Hb Variants of Hematology?
+  A: ↓ O₂ release → Tissue hypoxia → ↑ EPO
+- Q: What is Chronic Carbon Monoxide Exposure of Hematology?
+  A: CO-Hb → Functional anaemia
+- Q: What is the definition of Hematology?
+  A: Normal Red Cell Mass, Reduced Plasma Volume
+- Q: What causes Hematology?
+  A: Dehydration, Diuretics, Obesity (Gaisböck syndrome), Burns, Third-space losses
+- Q: What is Lab of Hematology?
+  A: Hb/Hct ↑, Normal Red Cell Mass (Cr-51), Normal EPO
+- Q: How is Hematology managed?
+  A: Volume Repletion (Oral/IV fluids), Treat underlying cause
+- Q: What is High Altitude of Hematology?
+  A: ↓ pO₂ → ↑ EPO
+- Q: What is COPD of Hematology?
+  A: Chronic hypoxaemia → ↑ EPO
+- Q: What is Cyanotic Congenital Heart Disease of Hematology?
+  A: Right-to-left shunt → Hypoxaemia
+- Q: What is Obstructive Sleep Apnoea (OSA) of Hematology?
+  A: Intermittent nocturnal hypoxia → ↑ EPO
+- Q: What is Heavy Smoking of Hematology?
+  A: CO binds Hb → Functional anaemia → ↑ EPO
+- Q: What is High Affinity Hb Variants of Hematology?
+  A: ↓ O₂ release → Tissue hypoxia → ↑ EPO
+- Q: What is the definition of Hematology?
+  A: Normal Red Cell Mass, Reduced Plasma Volume
+- Q: What causes Hematology?
+  A: Dehydration, Diuretics, Obesity (Gaisböck syndrome), Burns, Third-space losses
+- Q: What is Lab of Hematology?
+  A: Hb/Hct ↑, Normal Red Cell Mass (Cr-51), Normal EPO
+- Q: How is Hematology managed?
+  A: Volume Repletion (Oral/IV fluids), Treat underlying cause
+- Q: What is the definition of Hematology?
+  A: JAK2 Negative + EPO High = Secondary Polycythaemia
+- Q: What is Appropriate of Hematology?
+  A: Hypoxia → COPD, High altitude, Cyanotic heart disease, OSA, Smoking
+- Q: What is Inappropriate of Hematology?
+  A: EPO-secreting tumours (RCC, Hepatoma, Cerebellar haemangioblastoma) or Congenital (EPOR, VHL)
+- Q: What is Apparent Polycythaemia of Hematology?
+  A: Volume depletion (Dehydration, Diuretics, Obesity/Gaisböck), Normal RCM, Normal EPO
+- Q: What is the investigation of choice for Hematology?
+  A: JAK2 Negative + EPO Level → EPO High = Secondary
+- Q: How is Hematology managed?
+  A: Treat Cause (CPAP, Tumour resection, Smoking cessation); Phlebotomy if Symptomatic
+- Q: What is Phlebotomy Target of Hematology?
+  A: Hct <0.45 (Men), <0.42 (Women)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Polycythaemia → Secondary Polycythaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Appropriate (Physiological) — Hypoxia → ↑ EPO; Inappropriate (Pathological) — EPO-secreting tumour or Genetic; [!tip] Secondary Polycythaemia = JAK2 NEGATIVE + EPO ELEVATED. PV = JAK2 POSITIVE + EPO LOW/NORMAL. Appropriate = Hypoxia. Inappropriate = EPO-secreting tumour/Genetic.. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

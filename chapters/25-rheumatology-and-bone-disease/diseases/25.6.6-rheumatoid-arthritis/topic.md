@@ -459,3 +459,66 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
+---
+
+> Auto-generated study sections for "Inflammatory Arthritis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Inflammatory Arthritis?
+  A: RA is the most common inflammatory arthritis and the prototype csDMARD-treated disease.
+- Q: What is Joint Pattern of Inflammatory Arthritis?
+  A: Symmetrical polyarthritis — MCP, PIP, wrists, MTP (spares DIP, sacroiliac)
+- Q: What is Pain of Inflammatory Arthritis?
+  A: Inflammatory: worse at rest, morning stiffness >1 hour, improves with activity
+- Q: What is Swelling of Inflammatory Arthritis?
+  A: Boggy synovitis (not bony), warm, tender; tendon sheaths (tenosynovitis)
+- Q: What is Deformities (late/untreated) of Inflammatory Arthritis?
+  A: Ulnar drift, swan neck (PIP hyperextension/DIP flexion), boutonnière (PIP flexion/DIP extension), Z-thumb, hitchhiker's thumb
+- Q: What is Functional of Inflammatory Arthritis?
+  A: Reduced grip strength, difficulty with ADLs
+- Q: What is Joint Pattern of Inflammatory Arthritis?
+  A: Symmetrical polyarthritis — MCP, PIP, wrists, MTP (spares DIP, sacroiliac)
+- Q: What is Pain of Inflammatory Arthritis?
+  A: Inflammatory: worse at rest, morning stiffness >1 hour, improves with activity
+- Q: What is Swelling of Inflammatory Arthritis?
+  A: Boggy synovitis (not bony), warm, tender; tendon sheaths (tenosynovitis)
+- Q: What is Deformities (late/untreated) of Inflammatory Arthritis?
+  A: Ulnar drift, swan neck (PIP hyperextension/DIP flexion), boutonnière (PIP flexion/DIP extension), Z-thumb, hitchhiker's thumb
+- Q: How is Inflammatory Arthritis classified?
+  A: 2010 ACR/EULAR: ≥6/10 (joints, serology, CRP/ESR, duration)
+- Q: What is the investigation of choice for Inflammatory Arthritis?
+  A: Symmetrical small joint polyarthritis + >1hr AM stiffness + RF/ACPA + elevated CRP/ESR
+- Q: What is Anchor Drug of Inflammatory Arthritis?
+  A: Methotrexate (weekly + folic acid)
+- Q: What is Treat-to-Target of Inflammatory Arthritis?
+  A: Monitor DAS28/CDAI q1-3mo; target remission (DAS28 <2.6)
+- Q: What is Biologic Sequence of Inflammatory Arthritis?
+  A: MTX fail → Anti-TNF → Non-TNF (RTX if RF+, TCZ/ABA if RF-) → JAKi
+- Q: What is EAMs of Inflammatory Arthritis?
+  A: Nodules, scleritis, ILD, Felty's, vasculitis, cervical myelopathy, CV disease
+- Q: What is Pregnancy Safe of Inflammatory Arthritis?
+  A: HCQ, SSZ, AZA, Certolizumab, low-dose pred
+- Q: What is Pregnancy Avoid of Inflammatory Arthritis?
+  A: MTX, LEF, most biologics, JAKi
+- Q: What is MTX Pneumonitis of Inflammatory Arthritis?
+  A: Exclusion diagnosis; stop MTX permanently; HRCT + BAL
+- Q: What is Felty's of Inflammatory Arthritis?
+  A: RA + splenomegaly + neutropenia → G-CSF, RTX
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inflammatory Arthritis?**
+   A. **RA is the most common inflammatory arthritis and the prototype csDMARD-treated disease.**
+   B. An unrelated condition not matching the clinical picture of Inflammatory Arthritis
+   C. A complication seen late in the disease course of Inflammatory Arthritis
+   D. A condition that mimics Inflammatory Arthritis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inflammatory Arthritis presents with: Definition — Chronic symmetric polyarthritis of synovial joints → erosive damage, functional disability, systemic comorbidities; Prevalence — 0.5-1% worldwide; Peak Onset — 30-50 years (can occur at any age). What is the most likely diagnosis?
+   A. **Inflammatory Arthritis**
+   B. A condition that mimics Inflammatory Arthritis but is not the same entity
+   C. A complication of Inflammatory Arthritis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inflammatory Arthritis
+

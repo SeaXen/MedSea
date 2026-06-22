@@ -346,3 +346,86 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Osteoarthritis]] · [[Septic arthritis]] · [[Osteomyelitis]] · [[Diabetic foot]]
+---
+
+> Auto-generated study sections for "Osteoarthritis and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (30 generated)
+
+- Q: What is Clinical of Osteoarthritis and Related Disorders?
+  A: Neuropathy (10g monofilament, tuning fork), hot swollen foot, preserved pulses
+- Q: What is X-ray of Osteoarthritis and Related Disorders?
+  A: Stage-dependent: normal → fragmentation → coalescence → consolidation
+- Q: What is MRI of Osteoarthritis and Related Disorders?
+  A: Gold standard early — bone marrow oedema (Stage 0), soft tissue oedema, joint destruction
+- Q: What is Bone Scan of Osteoarthritis and Related Disorders?
+  A: Increased uptake (all stages) — sensitive not specific
+- Q: What is Inflammatory Markers of Osteoarthritis and Related Disorders?
+  A: CRP/ESR normal/mildly ↑ (vs septic: markedly ↑)
+- Q: What is Vascular of Osteoarthritis and Related Disorders?
+  A: Pulses preserved, ABI/TBI normal (unless PAD coexistent)
+- Q: What is Rocker-Bottom Foot of Osteoarthritis and Related Disorders?
+  A: Midfoot collapse (tarsometatarsal) → abnormal pressure distribution
+- Q: What is Ulceration of Osteoarthritis and Related Disorders?
+  A: Over bony prominences (especially with deformity) → osteomyelitis risk
+- Q: What is Osteomyelitis of Osteoarthritis and Related Disorders?
+  A: Contiguous from ulcer → contiguous spread
+- Q: What is Amputation of Osteoarthritis and Related Disorders?
+  A: Non-healing ulcer, uncontrolled infection, failed reconstruction
+- Q: What is Recurrence of Osteoarthritis and Related Disorders?
+  A: Contralateral foot or same foot if offloading inadequate
+- Q: What is Clinical of Osteoarthritis and Related Disorders?
+  A: Neuropathy (10g monofilament, tuning fork), hot swollen foot, preserved pulses
+- Q: What is X-ray of Osteoarthritis and Related Disorders?
+  A: Stage-dependent: normal → fragmentation → coalescence → consolidation
+- Q: What is MRI of Osteoarthritis and Related Disorders?
+  A: Gold standard early — bone marrow oedema (Stage 0), soft tissue oedema, joint destruction
+- Q: What is Bone Scan of Osteoarthritis and Related Disorders?
+  A: Increased uptake (all stages) — sensitive not specific
+- Q: What is Inflammatory Markers of Osteoarthritis and Related Disorders?
+  A: CRP/ESR normal/mildly ↑ (vs septic: markedly ↑)
+- Q: What is Vascular of Osteoarthritis and Related Disorders?
+  A: Pulses preserved, ABI/TBI normal (unless PAD coexistent)
+- Q: What is Rocker-Bottom Foot of Osteoarthritis and Related Disorders?
+  A: Midfoot collapse (tarsometatarsal) → abnormal pressure distribution
+- Q: What is Ulceration of Osteoarthritis and Related Disorders?
+  A: Over bony prominences (especially with deformity) → osteomyelitis risk
+- Q: What is Osteomyelitis of Osteoarthritis and Related Disorders?
+  A: Contiguous from ulcer → contiguous spread
+- Q: What is Amputation of Osteoarthritis and Related Disorders?
+  A: Non-healing ulcer, uncontrolled infection, failed reconstruction
+- Q: What is Recurrence of Osteoarthritis and Related Disorders?
+  A: Contralateral foot or same foot if offloading inadequate
+- Q: What is the definition of Osteoarthritis and Related Disorders?
+  A: Neuropathy + trauma → unregulated bone destruction
+- Q: What is Diabetes of Osteoarthritis and Related Disorders?
+  A: #1 cause (70-80%) — peripheral + autonomic neuropathy
+- Q: How is Osteoarthritis and Related Disorders classified?
+  A: Hot, swollen, erythematous foot = mimics septic/cellulitis — PRESERVED PULSES, NEUROPATHY
+- Q: What is Eichenholtz of Osteoarthritis and Related Disorders?
+  A: 0=Acute inflammation, 1=Fragmentation, 2=Coalescence, 3=Consolidation/Rocker-bottom
+- Q: What is Differentiation of Osteoarthritis and Related Disorders?
+  A: Charcot: afebrile, normal CRP, neuropathy, preserved pulses. Septic: febrile, CRP↑↑, no neuropathy
+- Q: How is Osteoarthritis and Related Disorders managed?
+  A: Total Contact Cast (TCC) = cornerstone; bisphosphonates controversial; surgery late
+- Q: What is Rocker-Bottom of Osteoarthritis and Related Disorders?
+  A: Midfoot collapse (tarsometatarsal) = late deformity
+- Q: What is Multidisciplinary of Osteoarthritis and Related Disorders?
+  A: Orthopaedics, vascular, podiatry, diabetology, orthotist
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Osteoarthritis and Related Disorders?**
+   A. **Charcot = neuropathic arthropathy — diabetes #1 cause.**
+   B. An unrelated condition not matching the clinical picture of Osteoarthritis and Related Disorders
+   C. A complication seen late in the disease course of Osteoarthritis and Related Disorders
+   D. A condition that mimics Osteoarthritis and Related Disorders but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Osteoarthritis and Related Disorders presents with: Definition — Neuropathic arthropathy — neuropathy + repetitive trauma → unregulated bone resorption/formation → joint destruction, dislocation, deformity; Most Common Cause — Diabetes mellitus (70-80%) — peripheral neuropathy; Other Causes — Tabes dorsalis (syphilis), syringomyelia, leprosy, alcohol, spinal cord injury, spina bifida, amyloidosis. What is the most likely diagnosis?
+   A. **Osteoarthritis and Related Disorders**
+   B. A condition that mimics Osteoarthritis and Related Disorders but is not the same entity
+   C. A complication of Osteoarthritis and Related Disorders rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Osteoarthritis and Related Disorders
+

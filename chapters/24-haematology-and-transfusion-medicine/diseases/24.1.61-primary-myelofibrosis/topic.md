@@ -378,3 +378,114 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (44 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Myeloproliferative Neoplasms → Primary Myelofibrosis
+- Q: What is Hematology indicated for?
+  A: Symptomatic splenomegaly, Constitutional symptoms (Int-2/High risk)
+- Q: What is the dose of Hematology?
+  A: Plt-based: >200 = 20mg BD; 100-200 = 15mg BD; 50-100 = 10mg BD; 25-50 = 5mg BD
+- Q: How is Hematology monitored?
+  A: CBC q2wk × 4, then q4wk; LFT, lipids, HCV/HBV/HIV screen
+- Q: What is Response of Hematology?
+  A: Spleen volume reduction ≥35% (CT), Symptom improvement (MFSAF v4.0)
+- Q: What is Discontinuation of Hematology?
+  A: Gradual taper (withdrawal syndrome: rebound symptoms, cytokine storm)
+- Q: What is DIPSS-plus Int-2 / High / Very High of Hematology?
+  A: Referral at diagnosis (donor search ASAP)
+- Q: What is Age <65-70, fit, HLA-matched donor of Hematology?
+  A: RIC/MAC conditioning (Flu/Mel ± TBI)
+- Q: What is Molecular remission of Hematology?
+  A: Pre-HSCT ruxolitinib bridge OK; JAK2 VAF monitoring post-HSCT
+- Q: What is Transfusions of Hematology?
+  A: Mainstay; leucodepleted, irradiated
+- Q: What is ESA (Epoetin/Darbepoetin) of Hematology?
+  A: Cautious (thrombosis risk); often poor response
+- Q: What is Luspatercept of Hematology?
+  A: Emerging (MEDALIST-MF trial); improves Hb in some
+- Q: What is Danazol of Hematology?
+  A: Historical (androgen); hepatotoxicity, virilisation
+- Q: What is Thalidomide/Lenalidomide of Hematology?
+  A: With prednisolone; neuropathy risk
+- Q: What is Portal Hypertension of Hematology?
+  A: Variceal screening (endoscopy), beta-blockers, TIPS if refractory
+- Q: What is Pulmonary Hypertension of Hematology?
+  A: Echo screening; treat underlying
+- Q: What is Blast Transformation (≥20% blasts) of Hematology?
+  A: Treat as AML (poor prognosis); HSCT if remission
+- Q: What is Infections of Hematology?
+  A: Vaccinate; neutropenia from ruxolitinib → ACV prophylaxis
+- Q: What is Thrombosis of Hematology?
+  A: Aspirin if Plt >50; anticoagulate if arterial/venous event
+- Q: What is Hematology indicated for?
+  A: Symptomatic splenomegaly, Constitutional symptoms (Int-2/High risk)
+- Q: What is the dose of Hematology?
+  A: Plt-based: >200 = 20mg BD; 100-200 = 15mg BD; 50-100 = 10mg BD; 25-50 = 5mg BD
+- Q: How is Hematology monitored?
+  A: CBC q2wk × 4, then q4wk; LFT, lipids, HCV/HBV/HIV screen
+- Q: What is Response of Hematology?
+  A: Spleen volume reduction ≥35% (CT), Symptom improvement (MFSAF v4.0)
+- Q: What is DIPSS-plus Int-2 / High / Very High of Hematology?
+  A: Referral at diagnosis (donor search ASAP)
+- Q: What is Age <65-70, fit, HLA-matched donor of Hematology?
+  A: RIC/MAC conditioning (Flu/Mel ± TBI)
+- Q: What is Transfusions of Hematology?
+  A: Mainstay; leucodepleted, irradiated
+- Q: What is ESA (Epoetin/Darbepoetin) of Hematology?
+  A: Cautious (thrombosis risk); often poor response
+- Q: What is Luspatercept of Hematology?
+  A: Emerging (MEDALIST-MF trial); improves Hb in some
+- Q: What is Danazol of Hematology?
+  A: Historical (androgen); hepatotoxicity, virilisation
+- Q: What is Thalidomide/Lenalidomide of Hematology?
+  A: With prednisolone; neuropathy risk
+- Q: What is Portal Hypertension of Hematology?
+  A: Variceal screening (endoscopy), beta-blockers, TIPS if refractory
+- Q: What is Pulmonary Hypertension of Hematology?
+  A: Echo screening; treat underlying
+- Q: What is Blast Transformation (≥20% blasts) of Hematology?
+  A: Treat as AML (poor prognosis); HSCT if remission
+- Q: What is Infections of Hematology?
+  A: Vaccinate; neutropenia from ruxolitinib → ACV prophylaxis
+- Q: What is Thrombosis of Hematology?
+  A: Aspirin if Plt >50; anticoagulate if arterial/venous event
+- Q: What is the investigation of choice for Hematology?
+  A: Megakaryocyte atypia + Fibrosis grade 2-3 + JAK2/CALR/MPL
+- Q: What is Driver Mutations of Hematology?
+  A: JAK2 (50-60%), CALR (25-30%, better OS), MPL (5-10%), Triple-neg (10-15%, worse)
+- Q: What is Blood Film of Hematology?
+  A: Leukoerythroblastic: Teardrops, NRBCs, immature granulocytes
+- Q: What is DIPSS-plus of Hematology?
+  A: Age>65, Hb<10, WBC>25, Blasts≥1%, Symptoms, Transfusion need, Plt<100, Unfavourable karyotype
+- Q: What is Ruxolitinib of Hematology?
+  A: First-line for spleen/symptoms; Plt-based dosing; taper on discontinuation
+- Q: What is Allo-HSCT of Hematology?
+  A: Curative; Int-2/High risk → refer early; RIC conditioning
+- Q: What is Transformation of Hematology?
+  A: Blasts ≥20% = Blast phase → AML-type therapy
+- Q: What is CALR vs JAK2 of Hematology?
+  A: CALR = better OS, lower thrombosis
+- Q: What is MIPSS70 of Hematology?
+  A: Mutation-enhanced (ASXL1, SRSF2, U2AF1, EZH2, IDH1/2 = HMR = worse)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Myeloproliferative Neoplasms → Primary Myelofibrosis**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: 2. BM fibrosis grade 2-3 (reticulin/collagen) — ; Diagnosis: All 4 Major Criteria; Prefibrotic/early PMF — Overt PMF. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

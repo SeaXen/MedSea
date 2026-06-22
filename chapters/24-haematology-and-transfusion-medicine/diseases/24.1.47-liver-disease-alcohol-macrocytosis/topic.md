@@ -336,3 +336,44 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Macrocytic Anaemia → Liver Disease & Alcohol
+- Q: What is Liver Disease Macrocytosis of Hematology?
+  A: Target cells (hallmark), MCV 100-110, Normal B12/Folate, PT↑, Platelets↓
+- Q: What is Alcohol Macrocytosis of Hematology?
+  A: Target cells + Oval macro, GGT ↑↑ (most sensitive), MCV 100-115
+- Q: What is the mechanism of Hematology?
+  A: Liver: Altered lipid membrane; Alcohol: Direct toxicity + Folate deficiency + Liver
+- Q: What is B12/Folate of Hematology?
+  A: Normal in both (unless coexisting malnutrition)
+- Q: What is Reversibility of Hematology?
+  A: Alcohol: 2-4 months abstinence; Liver: Improves with disease control
+- Q: What is Differentiation of Hematology?
+  A: Target cells = Liver/Alcohol; Hypersegmented neutrophils = B12/Folate
+- Q: How is Hematology managed?
+  A: Alcohol cessation + Thiamine/Folate; Liver disease treatment
+- Q: What is GGT of Hematology?
+  A: Alcohol marker (↑↑ within days); Liver disease = AST, ALT, ALP, GGT all ↑
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Macrocytic Anaemia → Liver Disease & Alcohol**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Anaemia — Mild-moderate, Multifactorial (blood loss, folate, inflammation); Target Cells — Pathognomonic (also in HbC, HbE, Thalassaemia, Iron deficiency post-treatment); Coagulopathy — PT ↑, Factor V/II/VII/IX/X ↓. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

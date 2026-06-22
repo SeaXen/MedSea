@@ -271,3 +271,28 @@ mindmap
 - [[Alcoholic Liver Disease/Corticosteroid therapy (prednisolone)|Corticosteroid Therapy]]
 - [[Alcoholic Liver Disease/Abstinence and nutritional support|Abstinence & Nutrition]]
 - [[Acute Liver Failure/Definition and Aetiology|ALF Aetiology]]
+---
+
+> Auto-generated study sections for "Alcoholic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Alcoholic Liver Disease?
+  A: Maddrey DF = 4.6 × (PTpatient - PTcontrol) + Bilirubin (mg/dL)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Alcoholic Liver Disease?**
+   A. **Maddrey DF = 4.6 × (PTpatient - PTcontrol) + Bilirubin (mg/dL)**
+   B. An unrelated condition not matching the clinical picture of Alcoholic Liver Disease
+   C. A complication seen late in the disease course of Alcoholic Liver Disease
+   D. A condition that mimics Alcoholic Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Alcoholic Liver Disease presents with: A[Diagnose Alcoholic Hepatitis: Jaundice, Heavy Alcohol, AST:ALT>2, <300] --> B[Calculate Maddrey DF]; B --> C{DF >=32?}; C -->|No| D[Supportive Care: Nutrition, Abstinence, Vitamins, Monitoring]. What is the most likely diagnosis?
+   A. **Alcoholic Liver Disease**
+   B. A condition that mimics Alcoholic Liver Disease but is not the same entity
+   C. A complication of Alcoholic Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Alcoholic Liver Disease
+

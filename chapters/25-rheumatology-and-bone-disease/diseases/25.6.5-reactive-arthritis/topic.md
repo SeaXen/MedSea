@@ -310,3 +310,66 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Ankylosing spondylitis]] · [[Psoriatic arthritis]] · [[Enteropathic arthritis]] · [[Undifferentiated spondyloarthritis]]
+---
+
+> Auto-generated study sections for "Inflammatory Arthritis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Inflammatory Arthritis?
+  A: Reactive arthritis = post-infectious sterile arthritis (classic triad: arthritis + conjunctivitis + urethritis).
+- Q: What is Enthesitis of Inflammatory Arthritis?
+  A: Achilles tendonitis, plantar fasciitis (heel pain) — hallmark of SpA
+- Q: What is Dactylitis of Inflammatory Arthritis?
+  A: 'Sausage digit' (toes > fingers) — flexor tenosynovitis + synovitis
+- Q: What is Mucocutaneous of Inflammatory Arthritis?
+  A: Circinate balanitis (painless annular lesions on glans), Keratoderma blennorrhagicum (pustular palmoplantar lesions — like pustular psoriasis)
+- Q: What is Axial of Inflammatory Arthritis?
+  A: Sacroiliitis (asymmetric), inflammatory back pain — develops in 20-50% if chronic
+- Q: What is Systemic of Inflammatory Arthritis?
+  A: Low-grade fever, fatigue, weight loss (acute phase)
+- Q: What is Enthesitis of Inflammatory Arthritis?
+  A: Achilles tendonitis, plantar fasciitis (heel pain) — hallmark of SpA
+- Q: What is Dactylitis of Inflammatory Arthritis?
+  A: 'Sausage digit' (toes > fingers) — flexor tenosynovitis + synovitis
+- Q: What is Mucocutaneous of Inflammatory Arthritis?
+  A: Circinate balanitis (painless annular lesions on glans), Keratoderma blennorrhagicum (pustular palmoplantar lesions — like pustular psoriasis)
+- Q: What is Axial of Inflammatory Arthritis?
+  A: Sacroiliitis (asymmetric), inflammatory back pain — develops in 20-50% if chronic
+- Q: What is Systemic of Inflammatory Arthritis?
+  A: Low-grade fever, fatigue, weight loss (acute phase)
+- Q: What is Classic Triad of Inflammatory Arthritis?
+  A: Arthritis + Conjunctivitis + Urethritis (Reiter's syndrome — historical)
+- Q: What is Trigger of Inflammatory Arthritis?
+  A: GU: Chlamydia trachomatis (most common); GI: Campylobacter, Salmonella, Shigella, Yersinia
+- Q: What is Timing of Inflammatory Arthritis?
+  A: 1-4 weeks post-infection
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: 50-80% positive — predicts chronicity + axial involvement
+- Q: What is Self-Limiting of Inflammatory Arthritis?
+  A: Most resolve 3-6 months; chronic/recurrent in 15-30% (HLA-B27+)
+- Q: What is Mucocutaneous of Inflammatory Arthritis?
+  A: Circinate balanitis (painless glans lesions), Keratoderma blennorrhagicum (palmoplantar pustules)
+- Q: What is Enthesitis of Inflammatory Arthritis?
+  A: Achilles, plantar fascia — hallmark SpA feature
+- Q: What is Differential: Gonococcal of Inflammatory Arthritis?
+  A: Migratory polyarthritis + tenosynovitis + dermatitis + culture +ve — septic, not sterile
+- Q: How is Inflammatory Arthritis managed?
+  A: Treat infection (doxycycline/azithromycin for Chlamydia) → NSAIDs → SSZ if chronic >6mo → Anti-TNF if refractory
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inflammatory Arthritis?**
+   A. **Reactive arthritis = post-infectious sterile arthritis (classic triad: arthritis + conjunctivitis + urethritis).**
+   B. An unrelated condition not matching the clinical picture of Inflammatory Arthritis
+   C. A complication seen late in the disease course of Inflammatory Arthritis
+   D. A condition that mimics Inflammatory Arthritis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inflammatory Arthritis presents with: Definition — Sterile inflammatory arthritis following an extra-articular infection (GU or GI) — "reactive" to distant infection; Incidence — 1-30/100,000/year (varies by population); Peak Onset — 20-40 years. What is the most likely diagnosis?
+   A. **Inflammatory Arthritis**
+   B. A condition that mimics Inflammatory Arthritis but is not the same entity
+   C. A complication of Inflammatory Arthritis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inflammatory Arthritis
+

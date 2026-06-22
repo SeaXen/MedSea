@@ -356,3 +356,62 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (18 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Platelet Disorders → Immune Thrombocytopenia
+- Q: What is Splenectomy of Hematology?
+  A: Laparoscopic; Response >70%; OPSI risk → Vaccines (PCV13, PPSV23, MenACWY, Hib) + Penicillin prophylaxis
+- Q: What is Immunosuppressants of Hematology?
+  A: Azathioprine, Mycophenolate, Cyclosporine, Tacrolimus, Cyclophosphamide – steroid-sparing
+- Q: What is Combination of Hematology?
+  A: TPO-RA + Rituximab + Immunosuppressant
+- Q: What is Dapsone / Danazol of Hematology?
+  A: Historical, limited evidence
+- Q: What is Splenectomy of Hematology?
+  A: Laparoscopic; Response >70%; OPSI risk → Vaccines (PCV13, PPSV23, MenACWY, Hib) + Penicillin prophylaxis
+- Q: What is Immunosuppressants of Hematology?
+  A: Azathioprine, Mycophenolate, Cyclosporine, Tacrolimus, Cyclophosphamide – steroid-sparing
+- Q: What is Combination of Hematology?
+  A: TPO-RA + Rituximab + Immunosuppressant
+- Q: What is Dapsone / Danazol of Hematology?
+  A: Historical, limited evidence
+- Q: What is the investigation of choice for Hematology?
+  A: Isolated Plt <100 + Exclusion (pseudothrombocytopenia, secondary causes, BM failure)
+- Q: What is Thresholds of Hematology?
+  A: >50 observe; 30-50 treat if bleed risk; <30 treat
+- Q: What is 1st Line of Hematology?
+  A: Prednisolone 0.5-1 mg/kg × 4-6wk taper OR Dex 40mg × 4d q2-4wk; IVIG for urgent/pre-proc
+- Q: What is 2nd Line of Hematology?
+  A: TPO-RA: Eltrombopag (oral, LFT) / Romiplostim (SC, BM fibrosis); Rituximab 375mg/m² × 4
+- Q: What is 3rd Line of Hematology?
+  A: Splenectomy (lap, OPSI risk → vaccines + penicillin); Immunosuppressants
+- Q: What is Fostamatinib of Hematology?
+  A: Syk inhibitor – refractory ITP; diarrhoea, HTN, LFT↑
+- Q: What is Pregnancy of Hematology?
+  A: Steroids + IVIG; Target Plt >50 (vaginal) / >80-100 (C-section); No TPO-RA/Ritux
+- Q: What is Secondary ITP of Hematology?
+  A: SLE, HIV, HCV, H. pylori, Drugs, CLL, CVID – treat underlying
+- Q: What is Helicobacter pylori of Hematology?
+  A: Eradication → Plt recovery in ~50% (especially in high-prevalence areas)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Platelet Disorders → Immune Thrombocytopenia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Primary ITP — Isolated Plt <100×10⁹/L + no other cause; Diagnosis of exclusion; Secondary ITP — Associated with: SLE, APS, HIV, HCV, H. pylori, Drugs (heparin, quinine, vancomycin), CLL, Lymphoma, CVID, ALPS; Newly Diagnosed — <3 months from diagnosis. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

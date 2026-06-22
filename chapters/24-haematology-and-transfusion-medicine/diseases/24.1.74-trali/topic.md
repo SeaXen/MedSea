@@ -221,3 +221,184 @@ mindmap
 > **Hierarchy**: [[../../Davidson Chapter 25 - Haematology Hierarchy|Haematology Hierarchy]]  
 > **Template**: [[../../../Templates/Hematology Topic Template|Hematology Topic Template]]  
 > **See also**: [[TACO]], [[Transfusion Reactions]], [[Acute Haemolytic Transfusion Reaction]], [[Transfusion Medicine]]
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (79 generated)
+
+- Q: What is 1. Acute Lung Injury of Hematology?
+  A: Acute Onset + Bilateral Pulmonary Infiltrates (CXR/CT)
+- Q: What is 2. Hypoxaemia of Hematology?
+  A: PaO₂/FiO₂ ≤300 mmHg or SpO₂ <90% on Room Air
+- Q: What is 3. No Left Atrial Hypertension of Hematology?
+  A: No Clinical Evidence of Fluid Overload (Normal BNP/NT-proBNP, Normal CVP/PCWP)
+- Q: What is 4. Temporal Association of Hematology?
+  A: Onset ≤6 Hours Post-Transfusion Completion
+- Q: What is 5. Exclusion of Hematology?
+  A: No Other Risk Factor for ALI (Sepsis, Aspiration, Trauma, Pancreatitis, etc.)
+- Q: What is Onset of Hematology?
+  A: ≤6 Hours Post-Transfusion (Median 1-2 Hours)
+- Q: What is Respiratory of Hematology?
+  A: Acute Dyspnoea, Hypoxaemia (SpO₂ <90%), Tachypnoea, Cyanosis
+- Q: What is Radiological of Hematology?
+  A: Bilateral Pulmonary Infiltrates (Perihilar/Peripheral), "White-Out" in Severe Cases
+- Q: What is Haemodynamic of Hematology?
+  A: Hypotension (Common), Fever, Tachycardia
+- Q: What is Laboratory of Hematology?
+  A: No Left Heart Failure (Normal CVP, Normal BNP/NT-proBNP, Normal PCWP if Swan-Ganz)
+- Q: What is Exclusion of Hematology?
+  A: No Sepsis, Aspiration, Trauma, Pancreatitis, Drowning, Drug Overdose in Same Timeframe
+- Q: What is Mortality of Hematology?
+  A: 5-10% (Respiratory Failure, Multi-Organ Failure)
+- Q: What is Recovery of Hematology?
+  A: Most Survivors Recover Fully (Days-Weeks)
+- Q: What is Recurrent TRALI of Hematology?
+  A: Rare (If Donor Deferred)
+- Q: What is Long-Term Sequelae of Hematology?
+  A: Rare (Chronic Lung Disease Uncommon)
+- Q: What is the definition of Hematology?
+  A: ALI ≤6h Post-Transfusion + No Left Atrial Hypertension
+- Q: What is TRALI vs TACO of Hematology?
+  A: TRALI = BNP Normal, Hypotension; TACO = BNP High, Hypertension
+- Q: What is the pathogenesis of Hematology?
+  A: Two-Hit: Patient Primed Neutrophils + Donor Anti-HLA/HNA Antibodies
+- Q: What is Donor Source of Hematology?
+  A: Multiparous Females (Anti-HLA/HNA from Pregnancy)
+- Q: What is Onset of Hematology?
+  A: ≤6 Hours Post-Transfusion
+- Q: How is Hematology managed?
+  A: Supportive (O₂, Ventilation); NO Diuretics; STOP Transfusion
+- Q: What is Prevention of Hematology?
+  A: Male-Only Plasma/Platelets (UK 2004); Leucodepletion
+- Q: What is Mortality of Hematology?
+  A: 5-10% (Leading Cause of Transfusion Death)
+- Q: What is BNP in TRALI of Hematology?
+  A: Normal / Low (Key Differentiator from TACO)
+- Q: What is the investigation of choice for Hematology?
+  A: Anti-HLA/HNA Antibodies on Implicated Donors
+- Q: What is Diuretic Contraindicated of Hematology?
+  A: Worsens Hypotension (Unlike TACO)
+- Q: What is Reporting of Hematology?
+  A: SHOT + Blood Service (Donor Deferral)
+- Q: What is TRALI vs TACO of Hematology?
+  A: BNP Normal = TRALI; BNP High = TACO
+- Q: What is the definition of Hematology?
+  A: ALI ≤6h Post-Transfusion; No Cardiac Failure; Bilateral Infiltrates
+- Q: What is the pathogenesis of Hematology?
+  A: Two-Hit: Primed Neutrophils + Donor Anti-HLA/HNA
+- Q: What is Donor Source of Hematology?
+  A: Multiparous Females (Anti-HLA/HNA from Pregnancy)
+- Q: What is Onset of Hematology?
+  A: ≤6 Hours Post-Transfusion
+- Q: How is Hematology managed?
+  A: Supportive; NO Diuretics; Stop Transfusion; Report to Blood Service
+- Q: What is Prevention of Hematology?
+  A: Male-Only Plasma/Platelets; Leucodepletion; Donor Deferral
+- Q: What is Mortality of Hematology?
+  A: 5-10% (Leading Cause of Transfusion Death in UK/US)
+- Q: What is BNP of Hematology?
+  A: Normal in TRALI (Key Differentiator)
+- Q: What is Reporting of Hematology?
+  A: SHOT + Blood Service (Donor Deferral)
+- Q: What is Diuretic of Hematology?
+  A: Contraindicated (Worsens Hypotension)
+- Q: What is CXR of Hematology?
+  A: Bilateral Pulmonary Infiltrates ("White-Out")
+- Q: What is Donor Deferral of Hematology?
+  A: Anti-HLA/HNA Positive Donors Deferred
+- Q: What is 1. Acute Lung Injury of Hematology?
+  A: Acute Onset + Bilateral Pulmonary Infiltrates (CXR/CT)
+- Q: What is 2. Hypoxaemia of Hematology?
+  A: PaO₂/FiO₂ ≤300 mmHg or SpO₂ <90% on Room Air
+- Q: What is 3. No Left Atrial Hypertension of Hematology?
+  A: No Clinical Evidence of Fluid Overload (Normal BNP/NT-proBNP, Normal CVP/PCWP)
+- Q: What is 4. Temporal Association of Hematology?
+  A: Onset ≤6 Hours Post-Transfusion Completion
+- Q: What is Onset of Hematology?
+  A: ≤6 Hours Post-Transfusion (Median 1-2 Hours)
+- Q: What is Respiratory of Hematology?
+  A: Acute Dyspnoea, Hypoxaemia (SpO₂ <90%), Tachypnoea, Cyanosis
+- Q: What is Radiological of Hematology?
+  A: Bilateral Pulmonary Infiltrates (Perihilar/Peripheral), "White-Out" in Severe Cases
+- Q: What is Haemodynamic of Hematology?
+  A: Hypotension (Common), Fever, Tachycardia
+- Q: What is Laboratory of Hematology?
+  A: No Left Heart Failure (Normal CVP, Normal BNP/NT-proBNP, Normal PCWP if Swan-Ganz)
+- Q: What is Exclusion of Hematology?
+  A: No Sepsis, Aspiration, Trauma, Pancreatitis, Drowning, Drug Overdose in Same Timeframe
+- Q: What is Mortality of Hematology?
+  A: 5-10% (Respiratory Failure, Multi-Organ Failure)
+- Q: What is Recovery of Hematology?
+  A: Most Survivors Recover Fully (Days-Weeks)
+- Q: What is Recurrent TRALI of Hematology?
+  A: Rare (If Donor Deferred)
+- Q: What is Long-Term Sequelae of Hematology?
+  A: Rare (Chronic Lung Disease Uncommon)
+- Q: What is the definition of Hematology?
+  A: ALI ≤6h Post-Transfusion + No Left Atrial Hypertension
+- Q: What is TRALI vs TACO of Hematology?
+  A: TRALI = BNP Normal, Hypotension; TACO = BNP High, Hypertension
+- Q: What is the pathogenesis of Hematology?
+  A: Two-Hit: Patient Primed Neutrophils + Donor Anti-HLA/HNA Antibodies
+- Q: What is Donor Source of Hematology?
+  A: Multiparous Females (Anti-HLA/HNA from Pregnancy)
+- Q: What is Onset of Hematology?
+  A: ≤6 Hours Post-Transfusion
+- Q: How is Hematology managed?
+  A: Supportive (O₂, Ventilation); NO Diuretics; STOP Transfusion
+- Q: What is Prevention of Hematology?
+  A: Male-Only Plasma/Platelets (UK 2004); Leucodepletion
+- Q: What is Mortality of Hematology?
+  A: 5-10% (Leading Cause of Transfusion Death)
+- Q: What is BNP in TRALI of Hematology?
+  A: Normal / Low (Key Differentiator from TACO)
+- Q: What is the investigation of choice for Hematology?
+  A: Anti-HLA/HNA Antibodies on Implicated Donors
+- Q: What is Diuretic Contraindicated of Hematology?
+  A: Worsens Hypotension (Unlike TACO)
+- Q: What is Reporting of Hematology?
+  A: SHOT + Blood Service (Donor Deferral)
+- Q: What is TRALI vs TACO of Hematology?
+  A: BNP Normal = TRALI; BNP High = TACO
+- Q: What is the definition of Hematology?
+  A: ALI ≤6h Post-Transfusion; No Cardiac Failure; Bilateral Infiltrates
+- Q: What is the pathogenesis of Hematology?
+  A: Two-Hit: Primed Neutrophils + Donor Anti-HLA/HNA
+- Q: What is Donor Source of Hematology?
+  A: Multiparous Females (Anti-HLA/HNA from Pregnancy)
+- Q: What is Onset of Hematology?
+  A: ≤6 Hours Post-Transfusion
+- Q: How is Hematology managed?
+  A: Supportive; NO Diuretics; Stop Transfusion; Report to Blood Service
+- Q: What is Prevention of Hematology?
+  A: Male-Only Plasma/Platelets; Leucodepletion; Donor Deferral
+- Q: What is Mortality of Hematology?
+  A: 5-10% (Leading Cause of Transfusion Death in UK/US)
+- Q: What is BNP of Hematology?
+  A: Normal in TRALI (Key Differentiator)
+- Q: What is Reporting of Hematology?
+  A: SHOT + Blood Service (Donor Deferral)
+- Q: What is Diuretic of Hematology?
+  A: Contraindicated (Worsens Hypotension)
+- Q: What is CXR of Hematology?
+  A: Bilateral Pulmonary Infiltrates ("White-Out")
+- Q: What is Donor Deferral of Hematology?
+  A: Anti-HLA/HNA Positive Donors Deferred
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **TRALI = Acute Non-Cardiogenic Pulmonary Oedema temporally related to Transfusion.**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: 1. Acute Lung Injury — Acute Onset + Bilateral Pulmonary Infiltrates (CXR/CT); 2. Hypoxaemia — PaO₂/FiO₂ ≤300 mmHg or SpO₂ <90% on Room Air; 3. No Left Atrial Hypertension — No Clinical Evidence of Fluid Overload (Normal BNP/NT-proBNP, Normal CVP/PCWP). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

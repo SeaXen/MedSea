@@ -446,3 +446,62 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[Drugs in rheumatology]] · [[Investigations in rheumatology]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (18 generated)
+
+- Q: What is Interstitial keratitis (IK) of Vasculitis?
+  A: Classic (typical form); corneal stromal inflammation; photophobia, blurred vision, red eye, pain; bilateral often
+- Q: What is Other ocular inflammation of Vasculitis?
+  A: Scleritis, episcleritis, uveitis, retinal vasculitis, retinal artery occlusion, optic neuritis (atypical)
+- Q: What is the definition of Vasculitis?
+  A: Interstitial keratitis + vestibuloauditory dysfunction (rare vasculitis)
+- Q: What is Typical of Vasculitis?
+  A: IK + audiovestibular within 2 years (often weeks)
+- Q: What is Atypical of Vasculitis?
+  A: Other ocular inflammation OR >2y onset between eye/ear
+- Q: What is Demographics of Vasculitis?
+  A: Young adult (20-40y); rare
+- Q: What is Eye of Vasculitis?
+  A: Interstitial keratitis (corneal stromal inflammation); photophobia, blurred vision
+- Q: What is Ear of Vasculitis?
+  A: Sudden sensorineural hearing loss (often bilateral, fluctuating then progressive); vertigo, tinnitus
+- Q: What is Deafness risk of Vasculitis?
+  A: 50-80% bilateral without Rx; <20% with early aggressive Rx
+- Q: What is Systemic of Vasculitis?
+  A: 10-15% aortitis (similar to Takayasu); medium-vessel vasculitis
+- Q: What is the investigation of choice for Vasculitis?
+  A: Exclusion; ANCA neg, ACE neg, syphilis neg, TB neg
+- Q: What is Acute Rx of Vasculitis?
+  A: High-dose steroids immediately (Methylpred 1g ×3d → Pred 1-2 mg/kg)
+- Q: What is Time-critical of Vasculitis?
+  A: Delay >2 weeks → permanent deafness
+- Q: What is Steroid-sparing of Vasculitis?
+  A: MTX, AZA, MMF
+- Q: What is Biologics of Vasculitis?
+  A: Tocilizumab (best for inner ear), anti-TNF (ADA, IFX)
+- Q: What is Aortitis of Vasculitis?
+  A: Same as Takayasu — surveillance, surgery at 5 cm
+- Q: What is Differential of Vasculitis?
+  A: GPA, sarcoidosis, syphilis, TB, Lyme, Susac, relapsing polychondritis, acoustic neuroma
+- Q: What is the prognosis of Vasculitis?
+  A: Chronic relapsing; deafness is main morbidity
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **Cogan's syndrome = rare vasculitis characterised by interstitial keratitis + vestibuloauditory dysfunction (eye + inner ear).**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Definition — Rare vasculitis with interstitial keratitis + vestibuloauditory dysfunction; systemic features possible (aortitis, vasculitis); First described — Cogan, 1945; Prevalence — Very rare (<1/million); ~300 cases in literature. What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

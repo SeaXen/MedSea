@@ -466,3 +466,130 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Osteomyelitis]] · [[Gout]] · [[Reactive arthritis]]
+---
+
+> Auto-generated study sections for "Infectious Arthritis and Bone Infections" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (52 generated)
+
+- Q: What is the definition of Infectious Arthritis and Bone Infections?
+  A: Bacterial infection of a synovial joint — purulent inflammation → rapid cartilage destruction (proteases, cytokines) → irreversible damage within hours-days
+- Q: What is the epidemiology of Infectious Arthritis and Bone Infections?
+  A: 4-10/100,000/year (higher in RA, prosthetic joints, immunocompromised)
+- Q: What is Peak Age of Infectious Arthritis and Bone Infections?
+  A: Bimodal: Children <5y (haematogenous) and Adults >60y (comorbidities, prostheses)
+- Q: What is Sex Ratio of Infectious Arthritis and Bone Infections?
+  A: M = F (children); M > F (adults)
+- Q: What is Joint Distribution of Infectious Arthritis and Bone Infections?
+  A: Knee (50%) > Hip (20%) > Shoulder, Ankle, Wrist, Elbow — Hip in children
+- Q: What is Mortality of Infectious Arthritis and Bone Infections?
+  A: 10-20% (higher in elderly, delayed Dx, prosthetic joints)
+- Q: What is Morbidity of Infectious Arthritis and Bone Infections?
+  A: Rapid joint destruction → osteoarthritis, avascular necrosis (hip), growth disturbance (children)
+- Q: What is Haematogenous of Infectious Arthritis and Bone Infections?
+  A: Bacteriaemia → seeding of synovium (highly vascular, no basement membrane) — most common
+- Q: What is Direct Inoculation of Infectious Arthritis and Bone Infections?
+  A: Trauma, surgery, injection, animal bite
+- Q: What is Contiguous Spread of Infectious Arthritis and Bone Infections?
+  A: Adjacent osteomyelitis, cellulitis, bursitis
+- Q: What is Host Factors of Infectious Arthritis and Bone Infections?
+  A: RA, diabetes, immunosuppression, prosthetic joint, IVDU, skin ulcers
+- Q: What is Pain of Infectious Arthritis and Bone Infections?
+  A: Severe, constant, worse with any movement (active + passive)
+- Q: What is Swelling of Infectious Arthritis and Bone Infections?
+  A: Tense effusion, warm, erythematous (can mimic gout/cellulitis)
+- Q: What is ROM of Infectious Arthritis and Bone Infections?
+  A: Markedly reduced — patient holds joint in position of comfort (knee: 15-20° flexion; hip: flexion/abduction/external rotation)
+- Q: What is Systemic of Infectious Arthritis and Bone Infections?
+  A: Fever (often low-grade), rigors, tachycardia — may be absent in elderly/immunocompromised
+- Q: What causes Infectious Arthritis and Bone Infections?
+  A: Recent joint surgery/injection, skin infection, IVDU, RA, diabetes, immunosuppression, prosthetic joint
+- Q: What is Demographic of Infectious Arthritis and Bone Infections?
+  A: Sexually active adolescents/young adults
+- Q: What is Pattern of Infectious Arthritis and Bone Infections?
+  A: Migratory polyarthralgia/arthritis (knee, wrist, ankle) + tenosynovitis + dermatitis (pustular lesions on trunk/extremities)
+- Q: What is Joint Fluid of Infectious Arthritis and Bone Infections?
+  A: Often sterile (immune complex) — culture blood, cervix, urethra, rectum, pharynx
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: Ceftriaxone 1g IV/IM daily + Azithromycin 1g PO (chlamydia co-infection)
+- Q: What is Blood cultures of Infectious Arthritis and Bone Infections?
+  A: 2 sets pre-antibiotics (positive 30-50%)
+- Q: What is CRP/ESR of Infectious Arthritis and Bone Infections?
+  A: Markedly elevated (CRP >100 common) — monitor response
+- Q: What is FBC of Infectious Arthritis and Bone Infections?
+  A: Leukocytosis with left shift
+- Q: What is Coagulation of Infectious Arthritis and Bone Infections?
+  A: Pre-op if surgery planned
+- Q: What is U&E, Cr, LFT of Infectious Arthritis and Bone Infections?
+  A: Baseline for antibiotics, renal function
+- Q: What is HIV, Hep B/C of Infectious Arthritis and Bone Infections?
+  A: If risk factors
+- Q: What is Haematogenous of Infectious Arthritis and Bone Infections?
+  A: Bacteriaemia → seeding of synovium (highly vascular, no basement membrane) — most common
+- Q: What is Direct Inoculation of Infectious Arthritis and Bone Infections?
+  A: Trauma, surgery, injection, animal bite
+- Q: What is Contiguous Spread of Infectious Arthritis and Bone Infections?
+  A: Adjacent osteomyelitis, cellulitis, bursitis
+- Q: What is Pain of Infectious Arthritis and Bone Infections?
+  A: Severe, constant, worse with any movement (active + passive)
+- Q: What is Swelling of Infectious Arthritis and Bone Infections?
+  A: Tense effusion, warm, erythematous (can mimic gout/cellulitis)
+- Q: What is ROM of Infectious Arthritis and Bone Infections?
+  A: Markedly reduced — patient holds joint in position of comfort (knee: 15-20° flexion; hip: flexion/abduction/external rotation)
+- Q: What is Systemic of Infectious Arthritis and Bone Infections?
+  A: Fever (often low-grade), rigors, tachycardia — may be absent in elderly/immunocompromised
+- Q: What is Demographic of Infectious Arthritis and Bone Infections?
+  A: Sexually active adolescents/young adults
+- Q: What is Pattern of Infectious Arthritis and Bone Infections?
+  A: Migratory polyarthralgia/arthritis (knee, wrist, ankle) + tenosynovitis + dermatitis (pustular lesions on trunk/extremities)
+- Q: What is Joint Fluid of Infectious Arthritis and Bone Infections?
+  A: Often sterile (immune complex) — culture blood, cervix, urethra, rectum, pharynx
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: Ceftriaxone 1g IV/IM daily + Azithromycin 1g PO (chlamydia co-infection)
+- Q: What is Blood cultures of Infectious Arthritis and Bone Infections?
+  A: 2 sets pre-antibiotics (positive 30-50%)
+- Q: What is CRP/ESR of Infectious Arthritis and Bone Infections?
+  A: Markedly elevated (CRP >100 common) — monitor response
+- Q: What is FBC of Infectious Arthritis and Bone Infections?
+  A: Leukocytosis with left shift
+- Q: What is Coagulation of Infectious Arthritis and Bone Infections?
+  A: Pre-op if surgery planned
+- Q: What is U&E, Cr, LFT of Infectious Arthritis and Bone Infections?
+  A: Baseline for antibiotics, renal function
+- Q: What is Emergency of Infectious Arthritis and Bone Infections?
+  A: Aspirate BEFORE antibiotics — time is cartilage
+- Q: What is Gold Standard of Infectious Arthritis and Bone Infections?
+  A: Synovial fluid: WBC >50,000, >90% neutrophils, positive Gram stain/culture
+- Q: What is Kocher Criteria (Child Hip) of Infectious Arthritis and Bone Infections?
+  A: Fever >38.5, non-weight bearing, ESR >40, WBC >12 → ≥3 = 93% probability
+- Q: What is Adult Native Joint of Infectious Arthritis and Bone Infections?
+  A: S. aureus 60-80% → Flucloxacillin 2g IV q6h + Gentamicin
+- Q: What is MRSA of Infectious Arthritis and Bone Infections?
+  A: Vancomycin 15-20mg/kg IV q12h (trough 15-20)
+- Q: What is Gonococcal of Infectious Arthritis and Bone Infections?
+  A: Young, migratory polyarthritis + tenosynovitis + dermatitis → Ceftriaxone 1g + Azithromycin 1g
+- Q: What is Prosthetic Joint of Infectious Arthritis and Bone Infections?
+  A: Early <3mo: DAIR; Chronic: 2-Stage Exchange; Coag-neg staph/Cutibacterium
+- Q: What is TB Arthritis of Infectious Arthritis and Bone Infections?
+  A: Chronic monoarthritis, endemic, standard 4-drug TB regimen
+- Q: What is Coexistence of Infectious Arthritis and Bone Infections?
+  A: Crystals + Sepsis → treat as septic until cultures negative
+- Q: What are the complications of Infectious Arthritis and Bone Infections?
+  A: AVN (hip), rapid OA, growth disturbance (kids), sepsis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Infectious Arthritis and Bone Infections?**
+   A. **| Definition | Bacterial infection of a synovial joint — purulent inflammation → rapid cartilage destruction (proteases, cytokines) → irreversible damage within hours-days |**
+   B. An unrelated condition not matching the clinical picture of Infectious Arthritis and Bone Infections
+   C. A complication seen late in the disease course of Infectious Arthritis and Bone Infections
+   D. A condition that mimics Infectious Arthritis and Bone Infections but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Infectious Arthritis and Bone Infections presents with: Definition — Bacterial infection of a synovial joint — purulent inflammation → rapid cartilage destruction (proteases, cytokines) → irreversible damage within hours-days; Incidence — 4-10/100,000/year (higher in RA, prosthetic joints, immunocompromised); Peak Age — Bimodal: Children <5y (haematogenous) and Adults >60y (comorbidities, prostheses). What is the most likely diagnosis?
+   A. **Infectious Arthritis and Bone Infections**
+   B. A condition that mimics Infectious Arthritis and Bone Infections but is not the same entity
+   C. A complication of Infectious Arthritis and Bone Infections rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Infectious Arthritis and Bone Infections
+

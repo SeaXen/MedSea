@@ -265,3 +265,52 @@ mindmap
 - [[Biliary Tract Disease/Acute Cholecystitis|Acute Cholecystitis]]
 - [[Biliary Tract Disease/Gallstone disease|Gallstone Disease]]
 - [[Portal Hypertension and Complications/Spontaneous bacterial peritonitis (SBP)|SBP]]
+---
+
+> Auto-generated study sections for "Biliary Tract Disease" — Ch 23: Hepatology.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Biliary Tract Disease?
+  A: | Feature | Charcot's Triad | Reynolds' Pentad |
+- Q: What is Choledocholithiasis of Biliary Tract Disease?
+  A: Most Common (60-80%)
+- Q: What is Malignant Stricture of Biliary Tract Disease?
+  A: Pancreatic Ca, Cholangiocarcinoma, Ampullary Ca
+- Q: What is Benign Stricture of Biliary Tract Disease?
+  A: Post-surgical, PSC, Mirizzi
+- Q: What is Parasites of Biliary Tract Disease?
+  A: Ascaris, Fasciola (Endemic)
+- Q: What is Charcot's Triad of Biliary Tract Disease?
+  A: Fever + RUQ Pain + Jaundice (~50-70%)
+- Q: What is Reynolds' Pentad of Biliary Tract Disease?
+  A: Charcot's + Shock + AMS (~5-10%)
+- Q: What is the investigation of choice for Biliary Tract Disease?
+  A: A (Inflammation) + B (Cholestasis) + C (Imaging)
+- Q: What is Severity of Biliary Tract Disease?
+  A: Grade I (Mild), II (Moderate), III (Severe/Organ Failure)
+- Q: What is Antibiotics of Biliary Tract Disease?
+  A: Ceftriaxone 2g IV (First-Line); Meropenem (Severe)
+- Q: What is Drainage Timing of Biliary Tract Disease?
+  A: Grade III: <12h (Emergency ERCP); Grade II: <24h (Urgent); Grade I: Elective
+- Q: What is the first-line treatment for Biliary Tract Disease?
+  A: ERCP + Sphincterotomy/Stent
+- Q: What is Common Pathogens of Biliary Tract Disease?
+  A: E. coli, Klebsiella, Enterococcus
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Biliary Tract Disease?**
+   A. **| Feature | Charcot's Triad | Reynolds' Pentad |**
+   B. An unrelated condition not matching the clinical picture of Biliary Tract Disease
+   C. A complication seen late in the disease course of Biliary Tract Disease
+   D. A condition that mimics Biliary Tract Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Biliary Tract Disease presents with: A[Biliary Obstruction] --> B[Bile Stasis]; B --> C[Bacterial Overgrowth]; C --> D[Bile Duct Mucosal Injury]. What is the most likely diagnosis?
+   A. **Biliary Tract Disease**
+   B. A condition that mimics Biliary Tract Disease but is not the same entity
+   C. A complication of Biliary Tract Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Biliary Tract Disease
+

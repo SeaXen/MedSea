@@ -224,3 +224,124 @@ mindmap
 > **Hierarchy**: [[../../Davidson Chapter 25 - Haematology Hierarchy|Haematology Hierarchy]]  
 > **Template**: [[../../../Templates/Hematology Topic Template|Hematology Topic Template]]  
 > **See also**: [[TRALI]], [[Transfusion Reactions]], [[Massive Transfusion Protocol]], [[Heart Failure]], [[Transfusion Medicine]]
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (49 generated)
+
+- Q: What is 1. Acute Respiratory Distress of Hematology?
+  A: Dyspnoea, Orthopnoea, Cough, Hypoxaemia (SpO₂ <90%)
+- Q: What is 2. Radiological of Hematology?
+  A: Bilateral Pulmonary Oedema (CXR: Batwing Infiltrates, Kerley B Lines, Cardiomegaly)
+- Q: What is 3. Fluid Overload of Hematology?
+  A: Positive Fluid Balance (Net Gain >1L or Weight Gain >2kg)
+- Q: What is 4. Cardiovascular of Hematology?
+  A: Hypertension, Tachycardia, Elevated JVP, Elevated BNP/NT-proBNP
+- Q: What is 5. Temporal of Hematology?
+  A: Onset ≤6 Hours Post-Transfusion (Can Occur During Transfusion)
+- Q: What is 6. Exclusion of Hematology?
+  A: No Alternative Explanation (TRALI, Sepsis, Anaphylaxis, Primary Cardiac Event)
+- Q: What is Hydrostatic Pressure of Hematology?
+  A: Rapid Volume Infusion → ↑ Pulmonary Capillary Pressure → Transudation into Alveoli
+- Q: What is Left Ventricular Dysfunction of Hematology?
+  A: Pre-existing Diastolic/Systolic Dysfunction → Inability to Handle Volume Load
+- Q: What is Decreased Oncotic Pressure of Hematology?
+  A: Hypoalbuminaemia (Common in Transfused Patients) → Favours Fluid Transudation
+- Q: What is Pulmonary Venous Constriction of Hematology?
+  A: Neurohormonal Response → ↑ Pulmonary Venous Pressure
+- Q: What is the epidemiology of Hematology?
+  A: 1-6% of Transfused Patients (Under-Recognised)
+- Q: What is Mortality of Hematology?
+  A: 5-15% (If Severe, Delayed Recognition)
+- Q: What is Recurrence Risk of Hematology?
+  A: High if Risk Factors Persist
+- Q: What is Long-Term of Hematology?
+  A: Most Recover Fully if Treated Promptly
+- Q: What is the definition of Hematology?
+  A: Acute Pulmonary Oedema ≤6h Post-Transfusion + Volume Overload Signs
+- Q: What is TACO vs TRALI of Hematology?
+  A: TACO = BNP High, Hypertension, JVP↑, Diuretic Response; TRALI = BNP Normal, Hypotension, No Diuretic Response
+- Q: What is Most Common Severe Reaction of Hematology?
+  A: TACO (Under-Recognised; 1-6% Incidence)
+- Q: What is High-Risk Groups of Hematology?
+  A: Elderly, HF, CKD, Rapid Transfusion, Paediatrics
+- Q: What is BNP in TACO of Hematology?
+  A: Markedly Elevated (Key Differentiator from TRALI)
+- Q: How is Hematology managed?
+  A: STOP Transfusion; Sit Upright; O₂; Furosemide 20-40mg IV; NIV
+- Q: What is Diuretics of Hematology?
+  A: First-Line (Unlike TRALI where Contraindicated)
+- Q: What is Prevention of Hematology?
+  A: Slow Rate (1 Unit/2-3h); Diuretic Prophylaxis; Single-Unit Policy; Restrictive Hb Threshold
+- Q: What is SHOT Reporting of Hematology?
+  A: All Severe TACO → SHOT + Blood Service
+- Q: What is NIV/CPAP of Hematology?
+  A: First-Line Ventilatory Support (Reduces Work of Breathing, Improves O₂)
+- Q: What causes Hematology?
+  A: Age >65, HF, CKD, Rapid Transfusion, Volume Overload Pre-Transfusion
+- Q: What is 1. Acute Respiratory Distress of Hematology?
+  A: Dyspnoea, Orthopnoea, Cough, Hypoxaemia (SpO₂ <90%)
+- Q: What is 2. Radiological of Hematology?
+  A: Bilateral Pulmonary Oedema (CXR: Batwing Infiltrates, Kerley B Lines, Cardiomegaly)
+- Q: What is 3. Fluid Overload of Hematology?
+  A: Positive Fluid Balance (Net Gain >1L or Weight Gain >2kg)
+- Q: What is 4. Cardiovascular of Hematology?
+  A: Hypertension, Tachycardia, Elevated JVP, Elevated BNP/NT-proBNP
+- Q: What is 5. Temporal of Hematology?
+  A: Onset ≤6 Hours Post-Transfusion (Can Occur During Transfusion)
+- Q: What is Hydrostatic Pressure of Hematology?
+  A: Rapid Volume Infusion → ↑ Pulmonary Capillary Pressure → Transudation into Alveoli
+- Q: What is Left Ventricular Dysfunction of Hematology?
+  A: Pre-existing Diastolic/Systolic Dysfunction → Inability to Handle Volume Load
+- Q: What is Decreased Oncotic Pressure of Hematology?
+  A: Hypoalbuminaemia (Common in Transfused Patients) → Favours Fluid Transudation
+- Q: What is Pulmonary Venous Constriction of Hematology?
+  A: Neurohormonal Response → ↑ Pulmonary Venous Pressure
+- Q: What is the epidemiology of Hematology?
+  A: 1-6% of Transfused Patients (Under-Recognised)
+- Q: What is Mortality of Hematology?
+  A: 5-15% (If Severe, Delayed Recognition)
+- Q: What is Recurrence Risk of Hematology?
+  A: High if Risk Factors Persist
+- Q: What is Long-Term of Hematology?
+  A: Most Recover Fully if Treated Promptly
+- Q: What is the definition of Hematology?
+  A: Acute Pulmonary Oedema ≤6h Post-Transfusion + Volume Overload Signs
+- Q: What is TACO vs TRALI of Hematology?
+  A: TACO = BNP High, Hypertension, JVP↑, Diuretic Response; TRALI = BNP Normal, Hypotension, No Diuretic Response
+- Q: What is Most Common Severe Reaction of Hematology?
+  A: TACO (Under-Recognised; 1-6% Incidence)
+- Q: What is High-Risk Groups of Hematology?
+  A: Elderly, HF, CKD, Rapid Transfusion, Paediatrics
+- Q: What is BNP in TACO of Hematology?
+  A: Markedly Elevated (Key Differentiator from TRALI)
+- Q: How is Hematology managed?
+  A: STOP Transfusion; Sit Upright; O₂; Furosemide 20-40mg IV; NIV
+- Q: What is Diuretics of Hematology?
+  A: First-Line (Unlike TRALI where Contraindicated)
+- Q: What is Prevention of Hematology?
+  A: Slow Rate (1 Unit/2-3h); Diuretic Prophylaxis; Single-Unit Policy; Restrictive Hb Threshold
+- Q: What is SHOT Reporting of Hematology?
+  A: All Severe TACO → SHOT + Blood Service
+- Q: What is NIV/CPAP of Hematology?
+  A: First-Line Ventilatory Support (Reduces Work of Breathing, Improves O₂)
+- Q: What causes Hematology?
+  A: Age >65, HF, CKD, Rapid Transfusion, Volume Overload Pre-Transfusion
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **TACO = Acute Pulmonary Oedema due to Rapid Volume Overload from Transfusion.**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: 1. Acute Respiratory Distress — Dyspnoea, Orthopnoea, Cough, Hypoxaemia (SpO₂ <90%); 2. Radiological — Bilateral Pulmonary Oedema (CXR: Batwing Infiltrates, Kerley B Lines, Cardiomegaly); 3. Fluid Overload — Positive Fluid Balance (Net Gain >1L or Weight Gain >2kg). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

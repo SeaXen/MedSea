@@ -219,3 +219,28 @@ mindmap
 - [[Acute Liver Failure/Wilson disease presenting as ALF|Wilson ALF]]
 - [[Acute Liver Failure/Autoimmune hepatitis presenting as ALF|AIH ALF]]
 - [[Acute Liver Failure/Acute fatty liver of pregnancy|AFLP]]
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: "Viral (HAV, HBV, HEV, HSV, EBV)" : 10
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **"Viral (HAV, HBV, HEV, HSV, EBV)" : 10**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Acute Liver Failure presents with: Coagulopathy (INR ≥1.5) + Encephalopathy (any grade) in a patient WITHOUT pre-existing liver disease AND illness duration <26 weeks; Subtype — Onset to Encephalopathy; Hyperacute — <7 days. What is the most likely diagnosis?
+   A. **Acute Liver Failure**
+   B. A condition that mimics Acute Liver Failure but is not the same entity
+   C. A complication of Acute Liver Failure rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Acute Liver Failure
+

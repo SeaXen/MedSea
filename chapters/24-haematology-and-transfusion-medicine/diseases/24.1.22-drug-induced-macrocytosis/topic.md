@@ -305,3 +305,72 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (23 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Macrocytic Anaemia → Drug-Induced
+- Q: What is Methotrexate of Hematology?
+  A: Folic acid 5-10 mg weekly (24-48h post-MTX); Consider dose reduction
+- Q: What is Trimethoprim/Sulfonamides of Hematology?
+  A: Folic acid 5 mg daily; Alternative antibiotics if possible
+- Q: What is AZT/NRTIs of Hematology?
+  A: Switch to non-NRTI regimen if severe; Monitor lactate
+- Q: What is Phenytoin/Carbamazepine of Hematology?
+  A: Folic acid 5 mg daily; Consider newer AEDs (Levetiracetam, Lamotrigine)
+- Q: What is Azathioprine/6-MP of Hematology?
+  A: Monitor MCV; Dose reduction if severe; Folic acid supplementation
+- Q: What is Hydroxyurea of Hematology?
+  A: Expected macrocytosis (therapeutic marker); No folate needed
+- Q: What is Alcohol of Hematology?
+  A: Abstinence + Thiamine/B-complex + Folate
+- Q: What is Methotrexate of Hematology?
+  A: Folic acid 5-10 mg weekly (24-48h post-MTX); Consider dose reduction
+- Q: What is Trimethoprim/Sulfonamides of Hematology?
+  A: Folic acid 5 mg daily; Alternative antibiotics if possible
+- Q: What is AZT/NRTIs of Hematology?
+  A: Switch to non-NRTI regimen if severe; Monitor lactate
+- Q: What is Phenytoin/Carbamazepine of Hematology?
+  A: Folic acid 5 mg daily; Consider newer AEDs (Levetiracetam, Lamotrigine)
+- Q: What is Azathioprine/6-MP of Hematology?
+  A: Monitor MCV; Dose reduction if severe; Folic acid supplementation
+- Q: What is Hydroxyurea of Hematology?
+  A: Expected macrocytosis (therapeutic marker); No folate needed
+- Q: What is Alcohol of Hematology?
+  A: Abstinence + Thiamine/B-complex + Folate
+- Q: What is Common Drugs of Hematology?
+  A: MTX, TMP-SMX, AZT, Phenytoin, Azathioprine, 5-FU, Hydroxyurea
+- Q: What is the mechanism of Hematology?
+  A: Impaired DNA synthesis (Antifolates, Purine/Pyrimidine analogues) OR Mitochondrial toxicity (NRTIs)
+- Q: What is Blood Film of Hematology?
+  A: Oval macrocytes, Hypersegmented neutrophils (if folate antagonism)
+- Q: What is B12/Folate of Hematology?
+  A: Normal (distinguishes from nutritional deficiency)
+- Q: What is Reversibility of Hematology?
+  A: MCV normalises in 2-3 months after drug cessation
+- Q: How is Hematology managed?
+  A: Stop/reduce/substitute drug; Folic acid 5mg daily if antifolate
+- Q: What is Folic Acid of Hematology?
+  A: 5mg daily with MTX/TMP; 5-10mg weekly post-MTX dose
+- Q: What is MCV Trend of Hematology?
+  A: Baseline MCV helpful; ↑ MCV correlates with drug duration/dose
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Macrocytic Anaemia → Drug-Induced**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: MCV — ↑ (95-115 fL); Blood Film — Oval macrocytes, ± Hypersegmented neutrophils; RBC Volume — ↓/Normal. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

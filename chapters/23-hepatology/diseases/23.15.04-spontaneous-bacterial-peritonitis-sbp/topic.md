@@ -252,3 +252,50 @@ mindmap
 - [[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]
 - [[Portal Hypertension and Complications/Hepatorenal Syndrome|HRS]]
 - [[Acute Liver Failure/CLIF-C ACLF and ACLF grades|ACLF]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: Infection of ascitic fluid without surgically treatable intra-abdominal source
+- Q: What is the epidemiology of Portal Hypertension and Complications?
+  A: 10-30% of hospitalized cirrhotics with ascites
+- Q: What is Mortality of Portal Hypertension and Complications?
+  A: 20-40% in-hospital (improved with albumin)
+- Q: What is Common organisms of Portal Hypertension and Complications?
+  A: E. coli (40%), Klebsiella (20%), Strep pneumoniae (10%), Enterococci (10%)
+- Q: What is Culture-negative of Portal Hypertension and Complications?
+  A: 40-60% (despite PMN ≥250) — "Culture-negative neutrocytic ascites"
+- Q: What is the investigation of choice for Portal Hypertension and Complications?
+  A: PMN ≥250 cells/mm³ ( cultura-negative = still SBP)
+- Q: What is Culture of Portal Hypertension and Complications?
+  A: Inoculate at bedside into blood culture bottles
+- Q: What is Empirical antibiotics of Portal Hypertension and Complications?
+  A: Ceftriaxone 2g IV daily × 5-7 days
+- Q: What is Albumin of Portal Hypertension and Complications?
+  A: 1.5g/kg Day 1 + 1g/kg Day 3 — prevents HRS/mortality
+- Q: What is Secondary peritonitis of Portal Hypertension and Complications?
+  A: Suspect if: protein >1, glucose <50, LDH high, polymicrobial
+- Q: What is Secondary prophylaxis of Portal Hypertension and Complications?
+  A: Norfloxacin 400mg daily lifelong after SBP
+- Q: What is Primary prophylaxis of Portal Hypertension and Complications?
+  A: Ascitic protein <1.5 + (Child≥9 or renal impairment)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **A[Clinical Suspicion: Fever, Abdo Pain, Worsening HE, Unexplained Deterioration] --> B[Diagnostic Paracentesis]**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Portal Hypertension and Complications presents with: Definition — Infection of ascitic fluid without surgically treatable intra-abdominal source; Incidence — 10-30% of hospitalized cirrhotics with ascites; Mortality — 20-40% in-hospital (improved with albumin). What is the most likely diagnosis?
+   A. **Portal Hypertension and Complications**
+   B. A condition that mimics Portal Hypertension and Complications but is not the same entity
+   C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
+

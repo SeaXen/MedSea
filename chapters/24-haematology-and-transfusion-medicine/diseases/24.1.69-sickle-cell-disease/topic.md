@@ -419,3 +419,76 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (25 generated)
+
+- Q: What is the definition of Hematology?
+  A: New pulmonary infiltrate + fever + respiratory symptoms
+- Q: What causes Hematology?
+  A: Infection (Strep pneumo, Chlamydia, Mycoplasma), fat embolism, vaso-occlusion
+- Q: What are the clinical features of Hematology?
+  A: Fever, cough, chest pain, tachypnoea, hypoxia, wheeze
+- Q: What is CXR of Hematology?
+  A: New infiltrate (often multilobar, upper lobe)
+- Q: How is Hematology managed?
+  A: Oxygen, broad-spectrum antibiotics (ceftriaxone + macrolide), bronchodilators, incentive spirometry, simple or exchange transfusion (target HbS <30%)
+- Q: What is the definition of Hematology?
+  A: New pulmonary infiltrate + fever + respiratory symptoms
+- Q: What causes Hematology?
+  A: Infection (Strep pneumo, Chlamydia, Mycoplasma), fat embolism, vaso-occlusion
+- Q: What are the clinical features of Hematology?
+  A: Fever, cough, chest pain, tachypnoea, hypoxia, wheeze
+- Q: What is CXR of Hematology?
+  A: New infiltrate (often multilobar, upper lobe)
+- Q: What is the mechanism of Hematology?
+  A: ↑ HbF (γ-globin), ↓ neutrophil count, ↓ adhesion molecules
+- Q: What is Hematology indicated for?
+  A: HbSS/HbSβ⁰: ≥3 VOC/yr, ACS, severe anaemia, symptomatic; all adults with HbSS
+- Q: What is Dosing of Hematology?
+  A: Start 15 mg/kg/day → escalate q8wk by 5 mg/kg to MTD (max 35 mg/kg)
+- Q: How is Hematology monitored?
+  A: CBC q2-4wk (ANC >1.5, Plt >80), HbF%, MCV↑, renal/LFT
+- Q: What is Response of Hematology?
+  A: ↑ HbF >20%, ↓ VOC/ACS/transfusion, ↑ Hb by 1-2 g/dL
+- Q: What is Mutation of Hematology?
+  A: β6 Glu→Val (GAG→GTG); autosomal recessive
+- Q: How is Hematology classified?
+  A: HbSS (severe), HbSC (mild-mod, retinopathy), HbSβ⁰ (like SS), HbSβ⁺ (mild)
+- Q: What is the investigation of choice for Hematology?
+  A: HPLC: HbS%, HbA2 (↑ in Sβ-thal), HbF; solubility test +ve
+- Q: How is Hematology managed?
+  A: Hydration + IV morphine/PCA + NSAIDs + treat trigger + oxygen if hypoxic
+- Q: What is ACS of Hematology?
+  A: #1 cause of death; CxR new infiltrate + fever + resp sx → ceftriaxone + azithromycin + exchange tx (HbS<30%)
+- Q: What is Stroke Prevention of Hematology?
+  A: TCD annually 2-16yr; >200 cm/s → chronic transfusion (HbS<30%)
+- Q: What is Priapism of Hematology?
+  A: >4h = urological emergency (aspirate/irrigate/phenylephrine)
+- Q: What is Hydroxyurea of Hematology?
+  A: Start 15 mg/kg → MTD (max 35 mg/kg), CBC q2-4wk, target HbF>20%
+- Q: What is Exchange Transfusion Target of Hematology?
+  A: HbS <30%, Hb ~10 g/dL
+- Q: What is Penicillin Prophylaxis of Hematology?
+  A: <5 years (or lifelong if splenectomy/invasive pneumococcal)
+- Q: What is Curative of Hematology?
+  A: HSCT (matched sibling); Gene therapy (lentiviral anti-sickling β-globin / CRISPR BCL11A)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haemoglobinopathies → Sickle Cell Disease**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Genotype — Haemoglobin Composition; HbSS (Homozygous) — HbS >90%, HbF ↑; HbSC — HbS ~50%, HbC ~50%. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

@@ -270,3 +270,40 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Ankylosing spondylitis]] · [[Psoriatic arthritis]] · [[Reactive arthritis]] · [[Enteropathic arthritis]]
+---
+
+> Auto-generated study sections for "Inflammatory Arthritis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (7 generated)
+
+- Q: What is the definition of Inflammatory Arthritis?
+  A: SpA features present but insufficient for AS, PsA, ReA, enteropathic
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: 60-80% positive — predicts evolution to AS
+- Q: What is Evolution of Inflammatory Arthritis?
+  A: 10-30% evolve to defined SpA over 2-5 years (AS most common)
+- Q: What is ASAS Criteria of Inflammatory Arthritis?
+  A: Insufficient for AS imaging arm (e.g., unilateral grade 2) or clinical arm
+- Q: How is Inflammatory Arthritis managed?
+  A: Treat by domain (axial: NSAIDs → anti-TNF/IL-17; peripheral: NSAIDs → SSZ/MTX → biologics)
+- Q: How is Inflammatory Arthritis monitored?
+  A: Annual MRI SI joints + clinical review for evolution
+- Q: What is the prognosis of Inflammatory Arthritis?
+  A: 50-70% remain stable/resolve; early recognition → early treat-to-target
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inflammatory Arthritis?**
+   A. **USpA = SpA features present but insufficient criteria for AS, PsA, ReA, or enteropathic.**
+   B. An unrelated condition not matching the clinical picture of Inflammatory Arthritis
+   C. A complication seen late in the disease course of Inflammatory Arthritis
+   D. A condition that mimics Inflammatory Arthritis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inflammatory Arthritis presents with: Definition — SpA features present (inflammatory back pain, arthritis, enthesitis, dactylitis, uveitis, psoriasis, IBD, HLA-B27, sacroiliitis) but DO NOT meet ASAS criteria for AS, PsA, ReA, or enteropathic arthritis; Prevalence — ~0.1-0.2% (similar to AS); Peak Onset — 20-40 years. What is the most likely diagnosis?
+   A. **Inflammatory Arthritis**
+   B. A condition that mimics Inflammatory Arthritis but is not the same entity
+   C. A complication of Inflammatory Arthritis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inflammatory Arthritis
+

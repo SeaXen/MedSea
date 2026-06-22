@@ -385,3 +385,134 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Osteoporosis]] · [[Renal osteodystrophy]] · [[Paget's disease of bone]]
+---
+
+> Auto-generated study sections for "Bone Metabolic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (54 generated)
+
+- Q: What is Bone Pain of Bone Metabolic Diseases?
+  A: Dull, aching, lower back, pelvis, ribs, thighs — worse on weight-bearing
+- Q: What is Proximal Myopathy of Bone Metabolic Diseases?
+  A: Waddling gait, difficulty climbing stairs, rising from chair (osteomalacic myopathy)
+- Q: What is Looser Zones (Pseudofractures) of Bone Metabolic Diseases?
+  A: Pathognomonic — transverse radiolucent lines perpendicular to cortex
+- Q: What is Fractures of Bone Metabolic Diseases?
+  A: Minimal trauma, multiple
+- Q: What is Bone Tenderness of Bone Metabolic Diseases?
+  A: Specific sites: ribs, pelvis, scapulae
+- Q: What is Looser Zones of Bone Metabolic Diseases?
+  A: Transverse radiolucent lines perpendicular to cortex — pseudofractures; bilateral/symmetric = pathognomonic
+- Q: What is Sites of Bone Metabolic Diseases?
+  A: Scapula (axillary border), Femoral neck (medial), Pubic rami, Ribs, Ulna (medial)
+- Q: What is Rickets: Growth Plate of Bone Metabolic Diseases?
+  A: Widening, cupping, flaring, fraying of metaphyses (wrist, knee, ankle)
+- Q: What is Genetics of Bone Metabolic Diseases?
+  A: PHEX mutation (X-linked dominant) → ↓ PHEX → ↑ FGF23
+- Q: What is the pathogenesis of Bone Metabolic Diseases?
+  A: FGF23 excess → ↓ renal phosphate reabsorption (NaPi-IIa/IIc) + ↓ 1α-hydroxylase → phosphate wasting + low 1,25 Vit D
+- Q: What is Biochemistry of Bone Metabolic Diseases?
+  A: Low PO₄, Normal 25-OH Vit D, High ALP, High FGF23, Normal/low PTH
+- Q: What is Inheritance of Bone Metabolic Diseases?
+  A: X-linked dominant — males more severely affected
+- Q: How is Bone Metabolic Diseases managed?
+  A: Burosumab (anti-FGF23 mAb) — newest, superior; Conventional: Phosphate supplements + Alfacalcidol (1α-OH Vit D)
+- Q: What causes Bone Metabolic Diseases?
+  A: Phosphaturic mesenchymal tumour (usually benign, sinonasal, extremity, bone) → secretes FGF23
+- Q: What are the clinical features of Bone Metabolic Diseases?
+  A: Adults: bone pain, fractures, myopathy; normal 25-OH Vit D
+- Q: What is the investigation of choice for Bone Metabolic Diseases?
+  A: High FGF23, low PO₄, high ALP; tumour localisation: FDG-PET, Octreotide scan, MRI, venous sampling
+- Q: How is Bone Metabolic Diseases managed?
+  A: Surgical resection = cure (FGF23 normalises); medical bridge (phosphate + alfacalcidol)
+- Q: What is Defect of Bone Metabolic Diseases?
+  A: Generalised proximal tubular dysfunction → glycosuria, aminoaciduria, phosphaturia, bicarbonaturia (proximal RTA), uric acid wasting
+- Q: What causes Bone Metabolic Diseases?
+  A: Genetic (cystinosis, Wilson's, Lowe), Drugs (tenofovir, ifosfamide, aminoglycosides, outdated tetracycline), Myeloma, Amyloidosis
+- Q: What is Biochemistry of Bone Metabolic Diseases?
+  A: Low PO₄, Low bicarbonate, Glycosuria (normal blood glucose), Aminoaciduria
+- Q: What is Phosphate Binders of Bone Metabolic Diseases?
+  A: With meals: Ca-carbonate/acetate, Sevelamer, Sucroferric oxyhydroxide
+- Q: What is Vit D Analogues of Bone Metabolic Diseases?
+  A: Alfacalcidol, Paricalcitol — suppress PTH
+- Q: What is Calcimimetic of Bone Metabolic Diseases?
+  A: Cinacalcet — if PTH refractory despite binders + Vit D
+- Q: What is Target PTH of Bone Metabolic Diseases?
+  A: 2-9x ULN (KDIGO) — avoid over-suppression (adynamic bone)
+- Q: What is Bone Pain of Bone Metabolic Diseases?
+  A: Dull, aching, lower back, pelvis, ribs, thighs — worse on weight-bearing
+- Q: What is Proximal Myopathy of Bone Metabolic Diseases?
+  A: Waddling gait, difficulty climbing stairs, rising from chair (osteomalacic myopathy)
+- Q: What is Looser Zones (Pseudofractures) of Bone Metabolic Diseases?
+  A: Pathognomonic — transverse radiolucent lines perpendicular to cortex
+- Q: What is Fractures of Bone Metabolic Diseases?
+  A: Minimal trauma, multiple
+- Q: What is Looser Zones of Bone Metabolic Diseases?
+  A: Transverse radiolucent lines perpendicular to cortex — pseudofractures; bilateral/symmetric = pathognomonic
+- Q: What is Sites of Bone Metabolic Diseases?
+  A: Scapula (axillary border), Femoral neck (medial), Pubic rami, Ribs, Ulna (medial)
+- Q: What is Rickets: Growth Plate of Bone Metabolic Diseases?
+  A: Widening, cupping, flaring, fraying of metaphyses (wrist, knee, ankle)
+- Q: What is Genetics of Bone Metabolic Diseases?
+  A: PHEX mutation (X-linked dominant) → ↓ PHEX → ↑ FGF23
+- Q: What is the pathogenesis of Bone Metabolic Diseases?
+  A: FGF23 excess → ↓ renal phosphate reabsorption (NaPi-IIa/IIc) + ↓ 1α-hydroxylase → phosphate wasting + low 1,25 Vit D
+- Q: What is Biochemistry of Bone Metabolic Diseases?
+  A: Low PO₄, Normal 25-OH Vit D, High ALP, High FGF23, Normal/low PTH
+- Q: What is Inheritance of Bone Metabolic Diseases?
+  A: X-linked dominant — males more severely affected
+- Q: What causes Bone Metabolic Diseases?
+  A: Phosphaturic mesenchymal tumour (usually benign, sinonasal, extremity, bone) → secretes FGF23
+- Q: What are the clinical features of Bone Metabolic Diseases?
+  A: Adults: bone pain, fractures, myopathy; normal 25-OH Vit D
+- Q: What is the investigation of choice for Bone Metabolic Diseases?
+  A: High FGF23, low PO₄, high ALP; tumour localisation: FDG-PET, Octreotide scan, MRI, venous sampling
+- Q: What is Defect of Bone Metabolic Diseases?
+  A: Generalised proximal tubular dysfunction → glycosuria, aminoaciduria, phosphaturia, bicarbonaturia (proximal RTA), uric acid wasting
+- Q: What causes Bone Metabolic Diseases?
+  A: Genetic (cystinosis, Wilson's, Lowe), Drugs (tenofovir, ifosfamide, aminoglycosides, outdated tetracycline), Myeloma, Amyloidosis
+- Q: What is Biochemistry of Bone Metabolic Diseases?
+  A: Low PO₄, Low bicarbonate, Glycosuria (normal blood glucose), Aminoaciduria
+- Q: What is Phosphate Binders of Bone Metabolic Diseases?
+  A: With meals: Ca-carbonate/acetate, Sevelamer, Sucroferric oxyhydroxide
+- Q: What is Vit D Analogues of Bone Metabolic Diseases?
+  A: Alfacalcidol, Paricalcitol — suppress PTH
+- Q: What is Calcimimetic of Bone Metabolic Diseases?
+  A: Cinacalcet — if PTH refractory despite binders + Vit D
+- Q: What is Target PTH of Bone Metabolic Diseases?
+  A: 2-9x ULN (KDIGO) — avoid over-suppression (adynamic bone)
+- Q: What is the definition of Bone Metabolic Diseases?
+  A: Osteomalacia = adult defective osteoid mineralisation; Rickets = child defective growth plate mineralisation
+- Q: What is Biochemistry of Bone Metabolic Diseases?
+  A: Low PO₄, High ALP, High PTH + Low 25-OH Vit D (nutritional) OR Normal 25-OH Vit D + High FGF23 (phosphate wasting)
+- Q: What is Looser Zones of Bone Metabolic Diseases?
+  A: Transverse radiolucent lines perpendicular to cortex — scapula, femoral neck, pubic rami, ribs — pathognomonic
+- Q: What is Rickets Signs of Bone Metabolic Diseases?
+  A: Bowed legs (genu varum), widened wrists/ankles (cupping/flaring), rachitic rosary, craniotabes
+- Q: What is Nutritional Vit D Deficiency of Bone Metabolic Diseases?
+  A: Low 25-OH Vit D, High PTH, Low PO₄, High ALP → Loading: 50,000 IU weekly ×8wk
+- Q: What is XLH of Bone Metabolic Diseases?
+  A: PHEX mutation → FGF23 excess → phosphate wasting; Normal 25-OH Vit D; Burosumab (anti-FGF23) 1st line
+- Q: What is Tumour-Induced Osteomalacia of Bone Metabolic Diseases?
+  A: Mesenchymal tumour → FGF23 → phosphate wasting; Resect tumour = cure
+- Q: What is Fanconi Syndrome of Bone Metabolic Diseases?
+  A: Proximal tubulopathy: phosphaturia + glycosuria + aminoaciduria + bicarbonate wasting
+- Q: What is CKD-MBD of Bone Metabolic Diseases?
+  A: High PO₄, Low Ca, High PTH, High FGF23, Low 1,25 Vit D → Binders, Vit D analogues, Cinacalcet
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Bone Metabolic Diseases?**
+   A. **| Definition | Defective mineralisation of osteoid in adults (growth plates fused) | Defective mineralisation of growth plate cartilage in children |**
+   B. An unrelated condition not matching the clinical picture of Bone Metabolic Diseases
+   C. A complication seen late in the disease course of Bone Metabolic Diseases
+   D. A condition that mimics Bone Metabolic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Bone Metabolic Diseases presents with: Definition — Defective mineralisation of osteoid in adults (growth plates fused); Age — Adults (>18-20y, plates fused); Key Defect — Accumulation of unmineralised osteoid. What is the most likely diagnosis?
+   A. **Bone Metabolic Diseases**
+   B. A condition that mimics Bone Metabolic Diseases but is not the same entity
+   C. A complication of Bone Metabolic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Bone Metabolic Diseases
+

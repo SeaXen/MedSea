@@ -342,3 +342,80 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (27 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Plasma Cell Disorders → AL Amyloidosis
+- Q: What is sFLC (κ/λ) of Hematology?
+  A: dFLC = Involved - Uninvolved; Involved/Uninvolved Ratio
+- Q: What is Congo Red + Polarised Light of Hematology?
+  A: Gold Standard: Apple-green birefringence
+- Q: What is Mass Spectrometry (Proteomics) of Hematology?
+  A: Definitive Typing: AL vs ATTR vs AA vs others
+- Q: What is Bone Marrow of Hematology?
+  A: BMPC% (usually <10%), Flow, Cytogenetics (t(11;14) common)
+- Q: What is NT-proBNP, Troponin of Hematology?
+  A: Mayo Staging + Baseline cardiac function
+- Q: What is CMR (Cardiac MRI) of Hematology?
+  A: Late Gadolinium Enhancement (LGE) – diffuse subendocardial = AL amyloid
+- Q: What is PYP/DPD Scan (Bone Scintigraphy) of Hematology?
+  A: ATTR: Positive (Grade 2-3); AL: Negative
+- Q: What is SAP Scintigraphy of Hematology?
+  A: Whole-body amyloid load (UK)
+- Q: What is sFLC (κ/λ) of Hematology?
+  A: dFLC = Involved - Uninvolved; Involved/Uninvolved Ratio
+- Q: What is Congo Red + Polarised Light of Hematology?
+  A: Gold Standard: Apple-green birefringence
+- Q: What is Mass Spectrometry (Proteomics) of Hematology?
+  A: Definitive Typing: AL vs ATTR vs AA vs others
+- Q: What is Bone Marrow of Hematology?
+  A: BMPC% (usually <10%), Flow, Cytogenetics (t(11;14) common)
+- Q: What is NT-proBNP, Troponin of Hematology?
+  A: Mayo Staging + Baseline cardiac function
+- Q: What is CMR (Cardiac MRI) of Hematology?
+  A: Late Gadolinium Enhancement (LGE) – diffuse subendocardial = AL amyloid
+- Q: What is PYP/DPD Scan (Bone Scintigraphy) of Hematology?
+  A: ATTR: Positive (Grade 2-3); AL: Negative
+- Q: What is SAP Scintigraphy of Hematology?
+  A: Whole-body amyloid load (UK)
+- Q: What is the investigation of choice for Hematology?
+  A: Congo Red + Apple-green birefringence + Mass Spec (AL)
+- Q: What is FLC of Hematology?
+  A: dFLC = Involved - Uninvolved; Involved/Uninvolved Ratio
+- Q: What is Cardiac of Hematology?
+  A: Low voltage ECG, Thickened walls, Sparkling Echo, LGE on CMR, PYP Scan Negative
+- Q: How is Hematology classified?
+  A: NT-proBNP, Troponin, dFLC → Stage I-IV → Prognosis
+- Q: What is the first-line treatment for Hematology?
+  A: Dara-CyBorD (ANDROMEDA: ~90% CR, ~50% cardiac response)
+- Q: What is SCT of Hematology?
+  A: Stage I-II, Age <70, No Severe Cardiac → Mel 200
+- Q: How is Hematology managed?
+  A: Loop Diuretics; AVOID ACEi/ARB/BB Initially
+- Q: What is Renal of Hematology?
+  A: Nephrotic Syndrome; Congo Red +ve on Biopsy
+- Q: How is Hematology monitored?
+  A: dFLC (CR = dFLC <10 + normal ratio); NT-proBNP, Troponin
+- Q: What is t(11;14) of Hematology?
+  A: ~40-50% AL Amyloid → Venetoclax Sensitive
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Plasma Cell Disorders → AL Amyloidosis**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: A[Clonal Plasma Cell Disorder] --> B[Production of Monoclonal Light Chains (κ/λ)]; B --> C[Misfolding → β-pleated Sheet Structure]; C --> D[Amyloid Fibril Formation]. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

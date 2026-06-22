@@ -433,3 +433,76 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (25 generated)
+
+- Q: What is Asparaginase Hypersensitivity of Hematology?
+  A: Switch to Erwinia asparaginase (25,000 IU/m² MWF × 6-9 doses) or pegcrisaspase
+- Q: What is Thrombosis (Asparaginase-related) of Hematology?
+  A: ATIII replacement if <80%; LMWH prophylaxis in high risk; therapeutic anticoagulation if thrombosis
+- Q: What is Pancreatitis of Hematology?
+  A: Stop asparaginase; supportive; may reintroduce Erwinia after resolution
+- Q: What is Osteonecrosis (AVN) of Hematology?
+  A: Bisphosphonates, analgesic, orthopaedic referral; risk: Dex, age>10, female
+- Q: What is Hyperglycaemia of Hematology?
+  A: Insulin sliding scale; monitor during Dex pulses
+- Q: What is TLS of Hematology?
+  A: Allopurinol/rasburicase, hydration (as per AML)
+- Q: What is Veno-occlusive Disease (VOD/SOS) of Hematology?
+  A: Defibrotide prophylaxis in high-risk HSCT
+- Q: What is Asparaginase Hypersensitivity of Hematology?
+  A: Switch to Erwinia asparaginase (25,000 IU/m² MWF × 6-9 doses) or pegcrisaspase
+- Q: What is Thrombosis (Asparaginase-related) of Hematology?
+  A: ATIII replacement if <80%; LMWH prophylaxis in high risk; therapeutic anticoagulation if thrombosis
+- Q: What is Pancreatitis of Hematology?
+  A: Stop asparaginase; supportive; may reintroduce Erwinia after resolution
+- Q: What is Osteonecrosis (AVN) of Hematology?
+  A: Bisphosphonates, analgesic, orthopaedic referral; risk: Dex, age>10, female
+- Q: What is Hyperglycaemia of Hematology?
+  A: Insulin sliding scale; monitor during Dex pulses
+- Q: What is TLS of Hematology?
+  A: Allopurinol/rasburicase, hydration (as per AML)
+- Q: What is Veno-occlusive Disease (VOD/SOS) of Hematology?
+  A: Defibrotide prophylaxis in high-risk HSCT
+- Q: What is the definition of Hematology?
+  A: ≥20% lymphoblasts (TdT+) in BM
+- Q: How is Hematology classified?
+  A: TdT+, CD19+, CD10+, CD34+, HLA-DR+
+- Q: What is Ph+ ALL of Hematology?
+  A: BCR::ABL1 p190; TKI (Dasatinib/Ponatinib) + Chemo → HSCT CR1
+- Q: What is Ph-like ALL of Hematology?
+  A: ABL-class → Dasatinib; JAK-STAT → Ruxolitinib
+- Q: What is Favourable Genetics of Hematology?
+  A: ETV6::RUNX1 (t(12;21)), Hyperdiploidy (51-65 chr)
+- Q: What are the side effects of Hematology?
+  A: Ph+, Ph-like, iAMP21, KMT2A-r, Hypodiploidy (<44), IKZF1 del
+- Q: What is Risk Stratification of Hematology?
+  A: NCI/Rome (Age/WBC) + Genetics + MRD
+- Q: What is MRD of Hematology?
+  A: Flow 10⁻⁴, NGS 10⁻⁵-10⁻⁶ – strongest prognostic factor
+- Q: What is CNS Prophylaxis of Hematology?
+  A: IT MTX + HD-MTX; CNS3 = Cranial RT (18Gy)
+- Q: What is Maintenance of Hematology?
+  A: 6-MP daily + MTX weekly + VCR/Dex monthly × 2y (F) / 3y (M)
+- Q: What is Relapsed B-ALL of Hematology?
+  A: Blinatumomab (MRD+) / Inotuzumab (salvage) / CAR-T (R/R ≤25y)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Acute Leukaemias → ALL**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: B-ALL — Ph+ (BCR::ABL1);  — DUX4, ZNF384, MEF2D, NUTM1-rearranged; T-ALL — TAL1, TLX1, TLX3, HOXA, LMO2 rearrangements. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

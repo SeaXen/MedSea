@@ -306,3 +306,90 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Ankylosing spondylitis]] · [[Psoriatic arthritis]] · [[Reactive arthritis]] · [[Undifferentiated spondyloarthritis]]
+---
+
+> Auto-generated study sections for "Inflammatory Arthritis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (32 generated)
+
+- Q: What is the definition of Inflammatory Arthritis?
+  A: Spondyloarthritis associated with inflammatory bowel disease (Crohn's disease, ulcerative colitis)
+- Q: What is the epidemiology of Inflammatory Arthritis?
+  A: 10-20% of IBD patients develop arthritis
+- Q: How is Inflammatory Arthritis classified?
+  A: Crohn's disease > Ulcerative colitis
+- Q: What is Peak Onset of Inflammatory Arthritis?
+  A: 20-40 years (often after IBD diagnosis, but can precede)
+- Q: What is Sex Ratio of Inflammatory Arthritis?
+  A: M = F
+- Q: What is Genetics of Inflammatory Arthritis?
+  A: HLA-B27 (20-50%), NOD2/CARD15 (Crohn's), shared SpA loci
+- Q: What is Sacroiliitis of Inflammatory Arthritis?
+  A: Asymmetric in Crohn's, symmetric in UC (but still SpA pattern)
+- Q: What is AS-like Disease of Inflammatory Arthritis?
+  A: 5-10% develop full AS radiographic picture (bamboo spine)
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: Positive in 30-50% of axial disease (lower than primary AS)
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: Positive in 20-50% (higher in axial/type 2)
+- Q: What is Inflammatory Markers of Inflammatory Arthritis?
+  A: ESR/CRP elevated (correlate with IBD activity in Type 1)
+- Q: What is Synovial Fluid of Inflammatory Arthritis?
+  A: Inflammatory, sterile, no crystals
+- Q: What is Imaging of Inflammatory Arthritis?
+  A: Sacroiliitis on X-ray/MRI (asymmetric in CD); peripheral erosions (late)
+- Q: What is IBD Workup of Inflammatory Arthritis?
+  A: Colonoscopy + biopsy (diagnose IBD if not known); faecal calprotectin
+- Q: What is LFTs of Inflammatory Arthritis?
+  A: Screen for PSC (alkaline phosphatase ↑)
+- Q: What is Sacroiliitis of Inflammatory Arthritis?
+  A: Asymmetric in Crohn's, symmetric in UC (but still SpA pattern)
+- Q: What is AS-like Disease of Inflammatory Arthritis?
+  A: 5-10% develop full AS radiographic picture (bamboo spine)
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: Positive in 20-50% (higher in axial/type 2)
+- Q: What is Inflammatory Markers of Inflammatory Arthritis?
+  A: ESR/CRP elevated (correlate with IBD activity in Type 1)
+- Q: What is Synovial Fluid of Inflammatory Arthritis?
+  A: Inflammatory, sterile, no crystals
+- Q: What is Imaging of Inflammatory Arthritis?
+  A: Sacroiliitis on X-ray/MRI (asymmetric in CD); peripheral erosions (late)
+- Q: What is IBD Workup of Inflammatory Arthritis?
+  A: Colonoscopy + biopsy (diagnose IBD if not known); faecal calprotectin
+- Q: What is LFTs of Inflammatory Arthritis?
+  A: Screen for PSC (alkaline phosphatase ↑)
+- Q: What is the epidemiology of Inflammatory Arthritis?
+  A: 10-20% of IBD develop arthritis; Crohn's > UC
+- Q: How is Inflammatory Arthritis classified?
+  A: Acute, pauciarticular, parallels IBD flare — treat gut, NSAIDs cautious, IA steroid
+- Q: What is Axial Involvement of Inflammatory Arthritis?
+  A: Asymmetric sacroiliitis in Crohn's, symmetric in UC; 5-10% AS-like
+- Q: What is HLA-B27 of Inflammatory Arthritis?
+  A: 20-50% (higher in axial/type 2)
+- Q: What is Anti-TNF of Inflammatory Arthritis?
+  A: Infliximab, Adalimumab, Certolizumab — treats BOTH gut + joints
+- Q: What is SSZ in Crohn's of Inflammatory Arthritis?
+  A: CONTRAINDICATED (worsens colitis) — use in UC only if needed
+- Q: What is Vedolizumab/Ustekinumab of Inflammatory Arthritis?
+  A: Vedolizumab = gut-selective (less joint effect); Ustekinumab = Crohn's + emerging joint data
+- Q: What is Extra-Articular of Inflammatory Arthritis?
+  A: Erythema nodosum (parallels IBD), pyoderma gangrenosum (independent), uveitis, PSC (UC)
+- Q: What is NSAIDs of Inflammatory Arthritis?
+  A: Avoid in active IBD; COX-2 + PPI if essential, short-term
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inflammatory Arthritis?**
+   A. **Enteropathic arthritis = SpA associated with IBD (Crohn's > UC).**
+   B. An unrelated condition not matching the clinical picture of Inflammatory Arthritis
+   C. A complication seen late in the disease course of Inflammatory Arthritis
+   D. A condition that mimics Inflammatory Arthritis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inflammatory Arthritis presents with: Definition — Spondyloarthritis associated with inflammatory bowel disease (Crohn's disease, ulcerative colitis); Prevalence in IBD — 10-20% of IBD patients develop arthritis; IBD Type — Crohn's disease > Ulcerative colitis. What is the most likely diagnosis?
+   A. **Inflammatory Arthritis**
+   B. A condition that mimics Inflammatory Arthritis but is not the same entity
+   C. A complication of Inflammatory Arthritis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inflammatory Arthritis
+

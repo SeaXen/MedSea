@@ -84,3 +84,46 @@ flowchart TD
 - **Chapter MOC**: [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related**: [[Acute Liver Failure]], [[Viral Hepatitis]], [[Alcoholic Liver Disease]], [[Autoimmune Liver Disease]], [[Drug-Induced Liver Injury]], [[Biliary Tract Disease]], [[Inherited and Metabolic Liver Disease]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: Serum bilirubin >35 µmol/L (visible >50 µmol/L)
+- Q: What is Pre-hepatic of Jaundice and LFT Interpretation?
+  A: Unconjugated hyperbilirubinaemia, normal ALP/ALT, increased urobilinogen, no bilirubinuria
+- Q: What is Hepatic of Jaundice and LFT Interpretation?
+  A: Mixed/conjugated bilirubin, elevated ALT/AST, reduced albumin/prolonged PT if severe
+- Q: What is Post-hepatic of Jaundice and LFT Interpretation?
+  A: Conjugated hyperbilirubinaemia, ALP ↑↑ (cholestatic), GGT ↑, pale stools, dark urine
+- Q: What is Gilbert syndrome of Jaundice and LFT Interpretation?
+  A: Benign, unconjugated hyperbilirubinaemia, precipitated by fasting/stress, UGTA1A mutation
+- Q: What is Hepatocellular pattern of Jaundice and LFT Interpretation?
+  A: ALT/AST ↑↑ > ALP (ALT:AST ratio clues: >2 viral/autoimmune, <1 alcoholic, ~1 cirrhosis)
+- Q: What is Cholestatic pattern of Jaundice and LFT Interpretation?
+  A: ALP ↑↑ > ALT/AST, GGT ↑ confirms hepatic source, bilirubin may be normal initially
+- Q: What is Isolated hyperbilirubinaemia of Jaundice and LFT Interpretation?
+  A: Think Gilbert, haemolysis, Dubin-Johnson/Rotor (conjugated)
+- Q: What is Bilirubin metabolism of Jaundice and LFT Interpretation?
+  A: Unconj (indirect) → albumin-bound → hepatic uptake → conjugation (UGT1A1) → conjugated (direct) → biliary excretion → urobilinogen
+- Q: What is Gilbert of Jaundice and LFT Interpretation?
+  A: 5-10% population, UGT1A1 promoter polymorphism, benign, fasting/stress induced, no treatment needed
+- Q: What is Crigler-Najjar of Jaundice and LFT Interpretation?
+  A: Type I: UGT1A1 absent → fatal kernicterus, phototherapy/liver transplant; Type II: partial deficiency → phenobarbital responsive
+- Q: What is Dubin-Johnson/Rotor of Jaundice and LFT Interpretation?
+  A: Conjugated hyperbilirubinaemia, Dubin-Johnson: black liver (melanin-like), Rotor: normal liver, both benign
+- Q: What is ALT vs AST ratio of Jaundice and LFT Interpretation?
+  A: >2: viral/autoimmune/DILI; <1: alcoholic; ~1: cirrhosis/NASH
+- Q: What is ALP sources of Jaundice and LFT Interpretation?
+  A: Liver (GGT ↑ confirms), Bone (bone-specific ALP, Paget's, mets), Placenta (pregnancy), Intestine (post-prandial)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **[!tip] FCPS/MRCP Priority: HIGH — Core viva topic; pattern recognition is bread-and-butter hepatology.**
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+

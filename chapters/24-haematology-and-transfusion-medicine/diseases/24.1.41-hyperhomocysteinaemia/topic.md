@@ -338,3 +338,84 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (29 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Thrombophilia → Hyperhomocysteinaemia
+- Q: What is Folate Deficiency of Hematology?
+  A: ↓ 5-methyl-THF → ↓ Homocysteine remethylation
+- Q: What is Vitamin B12 Deficiency of Hematology?
+  A: ↓ Methylcobalamin → ↓ Methionine synthase
+- Q: What is Vitamin B6 Deficiency of Hematology?
+  A: ↓ Pyridoxal phosphate → ↓ Cystathionine β-synthase (CBS)
+- Q: What is MTHFR C677T of Hematology?
+  A: ↓ Enzyme activity → ↓ 5-methyl-THF
+- Q: What is Renal Failure of Hematology?
+  A: ↓ Homocysteine clearance
+- Q: What is Drugs of Hematology?
+  A: MTX, Phenytoin, Carbamazepine, Nitrous oxide, Metformin
+- Q: What is VTE of Hematology?
+  A: Weak independent risk factor (OR 1.5-2.5 for mild)
+- Q: What is Arterial Disease of Hematology?
+  A: Premature CAD, Stroke, PAD
+- Q: What is Pregnancy of Hematology?
+  A: Recurrent loss, Pre-eclampsia, Placental abruption
+- Q: What is Neurodevelopmental of Hematology?
+  A: Neural tube defects (if Maternal)
+- Q: What is Folate Deficiency of Hematology?
+  A: ↓ 5-methyl-THF → ↓ Homocysteine remethylation
+- Q: What is Vitamin B12 Deficiency of Hematology?
+  A: ↓ Methylcobalamin → ↓ Methionine synthase
+- Q: What is Vitamin B6 Deficiency of Hematology?
+  A: ↓ Pyridoxal phosphate → ↓ Cystathionine β-synthase (CBS)
+- Q: What is MTHFR C677T of Hematology?
+  A: ↓ Enzyme activity → ↓ 5-methyl-THF
+- Q: What is Renal Failure of Hematology?
+  A: ↓ Homocysteine clearance
+- Q: What is Drugs of Hematology?
+  A: MTX, Phenytoin, Carbamazepine, Nitrous oxide, Metformin
+- Q: What is VTE of Hematology?
+  A: Weak independent risk factor (OR 1.5-2.5 for mild)
+- Q: What is Arterial Disease of Hematology?
+  A: Premature CAD, Stroke, PAD
+- Q: What is Pregnancy of Hematology?
+  A: Recurrent loss, Pre-eclampsia, Placental abruption
+- Q: What is Neurodevelopmental of Hematology?
+  A: Neural tube defects (if Maternal)
+- Q: What is Normal Homocysteine of Hematology?
+  A: 5-15 µmol/L (fasting)
+- Q: What is Mild (16-30) of Hematology?
+  A: Common; MTHFR C677T TT, Folate/B12/B6 deficiency, Renal
+- Q: What is Severe (>100) of Hematology?
+  A: Classical Homocystinuria = CBS deficiency
+- Q: What are the clinical features of Hematology?
+  A: Ectopia lentis (Down/Nasal), Marfanoid, Osteoporosis, VTE
+- Q: What is MTHFR C677T of Hematology?
+  A: TT = 25% enzyme activity; Mild ↑ Hcy, Weak VTE risk
+- Q: How is Hematology managed?
+  A: Folate 5mg + B12 1mg + B6 50mg; Lowers Hcy but NO proven VTE/CVD prevention
+- Q: What is Homocystinuria vs Marfan of Hematology?
+  A: Ectopia lentis: Down/Nasal (Homocystinuria) vs Up (Marfan); No aortic dilation in Homocystinuria
+- Q: What is VTE Risk of Hematology?
+  A: Mild = Weak; Severe = High
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Thrombophilia → Hyperhomocysteinaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Category — Homocysteine Level; Normal — 5-15 µmol/L; Mild — 16-30 µmol/L. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

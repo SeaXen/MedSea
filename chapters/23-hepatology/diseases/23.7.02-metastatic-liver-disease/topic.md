@@ -286,3 +286,60 @@ mindmap
 - [[Liver Tumours/Benign liver tumours|Benign Liver Tumours]]
 - [[Liver Transplantation/Liver Transplantation|Liver Transplant]]
 - [[Gastrointestinal Cancers|GI Cancers]]
+---
+
+> Auto-generated study sections for "Liver Tumours" — Ch 23: Hepatology.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Liver Tumours?
+  A: | Symptoms | Often asymptomatic (incidental); RUQ pain, weight loss, hepatomegaly |
+- Q: What are the clinical features of Liver Tumours?
+  A: Often asymptomatic (incidental); RUQ pain, weight loss, hepatomegaly
+- Q: What is Signs of Liver Tumours?
+  A: Hepatomegaly, firm irregular liver, ascites (late), jaundice (late)
+- Q: What is Biochemical of Liver Tumours?
+  A: ↑ ALP/GGT (often disproportionate to AST/ALT); ↑ CEA (colorectal); ↑ CA19-9 (pancreatic/biliary); ↑ AFP (if HCC suspected)
+- Q: What is Vascularity of Liver Tumours?
+  A: Hypervascular (intense arterial enhancement)
+- Q: What is Markers of Liver Tumours?
+  A: Chromogranin A, Synaptophysin, Ki-67 index
+- Q: What is Somatostatin Receptor of Liver Tumours?
+  A: SSTR+ → Octreotide scan / Ga-68 DOTATATE PET
+- Q: How is Liver Tumours managed?
+  A: Somatostatin analogues, PRRT, surgery if resectable
+- Q: What is Pattern of Liver Tumours?
+  A: Often multiple, subcapsular
+- Q: How is Liver Tumours classified?
+  A: ER/PR/HER2 status guides systemic therapy
+- Q: What is Bone Mets of Liver Tumours?
+  A: Often concurrent with liver mets
+- Q: What is Vascularity of Liver Tumours?
+  A: Hypervascular (intense arterial enhancement)
+- Q: What is Markers of Liver Tumours?
+  A: Chromogranin A, Synaptophysin, Ki-67 index
+- Q: What is Somatostatin Receptor of Liver Tumours?
+  A: SSTR+ → Octreotide scan / Ga-68 DOTATATE PET
+- Q: What is Pattern of Liver Tumours?
+  A: Often multiple, subcapsular
+- Q: How is Liver Tumours classified?
+  A: ER/PR/HER2 status guides systemic therapy
+- Q: What is Bone Mets of Liver Tumours?
+  A: Often concurrent with liver mets
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Liver Tumours?**
+   A. **| Symptoms | Often asymptomatic (incidental); RUQ pain, weight loss, hepatomegaly |**
+   B. An unrelated condition not matching the clinical picture of Liver Tumours
+   C. A complication seen late in the disease course of Liver Tumours
+   D. A condition that mimics Liver Tumours but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Liver Tumours presents with: Symptoms — Often asymptomatic (incidental); RUQ pain, weight loss, hepatomegaly; Signs — Hepatomegaly, firm irregular liver, ascites (late), jaundice (late); Biochemical — ↑ ALP/GGT (often disproportionate to AST/ALT); ↑ CEA (colorectal); ↑ CA19-9 (pancreatic/biliary); ↑ AFP (if HCC suspected). What is the most likely diagnosis?
+   A. **Liver Tumours**
+   B. A condition that mimics Liver Tumours but is not the same entity
+   C. A complication of Liver Tumours rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Liver Tumours
+

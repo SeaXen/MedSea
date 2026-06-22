@@ -266,3 +266,66 @@ mindmap
 > **Hierarchy**: [[../../Davidson Chapter 25 - Haematology Hierarchy|Haematology Hierarchy]]  
 > **Template**: [[../../../Templates/Hematology Topic Template|Hematology Topic Template]]  
 > **See also**: [[Transfusion Reactions]], [[Red Cell Transfusion]], [[Platelet Transfusion]], [[Special Transfusion Situations]], [[Massive Transfusion Protocol]]
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Hematology?
+  A: Crossmatch = Final Compatibility Test between Donor RBCs and Recipient Serum.
+- Q: What is Most Immunogenic of Hematology?
+  A: D Antigen (RhD)
+- Q: What is Rh Positive of Hematology?
+  A: D Antigen Present (~85% UK)
+- Q: What is Rh Negative of Hematology?
+  A: D Antigen Absent (~15% UK)
+- Q: What is Other Antigens of Hematology?
+  A: C, c, E, e (Clinical Significance in Haemolytic Disease of Fetus/Newborn)
+- Q: What is Weak D of Hematology?
+  A: Reduced D Expression → Treat as Rh+ for Donation, Rh- for Recipient
+- Q: What is Routine Antenatal of Hematology?
+  A: ABO/Rh at Booking; Antibody Screen at 28w (Anti-D Prophylaxis if Rh-)
+- Q: What is Anti-D Prophylaxis of Hematology?
+  A: 500 IU Anti-D Ig IM at 28w + 34w; Post-Delivery (Within 72h) if Baby Rh+
+- Q: What is Sensitising Events of Hematology?
+  A: Anti-D Ig within 72h (Miscarriage, TOP, Amnio, CVS, Trauma, ECV, APH)
+- Q: What is Antibody-Positive Mother of Hematology?
+  A: Serial Antibody Titres (Monthly <28w, 2-Weekly >28w); Referral if Rising; Anti-D, Anti-c, Anti-K = High Risk HDFN
+- Q: How is Hematology monitored?
+  A: MCA Doppler (Peak Systolic Velocity); Intrauterine Transfusion (If Anaemic)
+- Q: What is Most Immunogenic of Hematology?
+  A: D Antigen (RhD)
+- Q: What is Rh Positive of Hematology?
+  A: D Antigen Present (~85% UK)
+- Q: What is Rh Negative of Hematology?
+  A: D Antigen Absent (~15% UK)
+- Q: What is Other Antigens of Hematology?
+  A: C, c, E, e (Clinical Significance in Haemolytic Disease of Fetus/Newborn)
+- Q: What is Routine Antenatal of Hematology?
+  A: ABO/Rh at Booking; Antibody Screen at 28w (Anti-D Prophylaxis if Rh-)
+- Q: What is Anti-D Prophylaxis of Hematology?
+  A: 500 IU Anti-D Ig IM at 28w + 34w; Post-Delivery (Within 72h) if Baby Rh+
+- Q: What is Sensitising Events of Hematology?
+  A: Anti-D Ig within 72h (Miscarriage, TOP, Amnio, CVS, Trauma, ECV, APH)
+- Q: What is Antibody-Positive Mother of Hematology?
+  A: Serial Antibody Titres (Monthly <28w, 2-Weekly >28w); Referral if Rising; Anti-D, Anti-c, Anti-K = High Risk HDFN
+- Q: How is Hematology monitored?
+  A: MCA Doppler (Peak Systolic Velocity); Intrauterine Transfusion (If Anaemic)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **Crossmatch = Final Compatibility Test between Donor RBCs and Recipient Serum.**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Antibody — Blood Group System; Anti-K (Kell) — Kell; Anti-c, Anti-E — Rh. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

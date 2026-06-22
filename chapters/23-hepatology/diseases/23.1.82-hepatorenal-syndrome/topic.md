@@ -283,3 +283,60 @@ mindmap
 - [[Portal Hypertension and Complications/Ascites|Ascites]]
 - [[Portal Hypertension and Complications/Spontaneous bacterial peritonitis (SBP)|SBP]]
 - [[Acute Liver Failure/CLIF-C ACLF and ACLF grades|ACLF]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: ## ICA 2015 Diagnostic Criteria for HRS-AKI (ALL Required)
+- Q: What is Refractory HRS-AKI of Portal Hypertension and Complications?
+  A: Failed vasoconstrictor therapy
+- Q: What is Child-Pugh of Portal Hypertension and Complications?
+  A: A or B (Child C: high mortality)
+- Q: What is Exclusions of Portal Hypertension and Complications?
+  A: Severe HE (G3-4), cardiopulmonary disease, sepsis, HCC beyond criteria
+- Q: What is the prognosis of Portal Hypertension and Complications?
+  A: Improves renal function in 50-70%; bridge to transplant
+- Q: What is Refractory HRS-AKI of Portal Hypertension and Complications?
+  A: Failed vasoconstrictor therapy
+- Q: What is Child-Pugh of Portal Hypertension and Complications?
+  A: A or B (Child C: high mortality)
+- Q: What is Exclusions of Portal Hypertension and Complications?
+  A: Severe HE (G3-4), cardiopulmonary disease, sepsis, HCC beyond criteria
+- Q: What is the prognosis of Portal Hypertension and Complications?
+  A: Improves renal function in 50-70%; bridge to transplant
+- Q: What is the investigation of choice for Portal Hypertension and Complications?
+  A: ICA 2015: Cirrhosis + AKI + no volume response + no shock + no nephrotoxins + no parenchymal disease
+- Q: What is Urine indices of Portal Hypertension and Complications?
+  A: Na <10, FENa <0.1%, osmolality > plasma, benign sediment
+- Q: What is the first-line treatment for Portal Hypertension and Complications?
+  A: Terlipressin 2mg IV q4-6h + Alb 20-40g/day
+- Q: What is Alternatives of Portal Hypertension and Complications?
+  A: Noradrenaline (ICU), Midodrine+Octreotide (less effective)
+- Q: What is Response of Portal Hypertension and Complications?
+  A: Scr ↓25% at Day 3-7; Continue 14 days
+- Q: What is Non-response of Portal Hypertension and Complications?
+  A: TIPS (Child A/B) → Transplant evaluation
+- Q: What is HRS-CKD of Portal Hypertension and Complications?
+  A: Albumin long-term; TIPS/Transplant
+- Q: What is the prognosis of Portal Hypertension and Complications?
+  A: Untreated HRS-AKI: median survival <2 weeks
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **## ICA 2015 Diagnostic Criteria for HRS-AKI (ALL Required)**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Portal Hypertension and Complications presents with: AKI in cirrhosis meeting ICA criteria + no response to volume expansion + no other cause; Chronic kidney damage (eGFR <60) in cirrhosis with HRS pathophysiology; Onset — Acute (hours-days). What is the most likely diagnosis?
+   A. **Portal Hypertension and Complications**
+   B. A condition that mimics Portal Hypertension and Complications but is not the same entity
+   C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
+

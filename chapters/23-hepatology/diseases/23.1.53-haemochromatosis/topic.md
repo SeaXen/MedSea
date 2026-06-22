@@ -309,3 +309,74 @@ mindmap
 - [[Inherited and Metabolic Liver Disease/Alpha-1 antitrypsin deficiency|Alpha-1 AT]]
 - [[Inherited and Metabolic Liver Disease/Porphyrias|Porphyrias]]
 - [[Chronic Liver Disease and Cirrhosis/Aetiology|Inherited Metabolic in Cirrhosis]]
+---
+
+> Auto-generated study sections for "Inherited and Metabolic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (24 generated)
+
+- Q: What is the definition of Inherited and Metabolic Liver Disease?
+  A: # Haemochromatosis (HFE and Non-HFE): Diagnosis & Management
+- Q: What is Volume of Inherited and Metabolic Liver Disease?
+  A: 400-500 mL per session
+- Q: What is Frequency of Inherited and Metabolic Liver Disease?
+  A: Weekly (or twice weekly if Hb allows)
+- Q: What is Target of Inherited and Metabolic Liver Disease?
+  A: Ferritin 50-100 μg/L
+- Q: How is Inherited and Metabolic Liver Disease monitored?
+  A: Maintain Hb >110 g/L (men), >100 g/L (women)
+- Q: What is Duration of Inherited and Metabolic Liver Disease?
+  A: Months to 1-2 years (depends on iron burden)
+- Q: What is Liver Fibrosis/Cirrhosis of Inherited and Metabolic Liver Disease?
+  A: Transient Elastography (FibroScan) or Liver Biopsy if ferritin >1000 or LFTs elevated
+- Q: What is HCC of Inherited and Metabolic Liver Disease?
+  A: If Cirrhosis: 6-monthly US ± AFP
+- Q: What is Diabetes of Inherited and Metabolic Liver Disease?
+  A: Annual HbA1c / Fasting glucose
+- Q: What is Cardiomyopathy of Inherited and Metabolic Liver Disease?
+  A: Echo if symptoms; baseline at diagnosis
+- Q: What is Hypogonadism of Inherited and Metabolic Liver Disease?
+  A: Testosterone, LH, FSH if symptoms
+- Q: What is Arthropathy of Inherited and Metabolic Liver Disease?
+  A: Clinical; X-ray MCP joints
+- Q: What is Osteoporosis of Inherited and Metabolic Liver Disease?
+  A: DEXA (iron + hypogonadism)
+- Q: What is Volume of Inherited and Metabolic Liver Disease?
+  A: 400-500 mL per session
+- Q: What is Frequency of Inherited and Metabolic Liver Disease?
+  A: Weekly (or twice weekly if Hb allows)
+- Q: What is Target of Inherited and Metabolic Liver Disease?
+  A: Ferritin 50-100 μg/L
+- Q: How is Inherited and Metabolic Liver Disease monitored?
+  A: Maintain Hb >110 g/L (men), >100 g/L (women)
+- Q: What is Liver Fibrosis/Cirrhosis of Inherited and Metabolic Liver Disease?
+  A: Transient Elastography (FibroScan) or Liver Biopsy if ferritin >1000 or LFTs elevated
+- Q: What is HCC of Inherited and Metabolic Liver Disease?
+  A: If Cirrhosis: 6-monthly US ± AFP
+- Q: What is Diabetes of Inherited and Metabolic Liver Disease?
+  A: Annual HbA1c / Fasting glucose
+- Q: What is Cardiomyopathy of Inherited and Metabolic Liver Disease?
+  A: Echo if symptoms; baseline at diagnosis
+- Q: What is Hypogonadism of Inherited and Metabolic Liver Disease?
+  A: Testosterone, LH, FSH if symptoms
+- Q: What is Arthropathy of Inherited and Metabolic Liver Disease?
+  A: Clinical; X-ray MCP joints
+- Q: What is Osteoporosis of Inherited and Metabolic Liver Disease?
+  A: DEXA (iron + hypogonadism)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inherited and Metabolic Liver Disease?**
+   A. **# Haemochromatosis (HFE and Non-HFE): Diagnosis & Management**
+   B. An unrelated condition not matching the clinical picture of Inherited and Metabolic Liver Disease
+   C. A complication seen late in the disease course of Inherited and Metabolic Liver Disease
+   D. A condition that mimics Inherited and Metabolic Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inherited and Metabolic Liver Disease presents with: Type 1 (HFE) — HFE (C282Y, H63D); Type 2A (Juvenile) — HJV (Hemojuvelin); Type 2B (Juvenile) — HAMP (Hepcidin). What is the most likely diagnosis?
+   A. **Inherited and Metabolic Liver Disease**
+   B. A condition that mimics Inherited and Metabolic Liver Disease but is not the same entity
+   C. A complication of Inherited and Metabolic Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inherited and Metabolic Liver Disease
+

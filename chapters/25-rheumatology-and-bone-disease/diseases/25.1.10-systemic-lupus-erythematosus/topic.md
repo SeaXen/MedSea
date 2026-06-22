@@ -575,3 +575,66 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Antiphospholipid syndrome]] · [[Lupus nephritis]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: SLE is the prototypic systemic autoimmune disease — multi-organ, young women, diagnostic criteria (SLICC/EULAR), nephritis classification, pregnancy challenges.
+- Q: What is Arthralgia of Autoimmune Rheumatic Diseases?
+  A: Often precedes arthritis; migratory, symmetrical
+- Q: What is Arthritis of Autoimmune Rheumatic Diseases?
+  A: Non-erosive, reducible (Jaccoud's arthropathy — ulnar deviation, swan neck), MCP/PIP/wrist
+- Q: What is Myalgia of Autoimmune Rheumatic Diseases?
+  A: Common; myositis rare (<5%)
+- Q: What is Tenosynovitis of Autoimmune Rheumatic Diseases?
+  A: Can cause deformities without erosion
+- Q: What is Arthralgia of Autoimmune Rheumatic Diseases?
+  A: Often precedes arthritis; migratory, symmetrical
+- Q: What is Arthritis of Autoimmune Rheumatic Diseases?
+  A: Non-erosive, reducible (Jaccoud's arthropathy — ulnar deviation, swan neck), MCP/PIP/wrist
+- Q: What is Myalgia of Autoimmune Rheumatic Diseases?
+  A: Common; myositis rare (<5%)
+- Q: What is Tenosynovitis of Autoimmune Rheumatic Diseases?
+  A: Can cause deformities without erosion
+- Q: What is the investigation of choice for Autoimmune Rheumatic Diseases?
+  A: EULAR/ACR 2019: ANA ≥1:80 entry + weighted score ≥10; SLICC: ≥4 (1 clinical + 1 immunologic)
+- Q: What is Best Specific Antibody of Autoimmune Rheumatic Diseases?
+  A: Anti-Sm (99% specific); Anti-dsDNA (95% specific, correlates with renal activity)
+- Q: What is ANA Pattern of Autoimmune Rheumatic Diseases?
+  A: Homogeneous (dsDNA/histones), Speckled (ENA: Sm, RNP, Ro, La), Rim (dsDNA), Nucleolar (Scl-70 — scleroderma)
+- Q: What is Lupus Nephritis of Autoimmune Rheumatic Diseases?
+  A: Class III/IV = proliferative → MMF or IV CYC + steroids; Class V = membranous → MMF/CNI + steroids
+- Q: What is LN Induction of Autoimmune Rheumatic Diseases?
+  A: Euro-Lupus CYC 500mg/m² q2wk ×6 (low dose, less gonadal toxicity) or MMF 2-3g/day
+- Q: What is APS of Autoimmune Rheumatic Diseases?
+  A: Thrombosis/pregnancy morbidity + aPL (LA, aCL, anti-β2GPI) ×2 ≥12wk apart; Warfarin (not DOAC)
+- Q: What is Pregnancy Safe of Autoimmune Rheumatic Diseases?
+  A: HCQ (continue), Pred ≤10mg, AZA, Tacrolimus, Aspirin, LMWH
+- Q: What is Pregnancy Avoid of Autoimmune Rheumatic Diseases?
+  A: MMF, CYC, MTX, LEF, ACEi/ARB
+- Q: What is Neonatal Lupus of Autoimmune Rheumatic Diseases?
+  A: Anti-Ro/La → fetal heart block (2%) → fetal echo 18-30wk q1-2wk
+- Q: What is NPSLE of Autoimmune Rheumatic Diseases?
+  A: Exclusion diagnosis; MRI/CSF/EEG; treat with steroids + MMF/CYC/RTX
+- Q: What is HCQ of Autoimmune Rheumatic Diseases?
+  A: ALL SLE patients lifelong — ↓ flares, ↓ damage, ↓ thrombosis, safe in pregnancy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **SLE is the prototypic systemic autoimmune disease — multi-organ, young women, diagnostic criteria (SLICC/EULAR), nephritis classification, pregnancy challenges.**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: Definition — Chronic multisystem autoimmune disease with loss of self-tolerance → autoantibodies (ANA, dsDNA, Sm, aPL) → immune complex deposition → organ damage; Prevalence — 20-150/100,000 (varies by ethnicity); Peak Onset — 15-45 years (childhood and late-onset also occur). What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

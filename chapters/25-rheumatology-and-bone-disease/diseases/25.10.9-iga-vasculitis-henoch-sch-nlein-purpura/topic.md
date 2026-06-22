@@ -373,3 +373,96 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Granulomatosis with polyangiitis (GPA)]] · [[Microscopic polyangiitis (MPA)]] · [[Polyarteritis nodosa (PAN)]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (35 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: IgA Vasculitis (HSP) = most common childhood vasculitis.
+- Q: What is Gd-IgA1 of Vasculitis?
+  A: Galactose-deficient IgA1 — hinge region O-glycosylation defect
+- Q: What is Anti-Gd-IgA1 of Vasculitis?
+  A: IgG/IgM autoantibodies against Gd-IgA1
+- Q: What is Immune Complexes of Vasculitis?
+  A: IgA1-containing — deposit in dermal capillaries, synovium, GI vasculature, glomeruli
+- Q: What is Complement of Vasculitis?
+  A: Alternative pathway (C3 activation, C5a) → neutrophil recruitment
+- Q: What is Scrotal Pain/Swelling of Vasculitis?
+  A: Testicular torsion mimic — epididymo-orchitis from vasculitis
+- Q: What is CNS of Vasculitis?
+  A: Rare: encephalopathy, seizures, intracranial haemorrhage
+- Q: What is Pulmonary of Vasculitis?
+  A: Rare: pulmonary haemorrhage (capillaritis)
+- Q: What is Constitutional of Vasculitis?
+  A: Low-grade fever, malaise, preceding URI (2-3 weeks)
+- Q: What is Diffuse abdominal pain of Vasculitis?
+  A: Colicky, with/without intussusception
+- Q: What is Arthritis/Arthralgia of Vasculitis?
+  A: Acute, transient, ankles/knees
+- Q: What is Renal involvement of Vasculitis?
+  A: Haematuria (± proteinuria, nephritic/nephrotic)
+- Q: What is Biopsy (if done) of Vasculitis?
+  A: IgA-dominant immune deposits (granular) in vessel walls
+- Q: What is Gd-IgA1 of Vasculitis?
+  A: Galactose-deficient IgA1 — hinge region O-glycosylation defect
+- Q: What is Anti-Gd-IgA1 of Vasculitis?
+  A: IgG/IgM autoantibodies against Gd-IgA1
+- Q: What is Immune Complexes of Vasculitis?
+  A: IgA1-containing — deposit in dermal capillaries, synovium, GI vasculature, glomeruli
+- Q: What is Complement of Vasculitis?
+  A: Alternative pathway (C3 activation, C5a) → neutrophil recruitment
+- Q: What is Scrotal Pain/Swelling of Vasculitis?
+  A: Testicular torsion mimic — epididymo-orchitis from vasculitis
+- Q: What is CNS of Vasculitis?
+  A: Rare: encephalopathy, seizures, intracranial haemorrhage
+- Q: What is Pulmonary of Vasculitis?
+  A: Rare: pulmonary haemorrhage (capillaritis)
+- Q: What is Constitutional of Vasculitis?
+  A: Low-grade fever, malaise, preceding URI (2-3 weeks)
+- Q: What is Diffuse abdominal pain of Vasculitis?
+  A: Colicky, with/without intussusception
+- Q: What is Arthritis/Arthralgia of Vasculitis?
+  A: Acute, transient, ankles/knees
+- Q: What is Renal involvement of Vasculitis?
+  A: Haematuria (± proteinuria, nephritic/nephrotic)
+- Q: What is Biopsy (if done) of Vasculitis?
+  A: IgA-dominant immune deposits (granular) in vessel walls
+- Q: What is Demographics of Vasculitis?
+  A: Children 2-10y (peak 4-6y), M>F, winter/spring, post-URI
+- Q: What is Tetrad of Vasculitis?
+  A: Palpable purpura (gravity-dependent) + arthritis + abdominal pain + renal
+- Q: What is Purpura of Vasculitis?
+  A: Palpable, gravity-dependent (buttocks/legs), non-thrombocytopenic, symmetrical
+- Q: What is Abdominal of Vasculitis?
+  A: Colicky pain, intussusception (ileo-ileal), GI bleed — air enema therapeutic
+- Q: What is Renal of Vasculitis?
+  A: IgA nephropathy — haematuria ± proteinuria; biopsy: mesangial IgA deposits
+- Q: What is Criteria of Vasculitis?
+  A: Mandatory purpura + ≥1 (abdominal, arthritis, renal, biopsy)
+- Q: What is Platelets of Vasculitis?
+  A: Normal (vs TTP/HUS/meningococcemia)
+- Q: What is Recurrence of Vasculitis?
+  A: 30-50% within 6 months — often post-URI
+- Q: What is Severe Abdominal of Vasculitis?
+  A: Air enema (therapeutic); steroids if severe; surgery if failed
+- Q: What is Severe Renal of Vasculitis?
+  A: Steroids + CYC/MMF + ACEi/ARB; biopsy if proteinuria >0.5g
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **IgA Vasculitis (HSP) = most common childhood vasculitis.**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Definition — IgA-dominant immune complex small vessel vasculitis — palpable purpura, arthritis, abdominal pain, renal involvement; Previous Name — Henoch-Schönlein Purpura (HSP); Incidence — 10-20/100,000/year (most common childhood vasculitis). What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

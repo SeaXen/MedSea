@@ -250,3 +250,28 @@ mindmap
 - [[Viral Hepatitis/Hepatitis C decompensated cirrhosis management|HCV Decompensated]]
 - [[Viral Hepatitis/Hepatitis C renal impairment|HCV Renal]]
 - [[Viral Hepatitis/Hepatitis C post-SVR follow-up|Post-SVR]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: E -->|Decompensated (Child B/C)| H[SOF/VEL + RBV x 12w]
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **E -->|Decompensated (Child B/C)| H[SOF/VEL + RBV x 12w]**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Viral Hepatitis presents with: SVR12 — HCV RNA undetectable 12 weeks post-treatment; SVR24 — HCV RNA undetectable 24 weeks post-treatment; RV (Relapse) — HCV RNA detectable after EOT but before SVR12. What is the most likely diagnosis?
+   A. **Viral Hepatitis**
+   B. A condition that mimics Viral Hepatitis but is not the same entity
+   C. A complication of Viral Hepatitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Viral Hepatitis
+

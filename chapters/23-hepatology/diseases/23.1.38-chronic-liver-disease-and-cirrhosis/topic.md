@@ -150,3 +150,36 @@ flowchart TD
 |------------|----------|----------|
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Chronic Liver Disease and Cirrhosis" — Ch 23: Hepatology.
+
+## Flashcards (5 generated)
+
+- Q: What is the definition of Chronic Liver Disease and Cirrhosis?
+  A: Chronic Liver Disease & Cirrhosis = Final common pathway of chronic liver injury — Aetiology (ALD, NAFLD/NASH, Viral, Autoimmune, Inherited), Compensated vs Decompensated classification, Child-Pugh/MELD scoring, Non-invasive fibrosis assessment (FIB-4, NFS, APRI, ELF, FibroScan), HCC Surveillance, Aetiology-specific management.
+- Q: What is Chronic Liver Disease (CLD) of Chronic Liver Disease and Cirrhosis?
+  A: Persistent hepatic injury/inflammation/fibrosis >6 months
+- Q: What is Cirrhosis of Chronic Liver Disease and Cirrhosis?
+  A: Diffuse fibrosis with nodular regeneration distorting hepatic architecture
+- Q: What is Compensated Cirrhosis of Chronic Liver Disease and Cirrhosis?
+  A: No history of ascites, variceal bleed, hepatic encephalopathy, jaundice
+- Q: What is Decompensated Cirrhosis of Chronic Liver Disease and Cirrhosis?
+  A: Current or past ascites, variceal bleed, hepatic encephalopathy, or jaundice
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Chronic Liver Disease and Cirrhosis?**
+   A. **Chronic Liver Disease & Cirrhosis = Final common pathway of chronic liver injury — Aetiology (ALD, NAFLD/NASH, Viral, Autoimmune, Inherited), Compensated vs Decompensated classification, Child-Pugh/ME**
+   B. An unrelated condition not matching the clinical picture of Chronic Liver Disease and Cirrhosis
+   C. A complication seen late in the disease course of Chronic Liver Disease and Cirrhosis
+   D. A condition that mimics Chronic Liver Disease and Cirrhosis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Chronic Liver Disease and Cirrhosis presents with: Chronic Liver Disease (CLD) — Persistent hepatic injury/inflammation/fibrosis >6 months; Cirrhosis — Diffuse fibrosis with nodular regeneration distorting hepatic architecture; Compensated Cirrhosis — No history of ascites, variceal bleed, hepatic encephalopathy, jaundice. What is the most likely diagnosis?
+   A. **Chronic Liver Disease and Cirrhosis**
+   B. A condition that mimics Chronic Liver Disease and Cirrhosis but is not the same entity
+   C. A complication of Chronic Liver Disease and Cirrhosis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Chronic Liver Disease and Cirrhosis
+

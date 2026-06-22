@@ -451,3 +451,42 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[Drugs in rheumatology]] · [[Investigations in rheumatology]]
+---
+
+> Auto-generated study sections for "Polymyalgia Rheumatica and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Polymyalgia Rheumatica and Related Disorders?
+  A: RS3PE = Remitting Seronegative Symmetrical Synovitis with Pitting Oedema — a rare but distinct inflammatory condition of elderly men >65y.
+- Q: What is Bilateral pitting oedema of Polymyalgia Rheumatica and Related Disorders?
+  A: Dorsum of hands and feet (pathognomonic)
+- Q: What is Symmetrical of Polymyalgia Rheumatica and Related Disorders?
+  A: Both hands, both feet
+- Q: What is Sudden onset of Polymyalgia Rheumatica and Related Disorders?
+  A: Often over days to weeks
+- Q: What is Polyarthritis of Polymyalgia Rheumatica and Related Disorders?
+  A: Wrists, MCPs, PIPs, flexor tenosynovitis
+- Q: What is Bilateral pitting oedema of Polymyalgia Rheumatica and Related Disorders?
+  A: Dorsum of hands and feet (pathognomonic)
+- Q: What is Symmetrical of Polymyalgia Rheumatica and Related Disorders?
+  A: Both hands, both feet
+- Q: What is Sudden onset of Polymyalgia Rheumatica and Related Disorders?
+  A: Often over days to weeks
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Polymyalgia Rheumatica and Related Disorders?**
+   A. **RS3PE = Remitting Seronegative Symmetrical Synovitis with Pitting Oedema — a rare but distinct inflammatory condition of elderly men >65y.**
+   B. An unrelated condition not matching the clinical picture of Polymyalgia Rheumatica and Related Disorders
+   C. A complication seen late in the disease course of Polymyalgia Rheumatica and Related Disorders
+   D. A condition that mimics Polymyalgia Rheumatica and Related Disorders but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Polymyalgia Rheumatica and Related Disorders presents with: Definition — Remitting Seronegative Symmetrical Synovitis with Pitting Oedema — elderly onset inflammatory condition; bilateral distal extremity oedema; First described — McCarty, 1985; Prevalence — Rare; ~0.1% of elderly. What is the most likely diagnosis?
+   A. **Polymyalgia Rheumatica and Related Disorders**
+   B. A condition that mimics Polymyalgia Rheumatica and Related Disorders but is not the same entity
+   C. A complication of Polymyalgia Rheumatica and Related Disorders rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Polymyalgia Rheumatica and Related Disorders
+

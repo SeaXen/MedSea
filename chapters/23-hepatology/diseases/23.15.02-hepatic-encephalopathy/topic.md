@@ -277,3 +277,62 @@ mindmap
 - [[Acute Liver Failure/Definition and Aetiology|ALF]]
 - [[Acute Liver Failure/CLIF-C ACLF and ACLF grades|ACLF]]
 - [[Portal Hypertension and Complications/Hepatorenal Syndrome|HRS]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (18 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: B --> D[GI Bleed: Variceal, Portal hypertensive gastropathy]
+- Q: What is Clinical grading of Portal Hypertension and Complications?
+  A: West Haven (essential)
+- Q: What is Ammonia of Portal Hypertension and Complications?
+  A: Supportive (not diagnostic); arterial > venous
+- Q: What is CT/MRI Brain of Portal Hypertension and Complications?
+  A: Exclude structural (ICH, stroke) if atypical
+- Q: What is EEG of Portal Hypertension and Complications?
+  A: Triphasic waves (non-specific)
+- Q: What is the investigation of choice for Portal Hypertension and Complications?
+  A: Number connection test, digit symbol (for MHE)
+- Q: What is Clinical grading of Portal Hypertension and Complications?
+  A: West Haven (essential)
+- Q: What is Ammonia of Portal Hypertension and Complications?
+  A: Supportive (not diagnostic); arterial > venous
+- Q: What is CT/MRI Brain of Portal Hypertension and Complications?
+  A: Exclude structural (ICH, stroke) if atypical
+- Q: What is EEG of Portal Hypertension and Complications?
+  A: Triphasic waves (non-specific)
+- Q: What is the investigation of choice for Portal Hypertension and Complications?
+  A: Number connection test, digit symbol (for MHE)
+- Q: What is West Haven of Portal Hypertension and Complications?
+  A: Covert (MHE, G1): no asterixis; Overt (G2-4): asterixis present
+- Q: What is Precipitants of Portal Hypertension and Complications?
+  A: Infection #1, Bleed #2, Electrolytes #3, Drugs #4, Constipation #5
+- Q: What is Lactulose of Portal Hypertension and Complications?
+  A: 15-30ml BD → 2-3 soft stools/day; PR for Grade 3-4
+- Q: What is Rifaximin of Portal Hypertension and Complications?
+  A: 550mg BD add-on for recurrent/refractory (not monotherapy)
+- Q: What is Grade 3-4 of Portal Hypertension and Complications?
+  A: ICU, intubate if GCS<8, lactulose PR, albumin, treat precipitants
+- Q: What is Ammonia of Portal Hypertension and Complications?
+  A: Supportive only; poor correlation with grade
+- Q: What is Driving of Portal Hypertension and Complications?
+  A: No driving with overt HE
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **B --> D[GI Bleed: Variceal, Portal hypertensive gastropathy]**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Portal Hypertension and Complications presents with: Covert: Minimal (MHE) — Normal; Covert: Grade 1 — Trivial lack of awareness; Overt: Grade 2 — Lethargy. What is the most likely diagnosis?
+   A. **Portal Hypertension and Complications**
+   B. A condition that mimics Portal Hypertension and Complications but is not the same entity
+   C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
+

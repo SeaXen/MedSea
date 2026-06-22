@@ -150,3 +150,114 @@ By the end of this note you should be able to:
 
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Hepatology in Special Situations" — Ch 23: Hepatology.
+
+## Flashcards (48 generated)
+
+- Q: What is the definition of Hepatology in Special Situations?
+  A: Special Situations = High-yield viva topics — Liver disease in pregnancy (AFLP, HELLP, ICP, viral hepatitis), Liver disease in HIV (co-infection, ART hepatotoxicity, immune reconstitution), Liver disease in elderly (altered drug metabolism, reduced reserve), Perioperative assessment (pre-op LFTs, post-op liver dysfunction), Critical illness (ischaemic hepatitis/shock liver, drug-induced).
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 0.5-1% pregnancies (higher in South Asian, South American, Scandinavian)
+- Q: What is Timing of Hepatology in Special Situations?
+  A: Late 2nd / 3rd trimester (pruritus → LFTs)
+- Q: What is the pathogenesis of Hepatology in Special Situations?
+  A: Hormonal (oestrogen/progesterone) + genetic (ABCB4, ABCB11) → impaired bile acid transport
+- Q: What is Clinical of Hepatology in Special Situations?
+  A: Pruritus (palms/soles, worse at night), No rash (excoriations only); Dark urine
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: Bile acids >40 µmol/L (diagnostic), ALT/AST mildly ↑ (2-10×), Bilirubin normal/mild ↑
+- Q: What is Risks to Fetus of Hepatology in Special Situations?
+  A: Stillbirth (risk ↑ with bile acids >100 µmol/L), Preterm delivery, Meconium staining, RDS
+- Q: How is Hepatology in Special Situations managed?
+  A: Ursodeoxycholic Acid (UDCA) 15-20mg/kg/day (impr. pruritus, ↓ bile acids); Vitamin K (if PT prolonged); Delivery at 36-37 weeks (if bile acids >40); >100 µmol/L → deliver 35-36 wks
+- Q: What is Postpartum of Hepatology in Special Situations?
+  A: Resolution within 2-4 weeks; Recurrence risk 60-90% in subsequent pregnancies
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 5-10% of HIV+ globally
+- Q: What is Natural History of Hepatology in Special Situations?
+  A: Faster fibrosis progression, higher cirrhosis/HCC risk, lower spontaneous clearance
+- Q: What is ART & HBV of Hepatology in Special Situations?
+  A: TDF/FTC or TAF/FTC backbone covers both HIV & HBV
+- Q: What is HBV Reactivation of Hepatology in Special Situations?
+  A: Risk if stopping ART (especially if on TDF/FTC/TAF)
+- Q: How is Hepatology in Special Situations managed?
+  A: Avoid (high resistance)
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 20-30% of HIV+ (higher in PWID)
+- Q: What is Fibrosis Progression of Hepatology in Special Situations?
+  A: 2-3x faster than HCV mono-infection
+- Q: How is Hepatology in Special Situations managed?
+  A: Same as HCV mono (SOF/VEL, GLE/PIB, SOF/VEL/VOX); Check DDI with ART (e.g., SOF/VEL with boosted PIs — use GLE/PIB)
+- Q: What is SVR Rates of Hepatology in Special Situations?
+  A: >95% (similar to mono-infection)
+- Q: What is Timing of Hepatology in Special Situations?
+  A: 2-12 weeks after ART initiation
+- Q: What is the mechanism of Hepatology in Special Situations?
+  A: Immune recovery → exaggerated response to HBV/HCV/other antigens
+- Q: What are the clinical features of Hepatology in Special Situations?
+  A: Flare of hepatitis (ALT ↑↑), worsening LFTs, jaundice
+- Q: How is Hepatology in Special Situations managed?
+  A: Continue ART; Prednisolone 0.5-1mg/kg if severe; Do not stop ART
+- Q: What is Warfarin of Hepatology in Special Situations?
+  A: ↓ Dose (↑ sensitivity)
+- Q: What is Benzodiazepines of Hepatology in Special Situations?
+  A: ↓ Dose (lorazepam/oxazepam preferred — no active metabolites)
+- Q: What is Opioids of Hepatology in Special Situations?
+  A: ↓ Dose (morphine → oxycodone/alfentanil)
+- Q: What is Statins of Hepatology in Special Situations?
+  A: Start low (atorvastatin 10mg, rosuvastatin 5mg)
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 0.5-1% pregnancies (higher in South Asian, South American, Scandinavian)
+- Q: What is Timing of Hepatology in Special Situations?
+  A: Late 2nd / 3rd trimester (pruritus → LFTs)
+- Q: What is the pathogenesis of Hepatology in Special Situations?
+  A: Hormonal (oestrogen/progesterone) + genetic (ABCB4, ABCB11) → impaired bile acid transport
+- Q: What is Clinical of Hepatology in Special Situations?
+  A: Pruritus (palms/soles, worse at night), No rash (excoriations only); Dark urine
+- Q: What is LFTs of Hepatology in Special Situations?
+  A: Bile acids >40 µmol/L (diagnostic), ALT/AST mildly ↑ (2-10×), Bilirubin normal/mild ↑
+- Q: What is Risks to Fetus of Hepatology in Special Situations?
+  A: Stillbirth (risk ↑ with bile acids >100 µmol/L), Preterm delivery, Meconium staining, RDS
+- Q: How is Hepatology in Special Situations managed?
+  A: Ursodeoxycholic Acid (UDCA) 15-20mg/kg/day (impr. pruritus, ↓ bile acids); Vitamin K (if PT prolonged); Delivery at 36-37 weeks (if bile acids >40); >100 µmol/L → deliver 35-36 wks
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 5-10% of HIV+ globally
+- Q: What is Natural History of Hepatology in Special Situations?
+  A: Faster fibrosis progression, higher cirrhosis/HCC risk, lower spontaneous clearance
+- Q: What is ART & HBV of Hepatology in Special Situations?
+  A: TDF/FTC or TAF/FTC backbone covers both HIV & HBV
+- Q: What is HBV Reactivation of Hepatology in Special Situations?
+  A: Risk if stopping ART (especially if on TDF/FTC/TAF)
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 20-30% of HIV+ (higher in PWID)
+- Q: What is Fibrosis Progression of Hepatology in Special Situations?
+  A: 2-3x faster than HCV mono-infection
+- Q: How is Hepatology in Special Situations managed?
+  A: Same as HCV mono (SOF/VEL, GLE/PIB, SOF/VEL/VOX); Check DDI with ART (e.g., SOF/VEL with boosted PIs — use GLE/PIB)
+- Q: What is Timing of Hepatology in Special Situations?
+  A: 2-12 weeks after ART initiation
+- Q: What is the mechanism of Hepatology in Special Situations?
+  A: Immune recovery → exaggerated response to HBV/HCV/other antigens
+- Q: What are the clinical features of Hepatology in Special Situations?
+  A: Flare of hepatitis (ALT ↑↑), worsening LFTs, jaundice
+- Q: How is Hepatology in Special Situations managed?
+  A: Continue ART; Prednisolone 0.5-1mg/kg if severe; Do not stop ART
+- Q: What is Warfarin of Hepatology in Special Situations?
+  A: ↓ Dose (↑ sensitivity)
+- Q: What is Benzodiazepines of Hepatology in Special Situations?
+  A: ↓ Dose (lorazepam/oxazepam preferred — no active metabolites)
+- Q: What is Opioids of Hepatology in Special Situations?
+  A: ↓ Dose (morphine → oxycodone/alfentanil)
+- Q: What is Statins of Hepatology in Special Situations?
+  A: Start low (atorvastatin 10mg, rosuvastatin 5mg)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology in Special Situations?**
+   A. **Special Situations = High-yield viva topics — Liver disease in pregnancy (AFLP, HELLP, ICP, viral hepatitis), Liver disease in HIV (co-infection, ART hepatotoxicity, immune reconstitution), Liver dise**
+   B. An unrelated condition not matching the clinical picture of Hepatology in Special Situations
+   C. A complication seen late in the disease course of Hepatology in Special Situations
+   D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
+

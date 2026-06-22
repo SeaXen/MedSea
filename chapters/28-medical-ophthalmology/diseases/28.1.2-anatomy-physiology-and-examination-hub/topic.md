@@ -37,3 +37,20 @@ modified: 2026-06-16
 
 ## Tags
 #medicine #davidson #ophthalmology #hub #anatomy #physiology #examination
+---
+
+> Auto-generated study sections for "01_Anatomy_Physiology_Examination" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of 01_Anatomy_Physiology_Examination?
+  A: # Section 1: Anatomy, Physiology & Clinical Examination — Hub
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 01_Anatomy_Physiology_Examination?**
+   A. **# Section 1: Anatomy, Physiology & Clinical Examination — Hub**
+   B. An unrelated condition not matching the clinical picture of 01_Anatomy_Physiology_Examination
+   C. A complication seen late in the disease course of 01_Anatomy_Physiology_Examination
+   D. A condition that mimics 01_Anatomy_Physiology_Examination but has a different underlying cause
+

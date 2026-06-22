@@ -377,3 +377,124 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Microscopic polyangiitis (MPA)]] · [[Eosinophilic granulomatosis with polyangiitis (EPA)]] · [[ANCA-associated vasculitis overview]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (49 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: | Definition | Necrotising granulomatous vasculitis of small/medium vessels, strongly associated with c-ANCA/PR3 — affects upper respiratory, lungs, kidneys |
+- Q: What is PR3 (Proteinase 3) of Vasculitis?
+  A: Neutrophil serine protease — target of c-ANCA
+- Q: What is the mechanism of Vasculitis?
+  A: Anti-PR3 binds surface PR3 → neutrophil activation → ROS, degranulation, NETosis → endothelial damage
+- Q: What is Granulomatous inflammation of Vasculitis?
+  A: Necrotising granulomas with geographic necrosis (distinct from sarcoid non-necrotising)
+- Q: What is S. aureus carriage of Vasculitis?
+  A: Chronic nasal carriage → recurrent ENT flares; trimethoprim prophylaxis reduces relapse
+- Q: What is Pattern of Vasculitis?
+  A: c-ANCA (cytoplasmic) — granular cytoplasmic staining
+- Q: What is Target of Vasculitis?
+  A: PR3 (Proteinase 3)
+- Q: What is Sensitivity of Vasculitis?
+  A: 90% active generalised GPA, 70-80% limited GPA, 60% remission
+- Q: What is Specificity of Vasculitis?
+  A: >95% for GPA (vs MPA, EGPA, other)
+- Q: How is Vasculitis monitored?
+  A: Rising titres may predict relapse (but not perfect — treat clinically)
+- Q: What is Negative GPA of Vasculitis?
+  A: ~10% active GPA — biopsy if high suspicion
+- Q: What is c-ANCA / PR3 ELISA of Vasculitis?
+  A: Primary serological test (90% active generalised)
+- Q: What is p-ANCA / MPO of Vasculitis?
+  A: Usually negative (if +ve, think MPA/EGPA)
+- Q: What is FBC, ESR, CRP of Vasculitis?
+  A: Inflammatory markers (monitor activity)
+- Q: What is Renal Function of Vasculitis?
+  A: Cr, eGFR, urine dipstick (proteinuria, haematuria, RBC casts)
+- Q: What is CXR / CT Chest of Vasculitis?
+  A: Nodules (cavitating), haemorrhage (ground-glass), infiltrates
+- Q: What is Sinus CT of Vasculitis?
+  A: Opacification, mucosal thickening, bony destruction
+- Q: What is Renal Biopsy of Vasculitis?
+  A: Pauci-immune necrotising crescentic GN (IF: negative/few immune complexes)
+- Q: What is ENT/Lung Biopsy of Vasculitis?
+  A: Necrotising granulomatous inflammation with geographic necrosis
+- Q: What is Urine for Alveolar Haemorrhage of Vasculitis?
+  A: Haemosiderin-laden macrophages (if pulmonary haemorrhage)
+- Q: What is PR3 (Proteinase 3) of Vasculitis?
+  A: Neutrophil serine protease — target of c-ANCA
+- Q: What is the mechanism of Vasculitis?
+  A: Anti-PR3 binds surface PR3 → neutrophil activation → ROS, degranulation, NETosis → endothelial damage
+- Q: What is Granulomatous inflammation of Vasculitis?
+  A: Necrotising granulomas with geographic necrosis (distinct from sarcoid non-necrotising)
+- Q: What is S. aureus carriage of Vasculitis?
+  A: Chronic nasal carriage → recurrent ENT flares; trimethoprim prophylaxis reduces relapse
+- Q: What is Pattern of Vasculitis?
+  A: c-ANCA (cytoplasmic) — granular cytoplasmic staining
+- Q: What is Target of Vasculitis?
+  A: PR3 (Proteinase 3)
+- Q: What is Sensitivity of Vasculitis?
+  A: 90% active generalised GPA, 70-80% limited GPA, 60% remission
+- Q: What is Specificity of Vasculitis?
+  A: >95% for GPA (vs MPA, EGPA, other)
+- Q: How is Vasculitis monitored?
+  A: Rising titres may predict relapse (but not perfect — treat clinically)
+- Q: What is Negative GPA of Vasculitis?
+  A: ~10% active GPA — biopsy if high suspicion
+- Q: What is c-ANCA / PR3 ELISA of Vasculitis?
+  A: Primary serological test (90% active generalised)
+- Q: What is p-ANCA / MPO of Vasculitis?
+  A: Usually negative (if +ve, think MPA/EGPA)
+- Q: What is FBC, ESR, CRP of Vasculitis?
+  A: Inflammatory markers (monitor activity)
+- Q: What is Renal Function of Vasculitis?
+  A: Cr, eGFR, urine dipstick (proteinuria, haematuria, RBC casts)
+- Q: What is CXR / CT Chest of Vasculitis?
+  A: Nodules (cavitating), haemorrhage (ground-glass), infiltrates
+- Q: What is Sinus CT of Vasculitis?
+  A: Opacification, mucosal thickening, bony destruction
+- Q: What is Renal Biopsy of Vasculitis?
+  A: Pauci-immune necrotising crescentic GN (IF: negative/few immune complexes)
+- Q: What is ENT/Lung Biopsy of Vasculitis?
+  A: Necrotising granulomatous inflammation with geographic necrosis
+- Q: What is Urine for Alveolar Haemorrhage of Vasculitis?
+  A: Haemosiderin-laden macrophages (if pulmonary haemorrhage)
+- Q: What is ANCA of Vasculitis?
+  A: c-ANCA/PR3 (cytoplasmic) — 90% active generalised, 60% remission, >95% specific
+- Q: What is Classic Triad of Vasculitis?
+  A: ENT (sinusitis, saddle nose, subglottic stenosis) + Lung (cavitating nodules, haemorrhage) + Renal (pauci-immune crescentic GN)
+- Q: What is Saddle Nose of Vasculitis?
+  A: Septal cartilage destruction — pathognomonic
+- Q: What is Subglottic Stenosis of Vasculitis?
+  A: High stridor, voice change — endoscopic dilation, RTX may help
+- Q: What is Renal Biopsy of Vasculitis?
+  A: Pauci-immune necrotising crescentic GN (no immune complexes on IF)
+- Q: What is Induction of Vasculitis?
+  A: Severe: CYC IV + MP + PLEX or RTX + MP + PLEX. Non-severe: CYC oral or RTX + pred
+- Q: What is Maintenance of Vasculitis?
+  A: RTX 500mg q6mo > AZA (MAINRITSAN); 2-5 years
+- Q: What is Relapse of Vasculitis?
+  A: 50% at 5yr — ENT (subglottic), renal, cutaneous; re-induction with RTX
+- Q: What is Trimethoprim of Vasculitis?
+  A: 480mg 3x/week — reduces ENT relapse (S. aureus) + PJP prophylaxis
+- Q: What is Limited GPA of Vasculitis?
+  A: ENT + Lung only (no renal); c-ANCA 70-80%; better prognosis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **| Definition | Necrotising granulomatous vasculitis of small/medium vessels, strongly associated with c-ANCA/PR3 — affects upper respiratory, lungs, kidneys |**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Previous Name — Wegener's Granulomatosis; Peak Onset — 40-60 years (can occur any age); Sex Ratio — M = F (slight male predominance in some series). What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

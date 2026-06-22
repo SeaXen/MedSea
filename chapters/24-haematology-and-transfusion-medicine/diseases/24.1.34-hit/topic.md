@@ -318,3 +318,52 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Platelet Disorders → HIT
+- Q: What is Thrombocytopenia of Hematology?
+  A: Fall >50% from baseline; Nadir 20-100×10⁹/L (rarely <10)
+- Q: What is Timing of Hematology?
+  A: Days 5-10 after heparin start (or ≤1 day if prior exposure <100 days)
+- Q: What is Thrombosis (HITT) of Hematology?
+  A: Venous (DVT, PE, unusual sites: adrenal, cerebral sinus) > Arterial (limb ischaemia, stroke, MI)
+- Q: What is Skin Necrosis of Hematology?
+  A: At heparin injection sites; warfarin-induced if VKA started alone
+- Q: What is Adrenal Haemorrhage of Hematology?
+  A: Bilateral (Waterhouse-Friderichsen-like) – venous thrombosis
+- Q: What is Systemic Reaction of Hematology?
+  A: Fever, chills, hypertension, flushing (heparin flush)
+- Q: What is Thrombocytopenia of Hematology?
+  A: Fall >50% from baseline; Nadir 20-100×10⁹/L (rarely <10)
+- Q: What is Timing of Hematology?
+  A: Days 5-10 after heparin start (or ≤1 day if prior exposure <100 days)
+- Q: What is Thrombosis (HITT) of Hematology?
+  A: Venous (DVT, PE, unusual sites: adrenal, cerebral sinus) > Arterial (limb ischaemia, stroke, MI)
+- Q: What is Skin Necrosis of Hematology?
+  A: At heparin injection sites; warfarin-induced if VKA started alone
+- Q: What is Adrenal Haemorrhage of Hematology?
+  A: Bilateral (Waterhouse-Friderichsen-like) – venous thrombosis
+- Q: What is Systemic Reaction of Hematology?
+  A: Fever, chills, hypertension, flushing (heparin flush)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Platelet Disorders → HIT**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: A[Heparin (UFH/LMWH)] --> B[PF4 (Platelet Factor 4) Release from Platelets]; B --> C[PF4/Heparin Complex Formation]; C --> D[Anti-PF4/Heparin IgG Antibody Formation]. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

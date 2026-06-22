@@ -343,3 +343,128 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Septic arthritis]] · [[Lyme disease]] · [[Rheumatic fever]]
+---
+
+> Auto-generated study sections for "Infectious Arthritis and Bone Infections" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (51 generated)
+
+- Q: What is the definition of Infectious Arthritis and Bone Infections?
+  A: Acute inflammatory arthritis triggered by viral infection — direct joint invasion or immune complex deposition
+- Q: What are the clinical features of Infectious Arthritis and Bone Infections?
+  A: Acute polyarthritis (symmetric small joints) or polyarthralgia, often with rash, fever, constitutional symptoms
+- Q: What is Course of Infectious Arthritis and Bone Infections?
+  A: Self-limiting (days to weeks) in most; chronic may mimic chronic inflammatory arthritis
+- Q: What is Key Distinction from RA of Infectious Arthritis and Bone Infections?
+  A: RF/anti-CCP negative, no erosions, transient, associated systemic viral features
+- Q: What is Transmission of Infectious Arthritis and Bone Infections?
+  A: Respiratory droplets; school outbreaks
+- Q: What is Children of Infectious Arthritis and Bone Infections?
+  A: "Slapped cheek" rash (erythema infectiosum) → lacy reticular rash on trunk/limbs
+- Q: What is Adults of Infectious Arthritis and Bone Infections?
+  A: Symmetric small joint polyarthritis (hands, wrists, knees) — mimics RA; no rash often
+- Q: What is Course of Infectious Arthritis and Bone Infections?
+  A: Self-limiting 1-3 weeks (can recur for months)
+- Q: What is Transient ANA of Infectious Arthritis and Bone Infections?
+  A: Positive in 10-20% during acute phase (low titre, speckled)
+- Q: What is High-Risk of Infectious Arthritis and Bone Infections?
+  A: Aplastic crisis in sickle cell/haemolytic anaemia; hydrops fetalis in pregnancy
+- Q: What is Serology of Infectious Arthritis and Bone Infections?
+  A: IgM = acute (peaks 7-10 days, 2-3 months); IgG = immunity
+- Q: What is Pattern of Infectious Arthritis and Bone Infections?
+  A: Serum sickness-like prodrome: fever, urticarial rash, polyarthritis → then jaundice
+- Q: What is Arthritis of Infectious Arthritis and Bone Infections?
+  A: Symmetric, small joints (hands, wrists, knees) — precedes jaundice
+- Q: What is PAN Association of Infectious Arthritis and Bone Infections?
+  A: HBV-associated polyarteritis nodosa — vasculitis, mononeuritis multiplex, hypertension, renal
+- Q: What is Serology of Infectious Arthritis and Bone Infections?
+  A: HBsAg +, Anti-HBc IgM + (acute); Anti-HBs = immunity
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: Antivirals (entecavir/tenofovir) for chronic HBV; avoid immunosuppression
+- Q: What is Arthralgia of Infectious Arthritis and Bone Infections?
+  A: Very common (20-30%) — often non-inflammatory
+- Q: What is Cryoglobulinaemic Vasculitis of Infectious Arthritis and Bone Infections?
+  A: Type II/III cryoglobulinaemia — palpable purpura, peripheral neuropathy, membranoproliferative GN (MPGN), low C4
+- Q: What is Liver Disease of Infectious Arthritis and Bone Infections?
+  A: Chronic hepatitis, cirrhosis, HCC risk
+- Q: What is Serology of Infectious Arthritis and Bone Infections?
+  A: Anti-HCV +, HCV RNA + (active replication)
+- Q: How is Infectious Arthritis and Bone Infections managed?
+  A: DAA (Direct-acting antivirals) — cures HCV + resolves cryoglobulinaemia
+- Q: What is Viral IgM of Infectious Arthritis and Bone Infections?
+  A: Acute/recent infection (peaks 1-2 weeks, declines 2-3 months)
+- Q: What is Viral IgG of Infectious Arthritis and Bone Infections?
+  A: Past infection / immunity
+- Q: What is RF / Anti-CCP of Infectious Arthritis and Bone Infections?
+  A: Negative = supports viral; Positive = think RA
+- Q: What is ANA of Infectious Arthritis and Bone Infections?
+  A: Can be transiently positive (especially parvovirus)
+- Q: What is Cryoglobulins of Infectious Arthritis and Bone Infections?
+  A: HCV (Type II/III) — cryoglobulinaemic vasculitis
+- Q: What is Liver Function of Infectious Arthritis and Bone Infections?
+  A: HBsAg, Anti-HBc IgM, Anti-HCV, HCV RNA
+- Q: What is HCV RNA of Infectious Arthritis and Bone Infections?
+  A: Active replication — treat with DAA
+- Q: What is Complement (C3, C4) of Infectious Arthritis and Bone Infections?
+  A: Low C4 = cryoglobulinaemia/HCV/SLE
+- Q: What is Transmission of Infectious Arthritis and Bone Infections?
+  A: Respiratory droplets; school outbreaks
+- Q: What is Children of Infectious Arthritis and Bone Infections?
+  A: "Slapped cheek" rash (erythema infectiosum) → lacy reticular rash on trunk/limbs
+- Q: What is Adults of Infectious Arthritis and Bone Infections?
+  A: Symmetric small joint polyarthritis (hands, wrists, knees) — mimics RA; no rash often
+- Q: What is Course of Infectious Arthritis and Bone Infections?
+  A: Self-limiting 1-3 weeks (can recur for months)
+- Q: What is Transient ANA of Infectious Arthritis and Bone Infections?
+  A: Positive in 10-20% during acute phase (low titre, speckled)
+- Q: What is High-Risk of Infectious Arthritis and Bone Infections?
+  A: Aplastic crisis in sickle cell/haemolytic anaemia; hydrops fetalis in pregnancy
+- Q: What is Pattern of Infectious Arthritis and Bone Infections?
+  A: Serum sickness-like prodrome: fever, urticarial rash, polyarthritis → then jaundice
+- Q: What is Arthritis of Infectious Arthritis and Bone Infections?
+  A: Symmetric, small joints (hands, wrists, knees) — precedes jaundice
+- Q: What is PAN Association of Infectious Arthritis and Bone Infections?
+  A: HBV-associated polyarteritis nodosa — vasculitis, mononeuritis multiplex, hypertension, renal
+- Q: What is Serology of Infectious Arthritis and Bone Infections?
+  A: HBsAg +, Anti-HBc IgM + (acute); Anti-HBs = immunity
+- Q: What is Arthralgia of Infectious Arthritis and Bone Infections?
+  A: Very common (20-30%) — often non-inflammatory
+- Q: What is Cryoglobulinaemic Vasculitis of Infectious Arthritis and Bone Infections?
+  A: Type II/III cryoglobulinaemia — palpable purpura, peripheral neuropathy, membranoproliferative GN (MPGN), low C4
+- Q: What is Liver Disease of Infectious Arthritis and Bone Infections?
+  A: Chronic hepatitis, cirrhosis, HCC risk
+- Q: What is Serology of Infectious Arthritis and Bone Infections?
+  A: Anti-HCV +, HCV RNA + (active replication)
+- Q: What is Viral IgM of Infectious Arthritis and Bone Infections?
+  A: Acute/recent infection (peaks 1-2 weeks, declines 2-3 months)
+- Q: What is Viral IgG of Infectious Arthritis and Bone Infections?
+  A: Past infection / immunity
+- Q: What is RF / Anti-CCP of Infectious Arthritis and Bone Infections?
+  A: Negative = supports viral; Positive = think RA
+- Q: What is ANA of Infectious Arthritis and Bone Infections?
+  A: Can be transiently positive (especially parvovirus)
+- Q: What is Cryoglobulins of Infectious Arthritis and Bone Infections?
+  A: HCV (Type II/III) — cryoglobulinaemic vasculitis
+- Q: What is Liver Function of Infectious Arthritis and Bone Infections?
+  A: HBsAg, Anti-HBc IgM, Anti-HCV, HCV RNA
+- Q: What is HCV RNA of Infectious Arthritis and Bone Infections?
+  A: Active replication — treat with DAA
+- Q: What is Complement (C3, C4) of Infectious Arthritis and Bone Infections?
+  A: Low C4 = cryoglobulinaemia/HCV/SLE
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Infectious Arthritis and Bone Infections?**
+   A. **Viral arthritis = acute self-limiting polyarthritis from viral infection.**
+   B. An unrelated condition not matching the clinical picture of Infectious Arthritis and Bone Infections
+   C. A complication seen late in the disease course of Infectious Arthritis and Bone Infections
+   D. A condition that mimics Infectious Arthritis and Bone Infections but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Infectious Arthritis and Bone Infections presents with: Definition — Acute inflammatory arthritis triggered by viral infection — direct joint invasion or immune complex deposition; Presentation — Acute polyarthritis (symmetric small joints) or polyarthralgia, often with rash, fever, constitutional symptoms; Course — Self-limiting (days to weeks) in most; chronic may mimic chronic inflammatory arthritis. What is the most likely diagnosis?
+   A. **Infectious Arthritis and Bone Infections**
+   B. A condition that mimics Infectious Arthritis and Bone Infections but is not the same entity
+   C. A complication of Infectious Arthritis and Bone Infections rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Infectious Arthritis and Bone Infections
+

@@ -278,3 +278,38 @@ mindmap
 - [[Acute Liver Failure/Definition and Aetiology|ALF Definition]]
 - [[Acute Liver Failure/King's College Criteria|King's College Criteria]]
 - [[Acute Liver Failure/Autoimmune hepatitis presenting as ALF|AIH ALF]]
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: # Wilson Disease Presenting as Acute Liver Failure
+- Q: What is Age of Acute Liver Failure?
+  A: Typically 10-30 years (adolescents/young adults)
+- Q: What is Sex of Acute Liver Failure?
+  A: Female > Male (2:1)
+- Q: What is Setting of Acute Liver Failure?
+  A: Often precipitated by minor illness, pregnancy, surgery
+- Q: What is the prognosis of Acute Liver Failure?
+  A: Near 100% mortality
+- Q: What is % of ALF <40 years of Acute Liver Failure?
+  A: 5-10% (higher in Asia)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **# Wilson Disease Presenting as Acute Liver Failure**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Acute Liver Failure presents with: Feature — Wilson ALF; Age — Typically 10-30 years (adolescents/young adults); Sex — Female > Male (2:1). What is the most likely diagnosis?
+   A. **Acute Liver Failure**
+   B. A condition that mimics Acute Liver Failure but is not the same entity
+   C. A complication of Acute Liver Failure rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Acute Liver Failure
+

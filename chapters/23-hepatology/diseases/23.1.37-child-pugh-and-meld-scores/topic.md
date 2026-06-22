@@ -150,3 +150,20 @@ MELD-Na = MELD + 1.32 × (137 - Na) - [0.033 × MELD × (137 - Na)]
 
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Chronic Liver Disease and Cirrhosis" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Chronic Liver Disease and Cirrhosis?
+  A: | Bilirubin | 1.0 mg/dL | 4.0 mg/dL |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Chronic Liver Disease and Cirrhosis?**
+   A. **| Bilirubin | 1.0 mg/dL | 4.0 mg/dL |**
+   B. An unrelated condition not matching the clinical picture of Chronic Liver Disease and Cirrhosis
+   C. A complication seen late in the disease course of Chronic Liver Disease and Cirrhosis
+   D. A condition that mimics Chronic Liver Disease and Cirrhosis but has a different underlying cause
+

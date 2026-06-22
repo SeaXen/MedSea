@@ -256,3 +256,46 @@ mindmap
 - [[Portal Hypertension and Complications/Ascites|Ascites]]
 - [[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]
 - [[Liver Transplantation/Liver Transplantation|Liver Transplant]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: | Sofosbuvir/Velpatasvir (SOF/VEL) | 400/100 mg once daily | 12 weeks |
+- Q: What is Baseline Hb of Viral Hepatitis?
+  A: Must be ≥10 g/dL (ideally ≥12 g/dL)
+- Q: What is Weekly Hb of Viral Hepatitis?
+  A: First 4 weeks, then every 2 weeks
+- Q: What is Hb <10 g/dL of Viral Hepatitis?
+  A: Reduce RBV: 600→400mg, 1000→600mg
+- Q: What is Hb <8.5 g/dL of Viral Hepatitis?
+  A: Stop RBV (continue SOF/VEL monotherapy)
+- Q: What is Erythropoietin of Viral Hepatitis?
+  A: Consider if Hb <10 and symptomatic
+- Q: What is Only Regimen of Viral Hepatitis?
+  A: SOF/VEL + RBV 12 weeks for Child-Pugh B/C
+- Q: What is Contraindicated of Viral Hepatitis?
+  A: GLE/PIB (glecaprevir PI), SOF/VEL/VOX (voxilaprevir PI)
+- Q: What is the dose of Viral Hepatitis?
+  A: 600mg (<75kg) / 1000mg (≥75kg); Adjust for Hb <10; Stop if Hb <8.5
+- Q: How is Viral Hepatitis monitored?
+  A: Weekly Hb, LFTs, INR, Creatinine, Sodium, HE assessment
+- Q: What is Decompensation of Viral Hepatitis?
+  A: Stop RBV for any event (ascites, HE, bleed, SBP, AKI)
+- Q: What is SVR12 Rates of Viral Hepatitis?
+  A: Child B: 85-90%; Child C: 70-80%
+- Q: What is Post-SVR of Viral Hepatitis?
+  A: Lifelong HCC surveillance (6m US ± AFP)
+- Q: What is Transplant of Viral Hepatitis?
+  A: Treat pre-transplant if feasible; Post-Tx: SOF/VEL or GLE/PIB
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **| Sofosbuvir/Velpatasvir (SOF/VEL) | 400/100 mg once daily | 12 weeks |**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+

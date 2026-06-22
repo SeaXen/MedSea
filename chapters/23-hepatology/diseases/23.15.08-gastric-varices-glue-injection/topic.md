@@ -264,3 +264,44 @@ mindmap
 - [[Portal Hypertension and Complications/Acute variceal bleeding management|Acute Bleed]]
 - [[Portal Hypertension and Complications/Varices|Varices Overview]]
 - [[Portal Hypertension and Complications/Screening endoscopy|Screening Endoscopy]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: | Primary Prophylaxis | NSBB + EVL (treat oesophageal component) |
+- Q: How is Portal Hypertension and Complications classified?
+  A: GOV1 (Lesser curve), GOV2 (Fundal+Lesser), IGV1 (Fundal isolated), IGV2 (Ectopic)
+- Q: What is GOV1 of Portal Hypertension and Complications?
+  A: NSBB + EVL (primary/secondary prophylaxis)
+- Q: What is GOV2 / IGV1 of Portal Hypertension and Complications?
+  A: Glue Injection Primary (NSBB adjunct)
+- Q: What is IGV1 + Gastrorenal Shunt of Portal Hypertension and Complications?
+  A: BRTO/PARTO option for secondary prophylaxis/HE
+- Q: What is Glue Technique of Portal Hypertension and Complications?
+  A: Histoacryl:Lipiodol 1:1-1:3; Intravariceal; 0.5-1mL/site; Antibiotics
+- Q: What are the complications of Portal Hypertension and Complications?
+  A: Embolisation (lung > splenic > portal > brain); Ulcer/Stricture
+- Q: What is BRTO of Portal Hypertension and Complications?
+  A: Balloon occlusion of gastrorenal shunt + Ethanolamine oleate
+- Q: What is PARTO of Portal Hypertension and Complications?
+  A: Vascular plug instead of balloon — permanent, less radiation
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **| Primary Prophylaxis | NSBB + EVL (treat oesophageal component) |**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Portal Hypertension and Complications presents with: A[Gastric Varices] --> B{Relationship to Oesophageal Varices}; B -->|Continuous| C[GOV (Gastro-Oesophageal)]; B -->|Separate| D[IGV (Isolated Gastric)]. What is the most likely diagnosis?
+   A. **Portal Hypertension and Complications**
+   B. A condition that mimics Portal Hypertension and Complications but is not the same entity
+   C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
+

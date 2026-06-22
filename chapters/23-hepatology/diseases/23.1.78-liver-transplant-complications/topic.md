@@ -150,3 +150,128 @@ gantt
 |-------------|---------|
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Liver Transplantation" — Ch 23: Hepatology.
+
+## Flashcards (55 generated)
+
+- Q: What is the definition of Liver Transplantation?
+  A: | Timing | Days 5-30 (Peak 1-2 weeks); Can Occur Later |
+- Q: What is Timing of Liver Transplantation?
+  A: Days 5-30 (Peak 1-2 weeks); Can Occur Later
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 20-40% (Higher if No Induction)
+- Q: What is the investigation of choice for Liver Transplantation?
+  A: Liver Biopsy (Banff Criteria): Portal Inflammation, Endothelitis, Bile Duct Injury
+- Q: What is Severity of Liver Transplantation?
+  A: Mild / Moderate / Severe (Banff)
+- Q: How is Liver Transplantation managed?
+  A: Pulse Methylprednisolone 500-1000mg IV ×3 Days → Oral Taper
+- Q: What is Steroid-Refractory of Liver Transplantation?
+  A: Thymoglobulin (ATG) or Switch to mTOR (Sirolimus/Everolimus)
+- Q: What is Timing of Liver Transplantation?
+  A: Variable (Early or Late)
+- Q: What is the epidemiology of Liver Transplantation?
+  A: <5% (Increasing with DSA Testing)
+- Q: What is the investigation of choice for Liver Transplantation?
+  A: C4d+ on Biopsy + Donor-Specific Antibodies (DSA) + Histology
+- Q: How is Liver Transplantation managed?
+  A: Plasmapheresis + IVIG + Rituximab ± Bortezomib
+- Q: What is the prognosis of Liver Transplantation?
+  A: Worse than ACR; Higher Graft Loss
+- Q: What is Timing of Liver Transplantation?
+  A: Days 7-30 (Peak 2-3 weeks)
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 5-15% (DDLT > LDLT)
+- Q: What are the clinical features of Liver Transplantation?
+  A: Bile in Drain, Peritonitis, Fever, Rising Bilirubin/ALP
+- Q: What is the investigation of choice for Liver Transplantation?
+  A: ERCP (Gold Standard) / HIDA / CT
+- Q: How is Liver Transplantation managed?
+  A: ERCP + Stent (Primary); Percutaneous Drain; Surgery if Failed
+- Q: What is Timing of Liver Transplantation?
+  A: Months-Years (Peak 3-12 months)
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 10-20% (Anastomotic > Non-Anastomotic)
+- Q: How is Liver Transplantation classified?
+  A: Anastomotic (Surgical); Non-Anastomotic (Ischemic) — More Difficult
+- Q: What is the investigation of choice for Liver Transplantation?
+  A: MRCP (Non-Invasive) → ERCP (Therapeutic)
+- Q: How is Liver Transplantation managed?
+  A: ERCP + Dilatation ± Stent (Multiple Sessions); Surgery (Hepaticojejunostomy) if Failed
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 20-30% CKD Stage 3-5 at 5 Years
+- Q: What causes Liver Transplantation?
+  A: CNI Nephrotoxicity (Tacrolimus/Cyclosporine)
+- Q: How is Liver Transplantation managed?
+  A: CNI Minimisation → mTOR Conversion (Sirolimus/Everolimus); ACEi/ARB; Avoid Nephrotoxins
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 50-60% at 5 Years
+- Q: What is Components of Liver Transplantation?
+  A: Obesity, Diabetes, Hypertension, Dyslipidaemia
+- Q: What causes Liver Transplantation?
+  A: Steroids, CNIs (Tac > CsA), mTOR, Lifestyle
+- Q: How is Liver Transplantation managed?
+  A: Steroid Minimisation → CNI Minimisation → mTOR Switch; Lifestyle; Metformin/Statin/ACEi
+- Q: What is Timing of Liver Transplantation?
+  A: Days 5-30 (Peak 1-2 weeks); Can Occur Later
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 20-40% (Higher if No Induction)
+- Q: What is the investigation of choice for Liver Transplantation?
+  A: Liver Biopsy (Banff Criteria): Portal Inflammation, Endothelitis, Bile Duct Injury
+- Q: What is Severity of Liver Transplantation?
+  A: Mild / Moderate / Severe (Banff)
+- Q: How is Liver Transplantation managed?
+  A: Pulse Methylprednisolone 500-1000mg IV ×3 Days → Oral Taper
+- Q: What is Timing of Liver Transplantation?
+  A: Variable (Early or Late)
+- Q: What is the epidemiology of Liver Transplantation?
+  A: <5% (Increasing with DSA Testing)
+- Q: What is the investigation of choice for Liver Transplantation?
+  A: C4d+ on Biopsy + Donor-Specific Antibodies (DSA) + Histology
+- Q: How is Liver Transplantation managed?
+  A: Plasmapheresis + IVIG + Rituximab ± Bortezomib
+- Q: What is the prognosis of Liver Transplantation?
+  A: Worse than ACR; Higher Graft Loss
+- Q: What is Timing of Liver Transplantation?
+  A: Days 7-30 (Peak 2-3 weeks)
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 5-15% (DDLT > LDLT)
+- Q: What are the clinical features of Liver Transplantation?
+  A: Bile in Drain, Peritonitis, Fever, Rising Bilirubin/ALP
+- Q: What is the investigation of choice for Liver Transplantation?
+  A: ERCP (Gold Standard) / HIDA / CT
+- Q: What is Timing of Liver Transplantation?
+  A: Months-Years (Peak 3-12 months)
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 10-20% (Anastomotic > Non-Anastomotic)
+- Q: How is Liver Transplantation classified?
+  A: Anastomotic (Surgical); Non-Anastomotic (Ischemic) — More Difficult
+- Q: What is the investigation of choice for Liver Transplantation?
+  A: MRCP (Non-Invasive) → ERCP (Therapeutic)
+- Q: How is Liver Transplantation managed?
+  A: ERCP + Dilatation ± Stent (Multiple Sessions); Surgery (Hepaticojejunostomy) if Failed
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 20-30% CKD Stage 3-5 at 5 Years
+- Q: What causes Liver Transplantation?
+  A: CNI Nephrotoxicity (Tacrolimus/Cyclosporine)
+- Q: How is Liver Transplantation managed?
+  A: CNI Minimisation → mTOR Conversion (Sirolimus/Everolimus); ACEi/ARB; Avoid Nephrotoxins
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 50-60% at 5 Years
+- Q: What is Components of Liver Transplantation?
+  A: Obesity, Diabetes, Hypertension, Dyslipidaemia
+- Q: What causes Liver Transplantation?
+  A: Steroids, CNIs (Tac > CsA), mTOR, Lifestyle
+- Q: How is Liver Transplantation managed?
+  A: Steroid Minimisation → CNI Minimisation → mTOR Switch; Lifestyle; Metformin/Statin/ACEi
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Liver Transplantation?**
+   A. **| Timing | Days 5-30 (Peak 1-2 weeks); Can Occur Later |**
+   B. An unrelated condition not matching the clinical picture of Liver Transplantation
+   C. A complication seen late in the disease course of Liver Transplantation
+   D. A condition that mimics Liver Transplantation but has a different underlying cause
+

@@ -263,3 +263,20 @@ mindmap
 - [[Portal Hypertension and Complications/Secondary prophylaxis|Secondary Prophylaxis]]
 - [[Portal Hypertension and Complications/Gastric varices (glue injection)|Gastric Varices]]
 - [[Portal Hypertension and Complications/Screening endoscopy|Screening Endoscopy]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: - Goal: Diagnose source, achieve haemostasis, assess rebleeding risk
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **- Goal: Diagnose source, achieve haemostasis, assess rebleeding risk**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+

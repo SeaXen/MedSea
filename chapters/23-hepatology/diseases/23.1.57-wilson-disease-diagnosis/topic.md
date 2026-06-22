@@ -308,3 +308,86 @@ mindmap
 - [[Inherited and Metabolic Liver Disease/Alpha-1 Antitrypsin Deficiency|Alpha-1 AT]]
 - [[Acute Liver Failure/Wilson disease presenting as ALF|Wilson ALF]]
 - [[Autoimmune Liver Disease/Autoimmune hepatitis (AIH)|AIH]]
+---
+
+> Auto-generated study sections for "Inherited and Metabolic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (30 generated)
+
+- Q: What is the definition of Inherited and Metabolic Liver Disease?
+  A: Score ≥4 = Wilson Disease Confirmed; Score 3 = Probable; ≤2 = Unlikely
+- Q: What is Normal of Inherited and Metabolic Liver Disease?
+  A: 20-40 mg/dL (200-400 mg/L)
+- Q: What is Wilson of Inherited and Metabolic Liver Disease?
+  A: Low (<20 mg/dL) in 85-90%
+- Q: What is Pitfalls of Inherited and Metabolic Liver Disease?
+  A: Acute Phase Reactant → May Be Normal in ALF, Inflammation, Pregnancy, Estrogen
+- Q: What is Specificity of Inherited and Metabolic Liver Disease?
+  A: Not Specific (Low in Malnutrition, Nephrotic Syndrome, Menkes Disease)
+- Q: What causes Inherited and Metabolic Liver Disease?
+  A: Copper Deposition in Descemet's Membrane
+- Q: What is Detection of Inherited and Metabolic Liver Disease?
+  A: Slit-Lamp Examination (Essential — Not Visible to Naked Eye)
+- Q: What is Sensitivity of Inherited and Metabolic Liver Disease?
+  A: Neurological: 95-100%; Hepatic: 50-60%; ALF: Often Absent
+- Q: What is Specificity of Inherited and Metabolic Liver Disease?
+  A: High (Also in Chronic Cholestasis: PBC, PSC — Rare)
+- Q: What is Normal of Inherited and Metabolic Liver Disease?
+  A: <50 μg/g dry weight
+- Q: What is Wilson of Inherited and Metabolic Liver Disease?
+  A: >250 μg/g (Diagnostic)
+- Q: What is Caveat of Inherited and Metabolic Liver Disease?
+  A: Sampling Error in Cirrhosis; Cholestatic Diseases Also High
+- Q: What is Normal of Inherited and Metabolic Liver Disease?
+  A: 20-40 mg/dL (200-400 mg/L)
+- Q: What is Wilson of Inherited and Metabolic Liver Disease?
+  A: Low (<20 mg/dL) in 85-90%
+- Q: What is Pitfalls of Inherited and Metabolic Liver Disease?
+  A: Acute Phase Reactant → May Be Normal in ALF, Inflammation, Pregnancy, Estrogen
+- Q: What is Specificity of Inherited and Metabolic Liver Disease?
+  A: Not Specific (Low in Malnutrition, Nephrotic Syndrome, Menkes Disease)
+- Q: What causes Inherited and Metabolic Liver Disease?
+  A: Copper Deposition in Descemet's Membrane
+- Q: What is Detection of Inherited and Metabolic Liver Disease?
+  A: Slit-Lamp Examination (Essential — Not Visible to Naked Eye)
+- Q: What is Sensitivity of Inherited and Metabolic Liver Disease?
+  A: Neurological: 95-100%; Hepatic: 50-60%; ALF: Often Absent
+- Q: What is Normal of Inherited and Metabolic Liver Disease?
+  A: <50 μg/g dry weight
+- Q: What is Wilson of Inherited and Metabolic Liver Disease?
+  A: >250 μg/g (Diagnostic)
+- Q: What is Gene of Inherited and Metabolic Liver Disease?
+  A: ATP7B (Autosomal Recessive)
+- Q: What is Ceruloplasmin of Inherited and Metabolic Liver Disease?
+  A: <20 mg/dL (But Normal in ALF — Acute Phase)
+- Q: What is Urinary Copper of Inherited and Metabolic Liver Disease?
+  A: >100 μg/24h (Often >500)
+- Q: What is KF Rings of Inherited and Metabolic Liver Disease?
+  A: Slit-Lamp; Neuro 95%, Hepatic 50%, ALF Often Absent
+- Q: What is Liver Copper of Inherited and Metabolic Liver Disease?
+  A: >250 μg/g Dry Weight (Diagnostic)
+- Q: What is Leipzig Score of Inherited and Metabolic Liver Disease?
+  A: ≥4 = Confirmed; Genetics 2 Mutations = +4
+- Q: What is Wilson ALF Signature of Inherited and Metabolic Liver Disease?
+  A: ALP:Bil <2, AST:ALT >2.2, Coombs-Neg Haemolysis, Low Uric Acid
+- Q: What is Neurological of Inherited and Metabolic Liver Disease?
+  A: Wing-Beating Tremor, Dystonia, Face of Giant Panda (MRI)
+- Q: How is Inherited and Metabolic Liver Disease managed?
+  A: Penicillamine/Trientine + Zinc; ALF = Transplant Definitive
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inherited and Metabolic Liver Disease?**
+   A. **Score ≥4 = Wilson Disease Confirmed; Score 3 = Probable; ≤2 = Unlikely**
+   B. An unrelated condition not matching the clinical picture of Inherited and Metabolic Liver Disease
+   C. A complication seen late in the disease course of Inherited and Metabolic Liver Disease
+   D. A condition that mimics Inherited and Metabolic Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inherited and Metabolic Liver Disease presents with: Tremor — Wing-Beating (Proximal, Intentional); Dystonia — Oromandibular, Limbs, Truncal; Dysarthria — Scanning, Spastic. What is the most likely diagnosis?
+   A. **Inherited and Metabolic Liver Disease**
+   B. A condition that mimics Inherited and Metabolic Liver Disease but is not the same entity
+   C. A complication of Inherited and Metabolic Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inherited and Metabolic Liver Disease
+

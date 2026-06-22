@@ -262,3 +262,50 @@ mindmap
 - [[Inherited and Metabolic Liver Disease/Gilbert Syndrome|Gilbert Syndrome]]
 - [[Inherited and Metabolic Liver Disease/Crigler-Najjar Syndrome|Crigler-Najjar]]
 - [[Portal Hypertension and Complications/HELLP Syndrome|HELLP]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (16 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: Pre-hepatic jaundice = Unconjugated hyperbilirubinaemia due to increased bilirubin production exceeding hepatic conjugation capacity.
+- Q: What is Increased RBC destruction of Jaundice and LFT Interpretation?
+  A: ↑ Haemoglobin breakdown → ↑ Unconjugated bilirubin
+- Q: What is Liver conjugation capacity of Jaundice and LFT Interpretation?
+  A: Normal (UGT1A1 intact)
+- Q: How is Jaundice and LFT Interpretation classified?
+  A: Predominantly unconjugated (indirect)
+- Q: What is Urine bilirubin of Jaundice and LFT Interpretation?
+  A: Negative (unconjugated not water-soluble)
+- Q: What is Urobilinogen of Jaundice and LFT Interpretation?
+  A: Increased (more bilirubin reaching gut)
+- Q: What is Pre-hepatic = Unconjugated of Jaundice and LFT Interpretation?
+  A: Liver normal, production ↑
+- Q: What is Urine bilirubin = Negative of Jaundice and LFT Interpretation?
+  A: Unconjugated not water-soluble
+- Q: What is Urobilinogen = Increased of Jaundice and LFT Interpretation?
+  A: More bilirubin to gut
+- Q: What is Key Triad of Jaundice and LFT Interpretation?
+  A: Retic↑, Haptoglobin↓, LDH↑
+- Q: What is DAT (Coombs) of Jaundice and LFT Interpretation?
+  A: +ve = Immune; -ve = Non-immune
+- Q: What is Spherocytes of Jaundice and LFT Interpretation?
+  A: AIHA, Hereditary Spherocytosis
+- Q: What is Schistocytes of Jaundice and LFT Interpretation?
+  A: MAHA (TTP, HUS, DIC, HELLP)
+- Q: What is Heinz/Bite Cells of Jaundice and LFT Interpretation?
+  A: G6PD, Unstable Hb
+- Q: What is Sickle Cells of Jaundice and LFT Interpretation?
+  A: Sickle Cell Disease
+- Q: What is G6PD of Jaundice and LFT Interpretation?
+  A: X-linked, Oxidative drugs, Malaria protection
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **Pre-hepatic jaundice = Unconjugated hyperbilirubinaemia due to increased bilirubin production exceeding hepatic conjugation capacity.**
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+

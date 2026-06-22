@@ -327,3 +327,48 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (11 generated)
+
+- Q: What is Binuclear Erythroblasts of Hematology?
+  A: 30-50% on BM film
+- Q: What is the investigation of choice for Hematology?
+  A: Positive (Lysis of own RBCs in acidified serum)
+- Q: What is SDS-PAGE of Hematology?
+  A: Band 3 deficiency (Reduced), Increased Polypeptides
+- Q: What is the definition of Hematology?
+  A: Inherited + Ineffective erythropoiesis + Dyserythropoiesis
+- Q: What is CDA II (HEMPAS) of Hematology?
+  A: Most common; Binuclear erythroblasts (30-50%), Acidified serum test +ve, SEC23B, Band 3↓
+- Q: What is CDA I of Hematology?
+  A: Multinuclear erythroblasts (≥3 nuclei), Negative HEMPAS, CDAN1, Skeletal abnormalities
+- Q: What is CDA III of Hematology?
+  A: Multinuclear (up to 12 nuclei), KIF23, AD inheritance, Adult onset
+- Q: What is CDA IV of Hematology?
+  A: KLF1 mutation, No binuclear/multinuclear cells, AD
+- Q: What is Iron Overload of Hematology?
+  A: Major complication (CDA I/II) → Chelation (Deferasirox/Deferiprone/Deferoxamine)
+- Q: What is Splenectomy of Hematology?
+  A: Beneficial in CDA II (↑ Hb, ↓ transfusions)
+- Q: What is the investigation of choice for Hematology?
+  A: Positive = CDA II (Specific)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Congenital Dyserythropoietic Anaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: CDA I — Megaloblastic CDA; CDA II — HEMPAS (Hereditary Erythroblast Multinuclearity with Positive Acidified Serum test); CDA III — Erythroblast Multinuclearity. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

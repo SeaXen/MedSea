@@ -409,3 +409,96 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (39 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Transfusion Medicine → Special Transfusion Situations
+- Q: What is Hb of Hematology?
+  A: >70-80 g/L (stable); >80-100 (ongoing bleed)
+- Q: What is Platelets of Hematology?
+  A: >50 (bleeding); <100 (CS/neuraxial)
+- Q: What is Fibrinogen of Hematology?
+  A: >2.0 g/L (critical threshold)
+- Q: What is INR of Hematology?
+  A: <1.5 (if bleeding)
+- Q: What is Ionised Ca²⁺ of Hematology?
+  A: >1.0 mmol/L (citrate toxicity)
+- Q: What is Hematology indicated for?
+  A: CS with anticipated blood loss >1000 mL; Placenta praevia, Accreta, Multiple pregnancy
+- Q: What is Processing of Hematology?
+  A: Leucocyte depletion filter mandatory; Wash with saline
+- Q: What is Reinfusion of Hematology?
+  A: Up to 4000 mL (or 30 mL/kg); Monitor for AFE signs
+- Q: What is Rh-Negative Mothers of Hematology?
+  A: Anti-D Ig 250-500 IU post-reinfusion (fetal cells in salvaged blood)
+- Q: What is Severe Hyperbilirubinaemia of Hematology?
+  A: Phototherapy failure; Bilirubin >exchange threshold (gestation-specific)
+- Q: What is Haemolytic Disease of Hematology?
+  A: Anti-D/K, ABO incompatibility
+- Q: What is Severe Anaemia of Hematology?
+  A: Hydrops fetalis, Parvovirus
+- Q: What is Technique of Hematology?
+  A: Double volume exchange (160 mL/kg); Isovolaemic; ABO-compatible, Rh-compatible, CMV-, Irradiated
+- Q: What is Leukapheresis (Hyperleukocytosis) of Hematology?
+  A: WBC <50-100 (Leukaemia, Cytarabine bridge)
+- Q: What is Plateletpheresis (Essential Thrombocythaemia) of Hematology?
+  A: Platelets <400-600 (if symptomatic/refractory)
+- Q: What is Hb of Hematology?
+  A: >70-80 g/L (stable); >80-100 (ongoing bleed)
+- Q: What is Platelets of Hematology?
+  A: >50 (bleeding); <100 (CS/neuraxial)
+- Q: What is Fibrinogen of Hematology?
+  A: >2.0 g/L (critical threshold)
+- Q: What is INR of Hematology?
+  A: <1.5 (if bleeding)
+- Q: What is Hematology indicated for?
+  A: CS with anticipated blood loss >1000 mL; Placenta praevia, Accreta, Multiple pregnancy
+- Q: What is Processing of Hematology?
+  A: Leucocyte depletion filter mandatory; Wash with saline
+- Q: What is Reinfusion of Hematology?
+  A: Up to 4000 mL (or 30 mL/kg); Monitor for AFE signs
+- Q: What is Rh-Negative Mothers of Hematology?
+  A: Anti-D Ig 250-500 IU post-reinfusion (fetal cells in salvaged blood)
+- Q: What is Severe Hyperbilirubinaemia of Hematology?
+  A: Phototherapy failure; Bilirubin >exchange threshold (gestation-specific)
+- Q: What is Haemolytic Disease of Hematology?
+  A: Anti-D/K, ABO incompatibility
+- Q: What is Severe Anaemia of Hematology?
+  A: Hydrops fetalis, Parvovirus
+- Q: What is Technique of Hematology?
+  A: Double volume exchange (160 mL/kg); Isovolaemic; ABO-compatible, Rh-compatible, CMV-, Irradiated
+- Q: What is Leukapheresis (Hyperleukocytosis) of Hematology?
+  A: WBC <50-100 (Leukaemia, Cytarabine bridge)
+- Q: What is Plateletpheresis (Essential Thrombocythaemia) of Hematology?
+  A: Platelets <400-600 (if symptomatic/refractory)
+- Q: What is Obstetric MTP of Hematology?
+  A: TXA 1g within 3h, Fibrinogen >2.0 g/L, Cryo in 1st pack, Cell salvage in CS
+- Q: What is Neonatal Top-up of Hematology?
+  A: Preterm <28w: Hb <120-140; 10-15 mL/kg dose; CMV-, Irradiated
+- Q: What is Exchange Transfusion (Neonate) of Hematology?
+  A: 160 mL/kg (2x blood volume), Phototherapy failure, HDN
+- Q: What is Sickle Cell Simple of Hematology?
+  A: Hb 100 (avoid >110); Pre-op Hb 100 (Low), HbS<30% (High)
+- Q: What is Sickle Cell Exchange of Hematology?
+  A: HbS <30%, Hb ~100; ACS, Stroke, Priapism, Pre-op Major
+- Q: What is Thalassaemia of Hematology?
+  A: Pre-tx Hb 90-105, Interval 3-4wk, Iron Chelation, Extended Matching
+- Q: What is Cell Salvage of Hematology?
+  A: CS >1000 mL loss, Leucodepletion filter, Anti-D if Rh-neg mother
+- Q: What is Apheresis Cat I of Hematology?
+  A: TTP (PEX daily), Anti-GBM (PEX), Hyperviscosity (PEX)
+- Q: What is RCE of Hematology?
+  A: HbS<30% (Sickle), Parasitaemia (Malaria/Babesia)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Transfusion Medicine → Special Transfusion Situations**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

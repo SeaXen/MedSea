@@ -368,3 +368,68 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Granulomatosis with polyangiitis (GPA)]] · [[Microscopic polyangiitis (MPA)]] · [[Eosinophilic granulomatosis with polyangiitis (EPA)]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: | Definition | Necrotising vasculitis of medium-sized arteries (renal, mesenteric, coronary, hepatic, testicular) — ANCA-negative, no pulmonary involvement, no granulomas |
+- Q: What is Immune Complexes of Vasculitis?
+  A: HBsAg-anti-HBs (classical) — deposit in medium arteries
+- Q: What is Vessel Size of Vasculitis?
+  A: Medium (renal, mesenteric, coronary, hepatic, testicular) — NOT small
+- Q: What is Inflammation of Vasculitis?
+  A: Necrotising — transmural, fibrinoid necrosis, aneurysm formation
+- Q: What is No Granulomas of Vasculitis?
+  A: Distinguishes from GPA/EGPA
+- Q: What is No Pulmonary Involvement of Vasculitis?
+  A: Key differentiator from ANCA vasculitides
+- Q: What is the mechanism of Vasculitis?
+  A: Immune complex (HBsAg-anti-HBs) deposition in medium arteries
+- Q: What is the epidemiology of Vasculitis?
+  A: 30-50% of PAN (now <10% with vaccination)
+- Q: What are the clinical features of Vasculitis?
+  A: Often acute, severe, shortly after acute HBV
+- Q: What is Serology of Vasculitis?
+  A: HBsAg+, anti-HBc IgM+, HBeAg+ (active replication)
+- Q: How is Vasculitis managed?
+  A: Antivirals + Plasmapheresis + Short-course steroids — AVOID prolonged immunosuppression (CYC contraindicated in active HBV)
+- Q: What is Immune Complexes of Vasculitis?
+  A: HBsAg-anti-HBs (classical) — deposit in medium arteries
+- Q: What is Vessel Size of Vasculitis?
+  A: Medium (renal, mesenteric, coronary, hepatic, testicular) — NOT small
+- Q: What is Inflammation of Vasculitis?
+  A: Necrotising — transmural, fibrinoid necrosis, aneurysm formation
+- Q: What is No Granulomas of Vasculitis?
+  A: Distinguishes from GPA/EGPA
+- Q: What is No Pulmonary Involvement of Vasculitis?
+  A: Key differentiator from ANCA vasculitides
+- Q: What is the mechanism of Vasculitis?
+  A: Immune complex (HBsAg-anti-HBs) deposition in medium arteries
+- Q: What is the epidemiology of Vasculitis?
+  A: 30-50% of PAN (now <10% with vaccination)
+- Q: What are the clinical features of Vasculitis?
+  A: Often acute, severe, shortly after acute HBV
+- Q: What is Serology of Vasculitis?
+  A: HBsAg+, anti-HBc IgM+, HBeAg+ (active replication)
+- Q: How is Vasculitis managed?
+  A: Antivirals + Plasmapheresis + Short-course steroids — AVOID prolonged immunosuppression (CYC contraindicated in active HBV)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **| Definition | Necrotising vasculitis of medium-sized arteries (renal, mesenteric, coronary, hepatic, testicular) — ANCA-negative, no pulmonary involvement, no granulomas |**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Incidence — 3-5/1,000,000/year (declining with Hep B vaccination); Peak Onset — 40-60 years; Sex Ratio — M > F (1.5-2:1). What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

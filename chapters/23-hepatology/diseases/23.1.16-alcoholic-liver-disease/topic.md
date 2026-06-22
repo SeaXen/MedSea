@@ -260,3 +260,64 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Cirrhosis and Portal Hypertension]], [[Acute Liver Failure]], [[NAFLD]], [[Hepatology in Special Situations]]
+---
+
+> Auto-generated study sections for "Alcoholic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Alcoholic Liver Disease?
+  A: ALD Spectrum = Steatosis → Alcoholic Hepatitis → Cirrhosis — Abstinence is cornerstone; AST:ALT >2:1 characteristic; Maddrey DF ≥32 = Severe AH → Corticosteroids; Lille score Day 7 guides steroid continuation; Abstinence + Nutrition (Thiamine, Zinc) + Relapse prevention (Acamprosate/Baclofen).
+- Q: What is Abstinence of Alcoholic Liver Disease?
+  A: Cornerstone — complete cessation
+- Q: What is Nutrition of Alcoholic Liver Disease?
+  A: 35-40 kcal/kg/day, Protein 1.5g/kg/day, Thiamine 100mg IV TDS, Zinc 220mg BD
+- Q: What is Withdrawal of Alcoholic Liver Disease?
+  A: Thiamine 100mg IV TDS ×3-5d (BEFORE glucose), Chlordiazepoxide CIWA-Ar
+- Q: What is Relapse Prevention of Alcoholic Liver Disease?
+  A: Acamprosate 666mg TDS (renal adjust), Baclofen 10mg TDS (safe in cirrhosis), Naltrexone 50mg OD (avoid decompensated)
+- Q: What is Abstinence of Alcoholic Liver Disease?
+  A: Cornerstone — complete cessation
+- Q: What is Nutrition of Alcoholic Liver Disease?
+  A: 35-40 kcal/kg/day, Protein 1.5g/kg/day, Thiamine 100mg IV TDS, Zinc 220mg BD
+- Q: What is Withdrawal of Alcoholic Liver Disease?
+  A: Thiamine 100mg IV TDS ×3-5d (BEFORE glucose), Chlordiazepoxide CIWA-Ar
+- Q: What is Relapse Prevention of Alcoholic Liver Disease?
+  A: Acamprosate 666mg TDS (renal adjust), Baclofen 10mg TDS (safe in cirrhosis), Naltrexone 50mg OD (avoid decompensated)
+- Q: What is ALD Spectrum of Alcoholic Liver Disease?
+  A: Steatosis (Rev) → AH (Partial) → Cirrhosis (Irrev)
+- Q: What is AST:ALT of Alcoholic Liver Disease?
+  A: >2:1 = ALD
+- Q: What is Maddrey DF of Alcoholic Liver Disease?
+  A: ≥32 = Severe → Steroids (DF = 4.6×(PT-ctrl) + Bil mg/dL)
+- Q: What is GAHS of Alcoholic Liver Disease?
+  A: ≥9 Supports Steroids
+- Q: What is ABIC of Alcoholic Liver Disease?
+  A: ≥6.71 Supports, ≥9 High Mortality
+- Q: What is Steroids of Alcoholic Liver Disease?
+  A: Pred 40mg ×28d if DF≥32; Ciprofloxacin 500mg prophylaxis
+- Q: What is Lille Day 7 of Alcoholic Liver Disease?
+  A: <0.45 Continue, >0.56 Stop
+- Q: What is Alcoholic Liver Disease indicated for?
+  A: Infection, Bleed, Renal, Pancreatitis, DM
+- Q: What is Withdrawal of Alcoholic Liver Disease?
+  A: Thiamine IV before Glucose; Chlordiazepoxide CIWA-Ar
+- Q: What is Relapse Prevention of Alcoholic Liver Disease?
+  A: Acamprosate (Renal), Naltrexone (No Decomp), Baclofen (Safe)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Alcoholic Liver Disease?**
+   A. **ALD Spectrum = Steatosis → Alcoholic Hepatitis → Cirrhosis — Abstinence is cornerstone; AST:ALT >2:1 characteristic; Maddrey DF ≥32 = Severe AH → Corticosteroids; Lille score Day 7 guides steroid cont**
+   B. An unrelated condition not matching the clinical picture of Alcoholic Liver Disease
+   C. A complication seen late in the disease course of Alcoholic Liver Disease
+   D. A condition that mimics Alcoholic Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Alcoholic Liver Disease presents with: Steatosis (Fatty Liver) — Macrovesicular fat >5% hepatocytes; Alcoholic Hepatitis (AH) — Ballooning, Mallory bodies, neutrophilic infiltrate, cholestasis; Alcoholic Cirrhosis — Bridging fibrosis, regenerative nodules. What is the most likely diagnosis?
+   A. **Alcoholic Liver Disease**
+   B. A condition that mimics Alcoholic Liver Disease but is not the same entity
+   C. A complication of Alcoholic Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Alcoholic Liver Disease
+

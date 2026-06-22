@@ -150,3 +150,20 @@ flowchart TD
 | **Haemochromatosis** | TSAT >45%, Ferritin >300/200, HFE C282Y Homozygous |
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Drug Induced Liver Injury" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Drug Induced Liver Injury?
+  A: | Viral Hepatitis | HAV IgM, HBsAg, anti-HBc IgM, HCV Ab, HCV RNA, HEV IgM, HEV RNA, EBV/CMV/HSV Serology |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug Induced Liver Injury?**
+   A. **| Viral Hepatitis | HAV IgM, HBsAg, anti-HBc IgM, HCV Ab, HCV RNA, HEV IgM, HEV RNA, EBV/CMV/HSV Serology |**
+   B. An unrelated condition not matching the clinical picture of Drug Induced Liver Injury
+   C. A complication seen late in the disease course of Drug Induced Liver Injury
+   D. A condition that mimics Drug Induced Liver Injury but has a different underlying cause
+

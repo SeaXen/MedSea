@@ -50,7 +50,7 @@ SITE = ROOT / 'site' / 'assets'
 NUM_BLOCK_RE = re.compile(r'(?m)^(?=\d+\.\s+)')
 TAG_RE = re.compile(r'<[^>]+>')
 INLINE_OPT_RE = re.compile(r'\b([A-E])\.\s+([^\nA-E]+?)(?=\s+[A-E]\.\s+|\s*$)', re.S)
-LEGACY_OPT_RE = re.compile(r'^\s*([A-E])\.\s*(.+?)\s*$')
+LEGACY_OPT_RE = re.compile(r'^\s*([A-E])[.)]\s*(.+?)\s*$')
 BULLET_OPT_RE = re.compile(r'^\s*[-*]\s*([A-E])[.)]\s*(.+?)\s*$')
 ANSWER_LINE_RE = re.compile(r'\*{1,2}Answer:\s*([A-E])\*{1,2}', re.I)
 ANSWER_INLINE_RE = re.compile(r'^\*\*([A-E])\.\s+', re.I)

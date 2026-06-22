@@ -282,3 +282,130 @@ mindmap
 - [[Viral Hepatitis/HCV DAA Regimens by Genotype & Cirrhosis|HCV DAA Regimens]]
 - [[Viral Hepatitis/Hepatitis C decompensated cirrhosis management|HCV Decompensated]]
 - [[Viral Hepatitis/Hepatitis C renal impairment|HCV Renal]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (52 generated)
+
+- Q: What is Regimen of Viral Hepatitis?
+  A: SOF 400mg / VEL 100mg Once Daily
+- Q: What is Duration of Viral Hepatitis?
+  A: 12 Weeks (All Genotypes, All Fibrosis)
+- Q: What is Key Advantage of Viral Hepatitis?
+  A: Minimal ART Interactions — Fewest Drug Interactions
+- Q: What is ART Compatibility of Viral Hepatitis?
+  A: Compatible with Most ART (Integrase Inhibitors, NNRTIs, Some PIs)
+- Q: What is eGFR <30 of Viral Hepatitis?
+  A: Avoid (Sofosbuvir Accumulation)
+- Q: What is Regimen of Viral Hepatitis?
+  A: 3 Tablets (300/120mg) Once Daily
+- Q: What is Duration of Viral Hepatitis?
+  A: 8 Weeks (Naive, Non-Cirrhotic); 12 Weeks (Cirrhotic/Experienced)
+- Q: What is Key Caveat of Viral Hepatitis?
+  A: Drug Interactions with Boosted PIs (Ritonavir/Cobicistat-Boosted) — ↑ GLE/PIB Levels
+- Q: What is eGFR <30 of Viral Hepatitis?
+  A: Safe (Preferred in Renal Impairment)
+- Q: What is ART Compatibility of Viral Hepatitis?
+  A: Check Interactions (Avoid with Boosted DRV/ATV/LPV/r)
+- Q: What is the definition of Viral Hepatitis?
+  A: Paradoxical Worsening of Liver Inflammation After Starting ART (or HCV Treatment)
+- Q: What is Timing of Viral Hepatitis?
+  A: 4-12 Weeks After ART Initiation (or HCV DAA Start)
+- Q: What is Clinical of Viral Hepatitis?
+  A: ALT Flares, Jaundice, Hepatic Decompensation
+- Q: What is the mechanism of Viral Hepatitis?
+  A: Immune Recovery → Enhanced HCV-Specific Response
+- Q: What causes Viral Hepatitis?
+  A: Low CD4 (<200), High HIV VL, Advanced Fibrosis, Recent ART Start
+- Q: How is Viral Hepatitis managed?
+  A: Continue Both ART + DAA (Usually Self-Limited); Corticosteroids if Severe (Pred 0.5-1mg/kg)
+- Q: What is HCV RNA of Viral Hepatitis?
+  A: Baseline, Week 4 (Optional), EOT, SVR12
+- Q: What is HIV VL of Viral Hepatitis?
+  A: Every 3-6 Months (Per HIV Guidelines)
+- Q: What is CD4 Count of Viral Hepatitis?
+  A: Every 3-6 Months
+- Q: What is LFTs (ALT, AST, Bilirubin, ALP) of Viral Hepatitis?
+  A: Baseline, Week 4, EOT, SVR12
+- Q: What is Renal Function of Viral Hepatitis?
+  A: Baseline, Week 4, EOT (If TDF/ART)
+- Q: What is ART Levels of Viral Hepatitis?
+  A: If Boosted PI + VEL/VOX (Therapeutic Drug Monitoring)
+- Q: What is Regimen of Viral Hepatitis?
+  A: SOF 400mg / VEL 100mg Once Daily
+- Q: What is Duration of Viral Hepatitis?
+  A: 12 Weeks (All Genotypes, All Fibrosis)
+- Q: What is Key Advantage of Viral Hepatitis?
+  A: Minimal ART Interactions — Fewest Drug Interactions
+- Q: What is ART Compatibility of Viral Hepatitis?
+  A: Compatible with Most ART (Integrase Inhibitors, NNRTIs, Some PIs)
+- Q: What is Regimen of Viral Hepatitis?
+  A: 3 Tablets (300/120mg) Once Daily
+- Q: What is Duration of Viral Hepatitis?
+  A: 8 Weeks (Naive, Non-Cirrhotic); 12 Weeks (Cirrhotic/Experienced)
+- Q: What is Key Caveat of Viral Hepatitis?
+  A: Drug Interactions with Boosted PIs (Ritonavir/Cobicistat-Boosted) — ↑ GLE/PIB Levels
+- Q: What is eGFR <30 of Viral Hepatitis?
+  A: Safe (Preferred in Renal Impairment)
+- Q: What is the definition of Viral Hepatitis?
+  A: Paradoxical Worsening of Liver Inflammation After Starting ART (or HCV Treatment)
+- Q: What is Timing of Viral Hepatitis?
+  A: 4-12 Weeks After ART Initiation (or HCV DAA Start)
+- Q: What is Clinical of Viral Hepatitis?
+  A: ALT Flares, Jaundice, Hepatic Decompensation
+- Q: What is the mechanism of Viral Hepatitis?
+  A: Immune Recovery → Enhanced HCV-Specific Response
+- Q: What causes Viral Hepatitis?
+  A: Low CD4 (<200), High HIV VL, Advanced Fibrosis, Recent ART Start
+- Q: How is Viral Hepatitis managed?
+  A: Continue Both ART + DAA (Usually Self-Limited); Corticosteroids if Severe (Pred 0.5-1mg/kg)
+- Q: What is HCV RNA of Viral Hepatitis?
+  A: Baseline, Week 4 (Optional), EOT, SVR12
+- Q: What is HIV VL of Viral Hepatitis?
+  A: Every 3-6 Months (Per HIV Guidelines)
+- Q: What is CD4 Count of Viral Hepatitis?
+  A: Every 3-6 Months
+- Q: What is LFTs (ALT, AST, Bilirubin, ALP) of Viral Hepatitis?
+  A: Baseline, Week 4, EOT, SVR12
+- Q: What is Renal Function of Viral Hepatitis?
+  A: Baseline, Week 4, EOT (If TDF/ART)
+- Q: What is ART Levels of Viral Hepatitis?
+  A: If Boosted PI + VEL/VOX (Therapeutic Drug Monitoring)
+- Q: What is SVR Rates of Viral Hepatitis?
+  A: >95% in Coinfection (Same as Mono)
+- Q: What is Regimens of Viral Hepatitis?
+  A: Same Duration, Same Regimens — No Extension for HIV
+- Q: What is the first-line treatment for Viral Hepatitis?
+  A: SOF/VEL (Minimal ART Interactions)
+- Q: What is Alternative of Viral Hepatitis?
+  A: GLE/PIB (Avoid with Boosted PI)
+- Q: How is Viral Hepatitis managed?
+  A: SOF/VEL/VOX (Avoid Boosted PI)
+- Q: What is Decompensated of Viral Hepatitis?
+  A: SOF/VEL + RBV ONLY
+- Q: What is Renal Impairment of Viral Hepatitis?
+  A: GLE/PIB Preferred (<30 eGFR)
+- Q: What is Boosted PI + VEL/PIB/VOX of Viral Hepatitis?
+  A: ↑ Levels — Avoid/Monitor; INSTI/NNRTI Preferred
+- Q: What is IRIS of Viral Hepatitis?
+  A: ALT Flare 4-12w Post-ART/DAA — Continue Both, Steroids if Severe
+- Q: What is Priority of Viral Hepatitis?
+  A: Treat HCV First (If CD4>500) OR Concurrent — Don't Delay
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **| Same Efficacy | DAA SVR Rates >95% in Coinfection (Same as Mono) |**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Viral Hepatitis presents with: DAA — ART Class; SOF/VEL — INSTI (DTG, BIC, RAL, CAB); SOF/VEL — NNRTI (EFV, RPV, DOR, ETV). What is the most likely diagnosis?
+   A. **Viral Hepatitis**
+   B. A condition that mimics Viral Hepatitis but is not the same entity
+   C. A complication of Viral Hepatitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Viral Hepatitis
+

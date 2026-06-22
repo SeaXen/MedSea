@@ -295,3 +295,116 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Gout]] · [[Pseudogout (CPPD deposition disease)]]
+---
+
+> Auto-generated study sections for "Crystal Arthropathies" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (45 generated)
+
+- Q: What is the definition of Crystal Arthropathies?
+  A: BCP = hydroxyapatite, octacalcium phosphate, tricalcium phosphate — non-birefringent on polarised light.
+- Q: What is Site of Crystal Arthropathies?
+  A: Shoulder (supraspinatus tendon) > hip, wrist, elbow
+- Q: What are the clinical features of Crystal Arthropathies?
+  A: Acute painful shoulder, limited ROM, night pain
+- Q: What is Demographics of Crystal Arthropathies?
+  A: 30-60 years, F = M
+- Q: What is Course of Crystal Arthropathies?
+  A: Self-limiting (weeks-months); resorptive phase = most painful
+- Q: What is Imaging of Crystal Arthropathies?
+  A: Calcific deposit in tendon on X-ray/US; no chondrocalcinosis
+- Q: What is Population of Crystal Arthropathies?
+  A: Elderly women (70-80y)
+- Q: What is Pathology of Crystal Arthropathies?
+  A: Massive rotator cuff tear + BCP (HA) crystals in joint
+- Q: What are the clinical features of Crystal Arthropathies?
+  A: Painless or mildly painful, shoulder swelling, limited active ROM, passive preserved
+- Q: What is Effusion of Crystal Arthropathies?
+  A: Bloody, xanthochromic (recurrent)
+- Q: What is Destruction of Crystal Arthropathies?
+  A: Rapid humeral head destruction ("migrating" humeral head)
+- Q: What is X-ray of Crystal Arthropathies?
+  A: Superior migration of humeral head, no chondrocalcinosis
+- Q: What are the clinical features of Crystal Arthropathies?
+  A: Acute monoarthritis (knee > shoulder, wrist)
+- Q: What is Demographics of Crystal Arthropathies?
+  A: Elderly, often CKD/dialysis
+- Q: What is Joint Fluid of Crystal Arthropathies?
+  A: Bloody/serosanguineous, non-birefringent crystals
+- Q: What is Associations of Crystal Arthropathies?
+  A: OA, dialysis, Ca/P disorders, hypophosphatasia
+- Q: What are the clinical features of Crystal Arthropathies?
+  A: Acute painful swelling over joint (wrist, hip, shoulder)
+- Q: What is Course of Crystal Arthropathies?
+  A: Self-limiting (1-4 weeks)
+- Q: What is Imaging of Crystal Arthropathies?
+  A: Calcific deposit adjacent to joint (not intra-articular)
+- Q: What are the clinical features of Crystal Arthropathies?
+  A: NSAIDs, physiotherapy (passive ROM)
+- Q: What is Severe Destruction of Crystal Arthropathies?
+  A: Hemiarthroplasty / Total shoulder arthroplasty
+- Q: How is Crystal Arthropathies managed?
+  A: No specific BCP-dissolving drug
+- Q: What is Site of Crystal Arthropathies?
+  A: Shoulder (supraspinatus tendon) > hip, wrist, elbow
+- Q: What are the clinical features of Crystal Arthropathies?
+  A: Acute painful shoulder, limited ROM, night pain
+- Q: What is Demographics of Crystal Arthropathies?
+  A: 30-60 years, F = M
+- Q: What is Course of Crystal Arthropathies?
+  A: Self-limiting (weeks-months); resorptive phase = most painful
+- Q: What is Population of Crystal Arthropathies?
+  A: Elderly women (70-80y)
+- Q: What is Pathology of Crystal Arthropathies?
+  A: Massive rotator cuff tear + BCP (HA) crystals in joint
+- Q: What are the clinical features of Crystal Arthropathies?
+  A: Painless or mildly painful, shoulder swelling, limited active ROM, passive preserved
+- Q: What is Effusion of Crystal Arthropathies?
+  A: Bloody, xanthochromic (recurrent)
+- Q: What is Destruction of Crystal Arthropathies?
+  A: Rapid humeral head destruction ("migrating" humeral head)
+- Q: What are the clinical features of Crystal Arthropathies?
+  A: Acute monoarthritis (knee > shoulder, wrist)
+- Q: What is Demographics of Crystal Arthropathies?
+  A: Elderly, often CKD/dialysis
+- Q: What is Joint Fluid of Crystal Arthropathies?
+  A: Bloody/serosanguineous, non-birefringent crystals
+- Q: What are the clinical features of Crystal Arthropathies?
+  A: Acute painful swelling over joint (wrist, hip, shoulder)
+- Q: What is Course of Crystal Arthropathies?
+  A: Self-limiting (1-4 weeks)
+- Q: What is Imaging of Crystal Arthropathies?
+  A: Calcific deposit adjacent to joint (not intra-articular)
+- Q: What are the clinical features of Crystal Arthropathies?
+  A: NSAIDs, physiotherapy (passive ROM)
+- Q: What is Severe Destruction of Crystal Arthropathies?
+  A: Hemiarthroplasty / Total shoulder arthroplasty
+- Q: What is Crystals of Crystal Arthropathies?
+  A: HA, OCP, TCP — non-birefringent (too small)
+- Q: What is Special Stains of Crystal Arthropathies?
+  A: Alizarin Red S (gold standard), von Kossa, EM
+- Q: What is Milwaukee Shoulder of Crystal Arthropathies?
+  A: Elderly women, massive rotator cuff tear, bloody effusion, HA crystals, no chondrocalcinosis
+- Q: What is Calcific Tendonitis of Crystal Arthropathies?
+  A: Shoulder (supraspinatus), acute painful, self-limiting, barbotage if refractory
+- Q: What is Crystal ID of Crystal Arthropathies?
+  A: Non-birefringent → Alizarin Red S +ve
+- Q: What is vs Gout/CPPD of Crystal Arthropathies?
+  A: Gout = needle/neg; CPPD = rhomboid/pos; BCP = non-birefringent
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Crystal Arthropathies?**
+   A. **BCP = hydroxyapatite, octacalcium phosphate, tricalcium phosphate — non-birefringent on polarised light.**
+   B. An unrelated condition not matching the clinical picture of Crystal Arthropathies
+   C. A complication seen late in the disease course of Crystal Arthropathies
+   D. A condition that mimics Crystal Arthropathies but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Crystal Arthropathies presents with: Crystal Type — Chemical Formula; Hydroxyapatite (HA) — Ca₁₀(PO₄)₆(OH)₂; Octacalcium Phosphate (OCP) — Ca₈H₂(PO₄)₆·5H₂O. What is the most likely diagnosis?
+   A. **Crystal Arthropathies**
+   B. A condition that mimics Crystal Arthropathies but is not the same entity
+   C. A complication of Crystal Arthropathies rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Crystal Arthropathies
+

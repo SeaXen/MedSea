@@ -657,3 +657,52 @@ D. Anti-complement C5
 ## 26. Tags
 
 #medicine #davidson #ophthalmology #Behcets #vasculitis #hypopyon #uveitis #retinal-vasculitis #HLA-B51 #fcps #mrcp
+---
+
+> Auto-generated study sections for "12_Systemic_Disease_Manifestations" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of 12_Systemic_Disease_Manifestations?
+  A: Systemic neutrophilic vasculitis; recurrent oral + genital ulcers + uveitis
+- Q: What is Most common populations of 12_Systemic_Disease_Manifestations?
+  A: "Silk Road" — Turkey, Japan, Middle East
+- Q: What is Genetics of 12_Systemic_Disease_Manifestations?
+  A: HLA-B51 (relative risk ~6)
+- Q: What is Classic triad of 12_Systemic_Disease_Manifestations?
+  A: Oral aphthae + genital ulcers + uveitis
+- Q: What is the investigation of choice for 12_Systemic_Disease_Manifestations?
+  A: Sterile needle prick → papule/pustule at 24-48 h; positive in ~50%
+- Q: What are the clinical features of 12_Systemic_Disease_Manifestations?
+  A: Bilateral panuveitis, hypopyon, vitritis, retinal vasculitis (arteries AND veins), CMO
+- Q: What causes 12_Systemic_Disease_Manifestations?
+  A: Cystoid macular oedema
+- Q: What is Diagnostic criteria of 12_Systemic_Disease_Manifestations?
+  A: ISG (oral ulcers + 2 of 4); ICBD (≥4 points)
+- Q: What is the first-line treatment for 12_Systemic_Disease_Manifestations?
+  A: Topical + systemic steroid + azathioprine for steroid-sparing
+- Q: What is Refractory severe of 12_Systemic_Disease_Manifestations?
+  A: Anti-TNF (infliximab, adalimumab), interferon-α
+- Q: What is Pathergy of 12_Systemic_Disease_Manifestations?
+  A: Hyper-reactivity of skin to minor trauma
+- Q: What is the prognosis of 12_Systemic_Disease_Manifestations?
+  A: Young male, posterior segment, neuro-Behçet, pulmonary aneurysm
+- Q: What is Vascular disease of 12_Systemic_Disease_Manifestations?
+  A: DVT, arterial aneurysms (esp. pulmonary — can rupture)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 12_Systemic_Disease_Manifestations?**
+   A. **Related: [[Anterior Uveitis (Iritis)]], [[Retinal Vasculitis]], [[Panuveitis]], [[VKH Syndrome]]**
+   B. An unrelated condition not matching the clinical picture of 12_Systemic_Disease_Manifestations
+   C. A complication seen late in the disease course of 12_Systemic_Disease_Manifestations
+   D. A condition that mimics 12_Systemic_Disease_Manifestations but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected 12_Systemic_Disease_Manifestations presents with: Behçet's disease (BD) is a chronic, relapsing, systemic neutrophilic vasculitis affecting arteries and veins of all sizes. It is characterised by recurrent inflammation affecting:; Mucocutaneous (oral ulcers, genital ulcers, skin lesions); Ocular (panuveitis with hypopyon, retinal vasculitis). What is the most likely diagnosis?
+   A. **12_Systemic_Disease_Manifestations**
+   B. A condition that mimics 12_Systemic_Disease_Manifestations but is not the same entity
+   C. A complication of 12_Systemic_Disease_Manifestations rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as 12_Systemic_Disease_Manifestations
+

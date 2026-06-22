@@ -342,3 +342,64 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Hematology?
+  A: # Cutaneous T-cell Lymphoma (Mycosis Fungoides & Sézary Syndrome)
+- Q: What is the investigation of choice for Hematology?
+  A: Erythroderma + Lymphadenopathy + Sézary cells >1000/µL (CD4+CD7-CD26-)
+- Q: What is Sézary Cells of Hematology?
+  A: Cerebriform nuclei, CD4+CD7-CD26-CD62L-
+- Q: What is Erythroderma of Hematology?
+  A: >80% BSA, Pruritus, Ectropion, Palmoplantar keratoderma, Lymphadenopathy
+- Q: What is the first-line treatment for Hematology?
+  A: ECP (Extracorporeal Photopheresis) + Retinoids/Interferon
+- Q: What is the prognosis of Hematology?
+  A: Median OS 2-4 years (worse than MF)
+- Q: What is the investigation of choice for Hematology?
+  A: Erythroderma + Lymphadenopathy + Sézary cells >1000/µL (CD4+CD7-CD26-)
+- Q: What is Sézary Cells of Hematology?
+  A: Cerebriform nuclei, CD4+CD7-CD26-CD62L-
+- Q: What is Erythroderma of Hematology?
+  A: >80% BSA, Pruritus, Ectropion, Palmoplantar keratoderma, Lymphadenopathy
+- Q: What is the first-line treatment for Hematology?
+  A: ECP (Extracorporeal Photopheresis) + Retinoids/Interferon
+- Q: What is the prognosis of Hematology?
+  A: Median OS 2-4 years (worse than MF)
+- Q: What is MF vs SS of Hematology?
+  A: MF = Patches/Plaques/Tumours (<1000 Sézary); SS = Erythroderma + >1000 Sézary/µL
+- Q: What is Sézary Cells of Hematology?
+  A: CD4+CD7-CD26-CD62L-, Cerebriform nuclei
+- Q: What is Staging of Hematology?
+  A: TNMB: T1-4 (Skin), N0-3 (Nodes), M0-1 (Visceral), B0-2 (Blood)
+- Q: What is Early MF (IA-IIA) of Hematology?
+  A: Skin-directed: Topical steroids, PUVA, Radiotherapy, Mechlorethamine
+- Q: What is Advanced (IIB-IV) of Hematology?
+  A: Systemic: Bexarotene, IFN-α, HDAC inhibitors, Mogamulizumab, Brentuximab, ECP
+- Q: What is Sézary Syndrome of Hematology?
+  A: Erythroderma + >1000 Sézary/µL, ECP first-line, Median OS 2-4yr
+- Q: What is the prognosis of Hematology?
+  A: Early MF = Normal life expectancy; SS = 2-4 years
+- Q: What is Key IHC of Hematology?
+  A: CD4+, CD7-, CD26- (Sézary/MF), CD30- (MF), CD30+ (ALCL/pcALCL)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **# Cutaneous T-cell Lymphoma (Mycosis Fungoides & Sézary Syndrome)**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Mycosis Fungoides (MF) — Most common CTCL (~60%); Epidermotropic CD4+ T-cells; Patches → Plaques → Tumours; Sézary Syndrome (SS) — Leukaemic variant; Erythroderma + Sézary cells >1000/µL (CD4+CD7-CD26-); Primary Cutaneous CD30+ LPD — LyP (Lymphomatoid Papulosis) + pcALCL. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

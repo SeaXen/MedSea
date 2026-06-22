@@ -285,3 +285,116 @@ mindmap
 - [[Autoimmune Liver Disease/Overlap syndromes|Overlap Syndromes]]
 - [[Autoimmune Liver Disease/IgG4-related sclerosing cholangitis|IgG4-SC]]
 - [[Biliary Tract Disease/Cholangiocarcinoma|Cholangiocarcinoma]]
+---
+
+> Auto-generated study sections for "Autoimmune Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (45 generated)
+
+- Q: What is the definition of Autoimmune Liver Disease?
+  A: Chronic cholestatic liver disease with fibrosis and stricturing of intra- and extrahepatic bile ducts
+- Q: What is Demographics of Autoimmune Liver Disease?
+  A: Men 60-70%, Age 30-40 at Diagnosis
+- Q: What is IBD Association of Autoimmune Liver Disease?
+  A: 70-80% Have IBD (Ulcerative Colitis > Crohn's); IBD May Precede or Follow PSC
+- Q: What is Autoantibodies of Autoimmune Liver Disease?
+  A: p-ANCA 65-85% (Not Diagnostic); ANA/SMA Variable; AMA Negative
+- Q: What is Progression of Autoimmune Liver Disease?
+  A: Variable; Median to Transplant/Death ~12-18 Years
+- Q: What is Multifocal Strictures of Autoimmune Liver Disease?
+  A: Short, Concentric Narrowing
+- Q: What is Segmental Dilatations of Autoimmune Liver Disease?
+  A: Between Strictures → "Beads on a String"
+- Q: What is Involvement of Autoimmune Liver Disease?
+  A: Both Intra- and Extrahepatic (vs PBC: Intrahepatic Only)
+- Q: What is Sensitivity of Autoimmune Liver Disease?
+  A: 85-90% (Better for Larger Ducts)
+- Q: What is Small-Duct PSC of Autoimmune Liver Disease?
+  A: Normal MRCP — Needs Biopsy
+- Q: What is the epidemiology of Autoimmune Liver Disease?
+  A: 70-80% PSC Have IBD; 3-5% UC Have PSC
+- Q: How is Autoimmune Liver Disease classified?
+  A: Ulcerative Colitis > Crohn's (UC 90% of IBD in PSC)
+- Q: What is Chronology of Autoimmune Liver Disease?
+  A: IBD Can Precede, Coincide, or Follow PSC
+- Q: What is Colectomy of Autoimmune Liver Disease?
+  A: Does NOT Halt PSC Progression (But Reduces Colon Cancer Risk)
+- Q: What is Surveillance of Autoimmune Liver Disease?
+  A: Annual Colonoscopy if IBD ≥8 Years (Chromoendoscopy Preferred)
+- Q: What is Recurrent Cholangitis of Autoimmune Liver Disease?
+  A: ERCP for Dominant Stricture; Prophylactic Antibiotics (Controversial)
+- Q: What is Cirrhosis / Portal Hypertension of Autoimmune Liver Disease?
+  A: Variceal Screening, HCC Surveillance, Transplant Eval
+- Q: What is Fat-Soluble Vitamin Deficiency of Autoimmune Liver Disease?
+  A: Check A, D, E, K Annually; Replace
+- Q: What is Osteoporosis of Autoimmune Liver Disease?
+  A: DEXA; Calcium/Vit D; Bisphosphonate If Indicated
+- Q: What is Cholangiocarcinoma of Autoimmune Liver Disease?
+  A: MDT; Surgery If Early (Rare); Transplant (Neoadjuvant Protocol - Mayo)
+- Q: What is Multifocal Strictures of Autoimmune Liver Disease?
+  A: Short, Concentric Narrowing
+- Q: What is Segmental Dilatations of Autoimmune Liver Disease?
+  A: Between Strictures → "Beads on a String"
+- Q: What is Involvement of Autoimmune Liver Disease?
+  A: Both Intra- and Extrahepatic (vs PBC: Intrahepatic Only)
+- Q: What is Sensitivity of Autoimmune Liver Disease?
+  A: 85-90% (Better for Larger Ducts)
+- Q: What is Small-Duct PSC of Autoimmune Liver Disease?
+  A: Normal MRCP — Needs Biopsy
+- Q: What is the epidemiology of Autoimmune Liver Disease?
+  A: 70-80% PSC Have IBD; 3-5% UC Have PSC
+- Q: How is Autoimmune Liver Disease classified?
+  A: Ulcerative Colitis > Crohn's (UC 90% of IBD in PSC)
+- Q: What is Chronology of Autoimmune Liver Disease?
+  A: IBD Can Precede, Coincide, or Follow PSC
+- Q: What is Colectomy of Autoimmune Liver Disease?
+  A: Does NOT Halt PSC Progression (But Reduces Colon Cancer Risk)
+- Q: What is Surveillance of Autoimmune Liver Disease?
+  A: Annual Colonoscopy if IBD ≥8 Years (Chromoendoscopy Preferred)
+- Q: What is Recurrent Cholangitis of Autoimmune Liver Disease?
+  A: ERCP for Dominant Stricture; Prophylactic Antibiotics (Controversial)
+- Q: What is Cirrhosis / Portal Hypertension of Autoimmune Liver Disease?
+  A: Variceal Screening, HCC Surveillance, Transplant Eval
+- Q: What is Fat-Soluble Vitamin Deficiency of Autoimmune Liver Disease?
+  A: Check A, D, E, K Annually; Replace
+- Q: What is Osteoporosis of Autoimmune Liver Disease?
+  A: DEXA; Calcium/Vit D; Bisphosphonate If Indicated
+- Q: What is Cholangiocarcinoma of Autoimmune Liver Disease?
+  A: MDT; Surgery If Early (Rare); Transplant (Neoadjuvant Protocol - Mayo)
+- Q: What is Demographics of Autoimmune Liver Disease?
+  A: Men 60-70%, Age 30-40
+- Q: What is IBD of Autoimmune Liver Disease?
+  A: 70-80% (UC > Crohn's)
+- Q: What is the investigation of choice for Autoimmune Liver Disease?
+  A: MRCP Beading (Multifocal Strictures + Dilatations)
+- Q: What is Autoantibodies of Autoimmune Liver Disease?
+  A: p-ANCA 65-85%; AMA Negative
+- Q: What is Small-Duct PSC of Autoimmune Liver Disease?
+  A: Normal MRCP + Biopsy (Onion-Skin Fibrosis)
+- Q: What is CCA Risk of Autoimmune Liver Disease?
+  A: 10-20% Lifetime — Surveillance MRI + CA19-9
+- Q: What is Dominant Stricture of Autoimmune Liver Disease?
+  A: Balloon Dilatation ± Short Stent
+- Q: What is UDCA of Autoimmune Liver Disease?
+  A: High-Dose HARMFUL; Standard Dose Optional
+- Q: What is Transplant of Autoimmune Liver Disease?
+  A: Decompensation, Recurrent Cholangitis, Early CCA (Mayo Protocol)
+- Q: What is Colonoscopy of Autoimmune Liver Disease?
+  A: Annual If IBD ≥8 Years
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Liver Disease?**
+   A. **A[Suspect PSC: Young Man, IBD, ↑ALP, Cholestatic Picture] --> B{MRCP (Non-Invasive)}**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Liver Disease
+   C. A complication seen late in the disease course of Autoimmune Liver Disease
+   D. A condition that mimics Autoimmune Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Liver Disease presents with: Definition — Chronic cholestatic liver disease with fibrosis and stricturing of intra- and extrahepatic bile ducts; Demographics — Men 60-70%, Age 30-40 at Diagnosis; IBD Association — 70-80% Have IBD (Ulcerative Colitis > Crohn's); IBD May Precede or Follow PSC. What is the most likely diagnosis?
+   A. **Autoimmune Liver Disease**
+   B. A condition that mimics Autoimmune Liver Disease but is not the same entity
+   C. A complication of Autoimmune Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Liver Disease
+

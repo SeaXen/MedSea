@@ -328,3 +328,46 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Coagulation Disorders → Liver Disease
+- Q: What is Rebalanced Haemostasis of Hematology?
+  A: Both pro- and anti-coagulant factors ↓ → Net unpredictable (bleed or clot)
+- Q: What is Coagulopathy of Hematology?
+  A: PT↑, APTT↑, Platelets↓, Factor VIII↑
+- Q: What is PT/INR of Hematology?
+  A: Poor bleeding predictor; Do not routinely correct with FFP
+- Q: How is Hematology managed?
+  A: Terlipressin + Banding + Antibiotics + Targeted Transfusion
+- Q: What is Variceal Bleeding of Hematology?
+  A: Terlipressin + Ceftriaxone + Band Ligation
+- Q: What is VTE Prophylaxis of Hematology?
+  A: LMWH for all hospitalised (unless active bleed/plt<30)
+- Q: What is TEG/ROTEM of Hematology?
+  A: Better than PT/INR for bleeding prediction
+- Q: What is FFP for INR of Hematology?
+  A: NOT for asymptomatic INR correction; Only active bleed/procedure
+- Q: What is Fibrinogen of Hematology?
+  A: Cryoprecipitate if <1.0-1.5 g/L
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Coagulation Disorders → Liver Disease**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Gastrointestinal — Variceal bleeding, Portal hypertensive gastropathy, Ulcers; Mucosal — Epistaxis, Gum bleeding, Haematuria; Procedural — Post-paracentesis, Post-biopsy, Post-endoscopy. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

@@ -438,3 +438,36 @@ mindmap
 - **Next Topic**: [[Drugs in rheumatology]]
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
+---
+
+> Auto-generated study sections for "Clinical Approach to Musculoskeletal Disease" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Clinical Approach to Musculoskeletal Disease?
+  A: Interpretation of autoantibodies, acute phase reactants, joint fluid, and imaging is core SBA/viva territory.
+- Q: What is Association of Clinical Approach to Musculoskeletal Disease?
+  A: 90% AS, 50-80% other SpA (PsA, reactive, enteropathic), 6-8% general population
+- Q: What is Utility of Clinical Approach to Musculoskeletal Disease?
+  A: Supportive, not diagnostic — pre-test probability matters
+- Q: What is Negative predictive value of Clinical Approach to Musculoskeletal Disease?
+  A: High in AS (if -ve, AS unlikely); but not 100%
+- Q: What is FCPS/MRCP of Clinical Approach to Musculoskeletal Disease?
+  A: Young male + inflammatory back pain + HLA-B27+ = AS until proven otherwise
+- Q: What is Association of Clinical Approach to Musculoskeletal Disease?
+  A: 90% AS, 50-80% other SpA (PsA, reactive, enteropathic), 6-8% general population
+- Q: What is Utility of Clinical Approach to Musculoskeletal Disease?
+  A: Supportive, not diagnostic — pre-test probability matters
+- Q: What is Negative predictive value of Clinical Approach to Musculoskeletal Disease?
+  A: High in AS (if -ve, AS unlikely); but not 100%
+- Q: What is FCPS/MRCP of Clinical Approach to Musculoskeletal Disease?
+  A: Young male + inflammatory back pain + HLA-B27+ = AS until proven otherwise
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Clinical Approach to Musculoskeletal Disease?**
+   A. **Interpretation of autoantibodies, acute phase reactants, joint fluid, and imaging is core SBA/viva territory.**
+   B. An unrelated condition not matching the clinical picture of Clinical Approach to Musculoskeletal Disease
+   C. A complication seen late in the disease course of Clinical Approach to Musculoskeletal Disease
+   D. A condition that mimics Clinical Approach to Musculoskeletal Disease but has a different underlying cause
+

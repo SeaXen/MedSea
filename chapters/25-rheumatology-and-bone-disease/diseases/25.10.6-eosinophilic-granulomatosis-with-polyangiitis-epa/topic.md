@@ -341,3 +341,44 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Granulomatosis with polyangiitis (GPA)]] · [[Microscopic polyangiitis (MPA)]] · [[ANCA-associated vasculitis overview]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: # Eosinophilic Granulomatosis with Polyangiitis (EGPA / Churg-Strauss)
+- Q: What is Classic Triad of Vasculitis?
+  A: Asthma + Eosinophilia (>1.5×10⁹/L or >10%) + Vasculitis
+- Q: What is ANCA of Vasculitis?
+  A: p-ANCA/MPO 40-60% only — ANCA-negative = more eosinophilic/cardiac, less vasculitic/renal
+- Q: What is Cardiac of Vasculitis?
+  A: Myocarditis, cardiomyopathy, HF = LEADING CAUSE OF DEATH — FFS includes cardiac
+- Q: What is Phases of Vasculitis?
+  A: Prodromal (asthma/rhinitis) → Eosinophilic (infiltrates, GI, myocarditis) → Vasculitic (nerves, skin, kidney)
+- Q: What is Five-Factor Score (FFS) of Vasculitis?
+  A: Age >65, cardiac, GI, renal, ENT → 0=good, ≥2=poor (needs CYC)
+- Q: What is Mepolizumab of Vasculitis?
+  A: Anti-IL-5, 300mg SC q4wk — FDA approved, steroid-sparing, reduces relapse
+- Q: How is Vasculitis managed?
+  A: Steroids → steroid-sparing (AZA/MMF/MTX) → mepolizumab for refractory → CYC/RTX for severe
+- Q: What is ANCA+ vs ANCA- of Vasculitis?
+  A: ANCA+ = more vasculitic (nerves, kidney, purpura); ANCA- = more eosinophilic (heart, lung, GI)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **# Eosinophilic Granulomatosis with Polyangiitis (EGPA / Churg-Strauss)**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Previous Name — Churg-Strauss Syndrome; Peak Onset — 30-50 years; Sex Ratio — M = F. What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

@@ -290,3 +290,122 @@ mindmap
 - [[Autoimmune Liver Disease/Autoimmune hepatitis (AIH)|AIH]]
 - [[Inherited and Metabolic Liver Disease/Wilson Disease|Wilson Disease]]
 - [[Inherited and Metabolic Liver Disease/Haemochromatosis|Haemochromatosis]]
+---
+
+> Auto-generated study sections for "Chronic Liver Disease and Cirrhosis" — Ch 23: Hepatology.
+
+## Flashcards (48 generated)
+
+- Q: What is the definition of Chronic Liver Disease and Cirrhosis?
+  A: | Epidemiology | IVDU, Blood Transfusion (Pre-1992), High in Egypt/Pakistan |
+- Q: What is History of Chronic Liver Disease and Cirrhosis?
+  A: Heavy Alcohol (>30g/day M, >20g/day F for >10y)
+- Q: What is LFTs of Chronic Liver Disease and Cirrhosis?
+  A: AST:ALT >2:1 (AST <300), GGT ↑↑, MCV ↑
+- Q: What is Imaging of Chronic Liver Disease and Cirrhosis?
+  A: Nodular Liver, Splenomegaly, Ascites (Late)
+- Q: What is Biopsy of Chronic Liver Disease and Cirrhosis?
+  A: Macrovesicular Steatosis, Mallory Bodies, Perivenular Fibrosis
+- Q: What are the complications of Chronic Liver Disease and Cirrhosis?
+  A: Pancreatitis, Cardiomyopathy, Peripheral Neuropathy
+- Q: What is Key of Chronic Liver Disease and Cirrhosis?
+  A: Abstinence → Re-compensation Possible
+- Q: What is the epidemiology of Chronic Liver Disease and Cirrhosis?
+  A: IVDU, Blood Transfusion (Pre-1992), High in Egypt/Pakistan
+- Q: What is Progression of Chronic Liver Disease and Cirrhosis?
+  A: 20% → Cirrhosis at 20y; HCC Risk High (Even Post-SVR if Cirrhosis)
+- Q: What is Extrahepatic of Chronic Liver Disease and Cirrhosis?
+  A: Cryoglobulinaemia (MPGN, Vasculitis), Lymphoproliferative
+- Q: How is Chronic Liver Disease and Cirrhosis managed?
+  A: DAA → SVR >95%; Still Need HCC Surveillance if Cirrhosis
+- Q: What is the epidemiology of Chronic Liver Disease and Cirrhosis?
+  A: Endemic Asia/Africa, Vertical/Horizontal Transmission
+- Q: What is Progression of Chronic Liver Disease and Cirrhosis?
+  A: HCC Risk Even Without Cirrhosis (Integrated DNA)
+- Q: What is Phases of Chronic Liver Disease and Cirrhosis?
+  A: Immune Tolerant → Immune Active → Inactive → Reactivation
+- Q: How is Chronic Liver Disease and Cirrhosis managed?
+  A: NA (TDF/TAF/ETV); Suppress DNA → ↓ Cirrhosis Progression
+- Q: What is Reactivation Risk of Chronic Liver Disease and Cirrhosis?
+  A: Immunosuppression → Prophylactic NA
+- Q: What causes Chronic Liver Disease and Cirrhosis?
+  A: Obesity, T2DM, Metabolic Syndrome, Dyslipidaemia
+- Q: What is the pathogenesis of Chronic Liver Disease and Cirrhosis?
+  A: Insulin Resistance → Lipolysis → FFA Flux → Steatosis → NASH → Fibrosis
+- Q: What is Genetics of Chronic Liver Disease and Cirrhosis?
+  A: PNPLA3 I148M (Strongest Risk Allele)
+- Q: What is HCC Risk of Chronic Liver Disease and Cirrhosis?
+  A: High Even in Non-Cirrhotic NASH (Unique to NAFLD)
+- Q: What is the investigation of choice for Chronic Liver Disease and Cirrhosis?
+  A: FIB-4, NFS, ELF, FibroScan; Biopsy if Indeterminate
+- Q: How is Chronic Liver Disease and Cirrhosis managed?
+  A: Weight Loss 7-10% (Lifestyle); Pioglitazone, GLP-1, Resmetirom for F≥2
+- Q: What is Key of Chronic Liver Disease and Cirrhosis?
+  A: HCC Surveillance Even if Non-Cirrhotic (If High Risk)
+- Q: What is Drug-Induced of Chronic Liver Disease and Cirrhosis?
+  A: Temporal Relation, RUCAM, Isoniazid, Methotrexate, Amiodarone
+- Q: What is Cardiac of Chronic Liver Disease and Cirrhosis?
+  A: Chronic RHF, Constrictive Pericarditis, TR → Nutmeg Liver, Ascites
+- Q: What is Vascular of Chronic Liver Disease and Cirrhosis?
+  A: Budd-Chiari (HVOT), Portal Vein Thrombosis, SOS/VOD
+- Q: What is Sarcoidosis of Chronic Liver Disease and Cirrhosis?
+  A: Granulomas, ACE↑, Hilar Lymphadenopathy, Hypercalcaemia
+- Q: What is Cryptogenic of Chronic Liver Disease and Cirrhosis?
+  A: No Identifiable Cause (Now Often Reclassified as NAFLD)
+- Q: What is the epidemiology of Chronic Liver Disease and Cirrhosis?
+  A: IVDU, Blood Transfusion (Pre-1992), High in Egypt/Pakistan
+- Q: What is Progression of Chronic Liver Disease and Cirrhosis?
+  A: 20% → Cirrhosis at 20y; HCC Risk High (Even Post-SVR if Cirrhosis)
+- Q: What is Extrahepatic of Chronic Liver Disease and Cirrhosis?
+  A: Cryoglobulinaemia (MPGN, Vasculitis), Lymphoproliferative
+- Q: What is the epidemiology of Chronic Liver Disease and Cirrhosis?
+  A: Endemic Asia/Africa, Vertical/Horizontal Transmission
+- Q: What is Progression of Chronic Liver Disease and Cirrhosis?
+  A: HCC Risk Even Without Cirrhosis (Integrated DNA)
+- Q: What is Phases of Chronic Liver Disease and Cirrhosis?
+  A: Immune Tolerant → Immune Active → Inactive → Reactivation
+- Q: How is Chronic Liver Disease and Cirrhosis managed?
+  A: NA (TDF/TAF/ETV); Suppress DNA → ↓ Cirrhosis Progression
+- Q: What is Reactivation Risk of Chronic Liver Disease and Cirrhosis?
+  A: Immunosuppression → Prophylactic NA
+- Q: What causes Chronic Liver Disease and Cirrhosis?
+  A: Obesity, T2DM, Metabolic Syndrome, Dyslipidaemia
+- Q: What is the pathogenesis of Chronic Liver Disease and Cirrhosis?
+  A: Insulin Resistance → Lipolysis → FFA Flux → Steatosis → NASH → Fibrosis
+- Q: What is Genetics of Chronic Liver Disease and Cirrhosis?
+  A: PNPLA3 I148M (Strongest Risk Allele)
+- Q: What is HCC Risk of Chronic Liver Disease and Cirrhosis?
+  A: High Even in Non-Cirrhotic NASH (Unique to NAFLD)
+- Q: What is the investigation of choice for Chronic Liver Disease and Cirrhosis?
+  A: FIB-4, NFS, ELF, FibroScan; Biopsy if Indeterminate
+- Q: How is Chronic Liver Disease and Cirrhosis managed?
+  A: Weight Loss 7-10% (Lifestyle); Pioglitazone, GLP-1, Resmetirom for F≥2
+- Q: What is Key of Chronic Liver Disease and Cirrhosis?
+  A: HCC Surveillance Even if Non-Cirrhotic (If High Risk)
+- Q: What is Drug-Induced of Chronic Liver Disease and Cirrhosis?
+  A: Temporal Relation, RUCAM, Isoniazid, Methotrexate, Amiodarone
+- Q: What is Cardiac of Chronic Liver Disease and Cirrhosis?
+  A: Chronic RHF, Constrictive Pericarditis, TR → Nutmeg Liver, Ascites
+- Q: What is Vascular of Chronic Liver Disease and Cirrhosis?
+  A: Budd-Chiari (HVOT), Portal Vein Thrombosis, SOS/VOD
+- Q: What is Sarcoidosis of Chronic Liver Disease and Cirrhosis?
+  A: Granulomas, ACE↑, Hilar Lymphadenopathy, Hypercalcaemia
+- Q: What is Cryptogenic of Chronic Liver Disease and Cirrhosis?
+  A: No Identifiable Cause (Now Often Reclassified as NAFLD)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Chronic Liver Disease and Cirrhosis?**
+   A. **| Epidemiology | IVDU, Blood Transfusion (Pre-1992), High in Egypt/Pakistan |**
+   B. An unrelated condition not matching the clinical picture of Chronic Liver Disease and Cirrhosis
+   C. A complication seen late in the disease course of Chronic Liver Disease and Cirrhosis
+   D. A condition that mimics Chronic Liver Disease and Cirrhosis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Chronic Liver Disease and Cirrhosis presents with: A[Cirrhosis Aetiology] --> B[Alcohol]; A --> C[Viral: HBV, HCV]; A --> E[Autoimmune: AIH, PBC, PSC]. What is the most likely diagnosis?
+   A. **Chronic Liver Disease and Cirrhosis**
+   B. A condition that mimics Chronic Liver Disease and Cirrhosis but is not the same entity
+   C. A complication of Chronic Liver Disease and Cirrhosis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Chronic Liver Disease and Cirrhosis
+

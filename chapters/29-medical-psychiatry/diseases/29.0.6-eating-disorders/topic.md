@@ -31,3 +31,20 @@ Related: [[../Medical Psychiatry MOC|Medical Psychiatry MOC]] · [[../Davidson C
 - Comprehensive coverage at true disease-level granularity
 - Each topic has 10 MCQs + 10 SBAs + 5+ Flashcards + Answer Key
 - See local navigation links in each file for related topics
+---
+
+> Auto-generated study sections for "Medical Psychiatry" — Ch 29: Medical Psychiatry.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Medical Psychiatry?
+  A: Davidson alignment: Chapter 31: Medical psychiatry — Eating Disorders
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Medical Psychiatry?**
+   A. **Davidson alignment: Chapter 31: Medical psychiatry — Eating Disorders**
+   B. An unrelated condition not matching the clinical picture of Medical Psychiatry
+   C. A complication seen late in the disease course of Medical Psychiatry
+   D. A condition that mimics Medical Psychiatry but has a different underlying cause
+

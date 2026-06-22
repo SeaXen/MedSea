@@ -240,3 +240,38 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Portal Hypertension and Complications]], [[Cirrhosis and Portal Hypertension]], [[Spontaneous Bacterial Peritonitis]], [[Hepatorenal Syndrome]], [[Hepatopulmonary Syndrome]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: Ascites in Cirrhosis = Portal hypertension + hypoalbuminaemia — SAAG ≥11 g/L = portal hypertension; SBP = PMNs ≥250/mm³ → ceftriaxone 2g IV + albumin; Refractory ascites → LVP + albumin 8g/L removed → TIPS/transplant.
+- Q: What is Portal Hypertension of Portal Hypertension and Complications?
+  A: ↑ Hydrostatic pressure → transudation
+- Q: What is Hypoalbuminaemia of Portal Hypertension and Complications?
+  A: ↓ Oncotic pressure → ↓ plasma colloid osmotic pressure
+- Q: What is Splanchnic Vasodilation of Portal Hypertension and Complications?
+  A: NO-mediated → ↓ effective arterial volume → RAAS/SNS activation → Na/H₂O retention
+- Q: What is SAAG of Portal Hypertension and Complications?
+  A: ≥11 g/L = Portal HTN (cirrhosis, cardiac, Budd-Chiari); <11 = Non-portal (malignancy, TB)
+- Q: What is SBP of Portal Hypertension and Complications?
+  A: PMNs ≥250/mm³ → Ceftriaxone 2g IV + Albumin 1.5g/kg D1 + 1g/kg D3
+- Q: What is SBP Prophylaxis of Portal Hypertension and Complications?
+  A: Prior SBP: Norfloxacin 400mg OD; Protein <15 + Child≥9: Norfloxacin 400mg OD; GI bleed: Ceftriaxone 1g OD ×7d
+- Q: What is Refractory Ascites of Portal Hypertension and Complications?
+  A: LVP 5-8L + Albumin 8g/L (>5L) → TIPS / Transplant
+- Q: What is Diuretics of Portal Hypertension and Complications?
+  A: Spironolactone 100mg + Furosemide 40mg (100:40); max 400/160
+- Q: What is Albumin Replacement of Portal Hypertension and Complications?
+  A: 8g/L ascites removed if >5L removed (prevents circulatory dysfunction)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **Ascites in Cirrhosis = Portal hypertension + hypoalbuminaemia — SAAG ≥11 g/L = portal hypertension; SBP = PMNs ≥250/mm³ → ceftriaxone 2g IV + albumin; Refractory ascites → LVP + albumin 8g/L removed →**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+

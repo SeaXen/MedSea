@@ -269,3 +269,124 @@ mindmap
 - [[Alcoholic Liver Disease/Corticosteroid therapy (prednisolone)|Corticosteroid Therapy]]
 - [[Alcoholic Liver Disease/Abstinence and nutritional support|Abstinence & Nutrition]]
 - [[Alcoholic Liver Disease/Alcoholic hepatitis scoring (Maddrey DF, Glasgow, ABIC, Lille)|Scoring Systems]]
+---
+
+> Auto-generated study sections for "Alcoholic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (53 generated)
+
+- Q: What is the definition of Alcoholic Liver Disease?
+  A: | Agent | Best For | Liver Safety | Key Contraindication | Adherence |
+- Q: What is the mechanism of Alcoholic Liver Disease?
+  A: Modulates NMDA/Glutamate + GABA receptors → Reduces post-acute withdrawal craving
+- Q: What is the dose of Alcoholic Liver Disease?
+  A: 666 mg TDS (1998 mg/day); Renal adjustment: eGFR 30-50 → 333 mg TDS; eGFR <30 → Contraindicated
+- Q: What is Alcoholic Liver Disease indicated for?
+  A: Maintain abstinence in already detoxified patients
+- Q: What is Onset of Alcoholic Liver Disease?
+  A: 5-7 days to full effect
+- Q: What is Duration of Alcoholic Liver Disease?
+  A: 6-12 months (evidence-based); Can continue longer
+- Q: What is Key Advantage of Alcoholic Liver Disease?
+  A: Safe in Liver Disease (not hepatically metabolised)
+- Q: What are the side effects of Alcoholic Liver Disease?
+  A: Diarrhoea (common, transient), Nausea, Pruritus
+- Q: What is the mechanism of Alcoholic Liver Disease?
+  A: Opioid Antagonist (Mu receptor) → Blocks alcohol-induced endorphin reward
+- Q: What is the dose of Alcoholic Liver Disease?
+  A: 50 mg OD (oral); 380 mg IM monthly (Vivitrol®)
+- Q: What is Alcoholic Liver Disease indicated for?
+  A: Reduce heavy drinking / Prevent relapse; Can start while drinking
+- Q: What is Liver Safety of Alcoholic Liver Disease?
+  A: Hepatotoxic at HIGH doses (>300mg/day); Safe at 50mg/day in stable cirrhosis (Child A/B)
+- Q: What are the side effects of Alcoholic Liver Disease?
+  A: Nausea (10%), Headache, Fatigue, Hepatotoxicity (rare at 50mg)
+- Q: What is the mechanism of Alcoholic Liver Disease?
+  A: Aldehyde Dehydrogenase Inhibitor → Acetaldehyde Accumulation → Flushing, Nausea, Palpitations, Hypotension
+- Q: What is the dose of Alcoholic Liver Disease?
+  A: 200 mg OD (start after 12-24h abstinence); Maintenance 200mg OD
+- Q: What is Alcoholic Liver Disease indicated for?
+  A: Highly motivated patients with supervised administration
+- Q: What is Liver Safety of Alcoholic Liver Disease?
+  A: Hepatotoxic (rare but serious); Avoid in Significant Liver Disease
+- Q: What is Reaction Onset of Alcoholic Liver Disease?
+  A: 10-30 min post-alcohol; Lasts 30-60 min
+- Q: How is Alcoholic Liver Disease monitored?
+  A: LFTs Baseline, 2w, Monthly ×3, Then 3-monthly
+- Q: What is the mechanism of Alcoholic Liver Disease?
+  A: GABA-B Receptor Agonist → Reduces Dopamine Release in Reward Pathway
+- Q: What is the dose of Alcoholic Liver Disease?
+  A: 10-20 mg TDS (titrate from 5mg TDS); Max 30mg TDS
+- Q: What is Advantage of Alcoholic Liver Disease?
+  A: Safe in Cirrhosis (Renal Excretion); Reduces Craving + Anxiety
+- Q: What is Evidence of Alcoholic Liver Disease?
+  A: RCTs show benefit in Cirrhotic Alcohol Use Disorder
+- Q: What is Alcoholic Liver Disease indicated for?
+  A: Epilepsy, Renal Impairment (dose adjust), Psychosis
+- Q: What are the side effects of Alcoholic Liver Disease?
+  A: Sedation, Dizziness, Weakness, Confusion (elderly)
+- Q: What is the mechanism of Alcoholic Liver Disease?
+  A: Modulates NMDA/Glutamate + GABA receptors → Reduces post-acute withdrawal craving
+- Q: What is the dose of Alcoholic Liver Disease?
+  A: 666 mg TDS (1998 mg/day); Renal adjustment: eGFR 30-50 → 333 mg TDS; eGFR <30 → Contraindicated
+- Q: What is Alcoholic Liver Disease indicated for?
+  A: Maintain abstinence in already detoxified patients
+- Q: What is Onset of Alcoholic Liver Disease?
+  A: 5-7 days to full effect
+- Q: What is Duration of Alcoholic Liver Disease?
+  A: 6-12 months (evidence-based); Can continue longer
+- Q: What is Key Advantage of Alcoholic Liver Disease?
+  A: Safe in Liver Disease (not hepatically metabolised)
+- Q: What is the mechanism of Alcoholic Liver Disease?
+  A: Opioid Antagonist (Mu receptor) → Blocks alcohol-induced endorphin reward
+- Q: What is the dose of Alcoholic Liver Disease?
+  A: 50 mg OD (oral); 380 mg IM monthly (Vivitrol®)
+- Q: What is Alcoholic Liver Disease indicated for?
+  A: Reduce heavy drinking / Prevent relapse; Can start while drinking
+- Q: What is Liver Safety of Alcoholic Liver Disease?
+  A: Hepatotoxic at HIGH doses (>300mg/day); Safe at 50mg/day in stable cirrhosis (Child A/B)
+- Q: What is the mechanism of Alcoholic Liver Disease?
+  A: Aldehyde Dehydrogenase Inhibitor → Acetaldehyde Accumulation → Flushing, Nausea, Palpitations, Hypotension
+- Q: What is the dose of Alcoholic Liver Disease?
+  A: 200 mg OD (start after 12-24h abstinence); Maintenance 200mg OD
+- Q: What is Alcoholic Liver Disease indicated for?
+  A: Highly motivated patients with supervised administration
+- Q: What is Liver Safety of Alcoholic Liver Disease?
+  A: Hepatotoxic (rare but serious); Avoid in Significant Liver Disease
+- Q: What is Reaction Onset of Alcoholic Liver Disease?
+  A: 10-30 min post-alcohol; Lasts 30-60 min
+- Q: What is the mechanism of Alcoholic Liver Disease?
+  A: GABA-B Receptor Agonist → Reduces Dopamine Release in Reward Pathway
+- Q: What is the dose of Alcoholic Liver Disease?
+  A: 10-20 mg TDS (titrate from 5mg TDS); Max 30mg TDS
+- Q: What is Advantage of Alcoholic Liver Disease?
+  A: Safe in Cirrhosis (Renal Excretion); Reduces Craving + Anxiety
+- Q: What is Evidence of Alcoholic Liver Disease?
+  A: RCTs show benefit in Cirrhotic Alcohol Use Disorder
+- Q: What is Alcoholic Liver Disease indicated for?
+  A: Epilepsy, Renal Impairment (dose adjust), Psychosis
+- Q: What are the side effects of Alcoholic Liver Disease?
+  A: Sedation, Dizziness, Weakness, Confusion (elderly)
+- Q: What is Acamprosate of Alcoholic Liver Disease?
+  A: 1st line for abstinence maintenance; Safe in Liver Disease; Renal excretion; Dose 666mg TDS
+- Q: What is Naltrexone of Alcoholic Liver Disease?
+  A: 1st line for craving/heavy drinking; 50mg OD safe in Child A/B; Contraindicated with Opioids
+- Q: What is Disulfiram of Alcoholic Liver Disease?
+  A: Avoid in Liver Disease; Hepatotoxic; Supervised only
+- Q: What is Baclofen of Alcoholic Liver Disease?
+  A: Safe in Cirrhosis (renal); Off-label; Emerging evidence
+- Q: What is Psychosocial of Alcoholic Liver Disease?
+  A: CBT, MI, AA — Essential adjunct to pharmacotherapy
+- Q: What is Liver Disease of Alcoholic Liver Disease?
+  A: Acamprosate > Baclofen > Naltrexone (caution) > Disulfiram (avoid)
+- Q: What is Opioid Use of Alcoholic Liver Disease?
+  A: Naltrexone Contraindicated → Acamprosate/Baclofen
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Alcoholic Liver Disease?**
+   A. **| Agent | Best For | Liver Safety | Key Contraindication | Adherence |**
+   B. An unrelated condition not matching the clinical picture of Alcoholic Liver Disease
+   C. A complication seen late in the disease course of Alcoholic Liver Disease
+   D. A condition that mimics Alcoholic Liver Disease but has a different underlying cause
+

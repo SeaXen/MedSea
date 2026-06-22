@@ -350,3 +350,92 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Adult-onset Still's disease]] · [[Ankylosing spondylitis]] · [[Psoriatic arthritis]] · [[Systemic Lupus Erythematosus]]
+---
+
+> Auto-generated study sections for "Inflammatory Arthritis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Inflammatory Arthritis?
+  A: JIA = most common chronic arthritis in children (<16y).
+- Q: What is Joints of Inflammatory Arthritis?
+  A: 1-4 in first 6m; asymmetric large joints (knee > ankle > elbow)
+- Q: What is Uveitis Risk of Inflammatory Arthritis?
+  A: Chronic anterior uveitis — ANA+ = high risk (20-30%); asymptomatic, insidious
+- Q: What is Screening of Inflammatory Arthritis?
+  A: Slit-lamp every 3 months (ANA+), every 6 months (ANA-) for 7y, then annually
+- Q: What is Leg Length Discrepancy of Inflammatory Arthritis?
+  A: Asymmetric growth → hemihypertrophy → limb length inequality
+- Q: What is Extended Oligo of Inflammatory Arthritis?
+  A: >4 joints after 6m → higher uveitis risk, joint damage
+- Q: What is Trigger of Inflammatory Arthritis?
+  A: Infection, flare, drug change (esp. in sJIA)
+- Q: What is the investigation of choice for Inflammatory Arthritis?
+  A: Ferritin >10,000 + ≥2 cytopenias + hypertriglyceridaemia + hypofibrinogenaemia + high LDH + CNS dysfunction + hemophagocytosis (bone marrow)
+- Q: How is Inflammatory Arthritis managed?
+  A: IV MP 10-30mg/kg/day ×3-5d + Anakinra 4-10mg/kg/day IV/SC + IVIG + Ciclosporin A + Etoposide (refractory)
+- Q: What is Timing of Inflammatory Arthritis?
+  A: Start 12-14 years; complete by 18 years
+- Q: What is Key Elements of Inflammatory Arthritis?
+  A: Disease education, self-management, medication adherence, reproductive health, vocational planning, adult rheumatology handover
+- Q: What is Transition Coordinator of Inflammatory Arthritis?
+  A: Essential (nurse specialist)
+- Q: What is Adult Rheumatology of Inflammatory Arthritis?
+  A: Continued uveitis screening, bone health, cardiovascular risk
+- Q: What is Joints of Inflammatory Arthritis?
+  A: 1-4 in first 6m; asymmetric large joints (knee > ankle > elbow)
+- Q: What is Uveitis Risk of Inflammatory Arthritis?
+  A: Chronic anterior uveitis — ANA+ = high risk (20-30%); asymptomatic, insidious
+- Q: What is Screening of Inflammatory Arthritis?
+  A: Slit-lamp every 3 months (ANA+), every 6 months (ANA-) for 7y, then annually
+- Q: What is Leg Length Discrepancy of Inflammatory Arthritis?
+  A: Asymmetric growth → hemihypertrophy → limb length inequality
+- Q: What is Trigger of Inflammatory Arthritis?
+  A: Infection, flare, drug change (esp. in sJIA)
+- Q: What is the investigation of choice for Inflammatory Arthritis?
+  A: Ferritin >10,000 + ≥2 cytopenias + hypertriglyceridaemia + hypofibrinogenaemia + high LDH + CNS dysfunction + hemophagocytosis (bone marrow)
+- Q: How is Inflammatory Arthritis managed?
+  A: IV MP 10-30mg/kg/day ×3-5d + Anakinra 4-10mg/kg/day IV/SC + IVIG + Ciclosporin A + Etoposide (refractory)
+- Q: What is Timing of Inflammatory Arthritis?
+  A: Start 12-14 years; complete by 18 years
+- Q: What is Key Elements of Inflammatory Arthritis?
+  A: Disease education, self-management, medication adherence, reproductive health, vocational planning, adult rheumatology handover
+- Q: What is Transition Coordinator of Inflammatory Arthritis?
+  A: Essential (nurse specialist)
+- Q: What is Adult Rheumatology of Inflammatory Arthritis?
+  A: Continued uveitis screening, bone health, cardiovascular risk
+- Q: How is Inflammatory Arthritis classified?
+  A: Systemic, Oligo (persistent/extended), Poly RF-, Poly RF+, Psoriatic, Enthesitis-related, Undifferentiated
+- Q: What is Systemic JIA of Inflammatory Arthritis?
+  A: Quotidian fever + salmon rash + arthritis = classic; IL-1/IL-6 driven; MAS risk (ferritin >10k)
+- Q: What is Oligoarticular of Inflammatory Arthritis?
+  A: <6y, 1-4 joints, asymmetric knee/ankle, ANA+ = high uveitis risk (screen q3mo)
+- Q: What is Polyarticular RF+ of Inflammatory Arthritis?
+  A: Adolescent, mimics adult RA, RF/anti-CCP+, erosive, MTX → anti-TNF
+- Q: What is Enthesitis-related of Inflammatory Arthritis?
+  A: HLA-B27+, M>F, >6y, enthesitis, sacroiliitis, acute uveitis
+- Q: What is Psoriatic JIA of Inflammatory Arthritis?
+  A: Psoriasis/arthritis + dactylitis/nail/FHx
+- Q: What is Uveitis Screening of Inflammatory Arthritis?
+  A: ANA+ oligo = q3mo; ANA- = q6mo; chronic uveitis = asymptomatic
+- Q: What is MAS of Inflammatory Arthritis?
+  A: Ferritin >10,000 + cytopenias + coagulopathy → IV MP + Anakinra (IL-1Ra)
+- Q: What is Transition of Inflammatory Arthritis?
+  A: Start 12-14y, complete 18y; coordinator essential
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inflammatory Arthritis?**
+   A. **JIA = most common chronic arthritis in children (<16y).**
+   B. An unrelated condition not matching the clinical picture of Inflammatory Arthritis
+   C. A complication seen late in the disease course of Inflammatory Arthritis
+   D. A condition that mimics Inflammatory Arthritis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inflammatory Arthritis presents with: Definition — Chronic arthritis ≥6 weeks, onset <16 years, idiopathic (excluded other causes); Peak Onset — 1-6 years (systemic/oligo), 8-12 years (poly/enthesis); Sex Ratio — F > M (except enthesitis-related: M > F). What is the most likely diagnosis?
+   A. **Inflammatory Arthritis**
+   B. A condition that mimics Inflammatory Arthritis but is not the same entity
+   C. A complication of Inflammatory Arthritis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inflammatory Arthritis
+

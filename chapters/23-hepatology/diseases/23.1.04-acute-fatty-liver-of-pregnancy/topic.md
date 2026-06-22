@@ -276,3 +276,62 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Hepatology in Special Situations]], [[Acute Liver Failure]], [[HELLP Syndrome]], [[ICP]], [[Viral Hepatitis in Pregnancy]]
+---
+
+> Auto-generated study sections for "Hepatology in Special Situations" — Ch 23: Hepatology.
+
+## Flashcards (18 generated)
+
+- Q: What is the definition of Hepatology in Special Situations?
+  A: AFLP = Rare but catastrophic 3rd trimester liver failure — Swansea Criteria ≥6, hypoglycaemia, hyperuricaemia, coagulopathy, emergency delivery (C-section); differentiate from HELLP (AFLP = hypoglycaemia + hyperuricaemia + encephalopathy)
+- Q: What is Mitochondrial FA Oxidation Defect of Hepatology in Special Situations?
+  A: Fetal LCHAD deficiency → maternal accumulation of toxic fatty acid metabolites
+- Q: What is Inheritance of Hepatology in Special Situations?
+  A: Autosomal recessive (fetal HADHA mutation); mother heterozygous carrier
+- Q: What is Mode of Hepatology in Special Situations?
+  A: Caesarean Section (preferred — faster, avoids labour stress)
+- Q: What is Timing of Hepatology in Special Situations?
+  A: Immediate — regardless of gestation (34-38 weeks)
+- Q: What is Neonatal of Hepatology in Special Situations?
+  A: Neonatology team present — preterm neonate likely
+- Q: What is Mitochondrial FA Oxidation Defect of Hepatology in Special Situations?
+  A: Fetal LCHAD deficiency → maternal accumulation of toxic fatty acid metabolites
+- Q: What is Inheritance of Hepatology in Special Situations?
+  A: Autosomal recessive (fetal HADHA mutation); mother heterozygous carrier
+- Q: What is Mode of Hepatology in Special Situations?
+  A: Caesarean Section (preferred — faster, avoids labour stress)
+- Q: What is Timing of Hepatology in Special Situations?
+  A: Immediate — regardless of gestation (34-38 weeks)
+- Q: What is the epidemiology of Hepatology in Special Situations?
+  A: 1:10,000-15,000; 3rd trimester (34-38wks); mortality 10-20%
+- Q: What is Swansea Criteria of Hepatology in Special Situations?
+  A: ≥6 = AFLP (hypoglycaemia, hyperuricaemia, encephalopathy, coagulopathy, leukocytosis, elevated AST/ALT, bilirubin >14, PT>14, ammonia>100, renal impairment)
+- Q: What is Key Labs of Hepatology in Special Situations?
+  A: Hypoglycaemia (<4), Hyperuricaemia (>340), Prolonged PT, Leukocytosis, Elevated Ammonia
+- Q: What is AFLP vs HELLP of Hepatology in Special Situations?
+  A: AFLP: Hypoglycaemia + Hyperuricaemia + Encephalopathy; HELLP: Haemolysis + Elevated LFTs + Low Platelets
+- Q: How is Hepatology in Special Situations managed?
+  A: Emergency C-Section (regardless of gestation) + ICU support (glucose, coagulopathy correction, renal support)
+- Q: What is Maternal Mortality of Hepatology in Special Situations?
+  A: 10-20% (improved with early recognition)
+- Q: What is Recurrence of Hepatology in Special Situations?
+  A: ~25% in subsequent pregnancies
+- Q: What is Differential of Hepatology in Special Situations?
+  A: HELLP (no hypoglycaemia/hyperuricaemia), Severe Pre-eclampsia (hypertension + proteinuria), Acute Viral Hepatitis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology in Special Situations?**
+   A. **AFLP = Rare but catastrophic 3rd trimester liver failure — Swansea Criteria ≥6, hypoglycaemia, hyperuricaemia, coagulopathy, emergency delivery (C-section); differentiate from HELLP (AFLP = hypoglycae**
+   B. An unrelated condition not matching the clinical picture of Hepatology in Special Situations
+   C. A complication seen late in the disease course of Hepatology in Special Situations
+   D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hepatology in Special Situations presents with: Definition — Acute liver failure due to microvesicular steatosis in 3rd trimester pregnancy; Incidence — 1:10,000-15,000 pregnancies; Timing — 3rd trimester (typically 34-38 weeks). What is the most likely diagnosis?
+   A. **Hepatology in Special Situations**
+   B. A condition that mimics Hepatology in Special Situations but is not the same entity
+   C. A complication of Hepatology in Special Situations rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hepatology in Special Situations
+

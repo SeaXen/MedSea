@@ -358,3 +358,80 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Fibromyalgia]] · [[Chronic widespread pain]] · [[Drugs in rheumatology]]
+---
+
+> Auto-generated study sections for "Soft Tissue Rheumatism and Chronic Pain Syndromes" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (27 generated)
+
+- Q: What is Peripheral Sensitisation of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Neuropeptide release (substance P, CGRP) → neurogenic inflammation
+- Q: What is Sympathetic-Afferent Coupling of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Sympathetic efferents activate sensitised nociceptors
+- Q: What is Central Sensitisation of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Wind-up, temporal summation, cortical reorganisation (S1 shrinkage)
+- Q: What is Genetic Predisposition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: HLA associations, COMT, TNF-α polymorphisms
+- Q: What is Plain X-ray of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Patchy osteoporosis (Sudeck's atrophy) — late
+- Q: What is Triple Phase Bone Scan of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Early: ↑ flow + ↑ uptake; Late: ↓ uptake — sensitive, not specific
+- Q: What is MRI of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Bone marrow oedema (early), soft tissue changes
+- Q: What is Thermography of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Temperature asymmetry >1°C
+- Q: What is Sympathetic Block of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Diagnostic (pain relief) + therapeutic
+- Q: What is Nerve Conduction of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Normal in Type I; abnormal in Type II
+- Q: What is Peripheral Sensitisation of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Neuropeptide release (substance P, CGRP) → neurogenic inflammation
+- Q: What is Sympathetic-Afferent Coupling of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Sympathetic efferents activate sensitised nociceptors
+- Q: What is Central Sensitisation of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Wind-up, temporal summation, cortical reorganisation (S1 shrinkage)
+- Q: What is Genetic Predisposition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: HLA associations, COMT, TNF-α polymorphisms
+- Q: What is Plain X-ray of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Patchy osteoporosis (Sudeck's atrophy) — late
+- Q: What is Triple Phase Bone Scan of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Early: ↑ flow + ↑ uptake; Late: ↓ uptake — sensitive, not specific
+- Q: What is MRI of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Bone marrow oedema (early), soft tissue changes
+- Q: What is Thermography of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Temperature asymmetry >1°C
+- Q: What is Sympathetic Block of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Diagnostic (pain relief) + therapeutic
+- Q: What is Nerve Conduction of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Normal in Type I; abnormal in Type II
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Disproportionate limb pain + sensory/autonomic/motor/trophic changes
+- Q: What is Budapest Criteria of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: All 4 categories (sensory, vasmotor, sudomotor, motor) + disproportionate pain + ≥1 sign in ≥2 categories + ≥1 symptom in ≥3 categories
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes classified?
+  A: I = no nerve injury (RSD); II = nerve injury (causalgia) — same treatment
+- Q: What is Bone Scan of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Triple phase: early ↑ flow/uptake, late ↓ uptake
+- Q: What is Key Rx of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Early PT (desensitisation, mirror therapy, graded motor imagery) + Bisphosphonates + Sympathetic block
+- Q: What is the prognosis of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Early (<3mo) = good; Delayed = contracture/atrophy
+- Q: What is Refractory of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Spinal cord stimulation, IV ketamine, IVIG
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Soft Tissue Rheumatism and Chronic Pain Syndromes?**
+   A. **CRPS = severe limb pain disproportionate to inciting trauma.**
+   B. An unrelated condition not matching the clinical picture of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   C. A complication seen late in the disease course of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   D. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Soft Tissue Rheumatism and Chronic Pain Syndromes presents with: Peak Age — 40-60 years; Sex Ratio — F:M = 3-4:1; Triggers — Distal radius fracture #1, sprain, surgery, stroke, MI, immobilisation, minor trauma. What is the most likely diagnosis?
+   A. **Soft Tissue Rheumatism and Chronic Pain Syndromes**
+   B. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but is not the same entity
+   C. A complication of Soft Tissue Rheumatism and Chronic Pain Syndromes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Soft Tissue Rheumatism and Chronic Pain Syndromes
+

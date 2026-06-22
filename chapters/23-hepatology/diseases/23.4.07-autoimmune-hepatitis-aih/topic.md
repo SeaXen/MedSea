@@ -150,3 +150,28 @@ flowchart TD
 
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Autoimmune Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Autoimmune Liver Disease?
+  A: B -->|Type 1 (Classic)| C[ANA ≥1:40 AND/OR SMA ≥1:40]
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Liver Disease?**
+   A. **B -->|Type 1 (Classic)| C[ANA ≥1:40 AND/OR SMA ≥1:40]**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Liver Disease
+   C. A complication seen late in the disease course of Autoimmune Liver Disease
+   D. A condition that mimics Autoimmune Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Liver Disease presents with: Definition — Chronic inflammatory liver disease with autoimmune pathogenesis; Demographics — Women 70-80%, Age 10-50 (bimodal: young & perimenopausal); Associated Conditions — Thyroiditis, Coeliac, RA, Sjögren's, Type 1 DM, Ulcerative Colitis. What is the most likely diagnosis?
+   A. **Autoimmune Liver Disease**
+   B. A condition that mimics Autoimmune Liver Disease but is not the same entity
+   C. A complication of Autoimmune Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Liver Disease
+

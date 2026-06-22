@@ -348,3 +348,68 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Chronic widespread pain]] · [[Drugs in rheumatology]]
+---
+
+> Auto-generated study sections for "Osteoarthritis and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (21 generated)
+
+- Q: What is Wind-Up of Osteoarthritis and Related Disorders?
+  A: Progressive increase in dorsal horn neuron response to repeated C-fibre stimulation
+- Q: What is Temporal Summation of Osteoarthritis and Related Disorders?
+  A: Increasing pain perception with repeated identical stimuli
+- Q: What is Allodynia of Osteoarthritis and Related Disorders?
+  A: Pain from non-painful stimulus (light touch, brushing)
+- Q: What is Hyperalgesia of Osteoarthritis and Related Disorders?
+  A: Exaggerated pain response to painful stimulus
+- Q: What is Loss of Descending Inhibition of Osteoarthritis and Related Disorders?
+  A: ↓ Serotonin/noradrenaline → ↓ endogenous pain control
+- Q: What is Impaired CPM of Osteoarthritis and Related Disorders?
+  A: Diffuse Noxious Inhibitory Controls impaired
+- Q: What is Wind-Up of Osteoarthritis and Related Disorders?
+  A: Progressive increase in dorsal horn neuron response to repeated C-fibre stimulation
+- Q: What is Temporal Summation of Osteoarthritis and Related Disorders?
+  A: Increasing pain perception with repeated identical stimuli
+- Q: What is Allodynia of Osteoarthritis and Related Disorders?
+  A: Pain from non-painful stimulus (light touch, brushing)
+- Q: What is Hyperalgesia of Osteoarthritis and Related Disorders?
+  A: Exaggerated pain response to painful stimulus
+- Q: What is Loss of Descending Inhibition of Osteoarthritis and Related Disorders?
+  A: ↓ Serotonin/noradrenaline → ↓ endogenous pain control
+- Q: What is Impaired CPM of Osteoarthritis and Related Disorders?
+  A: Diffuse Noxious Inhibitory Controls impaired
+- Q: What is the definition of Osteoarthritis and Related Disorders?
+  A: Chronic widespread pain + central sensitisation — no structural pathology
+- Q: What is ACR 2016 Criteria of Osteoarthritis and Related Disorders?
+  A: WPI ≥7 & SSS ≥5 OR WPI 4-6 & SSS ≥9 (symptoms ≥3 months) — no tender points needed
+- Q: What is Central Sensitisation of Osteoarthritis and Related Disorders?
+  A: Wind-up, temporal summation, allodynia, hyperalgesia, loss of descending inhibition
+- Q: What are the clinical features of Osteoarthritis and Related Disorders?
+  A: Pain (widespread) + Fatigue + Unrefreshing sleep + Cognitive dysfunction ("fibro fog")
+- Q: What is Comorbidities of Osteoarthritis and Related Disorders?
+  A: IBS, CFS, migraine, TMJ, depression/anxiety, interstitial cystitis, RLS
+- Q: What is the investigation of choice for Osteoarthritis and Related Disorders?
+  A: Clinical (ACR 2016 criteria + exclusion); no confirmatory test, normal ESR/CRP/CK
+- Q: How is Osteoarthritis and Related Disorders managed?
+  A: Education → Exercise (core) → CBT → Duloxetine/Pregabalin → Amitriptyline
+- Q: What is Drugs of Osteoarthritis and Related Disorders?
+  A: Duloxetine (SNRI), Pregabalin (α2δ), Amitriptyline (low dose) — NO opioids, benzodiazepines
+- Q: What is Multidisciplinary of Osteoarthritis and Related Disorders?
+  A: Rheumatology + Physio + Psychology + Pain specialist
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Osteoarthritis and Related Disorders?**
+   A. **Fibromyalgia = central sensitisation syndrome — chronic widespread pain + fatigue + unrefreshing sleep + cognitive dysfunction.**
+   B. An unrelated condition not matching the clinical picture of Osteoarthritis and Related Disorders
+   C. A complication seen late in the disease course of Osteoarthritis and Related Disorders
+   D. A condition that mimics Osteoarthritis and Related Disorders but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Osteoarthritis and Related Disorders presents with: Definition — Chronic widespread pain + central sensitisation — no structural/peripheral pathology; Prevalence — 2-4% (higher in women); Peak Onset — 30-50 years. What is the most likely diagnosis?
+   A. **Osteoarthritis and Related Disorders**
+   B. A condition that mimics Osteoarthritis and Related Disorders but is not the same entity
+   C. A complication of Osteoarthritis and Related Disorders rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Osteoarthritis and Related Disorders
+

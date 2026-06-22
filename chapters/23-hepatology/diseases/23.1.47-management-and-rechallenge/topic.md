@@ -150,3 +150,20 @@ flowchart TD
 
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Drug Induced Liver Injury" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Drug Induced Liver Injury?
+  A: | STOP Suspect Drug(s) | Immediately — Most Critical Step |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug Induced Liver Injury?**
+   A. **| STOP Suspect Drug(s) | Immediately — Most Critical Step |**
+   B. An unrelated condition not matching the clinical picture of Drug Induced Liver Injury
+   C. A complication seen late in the disease course of Drug Induced Liver Injury
+   D. A condition that mimics Drug Induced Liver Injury but has a different underlying cause
+

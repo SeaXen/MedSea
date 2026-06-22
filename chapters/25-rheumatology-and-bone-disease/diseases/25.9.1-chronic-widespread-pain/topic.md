@@ -350,3 +350,68 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Fibromyalgia]] · [[Drugs in rheumatology]]
+---
+
+> Auto-generated study sections for "Soft Tissue Rheumatism and Chronic Pain Syndromes" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (21 generated)
+
+- Q: What is Wind-Up of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Progressive increase in dorsal horn neuron response to repeated C-fibre stimulation
+- Q: What is Temporal Summation of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Increasing pain perception with repeated identical stimuli
+- Q: What is Allodynia of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pain from non-painful stimulus (light touch, brushing)
+- Q: What is Hyperalgesia of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Exaggerated pain response to painful stimulus
+- Q: What is Loss of Descending Inhibition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: ↓ Serotonin/noradrenaline → ↓ endogenous pain control
+- Q: What is Impaired CPM of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Diffuse Noxious Inhibitory Controls impaired
+- Q: What is Wind-Up of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Progressive increase in dorsal horn neuron response to repeated C-fibre stimulation
+- Q: What is Temporal Summation of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Increasing pain perception with repeated identical stimuli
+- Q: What is Allodynia of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pain from non-painful stimulus (light touch, brushing)
+- Q: What is Hyperalgesia of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Exaggerated pain response to painful stimulus
+- Q: What is Loss of Descending Inhibition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: ↓ Serotonin/noradrenaline → ↓ endogenous pain control
+- Q: What is Impaired CPM of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Diffuse Noxious Inhibitory Controls impaired
+- Q: What is the definition of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Chronic pain ≥4/5 body regions (axial + 3 quadrants) ≥3 months
+- Q: What is vs Fibromyalgia of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: CWP = broader; FM = CWP + ACR 2016 (WPI ≥7 & SSS ≥5 OR WPI 4-6 & SSS ≥9)
+- Q: What is Central Sensitisation of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Wind-up, temporal summation, allodynia, hyperalgesia, loss of descending inhibition, impaired CPM
+- Q: What are the clinical features of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Pain (widespread) + Fatigue + Unrefreshing sleep + Cognitive dysfunction ("brain fog")
+- Q: What is Comorbidities of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: IBS, CFS, migraine, TMJ, depression/anxiety, interstitial cystitis, RLS
+- Q: What is the investigation of choice for Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Clinical (definition + exclusion); no confirmatory test, normal ESR/CRP/CK
+- Q: How is Soft Tissue Rheumatism and Chronic Pain Syndromes managed?
+  A: Education → Exercise (core) → CBT → Duloxetine/Pregabalin → Amitriptyline
+- Q: What is Drugs of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Duloxetine, Pregabalin, Amitriptyline (low dose) — NO opioids, benzos, muscle relaxants
+- Q: What is Multidisciplinary of Soft Tissue Rheumatism and Chronic Pain Syndromes?
+  A: Rheumatology + Physio + Psychology + Pain specialist
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Soft Tissue Rheumatism and Chronic Pain Syndromes?**
+   A. **CWP = pain in ≥4/5 body regions (axial + 3/4 quadrants) for ≥3 months.**
+   B. An unrelated condition not matching the clinical picture of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   C. A complication seen late in the disease course of Soft Tissue Rheumatism and Chronic Pain Syndromes
+   D. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Soft Tissue Rheumatism and Chronic Pain Syndromes presents with: Definition — Chronic pain in ≥4 of 5 body regions (left/right upper, left/right lower, axial) for ≥3 months; Body Regions (5) — 1. Left upper, 2. Right upper, 3. Left lower, 4. Right lower, 5. Axial (neck, back, chest, abdomen); Prevalence — 10-15% of general population. What is the most likely diagnosis?
+   A. **Soft Tissue Rheumatism and Chronic Pain Syndromes**
+   B. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but is not the same entity
+   C. A complication of Soft Tissue Rheumatism and Chronic Pain Syndromes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Soft Tissue Rheumatism and Chronic Pain Syndromes
+

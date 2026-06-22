@@ -322,3 +322,28 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../Investigations in rheumatology|Investigations in rheumatology]]
+---
+
+> Auto-generated study sections for "Clinical Approach to Musculoskeletal Disease" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Clinical Approach to Musculoskeletal Disease?
+  A: | Feature | Inflammatory Pain | Mechanical/Non-inflammatory Pain |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Clinical Approach to Musculoskeletal Disease?**
+   A. **| Feature | Inflammatory Pain | Mechanical/Non-inflammatory Pain |**
+   B. An unrelated condition not matching the clinical picture of Clinical Approach to Musculoskeletal Disease
+   C. A complication seen late in the disease course of Clinical Approach to Musculoskeletal Disease
+   D. A condition that mimics Clinical Approach to Musculoskeletal Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Clinical Approach to Musculoskeletal Disease presents with: System — Red Flags; Constitutional — Fever, weight loss, night sweats, fatigue; Skin — Rash, photosensitivity, ulcers, nodules, psoriasis. What is the most likely diagnosis?
+   A. **Clinical Approach to Musculoskeletal Disease**
+   B. A condition that mimics Clinical Approach to Musculoskeletal Disease but is not the same entity
+   C. A complication of Clinical Approach to Musculoskeletal Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Clinical Approach to Musculoskeletal Disease
+

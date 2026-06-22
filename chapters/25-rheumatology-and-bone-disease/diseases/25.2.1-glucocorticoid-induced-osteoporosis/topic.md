@@ -354,3 +354,78 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Osteoporosis]] · [[Paget's disease of bone]] · [[Osteomalacia and rickets]]
+---
+
+> Auto-generated study sections for "Bone Metabolic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Bone Metabolic Diseases?
+  A: Bone loss and increased fracture risk due to exogenous glucocorticoid excess — combined effects on bone formation, resorption, calcium, sex hormones
+- Q: What is Threshold of Bone Metabolic Diseases?
+  A: ≥7.5mg prednisolone (or equivalent) daily for ≥3 months
+- Q: What is the epidemiology of Bone Metabolic Diseases?
+  A: 30-50% of long-term steroid users develop fractures
+- Q: What is Fracture Risk of Bone Metabolic Diseases?
+  A: Rapid increase within 3 months of starting steroids; vertebral > non-vertebral
+- Q: What is the dose of Bone Metabolic Diseases?
+  A: ≥7.5mg/day = significant risk; <2.5mg/day = minimal risk; pulse IV = high risk
+- Q: What is Reversibility of Bone Metabolic Diseases?
+  A: Partial — bone density improves after stopping but fracture risk persists
+- Q: What is Osteoblast suppression of Bone Metabolic Diseases?
+  A: ↓ Bone formation (early, dominant)
+- Q: What is Osteoclast prolongation of Bone Metabolic Diseases?
+  A: ↑ Bone resorption (later)
+- Q: What is ↓ Calcium absorption of Bone Metabolic Diseases?
+  A: Gut + kidney → secondary hyperparathyroidism
+- Q: What is Gonadal suppression of Bone Metabolic Diseases?
+  A: Hypogonadism → bone loss
+- Q: What is Muscle wasting of Bone Metabolic Diseases?
+  A: Proximal myopathy → falls → fractures
+- Q: What is Osteoblast suppression of Bone Metabolic Diseases?
+  A: ↓ Bone formation (early, dominant)
+- Q: What is Osteoclast prolongation of Bone Metabolic Diseases?
+  A: ↑ Bone resorption (later)
+- Q: What is ↓ Calcium absorption of Bone Metabolic Diseases?
+  A: Gut + kidney → secondary hyperparathyroidism
+- Q: What is Gonadal suppression of Bone Metabolic Diseases?
+  A: Hypogonadism → bone loss
+- Q: What is Muscle wasting of Bone Metabolic Diseases?
+  A: Proximal myopathy → falls → fractures
+- Q: What is Threshold of Bone Metabolic Diseases?
+  A: ≥7.5mg prednisolone (equiv) daily for ≥3 months
+- Q: What is Start Protection of Bone Metabolic Diseases?
+  A: DAY 1 of steroids if ≥3 months expected — Ca 1g + Vit D 800-1000 IU + Oral Bisphosphonate
+- Q: What is FRAX of Bone Metabolic Diseases?
+  A: Tick "Glucocorticoid" and "Secondary osteoporosis"
+- Q: What is 1st Line of Bone Metabolic Diseases?
+  A: Alendronate 70mg weekly (upright 30min, water, fast 30min)
+- Q: What is Renal <35 of Bone Metabolic Diseases?
+  A: Avoid oral BP → IV Zoledronate 5mg yearly or Denosumab 60mg q6mo
+- Q: What is Denosumab of Bone Metabolic Diseases?
+  A: Ca/Vit D mandatory; no drug holiday (rebound fractures)
+- Q: What is Teriparatide of Bone Metabolic Diseases?
+  A: Superior to alendronate in GIOP (vertebral fractures); use if fractures on BP or T ≤-3.5
+- Q: What is Vertebral Fractures of Bone Metabolic Diseases?
+  A: Asymptomatic 2/3 — annual height + VFA
+- Q: What is Children of Bone Metabolic Diseases?
+  A: Z-scores; IV pamidronate/zoledronate only
+- Q: What is Transplant of Bone Metabolic Diseases?
+  A: Baseline DEXA at 3 months; zoledronate/denosumab preferred
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Bone Metabolic Diseases?**
+   A. **GIOP = most common cause of secondary osteoporosis.**
+   B. An unrelated condition not matching the clinical picture of Bone Metabolic Diseases
+   C. A complication seen late in the disease course of Bone Metabolic Diseases
+   D. A condition that mimics Bone Metabolic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Bone Metabolic Diseases presents with: Definition — Bone loss and increased fracture risk due to exogenous glucocorticoid excess — combined effects on bone formation, resorption, calcium, sex hormones; Threshold — ≥7.5mg prednisolone (or equivalent) daily for ≥3 months; Incidence — 30-50% of long-term steroid users develop fractures. What is the most likely diagnosis?
+   A. **Bone Metabolic Diseases**
+   B. A condition that mimics Bone Metabolic Diseases but is not the same entity
+   C. A complication of Bone Metabolic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Bone Metabolic Diseases
+

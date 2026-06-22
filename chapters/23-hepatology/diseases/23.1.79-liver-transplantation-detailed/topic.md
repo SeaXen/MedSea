@@ -150,3 +150,66 @@ By the end of this note you should be able to:
 | Disease | Recurrence Rate | Surveillance | Treatment |
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Liver Transplantation" — Ch 23: Hepatology.
+
+## Flashcards (24 generated)
+
+- Q: What is the definition of Liver Transplantation?
+  A: Liver Transplantation = Definitive treatment for end-stage liver disease — Indications (MELD ≥15, ALF, HCC Milan, metabolic), contraindications (absolute/relative), allocation (MELD-based), pre-transplant assessment, post-transplant complications (rejection, infection, recurrence), immunosuppression protocols.
+- Q: What is Decompensated Cirrhosis of Liver Transplantation?
+  A: MELD ≥15 (or MELD-Na ≥15)
+- Q: What is Recurrent Decompensation of Liver Transplantation?
+  A: ≥2 episodes of ascites/variceal bleed/HE in 6 months
+- Q: What is Refractory Ascites of Liver Transplantation?
+  A: Requiring LVP ≥q2weeks despite diuretics
+- Q: What is Recurrent SBP of Liver Transplantation?
+  A: ≥2 episodes despite prophylaxis
+- Q: What is Hepatorenal Syndrome of Liver Transplantation?
+  A: HRS-AKI unresponsive to terlipressin
+- Q: What is Hepatic Encephalopathy of Liver Transplantation?
+  A: Recurrent Grade II-IV despite maximal therapy
+- Q: What are the complications of Liver Transplantation?
+  A: Gastric variceal bleed, portal hypertensive gastropathy bleed
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 3-8% (higher in living donor/paediatric)
+- Q: What are the clinical features of Liver Transplantation?
+  A: Sudden ALT/AST rise >1000, biliary leak/stricture (liver infarcts), sepsis, fever
+- Q: What is the investigation of choice for Liver Transplantation?
+  A: Doppler US (absent HA flow), CTA/MR angiography
+- Q: How is Liver Transplantation managed?
+  A: Emergent re-exploration / thrombectomy (if <24h); Retransplant if failed/liver infarct
+- Q: What is Decompensated Cirrhosis of Liver Transplantation?
+  A: MELD ≥15 (or MELD-Na ≥15)
+- Q: What is Recurrent Decompensation of Liver Transplantation?
+  A: ≥2 episodes of ascites/variceal bleed/HE in 6 months
+- Q: What is Refractory Ascites of Liver Transplantation?
+  A: Requiring LVP ≥q2weeks despite diuretics
+- Q: What is Recurrent SBP of Liver Transplantation?
+  A: ≥2 episodes despite prophylaxis
+- Q: What is Hepatorenal Syndrome of Liver Transplantation?
+  A: HRS-AKI unresponsive to terlipressin
+- Q: What is Hepatic Encephalopathy of Liver Transplantation?
+  A: Recurrent Grade II-IV despite maximal therapy
+- Q: What is King's College Criteria of Liver Transplantation?
+  A: Met (pH <7.3 or PT>100s + Cr>300 + Grade III/IV HE)
+- Q: What is CLIF-C ACLF Grade 3 of Liver Transplantation?
+  A: ≥3 organ failures
+- Q: What is Lactic Acidosis of Liver Transplantation?
+  A: Lactate >3.5 mmol/L post-resuscitation
+- Q: What is the epidemiology of Liver Transplantation?
+  A: 3-8% (higher in living donor/paediatric)
+- Q: What are the clinical features of Liver Transplantation?
+  A: Sudden ALT/AST rise >1000, biliary leak/stricture (liver infarcts), sepsis, fever
+- Q: What is the investigation of choice for Liver Transplantation?
+  A: Doppler US (absent HA flow), CTA/MR angiography
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Liver Transplantation?**
+   A. **Liver Transplantation = Definitive treatment for end-stage liver disease — Indications (MELD ≥15, ALF, HCC Milan, metabolic), contraindications (absolute/relative), allocation (MELD-based), pre-transp**
+   B. An unrelated condition not matching the clinical picture of Liver Transplantation
+   C. A complication seen late in the disease course of Liver Transplantation
+   D. A condition that mimics Liver Transplantation but has a different underlying cause
+

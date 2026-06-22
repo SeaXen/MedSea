@@ -281,3 +281,50 @@ mindmap
 - [[Alcoholic Liver Disease/Alcoholic hepatitis scoring (Maddrey DF, Glasgow, ABIC, Lille)|Scoring Systems]]
 - [[Alcoholic Liver Disease/Abstinence and nutritional support|Abstinence & Nutrition]]
 - [[Alcoholic Liver Disease/Alcohol relapse prevention|Relapse Prevention]]
+---
+
+> Auto-generated study sections for "Alcoholic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (16 generated)
+
+- Q: What is the definition of Alcoholic Liver Disease?
+  A: | Week | Prednisolone (PO) | Methylprednisolone (IV) |
+- Q: What is Active Infection (SBP, Pneumonia, Sepsis, UTI) of Alcoholic Liver Disease?
+  A: ↑ Infection Risk (Steroids impair immunity)
+- Q: What is Active GI Bleeding of Alcoholic Liver Disease?
+  A: ↑ Bleeding Risk, Masking Symptoms
+- Q: What is Acute Pancreatitis of Alcoholic Liver Disease?
+  A: Steroids May Worsen
+- Q: What is Renal Failure (Cr >250 μmol/L / RRT) of Alcoholic Liver Disease?
+  A: Relative in some guidelines; High Infection Risk
+- Q: What is Active Infection (SBP, Pneumonia, Sepsis, UTI) of Alcoholic Liver Disease?
+  A: ↑ Infection Risk (Steroids impair immunity)
+- Q: What is Active GI Bleeding of Alcoholic Liver Disease?
+  A: ↑ Bleeding Risk, Masking Symptoms
+- Q: What is Acute Pancreatitis of Alcoholic Liver Disease?
+  A: Steroids May Worsen
+- Q: What is Maddrey DF of Alcoholic Liver Disease?
+  A: >32 = Severe → Consider Steroids
+- Q: What is DF Formula of Alcoholic Liver Disease?
+  A: 4.6 × (PTpt - PTctrl) + Bilirubin (mg/dL)
+- Q: What is Regimen of Alcoholic Liver Disease?
+  A: Prednisolone 40mg/day (or Methylprednisolone 32mg IV) × 28 days
+- Q: What is Lille Score of Alcoholic Liver Disease?
+  A: Day 7 — >0.45 = STOP STEROIDS
+- Q: What is Alcoholic Liver Disease indicated for?
+  A: Active Infection, GI Bleed, Pancreatitis, Renal Failure
+- Q: How is Alcoholic Liver Disease monitored?
+  A: Daily LFTs/INR/Renal/Glucose; Lille Day 7
+- Q: What is Nutrition of Alcoholic Liver Disease?
+  A: 35-40 kcal/kg, 1.2-1.5g Protein/kg, Thiamine 100mg IV
+- Q: What is Taper of Alcoholic Liver Disease?
+  A: 28 days total (40→30→20→10mg weekly) OR Flat 40mg ×28d
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Alcoholic Liver Disease?**
+   A. **| Week | Prednisolone (PO) | Methylprednisolone (IV) |**
+   B. An unrelated condition not matching the clinical picture of Alcoholic Liver Disease
+   C. A complication seen late in the disease course of Alcoholic Liver Disease
+   D. A condition that mimics Alcoholic Liver Disease but has a different underlying cause
+

@@ -284,3 +284,36 @@ mindmap
 - [[Portal Hypertension and Complications/Acute variceal bleeding management|Acute Bleed]]
 - [[Portal Hypertension and Complications/Screening endoscopy|Screening Endoscopy]]
 - [[Portal Hypertension and Complications/Gastric varices (glue injection)|Gastric Varices]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: | Grade | Description | Size | Bleeding Risk (per year) |
+- Q: What is Grading of Portal Hypertension and Complications?
+  A: G1: <5mm straight; G2: 5-10mm tortuous; G3: >10mm tortuous
+- Q: What is Red signs of Portal Hypertension and Complications?
+  A: Red wale, cherry red, hematocystic → Prophylaxis even if G1
+- Q: What is Bleeding risk/yr of Portal Hypertension and Complications?
+  A: G1: 1-2%, G2: 5-10%, G3: 10-15%
+- Q: What is Screening of Portal Hypertension and Complications?
+  A: Baveno VII: LSM<20 + Plt>150 = No scope
+- Q: What is Prophylaxis of Portal Hypertension and Complications?
+  A: G2/3 always; G1 + red signs/Child C
+- Q: What is Acute bleed of Portal Hypertension and Complications?
+  A: Terlipressin + Ceftriaxone + EVL <12h
+- Q: What is Rescue TIPS of Portal Hypertension and Complications?
+  A: Failed endoscopy, Early rebleed, Child B/C with bleed
+- Q: What is Secondary prophylaxis of Portal Hypertension and Complications?
+  A: NSBB + EVL lifelong
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **| Grade | Description | Size | Bleeding Risk (per year) |**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+

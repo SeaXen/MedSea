@@ -234,3 +234,40 @@ mindmap
 - [[Non-Alcoholic Fatty Liver Disease/NAFLD Diagnosis (FIB-4, NFS, ELF, FibroScan)|NAFLD Diagnosis]]
 - [[Non-Alcoholic Fatty Liver Disease/NAFLD Management (Lifestyle, Pharmacotherapy, Bariatric Surgery)|NAFLD Management]]
 - [[Non-Alcoholic Fatty Liver Disease/NAFLD HCC Risk and Surveillance|NAFLD HCC Risk]]
+---
+
+> Auto-generated study sections for "Non Alcoholic Fatty Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (7 generated)
+
+- Q: What is the definition of Non Alcoholic Fatty Liver Disease?
+  A: | MetS Component | Prevalence in NAFLD | Pathogenic Role |
+- Q: What is Insulin Resistance of Non Alcoholic Fatty Liver Disease?
+  A: Central Driver → Unrestrained lipolysis → ↑ FFA delivery to liver
+- Q: What is De Novo Lipogenesis (DNL) of Non Alcoholic Fatty Liver Disease?
+  A: ↑ ChREBP/SREBP-1c → Converts carbs → Fatty acids (contributes ~25% hepatic fat)
+- Q: What is Impaired VLDL Export of Non Alcoholic Fatty Liver Disease?
+  A: MTP deficiency / ApoB100 degradation → Traps TG in hepatocytes
+- Q: What is β-Oxidation Impairment of Non Alcoholic Fatty Liver Disease?
+  A: Mitochondrial dysfunction → Incomplete FA oxidation → ROS
+- Q: What is Adipokine Imbalance of Non Alcoholic Fatty Liver Disease?
+  A: ↓ Adiponectin, ↑ Leptin, ↑ TNF-α, ↑ IL-6 → Pro-inflammatory state
+- Q: What is Gut-Liver Axis of Non Alcoholic Fatty Liver Disease?
+  A: Dysbiosis → ↑ Portal endotoxin (LPS) → TLR4 activation → Kupffer cell activation
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Non Alcoholic Fatty Liver Disease?**
+   A. **| MetS Component | Prevalence in NAFLD | Pathogenic Role |**
+   B. An unrelated condition not matching the clinical picture of Non Alcoholic Fatty Liver Disease
+   C. A complication seen late in the disease course of Non Alcoholic Fatty Liver Disease
+   D. A condition that mimics Non Alcoholic Fatty Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Non Alcoholic Fatty Liver Disease presents with: Risk Category — Criteria; Low — Lean, No MetS, No T2DM, Normal LFTs; Intermediate — Overweight/Obese OR 1 MetS Component. What is the most likely diagnosis?
+   A. **Non Alcoholic Fatty Liver Disease**
+   B. A condition that mimics Non Alcoholic Fatty Liver Disease but is not the same entity
+   C. A complication of Non Alcoholic Fatty Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Non Alcoholic Fatty Liver Disease
+

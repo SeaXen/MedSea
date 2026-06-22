@@ -298,3 +298,48 @@ mindmap
 - [[Jaundice and LFT Interpretation/Post-hepatic (obstructive) jaundice|Post-hepatic]]
 - [[Jaundice and LFT Interpretation/Isolated hyperbilirubinaemia|Isolated Hyperbilirubinaemia]]
 - [[Jaundice and LFT Interpretation/Isolated alkaline phosphatase elevation|Isolated ALP]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: | Clinical Scenario | Typical ALT | Key Discriminators |
+- Q: What is Alcoholic Hepatitis of Jaundice and LFT Interpretation?
+  A: Often mixed early; AST:ALT >2
+- Q: What is Viral Hepatitis (Recovery) of Jaundice and LFT Interpretation?
+  A: Transitioning from hepatocellular
+- Q: What is NASH with Fibrosis of Jaundice and LFT Interpretation?
+  A: Overlap hepatocellular + cholestatic
+- Q: What is Early Obstruction of Jaundice and LFT Interpretation?
+  A: Before pure cholestatic
+- Q: What is Drug-induced (Mixed) of Jaundice and LFT Interpretation?
+  A: Many antibiotics, TB drugs
+- Q: What is Alcoholic Hepatitis of Jaundice and LFT Interpretation?
+  A: Often mixed early; AST:ALT >2
+- Q: What is Viral Hepatitis (Recovery) of Jaundice and LFT Interpretation?
+  A: Transitioning from hepatocellular
+- Q: What is NASH with Fibrosis of Jaundice and LFT Interpretation?
+  A: Overlap hepatocellular + cholestatic
+- Q: What is Early Obstruction of Jaundice and LFT Interpretation?
+  A: Before pure cholestatic
+- Q: What is Drug-induced (Mixed) of Jaundice and LFT Interpretation?
+  A: Many antibiotics, TB drugs
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **| Clinical Scenario | Typical ALT | Key Discriminators |**
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Jaundice and LFT Interpretation presents with: A[Asymptomatic Abnormal LFTs] --> B{Pattern}; B -->|Hepatocellular| C[HBV, HCV, NAFLD, Alcohol, AIH, Haemochromatosis, Wilson, Drugs]; B -->|Cholestatic| D[PBC, PSC, Drugs, Early Obstruction]. What is the most likely diagnosis?
+   A. **Jaundice and LFT Interpretation**
+   B. A condition that mimics Jaundice and LFT Interpretation but is not the same entity
+   C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
+

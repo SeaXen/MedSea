@@ -335,3 +335,60 @@ mindmap
 - [[Portal Hypertension and Complications/Ascites|Ascites]]
 - [[Chronic Liver Disease and Cirrhosis/Complications|Cirrhosis Complications]]
 - [[Renal Medicine/Anaemia of CKD|Anaemia of CKD]]
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Hematology?
+  A: Anaemia secondary to chronic inflammation/infection/malignancy — Functional Iron Deficiency
+- Q: What is the epidemiology of Hematology?
+  A: 2nd Most Common Anaemia (After IDA) ~30% of Hospital Anaemias
+- Q: What is Associated Conditions of Hematology?
+  A: Infections (TB, Endocarditis, Osteomyelitis), Autoimmune (RA, SLE, IBD), Malignancy (Lymphoma, Solid Tumours), CKD, Heart Failure
+- Q: What is the pathogenesis of Hematology?
+  A: Hepcidin-Mediated Iron Sequestration — Inflammatory Cytokines (IL-6) → ↑ Hepcidin → ↓ Ferroportin → Iron Trapped in Macrophages/Hepatocytes
+- Q: What is IL-6 → Hepcidin ↑ of Hematology?
+  A: ↓ Ferroportin → Iron Trapped in Macrophages/Enterocytes
+- Q: What is IL-1/TNF → Bone Marrow of Hematology?
+  A: ↓ Erythroid Progenitor Proliferation
+- Q: What is IL-1/TNF → Kidney of Hematology?
+  A: ↓ EPO Production
+- Q: What is Reduced RBC Survival of Hematology?
+  A: ↓ RBC Lifespan (80-90 days vs 120)
+- Q: What is Iron-Restricted Erythropoiesis of Hematology?
+  A: Functional Iron Deficiency (Stores Full, Serum Low)
+- Q: What is the definition of Hematology?
+  A: Anaemia 2° to Chronic Inflammation/Infection/Malignancy
+- Q: What is the pathogenesis of Hematology?
+  A: IL-6 → Hepcidin ↑ → Ferroportin Degradation → Iron Sequestration
+- Q: What is Lab Pattern of Hematology?
+  A: Normocytic/Mild Microcytic, Ferritin Normal/High, TSAT Low, TIBC Low, CRP High
+- Q: What is Key Differentiator of Hematology?
+  A: Ferritin >100 + CRP High = ACD (vs IDA: Ferritin <30, High TIBC)
+- Q: What is sTfR/log Ferritin Index of Hematology?
+  A: <1 = ACD; >1 = True Iron Deficiency
+- Q: How is Hematology managed?
+  A: Oral Ineffective (Hepcidin Blocks); IV Iron if True IDA
+- Q: What is Hematology indicated for?
+  A: CKD (Hb<100), Chemo-induced, Refractory ACD + True IDA
+- Q: What is Pure IDA + ACD of Hematology?
+  A: sTfR/Log Ferritin Index >1 = True Iron Deficiency → IV Iron
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **# Anaemia of Chronic Disease (ACD) / Anaemia of Inflammation**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Definition — Anaemia secondary to chronic inflammation/infection/malignancy — Functional Iron Deficiency; Prevalence — 2nd Most Common Anaemia (After IDA) ~30% of Hospital Anaemias; Associated Conditions — Infections (TB, Endocarditis, Osteomyelitis), Autoimmune (RA, SLE, IBD), Malignancy (Lymphoma, Solid Tumours), CKD, Heart Failure. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

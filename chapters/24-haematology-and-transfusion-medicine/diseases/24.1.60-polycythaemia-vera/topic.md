@@ -363,3 +363,110 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (42 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Myeloproliferative Neoplasms → Polycythaemia Vera
+- Q: What is Constitutional of Hematology?
+  A: Headache, dizziness, fatigue, pruritus (aquagenic - post-shower), erythromelalgia (burning extremities)
+- Q: What is Splenomegaly of Hematology?
+  A: ~70% (extramedullary haematopoiesis)
+- Q: What is Thrombosis of Hematology?
+  A: Arterial (MI, stroke, TIA) + Venous (Budd-Chiari, portal vein, DVT/PE) – leading cause of morbidity/mortality
+- Q: What is Haemorrhage of Hematology?
+  A: Acquired von Willebrand syndrome (if Plt >1000-1500)
+- Q: What is Hyperviscosity of Hematology?
+  A: Visual disturbances, Budd-Chiari, renal/hepatic impairment
+- Q: What is Uric Acid of Hematology?
+  A: ↑ (cell turnover) → gout, renal stones
+- Q: What is Hematology indicated for?
+  A: HU-intolerant or resistant (failure to control Hct/spleen/symptoms)
+- Q: What is the dose of Hematology?
+  A: 10 mg BD (adjust for Plt, renal)
+- Q: How is Hematology monitored?
+  A: CBC q2wk × 4, then q4wk; LFT, lipids
+- Q: What is Benefits of Hematology?
+  A: Spleen reduction, symptom control, Hct control
+- Q: What is Risks of Hematology?
+  A: Infections (HZV – need ACV prophylaxis), anaemia, thrombocytopenia
+- Q: What is Hematology indicated for?
+  A: Young patients, pregnancy desire, HU-intolerant, early PV
+- Q: What is the dose of Hematology?
+  A: 45-90 µg SC weekly (titrate)
+- Q: What is Benefits of Hematology?
+  A: Molecular remission (JAK2 VAF reduction); safe in pregnancy
+- Q: What is Toxicities of Hematology?
+  A: Flu-like, depression, cytopenias, autoimmune, thyroid
+- Q: What is Thrombosis of Hematology?
+  A: Aspirin + Cytoreduction + Anticoagulation (if venous)
+- Q: What is Bleeding of Hematology?
+  A: Acquired VWS (Plt >1000) → Apheresis / Desmopressin / Avoid aspirin if active bleed
+- Q: What is Post-PV Myelofibrosis of Hematology?
+  A: ~10-15% at 15yr; BM fibrosis, splenomegaly, leukoerythroblastic film → Ruxolitinib / HSCT
+- Q: What is AML Transformation of Hematology?
+  A: ~2-5% at 20yr; HSCT if fit
+- Q: What is Gout of Hematology?
+  A: Allopurinol / Febuxostat
+- Q: What is Pruritus of Hematology?
+  A: Antihistamines, SSRIs, Ruxolitinib, PUVA, Interferon
+- Q: What is Constitutional of Hematology?
+  A: Headache, dizziness, fatigue, pruritus (aquagenic - post-shower), erythromelalgia (burning extremities)
+- Q: What is Splenomegaly of Hematology?
+  A: ~70% (extramedullary haematopoiesis)
+- Q: What is Thrombosis of Hematology?
+  A: Arterial (MI, stroke, TIA) + Venous (Budd-Chiari, portal vein, DVT/PE) – leading cause of morbidity/mortality
+- Q: What is Haemorrhage of Hematology?
+  A: Acquired von Willebrand syndrome (if Plt >1000-1500)
+- Q: What is Hyperviscosity of Hematology?
+  A: Visual disturbances, Budd-Chiari, renal/hepatic impairment
+- Q: What is Uric Acid of Hematology?
+  A: ↑ (cell turnover) → gout, renal stones
+- Q: What is Hematology indicated for?
+  A: HU-intolerant or resistant (failure to control Hct/spleen/symptoms)
+- Q: What is the dose of Hematology?
+  A: 10 mg BD (adjust for Plt, renal)
+- Q: How is Hematology monitored?
+  A: CBC q2wk × 4, then q4wk; LFT, lipids
+- Q: What is Benefits of Hematology?
+  A: Spleen reduction, symptom control, Hct control
+- Q: What is Hematology indicated for?
+  A: Young patients, pregnancy desire, HU-intolerant, early PV
+- Q: What is the dose of Hematology?
+  A: 45-90 µg SC weekly (titrate)
+- Q: What is Benefits of Hematology?
+  A: Molecular remission (JAK2 VAF reduction); safe in pregnancy
+- Q: What is Toxicities of Hematology?
+  A: Flu-like, depression, cytopenias, autoimmune, thyroid
+- Q: What is Thrombosis of Hematology?
+  A: Aspirin + Cytoreduction + Anticoagulation (if venous)
+- Q: What is Bleeding of Hematology?
+  A: Acquired VWS (Plt >1000) → Apheresis / Desmopressin / Avoid aspirin if active bleed
+- Q: What is Post-PV Myelofibrosis of Hematology?
+  A: ~10-15% at 15yr; BM fibrosis, splenomegaly, leukoerythroblastic film → Ruxolitinib / HSCT
+- Q: What is AML Transformation of Hematology?
+  A: ~2-5% at 20yr; HSCT if fit
+- Q: What is Gout of Hematology?
+  A: Allopurinol / Febuxostat
+- Q: What is Pruritus of Hematology?
+  A: Antihistamines, SSRIs, Ruxolitinib, PUVA, Interferon
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Myeloproliferative Neoplasms → Polycythaemia Vera**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Major Criteria — Minor Criterion; Diagnosis: All 3 Major OR Major 1 + 2 + Minor; [!tip] FCPS/MRCP: PV = JAK2 V617F (95%) or Exon 12 (3-5%). WHO 2022: Hb/Hct thresholds + BM trilineage + JAK2. EPO low = minor criterion.. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

@@ -353,3 +353,64 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Myeloproliferative Neoplasms → Essential Thrombocythaemia
+- Q: What is the mechanism of Hematology?
+  A: Plt >1000-1500 → adsorption of vWF on platelet surface → loss of HMW multimers
+- Q: What are the clinical features of Hematology?
+  A: Bleeding (epistaxis, GI, post-procedure) despite thrombocytosis
+- Q: What is the investigation of choice for Hematology?
+  A: vWF:Ag ↓, vWF:RCo ↓↓, vWF:Ag/vWF:RCo ratio >2, HMW multimers absent
+- Q: How is Hematology managed?
+  A: Platelet apheresis (rapid ↓ Plt), Desmopressin (DDAVP), Avoid aspirin if active bleed, Hydroxyurea/Anagrelide to lower Plt
+- Q: What is the mechanism of Hematology?
+  A: Plt >1000-1500 → adsorption of vWF on platelet surface → loss of HMW multimers
+- Q: What are the clinical features of Hematology?
+  A: Bleeding (epistaxis, GI, post-procedure) despite thrombocytosis
+- Q: What is the investigation of choice for Hematology?
+  A: vWF:Ag ↓, vWF:RCo ↓↓, vWF:Ag/vWF:RCo ratio >2, HMW multimers absent
+- Q: How is Hematology managed?
+  A: Platelet apheresis (rapid ↓ Plt), Desmopressin (DDAVP), Avoid aspirin if active bleed, Hydroxyurea/Anagrelide to lower Plt
+- Q: What is the investigation of choice for Hematology?
+  A: Plt ≥450 + Megakaryocyte hyperplasia + JAK2/CALR/MPL
+- Q: What is Driver Mutations of Hematology?
+  A: JAK2 V617F (50-60%), CALR Type 1/2 (25-30%), MPL (3-5%), Triple-neg (10-15%)
+- Q: What is CALR vs JAK2 of Hematology?
+  A: CALR = Lower thrombosis risk, better OS; JAK2 = Higher risk
+- Q: What is Risk Stratification of Hematology?
+  A: IPSET-Thrombosis: Age>60 (2pts), Prior thrombosis (1), JAK2 (1), CV risk (1)
+- Q: What is Low Risk of Hematology?
+  A: Aspirin 75-100 mg daily
+- Q: What is High Risk of Hematology?
+  A: Aspirin + Hydroxyurea (1st line)
+- Q: What is Anagrelide of Hematology?
+  A: Platelet-specific; Avoid if CVD (arrhythmia); HU-intolerant
+- Q: What is Interferon-α of Hematology?
+  A: Young/Pregnancy; Safe in pregnancy; Molecular remission
+- Q: What is AVWS of Hematology?
+  A: Plt >1000-1500 → vWF adsorption → Bleeding; Apheresis + DDAVP
+- Q: What is Pregnancy of Hematology?
+  A: Aspirin + Interferon-α; Avoid HU/Anagrelide
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Myeloproliferative Neoplasms → Essential Thrombocythaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: 1. Platelet count ≥450×10⁹/L — ; Diagnosis: All 4 Major Criteria met; [!tip] FCPS/MRCP: ET = Thrombocytosis ≥450 + Megakaryocyte hyperplasia + Driver mutation (JAK2 50-60%, CALR 25-30%, MPL 3-5%). CALR = better prognosis, lower thrombosis risk. "Triple-negative" (10-15%) = worse prognosis.. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

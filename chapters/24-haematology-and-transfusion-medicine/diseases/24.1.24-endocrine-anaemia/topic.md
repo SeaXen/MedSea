@@ -291,3 +291,92 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Endocrine Anaemia
+- Q: How is Hematology classified?
+  A: Normocytic/Normochromic (most common) or Macrocytic
+- Q: What is the mechanism of Hematology?
+  A: ↓ EPO production (renal), ↓ Erythroid marrow responsiveness, ↓ O₂ demand
+- Q: What is Associated of Hematology?
+  A: Pernicious Anaemia (Autoimmune overlap), Iron deficiency (menorrhagia), B12/Folate malabsorption
+- Q: What is Lab of Hematology?
+  A: TSH ↑↑, T4 ↓, Hb ↓, MCV normal/↑, Reticulocytes ↓
+- Q: How is Hematology managed?
+  A: Levothyroxine → Anaemia resolves in 2-3 months
+- Q: How is Hematology classified?
+  A: Usually Mild Normocytic
+- Q: What is the mechanism of Hematology?
+  A: ↑ RBC turnover, ↑ EPO but ineffective erythropoiesis, ↑ Plasma volume
+- Q: What is Associated of Hematology?
+  A: Autoimmune (Graves), Pernicious Anaemia risk
+- Q: What is Lab of Hematology?
+  A: TSH ↓↓, T3/T4 ↑↑, Mild Hb ↓
+- Q: How is Hematology managed?
+  A: Antithyroid drugs → Anaemia resolves
+- Q: What is Erythrocyte Status of Hematology?
+  A: Polycythaemia (More common than anaemia)
+- Q: What is the mechanism of Hematology?
+  A: Androgen excess → ↑ EPO, ↑ Erythropoiesis
+- Q: What is Anaemia if present of Hematology?
+  A: If Simultaneous Iron deficiency or Coexisting Hypothyroidism
+- Q: How is Hematology classified?
+  A: Normocytic/Normochromic (most common) or Macrocytic
+- Q: What is the mechanism of Hematology?
+  A: ↓ EPO production (renal), ↓ Erythroid marrow responsiveness, ↓ O₂ demand
+- Q: What is Associated of Hematology?
+  A: Pernicious Anaemia (Autoimmune overlap), Iron deficiency (menorrhagia), B12/Folate malabsorption
+- Q: What is Lab of Hematology?
+  A: TSH ↑↑, T4 ↓, Hb ↓, MCV normal/↑, Reticulocytes ↓
+- Q: How is Hematology classified?
+  A: Usually Mild Normocytic
+- Q: What is the mechanism of Hematology?
+  A: ↑ RBC turnover, ↑ EPO but ineffective erythropoiesis, ↑ Plasma volume
+- Q: What is Associated of Hematology?
+  A: Autoimmune (Graves), Pernicious Anaemia risk
+- Q: What is Lab of Hematology?
+  A: TSH ↓↓, T3/T4 ↑↑, Mild Hb ↓
+- Q: What is Erythrocyte Status of Hematology?
+  A: Polycythaemia (More common than anaemia)
+- Q: What is the mechanism of Hematology?
+  A: Androgen excess → ↑ EPO, ↑ Erythropoiesis
+- Q: What is Anaemia if present of Hematology?
+  A: If Simultaneous Iron deficiency or Coexisting Hypothyroidism
+- Q: What is Hypothyroidism of Hematology?
+  A: Normocytic/Macrocytic, ↓ EPO, ↓ Marrow response; Levothyroxine → resolves in 2-3mo
+- Q: What is Hyperthyroidism of Hematology?
+  A: Mild Normocytic; ↑ Turnover; Carbimazole
+- Q: What is Adrenal Insufficiency of Hematology?
+  A: Normocytic; ↓ Androgens → ↓ EPO; Hydrocortisone
+- Q: What is Cushing's of Hematology?
+  A: Polycythaemia (common); Anaemia only if Fe deficiency
+- Q: What is Autoimmune Overlap of Hematology?
+  A: Pernicious Anaemia (B12) in Hypothyroid/Adrenal
+- Q: What is the mechanism of Hematology?
+  A: EPO ↓ or Marrow unresponsiveness
+- Q: What is the investigation of choice for Hematology?
+  A: TSH, T4, Cortisol, ACTH, Synacthen
+- Q: How is Hematology managed?
+  A: Treat Endocrine Disorder → Anaemia resolves
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Endocrine Anaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Anaemia Type — Normocytic/Normochromic (most common) or Macrocytic; Mechanism — ↓ EPO production (renal), ↓ Erythroid marrow responsiveness, ↓ O₂ demand; Associated — Pernicious Anaemia (Autoimmune overlap), Iron deficiency (menorrhagia), B12/Folate malabsorption. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

@@ -150,3 +150,30 @@ flowchart TD
     B -->|Mild Transient| C[Monitor, Supportive]
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Hepatology in Special Situations" — Ch 23: Hepatology.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Hepatology in Special Situations?
+  A: | Test | Purpose | Abnormal → Action |
+- Q: What is CPET (VO2 max) of Hepatology in Special Situations?
+  A: Major Hepatic Resection, Transplant
+- Q: What is Echocardiography of Hepatology in Special Situations?
+  A: All Major Surgery (Diastolic Dysfunction, PoPH)
+- Q: What is ABG / PFTs of Hepatology in Special Situations?
+  A: If COPD/Pulmonary Disease Suspected
+- Q: What is CPET (VO2 max) of Hepatology in Special Situations?
+  A: Major Hepatic Resection, Transplant
+- Q: What is Echocardiography of Hepatology in Special Situations?
+  A: All Major Surgery (Diastolic Dysfunction, PoPH)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology in Special Situations?**
+   A. **| Test | Purpose | Abnormal → Action |**
+   B. An unrelated condition not matching the clinical picture of Hepatology in Special Situations
+   C. A complication seen late in the disease course of Hepatology in Special Situations
+   D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
+

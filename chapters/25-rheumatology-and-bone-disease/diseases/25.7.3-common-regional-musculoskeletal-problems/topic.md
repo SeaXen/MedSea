@@ -494,3 +494,196 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[../Soft Tissue Rheumatism and Chronic Pain Syndromes/Fibromyalgia|Fibromyalgia]] · [[../Soft Tissue Rheumatism and Chronic Pain Syndromes/Chronic widespread pain|Chronic widespread pain]]
+---
+
+> Auto-generated study sections for "Osteoarthritis and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (85 generated)
+
+- Q: What is the definition of Osteoarthritis and Related Disorders?
+  A: Group of regional musculoskeletal disorders — predominantly OA, soft tissue, and referred pain — affecting specific joints/anatomical sites
+- Q: What is the epidemiology of Osteoarthritis and Related Disorders?
+  A: Up to 30-50% of adults ≥50 have symptomatic regional MSK pain; knee OA in 10-15% of >60y
+- Q: What is Common sites of Osteoarthritis and Related Disorders?
+  A: Knee (most common symptomatic OA), hand (most common radiographic OA), hip, spine, 1st CMC, shoulder, foot
+- Q: What causes Osteoarthritis and Related Disorders?
+  A: Age, female sex (hand/knee), obesity (knee), prior trauma (post-traumatic OA), occupational (kneeling, lifting), genetics (hand nodal OA: strong familial)
+- Q: What is Impact of Osteoarthritis and Related Disorders?
+  A: Leading cause of years lived with disability (YLD) globally; 2nd only to back pain in MSK burden
+- Q: What is Heberden's nodes of Osteoarthritis and Related Disorders?
+  A: DIP bony swellings (osteophytes); strong familial (3×); F > M 10:1; onset 40-60y
+- Q: What is Bouchard's nodes of Osteoarthritis and Related Disorders?
+  A: PIP bony swellings; less common than Heberden's; often co-occur
+- Q: What is 1st CMC squaring of Osteoarthritis and Related Disorders?
+  A: Thumb base (trapeziometacarpal); pinch weakness; "grind test" positive
+- Q: What is Functional of Osteoarthritis and Related Disorders?
+  A: Loss of grip, fine pinch, key pinch; correlates with radiographic severity
+- Q: What is Disease course of Osteoarthritis and Related Disorders?
+  A: Often burns out with stable functional impairment after initial progression
+- Q: What is Demographics of Osteoarthritis and Related Disorders?
+  A: Postmenopausal women; 40-65y peak
+- Q: What is Pattern of Osteoarthritis and Related Disorders?
+  A: DIP > PIP; bilateral, often symmetric
+- Q: What is Imaging of Osteoarthritis and Related Disorders?
+  A: "Gull-wing" / "saw-tooth" central erosions + marginal osteophytes (subchondral collapse → gives central erosion appearance)
+- Q: What is Inflammation of Osteoarthritis and Related Disorders?
+  A: Acute flares with red, hot, swollen IP joints; can mimic RA/psoriatic
+- Q: What is Serology of Osteoarthritis and Related Disorders?
+  A: RF/CCP negative; ESR/CRP mildly elevated in flares
+- Q: What is the prognosis of Osteoarthritis and Related Disorders?
+  A: Worse functional outcome than nodal OA; ~15% progress to ankylosis
+- Q: What is Joint space narrowing of Osteoarthritis and Related Disorders?
+  A: Superolateral (most common pattern); superomedial and medial patterns exist
+- Q: What is Subchondral sclerosis of Osteoarthritis and Related Disorders?
+  A: Dense white line below cartilage
+- Q: What is Subchondral cysts of Osteoarthritis and Related Disorders?
+  A: Geodes, often multiple
+- Q: What is Osteophytes of Osteoarthritis and Related Disorders?
+  A: Marginal (lateral acetabular, femoral head)
+- Q: What is Femoral head migration of Osteoarthritis and Related Disorders?
+  A: Superolateral (most common), axial, medial (Protrusio — suggests other cause)
+- Q: What is the epidemiology of Osteoarthritis and Related Disorders?
+  A: >50% asymptomatic >40y on imaging; 10% symptomatic
+- Q: What is Pathology of Osteoarthritis and Related Disorders?
+  A: Disc degeneration + facet joint OA + osteophytes + ligamentum flavum hypertrophy
+- Q: What are the clinical features of Osteoarthritis and Related Disorders?
+  A: Neck pain, occipital headache, radiculopathy (arm pain/paresthesia), myelopathy (cord compression)
+- Q: What is Levels of Osteoarthritis and Related Disorders?
+  A: C5-6 (most common), C6-7, C4-5
+- Q: What is the epidemiology of Osteoarthritis and Related Disorders?
+  A: 75% of adults have lumbar disc degeneration on MRI; 5-10% symptomatic radiculopathy
+- Q: What is Pathology of Osteoarthritis and Related Disorders?
+  A: Disc desiccation + annular tears + facet OA + ligamentum flavum hypertrophy → stenosis
+- Q: What is Most common levels of Osteoarthritis and Related Disorders?
+  A: L4-5, L5-S1 (90% of disc herniations)
+- Q: What is the epidemiology of Osteoarthritis and Related Disorders?
+  A: F > M 3:1, 40-60y peak; diabetes (5× risk), thyroid disease, post-stroke, post-MI
+- Q: What is Phases of Osteoarthritis and Related Disorders?
+  A: Painful freezing (2-9mo) → adhesive (4-12mo) → resolution (5-24mo); total 12-36mo
+- Q: What is Exam of Osteoarthritis and Related Disorders?
+  A: Global restriction: active = passive, external rotation most limited, abduction limited
+- Q: What is Imaging of Osteoarthritis and Related Disorders?
+  A: Plain X-ray normal; MRI shows capsular thickening, no rotator cuff tear
+- Q: How is Osteoarthritis and Related Disorders managed?
+  A: Analgesia, intra-articular steroid (early), hydrodilatation, gentle mobilisation; avoid arthrolysis unless refractory
+- Q: What is X-ray (weight-bearing for knee, AP pelvis for hip) of Osteoarthritis and Related Disorders?
+  A: Diagnostic (OA features)
+- Q: What is FBC, ESR, CRP of Osteoarthritis and Related Disorders?
+  A: Only if inflammatory features (red flags); not for routine primary OA
+- Q: What is MRI of Osteoarthritis and Related Disorders?
+  A: Suspected avascular necrosis, stress fracture, labral tear, soft tissue mass, tumour; red flags
+- Q: What is Ultrasound of Osteoarthritis and Related Disorders?
+  A: Effusion, bursitis, tendon pathology, guided injection
+- Q: What is Joint aspiration of Osteoarthritis and Related Disorders?
+  A: Effusion + red flag (septic, crystal); not routine
+- Q: What is Autoantibodies (RF, anti-CCP, ANA) of Osteoarthritis and Related Disorders?
+  A: Only if inflammatory polyarthritis suspected; NOT for nodal OA
+- Q: What is Bone densitometry (DEXA) of Osteoarthritis and Related Disorders?
+  A: Osteoporosis risk (postmenopausal women, men >70, fragility fracture history)
+- Q: What is Heberden's nodes of Osteoarthritis and Related Disorders?
+  A: DIP bony swellings (osteophytes); strong familial (3×); F > M 10:1; onset 40-60y
+- Q: What is Bouchard's nodes of Osteoarthritis and Related Disorders?
+  A: PIP bony swellings; less common than Heberden's; often co-occur
+- Q: What is 1st CMC squaring of Osteoarthritis and Related Disorders?
+  A: Thumb base (trapeziometacarpal); pinch weakness; "grind test" positive
+- Q: What is Functional of Osteoarthritis and Related Disorders?
+  A: Loss of grip, fine pinch, key pinch; correlates with radiographic severity
+- Q: What is Demographics of Osteoarthritis and Related Disorders?
+  A: Postmenopausal women; 40-65y peak
+- Q: What is Pattern of Osteoarthritis and Related Disorders?
+  A: DIP > PIP; bilateral, often symmetric
+- Q: What is Imaging of Osteoarthritis and Related Disorders?
+  A: "Gull-wing" / "saw-tooth" central erosions + marginal osteophytes (subchondral collapse → gives central erosion appearance)
+- Q: What is Inflammation of Osteoarthritis and Related Disorders?
+  A: Acute flares with red, hot, swollen IP joints; can mimic RA/psoriatic
+- Q: What is Serology of Osteoarthritis and Related Disorders?
+  A: RF/CCP negative; ESR/CRP mildly elevated in flares
+- Q: What is Joint space narrowing of Osteoarthritis and Related Disorders?
+  A: Superolateral (most common pattern); superomedial and medial patterns exist
+- Q: What is Subchondral sclerosis of Osteoarthritis and Related Disorders?
+  A: Dense white line below cartilage
+- Q: What is Subchondral cysts of Osteoarthritis and Related Disorders?
+  A: Geodes, often multiple
+- Q: What is Osteophytes of Osteoarthritis and Related Disorders?
+  A: Marginal (lateral acetabular, femoral head)
+- Q: What is the epidemiology of Osteoarthritis and Related Disorders?
+  A: >50% asymptomatic >40y on imaging; 10% symptomatic
+- Q: What is Pathology of Osteoarthritis and Related Disorders?
+  A: Disc degeneration + facet joint OA + osteophytes + ligamentum flavum hypertrophy
+- Q: What are the clinical features of Osteoarthritis and Related Disorders?
+  A: Neck pain, occipital headache, radiculopathy (arm pain/paresthesia), myelopathy (cord compression)
+- Q: What is Levels of Osteoarthritis and Related Disorders?
+  A: C5-6 (most common), C6-7, C4-5
+- Q: What is the epidemiology of Osteoarthritis and Related Disorders?
+  A: 75% of adults have lumbar disc degeneration on MRI; 5-10% symptomatic radiculopathy
+- Q: What is Pathology of Osteoarthritis and Related Disorders?
+  A: Disc desiccation + annular tears + facet OA + ligamentum flavum hypertrophy → stenosis
+- Q: What is Most common levels of Osteoarthritis and Related Disorders?
+  A: L4-5, L5-S1 (90% of disc herniations)
+- Q: What is the epidemiology of Osteoarthritis and Related Disorders?
+  A: F > M 3:1, 40-60y peak; diabetes (5× risk), thyroid disease, post-stroke, post-MI
+- Q: What is Phases of Osteoarthritis and Related Disorders?
+  A: Painful freezing (2-9mo) → adhesive (4-12mo) → resolution (5-24mo); total 12-36mo
+- Q: What is Exam of Osteoarthritis and Related Disorders?
+  A: Global restriction: active = passive, external rotation most limited, abduction limited
+- Q: What is Imaging of Osteoarthritis and Related Disorders?
+  A: Plain X-ray normal; MRI shows capsular thickening, no rotator cuff tear
+- Q: How is Osteoarthritis and Related Disorders managed?
+  A: Analgesia, intra-articular steroid (early), hydrodilatation, gentle mobilisation; avoid arthrolysis unless refractory
+- Q: What is X-ray (weight-bearing for knee, AP pelvis for hip) of Osteoarthritis and Related Disorders?
+  A: Diagnostic (OA features)
+- Q: What is FBC, ESR, CRP of Osteoarthritis and Related Disorders?
+  A: Only if inflammatory features (red flags); not for routine primary OA
+- Q: What is MRI of Osteoarthritis and Related Disorders?
+  A: Suspected avascular necrosis, stress fracture, labral tear, soft tissue mass, tumour; red flags
+- Q: What is Ultrasound of Osteoarthritis and Related Disorders?
+  A: Effusion, bursitis, tendon pathology, guided injection
+- Q: What is Joint aspiration of Osteoarthritis and Related Disorders?
+  A: Effusion + red flag (septic, crystal); not routine
+- Q: What is Autoantibodies (RF, anti-CCP, ANA) of Osteoarthritis and Related Disorders?
+  A: Only if inflammatory polyarthritis suspected; NOT for nodal OA
+- Q: What is Bone densitometry (DEXA) of Osteoarthritis and Related Disorders?
+  A: Osteoporosis risk (postmenopausal women, men >70, fragility fracture history)
+- Q: What is Nodal OA of Osteoarthritis and Related Disorders?
+  A: DIP = Heberden's, PIP = Bouchard's, 1st CMC = squaring; strong familial (especially in women)
+- Q: What is Erosive OA of Osteoarthritis and Related Disorders?
+  A: Postmenopausal women, DIP/PIP, gull-wing/saw-tooth erosions, inflammatory flares, RF/CCP negative
+- Q: What is Knee OA of Osteoarthritis and Related Disorders?
+  A: Medial > lateral compartment; varus deformity; Baker's cyst possible; referred hip pain must be excluded
+- Q: What is Hip OA of Osteoarthritis and Related Disorders?
+  A: Groin pain (most specific), limited internal rotation (earliest sign), superolateral migration
+- Q: What is Lumbar radiculopathy of Osteoarthritis and Related Disorders?
+  A: L4-5/L5-S1 most common; L5 = big toe/ankle dorsi; S1 = lateral foot/plantar
+- Q: What is Spinal stenosis of Osteoarthritis and Related Disorders?
+  A: Neurogenic claudication: pain on standing/walking, relieved by flexion (shopping cart sign)
+- Q: What is Cauda equina of Osteoarthritis and Related Disorders?
+  A: Saddle anaesthesia + bladder/bowel dysfunction → urgent MRI + surgery
+- Q: What is Cervical myelopathy of Osteoarthritis and Related Disorders?
+  A: Gait disturbance, clumsy hands, urinary symptoms; Hoffmann's sign; urgent MRI + surgery
+- Q: What is Mechanical vs inflammatory back pain of Osteoarthritis and Related Disorders?
+  A: Inflammatory: <45, insidious, >30 min stiffness, better with exercise, night pain
+- Q: What is Frozen shoulder of Osteoarthritis and Related Disorders?
+  A: F:M 3:1, 40-60y, diabetes association (5×), ER most limited, self-limiting 12-36mo
+- Q: What is Plantar fasciitis of Osteoarthritis and Related Disorders?
+  A: Worst first steps in morning, tenderness at medial calcaneal tubercle; stretching first-line
+- Q: What is Kellgren-Lawrence of Osteoarthritis and Related Disorders?
+  A: X-ray OA grading 0-4 (osteophytes → JSN → sclerosis → deformity)
+- Q: How is Osteoarthritis and Related Disorders managed?
+  A: Education + exercise + weight loss → topical NSAID → oral NSAID + PPI → IA steroid → surgery
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Osteoarthritis and Related Disorders?**
+   A. **Common regional MSK problems are the most frequent cause of rheumatology referrals.**
+   B. An unrelated condition not matching the clinical picture of Osteoarthritis and Related Disorders
+   C. A complication seen late in the disease course of Osteoarthritis and Related Disorders
+   D. A condition that mimics Osteoarthritis and Related Disorders but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Osteoarthritis and Related Disorders presents with: Definition — Group of regional musculoskeletal disorders — predominantly OA, soft tissue, and referred pain — affecting specific joints/anatomical sites; Prevalence — Up to 30-50% of adults ≥50 have symptomatic regional MSK pain; knee OA in 10-15% of >60y; Common sites — Knee (most common symptomatic OA), hand (most common radiographic OA), hip, spine, 1st CMC, shoulder, foot. What is the most likely diagnosis?
+   A. **Osteoarthritis and Related Disorders**
+   B. A condition that mimics Osteoarthritis and Related Disorders but is not the same entity
+   C. A complication of Osteoarthritis and Related Disorders rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Osteoarthritis and Related Disorders
+

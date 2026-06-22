@@ -347,3 +347,66 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Acute Leukaemias → Mixed Lineage Leukaemia
+- Q: What is Flow Cytometry of Hematology?
+  A: Biphenotypic: CD19+, CD10+ (B-lymphoid) + CD13+, CD33+, CD117+, MPO+ (Myeloid)
+- Q: What is KMT2A FISH of Hematology?
+  A: Positive (Break-apart probe)
+- Q: What is KMT2A PCR/NGS of Hematology?
+  A: Partner gene identified (AF4, AF9, ENL, AF10, ELL, etc.)
+- Q: What is Cytogenetics of Hematology?
+  A: t(4;11), t(9;11), t(11;19), t(10;11), etc.
+- Q: What is Cytochemistry of Hematology?
+  A: MPO+ (Myeloid), TdT+ (Lymphoid) - may be both
+- Q: What is Flow Cytometry of Hematology?
+  A: Biphenotypic: CD19+, CD10+ (B-lymphoid) + CD13+, CD33+, CD117+, MPO+ (Myeloid)
+- Q: What is KMT2A FISH of Hematology?
+  A: Positive (Break-apart probe)
+- Q: What is KMT2A PCR/NGS of Hematology?
+  A: Partner gene identified (AF4, AF9, ENL, AF10, ELL, etc.)
+- Q: What is Cytogenetics of Hematology?
+  A: t(4;11), t(9;11), t(11;19), t(10;11), etc.
+- Q: What is Cytochemistry of Hematology?
+  A: MPO+ (Myeloid), TdT+ (Lymphoid) - may be both
+- Q: What are the clinical features of Hematology?
+  A: KMT2A (MLL) rearrangement at 11q23
+- Q: What is Common Partners of Hematology?
+  A: AF4 (t(4;11)), AF9 (t(9;11)), ENL (t(11;19)), AF10 (t(10;11)), ELL
+- Q: What is the epidemiology of Hematology?
+  A: Infants <1yr: 70-80% of infant ALL/AML; Secondary post-topo II inhibitors
+- Q: How is Hematology classified?
+  A: Biphenotypic: CD19+/CD10+ + CD13+/CD33+/MPO+
+- Q: What is Lineage of Hematology?
+  A: MPAL (mixed phenotype) common; Can be B-ALL type or AML type
+- Q: What is the prognosis of Hematology?
+  A: Infants = Poor; t(4;11) = Worst partner; Adults = Adverse (ELN 2022)
+- Q: How is Hematology managed?
+  A: Lineage-directed: ALL-type vs AML-type backbone; HSCT in CR1
+- Q: What is Emerging of Hematology?
+  A: Menin inhibitors (Revumenib) - Target Menin-MLL interaction
+- Q: What is ELN 2022 of Hematology?
+  A: KMT2A-r = Adverse risk (regardless of blast % or lineage)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Acute Leukaemias → Mixed Lineage Leukaemia**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Defining Genetic Abnormality — KMT2A (MLL) rearrangement at 11q23; Partner Genes — >100 partners; Common: AF4 (AFF1), AF9 (MLLT3), ENL (MLLT1), AF10 (MLLT10), ELL, AF6, SEPTIN6; WHO/ICC Classification — Acute leukaemia with KMT2A rearrangement (Myeloid, Lymphoid, or Mixed phenotype). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

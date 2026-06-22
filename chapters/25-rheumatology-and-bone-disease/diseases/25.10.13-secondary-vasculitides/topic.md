@@ -340,3 +340,138 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Granulomatosis with polyangiitis (GPA)]] · [[Microscopic polyangiitis (MPA)]] · [[IgA vasculitis (Henoch-Schönlein purpura)]] · [[Polyarteritis nodosa (PAN)]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (56 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: Secondary vasculitis = vasculitis due to underlying disease (CTD, infection, malignancy, drugs).
+- Q: How is Vasculitis classified?
+  A: Small vessel (leukocytoclastic vasculitis)
+- Q: What is Clinical of Vasculitis?
+  A: Palpable purpura (lower limbs), livedo reticularis, digital infarcts, urticarial vasculitis
+- Q: What is Serology of Vasculitis?
+  A: ANA+, anti-dsDNA+, low C3/C4; ANCA usually negative
+- Q: What is Antiphospholipid of Vasculitis?
+  A: Co-existing APS → thrombosis
+- Q: How is Vasculitis managed?
+  A: Steroids + immunosuppression (MMF, AZA, CYC, RTX)
+- Q: What is Setting of Vasculitis?
+  A: Long-standing, severe, seropositive RA (RF high titre)
+- Q: What are the clinical features of Vasculitis?
+  A: Mononeuritis multiplex, digital infarcts, cutaneous ulcers, nailfold infarcts, episcleritis, scleritis
+- Q: What is Biopsy of Vasculitis?
+  A: Necrotising vasculitis of small/medium vessels
+- Q: How is Vasculitis managed?
+  A: Steroids + CYC or RTX (preferred now)
+- Q: What is the mechanism of Vasculitis?
+  A: Cryoglobulinaemic vasculitis (Type II/III)
+- Q: What is Clinical of Vasculitis?
+  A: Purpura, weakness, arthralgia, MPGN, peripheral neuropathy
+- Q: What is Serology of Vasculitis?
+  A: Anti-Ro/La+, cryoglobulins+, low C4
+- Q: How is Vasculitis managed?
+  A: Treat cryoglobulinaemia (see below)
+- Q: What is Rarity of Vasculitis?
+  A: Rare; ILD/PAH more common
+- Q: What are the clinical features of Vasculitis?
+  A: Digital ischaemia, calcinosis, telangiectasia
+- Q: What is the mechanism of Vasculitis?
+  A: HCV + IgMκ RF → Type II/III mixed cryoglobulins → immune complex deposition
+- Q: What is Clinical Triad of Vasculitis?
+  A: Palpable purpura + weakness/neuropathy + MPGN
+- Q: What is Lab of Vasculitis?
+  A: Cryoglobulins+, low C4, RF+, HCV RNA+
+- Q: How is Vasculitis classified?
+  A: Type II (monoclonal IgMκ + polyclonal IgG) — most common; Type III (polyclonal)
+- Q: How is Vasculitis managed?
+  A: DAA for HCV (cures both); Rituximab if severe/organ-threatening; CYC if life-threatening
+- Q: What is the mechanism of Vasculitis?
+  A: Immune complex (HBsAg-anti-HBs) in medium arteries
+- Q: What is the epidemiology of Vasculitis?
+  A: Historically 30-50% PAN; now <10% with vaccination
+- Q: How is Vasculitis managed?
+  A: Antivirals (entecavir/tenofovir) + Plasmapheresis + Short steroids — AVOID CYC
+- Q: What is the mechanism of Vasculitis?
+  A: Immune complex (bacterial antigens)
+- Q: What is Signs of Vasculitis?
+  A: Janeway lesions, Osler nodes, Roth spots, splinter haemorrhages, GN
+- Q: How is Vasculitis managed?
+  A: Antibiotics (treat infection) — vasculitis resolves
+- Q: How is Vasculitis classified?
+  A: Small vessel (leukocytoclastic vasculitis)
+- Q: What is Clinical of Vasculitis?
+  A: Palpable purpura (lower limbs), livedo reticularis, digital infarcts, urticarial vasculitis
+- Q: What is Serology of Vasculitis?
+  A: ANA+, anti-dsDNA+, low C3/C4; ANCA usually negative
+- Q: What is Antiphospholipid of Vasculitis?
+  A: Co-existing APS → thrombosis
+- Q: What is Setting of Vasculitis?
+  A: Long-standing, severe, seropositive RA (RF high titre)
+- Q: What are the clinical features of Vasculitis?
+  A: Mononeuritis multiplex, digital infarcts, cutaneous ulcers, nailfold infarcts, episcleritis, scleritis
+- Q: What is Biopsy of Vasculitis?
+  A: Necrotising vasculitis of small/medium vessels
+- Q: What is the mechanism of Vasculitis?
+  A: Cryoglobulinaemic vasculitis (Type II/III)
+- Q: What is Clinical of Vasculitis?
+  A: Purpura, weakness, arthralgia, MPGN, peripheral neuropathy
+- Q: What is Serology of Vasculitis?
+  A: Anti-Ro/La+, cryoglobulins+, low C4
+- Q: What is Rarity of Vasculitis?
+  A: Rare; ILD/PAH more common
+- Q: What are the clinical features of Vasculitis?
+  A: Digital ischaemia, calcinosis, telangiectasia
+- Q: What is the mechanism of Vasculitis?
+  A: HCV + IgMκ RF → Type II/III mixed cryoglobulins → immune complex deposition
+- Q: What is Clinical Triad of Vasculitis?
+  A: Palpable purpura + weakness/neuropathy + MPGN
+- Q: What is Lab of Vasculitis?
+  A: Cryoglobulins+, low C4, RF+, HCV RNA+
+- Q: How is Vasculitis classified?
+  A: Type II (monoclonal IgMκ + polyclonal IgG) — most common; Type III (polyclonal)
+- Q: What is the mechanism of Vasculitis?
+  A: Immune complex (HBsAg-anti-HBs) in medium arteries
+- Q: What is the epidemiology of Vasculitis?
+  A: Historically 30-50% PAN; now <10% with vaccination
+- Q: What is the mechanism of Vasculitis?
+  A: Immune complex (bacterial antigens)
+- Q: What is Signs of Vasculitis?
+  A: Janeway lesions, Osler nodes, Roth spots, splinter haemorrhages, GN
+- Q: How is Vasculitis managed?
+  A: Antibiotics (treat infection) — vasculitis resolves
+- Q: What is HCV Cryoglobulinaemia of Vasculitis?
+  A: Type II/III, purpura + neuropathy + MPGN; DAA cures HCV + vasculitis; Rituximab if severe
+- Q: What is Drug-Induced of Vasculitis?
+  A: PTU (p-ANCA/MPO+), hydralazine, minocycline, levamisole-cocaine → STOP DRUG + steroids + immunosuppression
+- Q: What is RA Vasculitis of Vasculitis?
+  A: Severe RA + RF+ + mononeuritis multiplex, digital infarcts, ulcers → CYC/RTX + steroids
+- Q: What is SLE Vasculitis of Vasculitis?
+  A: Leukocytoclastic, small vessel; ANA/dsDNA+, low C3/C4, ANCA usually negative
+- Q: What is Hep B PAN of Vasculitis?
+  A: Antivirals + PLEX + short steroids — NO CYC
+- Q: How is Vasculitis classified?
+  A: Type I = monoclonal (lymphoproliferative); Type II/III = mixed (HCV, autoimmune)
+- Q: What is Levamisole-Cocaine of Vasculitis?
+  A: p-ANCA/MPO+, purpura, neutropenia, necrosis — stop cocaine + steroids + CYC/RTX
+- Q: How is Vasculitis managed?
+  A: Treat underlying cause: HCV → DAAs; Drug → stop + steroids; CTD → immunosuppression
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **Secondary vasculitis = vasculitis due to underlying disease (CTD, infection, malignancy, drugs).**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Connective Tissue Disease — SLE, RA, Sjögren's, SSc; Infection-Associated — HCV (cryoglobulinaemia), HBV (PAN), SBE, HIV; Malignancy-Associated — Paraneoplastic (haematologic > solid). What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

@@ -399,3 +399,78 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Systemic sclerosis (scleroderma)]] · [[Sjogren's syndrome]] · [[Mixed connective tissue disease (MCTD)]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: | Definition | Idiopathic inflammatory myopathy — proximal muscle weakness, no skin signs | PM + characteristic skin signs |
+- Q: What is Proximal Muscle Weakness of Autoimmune Rheumatic Diseases?
+  A: Symmetric, shoulders/hips > distal; difficulty rising from chair, climbing stairs, combing hair, lifting arms
+- Q: What is Dysphagia of Autoimmune Rheumatic Diseases?
+  A: Pharyngeal/oesophageal involvement (1/3) — aspiration risk
+- Q: What is Dysphonia of Autoimmune Rheumatic Diseases?
+  A: Laryngeal muscle weakness
+- Q: What is Interstitial Lung Disease (ILD) of Autoimmune Rheumatic Diseases?
+  A: 30-40% — NSIP pattern; anti-Jo1, anti-MDA5
+- Q: What is Arthralgia/Arthritis of Autoimmune Rheumatic Diseases?
+  A: Non-erosive, symmetric (hands, wrists)
+- Q: What is Raynaud's Phenomenon of Autoimmune Rheumatic Diseases?
+  A: 20-30% — associated with antisynthetase
+- Q: What is Constitutional of Autoimmune Rheumatic Diseases?
+  A: Fatigue, low-grade fever, weight loss
+- Q: What is Cardiac of Autoimmune Rheumatic Diseases?
+  A: Conduction defects, cardiomyopathy (rare)
+- Q: What is Proximal Muscle Weakness of Autoimmune Rheumatic Diseases?
+  A: Symmetric, shoulders/hips > distal; difficulty rising from chair, climbing stairs, combing hair, lifting arms
+- Q: What is Dysphagia of Autoimmune Rheumatic Diseases?
+  A: Pharyngeal/oesophageal involvement (1/3) — aspiration risk
+- Q: What is Dysphonia of Autoimmune Rheumatic Diseases?
+  A: Laryngeal muscle weakness
+- Q: What is Interstitial Lung Disease (ILD) of Autoimmune Rheumatic Diseases?
+  A: 30-40% — NSIP pattern; anti-Jo1, anti-MDA5
+- Q: What is Arthralgia/Arthritis of Autoimmune Rheumatic Diseases?
+  A: Non-erosive, symmetric (hands, wrists)
+- Q: What is Raynaud's Phenomenon of Autoimmune Rheumatic Diseases?
+  A: 20-30% — associated with antisynthetase
+- Q: What is Constitutional of Autoimmune Rheumatic Diseases?
+  A: Fatigue, low-grade fever, weight loss
+- Q: What is PM vs DM of Autoimmune Rheumatic Diseases?
+  A: DM = PM + skin signs (heliotrope, Gottron's, shawl/V, mechanic's hands)
+- Q: What is DM Skin Signs of Autoimmune Rheumatic Diseases?
+  A: Heliotrope (periorbital violaceous), Gottron's (knuckles), Shawl/V-sign, Mechanic's hands (antisynthetase)
+- Q: What is Antisynthetase (Jo1) of Autoimmune Rheumatic Diseases?
+  A: Myositis + ILD + Mechanic's Hands + Raynaud's + Arthritis + Fever
+- Q: What is Cancer Association of Autoimmune Rheumatic Diseases?
+  A: DM > PM; age >40; Anti-TIF1γ (strongest), Anti-NXP2 → CT CAP, mammo, colonoscopy, gynae, PSA
+- Q: What is Anti-MDA5 of Autoimmune Rheumatic Diseases?
+  A: Clinically amyopathic DM + Rapid ILD — high mortality; early tacrolimus/RTX/IVIG
+- Q: What is Anti-HMGCR of Autoimmune Rheumatic Diseases?
+  A: Statin-associated IMNM — high CK, necrotizing biopsy; stop statin + immunosuppress
+- Q: What is IBM of Autoimmune Rheumatic Diseases?
+  A: Elderly M, asymmetric quads + finger flexors, rimmed vacuoles, refractory
+- Q: What is the investigation of choice for Autoimmune Rheumatic Diseases?
+  A: CK (screening), EMG (myopathic), MRI (oedema), Biopsy (gold standard), Autoantibody panel
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: Steroids 1mg/kg → Steroid-sparing (MMF 1st for ILD) → IVIG/RTX refractory
+- Q: What is Malignancy Screen (DM >40) of Autoimmune Rheumatic Diseases?
+  A: CT CAP, Mammo, Colonoscopy, Gynae, PSA at Dx + annually ×3-5yr
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **| Definition | Idiopathic inflammatory myopathy — proximal muscle weakness, no skin signs | PM + characteristic skin signs |**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: Definition — Idiopathic inflammatory myopathy — proximal muscle weakness, no skin signs; Peak Onset — 40-60 years; Sex Ratio — F > M (2:1). What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

@@ -477,3 +477,92 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Plasma Cell Disorders → Multiple Myeloma
+- Q: What is Mobilisation of Hematology?
+  A: G-CSF 10 µg/kg/day ± Plerixafor 240 µg/kg (if poor mobiliser)
+- Q: What is Conditioning of Hematology?
+  A: Melphalan 200 mg/m² (Mel 200) single dose
+- Q: What is Timing of Hematology?
+  A: After 4 cycles induction (deeper response → better PFS)
+- Q: What is Tandem Transplant of Hematology?
+  A: Not routinely recommended (STaMINA, EMN02/HO95: no OS benefit)
+- Q: What is Post-HSCT Assessment of Hematology?
+  A: Day 100: Response, MRD (NGS/Flow)
+- Q: What is Drug Choice of Hematology?
+  A: Bortezomib-based (no dose adjust); Avoid Lenalidomide if eGFR <30 (dose adjust); Carfilzomib (no dose adjust)
+- Q: What is Hydration of Hematology?
+  A: 3L/day IV/oral if possible
+- Q: What is Avoid of Hematology?
+  A: NSAIDs, IV contrast (if possible), aminoglycosides, high-dose bisphosphonates
+- Q: What is Dialysis of Hematology?
+  A: Early if indicated; High-cutoff dialysis for FLC removal (e.g., Myers cocktail)
+- Q: What is Plasma Exchange of Hematology?
+  A: Not routinely recommended (MYRE trial: no benefit)
+- Q: What is Mobilisation of Hematology?
+  A: G-CSF 10 µg/kg/day ± Plerixafor 240 µg/kg (if poor mobiliser)
+- Q: What is Conditioning of Hematology?
+  A: Melphalan 200 mg/m² (Mel 200) single dose
+- Q: What is Timing of Hematology?
+  A: After 4 cycles induction (deeper response → better PFS)
+- Q: What is Tandem Transplant of Hematology?
+  A: Not routinely recommended (STaMINA, EMN02/HO95: no OS benefit)
+- Q: What is Post-HSCT Assessment of Hematology?
+  A: Day 100: Response, MRD (NGS/Flow)
+- Q: What is Drug Choice of Hematology?
+  A: Bortezomib-based (no dose adjust); Avoid Lenalidomide if eGFR <30 (dose adjust); Carfilzomib (no dose adjust)
+- Q: What is Hydration of Hematology?
+  A: 3L/day IV/oral if possible
+- Q: What is Avoid of Hematology?
+  A: NSAIDs, IV contrast (if possible), aminoglycosides, high-dose bisphosphonates
+- Q: What is Dialysis of Hematology?
+  A: Early if indicated; High-cutoff dialysis for FLC removal (e.g., Myers cocktail)
+- Q: What is the investigation of choice for Hematology?
+  A: ≥10% Clonal BMPC + ≥1 MDE (SLiM/CRAB)
+- Q: What is SLiM of Hematology?
+  A: ≥60% BMPC, FLC ratio ≥100, Lytic lesion (CT/PET)
+- Q: What is CRAB of Hematology?
+  A: Ca >2.75, Renal Cr>177, Anaemia Hb<10, Bone lytic lesions
+- Q: What is R-ISS of Hematology?
+  A: ISS + FISH (del17p, t(4;14), t(14;16)) + LDH
+- Q: What is Imaging of Hematology?
+  A: WBLD-CT or PET-CT (not skeletal survey)
+- Q: What is TE Induction of Hematology?
+  A: Dara-VRd (4 cycles) → Auto-HSCT (Mel 200) → Len maintenance
+- Q: What is TIE Induction of Hematology?
+  A: Dara-Rd (preferred) or VRd-lite
+- Q: What is Renal Failure of Hematology?
+  A: Bortezomib-based (no dose adjust); Avoid lenalidomide/NSAIDs
+- Q: What is Bone Disease of Hematology?
+  A: Zoledronic acid 4mg monthly × 1-2yr or Denosumab 120mg SC qmo
+- Q: What is Maintenance of Hematology?
+  A: Lenalidomide until progression post-ASCT
+- Q: What is MRD of Hematology?
+  A: NGS 10⁻⁵-10⁻⁶ (gold standard); MRD-neg = best prognosis
+- Q: What is Venetoclax of Hematology?
+  A: Only if t(11;14)
+- Q: What is Relapse of Hematology?
+  A: Dara-VRd, Dara-Kd, CAR-T, BiTE, BCMA-ADC per refractoriness
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Plasma Cell Disorders → Multiple Myeloma**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: 1. Clonal BM plasma cells ≥10% (or biopsy-proven plasmacytoma); 2. ≥1 Myeloma-Defining Event (MDE):; Category — MDE (SLiM). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

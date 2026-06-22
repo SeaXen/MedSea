@@ -150,3 +150,28 @@ By the end of this note you should be able to:
 
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Palliative Care" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Palliative Care?
+  A: Ethical & Legal = Core Palliative Care Competency — Advance Care Planning (ACP), DNACPR, ReSPECT; Dying Patient Care (Last Days/Hours): Recognise Dying, Comfort Measures, Syringe Drivers, Anticipatory Prescribing; Withdrawal of Treatment; Organ Donation; Bereavement Support; Mental Capacity Act, Best Interests, Deprivation of Liberty Safeguards (DoLS)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Palliative Care?**
+   A. **Ethical & Legal = Core Palliative Care Competency — Advance Care Planning (ACP), DNACPR, ReSPECT; Dying Patient Care (Last Days/Hours): Recognise Dying, Comfort Measures, Syringe Drivers, Anticipatory**
+   B. An unrelated condition not matching the clinical picture of Palliative Care
+   C. A complication seen late in the disease course of Palliative Care
+   D. A condition that mimics Palliative Care but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Palliative Care presents with: Goals of Care Discussion — Explore Values, Preferences, Priorities — What Matters Most?; Treatment Escalation Plan — DNACPR, ReSPECT, Ceiling of Care; Preferred Place of Care/Death — Home, Hospice, Hospital, Care Home. What is the most likely diagnosis?
+   A. **Palliative Care**
+   B. A condition that mimics Palliative Care but is not the same entity
+   C. A complication of Palliative Care rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Palliative Care
+

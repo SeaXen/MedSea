@@ -306,3 +306,50 @@ mindmap
 - [[Hepatology in Special Situations/Perioperative liver assessment|Perioperative Assessment]]
 - [[Hepatology in Special Situations/Liver disease in critical illness|Critical Illness]]
 - [[Drug-Induced Liver Injury/Classification and patterns|DILI Classification]]
+---
+
+> Auto-generated study sections for "Hepatology in Special Situations" — Ch 23: Hepatology.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Hepatology in Special Situations?
+  A: | Parameter | Change | Clinical Implication |
+- Q: What is Amiodarone of Hepatology in Special Situations?
+  A: Avoid First-Line (High Hepatotoxicity, Long t½)
+- Q: What is Methotrexate of Hepatology in Special Situations?
+  A: Contraindicated if Significant Liver Disease
+- Q: What is Valproate of Hepatology in Special Situations?
+  A: Caution (Hyperammonaemia, Hepatotoxicity)
+- Q: What is the dose of Hepatology in Special Situations?
+  A: Max 3g/day (vs 4g Standard)
+- Q: What is Nitrofurantoin of Hepatology in Special Situations?
+  A: Avoid Long-Term (Chronic Hepatitis Risk)
+- Q: What is Isoniazid of Hepatology in Special Situations?
+  A: Age >35 → ↑ Hepatotoxicity Risk; Add Pyridoxine
+- Q: What is Amiodarone of Hepatology in Special Situations?
+  A: Avoid First-Line (High Hepatotoxicity, Long t½)
+- Q: What is Methotrexate of Hepatology in Special Situations?
+  A: Contraindicated if Significant Liver Disease
+- Q: What is Valproate of Hepatology in Special Situations?
+  A: Caution (Hyperammonaemia, Hepatotoxicity)
+- Q: What is the dose of Hepatology in Special Situations?
+  A: Max 3g/day (vs 4g Standard)
+- Q: What is Nitrofurantoin of Hepatology in Special Situations?
+  A: Avoid Long-Term (Chronic Hepatitis Risk)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hepatology in Special Situations?**
+   A. **| Parameter | Change | Clinical Implication |**
+   B. An unrelated condition not matching the clinical picture of Hepatology in Special Situations
+   C. A complication seen late in the disease course of Hepatology in Special Situations
+   D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hepatology in Special Situations presents with: Condition — Typical Presentation; Acute Viral Hepatitis — Jaundice, Fever, RUQ Pain; Acute Cholecystitis — RUQ Pain, Fever, Murphy's Sign. What is the most likely diagnosis?
+   A. **Hepatology in Special Situations**
+   B. A condition that mimics Hepatology in Special Situations but is not the same entity
+   C. A complication of Hepatology in Special Situations rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hepatology in Special Situations
+

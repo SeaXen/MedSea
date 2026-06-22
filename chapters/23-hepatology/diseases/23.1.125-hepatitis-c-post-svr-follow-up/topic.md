@@ -264,3 +264,28 @@ mindmap
 - [[Viral Hepatitis/HCV DAA Regimens by Genotype & Cirrhosis|HCV DAA Regimens]]
 - [[Liver Tumours/HCC (Hepatocellular Carcinoma)|HCC]]
 - [[Viral Hepatitis/Hepatitis C decompensated cirrhosis management|HCV Decompensated]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: | SVR12 (Week 12 Post-Tx) | HCV RNA Quantitative (Primary Endpoint) | If Undetectable = CURE; If Detectable → Treatment Failure |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **| SVR12 (Week 12 Post-Tx) | HCV RNA Quantitative (Primary Endpoint) | If Undetectable = CURE; If Detectable → Treatment Failure |**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Viral Hepatitis presents with: SVR12 — HCV RNA Undetectable 12 Weeks Post-Treatment; SVR24 — HCV RNA Undetectable 24 Weeks Post-Treatment; FCPS/MRCP: SVR12 = CURE — No Need for SVR24 in DAA Era. What is the most likely diagnosis?
+   A. **Viral Hepatitis**
+   B. A condition that mimics Viral Hepatitis but is not the same entity
+   C. A complication of Viral Hepatitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Viral Hepatitis
+

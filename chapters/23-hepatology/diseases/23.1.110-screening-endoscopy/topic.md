@@ -259,3 +259,28 @@ mindmap
 - [[Portal Hypertension and Complications/Varices|Varices Overview]]
 - [[Portal Hypertension and Complications/Acute variceal bleeding management|Acute Bleed]]
 - [[Portal Hypertension and Complications/Gastric varices (glue injection)|Gastric Varices]]
+---
+
+> Auto-generated study sections for "Portal Hypertension and Complications" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Portal Hypertension and Complications?
+  A: | Grade | Description | Size | Risk of Bleeding |
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Portal Hypertension and Complications?**
+   A. **| Grade | Description | Size | Risk of Bleeding |**
+   B. An unrelated condition not matching the clinical picture of Portal Hypertension and Complications
+   C. A complication seen late in the disease course of Portal Hypertension and Complications
+   D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Portal Hypertension and Complications presents with: Grade 1 (Small) — Straight, <5mm, flatten on insufflation; Grade 2 (Medium) — Tortuous, 5-10mm, <1/3 lumen; Grade 3 (Large) — Tortuous, >10mm, >1/3 lumen. What is the most likely diagnosis?
+   A. **Portal Hypertension and Complications**
+   B. A condition that mimics Portal Hypertension and Complications but is not the same entity
+   C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
+

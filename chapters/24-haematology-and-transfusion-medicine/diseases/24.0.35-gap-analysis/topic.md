@@ -187,3 +187,20 @@
 **Option C: Stop at current 48 files** - 48% coverage, focus on other chapters
 
 Given the user asked "fully complete those", **Option A or B** is appropriate.
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Hematology?
+  A: # GAP ANALYSIS: Davidson Ch 25 Hierarchy vs Actual Files
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **# GAP ANALYSIS: Davidson Ch 25 Hierarchy vs Actual Files**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

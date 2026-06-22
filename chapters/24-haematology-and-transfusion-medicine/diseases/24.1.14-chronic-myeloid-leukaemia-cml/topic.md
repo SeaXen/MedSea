@@ -415,3 +415,62 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (18 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Chronic Leukaemias → CML
+- Q: What is RT-qPCR BCR::ABL1 (IS) of Hematology?
+  A: Gold standard for diagnosis & monitoring (quantitative, IS calibrated)
+- Q: What is FISH of Hematology?
+  A: Rapid confirmation, detects cryptic translocations
+- Q: How is Hematology classified?
+  A: Detect Additional Chromosomal Abnormalities (ACA) – major route ACA, minor route ACA
+- Q: What is BCR::ABL1 Kinase Domain Sequencing of Hematology?
+  A: If AP/BC, TKI failure, or suboptimal response
+- Q: What is Risk Scores of Hematology?
+  A: Sokal (age, spleen, platelets, blasts), Hasford (adds eosinophils, basophils), ELTS (simplified: age, spleen, platelets)
+- Q: What is Deep Molecular Response (DMR) of Hematology?
+  A: MR4.5 (BCR::ABL1 ≤0.0032% IS) sustained ≥2 years (some protocols ≥3 years)
+- Q: What is Prior TKI Duration of Hematology?
+  A: ≥3 years on current TKI
+- Q: How is Hematology monitored?
+  A: Monthly RT-qPCR for 6mo, then q3mo (mandatory for early detection)
+- Q: What is Patient Factors of Hematology?
+  A: Motivated, adherent, understands risk of molecular relapse (~40-50%)
+- Q: What is RT-qPCR BCR::ABL1 (IS) of Hematology?
+  A: Gold standard for diagnosis & monitoring (quantitative, IS calibrated)
+- Q: What is FISH of Hematology?
+  A: Rapid confirmation, detects cryptic translocations
+- Q: How is Hematology classified?
+  A: Detect Additional Chromosomal Abnormalities (ACA) – major route ACA, minor route ACA
+- Q: What is BCR::ABL1 Kinase Domain Sequencing of Hematology?
+  A: If AP/BC, TKI failure, or suboptimal response
+- Q: What is Risk Scores of Hematology?
+  A: Sokal (age, spleen, platelets, blasts), Hasford (adds eosinophils, basophils), ELTS (simplified: age, spleen, platelets)
+- Q: What is Deep Molecular Response (DMR) of Hematology?
+  A: MR4.5 (BCR::ABL1 ≤0.0032% IS) sustained ≥2 years (some protocols ≥3 years)
+- Q: What is Prior TKI Duration of Hematology?
+  A: ≥3 years on current TKI
+- Q: How is Hematology monitored?
+  A: Monthly RT-qPCR for 6mo, then q3mo (mandatory for early detection)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Chronic Leukaemias → CML**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Driver — t(9;22)(q34;q11) → BCR::ABL1 fusion (Philadelphia chromosome); Isoforms — p210 (b2a2, b3a2) – classic CML; p190 (e1a2) – Ph+ ALL-like, more aggressive; WHO Classification — CML, BCR::ABL1-positive. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

@@ -361,3 +361,80 @@ mindmap
 - [[Anaemia and Red Cell Disorders/Vitamin B12 Deficiency Anaemia|B12 Deficiency]]
 - [[Anaemia and Red Cell Disorders/Megaloblastic Anaemia|Megaloblastic Anaemia Overview]]
 - [[Obstetrics/Neural Tube Defects|NTD Prevention]]
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (27 generated)
+
+- Q: What is the definition of Hematology?
+  A: Megaloblastic anaemia due to impaired DNA synthesis from folate deficiency
+- Q: What is the epidemiology of Hematology?
+  A: Common in pregnancy, alcoholism, malnutrition, malabsorption
+- Q: What is Daily Requirement of Hematology?
+  A: 400 µg/day (600 µg in pregnancy, 500 µg lactation)
+- Q: What is Body Stores of Hematology?
+  A: 5-10 mg (4-6 months supply) — shorter than B12
+- Q: What is Absorption of Hematology?
+  A: Proximal Jejunum (pH dependent, carrier-mediated)
+- Q: What is the mechanism of Hematology?
+  A: DHFR Inhibitor → Blocks Tetrahydrofolate Synthesis
+- Q: What is Rescue of Hematology?
+  A: Folinic Acid (Leucovorin) — 24h Post-MTX
+- Q: What is Folic Acid of Hematology?
+  A: 5 mg Weekly (24h Post-MTX) — Prevents Toxicity
+- Q: What is the mechanism of Hematology?
+  A: Poor Intake + Malabsorption + Hepatic Storage ↓
+- Q: What is MCV of Hematology?
+  A: Often >105 (Alcohol Direct Toxicity + Folate Def)
+- Q: How is Hematology managed?
+  A: Thiamine + Folate + Alcohol Cessation
+- Q: What is Requirement of Hematology?
+  A: 600 µg/day (Diet + Supplement)
+- Q: What is Supplement of Hematology?
+  A: 400 µg Daily (Pre-conception → 12 Weeks)
+- Q: What is High Risk (Previous NTD) of Hematology?
+  A: 5 mg Daily (Pre-conception → 12 Weeks)
+- Q: What is the mechanism of Hematology?
+  A: DHFR Inhibitor → Blocks Tetrahydrofolate Synthesis
+- Q: What is Rescue of Hematology?
+  A: Folinic Acid (Leucovorin) — 24h Post-MTX
+- Q: What is the mechanism of Hematology?
+  A: Poor Intake + Malabsorption + Hepatic Storage ↓
+- Q: What is MCV of Hematology?
+  A: Often >105 (Alcohol Direct Toxicity + Folate Def)
+- Q: How is Hematology managed?
+  A: Thiamine + Folate + Alcohol Cessation
+- Q: What is Key Differentiator of Hematology?
+  A: Neurological Signs = B12 ONLY; Folate = NO Neuro
+- Q: What is MMA of Hematology?
+  A: Normal in Folate Def (↑ in B12 Def)
+- Q: What is Homocysteine of Hematology?
+  A: Elevated in BOTH
+- Q: What is RBC Folate vs Serum of Hematology?
+  A: RBC Folate > Serum (Long-term Store)
+- Q: What is Pregnancy of Hematology?
+  A: 400 µg Pre-conception → 12 Weeks; High Risk = 5mg
+- Q: What is Methotrexate Rescue of Hematology?
+  A: Leucovorin (Folinic Acid) 24h Post-MTX
+- Q: What causes Hematology?
+  A: Methotrexate, Phenytoin, Trimethoprim, Sulfasalazine
+- Q: What are the complications of Hematology?
+  A: NTDs, Preterm, LBW — Prevented by Pre-conception Folate
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **## Aetiology: The "3 Ms" (Malabsorption, Malnutrition, Medication)**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Definition — Megaloblastic anaemia due to impaired DNA synthesis from folate deficiency; Prevalence — Common in pregnancy, alcoholism, malnutrition, malabsorption; Daily Requirement — 400 µg/day (600 µg in pregnancy, 500 µg lactation). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

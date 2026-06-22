@@ -232,3 +232,28 @@ mindmap
 - [[Viral Hepatitis/Hepatitis E|Hepatitis E]]
 - [[Viral Hepatitis/Hepatitis B Serology Interpretation|HBV Serology]]
 - [[Acute Liver Failure/Acute viral hepatitis|ALF: Viral Hepatitis]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: - Acute hepatocellular: ALT 1000-5000, AST slightly lower
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **- Acute hepatocellular: ALT 1000-5000, AST slightly lower**
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Jaundice and LFT Interpretation presents with: Relapsing HAV: 10-15% (prolonged cholestasis) — NOT chronic; Vaccination: Inactivated vaccine, 2 doses 6-12 months apart; Post-exposure: IgG (HNIG) within 2 weeks. What is the most likely diagnosis?
+   A. **Jaundice and LFT Interpretation**
+   B. A condition that mimics Jaundice and LFT Interpretation but is not the same entity
+   C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
+

@@ -291,3 +291,48 @@ mindmap
 - [[Acute Liver Failure/CLIF-C ACLF and ACLF grades|CLIF-C ACLF]]
 - [[Acute Liver Failure/N-acetylcysteine therapy|NAC Therapy]]
 - [[Acute Liver Failure/Liver transplant referral and timing|Transplant Referral]]
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: | Grade | Consciousness | Intellectual | Behaviour | Neurological |
+- Q: What is Factor V of Acute Liver Failure?
+  A: <20% (if <30y) or <30% (if ≥30y)
+- Q: What is AND of Acute Liver Failure?
+  A: HE Grade III/IV
+- Q: What is Encephalopathy Grading of Acute Liver Failure?
+  A: G1-2: No asterixis; G3-4: Asterixis present
+- Q: How is Acute Liver Failure monitored?
+  A: Hourly: Glucose, pH, Lactate, Encephalopathy; 2-4h: INR, Renal
+- Q: What is Hypoglycaemia of Acute Liver Failure?
+  A: Common — Hourly Glucose, IV Dextrose
+- Q: What is KCC Paracetamol of Acute Liver Failure?
+  A: pH<7.3 OR (PT>100s + Cr>300 + HE III/IV)
+- Q: What is KCC Non-PCM of Acute Liver Failure?
+  A: PT>100s OR 3 of 5 Minor Criteria
+- Q: What is Clichy Criteria of Acute Liver Failure?
+  A: Factor V <20% (<30y) / <30% (≥30y) + HE III/IV
+- Q: What is Transplant Referral of Acute Liver Failure?
+  A: KCC Met → Urgent Super-Urgent Listing
+- Q: What is Cerebral Oedema of Acute Liver Failure?
+  A: G3-4 Risk; ICP >20 → Mannitol/3% Saline
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **| Grade | Consciousness | Intellectual | Behaviour | Neurological |**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Acute Liver Failure presents with: A[Patient with Suspected ALF] --> B[History]; B --> C[Drug History: Paracetamol, Herbal, Anti-TB, Antibiotics, Alcohol]; B --> D[Risk Factors: Travel, Sexual, IVDU, Transfusion, Autoimmune]. What is the most likely diagnosis?
+   A. **Acute Liver Failure**
+   B. A condition that mimics Acute Liver Failure but is not the same entity
+   C. A complication of Acute Liver Failure rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Acute Liver Failure
+

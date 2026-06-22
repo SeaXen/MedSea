@@ -484,3 +484,60 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[../Bone Metabolic Diseases/Osteoporosis|Osteoporosis]] · [[../Bone Metabolic Diseases/Paget's disease of bone|Paget's disease]] · [[../Bone Metabolic Diseases/Osteomalacia and rickets|Osteomalacia]]
+---
+
+> Auto-generated study sections for "Clinical Approach to Musculoskeletal Disease" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Clinical Approach to Musculoskeletal Disease?
+  A: # Bone Structure & Remodelling and Joint Biology
+- Q: How is Clinical Approach to Musculoskeletal Disease classified?
+  A: Cortical 80% mass (Haversian), trabecular 20% mass, 80% surface (metabolically active)
+- Q: What is Bone cells of Clinical Approach to Musculoskeletal Disease?
+  A: Osteoclast (resorption, monocyte origin); osteoblast (formation, MSC origin); osteocyte (mechanosensor, sclerostin/RANKL)
+- Q: What is BMU of Clinical Approach to Musculoskeletal Disease?
+  A: Activation → Resorption (2-3wk) → Reversal → Formation (3-4mo) → Mineralisation → Quiescence
+- Q: What is RANKL of Clinical Approach to Musculoskeletal Disease?
+  A: From osteoblasts/osteocytes/T cells → osteoclastogenesis; OPG = decoy receptor
+- Q: What is Denosumab of Clinical Approach to Musculoskeletal Disease?
+  A: Anti-RANKL mAb → osteoclast inhibition; stopping causes rebound (need bisphosphonate cover)
+- Q: What is Wnt/sclerostin of Clinical Approach to Musculoskeletal Disease?
+  A: Wnt → bone formation; sclerostin (from osteocytes) blocks Wnt; mechanical loading ↓ sclerostin
+- Q: What is Romosozumab of Clinical Approach to Musculoskeletal Disease?
+  A: Anti-sclerostin → anabolic + anti-resorptive; boxed warning MACE
+- Q: What is PTH of Clinical Approach to Musculoskeletal Disease?
+  A: Continuous high = resorption; intermittent low = formation (teriparatide)
+- Q: What is Glucocorticoids of Clinical Approach to Musculoskeletal Disease?
+  A: Severe bone loss: ↓ osteoblast, ↑ osteoblast apoptosis, ↑ RANKL, ↓ Ca²⁺ absorption, ↓ sex hormones
+- Q: What is Articular cartilage of Clinical Approach to Musculoskeletal Disease?
+  A: Type II collagen + aggrecan + water (70-80%); chondrocytes <5%
+- Q: What is Cartilage degradation of Clinical Approach to Musculoskeletal Disease?
+  A: MMPs (collagen), aggrecanases (ADAMTS-4, -5) (aggrecan); no effective DMOAD yet
+- Q: What is Synovial fluid analysis of Clinical Approach to Musculoskeletal Disease?
+  A: Septic: WBC >50,000, PMN >75%, culture +ve; aspirate before antibiotics
+- Q: What is RA erosion of Clinical Approach to Musculoskeletal Disease?
+  A: Synovial cytokines (TNF, IL-1, IL-6) → RANKL on FLS + osteoblasts → osteoclast activation
+- Q: What is Pannus of Clinical Approach to Musculoskeletal Disease?
+  A: Invasive synovial tissue; FLS + macrophages + T cells + B cells; drives erosion in RA
+- Q: What is Mechanical vs inflammatory enthesitis of Clinical Approach to Musculoskeletal Disease?
+  A: SpA: insertional + bone oedema, IL-23/17; Mechanical: degenerative, eccentric exercise
+- Q: What is Bone loss in RA of Clinical Approach to Musculoskeletal Disease?
+  A: Inflammation + RANKL + ACPA; treat with DMARDs/biologics; denosumab reduces erosion
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Clinical Approach to Musculoskeletal Disease?**
+   A. **# Bone Structure & Remodelling and Joint Biology**
+   B. An unrelated condition not matching the clinical picture of Clinical Approach to Musculoskeletal Disease
+   C. A complication seen late in the disease course of Clinical Approach to Musculoskeletal Disease
+   D. A condition that mimics Clinical Approach to Musculoskeletal Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Clinical Approach to Musculoskeletal Disease presents with: Disease — Key Pathophysiology; Osteoporosis — ↑ RANKL, ↓ OPG, ↓ Wnt, ↓ osteoblast activity → bone resorption > formation; Osteomalacia — Defective mineralisation (↓ vitamin D, ↓ Ca/PO₄) → unmineralised osteoid. What is the most likely diagnosis?
+   A. **Clinical Approach to Musculoskeletal Disease**
+   B. A condition that mimics Clinical Approach to Musculoskeletal Disease but is not the same entity
+   C. A complication of Clinical Approach to Musculoskeletal Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Clinical Approach to Musculoskeletal Disease
+

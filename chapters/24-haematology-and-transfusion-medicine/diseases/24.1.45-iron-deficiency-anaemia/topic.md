@@ -358,3 +358,86 @@ mindmap
 - [[Anaemia and Red Cell Disorders/Thalassaemia|Thalassaemia]]
 - [[Bleeding and Thrombotic Disorders/Gastrointestinal Bleeding|GI Bleeding]]
 - [[Transfusion Medicine/Red Cell Transfusion|Red Cell Transfusion]]
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (30 generated)
+
+- Q: What is the definition of Hematology?
+  A: ## Aetiology: The "3 Ls" (Loss, Lack, Limited absorption)
+- Q: What is FBC + Film of Hematology?
+  A: Confirm microcytic hypochromic
+- Q: What is Ferritin of Hematology?
+  A: Diagnostic if <30
+- Q: What is Iron Studies of Hematology?
+  A: Iron, TIBC, TSAT, sTfR
+- Q: What is Coeliac Screen of Hematology?
+  A: TTG-IgA + Total IgA (all IDA)
+- Q: What is Faecal Occult Blood of Hematology?
+  A: If >50 or GI symptoms
+- Q: What is the dose of Hematology?
+  A: Elemental Iron 100-200 mg/day (e.g., Ferrous Fumarate 210mg = 65mg elemental)
+- Q: What is Frequency of Hematology?
+  A: Once daily (alternate day may improve absorption)
+- Q: What is Duration of Hematology?
+  A: 3 months after Hb normalisation (replete stores)
+- Q: What is Absorption Enhancers of Hematology?
+  A: Vitamin C (250mg), empty stomach
+- Q: What is Absorption Inhibitors of Hematology?
+  A: Tea, coffee, calcium, antacids, PPIs (take 2h apart)
+- Q: What is FBC + Film of Hematology?
+  A: Confirm microcytic hypochromic
+- Q: What is Ferritin of Hematology?
+  A: Diagnostic if <30
+- Q: What is Iron Studies of Hematology?
+  A: Iron, TIBC, TSAT, sTfR
+- Q: What is Coeliac Screen of Hematology?
+  A: TTG-IgA + Total IgA (all IDA)
+- Q: What is the dose of Hematology?
+  A: Elemental Iron 100-200 mg/day (e.g., Ferrous Fumarate 210mg = 65mg elemental)
+- Q: What is Frequency of Hematology?
+  A: Once daily (alternate day may improve absorption)
+- Q: What is Duration of Hematology?
+  A: 3 months after Hb normalisation (replete stores)
+- Q: What is Absorption Enhancers of Hematology?
+  A: Vitamin C (250mg), empty stomach
+- Q: What is Absorption Inhibitors of Hematology?
+  A: Tea, coffee, calcium, antacids, PPIs (take 2h apart)
+- Q: What is Most Common Anaemia of Hematology?
+  A: Iron Deficiency Anaemia (global)
+- Q: What is Diagnostic Triad of Hematology?
+  A: Ferritin <30, TSAT <16%, High RDW
+- Q: What is Ferritin Cut-off of Hematology?
+  A: <30 µg/L = Diagnostic (CRP <10)
+- Q: What is TSAT of Hematology?
+  A: <16% = Functional Iron Deficiency
+- Q: What is Mentzer Index of Hematology?
+  A: MCV/RBC <13 = Thalassaemia; >13 = IDA
+- Q: What is Oral Iron of Hematology?
+  A: 100-200mg elemental Fe daily; Alternate day dosing
+- Q: What is Hematology indicated for?
+  A: Intolerance, Malabsorption, Rapid correction needed
+- Q: What is Ganzoni Formula of Hematology?
+  A: Weight × (Target Hb - Actual Hb) × 2.4 + 500
+- Q: What is Response Target of Hematology?
+  A: Hb ↑20 g/L by Week 3; Hb normal by 6-8 weeks
+- Q: What is GI Workup of Hematology?
+  A: Men & Postmenopausal Women → Upper + Lower GI Endoscopy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **## Aetiology: The "3 Ls" (Loss, Lack, Limited absorption)**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Definition — Anaemia due to insufficient iron for haemoglobin synthesis; Prevalence — Most common anaemia worldwide (~30% global population); High-risk Groups — Women of reproductive age, children, elderly, vegetarians, blood donors. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

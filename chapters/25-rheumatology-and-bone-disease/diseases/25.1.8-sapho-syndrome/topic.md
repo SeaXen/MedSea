@@ -492,3 +492,80 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[Drugs in rheumatology]] · [[Investigations in rheumatology]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (27 generated)
+
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: SAPHO = Synovitis, Acne, Pustulosis, Hyperostosis, Osteitis — a rare but recognised chronic inflammatory disorder of bone + joints + skin.
+- Q: What is the epidemiology of Autoimmune Rheumatic Diseases?
+  A: Rare (<1/10,000); increasingly recognised
+- Q: What is Age of Autoimmune Rheumatic Diseases?
+  A: Bimodal: children (CRMO) + adults 30-50y
+- Q: What is Sex of Autoimmune Rheumatic Diseases?
+  A: F > M (slight); variable
+- Q: What is Geography of Autoimmune Rheumatic Diseases?
+  A: Worldwide; Japanese and Caucasian reported
+- Q: What is Trigger of Autoimmune Rheumatic Diseases?
+  A: Cutibacterium acnes (formerly Propionibacterium) — low-virulence skin organism
+- Q: What is Cutibacterium acnes of Autoimmune Rheumatic Diseases?
+  A: Low-virulence skin commensal; detected in bone biopsies (PCR+) despite sterile culture
+- Q: What is IL-1 / IL-23 / IL-17 axis of Autoimmune Rheumatic Diseases?
+  A: Similar to SpA; target of biologics
+- Q: What is Bone lesions of Autoimmune Rheumatic Diseases?
+  A: Sterile osteitis → hyperostosis → sclerosis
+- Q: What is Chronic relapsing of Autoimmune Rheumatic Diseases?
+  A: Flares over years; rarely progressive systemic disease
+- Q: What is Skin biopsy (PPP, severe acne) of Autoimmune Rheumatic Diseases?
+  A: Confirm skin diagnosis
+- Q: What is Bone biopsy of Autoimmune Rheumatic Diseases?
+  A: Exclude malignancy/infection; PCR for Cutibacterium acnes
+- Q: What is Blood cultures (if febrile) of Autoimmune Rheumatic Diseases?
+  A: Exclude subacute osteomyelitis
+- Q: What is HIV, syphilis serology of Autoimmune Rheumatic Diseases?
+  A: If clinical concern
+- Q: What is the epidemiology of Autoimmune Rheumatic Diseases?
+  A: Rare (<1/10,000); increasingly recognised
+- Q: What is Age of Autoimmune Rheumatic Diseases?
+  A: Bimodal: children (CRMO) + adults 30-50y
+- Q: What is Sex of Autoimmune Rheumatic Diseases?
+  A: F > M (slight); variable
+- Q: What is Geography of Autoimmune Rheumatic Diseases?
+  A: Worldwide; Japanese and Caucasian reported
+- Q: What is Trigger of Autoimmune Rheumatic Diseases?
+  A: Cutibacterium acnes (formerly Propionibacterium) — low-virulence skin organism
+- Q: What is Cutibacterium acnes of Autoimmune Rheumatic Diseases?
+  A: Low-virulence skin commensal; detected in bone biopsies (PCR+) despite sterile culture
+- Q: What is IL-1 / IL-23 / IL-17 axis of Autoimmune Rheumatic Diseases?
+  A: Similar to SpA; target of biologics
+- Q: What is Bone lesions of Autoimmune Rheumatic Diseases?
+  A: Sterile osteitis → hyperostosis → sclerosis
+- Q: What is Chronic relapsing of Autoimmune Rheumatic Diseases?
+  A: Flares over years; rarely progressive systemic disease
+- Q: What is Skin biopsy (PPP, severe acne) of Autoimmune Rheumatic Diseases?
+  A: Confirm skin diagnosis
+- Q: What is Bone biopsy of Autoimmune Rheumatic Diseases?
+  A: Exclude malignancy/infection; PCR for Cutibacterium acnes
+- Q: What is Blood cultures (if febrile) of Autoimmune Rheumatic Diseases?
+  A: Exclude subacute osteomyelitis
+- Q: What is HIV, syphilis serology of Autoimmune Rheumatic Diseases?
+  A: If clinical concern
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **SAPHO = Synovitis, Acne, Pustulosis, Hyperostosis, Osteitis — a rare but recognised chronic inflammatory disorder of bone + joints + skin.**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: SAPHO (full) — All components; CRMO (chronic recurrent multifocal osteomyelitis) — Predominantly children/adolescents; sterile osteomyelitis of long bones, clavicle, spine; CNO (chronic non-bacterial osteomyelitis) — Broader term including CRMO. What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

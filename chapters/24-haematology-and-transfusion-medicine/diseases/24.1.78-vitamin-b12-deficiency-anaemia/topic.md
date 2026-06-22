@@ -366,3 +366,120 @@ mindmap
 - [[Anaemia and Red Cell Disorders/Megaloblastic Anaemia|Megaloblastic Anaemia Overview]]
 - [[Neurology/Subacute Combined Degeneration|SCD Detail]]
 - [[Inherited and Metabolic Liver Disease/Pernicious Anaemia|Pernicious Anaemia Pathophysiology]]
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (47 generated)
+
+- Q: What is the definition of Hematology?
+  A: Megaloblastic anaemia due to impaired DNA synthesis from B12 deficiency
+- Q: What is the epidemiology of Hematology?
+  A: ~6% in >60y; Higher in vegans, elderly, pernicious anaemia
+- Q: What is Daily Requirement of Hematology?
+  A: 2.4 µg/day (increases in pregnancy/lactation)
+- Q: What is Body Stores of Hematology?
+  A: 2-5 mg (3-5 years supply)
+- Q: What is Absorption of Hematology?
+  A: IF-B12 Complex → Ileal Cubilin Receptor → Portal Blood → Transcobalamin II
+- Q: What is the pathogenesis of Hematology?
+  A: Autoimmune — Anti-IF Antibody (blocks IF-B12 binding) + Anti-Parietal Cell Antibody
+- Q: What is Demographics of Hematology?
+  A: >60y, Female > Male, Autoimmune Diseases (Thyroid, Vitiligo, T1DM)
+- Q: What is Histology of Hematology?
+  A: Atrophic Gastritis (Loss of Parietal Cells)
+- Q: What is Associated of Hematology?
+  A: Anti-IF Ab (70% sensitive), Anti-Parietal Cell Ab (90% sensitive, less specific)
+- Q: What is Serum B12 of Hematology?
+  A: Low (<150-200 pg/mL)
+- Q: What is MMA (Methylmalonic Acid) of Hematology?
+  A: Elevated (Most Sensitive & Specific)
+- Q: What is Homocysteine of Hematology?
+  A: Elevated (Also Elevated in Folate Deficiency)
+- Q: What is Hb/MCV of Hematology?
+  A: Macrocytic (MCV >100, often >110)
+- Q: What is Peripheral Smear of Hematology?
+  A: Macro-ovalocytes, Hypersegmented Neutrophils (≥6 lobes)
+- Q: What is Anti-IF Antibody of Hematology?
+  A: Pernicious Anaemia (Specific 95%)
+- Q: What is Anti-Parietal Cell Antibody of Hematology?
+  A: Sensitive (90%) but Low Specificity
+- Q: What is Gastrin of Hematology?
+  A: ↑ in Pernicious Anaemia (Achlorhydria)
+- Q: What is sGastric Intrinsic Factor of Hematology?
+  A: Low in Pernicious Anaemia
+- Q: What is Mild Deficiency / Patient Preference of Hematology?
+  A: 1-2 mg Daily Oral (High-dose passive absorption ~1%)
+- Q: What is Maintenance (Post Parenteral Loading) of Hematology?
+  A: 1-2 mg Daily
+- Q: What is Hydroxocobalamin 1mg IM of Hematology?
+  A: Alternate Days × 3 Weeks → Then Monthly
+- Q: How is Hematology monitored?
+  A: Neurological Improvement (Months to Years; May Be Incomplete)
+- Q: What is the pathogenesis of Hematology?
+  A: Autoimmune — Anti-IF Antibody (blocks IF-B12 binding) + Anti-Parietal Cell Antibody
+- Q: What is Demographics of Hematology?
+  A: >60y, Female > Male, Autoimmune Diseases (Thyroid, Vitiligo, T1DM)
+- Q: What is Histology of Hematology?
+  A: Atrophic Gastritis (Loss of Parietal Cells)
+- Q: What is Serum B12 of Hematology?
+  A: Low (<150-200 pg/mL)
+- Q: What is MMA (Methylmalonic Acid) of Hematology?
+  A: Elevated (Most Sensitive & Specific)
+- Q: What is Homocysteine of Hematology?
+  A: Elevated (Also Elevated in Folate Deficiency)
+- Q: What is Hb/MCV of Hematology?
+  A: Macrocytic (MCV >100, often >110)
+- Q: What is Anti-IF Antibody of Hematology?
+  A: Pernicious Anaemia (Specific 95%)
+- Q: What is Anti-Parietal Cell Antibody of Hematology?
+  A: Sensitive (90%) but Low Specificity
+- Q: What is Gastrin of Hematology?
+  A: ↑ in Pernicious Anaemia (Achlorhydria)
+- Q: What is sGastric Intrinsic Factor of Hematology?
+  A: Low in Pernicious Anaemia
+- Q: What is Mild Deficiency / Patient Preference of Hematology?
+  A: 1-2 mg Daily Oral (High-dose passive absorption ~1%)
+- Q: What is Maintenance (Post Parenteral Loading) of Hematology?
+  A: 1-2 mg Daily
+- Q: What is Hydroxocobalamin 1mg IM of Hematology?
+  A: Alternate Days × 3 Weeks → Then Monthly
+- Q: How is Hematology monitored?
+  A: Neurological Improvement (Months to Years; May Be Incomplete)
+- Q: What causes Hematology?
+  A: Pernicious Anaemia (Autoimmune Anti-IF)
+- Q: What is Key Haematological of Hematology?
+  A: MCV >100, Hypersegmented Neutrophils (≥6 lobes), Macro-ovalocytes
+- Q: What is Neurological of Hematology?
+  A: SCD = Posterior + Lateral Columns (ONLY in B12, NOT Folate)
+- Q: What is Diagnostic Triad of Hematology?
+  A: Low B12 + Elevated MMA + Elevated Homocysteine
+- Q: What is the investigation of choice for Hematology?
+  A: MMA (Methylmalonic Acid) — Elevated in B12 Def ONLY
+- Q: What is Pernicious Anaemia of Hematology?
+  A: Anti-IF Ab (Specific), Anti-Parietal Cell Ab (Sensitive)
+- Q: How is Hematology managed?
+  A: Hydroxocobalamin 1mg IM — Loading ×6 Days → Monthly
+- Q: What is Neurological SCD of Hematology?
+  A: Posterior + Lateral Columns; Only B12 NOT Folate
+- Q: What is MMA vs Homocysteine of Hematology?
+  A: MMA ↑ = B12 Only; Homocysteine ↑ = B12 + Folate
+- Q: What is Oral B12 of Hematology?
+  A: 1-2mg Daily Effective (1% passive absorption)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **## Aetiology: The "3 Ms" (Malabsorption, Malnutrition, Medication)**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Definition — Megaloblastic anaemia due to impaired DNA synthesis from B12 deficiency; Prevalence — ~6% in >60y; Higher in vegans, elderly, pernicious anaemia; Daily Requirement — 2.4 µg/day (increases in pregnancy/lactation). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

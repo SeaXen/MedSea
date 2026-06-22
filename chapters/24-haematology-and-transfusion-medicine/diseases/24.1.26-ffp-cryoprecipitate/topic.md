@@ -340,3 +340,34 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Transfusion Medicine → Blood Products → FFP & Cryoprecipitate
+- Q: What is FFP Composition of Hematology?
+  A: All factors at 100%, ~250mL, Fibrinogen ~400-800mg
+- Q: What is Cryoprecipitate Composition of Hematology?
+  A: High Fibrinogen (150-300mg), Factor VIII, vWF, Factor XIII
+- Q: What is the dose of Hematology?
+  A: 4 units (15-20 mL/kg) adult; INR ↑ ~15-30% per 4 units
+- Q: What is Hematology indicated for?
+  A: Warfarin reversal (if no PCC), DIC, MTP 1:1:1, Liver disease bleeding, TTP (plasma exchange)
+- Q: What is Warfarin Reversal of Hematology?
+  A: PCC 1st line; FFP ONLY if PCC unavailable; Vitamin K always
+- Q: What is MTP Ratio of Hematology?
+  A: 1:1:1 (RBC:FFP:Plts); Add cryo if fibrinogen <1.5
+- Q: What are the complications of Hematology?
+  A: TACO, TRALI, Allergic, Volume overload
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Transfusion Medicine → Blood Products → FFP & Cryoprecipitate**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+

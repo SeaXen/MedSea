@@ -231,3 +231,60 @@ mindmap
 - [[Inherited and Metabolic Liver Disease/Crigler-Najjar Syndrome|Crigler-Najjar]]
 - [[Jaundice and LFT Interpretation/Isolated hyperbilirubinaemia|Isolated Hyperbilirubinaemia]]
 - [[Jaundice and LFT Interpretation/Post-hepatic (obstructive) jaundice|Obstructive Jaundice]]
+---
+
+> Auto-generated study sections for "Inherited and Metabolic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Inherited and Metabolic Liver Disease?
+  A: - ABCC2 encodes MRP2 (Multidrug Resistance Protein 2) — canalicular transporter for conjugated bilirubin and other anions
+- Q: What are the clinical features of Inherited and Metabolic Liver Disease?
+  A: Adolescence/early adulthood; intermittent jaundice
+- Q: What is Triggers of Inherited and Metabolic Liver Disease?
+  A: Pregnancy, OCP, alcohol, intercurrent illness
+- Q: What is Bilirubin of Inherited and Metabolic Liver Disease?
+  A: Conjugated > Unconjugated (usually 2-5 mg/dL; can be higher)
+- Q: What is LFTs of Inherited and Metabolic Liver Disease?
+  A: Normal (AST, ALT, ALP, GGT, Albumin, PT)
+- Q: What is Liver of Inherited and Metabolic Liver Disease?
+  A: BLACK on gross inspection (polymerized epinephrine metabolites)
+- Q: What are the clinical features of Inherited and Metabolic Liver Disease?
+  A: Adolescence/early adulthood; intermittent jaundice
+- Q: What is Triggers of Inherited and Metabolic Liver Disease?
+  A: Pregnancy, OCP, alcohol, intercurrent illness
+- Q: What is Bilirubin of Inherited and Metabolic Liver Disease?
+  A: Conjugated > Unconjugated (usually 2-5 mg/dL; can be higher)
+- Q: What is LFTs of Inherited and Metabolic Liver Disease?
+  A: Normal (AST, ALT, ALP, GGT, Albumin, PT)
+- Q: What is Liver of Inherited and Metabolic Liver Disease?
+  A: BLACK on gross inspection (polymerized epinephrine metabolites)
+- Q: What is Both of Inherited and Metabolic Liver Disease?
+  A: Autosomal recessive, benign, normal life expectancy, conjugated hyperbilirubinaemia
+- Q: What is Dubin-Johnson of Inherited and Metabolic Liver Disease?
+  A: ABCC2 (MRP2) defect → excretory block; BLACK liver; Copro I >80%; HIDA no visualization
+- Q: What is Rotor of Inherited and Metabolic Liver Disease?
+  A: SLCO1B1/1B3 (OATP1B1/1B3) defect → uptake/storage defect; Normal liver; Total copro ↑↑, Copro I 65%
+- Q: What is Key Differentiator of Inherited and Metabolic Liver Disease?
+  A: Liver colour (Black vs Normal); Urinary coproporphyrin pattern
+- Q: How is Inherited and Metabolic Liver Disease managed?
+  A: None — reassurance
+- Q: What is Pregnancy/OCP of Inherited and Metabolic Liver Disease?
+  A: May exacerbate jaundice
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inherited and Metabolic Liver Disease?**
+   A. **- ABCC2 encodes MRP2 (Multidrug Resistance Protein 2) — canalicular transporter for conjugated bilirubin and other anions**
+   B. An unrelated condition not matching the clinical picture of Inherited and Metabolic Liver Disease
+   C. A complication seen late in the disease course of Inherited and Metabolic Liver Disease
+   D. A condition that mimics Inherited and Metabolic Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inherited and Metabolic Liver Disease presents with: Presentation — Adolescence/early adulthood; intermittent jaundice; Triggers — Pregnancy, OCP, alcohol, intercurrent illness; Bilirubin — Conjugated > Unconjugated (usually 2-5 mg/dL; can be higher). What is the most likely diagnosis?
+   A. **Inherited and Metabolic Liver Disease**
+   B. A condition that mimics Inherited and Metabolic Liver Disease but is not the same entity
+   C. A complication of Inherited and Metabolic Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inherited and Metabolic Liver Disease
+

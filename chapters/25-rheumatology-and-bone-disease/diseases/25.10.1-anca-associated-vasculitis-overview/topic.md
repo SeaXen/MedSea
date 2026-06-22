@@ -551,3 +551,104 @@ mindmap
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Related**: [[Primary systemic vasculitides overview]] · [[Secondary vasculitides]] · [[Investigations in rheumatology]] · [[Drugs in rheumatology]]
+---
+
+> Auto-generated study sections for "Vasculitis" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (39 generated)
+
+- Q: What is the definition of Vasculitis?
+  A: AAV is the prototype small-vessel vasculitis and a high-yield viva.
+- Q: What is Pauci-immune of Vasculitis?
+  A: Scant immunoglobulin deposition on IF (vs immune-complex vasculitis) — distinguishes from lupus, IgA, cryoglobulinemic
+- Q: What is Small vessels of Vasculitis?
+  A: Capillaries, venules, arterioles; also medium-vessel involvement in EGPA and severe GPA
+- Q: What is Granulomas of Vasculitis?
+  A: GPA: necrotising granulomas (ENT, lung); MPA: NO granulomas (key differentiator)
+- Q: What is NETs of Vasculitis?
+  A: Neutrophil extracellular traps contribute to endothelial damage
+- Q: What is Complement of Vasculitis?
+  A: Alternative pathway activation (C5a); C5a inhibitor (vilobelimab) emerging
+- Q: What is ANCA (IIF + ELISA) of Vasculitis?
+  A: PR3-ANCA = GPA, MPO-ANCA = MPA/EGPA
+- Q: What is FBC of Vasculitis?
+  A: Eosinophilia (>10%, >1.5×10⁹/L) in EGPA; anaemia of chronic disease
+- Q: What is ESR, CRP of Vasculitis?
+  A: Inflammatory markers (active disease)
+- Q: What is U&E, creatinine of Vasculitis?
+  A: Renal function (rising Cr = urgent)
+- Q: What is Urinalysis + microscopy of Vasculitis?
+  A: Active sediment: dysmorphic RBCs, RBC casts, proteinuria (urgent)
+- Q: What is CXR / HRCT chest of Vasculitis?
+  A: Nodules, cavities, infiltrates, alveolar haemorrhage (DAH)
+- Q: What is Sinus CT of Vasculitis?
+  A: Mucosal thickening, bone erosion (GPA)
+- Q: What is Biopsy of Vasculitis?
+  A: Renal (pauci-immune crescentic GN); nasal (necrotising granulomas, GPA); skin (leukocytoclastic); lung (DAH, granulomas)
+- Q: What is Pauci-immune of Vasculitis?
+  A: Scant immunoglobulin deposition on IF (vs immune-complex vasculitis) — distinguishes from lupus, IgA, cryoglobulinemic
+- Q: What is Small vessels of Vasculitis?
+  A: Capillaries, venules, arterioles; also medium-vessel involvement in EGPA and severe GPA
+- Q: What is Granulomas of Vasculitis?
+  A: GPA: necrotising granulomas (ENT, lung); MPA: NO granulomas (key differentiator)
+- Q: What is NETs of Vasculitis?
+  A: Neutrophil extracellular traps contribute to endothelial damage
+- Q: What is Complement of Vasculitis?
+  A: Alternative pathway activation (C5a); C5a inhibitor (vilobelimab) emerging
+- Q: What is ANCA (IIF + ELISA) of Vasculitis?
+  A: PR3-ANCA = GPA, MPO-ANCA = MPA/EGPA
+- Q: What is FBC of Vasculitis?
+  A: Eosinophilia (>10%, >1.5×10⁹/L) in EGPA; anaemia of chronic disease
+- Q: What is ESR, CRP of Vasculitis?
+  A: Inflammatory markers (active disease)
+- Q: What is U&E, creatinine of Vasculitis?
+  A: Renal function (rising Cr = urgent)
+- Q: What is Urinalysis + microscopy of Vasculitis?
+  A: Active sediment: dysmorphic RBCs, RBC casts, proteinuria (urgent)
+- Q: What is CXR / HRCT chest of Vasculitis?
+  A: Nodules, cavities, infiltrates, alveolar haemorrhage (DAH)
+- Q: What is Sinus CT of Vasculitis?
+  A: Mucosal thickening, bone erosion (GPA)
+- Q: What is GPA of Vasculitis?
+  A: c-ANCA/PR3 (90%); ENT (sinusitis, saddle nose) + lung nodules/cavities + renal (pauci-immune GN)
+- Q: What is MPA of Vasculitis?
+  A: p-ANCA/MPO (70%); renal (crescentic GN) + DAH; no ENT, no granulomas
+- Q: What is EGPA of Vasculitis?
+  A: Asthma + eosinophilia + vasculitis; p-ANCA/MPO 40-60%; cardiac = leading cause of death
+- Q: What is Pauci-immune of Vasculitis?
+  A: Scant Ig on IF; distinguishes from immune complex vasculitis (IgA, lupus, cryo)
+- Q: What is the investigation of choice for Vasculitis?
+  A: IIF + ELISA (PR3 vs MPO); high-titre PR3 = GPA
+- Q: What is Biopsy of Vasculitis?
+  A: Renal (pauci-immune crescentic GN), nasal (granulomas, GPA), skin (LCV)
+- Q: What is FFS of Vasculitis?
+  A: Renal Cr >150, cardiac, GI, age >65, no ENT — 5y survival by score
+- Q: What is Induction of Vasculitis?
+  A: RTX 375/m² ×4 OR CYC IV + Pred 1mg/kg (PJP prophylaxis)
+- Q: What is Maintenance of Vasculitis?
+  A: RTX 500 mg q6mo × 2-4y (preferred) OR AZA, MMF, MTX
+- Q: What is PEXIVAS of Vasculitis?
+  A: Plasma exchange no benefit in severe AAV (use selectively)
+- Q: What causes Vasculitis?
+  A: PTU, hydralazine, levamisole (cocaine), minocycline, anti-TNF
+- Q: What are the complications of Vasculitis?
+  A: CVD leading cause; CKD, malignancy, osteoporosis, infertility
+- Q: What is EGPA biologics of Vasculitis?
+  A: Mepolizumab (anti-IL-5) licensed; omalizumab for asthma
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Vasculitis?**
+   A. **AAV is the prototype small-vessel vasculitis and a high-yield viva.**
+   B. An unrelated condition not matching the clinical picture of Vasculitis
+   C. A complication seen late in the disease course of Vasculitis
+   D. A condition that mimics Vasculitis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Vasculitis presents with: Granulomatosis with polyangiitis (GPA) — Wegener's granulomatosis; Microscopic polyangiitis (MPA) — —; Eosinophilic granulomatosis with polyangiitis (EGPA) — Churg-Strauss syndrome. What is the most likely diagnosis?
+   A. **Vasculitis**
+   B. A condition that mimics Vasculitis but is not the same entity
+   C. A complication of Vasculitis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Vasculitis
+

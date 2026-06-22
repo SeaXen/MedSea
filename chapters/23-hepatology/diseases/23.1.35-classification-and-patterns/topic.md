@@ -301,3 +301,70 @@ mindmap
 - [[Acute Liver Failure/Paracetamol-induced hepatotoxicity|Paracetamol ALF]]
 - [[Acute Liver Failure/Non-paracetamol drug-induced liver injury|Non-PCM DILI ALF]]
 - [[Jaundice and LFT Interpretation/DILI patterns|DILI Patterns in Jaundice]]
+---
+
+> Auto-generated study sections for "Drug Induced Liver Injury" — Ch 23: Hepatology.
+
+## Flashcards (22 generated)
+
+- Q: What is the definition of Drug Induced Liver Injury?
+  A: | Mechanism | Direct Toxicity / Metabolite Accumulation |
+- Q: What is Valproate of Drug Induced Liver Injury?
+  A: Microvesicular Steatosis, Hyperammonaemia, Children <3y + Polytherapy
+- Q: What is Tetracyclines of Drug Induced Liver Injury?
+  A: Microvesicular Steatosis, Acute Fatty Liver (High Dose IV)
+- Q: What is NRTIs (Didanosine, Stavudine) of Drug Induced Liver Injury?
+  A: Lactic Acidosis, Steatosis, Pancreatitis
+- Q: What is Linezolid of Drug Induced Liver Injury?
+  A: Mitochondrial Protein Synthesis Inhibition
+- Q: What is OCP of Drug Induced Liver Injury?
+  A: Hepatic Vein Thrombosis (Budd-Chiari), Sinusoidal Dilatation
+- Q: What is Anabolic Steroids of Drug Induced Liver Injury?
+  A: Peliosis Hepatis, Hepatic Adenoma
+- Q: What is Pyrrolizidine Alkaloids (Herbal) of Drug Induced Liver Injury?
+  A: Veno-Occlusive Disease (SOS)
+- Q: What is Valproate of Drug Induced Liver Injury?
+  A: Microvesicular Steatosis, Hyperammonaemia, Children <3y + Polytherapy
+- Q: What is Tetracyclines of Drug Induced Liver Injury?
+  A: Microvesicular Steatosis, Acute Fatty Liver (High Dose IV)
+- Q: What is NRTIs (Didanosine, Stavudine) of Drug Induced Liver Injury?
+  A: Lactic Acidosis, Steatosis, Pancreatitis
+- Q: What is OCP of Drug Induced Liver Injury?
+  A: Hepatic Vein Thrombosis (Budd-Chiari), Sinusoidal Dilatation
+- Q: What is Anabolic Steroids of Drug Induced Liver Injury?
+  A: Peliosis Hepatis, Hepatic Adenoma
+- Q: What is Intrinsic vs Idiosyncratic of Drug Induced Liver Injury?
+  A: Intrinsic: Dose-Dependent, Predictable (Paracetamol); Idiosyncratic: Unpredictable, Genetic/Immune
+- Q: How is Drug Induced Liver Injury classified?
+  A: Immune-Mediated (AutoAbs, Eosinophilia) vs Metabolic (Genetic, NAT2/HLA)
+- Q: What is R Ratio of Drug Induced Liver Injury?
+  A: Hepatocellular >5, Cholestatic <2, Mixed 2-5
+- Q: What is Hepatocellular Drugs of Drug Induced Liver Injury?
+  A: Paracetamol, INH, Anticonvulsants, Valproate
+- Q: What is Cholestatic Drugs of Drug Induced Liver Injury?
+  A: Amox-Clav, Flucloxacillin, OCP, Chlorpromazine
+- Q: What is Mixed Drugs of Drug Induced Liver Injury?
+  A: Rifampicin, Cotrimoxazole, Tricyclics
+- Q: What is Hy's Law of Drug Induced Liver Injury?
+  A: ALT>3×ULN + Bil>2×ULN + ALP<2×ULN = 10-50% Mortality
+- Q: What is Paracetamol of Drug Induced Liver Injury?
+  A: ALT>5000, NAC Within 8h
+- Q: What is Hy's Law Implications of Drug Induced Liver Injury?
+  A: 10-50% Mortality — Regulatory Withdrawal Signal
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug Induced Liver Injury?**
+   A. **| Mechanism | Direct Toxicity / Metabolite Accumulation |**
+   B. An unrelated condition not matching the clinical picture of Drug Induced Liver Injury
+   C. A complication seen late in the disease course of Drug Induced Liver Injury
+   D. A condition that mimics Drug Induced Liver Injury but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Drug Induced Liver Injury presents with: A[Drug-Induced Liver Injury (DILI)] --> B{Mechanism}; B -->|Intrinsic| C[Predictable, Dose-Dependent]; B -->|Idiosyncratic| D[Unpredictable, Not Dose-Dependent]. What is the most likely diagnosis?
+   A. **Drug Induced Liver Injury**
+   B. A condition that mimics Drug Induced Liver Injury but is not the same entity
+   C. A complication of Drug Induced Liver Injury rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Drug Induced Liver Injury
+

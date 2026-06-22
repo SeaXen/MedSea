@@ -243,3 +243,72 @@ mindmap
 - [[Viral Hepatitis/Hepatitis B treatment indications|HBV Treatment]]
 - [[Viral Hepatitis/Hepatitis B reactivation|HBV Reactivation]]
 - [[Viral Hepatitis/Hepatitis B serology interpretation|HBV Serology]]
+---
+
+> Auto-generated study sections for "Viral Hepatitis" — Ch 23: Hepatology.
+
+## Flashcards (27 generated)
+
+- Q: What is the definition of Viral Hepatitis?
+  A: | Maternal HBV DNA | Gestation Start | Recommendation |
+- Q: What is Drug of Viral Hepatitis?
+  A: Tenofovir DF (TDF) 245mg daily
+- Q: What is Start of Viral Hepatitis?
+  A: 24-28 weeks Gestation
+- Q: What is Stop of Viral Hepatitis?
+  A: 4-12 weeks Postpartum (After HBIG/Vaccine to Baby)
+- Q: What is Safety of Viral Hepatitis?
+  A: Category B — No Teratogenicity; Safe in Pregnancy
+- Q: How is Viral Hepatitis monitored?
+  A: Renal Function, LFTs, HBV DNA q4-6 weeks
+- Q: What is Maternal ALT Flare of Viral Hepatitis?
+  A: Common 4-12w Postpartum — Monitor LFTs Monthly ×3mo; Usually Self-Limited
+- Q: What is Antiviral Continuation of Viral Hepatitis?
+  A: Stop at 4-12w Postpartum (unless Cirrhosis/Indication Persists)
+- Q: What is HBeAg Seroconversion of Viral Hepatitis?
+  A: More Common Postpartum — Monitor HBV DNA, HBeAg
+- Q: What is Contraception of Viral Hepatitis?
+  A: Discuss Postpartum — TDF/ETV/TAF Safe with All Methods
+- Q: What is Drug of Viral Hepatitis?
+  A: Tenofovir DF (TDF) 245mg daily
+- Q: What is Start of Viral Hepatitis?
+  A: 24-28 weeks Gestation
+- Q: What is Stop of Viral Hepatitis?
+  A: 4-12 weeks Postpartum (After HBIG/Vaccine to Baby)
+- Q: What is Safety of Viral Hepatitis?
+  A: Category B — No Teratogenicity; Safe in Pregnancy
+- Q: How is Viral Hepatitis monitored?
+  A: Renal Function, LFTs, HBV DNA q4-6 weeks
+- Q: What is Maternal ALT Flare of Viral Hepatitis?
+  A: Common 4-12w Postpartum — Monitor LFTs Monthly ×3mo; Usually Self-Limited
+- Q: What is Antiviral Continuation of Viral Hepatitis?
+  A: Stop at 4-12w Postpartum (unless Cirrhosis/Indication Persists)
+- Q: What is HBeAg Seroconversion of Viral Hepatitis?
+  A: More Common Postpartum — Monitor HBV DNA, HBeAg
+- Q: What is Contraception of Viral Hepatitis?
+  A: Discuss Postpartum — TDF/ETV/TAF Safe with All Methods
+- Q: What is Transmission Threshold of Viral Hepatitis?
+  A: HBV DNA >200,000 IU/mL (5.3 log) = High Risk
+- Q: What is Viral Hepatitis indicated for?
+  A: TDF 245mg from 24-28 weeks if HBV DNA >200,000
+- Q: What is Neonatal Prophylaxis of Viral Hepatitis?
+  A: HBIG 100 IU + HB Vaccine 10µg within 12h of birth
+- Q: What is Breastfeeding of Viral Hepatitis?
+  A: Safe (with HBIG+Vaccine); No Contraindication
+- Q: What is Postpartum Flare of Viral Hepatitis?
+  A: Common 4-12w — Monitor LFTs Monthly ×3mo
+- Q: What is TDF Safety of Viral Hepatitis?
+  A: Category B — Preferred; Stop 4-12w Postpartum
+- Q: What is HBIG + Vaccine of Viral Hepatitis?
+  A: Different Sites; HBIG 100 IU, Vaccine 10µg
+- Q: What is Preterm <2kg of Viral Hepatitis?
+  A: HBIG + Vaccine ×4 Doses (Birth, 1, 2, 6, 12mo)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Viral Hepatitis?**
+   A. **| Maternal HBV DNA | Gestation Start | Recommendation |**
+   B. An unrelated condition not matching the clinical picture of Viral Hepatitis
+   C. A complication seen late in the disease course of Viral Hepatitis
+   D. A condition that mimics Viral Hepatitis but has a different underlying cause
+

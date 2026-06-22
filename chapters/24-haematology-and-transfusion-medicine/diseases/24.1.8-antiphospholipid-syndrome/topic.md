@@ -330,3 +330,72 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (23 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Thrombophilia → Antiphospholipid Syndrome
+- Q: What is Vascular Thrombosis of Hematology?
+  A: ≥1 episode of arterial, venous, or small vessel thrombosis (objective imaging/histology)
+- Q: What is Pregnancy Morbidity of Hematology?
+  A: ≥1 unexplained fetal death ≥10 weeks; ≥1 premature birth <34w (eclampsia/severe PE/placental insufficiency); ≥3 consecutive unexplained miscarriages <10 weeks
+- Q: What is Lupus Anticoagulant (LA) of Hematology?
+  A: Positive per ISTH guidelines (dRVVT/PTT based)
+- Q: What is Anti-cardiolipin (aCL) IgG/IgM of Hematology?
+  A: >40 GPL/MPL (or >99th percentile)
+- Q: What is Anti-β2-Glycoprotein I (anti-β2GPI) IgG/IgM of Hematology?
+  A: >40 SGU/SMU (or >99th percentile)
+- Q: What is Prophylactic of Hematology?
+  A: LDA 75-100 mg daily (start pre-conception/early pregnancy) + Prophylactic LMWH (Enoxaparin 40mg daily) throughout pregnancy + 6 weeks postpartum
+- Q: What is Prior Thrombosis of Hematology?
+  A: Therapeutic LMWH (Enoxaparin 1mg/kg BD) + LDA throughout pregnancy + 6-12 weeks postpartum
+- Q: How is Hematology monitored?
+  A: Monthly CBC, renal function, anti-Xa (if therapeutic LMWH), uterine artery Doppler
+- Q: What is Lupus Anticoagulant (LA) of Hematology?
+  A: Positive per ISTH guidelines (dRVVT/PTT based)
+- Q: What is Anti-cardiolipin (aCL) IgG/IgM of Hematology?
+  A: >40 GPL/MPL (or >99th percentile)
+- Q: What is Anti-β2-Glycoprotein I (anti-β2GPI) IgG/IgM of Hematology?
+  A: >40 SGU/SMU (or >99th percentile)
+- Q: What is Prophylactic of Hematology?
+  A: LDA 75-100 mg daily (start pre-conception/early pregnancy) + Prophylactic LMWH (Enoxaparin 40mg daily) throughout pregnancy + 6 weeks postpartum
+- Q: What is Prior Thrombosis of Hematology?
+  A: Therapeutic LMWH (Enoxaparin 1mg/kg BD) + LDA throughout pregnancy + 6-12 weeks postpartum
+- Q: What is the investigation of choice for Hematology?
+  A: 1 Clinical (Thrombosis/Pregnancy loss) + 1 Lab (LA/aCL/anti-β2GPI) ≥12 weeks apart
+- Q: What is Triple Positivity of Hematology?
+  A: LA + aCL + anti-β2GPI = Highest thrombosis risk
+- Q: What is Warfarin Target of Hematology?
+  A: VTE: INR 2-3; Arterial/Recurrent: INR 3-4; Triple positive: INR 3-4
+- Q: What is DOACs of Hematology?
+  A: CONTRAINDICATED in Triple Positive APS (↑ arterial events)
+- Q: What is Obstetric APS of Hematology?
+  A: LDA + Prophylactic LMWH throughout pregnancy + 6wks postpartum
+- Q: What is CAPS of Hematology?
+  A: ≥3 organs in 1 week; Triple therapy: Heparin + Steroids + IVIG/PLEX
+- Q: What is Livedo Reticularis of Hematology?
+  A: Common cutaneous sign; Livedo racemosa = more specific
+- Q: What is Libman-Sacks Endocarditis of Hematology?
+  A: Non-bacterial verrucous valvular lesions (mitral > aortic)
+- Q: What is Thrombocytopenia of Hematology?
+  A: Mild-moderate common in APS
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Bleeding and Thrombotic Disorders → Thrombophilia → Antiphospholipid Syndrome**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Vascular Thrombosis — ≥1 episode of arterial, venous, or small vessel thrombosis (objective imaging/histology); Pregnancy Morbidity — ≥1 unexplained fetal death ≥10 weeks; ≥1 premature birth <34w (eclampsia/severe PE/placental insufficiency); ≥3 consecutive unexplained miscarriages <10 weeks; Test — Positive Threshold. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

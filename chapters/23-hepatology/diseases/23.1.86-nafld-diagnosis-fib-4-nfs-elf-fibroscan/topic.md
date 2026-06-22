@@ -150,3 +150,34 @@ flowchart TD
 | Component | Score |
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Non Alcoholic Fatty Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Non Alcoholic Fatty Liver Disease?
+  A: FIB-4 = (Age × AST) / (Platelets × √ALT)
+- Q: What is the investigation of choice for Non Alcoholic Fatty Liver Disease?
+  A: FIB-4 1.3-2.67 + FibroScan Discordant/Unavailable
+- Q: What are the clinical features of Non Alcoholic Fatty Liver Disease?
+  A: Suspected Alternative Diagnosis (AIH, DILI, Wilson, Drug)
+- Q: What is Clinical Trial Enrollment of Non Alcoholic Fatty Liver Disease?
+  A: Histologic Endpoints Required
+- Q: How is Non Alcoholic Fatty Liver Disease managed?
+  A: Some Guidelines (Optional for DAA)
+- Q: What is the investigation of choice for Non Alcoholic Fatty Liver Disease?
+  A: FIB-4 1.3-2.67 + FibroScan Discordant/Unavailable
+- Q: What are the clinical features of Non Alcoholic Fatty Liver Disease?
+  A: Suspected Alternative Diagnosis (AIH, DILI, Wilson, Drug)
+- Q: What is Clinical Trial Enrollment of Non Alcoholic Fatty Liver Disease?
+  A: Histologic Endpoints Required
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Non Alcoholic Fatty Liver Disease?**
+   A. **FIB-4 = (Age × AST) / (Platelets × √ALT)**
+   B. An unrelated condition not matching the clinical picture of Non Alcoholic Fatty Liver Disease
+   C. A complication seen late in the disease course of Non Alcoholic Fatty Liver Disease
+   D. A condition that mimics Non Alcoholic Fatty Liver Disease but has a different underlying cause
+

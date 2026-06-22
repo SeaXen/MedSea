@@ -150,3 +150,42 @@ flowchart TD
 ### Indications for Intubation
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: - Cerebral Blood Flow Dysregulation (Loss of Autoregulation)
+- Q: What is PaO₂ of Acute Liver Failure?
+  A: >10 kPa (80 mmHg)
+- Q: What is PaCO₂ of Acute Liver Failure?
+  A: 30-35 mmHg (If Cerebral Oedema)
+- Q: What is FiO₂ of Acute Liver Failure?
+  A: Minimum to Maintain Target
+- Q: What is PEEP of Acute Liver Failure?
+  A: Low (5-8 cmH₂O) — Avoid High PEEP (↑ ICP)
+- Q: What is Creatinine of Acute Liver Failure?
+  A: >300 μmol/L (or Rising Rapidly)
+- Q: What is Urine Output of Acute Liver Failure?
+  A: <0.5 ml/kg/h for >6h
+- Q: What is Fluid Overload of Acute Liver Failure?
+  A: >10% FO, Pulmonary Oedema
+- Q: What is Electrolytes of Acute Liver Failure?
+  A: K >6.5, pH <7.15
+- Q: What is PaO₂ of Acute Liver Failure?
+  A: >10 kPa (80 mmHg)
+- Q: What is PaCO₂ of Acute Liver Failure?
+  A: 30-35 mmHg (If Cerebral Oedema)
+- Q: What is FiO₂ of Acute Liver Failure?
+  A: Minimum to Maintain Target
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **- Cerebral Blood Flow Dysregulation (Loss of Autoregulation)**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+

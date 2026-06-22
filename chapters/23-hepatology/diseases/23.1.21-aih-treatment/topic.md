@@ -150,3 +150,78 @@ flowchart TD
 | Consideration | Management |
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Autoimmune Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Autoimmune Liver Disease?
+  A: | Regimen | Dose | Indication | Duration |
+- Q: What is the dose of Autoimmune Liver Disease?
+  A: 9mg/day (3mg TDS)
+- Q: What is the mechanism of Autoimmune Liver Disease?
+  A: High First-Pass Metabolism (~90%) → Low Systemic Exposure
+- Q: What is Autoimmune Liver Disease indicated for?
+  A: Non-Cirrhotic AIH, Mild-Moderate Disease
+- Q: What is Efficacy of Autoimmune Liver Disease?
+  A: Similar to Prednisolone in Mild Disease, Fewer SE
+- Q: What is the dose of Autoimmune Liver Disease?
+  A: 1-2 mg/kg/day (Start 50mg, Titrate)
+- Q: What is the investigation of choice for Autoimmune Liver Disease?
+  A: Before Start (TPMT Deficient = ↑ Myelosuppression Risk)
+- Q: What are the side effects of Autoimmune Liver Disease?
+  A: Myelosuppression, Hepatotoxicity, Pancreatitis, Nausea
+- Q: What is Drug Interactions of Autoimmune Liver Disease?
+  A: Allopurinol (↑ 6-MP Toxicity → Reduce Aza Dose to 25%)
+- Q: What is In Pregnancy of Autoimmune Liver Disease?
+  A: Safe (Category D but Data Supports Use)
+- Q: What is Active AIH of Autoimmune Liver Disease?
+  A: Continuation of Aza + Pred (Safe)
+- Q: What is Remission of Autoimmune Liver Disease?
+  A: Continue Maintenance (Stop Steroids if Possible)
+- Q: What is the investigation of choice for Autoimmune Liver Disease?
+  A: Pred 30-40mg + Aza 1-2mg/kg (Safe)
+- Q: What is Postpartum Flare Risk of Autoimmune Liver Disease?
+  A: ↑↑ (Immune Reconstitution) → Close Monitoring
+- Q: What is the dose of Autoimmune Liver Disease?
+  A: 9mg/day (3mg TDS)
+- Q: What is the mechanism of Autoimmune Liver Disease?
+  A: High First-Pass Metabolism (~90%) → Low Systemic Exposure
+- Q: What is Autoimmune Liver Disease indicated for?
+  A: Non-Cirrhotic AIH, Mild-Moderate Disease
+- Q: What is Efficacy of Autoimmune Liver Disease?
+  A: Similar to Prednisolone in Mild Disease, Fewer SE
+- Q: What is the dose of Autoimmune Liver Disease?
+  A: 1-2 mg/kg/day (Start 50mg, Titrate)
+- Q: What is the investigation of choice for Autoimmune Liver Disease?
+  A: Before Start (TPMT Deficient = ↑ Myelosuppression Risk)
+- Q: What are the side effects of Autoimmune Liver Disease?
+  A: Myelosuppression, Hepatotoxicity, Pancreatitis, Nausea
+- Q: What is Drug Interactions of Autoimmune Liver Disease?
+  A: Allopurinol (↑ 6-MP Toxicity → Reduce Aza Dose to 25%)
+- Q: What is In Pregnancy of Autoimmune Liver Disease?
+  A: Safe (Category D but Data Supports Use)
+- Q: What is Active AIH of Autoimmune Liver Disease?
+  A: Continuation of Aza + Pred (Safe)
+- Q: What is Remission of Autoimmune Liver Disease?
+  A: Continue Maintenance (Stop Steroids if Possible)
+- Q: What is the investigation of choice for Autoimmune Liver Disease?
+  A: Pred 30-40mg + Aza 1-2mg/kg (Safe)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Liver Disease?**
+   A. **| Regimen | Dose | Indication | Duration |**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Liver Disease
+   C. A complication seen late in the disease course of Autoimmune Liver Disease
+   D. A condition that mimics Autoimmune Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Liver Disease presents with: Dose — 1-2 mg/kg/day (Start 50mg, Titrate); TPMT Testing — Before Start (TPMT Deficient = ↑ Myelosuppression Risk); Side Effects — Myelosuppression, Hepatotoxicity, Pancreatitis, Nausea. What is the most likely diagnosis?
+   A. **Autoimmune Liver Disease**
+   B. A condition that mimics Autoimmune Liver Disease but is not the same entity
+   C. A complication of Autoimmune Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Liver Disease
+

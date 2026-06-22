@@ -378,3 +378,100 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Polymyositis and dermatomyositis]] · [[Sjogren's syndrome]] · [[Mixed connective tissue disease (MCTD)]]
+---
+
+> Auto-generated study sections for "Autoimmune Rheumatic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (37 generated)
+
+- Q: What is the definition of Autoimmune Rheumatic Diseases?
+  A: Systemic sclerosis = fibrotic autoimmune disease with vascular injury (Raynaud's) + fibrosis.
+- Q: What is Raynaud's Phenomenon of Autoimmune Rheumatic Diseases?
+  A: Universal (95-99%) — often first symptom (years before skin in limited)
+- Q: What is Digital Ulcers / Pitting Scars of Autoimmune Rheumatic Diseases?
+  A: 40-50% — ischaemic, painful, slow healing
+- Q: What is Telangiectasia of Autoimmune Rheumatic Diseases?
+  A: Face, hands, lips, oral mucosa — matte, not spider nevi
+- Q: What is Nailfold Capillaroscopy of Autoimmune Rheumatic Diseases?
+  A: Enlarged loops, dropout, avascular areas — diagnostic + severity
+- Q: What is Pattern of Autoimmune Rheumatic Diseases?
+  A: NSIP > UIP (contrast with IPF)
+- Q: What is Screening of Autoimmune Rheumatic Diseases?
+  A: Baseline HRCT + PFTs (FVC, DLCO) — repeat 6-12 monthly
+- Q: What is Progression of Autoimmune Rheumatic Diseases?
+  A: ↓FVC >10% or ↓DLCO >15% = progression
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: MMF 2-3g/day (1st line, SLS-I/II trials) — CYC alternative; Nintedanib (anti-fibrotic, slows FVC decline); Tocilizumab (faSScinate trial — preserves FVC); RTX (refractory)
+- Q: How is Autoimmune Rheumatic Diseases monitored?
+  A: FVC, DLCO, HRCT, 6MWT
+- Q: What is Screening of Autoimmune Rheumatic Diseases?
+  A: Annual Echo (RVSP) + PFTs (DLCO) — DLCO <60% predicted + FVC/DLCO >1.6 = high risk
+- Q: What is Confirmation of Autoimmune Rheumatic Diseases?
+  A: Right Heart Catheterisation (RHC) — Gold standard: mPAP >20mmHg, PAWP ≤15mmHg, PVR >3WU
+- Q: What is SSc-PAH Specific of Autoimmune Rheumatic Diseases?
+  A: Isolated PAH (no ILD) more common in limited (ACA+); ILD-associated PAH in diffuse
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: ERA (Bosentan, Ambrisentan, Macitentan) + PDE5i (Sildenafil, Tadalafil) ± Prostacyclin analogues (IV Epoprostenol, SC Treprostinil, Inhaled Iloprost) — Selexipag (oral IP receptor agonist)
+- Q: What is Avoid of Autoimmune Rheumatic Diseases?
+  A: High-dose calcium channel blockers (non-responders); anticoagulation not routine
+- Q: What is Raynaud's Phenomenon of Autoimmune Rheumatic Diseases?
+  A: Universal (95-99%) — often first symptom (years before skin in limited)
+- Q: What is Digital Ulcers / Pitting Scars of Autoimmune Rheumatic Diseases?
+  A: 40-50% — ischaemic, painful, slow healing
+- Q: What is Telangiectasia of Autoimmune Rheumatic Diseases?
+  A: Face, hands, lips, oral mucosa — matte, not spider nevi
+- Q: What is Pattern of Autoimmune Rheumatic Diseases?
+  A: NSIP > UIP (contrast with IPF)
+- Q: What is Screening of Autoimmune Rheumatic Diseases?
+  A: Baseline HRCT + PFTs (FVC, DLCO) — repeat 6-12 monthly
+- Q: What is Progression of Autoimmune Rheumatic Diseases?
+  A: ↓FVC >10% or ↓DLCO >15% = progression
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: MMF 2-3g/day (1st line, SLS-I/II trials) — CYC alternative; Nintedanib (anti-fibrotic, slows FVC decline); Tocilizumab (faSScinate trial — preserves FVC); RTX (refractory)
+- Q: How is Autoimmune Rheumatic Diseases monitored?
+  A: FVC, DLCO, HRCT, 6MWT
+- Q: What is Screening of Autoimmune Rheumatic Diseases?
+  A: Annual Echo (RVSP) + PFTs (DLCO) — DLCO <60% predicted + FVC/DLCO >1.6 = high risk
+- Q: What is Confirmation of Autoimmune Rheumatic Diseases?
+  A: Right Heart Catheterisation (RHC) — Gold standard: mPAP >20mmHg, PAWP ≤15mmHg, PVR >3WU
+- Q: What is SSc-PAH Specific of Autoimmune Rheumatic Diseases?
+  A: Isolated PAH (no ILD) more common in limited (ACA+); ILD-associated PAH in diffuse
+- Q: How is Autoimmune Rheumatic Diseases managed?
+  A: ERA (Bosentan, Ambrisentan, Macitentan) + PDE5i (Sildenafil, Tadalafil) ± Prostacyclin analogues (IV Epoprostenol, SC Treprostinil, Inhaled Iloprost) — Selexipag (oral IP receptor agonist)
+- Q: What is Avoid of Autoimmune Rheumatic Diseases?
+  A: High-dose calcium channel blockers (non-responders); anticoagulation not routine
+- Q: How is Autoimmune Rheumatic Diseases classified?
+  A: Limited (lcSSc/CREST): distal skin, ACA+, late PAH/ILD, rare renal crisis. Diffuse (dcSSc): proximal+trunk, Scl-70/RNA Pol III+, early ILD/renal crisis.
+- Q: What is CREST of Autoimmune Rheumatic Diseases?
+  A: Calcinosis, Raynaud's, Esophageal dysmotility, Sclerodactyly, Telangiectasia — ACA+
+- Q: What is Autoantibodies of Autoimmune Rheumatic Diseases?
+  A: ACA = Limited + PAH; Scl-70 = Diffuse + ILD; RNA Pol III = Diffuse + Renal Crisis
+- Q: What is Renal Crisis (SRC) of Autoimmune Rheumatic Diseases?
+  A: New HTN + AKI + MAHA → ACEi (Captopril) IMMEDIATELY — life-saving; 50% recover if early
+- Q: What is ILD of Autoimmune Rheumatic Diseases?
+  A: NSIP pattern; MMF 1st line (SLS-I/II); Nintedanib, Tocilizumab, CYC
+- Q: What is PAH of Autoimmune Rheumatic Diseases?
+  A: Annual Echo + PFTs (DLCO); RHC confirm; ERA + PDE5i ± Prostacyclin
+- Q: What is Capillaroscopy of Autoimmune Rheumatic Diseases?
+  A: Enlarged loops → dropout → avascular areas = severity
+- Q: What is GI of Autoimmune Rheumatic Diseases?
+  A: Oesophageal dysmotility (reflux, dysphagia) — PPI + prokinetics; bacterial overgrowth — antibiotics
+- Q: What is the prognosis of Autoimmune Rheumatic Diseases?
+  A: Limited better (10yr 80%) vs Diffuse worse (10yr 60-70%); PAH/ILD = major mortality
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Rheumatic Diseases?**
+   A. **Systemic sclerosis = fibrotic autoimmune disease with vascular injury (Raynaud's) + fibrosis.**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Rheumatic Diseases
+   C. A complication seen late in the disease course of Autoimmune Rheumatic Diseases
+   D. A condition that mimics Autoimmune Rheumatic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Rheumatic Diseases presents with: Definition — Systemic autoimmune disease characterised by vasculopathy (Raynaud's), fibrosis (skin, viscera), and autoimmunity (specific autoantibodies); Peak Onset — 30-50 years; Sex Ratio — F:M = 4:1. What is the most likely diagnosis?
+   A. **Autoimmune Rheumatic Diseases**
+   B. A condition that mimics Autoimmune Rheumatic Diseases but is not the same entity
+   C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
+

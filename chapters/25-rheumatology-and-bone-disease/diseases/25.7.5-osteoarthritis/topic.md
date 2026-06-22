@@ -438,3 +438,106 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Erosive osteoarthritis]] · [[Charcot arthropathy]] · [[Common regional musculoskeletal problems]]
+---
+
+> Auto-generated study sections for "Osteoarthritis and Related Disorders" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (40 generated)
+
+- Q: What is the definition of Osteoarthritis and Related Disorders?
+  A: Whole-joint disease — cartilage loss, subchondral bone sclerosis, osteophytes, synovitis, capsule/ligament changes, meniscal damage; not just "wear and tear"
+- Q: What is the epidemiology of Osteoarthritis and Related Disorders?
+  A: Most common arthritis — 10% men, 18% women >60y symptomatic; radiographic > clinical
+- Q: What is Peak Onset of Osteoarthritis and Related Disorders?
+  A: >45 years (rare <40 unless secondary)
+- Q: What is Sex Ratio of Osteoarthritis and Related Disorders?
+  A: F > M (especially hand, knee); hip similar
+- Q: What causes Osteoarthritis and Related Disorders?
+  A: Age, obesity (knee > hip), female sex, joint injury (ACL/meniscus), occupation (kneeling, heavy lifting), genetics (nodal OA heritability ~40-60%), malalignment, muscle weakness
+- Q: What is Not just cartilage of Osteoarthritis and Related Disorders?
+  A: Whole joint: bone, synovium, capsule, ligaments, menisci, muscles
+- Q: What is Mechanical + inflammatory of Osteoarthritis and Related Disorders?
+  A: Low-grade synovitis (cytokines: IL-1, TNF, IL-6) drives pain and progression
+- Q: What is Subchondral bone of Osteoarthritis and Related Disorders?
+  A: Sclerosis → altered load distribution → cartilage loss; bone marrow lesions (BMLs) on MRI = pain correlate
+- Q: What is Osteophytes of Osteoarthritis and Related Disorders?
+  A: Stabilisation attempt at joint margins; not the cause of pain
+- Q: How is Osteoarthritis and Related Disorders classified?
+  A: Anabolic → catabolic (MMPs, ADAMTS-5)
+- Q: What is Population of Osteoarthritis and Related Disorders?
+  A: Postmenopausal women (40-60)
+- Q: What is Joints of Osteoarthritis and Related Disorders?
+  A: DIP/PIP (nodal distribution)
+- Q: What is Clinical of Osteoarthritis and Related Disorders?
+  A: Inflammatory (pain, stiffness >30min, warmth, swelling) + erosions
+- Q: What is Radiographic of Osteoarthritis and Related Disorders?
+  A: Central erosions (gull-wing, saw-tooth), osteophytes, preserved MCP
+- Q: What is Serology of Osteoarthritis and Related Disorders?
+  A: RF/ACPA negative, CRP normal/mildly elevated
+- Q: What is Course of Osteoarthritis and Related Disorders?
+  A: Burns out → stable bony ankylosis; can mimic RA/PsA
+- Q: How is Osteoarthritis and Related Disorders managed?
+  A: NSAID, IA steroid, HCQ (anecdotally), avoid aggressive immunosuppression
+- Q: What is Not just cartilage of Osteoarthritis and Related Disorders?
+  A: Whole joint: bone, synovium, capsule, ligaments, menisci, muscles
+- Q: What is Mechanical + inflammatory of Osteoarthritis and Related Disorders?
+  A: Low-grade synovitis (cytokines: IL-1, TNF, IL-6) drives pain and progression
+- Q: What is Subchondral bone of Osteoarthritis and Related Disorders?
+  A: Sclerosis → altered load distribution → cartilage loss; bone marrow lesions (BMLs) on MRI = pain correlate
+- Q: What is Osteophytes of Osteoarthritis and Related Disorders?
+  A: Stabilisation attempt at joint margins; not the cause of pain
+- Q: How is Osteoarthritis and Related Disorders classified?
+  A: Anabolic → catabolic (MMPs, ADAMTS-5)
+- Q: What is Population of Osteoarthritis and Related Disorders?
+  A: Postmenopausal women (40-60)
+- Q: What is Joints of Osteoarthritis and Related Disorders?
+  A: DIP/PIP (nodal distribution)
+- Q: What is Clinical of Osteoarthritis and Related Disorders?
+  A: Inflammatory (pain, stiffness >30min, warmth, swelling) + erosions
+- Q: What is Radiographic of Osteoarthritis and Related Disorders?
+  A: Central erosions (gull-wing, saw-tooth), osteophytes, preserved MCP
+- Q: What is Serology of Osteoarthritis and Related Disorders?
+  A: RF/ACPA negative, CRP normal/mildly elevated
+- Q: What is Course of Osteoarthritis and Related Disorders?
+  A: Burns out → stable bony ankylosis; can mimic RA/PsA
+- Q: How is Osteoarthritis and Related Disorders managed?
+  A: NSAID, IA steroid, HCQ (anecdotally), avoid aggressive immunosuppression
+- Q: What is Pain Pattern of Osteoarthritis and Related Disorders?
+  A: Mechanical: worse activity, better rest, stiffness <15 min
+- Q: What is Examination of Osteoarthritis and Related Disorders?
+  A: Bony swelling (hard, cool), crepitus, reduced ROM; MCP spared in hand
+- Q: What is Hand OA Pattern of Osteoarthritis and Related Disorders?
+  A: Heberden's (DIP) + Bouchard's (PIP) + 1st CMC squaring; MCP spared
+- Q: What is Kellgren-Lawrence of Osteoarthritis and Related Disorders?
+  A: 0-4: 0=normal, 1=doubtful osteophyte, 2=minimal, 3=moderate JSN+sclerosis, 4=severe bone-on-bone
+- Q: How is Osteoarthritis and Related Disorders managed?
+  A: Exercise + Weight loss + Education (mandatory for ALL)
+- Q: What is 1st Line Drug of Osteoarthritis and Related Disorders?
+  A: Topical NSAID (knee/hand)
+- Q: What is 2nd Line Drug of Osteoarthritis and Related Disorders?
+  A: Oral NSAID/COX-2 + PPI (lowest dose, shortest duration)
+- Q: What is IA Steroid of Osteoarthritis and Related Disorders?
+  A: Flare / bridge; max 3-4/year/joint
+- Q: What is Surgery of Osteoarthritis and Related Disorders?
+  A: TKR/THR: severe symptoms + KL 3-4 + failed 3-6mo conservative
+- Q: What is Erosive OA of Osteoarthritis and Related Disorders?
+  A: Postmenopausal women, DIP/PIP erosions + inflammation, gull-wing, RF/CCP negative
+- Q: What is Red Flags for Secondary OA of Osteoarthritis and Related Disorders?
+  A: Age <45, inflammatory features, unusual joints, rapid progression, chondrocalcinosis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Osteoarthritis and Related Disorders?**
+   A. **OA is the most common joint disease — mechanical pain pattern, bony swelling, Kellgren-Lawrence grading, core treatments (exercise/weight loss/NSAIDs), joint replacement criteria.**
+   B. An unrelated condition not matching the clinical picture of Osteoarthritis and Related Disorders
+   C. A complication seen late in the disease course of Osteoarthritis and Related Disorders
+   D. A condition that mimics Osteoarthritis and Related Disorders but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Osteoarthritis and Related Disorders presents with: Definition — Whole-joint disease — cartilage loss, subchondral bone sclerosis, osteophytes, synovitis, capsule/ligament changes, meniscal damage; not just "wear and tear"; Prevalence — Most common arthritis — 10% men, 18% women >60y symptomatic; radiographic > clinical; Incidence — Increases exponentially with age. What is the most likely diagnosis?
+   A. **Osteoarthritis and Related Disorders**
+   B. A condition that mimics Osteoarthritis and Related Disorders but is not the same entity
+   C. A complication of Osteoarthritis and Related Disorders rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Osteoarthritis and Related Disorders
+

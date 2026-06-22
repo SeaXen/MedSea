@@ -150,3 +150,28 @@ flowchart TD
 | **Nutrition** | Early EN (24-48h); Protein 1.2-1.5 g/kg; Thiamine 100mg IV |
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (5 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: Mnemonic for Minor Criteria: "AAIII" — Age, Aetiology, Interval, INR, Icterus
+- Q: What is Factor V of Acute Liver Failure?
+  A: <20% of normal (if age <30 years)
+- Q: What is AND of Acute Liver Failure?
+  A: Hepatic Encephalopathy Grade III/IV
+- Q: What is Factor V of Acute Liver Failure?
+  A: <20% of normal (if age <30 years)
+- Q: What is AND of Acute Liver Failure?
+  A: Hepatic Encephalopathy Grade III/IV
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **Mnemonic for Minor Criteria: "AAIII" — Age, Aetiology, Interval, INR, Icterus**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+

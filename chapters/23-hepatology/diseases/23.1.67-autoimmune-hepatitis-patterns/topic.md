@@ -251,3 +251,32 @@ mindmap
 - [[Acute Liver Failure/Autoimmune hepatitis presenting as ALF|AIH-ALF]]
 - [[Jaundice and LFT Interpretation/Hepatocellular vs Cholestatic Pattern|Hepatocellular vs Cholestatic]]
 - [[Acute Liver Failure/Wilson disease presenting as ALF|Wilson ALF]]
+---
+
+> Auto-generated study sections for "Jaundice and LFT Interpretation" — Ch 23: Hepatology.
+
+## Flashcards (7 generated)
+
+- Q: What is the definition of Jaundice and LFT Interpretation?
+  A: F -->|ANA/SMA ≥1:80 or LKM1 ≥1:40| G[AIH Probable/Definite]
+- Q: What is Demographics of Jaundice and LFT Interpretation?
+  A: Women 15-50, peak 20-40
+- Q: What is IgG of Jaundice and LFT Interpretation?
+  A: Markedly elevated (>2×ULN common)
+- Q: What is Autoantibodies of Jaundice and LFT Interpretation?
+  A: ANA/SMA ≥1:80 (Type 1), LKM1 ≥1:40 (Type 2)
+- Q: How is Jaundice and LFT Interpretation classified?
+  A: ANA/SMA (80% of AIH)
+- Q: What is In ALF of Jaundice and LFT Interpretation?
+  A: Only steroid-responsive ALF — Pred 60mg → Day 7
+- Q: What is Exclusions of Jaundice and LFT Interpretation?
+  A: Viral, Drug, Alcohol, Wilson, PBC (AMA+)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Jaundice and LFT Interpretation?**
+   A. **F -->|ANA/SMA ≥1:80 or LKM1 ≥1:40| G[AIH Probable/Definite]**
+   B. An unrelated condition not matching the clinical picture of Jaundice and LFT Interpretation
+   C. A complication seen late in the disease course of Jaundice and LFT Interpretation
+   D. A condition that mimics Jaundice and LFT Interpretation but has a different underlying cause
+

@@ -453,3 +453,146 @@ mindmap
 - **Previous Topic**: [[Investigations in rheumatology]]
 - **Chapter Map**: [[../Davidson Chapter 26 - Rheumatology Hierarchy|Rheumatology Hierarchy]]
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
+---
+
+> Auto-generated study sections for "Clinical Approach to Musculoskeletal Disease" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (64 generated)
+
+- Q: What is the definition of Clinical Approach to Musculoskeletal Disease?
+  A: DMARD/biologic mechanisms, monitoring, step-up therapy, pregnancy safety, and vaccine timing are guaranteed SBA/viva topics.
+- Q: What is the mechanism of Clinical Approach to Musculoskeletal Disease?
+  A: DHFR inhibition → adenosine accumulation (anti-inflammatory) + polyglutamation
+- Q: What is the dose of Clinical Approach to Musculoskeletal Disease?
+  A: 7.5-25mg ONCE WEEKLY (oral/SC); split dose (e.g., 3 doses 12hr apart) if GI intolerance
+- Q: What is Folic Acid of Clinical Approach to Musculoskeletal Disease?
+  A: 5mg weekly (24-48hr AFTER MTX) — reduces mucositis, LFT derangement, cytopenias
+- Q: What is Onset of Clinical Approach to Musculoskeletal Disease?
+  A: 4-8 weeks (max 12 weeks)
+- Q: How is Clinical Approach to Musculoskeletal Disease monitored?
+  A: Baseline: FBC, LFT, U&E, Cr, Hep B/C/HIV, CXR, albumin, pregnancy test
+- Q: What are the side effects of Clinical Approach to Musculoskeletal Disease?
+  A: Hepatotoxicity (fibrosis/cirrhosis — cumulative dose), myelosuppression, pneumonitis (acute hypersensitivity), mucositis, infection
+- Q: What is Pregnancy of Clinical Approach to Musculoskeletal Disease?
+  A: CONTRAINDICATED (teratogenic) — stop 3 months pre-conception (M/F)
+- Q: What is Key Interactions of Clinical Approach to Musculoskeletal Disease?
+  A: TMP-SMX (↑ MTX levels — avoid), NSAIDs (↓ renal clearance), PPIs (↑ MTX levels), penicillins
+- Q: What is the dose of Clinical Approach to Musculoskeletal Disease?
+  A: Start 500mg daily → escalate weekly by 500mg → target 2-3g daily (divided BD)
+- Q: How is Clinical Approach to Musculoskeletal Disease monitored?
+  A: Baseline + monthly ×3, then 3-monthly: FBC, LFT, U&E
+- Q: What are the side effects of Clinical Approach to Musculoskeletal Disease?
+  A: Neutropenia (early, idiosyncratic), hepatotoxicity, rash, male infertility (reversible oligospermia), G6PD deficiency (haemolysis)
+- Q: What is Pregnancy of Clinical Approach to Musculoskeletal Disease?
+  A: SAFE (continue); folic acid 5mg daily (SSZ inhibits folate absorption)
+- Q: What is Key Pearl of Clinical Approach to Musculoskeletal Disease?
+  A: G6PD screen before starting in high-risk populations
+- Q: What is the mechanism of Clinical Approach to Musculoskeletal Disease?
+  A: Dihydroorotate dehydrogenase (DHODH) inhibition → pyrimidine synthesis blockade
+- Q: What is the dose of Clinical Approach to Musculoskeletal Disease?
+  A: Loading 100mg daily ×3 days (optional) → 10-20mg daily
+- Q: What is Half-life of Clinical Approach to Musculoskeletal Disease?
+  A: 2 weeks (active metabolite) — washout with cholestyramine 8g TDS ×11 days if pregnancy/toxicity
+- Q: How is Clinical Approach to Musculoskeletal Disease monitored?
+  A: Baseline + monthly ×3, then 3-monthly: FBC, LFT, BP (hypertension), weight
+- Q: What are the side effects of Clinical Approach to Musculoskeletal Disease?
+  A: Hepatotoxicity, hypertension, diarrhoea, alopecia, peripheral neuropathy, teratogenic
+- Q: What is Pregnancy of Clinical Approach to Musculoskeletal Disease?
+  A: CONTRAINDICATED — M/F washout required (cholestyramine)
+- Q: What is Key Interaction of Clinical Approach to Musculoskeletal Disease?
+  A: Warfarin (↑ INR — monitor), TMP-SMX (↑ LEF levels)
+- Q: What is the mechanism of Clinical Approach to Musculoskeletal Disease?
+  A: Lysosomal pH ↑ → TLR inhibition, antigen processing ↓, anti-thrombotic
+- Q: What is the dose of Clinical Approach to Musculoskeletal Disease?
+  A: ≤5mg/kg actual body weight daily (max 400mg) — retinal toxicity dose-dependent
+- Q: How is Clinical Approach to Musculoskeletal Disease monitored?
+  A: Baseline + annual ophthalmology (10-2 visual field, OCT, fundus autofluorescence) after 5 years (or earlier if risk factors)
+- Q: What are the side effects of Clinical Approach to Musculoskeletal Disease?
+  A: Retinopathy (bull's eye maculopathy — irreversible), cardiomyopathy (rare), GI, skin pigmentation
+- Q: What is Pregnancy of Clinical Approach to Musculoskeletal Disease?
+  A: SAFE — continue throughout
+- Q: What is Key Pearl of Clinical Approach to Musculoskeletal Disease?
+  A: Baseline ophthalmology mandatory; risk factors: >5 years, >5mg/kg, renal impairment, tamoxifen, pre-existing maculopathy
+- Q: What is the mechanism of Clinical Approach to Musculoskeletal Disease?
+  A: Purine analogue → 6-MP → inhibits DNA synthesis
+- Q: What is the dose of Clinical Approach to Musculoskeletal Disease?
+  A: 1-3mg/kg daily (adjust for TPMT)
+- Q: What is the investigation of choice for Clinical Approach to Musculoskeletal Disease?
+  A: Mandatory before starting — low activity = ↓ dose (10-25%) or avoid; absent = avoid
+- Q: How is Clinical Approach to Musculoskeletal Disease monitored?
+  A: Baseline + monthly ×3, then 3-monthly: FBC, LFT
+- Q: What are the side effects of Clinical Approach to Musculoskeletal Disease?
+  A: Myelosuppression (TPMT-related), hepatotoxicity (cholestatic), pancreatitis, infection, malignancy (skin, lymphoma)
+- Q: What is Pregnancy of Clinical Approach to Musculoskeletal Disease?
+  A: SAFE (continue) — fetal TPMT protects
+- Q: What is Key Interaction of Clinical Approach to Musculoskeletal Disease?
+  A: Allopurinol (↑ 6-MP → severe myelosuppression — avoid or ↓ AZA to 25% dose)
+- Q: What is the mechanism of Clinical Approach to Musculoskeletal Disease?
+  A: DHFR inhibition → adenosine accumulation (anti-inflammatory) + polyglutamation
+- Q: What is the dose of Clinical Approach to Musculoskeletal Disease?
+  A: 7.5-25mg ONCE WEEKLY (oral/SC); split dose (e.g., 3 doses 12hr apart) if GI intolerance
+- Q: What is Folic Acid of Clinical Approach to Musculoskeletal Disease?
+  A: 5mg weekly (24-48hr AFTER MTX) — reduces mucositis, LFT derangement, cytopenias
+- Q: What is Onset of Clinical Approach to Musculoskeletal Disease?
+  A: 4-8 weeks (max 12 weeks)
+- Q: How is Clinical Approach to Musculoskeletal Disease monitored?
+  A: Baseline: FBC, LFT, U&E, Cr, Hep B/C/HIV, CXR, albumin, pregnancy test
+- Q: What are the side effects of Clinical Approach to Musculoskeletal Disease?
+  A: Hepatotoxicity (fibrosis/cirrhosis — cumulative dose), myelosuppression, pneumonitis (acute hypersensitivity), mucositis, infection
+- Q: What is Pregnancy of Clinical Approach to Musculoskeletal Disease?
+  A: CONTRAINDICATED (teratogenic) — stop 3 months pre-conception (M/F)
+- Q: What is Key Interactions of Clinical Approach to Musculoskeletal Disease?
+  A: TMP-SMX (↑ MTX levels — avoid), NSAIDs (↓ renal clearance), PPIs (↑ MTX levels), penicillins
+- Q: What is the dose of Clinical Approach to Musculoskeletal Disease?
+  A: Start 500mg daily → escalate weekly by 500mg → target 2-3g daily (divided BD)
+- Q: How is Clinical Approach to Musculoskeletal Disease monitored?
+  A: Baseline + monthly ×3, then 3-monthly: FBC, LFT, U&E
+- Q: What are the side effects of Clinical Approach to Musculoskeletal Disease?
+  A: Neutropenia (early, idiosyncratic), hepatotoxicity, rash, male infertility (reversible oligospermia), G6PD deficiency (haemolysis)
+- Q: What is Pregnancy of Clinical Approach to Musculoskeletal Disease?
+  A: SAFE (continue); folic acid 5mg daily (SSZ inhibits folate absorption)
+- Q: What is the mechanism of Clinical Approach to Musculoskeletal Disease?
+  A: Dihydroorotate dehydrogenase (DHODH) inhibition → pyrimidine synthesis blockade
+- Q: What is the dose of Clinical Approach to Musculoskeletal Disease?
+  A: Loading 100mg daily ×3 days (optional) → 10-20mg daily
+- Q: What is Half-life of Clinical Approach to Musculoskeletal Disease?
+  A: 2 weeks (active metabolite) — washout with cholestyramine 8g TDS ×11 days if pregnancy/toxicity
+- Q: How is Clinical Approach to Musculoskeletal Disease monitored?
+  A: Baseline + monthly ×3, then 3-monthly: FBC, LFT, BP (hypertension), weight
+- Q: What are the side effects of Clinical Approach to Musculoskeletal Disease?
+  A: Hepatotoxicity, hypertension, diarrhoea, alopecia, peripheral neuropathy, teratogenic
+- Q: What is Pregnancy of Clinical Approach to Musculoskeletal Disease?
+  A: CONTRAINDICATED — M/F washout required (cholestyramine)
+- Q: What is the mechanism of Clinical Approach to Musculoskeletal Disease?
+  A: Lysosomal pH ↑ → TLR inhibition, antigen processing ↓, anti-thrombotic
+- Q: What is the dose of Clinical Approach to Musculoskeletal Disease?
+  A: ≤5mg/kg actual body weight daily (max 400mg) — retinal toxicity dose-dependent
+- Q: How is Clinical Approach to Musculoskeletal Disease monitored?
+  A: Baseline + annual ophthalmology (10-2 visual field, OCT, fundus autofluorescence) after 5 years (or earlier if risk factors)
+- Q: What are the side effects of Clinical Approach to Musculoskeletal Disease?
+  A: Retinopathy (bull's eye maculopathy — irreversible), cardiomyopathy (rare), GI, skin pigmentation
+- Q: What is Pregnancy of Clinical Approach to Musculoskeletal Disease?
+  A: SAFE — continue throughout
+- Q: What is the mechanism of Clinical Approach to Musculoskeletal Disease?
+  A: Purine analogue → 6-MP → inhibits DNA synthesis
+- Q: What is the dose of Clinical Approach to Musculoskeletal Disease?
+  A: 1-3mg/kg daily (adjust for TPMT)
+- Q: What is the investigation of choice for Clinical Approach to Musculoskeletal Disease?
+  A: Mandatory before starting — low activity = ↓ dose (10-25%) or avoid; absent = avoid
+- Q: How is Clinical Approach to Musculoskeletal Disease monitored?
+  A: Baseline + monthly ×3, then 3-monthly: FBC, LFT
+- Q: What are the side effects of Clinical Approach to Musculoskeletal Disease?
+  A: Myelosuppression (TPMT-related), hepatotoxicity (cholestatic), pancreatitis, infection, malignancy (skin, lymphoma)
+- Q: What is Pregnancy of Clinical Approach to Musculoskeletal Disease?
+  A: SAFE (continue) — fetal TPMT protects
+- Q: What is Key Interaction of Clinical Approach to Musculoskeletal Disease?
+  A: Allopurinol (↑ 6-MP → severe myelosuppression — avoid or ↓ AZA to 25% dose)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Clinical Approach to Musculoskeletal Disease?**
+   A. **DMARD/biologic mechanisms, monitoring, step-up therapy, pregnancy safety, and vaccine timing are guaranteed SBA/viva topics.**
+   B. An unrelated condition not matching the clinical picture of Clinical Approach to Musculoskeletal Disease
+   C. A complication seen late in the disease course of Clinical Approach to Musculoskeletal Disease
+   D. A condition that mimics Clinical Approach to Musculoskeletal Disease but has a different underlying cause
+

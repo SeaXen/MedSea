@@ -150,3 +150,94 @@ flowchart TD
 
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Liver Tumours" — Ch 23: Hepatology.
+
+## Flashcards (34 generated)
+
+- Q: What is the definition of Liver Tumours?
+  A: | Histology | Cavernous vascular channels lined by endothelium |
+- Q: What is Histology of Liver Tumours?
+  A: Cavernous vascular channels lined by endothelium
+- Q: What is the pathogenesis of Liver Tumours?
+  A: Congenital hamartoma (not true neoplasm)
+- Q: What is Growth of Liver Tumours?
+  A: Slow; hormone-responsive (grows in pregnancy/OCP)
+- Q: What are the clinical features of Liver Tumours?
+  A: Asymptomatic (>90% incidental)
+- Q: What are the complications of Liver Tumours?
+  A: Rupture, Kasabach-Merritt (thrombocytopenia), compression
+- Q: What causes Liver Tumours?
+  A: Vascular malformation + hepatocyte hyperplasia (response to arterial aberration)
+- Q: What is Central Scar of Liver Tumours?
+  A: Fibrosis + abnormal vessels (pathognomonic)
+- Q: What is Genetics of Liver Tumours?
+  A: Usually sporadic; rare familial
+- Q: What is Demographics of Liver Tumours?
+  A: Women 80-90%, age 20-50
+- Q: What is OCP Association of Liver Tumours?
+  A: Strong link (hormone-responsive)
+- Q: What are the clinical features of Liver Tumours?
+  A: Usually asymptomatic; RUQ pain if large
+- Q: What are the complications of Liver Tumours?
+  A: Rare rupture, bleeding (unlike adenoma)
+- Q: What is Central Scar of Liver Tumours?
+  A: T2 hyperintense, delayed enhancement (pathognomonic)
+- Q: What is "Wheel-spoke" Pattern of Liver Tumours?
+  A: Radial vessels on arterial phase
+- Q: What is Hepatobiliary Phase of Liver Tumours?
+  A: Iso/hyperintense (contains hepatocytes + bile ductules)
+- Q: What is Demographics of Liver Tumours?
+  A: Women 90% (OCP use 80-90%), age 15-45
+- Q: What causes Liver Tumours?
+  A: OCP >5 years, anabolic steroids, glycogen storage diseases
+- Q: What are the clinical features of Liver Tumours?
+  A: Asymptomatic, RUQ pain, rupture (haemorrhage) - 25-30%
+- Q: What is Malignant Transformation of Liver Tumours?
+  A: 5-10% (b-HCA highest)
+- Q: What is Histology of Liver Tumours?
+  A: Cavernous vascular channels lined by endothelium
+- Q: What is the pathogenesis of Liver Tumours?
+  A: Congenital hamartoma (not true neoplasm)
+- Q: What are the clinical features of Liver Tumours?
+  A: Asymptomatic (>90% incidental)
+- Q: What causes Liver Tumours?
+  A: Vascular malformation + hepatocyte hyperplasia (response to arterial aberration)
+- Q: What is Central Scar of Liver Tumours?
+  A: Fibrosis + abnormal vessels (pathognomonic)
+- Q: What is Demographics of Liver Tumours?
+  A: Women 80-90%, age 20-50
+- Q: What is OCP Association of Liver Tumours?
+  A: Strong link (hormone-responsive)
+- Q: What are the clinical features of Liver Tumours?
+  A: Usually asymptomatic; RUQ pain if large
+- Q: What is Central Scar of Liver Tumours?
+  A: T2 hyperintense, delayed enhancement (pathognomonic)
+- Q: What is "Wheel-spoke" Pattern of Liver Tumours?
+  A: Radial vessels on arterial phase
+- Q: What is Hepatobiliary Phase of Liver Tumours?
+  A: Iso/hyperintense (contains hepatocytes + bile ductules)
+- Q: What is Demographics of Liver Tumours?
+  A: Women 90% (OCP use 80-90%), age 15-45
+- Q: What causes Liver Tumours?
+  A: OCP >5 years, anabolic steroids, glycogen storage diseases
+- Q: What are the clinical features of Liver Tumours?
+  A: Asymptomatic, RUQ pain, rupture (haemorrhage) - 25-30%
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Liver Tumours?**
+   A. **| Histology | Cavernous vascular channels lined by endothelium |**
+   B. An unrelated condition not matching the clinical picture of Liver Tumours
+   C. A complication seen late in the disease course of Liver Tumours
+   D. A condition that mimics Liver Tumours but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Liver Tumours presents with: Presentation — Asymptomatic (>90% incidental); Symptoms (if large >10cm) — RUQ fullness, pain, early satiety; Complications (Rare) — Rupture, Kasabach-Merritt (thrombocytopenia), compression. What is the most likely diagnosis?
+   A. **Liver Tumours**
+   B. A condition that mimics Liver Tumours but is not the same entity
+   C. A complication of Liver Tumours rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Liver Tumours
+

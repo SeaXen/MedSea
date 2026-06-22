@@ -288,3 +288,70 @@ mindmap
 - [[Inherited and Metabolic Liver Disease/Haemochromatosis|Haemochromatosis]]
 - [[Inherited and Metabolic Liver Disease/Alpha-1 Antitrypsin Deficiency|Alpha-1 AT]]
 - [[Acute Liver Failure/Definition and Aetiology|ALF Aetiology]]
+---
+
+> Auto-generated study sections for "Inherited and Metabolic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (22 generated)
+
+- Q: What is the definition of Inherited and Metabolic Liver Disease?
+  A: | Enzyme | Gene | Porphyria | Accumulates |
+- Q: What is Enzyme of Inherited and Metabolic Liver Disease?
+  A: UROD (acquired inhibition ± genetic)
+- Q: What is Inheritance of Inherited and Metabolic Liver Disease?
+  A: Sporadic (80%) — acquired (alcohol, HCV, HIV, estrogen, iron); Familial (20%) — autosomal dominant
+- Q: What are the clinical features of Inherited and Metabolic Liver Disease?
+  A: Photosensitivity: Blistering on sun-exposed areas (hands, face), skin fragility, hypertrichosis, hyperpigmentation
+- Q: What is Biochemistry of Inherited and Metabolic Liver Disease?
+  A: Urinary uroporphyrin ↑↑, heptacarboxyl ↑↑; Fecal isocoproporphyrin ↑
+- Q: What is Associations of Inherited and Metabolic Liver Disease?
+  A: HCV (50%), Alcohol, Estrogen, HFE mutations (iron overload), HIV
+- Q: How is Inherited and Metabolic Liver Disease managed?
+  A: Venesection (target ferritin 50-100) OR Low-dose chloroquine/hydroxychloroquine
+- Q: What is Enzyme of Inherited and Metabolic Liver Disease?
+  A: UROD (acquired inhibition ± genetic)
+- Q: What is Inheritance of Inherited and Metabolic Liver Disease?
+  A: Sporadic (80%) — acquired (alcohol, HCV, HIV, estrogen, iron); Familial (20%) — autosomal dominant
+- Q: What are the clinical features of Inherited and Metabolic Liver Disease?
+  A: Photosensitivity: Blistering on sun-exposed areas (hands, face), skin fragility, hypertrichosis, hyperpigmentation
+- Q: What is Biochemistry of Inherited and Metabolic Liver Disease?
+  A: Urinary uroporphyrin ↑↑, heptacarboxyl ↑↑; Fecal isocoproporphyrin ↑
+- Q: What is Associations of Inherited and Metabolic Liver Disease?
+  A: HCV (50%), Alcohol, Estrogen, HFE mutations (iron overload), HIV
+- Q: What is Acute Porphyrias of Inherited and Metabolic Liver Disease?
+  A: AIP, VP, HCP — Neurovisceral attacks (abdo pain, neuropathy, psychiatric)
+- Q: What is Cutaneous Porphyrias of Inherited and Metabolic Liver Disease?
+  A: PCT, EPP, CEP — Photosensitivity
+- Q: What is the investigation of choice for Inherited and Metabolic Liver Disease?
+  A: Urinary PBG (↑↑ in acute attack)
+- Q: What is AIP of Inherited and Metabolic Liver Disease?
+  A: PBGD low; Urinary PBG/ALA ↑; Fecal normal
+- Q: What is VP of Inherited and Metabolic Liver Disease?
+  A: Plasma fluorescence 626 nm; Fecal proto + copro ↑; Photosensitivity
+- Q: What is HCP of Inherited and Metabolic Liver Disease?
+  A: Fecal coproporphyrin III ↑; Photosensitivity
+- Q: What is PCT of Inherited and Metabolic Liver Disease?
+  A: Most common; Urinary uroporphyrin ↑; Venesection or chloroquine; HCV, alcohol, iron
+- Q: What is EPP of Inherited and Metabolic Liver Disease?
+  A: Childhood pain on sun exposure; RBC protoporphyrin ↑; Afamelanotide
+- Q: What is Acute Attack Rx of Inherited and Metabolic Liver Disease?
+  A: Stop drugs, IV Glucose, Haemin 3-4 mg/kg ×4d
+- Q: What is Precipitants of Inherited and Metabolic Liver Disease?
+  A: Drugs (barbiturates, rifampicin, phenytoin, OCP), Fasting, Alcohol, Hormones
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inherited and Metabolic Liver Disease?**
+   A. **| Enzyme | Gene | Porphyria | Accumulates |**
+   B. An unrelated condition not matching the clinical picture of Inherited and Metabolic Liver Disease
+   C. A complication seen late in the disease course of Inherited and Metabolic Liver Disease
+   D. A condition that mimics Inherited and Metabolic Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inherited and Metabolic Liver Disease presents with: A[Porphyrias: Defects in Haem Biosynthesis] --> B{Hepatic (Liver)}; A --> C{Erythropoietic (Bone Marrow)}; B --> D[Acute Hepatic Porphyrias]. What is the most likely diagnosis?
+   A. **Inherited and Metabolic Liver Disease**
+   B. A condition that mimics Inherited and Metabolic Liver Disease but is not the same entity
+   C. A complication of Inherited and Metabolic Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inherited and Metabolic Liver Disease
+

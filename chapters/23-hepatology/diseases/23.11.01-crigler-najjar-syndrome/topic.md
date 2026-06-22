@@ -249,3 +249,38 @@ mindmap
 - [[Inherited and Metabolic Liver Disease/Gilbert Syndrome|Gilbert Syndrome]]
 - [[Inherited and Metabolic Liver Disease/Dubin-Johnson vs Rotor Syndrome|Dubin-Johnson vs Rotor]]
 - [[Jaundice and LFT Interpretation/Isolated hyperbilirubinaemia|Isolated Hyperbilirubinaemia]]
+---
+
+> Auto-generated study sections for "Inherited and Metabolic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Inherited and Metabolic Liver Disease?
+  A: | Feature | Type 1 | Type 2 (Arias) |
+- Q: How is Inherited and Metabolic Liver Disease classified?
+  A: Bilirubin >340, no phenobarbital response, kernicterus high, transplant curative
+- Q: What is Gilbert of Inherited and Metabolic Liver Disease?
+  A: Bilirubin 20-80, benign, no treatment
+- Q: What is Kernicterus of Inherited and Metabolic Liver Disease?
+  A: Acute: opisthotonus, seizures; Chronic: choreoathetosis, gaze palsy, hearing loss
+- Q: How is Inherited and Metabolic Liver Disease managed?
+  A: Blue light 420-470 nm; converts bilirubin to water-soluble isomers
+- Q: What is Phenobarbital of Inherited and Metabolic Liver Disease?
+  A: Induces UGT1A1 — works ONLY in Type 2 (and Gilbert, but not needed)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inherited and Metabolic Liver Disease?**
+   A. **| Feature | Type 1 | Type 2 (Arias) |**
+   B. An unrelated condition not matching the clinical picture of Inherited and Metabolic Liver Disease
+   C. A complication seen late in the disease course of Inherited and Metabolic Liver Disease
+   D. A condition that mimics Inherited and Metabolic Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inherited and Metabolic Liver Disease presents with: Feature — Crigler-Najjar Syndrome; Definition — Severe congenital unconjugated hyperbilirubinaemia due to UGT1A1 deficiency; Inheritance — Autosomal recessive. What is the most likely diagnosis?
+   A. **Inherited and Metabolic Liver Disease**
+   B. A condition that mimics Inherited and Metabolic Liver Disease but is not the same entity
+   C. A complication of Inherited and Metabolic Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inherited and Metabolic Liver Disease
+

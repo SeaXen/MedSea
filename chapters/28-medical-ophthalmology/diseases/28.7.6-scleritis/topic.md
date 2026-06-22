@@ -619,3 +619,48 @@ D. Retinal detachment
 ## 23. Tags
 
 #medicine #davidson #ophthalmology #scleritis #scleromalacia #PUK #RA #vasculitis #GPA #fcps #mrcp
+---
+
+> Auto-generated study sections for "07_Uveal_Tract" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of 07_Uveal_Tract?
+  A: Related: [[Episcleritis]], [[Rheumatoid Arthritis (Ocular)]], [[Anterior Uveitis (Iritis)]], [[The Red Eye (Approach)]]
+- Q: What is Scleritis = sclera proper; episcleritis = superficial of 07_Uveal_Tract?
+  A: Deep pain, wakes from sleep = scleritis
+- Q: What is 50% associated with systemic disease of 07_Uveal_Tract?
+  A: RA most common, then GPA, SLE, AS
+- Q: What is Necrotising = most severe of 07_Uveal_Tract?
+  A: Perforation risk, surgical emergency
+- Q: What is Scleromalacia perforans = RA, painless of 07_Uveal_Tract?
+  A: Quiet killer, avascular scleral thinning
+- Q: What is Posterior scleritis = T-sign on B-scan of 07_Uveal_Tract?
+  A: Choroidal folds, exudative RD, proptosis
+- Q: What is PUK = crescent-shaped peripheral corneal ulcer of 07_Uveal_Tract?
+  A: Strongly suggests systemic vasculitis
+- Q: What is the first-line treatment for 07_Uveal_Tract?
+  A: Steroid if no response
+- Q: What is Necrotising = systemic steroid + immunosuppressant of 07_Uveal_Tract?
+  A: MTX, cyclophosphamide, biologics
+- Q: What is Always rule out infection before steroid of 07_Uveal_Tract?
+  A: VZV, syphilis, TB, Lyme
+- Q: What is Refer to rheumatology for systemic workup of 07_Uveal_Tract?
+  A: ANCA, ANA, RF, anti-CCP
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 07_Uveal_Tract?**
+   A. **Related: [[Episcleritis]], [[Rheumatoid Arthritis (Ocular)]], [[Anterior Uveitis (Iritis)]], [[The Red Eye (Approach)]]**
+   B. An unrelated condition not matching the clinical picture of 07_Uveal_Tract
+   C. A complication seen late in the disease course of 07_Uveal_Tract
+   D. A condition that mimics 07_Uveal_Tract but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected 07_Uveal_Tract presents with: Inflammation of the sclera proper (the dense avascular collagen coat of the eye). It is a chronic, painful, potentially blinding condition that almost always indicates an underlying systemic disease — particularly autoimmune connective tissue disease.; Scleritis vs Episcleritis (the common exam discriminator):; Pain — Severe, boring, radiating, wakes from sleep. What is the most likely diagnosis?
+   A. **07_Uveal_Tract**
+   B. A condition that mimics 07_Uveal_Tract but is not the same entity
+   C. A complication of 07_Uveal_Tract rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as 07_Uveal_Tract
+

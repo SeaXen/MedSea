@@ -36,3 +36,20 @@ modified: 2026-06-16
 
 ## Tags
 #medicine #davidson #ophthalmology #hub #orbit #trauma
+---
+
+> Auto-generated study sections for "11_Orbit_and_Trauma" — Ch 28: Medical Ophthalmology.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of 11_Orbit_and_Trauma?
+  A: # Section 11: Orbit & Ocular Trauma — Hub
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes 11_Orbit_and_Trauma?**
+   A. **# Section 11: Orbit & Ocular Trauma — Hub**
+   B. An unrelated condition not matching the clinical picture of 11_Orbit_and_Trauma
+   C. A complication seen late in the disease course of 11_Orbit_and_Trauma
+   D. A condition that mimics 11_Orbit_and_Trauma but has a different underlying cause
+

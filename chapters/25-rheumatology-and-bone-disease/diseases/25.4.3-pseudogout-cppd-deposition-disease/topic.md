@@ -336,3 +336,54 @@ mindmap
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Investigation Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Investigations in rheumatology|Investigations in rheumatology]]
 - **Related**: [[Gout]] · [[Basic calcium phosphate crystal deposition]]
+---
+
+> Auto-generated study sections for "Crystal Arthropathies" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Crystal Arthropathies?
+  A: Deposition of calcium pyrophosphate dihydrate (CPPD) crystals in articular cartilage, fibrocartilage, and soft tissues → acute inflammation ("pseudogout") or chronic arthropathy
+- Q: What is the epidemiology of Crystal Arthropathies?
+  A: Increases with age — 10-15% >65y, 40% >85y (autopsy); many asymptomatic
+- Q: What is Peak Onset of Crystal Arthropathies?
+  A: >65 years (rare <50 unless metabolic association)
+- Q: What is Sex Ratio of Crystal Arthropathies?
+  A: M = F (slight female predominance in elderly)
+- Q: What is Genetics of Crystal Arthropathies?
+  A: ANKH mutations (familial CPPD); sporadic more common
+- Q: What is Crystal of Crystal Arthropathies?
+  A: CPPD = Rhomboid/Rectangular, Weak Positive Birefringence (Blue Parallel)
+- Q: What is Mnemonic of Crystal Arthropathies?
+  A: Pseudogout = Blue Rhomboids (Positive) vs Gout = Yellow Needles (Negative)
+- Q: What is Chondrocalcinosis of Crystal Arthropathies?
+  A: Linear calcification of fibrocartilage: Menisci (knee), TFCC (wrist), Pubic symphysis
+- Q: What is Clinical of Crystal Arthropathies?
+  A: Knee > Wrist > Ankle; older (>65); less dramatic than gout
+- Q: What is Associations (Screen!) of Crystal Arthropathies?
+  A: Haemochromatosis (Ferritin, TSAT), Hyperparathyroidism (PTH, Ca), Hypomagnesaemia (Mg), Hypophosphatasia (low ALP), ANKH (familial)
+- Q: What is Crowned Dens of Crystal Arthropathies?
+  A: CPPD in atlantoaxial → acute neck pain, fever, periodontoid calcification on CT
+- Q: What is Acute Rx of Crystal Arthropathies?
+  A: NSAID / Colchicine low-dose / IA Steroid / Oral Pred (like gout)
+- Q: What is No ULT of Crystal Arthropathies?
+  A: No allopurinol equivalent — treat underlying cause only
+- Q: What is Chronic Arthropathy of Crystal Arthropathies?
+  A: Wrist (scapholunate), knee, hip — OA-like + chondrocalcinosis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Crystal Arthropathies?**
+   A. **| Definition | Deposition of calcium pyrophosphate dihydrate (CPPD) crystals in articular cartilage, fibrocartilage, and soft tissues → acute inflammation ("pseudogout") or chronic arthropathy |**
+   B. An unrelated condition not matching the clinical picture of Crystal Arthropathies
+   C. A complication seen late in the disease course of Crystal Arthropathies
+   D. A condition that mimics Crystal Arthropathies but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Crystal Arthropathies presents with: Definition — Deposition of calcium pyrophosphate dihydrate (CPPD) crystals in articular cartilage, fibrocartilage, and soft tissues → acute inflammation ("pseudogout") or chronic arthropathy; Prevalence — Increases with age — 10-15% >65y, 40% >85y (autopsy); many asymptomatic; Peak Onset — >65 years (rare <50 unless metabolic association). What is the most likely diagnosis?
+   A. **Crystal Arthropathies**
+   B. A condition that mimics Crystal Arthropathies but is not the same entity
+   C. A complication of Crystal Arthropathies rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Crystal Arthropathies
+

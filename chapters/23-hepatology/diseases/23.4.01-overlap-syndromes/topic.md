@@ -283,3 +283,40 @@ mindmap
 - [[Autoimmune Liver Disease/Primary sclerosing cholangitis (PSC)|PSC]]
 - [[Autoimmune Liver Disease/AIH diagnostic criteria (IAIHG simplified)|AIH Criteria]]
 - [[Autoimmune Liver Disease/IgG4-related sclerosing cholangitis|IgG4-SC]]
+---
+
+> Auto-generated study sections for "Autoimmune Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (7 generated)
+
+- Q: What is the definition of Autoimmune Liver Disease?
+  A: C -->|ALT >5xULN OR IgG >2xULN OR ANA/SMA ≥1:80| D[AIH-PBC OVERLAP]
+- Q: What is AIH-PBC of Autoimmune Liver Disease?
+  A: Women, AMA+, ALP↑↑+ALT↑↑, ANA/SMA+, IgG↑; Paris: 2 PBC + 2 AIH
+- Q: What is AIH-PSC of Autoimmune Liver Disease?
+  A: Men, IBD, MRCP Beading, ALP↑↑+ALT↑↑, ANA/SMA+, p-ANCA+, AMA-
+- Q: How is Autoimmune Liver Disease managed?
+  A: UDCA + Immunosuppression (Pred + Aza) for both
+- Q: What is Response of Autoimmune Liver Disease?
+  A: Paris I/II for PBC component; ALT/IgG normalization for AIH
+- Q: What is Biopsy of Autoimmune Liver Disease?
+  A: Florid Duct + Interface Hepatitis (AIH-PBC); Duct + Interface (AIH-PSC)
+- Q: What is Transplant of Autoimmune Liver Disease?
+  A: Decompensation / CCA (PSC)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Liver Disease?**
+   A. **C -->|ALT >5xULN OR IgG >2xULN OR ANA/SMA ≥1:80| D[AIH-PBC OVERLAP]**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Liver Disease
+   C. A complication seen late in the disease course of Autoimmune Liver Disease
+   D. A condition that mimics Autoimmune Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Liver Disease presents with: Overlap Syndrome = Features of two autoimmune liver diseases simultaneously (usually AIH + PBC or AIH + PSC); AIH-PBC — Autoimmune Hepatitis + Primary Biliary Cholangitis; AIH-PSC — Autoimmune Hepatitis + Primary Sclerosing Cholangitis. What is the most likely diagnosis?
+   A. **Autoimmune Liver Disease**
+   B. A condition that mimics Autoimmune Liver Disease but is not the same entity
+   C. A complication of Autoimmune Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Liver Disease
+

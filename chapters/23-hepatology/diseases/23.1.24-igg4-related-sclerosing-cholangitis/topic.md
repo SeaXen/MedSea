@@ -266,3 +266,92 @@ mindmap
 - [[Autoimmune Liver Disease/Autoimmune hepatitis (AIH)|AIH]]
 - [[Autoimmune Liver Disease/PBC (Primary Biliary Cholangitis)|PBC]]
 - [[Biliary Tract Disease/Cholangiocarcinoma|Cholangiocarcinoma]]
+---
+
+> Auto-generated study sections for "Autoimmune Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Autoimmune Liver Disease?
+  A: IgG4-related disease manifesting as sclerosing cholangitis — part of systemic IgG4-related disease
+- Q: What is Demographics of Autoimmune Liver Disease?
+  A: Men > Women (2:1), Age 50-70
+- Q: What is Association of Autoimmune Liver Disease?
+  A: Multi-organ involvement: Pancreatitis (Type 1 AIP), Sialadenitis, Retroperitoneal Fibrosis, Tubulointerstitial Nephritis
+- Q: What is Malignant Mimicry of Autoimmune Liver Disease?
+  A: Mimics Cholangiocarcinoma and PSC
+- Q: What is H (Histology) of Autoimmune Liver Disease?
+  A: Lymphoplasmacytic infiltrate with >10 IgG4+ plasma cells/HPF AND IgG4/IgG ratio >40% + Storiform Fibrosis + Obliterative Phlebitis
+- Q: What is I (Imaging) of Autoimmune Liver Disease?
+  A: MRCP/ERCP: Diffuse/segmental biliary strictures (often lower CBD, pancreatic); Pancreatic enlargement (Type 1 AIP)
+- Q: What is S (Serology) of Autoimmune Liver Disease?
+  A: Serum IgG4 >135 mg/dL (or >2×ULN)
+- Q: What is O (Other Organ) of Autoimmune Liver Disease?
+  A: Type 1 AIP, Sialadenitis (Mikulicz), Retroperitoneal Fibrosis, RPN, Lymphadenopathy
+- Q: What is R (Response) of Autoimmune Liver Disease?
+  A: Rapid Clinical/Imaging Response to Steroids (2-4 weeks)
+- Q: What is t (Tomography) of Autoimmune Liver Disease?
+  A: CT/MRI: Pancreatic/biliary involvement
+- Q: What are the clinical features of Autoimmune Liver Disease?
+  A: Jaundice, Pruritus, Weight Loss, Abdominal Pain
+- Q: What is Jaundice of Autoimmune Liver Disease?
+  A: Obstructive pattern (Conjugated bilirubin ↑, ALP ↑↑)
+- Q: What is Pancreatic Involvement of Autoimmune Liver Disease?
+  A: 60-80% have Type 1 AIP (diffuse pancreatic enlargement, "Sausage pancreas")
+- Q: What is Other Organs of Autoimmune Liver Disease?
+  A: Submandibular/lacrimal gland enlargement (Mikulicz), Retroperitoneal fibrosis, Lymphadenopathy
+- Q: What is Autoantibodies of Autoimmune Liver Disease?
+  A: ANA+, Rheumatoid Factor+, Anti-nuclear (non-specific)
+- Q: What is Inflammatory Markers of Autoimmune Liver Disease?
+  A: ESR/CRP ↑, IgG ↑, IgG4 ↑↑
+- Q: What is Rate of Autoimmune Liver Disease?
+  A: 30-50% after steroid taper
+- Q: What is Timing of Autoimmune Liver Disease?
+  A: Within 1-2 years
+- Q: How is Autoimmune Liver Disease managed?
+  A: Re-induction with Steroids + Steroid-Sparing Agent
+- Q: What is Rate of Autoimmune Liver Disease?
+  A: 30-50% after steroid taper
+- Q: What is Timing of Autoimmune Liver Disease?
+  A: Within 1-2 years
+- Q: How is Autoimmune Liver Disease managed?
+  A: Re-induction with Steroids + Steroid-Sparing Agent
+- Q: What is Demographics of Autoimmune Liver Disease?
+  A: Older Men (50-70)
+- Q: What is Key Association of Autoimmune Liver Disease?
+  A: Type 1 AIP (Autoimmune Pancreatitis)
+- Q: What is Serum IgG4 of Autoimmune Liver Disease?
+  A: >135 mg/dL (or >2×ULN)
+- Q: What is Imaging of Autoimmune Liver Disease?
+  A: Long diffuse strictures, Lower CBD, Pancreatic Enlargement
+- Q: What is Histology of Autoimmune Liver Disease?
+  A: >10 IgG4+/HPF, IgG4/IgG >40%, Storiform Fibrosis, Obliterative Phlebitis
+- Q: What is Other Organs of Autoimmune Liver Disease?
+  A: AIP, Mikulicz (Sialadenitis/Lacrimal), Retroperitoneal Fibrosis, RPN
+- Q: What is the investigation of choice for Autoimmune Liver Disease?
+  A: HISORt Criteria (Histology, Imaging, Serology, Other Organ, Response, Tomography)
+- Q: How is Autoimmune Liver Disease managed?
+  A: Steroids 40mg → Taper over 6mo → Maintenance 5-10mg
+- Q: What is Response of Autoimmune Liver Disease?
+  A: Rapid (2-4 weeks) — Key diagnostic feature
+- Q: What is Relapse of Autoimmune Liver Disease?
+  A: 30-50% → Steroid-sparing (Aza, MMF, Rituximab)
+- Q: What is Mimics of Autoimmune Liver Disease?
+  A: PSC, Cholangiocarcinoma — Biopsy if uncertain
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoimmune Liver Disease?**
+   A. **HISORt Criteria = Histology + Imaging + Serology + Other Organ + Response to Steroids**
+   B. An unrelated condition not matching the clinical picture of Autoimmune Liver Disease
+   C. A complication seen late in the disease course of Autoimmune Liver Disease
+   D. A condition that mimics Autoimmune Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoimmune Liver Disease presents with: Definition — IgG4-related disease manifesting as sclerosing cholangitis — part of systemic IgG4-related disease; Demographics — Men > Women (2:1), Age 50-70; Association — Multi-organ involvement: Pancreatitis (Type 1 AIP), Sialadenitis, Retroperitoneal Fibrosis, Tubulointerstitial Nephritis. What is the most likely diagnosis?
+   A. **Autoimmune Liver Disease**
+   B. A condition that mimics Autoimmune Liver Disease but is not the same entity
+   C. A complication of Autoimmune Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoimmune Liver Disease
+

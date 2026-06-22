@@ -150,3 +150,72 @@ flowchart TD
     B -->|Presymptomatic / Mild| E[Zinc 50mg TID alone (or + low-dose chelator)]
 
 *...continued (truncated for renderer performance)*
+---
+
+> Auto-generated study sections for "Inherited and Metabolic Liver Disease" — Ch 23: Hepatology.
+
+## Flashcards (23 generated)
+
+- Q: What is the definition of Inherited and Metabolic Liver Disease?
+  A: B --> F[Acute Liver Failure (5-10% of young ALF)]
+- Q: What is Genetics of Inherited and Metabolic Liver Disease?
+  A: Autosomal recessive: ATP7B gene (chromosome 13)
+- Q: What is Protein of Inherited and Metabolic Liver Disease?
+  A: ATP7B = Copper-transporting ATPase (biliary excretion)
+- Q: What is Defect of Inherited and Metabolic Liver Disease?
+  A: Impaired biliary copper excretion → hepatic copper accumulation → oxidative damage
+- Q: What is the epidemiology of Inherited and Metabolic Liver Disease?
+  A: 1:30,000; carrier frequency 1:90
+- Q: What is Age of onset of Inherited and Metabolic Liver Disease?
+  A: 5-35 years (hepatic); 10-50 years (neurological)
+- Q: What causes Inherited and Metabolic Liver Disease?
+  A: Copper deposition in Descemet's membrane
+- Q: What is Detection of Inherited and Metabolic Liver Disease?
+  A: Slit-lamp examination (essential — not visible to naked eye usually)
+- Q: What is Sensitivity of Inherited and Metabolic Liver Disease?
+  A: Neurological: 95-100%; Hepatic: 50-60%; ALF: often absent
+- Q: What is Specificity of Inherited and Metabolic Liver Disease?
+  A: High (also in chronic cholestasis: PBC, PSC — but rare)
+- Q: What is Normal of Inherited and Metabolic Liver Disease?
+  A: <50 μg/g dry weight
+- Q: What is Wilson of Inherited and Metabolic Liver Disease?
+  A: >250 μg/g (diagnostic)
+- Q: What is Caveat of Inherited and Metabolic Liver Disease?
+  A: Sampling error in cirrhosis; cholestatic diseases also high
+- Q: What is the mechanism of Inherited and Metabolic Liver Disease?
+  A: Induces intestinal metallothionein → blocks copper absorption
+- Q: What is Use of Inherited and Metabolic Liver Disease?
+  A: Maintenance after decoppering; Initial for presymptomatic/mild
+- Q: How is Inherited and Metabolic Liver Disease monitored?
+  A: Urinary copper <100 μg/24h; Zinc levels
+- Q: What causes Inherited and Metabolic Liver Disease?
+  A: Copper deposition in Descemet's membrane
+- Q: What is Detection of Inherited and Metabolic Liver Disease?
+  A: Slit-lamp examination (essential — not visible to naked eye usually)
+- Q: What is Sensitivity of Inherited and Metabolic Liver Disease?
+  A: Neurological: 95-100%; Hepatic: 50-60%; ALF: often absent
+- Q: What is Normal of Inherited and Metabolic Liver Disease?
+  A: <50 μg/g dry weight
+- Q: What is Wilson of Inherited and Metabolic Liver Disease?
+  A: >250 μg/g (diagnostic)
+- Q: What is the mechanism of Inherited and Metabolic Liver Disease?
+  A: Induces intestinal metallothionein → blocks copper absorption
+- Q: What is Use of Inherited and Metabolic Liver Disease?
+  A: Maintenance after decoppering; Initial for presymptomatic/mild
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Inherited and Metabolic Liver Disease?**
+   A. **B --> F[Acute Liver Failure (5-10% of young ALF)]**
+   B. An unrelated condition not matching the clinical picture of Inherited and Metabolic Liver Disease
+   C. A complication seen late in the disease course of Inherited and Metabolic Liver Disease
+   D. A condition that mimics Inherited and Metabolic Liver Disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Inherited and Metabolic Liver Disease presents with: Feature — Wilson Disease; Genetics — Autosomal recessive: ATP7B gene (chromosome 13); Protein — ATP7B = Copper-transporting ATPase (biliary excretion). What is the most likely diagnosis?
+   A. **Inherited and Metabolic Liver Disease**
+   B. A condition that mimics Inherited and Metabolic Liver Disease but is not the same entity
+   C. A complication of Inherited and Metabolic Liver Disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Inherited and Metabolic Liver Disease
+

@@ -457,3 +457,72 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (23 generated)
+
+- Q: What is the definition of Hematology?
+  A: [!info] Davidson Ch 25 Alignment: Haematological Malignancies → Lymphomas → Non-Hodgkin Lymphoma
+- Q: What is Genetics of Hematology?
+  A: t(8;14) MYC::IGH (80%), t(8;22) MYC::IGL, t(2;8) MYC::IGK
+- Q: How is Hematology classified?
+  A: CD20+, CD10+, BCL6+, BCL2-, Ki-67 ~100%, MYC protein+
+- Q: How is Hematology managed?
+  A: Intensive chemo + Rituximab: CODOX-M/IVAC, Hyper-CVAD, LMB (pediatric)
+- Q: What is CNS Prophylaxis of Hematology?
+  A: Mandatory: Intrathecal MTX/Ara-C + High-dose MTX (3-4 g/m²) during systemic chemo
+- Q: What is TLS Risk of Hematology?
+  A: EXTREME – Rasburicase, aggressive hydration, allopurinol, monitor q6h
+- Q: What is Genetics of Hematology?
+  A: t(8;14) MYC::IGH (80%), t(8;22) MYC::IGL, t(2;8) MYC::IGK
+- Q: How is Hematology classified?
+  A: CD20+, CD10+, BCL6+, BCL2-, Ki-67 ~100%, MYC protein+
+- Q: How is Hematology managed?
+  A: Intensive chemo + Rituximab: CODOX-M/IVAC, Hyper-CVAD, LMB (pediatric)
+- Q: What is CNS Prophylaxis of Hematology?
+  A: Mandatory: Intrathecal MTX/Ara-C + High-dose MTX (3-4 g/m²) during systemic chemo
+- Q: What is TLS Risk of Hematology?
+  A: EXTREME – Rasburicase, aggressive hydration, allopurinol, monitor q6h
+- Q: How is Hematology classified?
+  A: B-cell 85-90% (DLBCL 30-35%, FL 20-25%, MCL 5-7%, MZL 8-10%, Burkitt 1-2%)
+- Q: What is the investigation of choice for Hematology?
+  A: Excisional node biopsy (core/incisional inadequate); IHC, Flow, FISH, PET-CT
+- Q: What is DLBCL Frontline of Hematology?
+  A: R-CHOP ×6 (IPI 0-2); Pola-R-CHP (IPI 3-5, POLARIX); DA-EPOCH-R (DH/TH)
+- Q: What is DLBCL CNS Prophylaxis of Hematology?
+  A: High-risk sites OR CNS-IPI ≥2 → IT MTX or HD-MTX
+- Q: What is FL Indolent of Hematology?
+  A: Stage I-II = RT (curative); Stage III-IV asymptomatic = Watch & Wait; Symptomatic = R-Benda / G-chemo
+- Q: What is FL Transformation of Hematology?
+  A: Excisional biopsy → Treat as DLBCL
+- Q: What is MCL of Hematology?
+  A: t(11;14) Cyclin D1+ → Fit young = R-CHOP/R-Benda → Auto-HSCT → Ritux maint; R/R = BTKi
+- Q: What is MZL (Gastric MALT) of Hematology?
+  A: H. pylori eradication FIRST
+- Q: What is Burkitt of Hematology?
+  A: MYC translocation, Ki-67 100%, BCL2- → CODOX-M/IVAC/Hyper-CVAD + RTX + CNS prophylaxis
+- Q: What is DH/TH Lymphoma of Hematology?
+  A: MYC + BCL2/BCL6 → DA-EPOCH-R + CNS prophylaxis
+- Q: What is CAR-T of Hematology?
+  A: CD19 CAR-T for R/R DLBCL/FL/MCL after ≥2 lines (Axi, Tisa, Liso, Brexu)
+- Q: What is Bispecifics of Hematology?
+  A: Glofitamab, Epcoritamab (CD20×CD3) – step-up dosing, CRS/ICANS
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Haematological Malignancies → Lymphomas → Non-Hodgkin Lymphoma**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Mature B-cell Neoplasms — ;  — DLBCL (Diffuse Large B-cell Lymphoma);  — Follicular Lymphoma (FL). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

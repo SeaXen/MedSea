@@ -399,3 +399,110 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (42 generated)
+
+- Q: What is the definition of Hematology?
+  A: # Foetal & Neonatal Transfusion / Haemolytic Disease of Fetus and Newborn (HDFN)
+- Q: What is Maternal Group & Antibody Screen of Hematology?
+  A: Booking + 28 weeks
+- Q: What is Antibody Identification + Titre of Hematology?
+  A: Identify specificity & level
+- Q: What is MCA-PSV Doppler of Hematology?
+  A: Non-invasive detection of fetal anaemia (>1.5 MoM = Anaemic)
+- Q: What is Amniotic Fluid ΔOD450 of Hematology?
+  A: Historical (Liley chart), Replaced by MCA-PSV
+- Q: What is Fetal Blood Sampling (Cordocentesis) of Hematology?
+  A: Confirm anaemia before IUT (Hb, Group, Direct Coombs)
+- Q: What is Amniocentesis (ΔOD450) of Hematology?
+  A: If MCA-PSV unavailable
+- Q: What is Route of Hematology?
+  A: Intravascular (IVT) (Umbilical vein) - Preferred
+- Q: What is Alternative of Hematology?
+  A: Intraperitoneal (IPT) - Used if IVT not feasible
+- Q: What is Donor Blood of Hematology?
+  A: O Negative, CMV-, Irradiated, HbS Negative, Hb 70-80 g/L, <5 days old
+- Q: What is Volume of Hematology?
+  A: 40-50 mL/kg estimated fetal weight
+- Q: What is Target Fetal Hb of Hematology?
+  A: 120-140 g/L (Post-transfusion)
+- Q: What is Repeat Interval of Hematology?
+  A: Every 2-4 weeks until 34-36 weeks
+- Q: What is Gestation of Hematology?
+  A: 18-34 weeks (After 34w → Delivery preferred)
+- Q: What is Severe Immune Haemolysis (Anti-D, Anti-Kell) of Hematology?
+  A: 0.5-1 g/kg IV (Adjunct to PT/ET)
+- Q: What is the mechanism of Hematology?
+  A: Blocks Fc receptors on macrophages → ↓ Haemolysis
+- Q: What is the mechanism of Hematology?
+  A: Anti-Kell binds K-precursor cells → Suppressed Erythropoiesis
+- Q: What are the clinical features of Hematology?
+  A: Severe Anaemia WITHOUT Marked Hyperbilirubinaemia
+- Q: What is MCA-PSV of Hematology?
+  A: Elevated (Anaemia detected)
+- Q: What is Bilirubin of Hematology?
+  A: Normal/Low (Despite severe anaemia)
+- Q: How is Hematology managed?
+  A: IUT (Hb target), Top-up postnatal
+- Q: What is Risk of Hematology?
+  A: Kell+ve fetus → Severe suppression of erythropoiesis
+- Q: What is Maternal Group & Antibody Screen of Hematology?
+  A: Booking + 28 weeks
+- Q: What is Antibody Identification + Titre of Hematology?
+  A: Identify specificity & level
+- Q: What is MCA-PSV Doppler of Hematology?
+  A: Non-invasive detection of fetal anaemia (>1.5 MoM = Anaemic)
+- Q: What is Amniotic Fluid ΔOD450 of Hematology?
+  A: Historical (Liley chart), Replaced by MCA-PSV
+- Q: What is Fetal Blood Sampling (Cordocentesis) of Hematology?
+  A: Confirm anaemia before IUT (Hb, Group, Direct Coombs)
+- Q: What is Amniocentesis (ΔOD450) of Hematology?
+  A: If MCA-PSV unavailable
+- Q: What is Route of Hematology?
+  A: Intravascular (IVT) (Umbilical vein) - Preferred
+- Q: What is Alternative of Hematology?
+  A: Intraperitoneal (IPT) - Used if IVT not feasible
+- Q: What is Donor Blood of Hematology?
+  A: O Negative, CMV-, Irradiated, HbS Negative, Hb 70-80 g/L, <5 days old
+- Q: What is Volume of Hematology?
+  A: 40-50 mL/kg estimated fetal weight
+- Q: What is Target Fetal Hb of Hematology?
+  A: 120-140 g/L (Post-transfusion)
+- Q: What is Repeat Interval of Hematology?
+  A: Every 2-4 weeks until 34-36 weeks
+- Q: What is Severe Immune Haemolysis (Anti-D, Anti-Kell) of Hematology?
+  A: 0.5-1 g/kg IV (Adjunct to PT/ET)
+- Q: What is the mechanism of Hematology?
+  A: Blocks Fc receptors on macrophages → ↓ Haemolysis
+- Q: What is the mechanism of Hematology?
+  A: Anti-Kell binds K-precursor cells → Suppressed Erythropoiesis
+- Q: What are the clinical features of Hematology?
+  A: Severe Anaemia WITHOUT Marked Hyperbilirubinaemia
+- Q: What is MCA-PSV of Hematology?
+  A: Elevated (Anaemia detected)
+- Q: What is Bilirubin of Hematology?
+  A: Normal/Low (Despite severe anaemia)
+- Q: How is Hematology managed?
+  A: IUT (Hb target), Top-up postnatal
+- Q: What is Risk of Hematology?
+  A: Kell+ve fetus → Severe suppression of erythropoiesis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **# Foetal & Neonatal Transfusion / Haemolytic Disease of Fetus and Newborn (HDFN)**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: A[Maternal Sensitisation] --> B[IgG Alloantibody Crosses Placenta]; B --> C[Fetal RBC Destruction]; C --> D1[Fetal Anaemia → Hydrops Fetalis]. What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

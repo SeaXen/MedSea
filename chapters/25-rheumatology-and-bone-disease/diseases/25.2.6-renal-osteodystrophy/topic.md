@@ -318,3 +318,92 @@ mindmap
 - **Chapter MOC**: [[../Rheumatology MOC|Rheumatology MOC]]
 - **Drug Reference**: [[../../Clinical Approach to Musculoskeletal Disease/Drugs in rheumatology|Drugs in rheumatology]]
 - **Related**: [[Osteoporosis]] · [[Hyperparathyroidism and bone]] · [[Osteomalacia and rickets]]
+---
+
+> Auto-generated study sections for "Bone Metabolic Diseases" — Ch 25: Rheumatology & Bone Disease.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Bone Metabolic Diseases?
+  A: CKD-MBD = abnormalities of Ca, PO4, PTH, vitamin D, bone turnover, vascular calcification due to CKD
+- Q: What is the epidemiology of Bone Metabolic Diseases?
+  A: ~100% of dialysis patients have some features; increases with CKD stage
+- Q: What is Clinical Spectrum of Bone Metabolic Diseases?
+  A: Bone pain, fractures, vascular calcification, pruritus, proximal myopathy
+- Q: What is Mortality of Bone Metabolic Diseases?
+  A: Vascular calcification → cardiovascular death (major cause of death in CKD)
+- Q: What is the mechanism of Bone Metabolic Diseases?
+  A: Positive allosteric modulator of CaSR → ↓ PTH secretion, ↓ Ca × PO4 product
+- Q: What is Bone Metabolic Diseases indicated for?
+  A: Refractory SHPT (PTH >9x ULN despite vitamin D + phosphate binders)
+- Q: What is the dose of Bone Metabolic Diseases?
+  A: 30-180mg daily (titrate to PTH target)
+- Q: How is Bone Metabolic Diseases monitored?
+  A: Calcium (↓ risk of hypocalcaemia), PTH, Ca × PO4
+- Q: What is the mechanism of Bone Metabolic Diseases?
+  A: High Ca × PO4 product + low fetuin-A + inflammation → vascular smooth muscle osteogenic transformation
+- Q: What is Sites of Bone Metabolic Diseases?
+  A: Coronary arteries (major CV mortality), aortic, peripheral arteries, cardiac valves
+- Q: What is Imaging of Bone Metabolic Diseases?
+  A: CT coronary calcium score, plain X-ray, ultrasound
+- Q: What is Predictors of Bone Metabolic Diseases?
+  A: High Ca × PO4, high PTH, low fetuin-A, inflammation, diabetes, age
+- Q: How is Bone Metabolic Diseases managed?
+  A: Lower Ca × PO4 (phosphate binders, dialysis), avoid calcium overload, cinacalcet
+- Q: What is the mechanism of Bone Metabolic Diseases?
+  A: Positive allosteric modulator of CaSR → ↓ PTH secretion, ↓ Ca × PO4 product
+- Q: What is Bone Metabolic Diseases indicated for?
+  A: Refractory SHPT (PTH >9x ULN despite vitamin D + phosphate binders)
+- Q: What is the dose of Bone Metabolic Diseases?
+  A: 30-180mg daily (titrate to PTH target)
+- Q: How is Bone Metabolic Diseases monitored?
+  A: Calcium (↓ risk of hypocalcaemia), PTH, Ca × PO4
+- Q: What is the mechanism of Bone Metabolic Diseases?
+  A: High Ca × PO4 product + low fetuin-A + inflammation → vascular smooth muscle osteogenic transformation
+- Q: What is Sites of Bone Metabolic Diseases?
+  A: Coronary arteries (major CV mortality), aortic, peripheral arteries, cardiac valves
+- Q: What is Imaging of Bone Metabolic Diseases?
+  A: CT coronary calcium score, plain X-ray, ultrasound
+- Q: What is Predictors of Bone Metabolic Diseases?
+  A: High Ca × PO4, high PTH, low fetuin-A, inflammation, diabetes, age
+- Q: How is Bone Metabolic Diseases managed?
+  A: Lower Ca × PO4 (phosphate binders, dialysis), avoid calcium overload, cinacalcet
+- Q: What is CKD-MBD of Bone Metabolic Diseases?
+  A: Ca, PO4, PTH, Vit D, bone turnover, vascular calcification
+- Q: What is FGF23 of Bone Metabolic Diseases?
+  A: Earliest marker — rises CKD 3; ↓ 1,25-Vit D, ↓ PO4 reabsorption
+- Q: What is Progression of Bone Metabolic Diseases?
+  A: FGF23↑ → 1,25-Vit D↓ → PTH↑ → PO4↑ → Vascular calcification
+- Q: What is High Turnover of Bone Metabolic Diseases?
+  A: High PTH, High ALP, Osteitis Fibrosa → vit D analogues, cinacalcet
+- Q: What is Low Turnover (Adynamic) of Bone Metabolic Diseases?
+  A: PTH <100-150, Low ALP → Reduce/stop vit D, switch to non-Ca binders
+- Q: What is Mixed of Bone Metabolic Diseases?
+  A: Features of both high and low turnover
+- Q: What is Phosphate Binders of Bone Metabolic Diseases?
+  A: Calcium-based (1st line) vs Non-calcium (sevelamer, lanthanum, sucroferric)
+- Q: What is Vit D Analogues of Bone Metabolic Diseases?
+  A: Calcitriol/Alfacalcidol (↑ Ca/PO4); Paricalcitol (selective VDR, less Ca/PO4)
+- Q: What is Cinacalcet of Bone Metabolic Diseases?
+  A: Calcimimetic → CaSR sensitisation → ↓ PTH, ↓ Ca×PO4; refractory SHPT
+- Q: What is Adynamic Bone of Bone Metabolic Diseases?
+  A: PTH <100-150, Low ALP → Reduce/stop vit D, non-Ca binders
+- Q: What is Vascular Calcification of Bone Metabolic Diseases?
+  A: Ca × PO4 product >4.4 → CV mortality; fetuin-A low
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Bone Metabolic Diseases?**
+   A. **Renal osteodystrophy = CKD-MBD (Chronic Kidney Disease-Mineral and Bone Disorder).**
+   B. An unrelated condition not matching the clinical picture of Bone Metabolic Diseases
+   C. A complication seen late in the disease course of Bone Metabolic Diseases
+   D. A condition that mimics Bone Metabolic Diseases but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Bone Metabolic Diseases presents with: Definition — CKD-MBD = abnormalities of Ca, PO4, PTH, vitamin D, bone turnover, vascular calcification due to CKD; Prevalence — ~100% of dialysis patients have some features; increases with CKD stage; Clinical Spectrum — Bone pain, fractures, vascular calcification, pruritus, proximal myopathy. What is the most likely diagnosis?
+   A. **Bone Metabolic Diseases**
+   B. A condition that mimics Bone Metabolic Diseases but is not the same entity
+   C. A complication of Bone Metabolic Diseases rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Bone Metabolic Diseases
+

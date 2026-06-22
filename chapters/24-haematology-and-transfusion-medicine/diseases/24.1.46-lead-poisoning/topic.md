@@ -322,3 +322,50 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 25.*
+---
+
+> Auto-generated study sections for "Hematology" — Ch 24: Haematology & Transfusion Medicine.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Hematology?
+  A: Toxic accumulation of lead → multisystem toxicity (haematological, neurological, GI, renal)
+- Q: What is Sources of Hematology?
+  A: Lead-based paint, contaminated water, batteries, ceramics, traditional medicines, occupational
+- Q: What is At-risk Groups of Hematology?
+  A: Children (pica, hand-to-mouth), Industrial workers, Developing countries (leaded petrol)
+- Q: What is Absorption of Hematology?
+  A: GI tract (↑ in children, fasting, iron/calcium deficiency), Respiratory (inhalation)
+- Q: How is Hematology classified?
+  A: Microcytic hypochromic + Basophilic stippling (coarse)
+- Q: What is Blood Lead Level of Hematology?
+  A: Gold standard; >5 µg/dL action (children), >45 chelation, >70 emergency
+- Q: What is Enzyme Inhibition of Hematology?
+  A: ALAD (↑ ALA), Ferrochelatase (↑ ZPP/FEP), P5'N (Basophilic stippling)
+- Q: What is Clinical Triad of Hematology?
+  A: Abdominal colic + Wrist/foot drop + Burton's line
+- Q: What is Chelation of Hematology?
+  A: DMSA (oral) first-line; EDTA (IV) severe/encephalopathy
+- Q: What is Screening of Hematology?
+  A: ZPP/FEP (cheapest), Urinary ALA (most sensitive), BLL (gold standard)
+- Q: What is X-ray of Hematology?
+  A: Lead lines at metaphyses (children), Radiopaque flecks in GI
+- Q: What is Iron Deficiency of Hematology?
+  A: Coexists with lead poisoning (↑ absorption); Treat both
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hematology?**
+   A. **[!info] Davidson Ch 25 Alignment: Anaemia and Red Cell Disorders → Microcytic Anaemia → Lead Poisoning**
+   B. An unrelated condition not matching the clinical picture of Hematology
+   C. A complication seen late in the disease course of Hematology
+   D. A condition that mimics Hematology but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hematology presents with: Definition — Toxic accumulation of lead → multisystem toxicity (haematological, neurological, GI, renal); Sources — Lead-based paint, contaminated water, batteries, ceramics, traditional medicines, occupational; At-risk Groups — Children (pica, hand-to-mouth), Industrial workers, Developing countries (leaded petrol). What is the most likely diagnosis?
+   A. **Hematology**
+   B. A condition that mimics Hematology but is not the same entity
+   C. A complication of Hematology rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hematology
+

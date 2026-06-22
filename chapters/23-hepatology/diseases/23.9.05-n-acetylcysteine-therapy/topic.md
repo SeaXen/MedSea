@@ -264,3 +264,46 @@ mindmap
 - **Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]
 - **Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
 - **Related": [[Acute Liver Failure]], [[Paracetamol-induced hepatotoxicity]], [[King's College Criteria]], [[ALF vs ACLF]], [[Drug-Induced Liver Injury]]
+---
+
+> Auto-generated study sections for "Acute Liver Failure" — Ch 23: Hepatology.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Acute Liver Failure?
+  A: NAC = Universal antidote for ALL ALF (not just paracetamol) — Regimen: 150mg/kg/1h → 50mg/kg/4h → 100mg/kg/16h = 300mg/kg/21h; Improves survival in Grade I/II HE; Continue if INR↑/HE/renal failure; Beneficial in non-paracetamol ALF (ALF-2 trial).
+- Q: What is Standard Regimen of Acute Liver Failure?
+  A: 150mg/kg/1h → 50mg/kg/4h → 100mg/kg/16h = 300mg/kg/21h
+- Q: What is Continue Beyond 21h If of Acute Liver Failure?
+  A: INR↑/HE/renal failure/ALT↑/<8h above nomogram
+- Q: What is Non-Paracetamol ALF of Acute Liver Failure?
+  A: NAC improves survival in Grade I/II HE (ALF-2 trial)
+- Q: What is Paracetamol Nomogram of Acute Liver Failure?
+  A: 100mg/L at 4h → 15mg/L at 15h; High-risk line = half
+- Q: What are the clinical features of Acute Liver Failure?
+  A: Still give NAC (benefit even >24h)
+- Q: What is Anaphylactoid Reaction of Acute Liver Failure?
+  A: Stop infusion → Chlorphenamine 10mg IV + Hydrocortisone 200mg IV → Restart slower
+- Q: What is Paediatric of Acute Liver Failure?
+  A: Same mg/kg (max 300mg/kg)
+- Q: What is Pregnancy of Acute Liver Failure?
+  A: Safe (Category B)
+- Q: What is Continue Beyond 21h of Acute Liver Failure?
+  A: INR↑, HE, Renal failure, ALT↑, <8h above nomogram
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute Liver Failure?**
+   A. **NAC = Universal antidote for ALL ALF (not just paracetamol) — Regimen: 150mg/kg/1h → 50mg/kg/4h → 100mg/kg/16h = 300mg/kg/21h; Improves survival in Grade I/II HE; Continue if INR↑/HE/renal failure; Be**
+   B. An unrelated condition not matching the clinical picture of Acute Liver Failure
+   C. A complication seen late in the disease course of Acute Liver Failure
+   D. A condition that mimics Acute Liver Failure but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Acute Liver Failure presents with: >15h or unknown time — Treat empirically with full NAC regimen; Staggered overdose — Full NAC regimen (don't use nomogram); History unreliable — Treat empirically. What is the most likely diagnosis?
+   A. **Acute Liver Failure**
+   B. A condition that mimics Acute Liver Failure but is not the same entity
+   C. A complication of Acute Liver Failure rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Acute Liver Failure
+
