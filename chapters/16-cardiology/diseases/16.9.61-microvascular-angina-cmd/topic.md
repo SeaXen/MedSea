@@ -1,204 +1,59 @@
----
-davidson_chapter: "Chapter 16: Cardiology"
-davidson_topic_id: "16.9.61"
-topic: "Microvascular_angina_(CMD)"
-status: full-fcps-mrcp-note
-priority: critical
-cards: 20-25
-created: 2026-06-20
-modified: 2026-06-20
-exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
-source: "/mnt/tb/Medicine/Cardiology/03_Chronic_Coronary_Syndromes/Microvascular_angina_(CMD).md"
-tags: [medicine, cardiology, davidson, fcps, mrcp]
----
+# Microvascular Angina (CMD / INOCA)
 
-# Microvascular angina
+<callout icon="💔" color="red_bg">
+**Topic:** Microvascular Angina — Cardiology
+**Style:** Sea Knowledge study infographic
+**Audience:** FCPS / MRCP exam prep
+</callout>
 
-> [!info] **Topic Classification**
-> **Section:** 03_Chronic_Coronary_Syndromes | **Category:** Cardiology
+## 1. Definition
+**Ischaemia with No Obstructive Coronary Arteries (INOCA)** due to **coronary microvascular dysfunction (CMD)**. Affects ~50% of women with chest pain and normal angiograms.
+
+### Pathophysiology
+- **Structural:** arteriole remodelling, ↓capillary density
+- **Functional:** impaired vasodilation (↓NO, ↑endothelin), enhanced vasoconstriction
+- Microvascular spasm (microvascular angina)
+- Mechanisms: endothelial dysfunction, inflammation, autonomic dysregulation
 
 ---
 
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Microvascular angina**: chronic coronary syndrome (previously stable angina) — chest pain or discomfort due to myocardial ischaemia, typically precipitated by exertion, emotional stress, or cold, relieved by rest or nitrates. **CCSAP** (chronic coronary syndromes, ESC 2019): 6 scenarios — (1) suspected CAD with stable angina symptoms + dyspnoea, (2) new-onset CCS or recent destabilisation, (3) symptomatic despite treatment, (4) asymptomatic post-revascularisation, (5) asymptomatic 1y post-ACS or recent revascularisation, (6) asymptomatic with detected ischaemia. **Prevalence**: 5-7% in men >45y, 5-7% in women >55y.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-**Atherosclerotic narrowing** of epicardial coronary arteries (≥70% stenosis, or ≥50% left main) → **fixed supply limitation**. **Demand-supply mismatch**: exertion (↑HR, ↑BP, ↑contractility) → ↑O2 demand → ischaemia (subendocardium first). **Mechanisms**: (1) **Fixed stenosis** (most common, ≥70%), (2) **Vasospasm** (Prinzmetal, focal or diffuse), (3) **Microvascular** (syndrome X, normal angio, INOCA), (4) **Recurrent ischaemia** post-revascularisation, (5) **Myocardial bridge** (systolic compression). **Triggers**: exertion, emotion, cold, post-prandial, tachyarrhythmia, anaemia, hyperthyroidism, drugs (cocaine, triptans, ergot). **Ischaemia cascade**: perfusion heterogeneity → diastolic dysfunction → ECG changes → pain.
-
-
-## 3. CLINICAL FEATURES
-
-**Typical angina** (3): (1) substernal chest discomfort (pressure, heaviness, squeezing, tightness), (2) precipitated by exertion or emotional stress, (3) relieved by rest or nitrates within minutes. **Atypical** (2 of 3, or non-cardiac — women, elderly, diabetics). **Examination**: usually normal. May have: S4, MR murmur (papillary dysfunction), signs of LV dysfunction, peripheral vascular disease, dyslipidaemia (xanthelasma, corneal arcus, tendon xanthomas). **Risk factors**: age, sex, family, HTN, DM, dyslipidaemia, smoking, obesity, sedentary. **Symptoms equivalents**: dyspnoea, fatigue, nausea, back/jaw pain (women, elderly, diabetics).
-
-
-## 4. DIAGNOSTIC APPROACH
-
-**Resting ECG**: usually normal (50%), may show Q waves (old MI), LVH, BBB, ST-T changes. **Stress testing**: (1) **Exercise ECG** (≥1mm STD, ≥80ms from J point, in ≥2 contiguous leads, at low workload/high risk — Duke Treadmill Score high-risk <−11), (2) **Stress echo** (RWMA, more sensitive/specific), (3) **Stress CMR** (perfusion, scar, viability), (4) **Stress nuclear** (perfusion, MUGA), (5) **CTCA** (low-intermediate probability, anatomical). **First-line test** depends on pre-test probability: **Low** (<15%): no test, or CAC scoring. **Intermediate** (15-50%): stress imaging (echo, nuclear, CMR) or CTCA. **High** (>50%): invasive angio or functional test. **Invasive coronary angiography** (definitive). **FFR/iFR** (functional assessment, intermediate lesions 50-90%). **CMR** (scar, viability, microvascular obstruction).
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-**CCS class** (Canadian Cardiovascular Society): I (ordinary activity, no angina), II (slight limitation, angina with vigorous/rapid), III (marked limitation, angina with ordinary activity), IV (inability to perform any activity, angina at rest). **Duke Treadmill Score**: high-risk <−11, moderate −10 to +4, low ≥+5. **Number of vessels**: 1, 2, 3, left main (>50%). **LV function** (LVEF, regional WMA). **Stress test parameters**: time, workload, HR recovery, BP response, ischaemia threshold (HR×BP product).
-
-
-## 6. MANAGEMENT ALGORITHM
-
-**Risk factor modification** (ESC 2019): smoking cessation, BP <130/80, LDL-C <1.4 mmol/L (very high risk) or <1.8 (high), HbA1c <7%, weight (BMI <25), exercise ≥150 min/week, Mediterranean diet, alcohol <14 units/week. **Anti-anginal** (symptom control): (1) **Beta-blocker** (1st line, e.g. bisoprolol, atenolol, metoprolol), (2) **CCB** (dihydropyridine — amlodipine, nifedipine — add or alternative to BB, vasodilator; non-dihydro — verapamil, diltiazem — alternative to BB, avoid with BB), (3) **Long-acting nitrates** (isosorbide mononitrate, add-on, nitrate-free interval 8-12h), (4) **Nicorandil** (K-ATP channel opener, vasodilator), (5) **Ranolazine** (late Na+ current inhibitor, add-on, QT prolongation), (6) **Ivabradine** (HR reduction, sinus rhythm only, if HR≥70), (7) **Trimetazidine** (metabolic, anti-anginal). **Anti-thrombotic**: aspirin 75-100mg daily (or clopidogrel 75mg if aspirin-intolerant). **Lipid-lowering**: high-intensity statin (atorvastatin 40-80mg, rosuvastatin 20-40mg), ezetimibe if not at LDL target, PCSK9i if very high risk. **ACEi/ARB** if HTN, DM, CKD, LV dysfunction. **Revascularisation** (PCI vs CABG): consider if (1) refractory symptoms despite GDMT, (2) high-risk anatomy (left main, 3-vessel, proximal LAD, SYNTAX score), (3) LV dysfunction with viable myocardium. **PCI** vs **CABG**: SYNTAX score, anatomical complexity, surgical risk, patient preference. **ISCHEMIA (2020)**: routine invasive + optimal medical vs optimal medical alone — no overall difference in death/MI, but invasive better in left main, multivessel with LV dysfunction. **Lifestyle**: exercise-based cardiac rehab, Mediterranean diet, weight, smoking, alcohol, sleep.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-**ACS** (progression of plaque). **MI**. **Heart failure** (ischaemic cardiomyopathy). **Arrhythmia** (VT, AF, brady). **Death** (5-yr 5% with treatment, 15% without). **Repeated hospitalisation** (angina, revascularisation).
-
-
-## 8. SPECIAL POPULATIONS
-
-**Elderly**: more comorbidities, less invasive, more GDMT, careful dosing. **Women**: atypical symptoms, more microvascular (INOCA), more abnormal stress test with normal angio, less revascularisation. **Diabetes**: more multivessel, smaller vessels, more diffuse, higher risk, SGLT2i benefit. **CKD**: more bleeding, more CV risk, dose adjust, more GDMT. **Pregnancy**: avoid statins, ACEi/ARB, warfarin; beta-blocker (atenolol) safe; consider PCI only if refractory.
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**ESC 2019 CCSAP (EHJ)**: chronic coronary syndromes, replaces stable angina. **2021 ACC/AHA ACS/CAD**: chronic coronary disease (CCD). **NICE NG95 (2016)**: chest pain of recent onset, updated 2023. **NICE CG126 (2011)**: stable angina (older). **ISCHEMIA (2020)**: routine invasive vs OM. **COURAGE (2007)**: PCI + OM vs OM (no difference in death/MI, OM less invasive). **ORBITA (2018)**: sham-controlled, no significant improvement. **FAME 2 (2012)**: FFR-guided PCI better than OM. **SYNTAX (2009), SYNTAX II**: PCI vs CABG, anatomy, score.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Atypical** in women, elderly, diabetics (more common). **Microvascular** (INOCA, syndrome X) — normal angio, abnormal stress. **Vasospasm** (Prinzmetal) — transient STE, normal angio, hyperventilation test. **SCAD** in young women. **Don't delay** GDMT. **Statin + ACEi** for all. **Revascularisation** for refractory symptoms, high-risk anatomy (left main, 3-vessel, proximal LAD), LV dysfunction with viability. **Lifestyle** critical. **Anxiety/depression** common. **Differential** non-cardiac chest pain (oesophageal, MSK, anxiety).
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Typical angina** (3): substernal, exertion, relieved by rest/nitrates. **Atypical** (2 of 3, or non-cardiac). **CCSAP** (ESC 2019): 6 scenarios. **CCS class** I-IV. **Duke Treadmill**: high-risk <−11. **SYNTAX**: PCI vs CABG, anatomy. **ISCHEMIA (2020)**: no overall death/MI difference (except left main, 3-vessel with LV dysfunction). **Anti-anginal ladder**: BB → CCB (dihydro) → long-acting nitrates → nicorandil → ranolazine → ivabradine (sinus) → trimetazidine. **Microvascular** (INOCA, syndrome X): female, abnormal stress, normal angio, treat with BB, CCB, ranolazine. **Vasospasm** (Prinzmetal): transient STE, normal angio, CCB, nitrates, avoid triptans, ergot.
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-Oesophageal spasm, GERD, peptic ulcer, cholecystitis, MSK chest pain (costochondritis, Tietze), cervical radiculopathy, herpes zoster, anxiety, panic, PE, aortic dissection, pericarditis, myocarditis, Takotsubo, MS, AS, HCM, microvascular (INOCA), vasospasm, SCAD.
-
-
-## 13. INVESTIGATIONS
-
-Resting ECG, stress testing (exercise ECG, stress echo, stress CMR, stress nuclear), CTCA (low-intermediate), invasive coronary angiography (± FFR/iFR), echo (LV function, MR, structural), CMR (scar, viability), Holter (arrhythmia), CXR, bloods (FBC, U&E, LFT, TFT, lipid profile, hs-CRP, Lp(a), HbA1c), BP, BMI.
-
+## 2. Clinical Features
+- **Predominantly women**, perimenopausal
+- Exertional AND rest angina (mixed pattern)
+- Abnormal stress test (ECG / echo) with **normal epicardial coronaries**
+- Often with cardiovascular risk factors + insomnia, depression
+- Term: **Syndrome X** (historical); now stratified by CFR and IMR
 
 ---
 
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Microvascular angina?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Microvascular angina:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Microvascular angina:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Microvascular angina?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Microvascular angina is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Microvascular angina. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Microvascular angina on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Microvascular angina
-2. Discuss the pathophysiology of Microvascular angina
-3. What are the diagnostic criteria for Microvascular angina?
-4. Outline the management approach to Microvascular angina
-5. What are the complications and prognosis of Microvascular angina?
-6. What are the latest guidelines for Microvascular angina?
-7. How is Microvascular angina managed in special populations?
-8. Compare Microvascular angina with related conditions
+## 3. Diagnosis
+- **Abnormal stress test** + **normal CTCA / angio** (FFR >0.80)
+- **Invasive functional testing:**
+  - **CFR (coronary flow reserve) < 2.0** (thermodilution or Doppler)
+  - **IMR (index of microcirculatory resistance) > 25**
+  - Acetylcholine test → microvascular spasm
+- **CMR** can quantify MBF (myocardial blood flow)
 
 ---
 
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
+## 4. Treatment
+- **Beta-blocker** (atenolol preferred — ↓sympathetic tone)
+- **CCB** (non-dihydropyridine) — for vasospasm overlap
+- **Statin** (improves endothelial function)
+- **ACEi / ARB** (↓ RAAS-mediated vasoconstriction)
+- **Nicorandil, ranolazine** (second-line)
+- Lifestyle: smoking cessation, exercise, weight loss
+- Avoid nitrates if pure microvascular (may worsen by stealing flow)
 
 ---
 
-## 16. CROSS-REFERENCES & NAVIGATION
+## 5. Key Pearls
 
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+> **Pearls**
+- **INOCA = Ischaemia + No Obstructive CAD** — predominantly women
+- **CFR < 2.0**, **IMR > 25** on invasive testing = microvascular angina
+- **Atenolol** preferred BB; CCB for spasm component
+- **Statin** + **ACEi** for endothelial function
+- Lifestyle: smoking cessation, weight loss, exercise
 
----
-
-## 17. METADATA & TRACKING
-
-**File:** Microvascular_angina.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+*Sea Knowledge · Cardiology · Chronic Coronary Syndromes · v1.0 · For FCPS / MRCP exam prep*

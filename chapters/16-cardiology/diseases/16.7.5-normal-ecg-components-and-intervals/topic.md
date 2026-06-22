@@ -1,204 +1,96 @@
----
-davidson_chapter: "Chapter 16: Cardiology"
-davidson_topic_id: "16.7.5"
-topic: "Normal_ECG_components_and_intervals"
-status: full-fcps-mrcp-note
-priority: critical
-cards: 20-25
-created: 2026-06-20
-modified: 2026-06-20
-exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
-source: "/mnt/tb/Medicine/Cardiology/01_Cardiac_Investigations/Normal_ECG_components_and_intervals.md"
-tags: [medicine, cardiology, davidson, fcps, mrcp]
----
-
-# Normal ECG components and intervals
-
-> [!info] **Topic Classification**
-> **Section:** 01_Cardiac_Investigations | **Category:** Cardiology
-
----
-
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Normal ECG components and intervals**: chronic coronary syndrome (previously stable angina) — chest pain or discomfort due to myocardial ischaemia, typically precipitated by exertion, emotional stress, or cold, relieved by rest or nitrates. **CCSAP** (chronic coronary syndromes, ESC 2019): 6 scenarios — (1) suspected CAD with stable angina symptoms + dyspnoea, (2) new-onset CCS or recent destabilisation, (3) symptomatic despite treatment, (4) asymptomatic post-revascularisation, (5) asymptomatic 1y post-ACS or recent revascularisation, (6) asymptomatic with detected ischaemia. **Prevalence**: 5-7% in men >45y, 5-7% in women >55y.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-**Atherosclerotic narrowing** of epicardial coronary arteries (≥70% stenosis, or ≥50% left main) → **fixed supply limitation**. **Demand-supply mismatch**: exertion (↑HR, ↑BP, ↑contractility) → ↑O2 demand → ischaemia (subendocardium first). **Mechanisms**: (1) **Fixed stenosis** (most common, ≥70%), (2) **Vasospasm** (Prinzmetal, focal or diffuse), (3) **Microvascular** (syndrome X, normal angio, INOCA), (4) **Recurrent ischaemia** post-revascularisation, (5) **Myocardial bridge** (systolic compression). **Triggers**: exertion, emotion, cold, post-prandial, tachyarrhythmia, anaemia, hyperthyroidism, drugs (cocaine, triptans, ergot). **Ischaemia cascade**: perfusion heterogeneity → diastolic dysfunction → ECG changes → pain.
-
-
-## 3. CLINICAL FEATURES
-
-**Typical angina** (3): (1) substernal chest discomfort (pressure, heaviness, squeezing, tightness), (2) precipitated by exertion or emotional stress, (3) relieved by rest or nitrates within minutes. **Atypical** (2 of 3, or non-cardiac — women, elderly, diabetics). **Examination**: usually normal. May have: S4, MR murmur (papillary dysfunction), signs of LV dysfunction, peripheral vascular disease, dyslipidaemia (xanthelasma, corneal arcus, tendon xanthomas). **Risk factors**: age, sex, family, HTN, DM, dyslipidaemia, smoking, obesity, sedentary. **Symptoms equivalents**: dyspnoea, fatigue, nausea, back/jaw pain (women, elderly, diabetics).
-
-
-## 4. DIAGNOSTIC APPROACH
-
-**Resting ECG**: usually normal (50%), may show Q waves (old MI), LVH, BBB, ST-T changes. **Stress testing**: (1) **Exercise ECG** (≥1mm STD, ≥80ms from J point, in ≥2 contiguous leads, at low workload/high risk — Duke Treadmill Score high-risk <−11), (2) **Stress echo** (RWMA, more sensitive/specific), (3) **Stress CMR** (perfusion, scar, viability), (4) **Stress nuclear** (perfusion, MUGA), (5) **CTCA** (low-intermediate probability, anatomical). **First-line test** depends on pre-test probability: **Low** (<15%): no test, or CAC scoring. **Intermediate** (15-50%): stress imaging (echo, nuclear, CMR) or CTCA. **High** (>50%): invasive angio or functional test. **Invasive coronary angiography** (definitive). **FFR/iFR** (functional assessment, intermediate lesions 50-90%). **CMR** (scar, viability, microvascular obstruction).
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-**CCS class** (Canadian Cardiovascular Society): I (ordinary activity, no angina), II (slight limitation, angina with vigorous/rapid), III (marked limitation, angina with ordinary activity), IV (inability to perform any activity, angina at rest). **Duke Treadmill Score**: high-risk <−11, moderate −10 to +4, low ≥+5. **Number of vessels**: 1, 2, 3, left main (>50%). **LV function** (LVEF, regional WMA). **Stress test parameters**: time, workload, HR recovery, BP response, ischaemia threshold (HR×BP product).
-
-
-## 6. MANAGEMENT ALGORITHM
-
-**Risk factor modification** (ESC 2019): smoking cessation, BP <130/80, LDL-C <1.4 mmol/L (very high risk) or <1.8 (high), HbA1c <7%, weight (BMI <25), exercise ≥150 min/week, Mediterranean diet, alcohol <14 units/week. **Anti-anginal** (symptom control): (1) **Beta-blocker** (1st line, e.g. bisoprolol, atenolol, metoprolol), (2) **CCB** (dihydropyridine — amlodipine, nifedipine — add or alternative to BB, vasodilator; non-dihydro — verapamil, diltiazem — alternative to BB, avoid with BB), (3) **Long-acting nitrates** (isosorbide mononitrate, add-on, nitrate-free interval 8-12h), (4) **Nicorandil** (K-ATP channel opener, vasodilator), (5) **Ranolazine** (late Na+ current inhibitor, add-on, QT prolongation), (6) **Ivabradine** (HR reduction, sinus rhythm only, if HR≥70), (7) **Trimetazidine** (metabolic, anti-anginal). **Anti-thrombotic**: aspirin 75-100mg daily (or clopidogrel 75mg if aspirin-intolerant). **Lipid-lowering**: high-intensity statin (atorvastatin 40-80mg, rosuvastatin 20-40mg), ezetimibe if not at LDL target, PCSK9i if very high risk. **ACEi/ARB** if HTN, DM, CKD, LV dysfunction. **Revascularisation** (PCI vs CABG): consider if (1) refractory symptoms despite GDMT, (2) high-risk anatomy (left main, 3-vessel, proximal LAD, SYNTAX score), (3) LV dysfunction with viable myocardium. **PCI** vs **CABG**: SYNTAX score, anatomical complexity, surgical risk, patient preference. **ISCHEMIA (2020)**: routine invasive + optimal medical vs optimal medical alone — no overall difference in death/MI, but invasive better in left main, multivessel with LV dysfunction. **Lifestyle**: exercise-based cardiac rehab, Mediterranean diet, weight, smoking, alcohol, sleep.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-**ACS** (progression of plaque). **MI**. **Heart failure** (ischaemic cardiomyopathy). **Arrhythmia** (VT, AF, brady). **Death** (5-yr 5% with treatment, 15% without). **Repeated hospitalisation** (angina, revascularisation).
-
-
-## 8. SPECIAL POPULATIONS
-
-**Elderly**: more comorbidities, less invasive, more GDMT, careful dosing. **Women**: atypical symptoms, more microvascular (INOCA), more abnormal stress test with normal angio, less revascularisation. **Diabetes**: more multivessel, smaller vessels, more diffuse, higher risk, SGLT2i benefit. **CKD**: more bleeding, more CV risk, dose adjust, more GDMT. **Pregnancy**: avoid statins, ACEi/ARB, warfarin; beta-blocker (atenolol) safe; consider PCI only if refractory.
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**ESC 2019 CCSAP (EHJ)**: chronic coronary syndromes, replaces stable angina. **2021 ACC/AHA ACS/CAD**: chronic coronary disease (CCD). **NICE NG95 (2016)**: chest pain of recent onset, updated 2023. **NICE CG126 (2011)**: stable angina (older). **ISCHEMIA (2020)**: routine invasive vs OM. **COURAGE (2007)**: PCI + OM vs OM (no difference in death/MI, OM less invasive). **ORBITA (2018)**: sham-controlled, no significant improvement. **FAME 2 (2012)**: FFR-guided PCI better than OM. **SYNTAX (2009), SYNTAX II**: PCI vs CABG, anatomy, score.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Atypical** in women, elderly, diabetics (more common). **Microvascular** (INOCA, syndrome X) — normal angio, abnormal stress. **Vasospasm** (Prinzmetal) — transient STE, normal angio, hyperventilation test. **SCAD** in young women. **Don't delay** GDMT. **Statin + ACEi** for all. **Revascularisation** for refractory symptoms, high-risk anatomy (left main, 3-vessel, proximal LAD), LV dysfunction with viability. **Lifestyle** critical. **Anxiety/depression** common. **Differential** non-cardiac chest pain (oesophageal, MSK, anxiety).
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Typical angina** (3): substernal, exertion, relieved by rest/nitrates. **Atypical** (2 of 3, or non-cardiac). **CCSAP** (ESC 2019): 6 scenarios. **CCS class** I-IV. **Duke Treadmill**: high-risk <−11. **SYNTAX**: PCI vs CABG, anatomy. **ISCHEMIA (2020)**: no overall death/MI difference (except left main, 3-vessel with LV dysfunction). **Anti-anginal ladder**: BB → CCB (dihydro) → long-acting nitrates → nicorandil → ranolazine → ivabradine (sinus) → trimetazidine. **Microvascular** (INOCA, syndrome X): female, abnormal stress, normal angio, treat with BB, CCB, ranolazine. **Vasospasm** (Prinzmetal): transient STE, normal angio, CCB, nitrates, avoid triptans, ergot.
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-Oesophageal spasm, GERD, peptic ulcer, cholecystitis, MSK chest pain (costochondritis, Tietze), cervical radiculopathy, herpes zoster, anxiety, panic, PE, aortic dissection, pericarditis, myocarditis, Takotsubo, MS, AS, HCM, microvascular (INOCA), vasospasm, SCAD.
-
-
-## 13. INVESTIGATIONS
-
-Resting ECG, stress testing (exercise ECG, stress echo, stress CMR, stress nuclear), CTCA (low-intermediate), invasive coronary angiography (± FFR/iFR), echo (LV function, MR, structural), CMR (scar, viability), Holter (arrhythmia), CXR, bloods (FBC, U&E, LFT, TFT, lipid profile, hs-CRP, Lp(a), HbA1c), BP, BMI.
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Normal ECG components and intervals?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Normal ECG components and intervals:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Normal ECG components and intervals:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Normal ECG components and intervals?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Normal ECG components and intervals is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Normal ECG components and intervals. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Normal ECG components and intervals on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Normal ECG components and intervals
-2. Discuss the pathophysiology of Normal ECG components and intervals
-3. What are the diagnostic criteria for Normal ECG components and intervals?
-4. Outline the management approach to Normal ECG components and intervals
-5. What are the complications and prognosis of Normal ECG components and intervals?
-6. What are the latest guidelines for Normal ECG components and intervals?
-7. How is Normal ECG components and intervals managed in special populations?
-8. Compare Normal ECG components and intervals with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Normal_ECG_components_and_intervals.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+# Normal ECG Components and Intervals
+
+<callout icon="📈" color="red_bg">
+**Topic:** Normal ECG Components and Intervals — Cardiology
+**Style:** Sea Knowledge study infographic
+**Audience:** FCPS / MRCP exam prep
+</callout>
+
+## 1. Introduction
+A 12-lead ECG records electrical activity from **10 electrodes** (4 limb + 6 precordial) at standard paper speed **25 mm/s** and calibration **10 mm/mV**. Each large square = 0.2 s, small = 0.04 s.
+
+## 2. The Five-Step Read
+1. **Rate** (300 ÷ number of large squares between R-R)
+2. **Rhythm** (P before every QRS? Regular?)
+3. **Axis** (leads I, II, III; isoelectric / LAD / RAD)
+4. **Intervals** (PR, QRS, QTc)
+5. **Morphology** — P wave, QRS, ST, T, U waves
+
+## 3. ECG Paper
+- **Speed:** 25 mm/s
+- **Calibration:** 10 mm = 1 mV
+- **Large square (5 mm):** 0.2 s
+- **Small square (1 mm):** 0.04 s
+- **Vertical:** 0.1 mV per mm
+- **Frequency filtering:** 0.5–150 Hz
+
+## 4. Normal Waveform Anatomy
+
+### P Wave
+- Atrial depolarisation
+- **Duration <120 ms** (3 small squares)
+- **Height <2.5 mm** in lead II
+- Upright in I, II; inverted in aVR; biphasic in V1
+- **P mitrale** (broad, notched ≥120 ms) → LA enlargement
+- **P pulmonale** (tall, peaked ≥2.5 mm) → RA enlargement
+
+### PR Interval
+- Start of P → start of QRS
+- **Normal 120–200 ms** (3–5 small squares)
+- **Short PR** (<120 ms) — WPW (delta wave), junctional rhythm
+- **Long PR** (>200 ms) — 1° AV block
+- **Variable PR** — Wenckebach (Mobitz I)
+- **Progressive lengthening then dropped beat** → Mobitz I
+- **Constant PR + dropped beat** → Mobitz II
+
+### QRS Complex
+- Ventricular depolarisation
+- **Duration <120 ms** (3 small squares)
+- **Normal Q wave** — small, narrow (<40 ms, <2 mm deep) in lateral leads; pathological if >40 ms, >2 mm deep, or >25% of QRS height
+
+### ST Segment
+- End of QRS (J point) → start of T
+- Normally **isoelectric** (≤1 mm deviation)
+- Elevation ≥1 mm (≥2 mm V2–V3 ♂, ≥1.5 mm V2–V3 ♀) in ≥2 contiguous leads → STEMI
+- Early repolarisation: concave ST elevation at J point, most marked in V3–V5, young males
+
+### T Wave
+- Ventricular repolarisation
+- **Asymmetric**, smooth, rounded
+- Upright in I, II, V2–V6; inverted in aVR; variable in III, V1
+- **Tall peaked** → hyperkalaemia
+- **Inverted** → ischaemia, LVH, BBB, digoxin
+
+### U Wave
+- Small deflection after T (in V2–V4)
+- **Prominent** → hypokalaemia, bradycardia, hypothermia, hypercalcaemia, digoxin
+- **Inverted** → ischaemia, LVH
+
+### QT Interval
+- Start of QRS → end of T
+- **Bazett corrected (QTc) = QT / √RR**
+- **Normal:** ♂ <440 ms, ♀ <460 ms
+- **Long QTc** → torsades, sudden death
+- **Short QT** → short QT syndrome
+
+## 5. QRS Axis
+- **Normal axis:** –30° to +90° (Lead I +ve, aVF +ve)
+- **LAD:** –30° to –90° (Lead I +ve, aVF –ve)
+- **RAD:** +90° to +180° (Lead I –ve, aVF +ve)
+- **Extreme / North-west:** –90° to –180° (Lead I –ve, aVF –ve)
+
+## 6. Lead Groups & Territories
+| Leads | Region | Artery |
+|---|---|---|
+| II, III, aVF | Inferior | RCA (LCx in L-dominant) |
+| V1–V2 | Septal | LAD (septal branches) |
+| V3–V4 | Anterior | LAD |
+| V5–V6, I, aVL | Lateral | LCx (RCA for RV in R-dominant) |
+| V7–V9 | Posterior | RCA / LCx |
+| V1–V4 ST depression | Posterior STEMI (mirror) | RCA / LCx |
+
+> **Pearls**
+> - **Lead aVR** is often forgotten: ST elevation in aVR with diffuse ST depression → left main / triple vessel disease, or proximal LAD.
+> - **5 mm** = 1 large box = 0.2 s. Memorise it.
+> - **Isoelectric J point** is the reference for ST segment deviation.
+> - A **normal ECG does not exclude significant cardiac disease.**

@@ -1,204 +1,95 @@
----
-davidson_chapter: "Chapter 16: Cardiology"
-davidson_topic_id: "16.1.38"
-topic: "Coronary_angiography_timing"
-status: full-fcps-mrcp-note
-priority: critical
-cards: 20-25
-created: 2026-06-20
-modified: 2026-06-20
-exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
-source: "/mnt/tb/Medicine/Cardiology/02_Acute_Coronary_Syndromes/Coronary_angiography_timing.md"
-tags: [medicine, cardiology, davidson, fcps, mrcp]
----
-
-# Coronary angiography timing
-
-> [!info] **Topic Classification**
-> **Section:** 02_Acute_Coronary_Syndromes | **Category:** Cardiology
-
----
-
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**ACS risk scores** quantify prognosis, guide management. **GRACE** (Global Registry of Acute Coronary Events): in-hospital and 6-month mortality, ESC-recommended. **TIMI** (Thrombolysis In Myocardial Infarction): 14-day MACE for UA/NSTEMI, 30-day mortality for STEMI. **HEART** (History, ECG, Age, Risk factors, Troponin): ED chest pain triage. **CRUSADE** for bleeding risk.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-Statistical models from large ACS registries. GRACE: multinational >100,000 patients. TIMI: TIMI-11B, ESSENCE trials. HEART: ED chest pain populations. Variables weighted by independent prognostic value.
-
-
-## 3. CLINICAL FEATURES
-
-**GRACE**: Age, HR, SBP, Cr, Killip class, cardiac arrest, ST-deviation, biomarkers. **TIMI UA/NSTEMI** (0-7): age ≥65, ≥3 RF, CAD, ST-dev ≥0.5mm, severe angina, ASA, +markers. **TIMI STEMI**: age ≥75, ≥3 RF, prior CABG/MI, ST-dev, DM, SBP<100, HR≥100. **HEART** (0-10): History (0-2), ECG (0-2), Age (0-2), Risk factors (0-2), Troponin (0-2).
-
-
-## 4. DIAGNOSTIC APPROACH
-
-Calculate at admission, repeat if clinical change. **GRACE** preferred in NSTEMI/UA. **TIMI** for quick bedside. **HEART** for ED chest pain.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-GRACE in-hospital mortality: low <108 (0.4-1.4%), intermediate 108-140 (1.4-3.9%), high >140 (3.9-50%). TIMI 0/1: 4.7% MACE; 6/7: 40.9%. HEART low: 1.7% MACE 6 weeks; high: 50-65%.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-GRACE >140: early invasive <24h. GRACE 108-140: <72h. GRACE <108: non-invasive. HEART 0-3: discharge. HEART 4-6: admit, serial troponin. HEART ≥7: aggressive. **DAPT score** guides DAPT duration.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-High scores predict death, MI, stroke, recurrent ischaemia, shock, bleeding. Need closer monitoring, more aggressive antithrombotic, advanced therapies.
-
-
-## 8. SPECIAL POPULATIONS
-
-CKD: GRACE may underestimate. Elderly: high-risk but high bleeding (use CRUSADE). Diabetes: higher risk. Women: tend to score lower but higher in-hospital mortality.
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-ESC 2023: GRACE class IA. ACC/AHA 2023: TIMI or GRACE. NICE NG185: GRACE. CRUSADE for bleeding.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-Don't use single score in isolation. GRACE underestimates bleeding (use CRUSADE). TIMI simpler but less accurate. HEART for ED triage. Statistical — clinical judgment always.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-GRACE, TIMI, HEART (History, ECG, Age, Risk, Troponin), CRUSADE, DAPT score (≥2 long, <2 short), PURSUIT.
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-High score = established CAD, multiple RF, advanced age, haemodynamic instability, renal dysfunction.
-
-
-## 13. INVESTIGATIONS
-
-Calculate at admission, repeat if clinical change. Combine with ECG, troponin, echo, biomarkers. Document for MDT, discharge.
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Coronary angiography timing?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Coronary angiography timing:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Coronary angiography timing:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Coronary angiography timing?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Coronary angiography timing is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Coronary angiography timing. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Coronary angiography timing on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Coronary angiography timing
-2. Discuss the pathophysiology of Coronary angiography timing
-3. What are the diagnostic criteria for Coronary angiography timing?
-4. Outline the management approach to Coronary angiography timing
-5. What are the complications and prognosis of Coronary angiography timing?
-6. What are the latest guidelines for Coronary angiography timing?
-7. How is Coronary angiography timing managed in special populations?
-8. Compare Coronary angiography timing with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Coronary_angiography_timing.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+# Coronary Angiography Timing in NSTE-ACS
+
+<callout icon="🕐" color="blue_bg">
+**Topic:** Coronary Angiography Timing in NSTE-ACS — Cardiology
+**Style:** Sea Knowledge study infographic
+**Audience:** FCPS / MRCP exam prep
+</callout>
+
+## 1. Definition
+Coronary angiography is the **definitive diagnostic test** in NSTE-ACS to identify the culprit lesion and plan revascularisation (PCI or CABG). The **timing** of angiography is risk-driven.
+
+## 2. Risk-Based Timing (2023 ESC / 2025 ACC)
+
+| Risk Category | Timing | Examples |
+|---|---|---|
+| **Immediate / very urgent** | <2 h | Refractory ischaemia, cardiogenic shock, mechanical complication, life-threatening arrhythmia |
+| **Early** | <24 h | GRACE >140, dynamic ST changes, high troponin, high TIMI, post-PCI/CABG |
+| **Standard** | <72 h | GRACE 109–140, diabetes, CKD, LVEF <40% |
+| **Selective / conservative** | Based on non-invasive testing | GRACE <109, low risk, no recurrent ischaemia |
+
+## 3. High-Risk Features Mandating Early Angiography
+- **Haemodynamic instability** (hypotension, shock, pulmonary oedema)
+- **Sustained ventricular arrhythmia** (VT/VF)
+- **Recurrent/refractory ischaemia at rest**
+- **Dynamic ST changes** (especially with ongoing pain)
+- **High GRACE score (>140)**
+- **High TIMI score (≥3)**
+- **Significant troponin rise**
+- **New/worsening mitral regurgitation**
+- **Diabetes mellitus**
+- **LVEF <40%**
+- **Post-CABG** (suggesting graft failure)
+
+## 4. Routine Early vs Delayed Trials
+
+| Trial | Finding |
+|---|---|
+| **FRISC-II** | Early invasive <conservative in NSTEMI |
+| **TACTICS-TIMI 18** | Early invasive reduces death/MI |
+| **RITA-3** | Early invasive better at 5 yr (high-risk) |
+| **ICTUS** | No benefit in low-risk NSTEMI |
+| **TIMACS** | Early (<24 h) best if GRACE >140 |
+| **ABOARD** | Immediate (within 2 h) not better than early (<24 h) |
+
+## 5. Pre-Angiography Preparation
+- **DAPT** (aspirin + P2Y12) — given once decision made (ticagrelor 180 mg or clopidogrel 600 mg)
+- **Anticoagulation** (fondaparinux 2.5 mg SC, enoxaparin, or UFH)
+- **Hydration** if CKD (avoid contrast nephropathy)
+- **NPO** if radial (no NPO needed for radial)
+- **Consent, dual access** (radial preferred)
+
+## 6. Access Choice
+- **Radial** — preferred (lower bleeding, mortality in ACS — RIVAL, MATRIX)
+- **Femoral** — haemodynamic instability, large catheters (IABP, Impella), anatomy
+- **Brachial** — rare alternative
+
+## 7. Findings on Angiography
+- **Culprit lesion**: complex, irregular, thrombus, haziness
+- **TIMI flow**: 0 (no flow), 1 (penetration), 2 (slow), 3 (normal)
+- **TIMI blush**: myocardial reperfusion grade
+- **Multivessel disease** in ~50% of NSTEMI
+- **No critical lesion** — consider MINOCA, SCAD, vasospasm, thrombus resolved
+
+## 8. Subsequent Management Based on Anatomy
+- **Single-vessel / focal** → PCI with DES
+- **Multivessel, simple** → PCI (single or staged)
+- **Multivessel, complex (3VD / LM / DM)** → Heart Team discussion (CABG vs PCI)
+- **Non-obstructive** (<50% stenosis) → medical therapy, consider MINOCA workup
+
+## 9. Special Considerations
+
+| Situation | Approach |
+|---|---|
+| **Cardiogenic shock** | Immediate PCI; **culprit-only** (CULPRIT-SHOCK) |
+| **CKD (eGFR <30)** | Hydration, hold metformin, consider no PCI or staged |
+| **Anticoagulated (VKA, DOAC)** | Time procedure; reversal if UFH needed |
+| **Lactation / pregnancy** | Limit radiation, abdominal shield |
+| **Recent fibrinolysis** | Wait 2–24 h if stable; urgent if refractory |
+
+## 10. When to Defer Angiography
+- **Active bleeding**
+- **Severe anaemia** (transfuse first)
+- **Stroke within 3 months**
+- **Uncontrolled hypertension**
+- **Severe contrast allergy** (premedicate)
+- **Patient refusal / palliative**
+
+> **Pearls**
+> - **Risk-stratify first** (GRACE, TIMI) — determines timing
+> - **Refractory ischaemia, shock, VT/VF** → <2 h
+> - **GRACE >140** → <24 h
+> - **GRACE 109–140** → <72 h
+> - **Radial access** preferred (lower bleeding, mortality)
+> - **DAPT before PCI**; **fondaparinux + UFH** is standard
+> - **Multivessel disease** in 50%; Heart Team for LM/3VD

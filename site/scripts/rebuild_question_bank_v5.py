@@ -304,6 +304,27 @@ def quality_ok(item: dict, *, need_options: int, min_stem_words: int,
         return False
     if need_scenario and len(stem.split()) < 12:
         return False
+    # Reject table-pipe leakage (markdown table cells leaked into option text)
+    if any('|' in (v or '') for v in opts.values()):
+        return False
+    # Reject generic autogen distractors (≥2 of 4 options are placeholder text)
+    generic_patterns = (
+        'an unrelated condition not matching',
+        'a complication seen late in the disease',
+        'a condition that mimics',
+        'none of the above',
+        'all of the above',
+    )
+    if sum(1 for v in opts.values()
+           if any(p in (v or '').lower() for p in generic_patterns)) >= 2:
+        return False
+    # Reject stems with formal "Q." / "Question:" prefix residue
+    if re.match(r'^\s*(\*\*?Q[\.:\)]|\*\*Question[:\)]|\d+\.\s*\*\*?Q[\.:])',
+                stem):
+        return False
+    # Reject option text that starts with bold-label residue "**A.** ..."
+    if any(re.match(r'^\s*\*\*[A-E][\.\)]', v or '') for v in opts.values()):
+        return False
     return True
 
 

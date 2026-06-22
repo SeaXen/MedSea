@@ -1,204 +1,86 @@
----
-davidson_chapter: "Chapter 16: Cardiology"
-davidson_topic_id: "16.11.91"
-topic: "Cardiorenal_syndrome"
-status: full-fcps-mrcp-note
-priority: critical
-cards: 20-25
-created: 2026-06-20
-modified: 2026-06-20
-exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
-source: "/mnt/tb/Medicine/Cardiology/04_Heart_Failure/Cardiorenal_syndrome.md"
-tags: [medicine, cardiology, davidson, fcps, mrcp]
----
-
-# Cardiorenal syndrome
-
-> [!info] **Topic Classification**
-> **Section:** 04_Heart_Failure | **Category:** Cardiology
-
----
-
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-HFrEF (Heart Failure with reduced Ejection Fraction): LVEF ≤40%, with symptoms/signs of HF. ~50% of HF. Etiology: ischaemic (most common, 60-70%), dilated cardiomyopathy (DCM, idiopathic, genetic, toxic — alcohol, chemo), valvular (late), tachycardia-mediated, myocarditis, peripartum, infiltrative, congenital.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-**Initial insult** (MI, infection, toxin) → myocyte loss → neurohormonal activation (RAAS, SNS, AVP, BNP, endothelin) → vasoconstriction, sodium/water retention, adverse remodelling (eccentric hypertrophy, dilation, fibrosis, mitral annular dilation → functional MR) → progressive pump failure. **Vicious cycle**: ↓CO → RAAS/SNS → vasoconstriction, retention → ↑preload, afterload → further ↓CO.
-
-
-## 3. CLINICAL FEATURES
-
-Dyspnoea (exertional, orthopnoea, PND, bendopnoea), fatigue, exercise intolerance, peripheral/sacral oedema, nocturia, anorexia, cachexia, cool peripheries, narrow pulse pressure. Examination: displaced apex, S3, JVP, TR, hepatomegaly, ascites, peripheral oedema, crepitations, Cheyne-Stokes, pulsus alternans (severe).
-
-
-## 4. DIAGNOSTIC APPROACH
-
-**ECG**: LVH, Q waves (ischaemic), LBBB, AF. **CXR**: cardiomegaly, pulmonary oedema, Kerley B, pleural effusion. **BNP/NT-proBNP** elevated. **Echo** (essential): LVEF ≤40%, LV dilation, RWMA (ischaemic), MR (functional), RV function, PASP. **CMR**: gold standard for volumes, scar, viability, infiltrative, myocarditis. **Coronary angiography**: ischaemic aetiology. **Genetic testing** (DCM, lamin A/C, etc.).
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-**NYHA** I-IV (functional). **ACC/AHA stages** A (at risk), B (pre-HF, structural, no symptoms), C (structural + symptoms), D (advanced, refractory). **INTERMACS** 1-7. **MAGGIC score** (3-year mortality, Meta-Analysis Global Group in Chronic Heart Failure). **Seattle Heart Failure Model**. **LVEF severity**: mild 35-40%, moderate 30-35%, severe <30%.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-**4 pillars of GDMT (all HFrEF unless contraindicated)**: (1) **RAAS inhibitor**: ARNI (sacubitril/valsartan, Entresto) preferred over ACEi (PARADIGM-HF — 20% mortality reduction), ARB if ACEi-intolerant. Start low, up-titrate. (2) **Beta-blocker**: bisoprolol, carvedilol, metoprolol succinate (CIBIS-II, COPERNICUS, MERIT-HF). (3) **MRA**: spironolactone (RALES), eplerenone (EPHESUS, EMPHASIS-HF). (4) **SGLT2i**: dapagliflozin (DAPA-HF), empagliflozin (EMPEROR-Reduced) — reduce mortality and hospitalisation. **Additional**: diuretics (loop, thiazide for resistance), ivabradine (HR ≥70, sinus rhythm, max tolerated beta-blocker — SHIFT), digoxin (symptomatic despite GDMT, in sinus rhythm — DIG trial; reduce hospitalisation not mortality), hydralazine+ISDN (especially in Black patients — A-HeFT), vericiguat (recently hospitalised, worsening HF — VICTORIA), ferric carboxymaltose (HF, iron deficiency, EF ≤40% — AFFIRM-AHF, FAIR-HFpEF). **Devices**: ICD (primary prevention, LVEF ≤35% on GDMT 3m, NYHA II-III, life expectancy >1y — MADIT-II, SCD-HeFT), CRT (LBBB with QRS >150ms, LVEF ≤35%, NYHA II-IV — COMPANION, CARE-HF, MADIT-CRT).
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-**Pump failure** (progressive, cardiogenic shock). **Arrhythmia** (VT/VF, AF). **Thromboembolism** (LV thrombus, stroke). **Sudden cardiac death** (VT/VF, bradyarrhythmia). **Cachexia** (cardiac, advanced). **Renal dysfunction** (cardiorenal, diuretic resistance). **Hepatic congestion** (cardiohepatic). **Resistant oedema**. **Death**: 5-year mortality 50% overall, worse with advanced disease.
-
-
-## 8. SPECIAL POPULATIONS
-
-Elderly: more frail, less tolerance. Women: more HFpEF, less referred. CKD: avoid ACEi/ARB if bilateral RAS, dose adjust, monitor K+. Diabetes: SGLT2i benefits (cardio-renal-metabolic). Pregnancy: avoid ACEi/ARB, MRA, ARNI; beta-blocker safe; hydralazine, nitrates safe. African-American: hydralazine+ISDN (A-HeFT). Post-MI: early ACEi/ARB, beta-blocker, MRA, SGLT2i.
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**ESC 2021 HF (EHJ)**: 4 pillars (ARNI, BB, MRA, SGLT2i), class IA for HFrEF. **2022 ACC/AHA/HFSA HF**: same. **NICE NG106 (2018)**: chronic HF. **2016 ESC/HFSA/HRS CRT**: LBBB QRS >150ms class IA. **2015 ESC/HFA ICD**: primary prevention. **STRONG-HF (2022)**: rapid up-titration of GDMT within 2 weeks post-discharge reduces HF readmission and mortality. **TRANSFORM-HF (2022)**: torsemide vs furosemide — no difference. **2023 ESC/HFA**: ferric carboxymaltose for iron deficiency. **VICTORIA (2020)**: vericiguat.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-Don't delay GDMT initiation. Don't forget 4 pillars (ARNI, BB, MRA, SGLT2i). Don't miss iron deficiency. Don't miss ICD/CRT indication. Don't use CCB in HFrEF. Don't use class IC antiarrhythmics in structural HD. Monitor K+ with ACEi/ARB + MRA (hyperkalaemia, ~5-10%). Hydralazine+ISDN for Black patients. SGLT2i benefit independent of DM.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**4 pillars**: ARNI/ACEi/ARB, Beta-blocker, MRA, SGLT2i. **GDMT**: Guideline-Directed Medical Therapy. **NYHA** I-IV. **INTERMACS** 1-7. **STRONG-HF**: rapid up-titration. **AFFIRM-AHF**: ferric carboxymaltose. **VICTORIA**: vericiguat. **ICD primary prevention**: LVEF ≤35% on GDMT 3m, NYHA II-III. **CRT**: LBBB QRS >150ms, LVEF ≤35%, NYHA II-IV. **ICD for primary prevention: MADIT-II, SCD-HeFT**. **ICD for secondary prevention: AVID, CIDS, CASH**.
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-HFpEF (LVEF ≥50%), HFmrEF (41-49%), lung disease (COPD, asthma, PE), renal disease (fluid overload), cirrhosis (ascites, oedema), thyroid (hyper/hypo), anaemia, obesity (fluid retention, deconditioning).
-
-
-## 13. INVESTIGATIONS
-
-**Echo** (essential, multiple times). **ECG** (LVH, Q waves, LBBB, AF, low voltage in amyloid). **BNP/NT-proBNP** (diagnosis, severity, prognosis). **CXR** (cardiomegaly, pulmonary oedema, effusions, Kerley B). **Bloods**: FBC (anaemia), U&E (renal, K+), LFT (hepatic congestion), TFT, HbA1c, lipid profile, troponin, ferritin, transferrin saturation. **CMR** (gold standard, viability, infiltrative, myocarditis, scar). **Coronary angio** (ischaemic aetiology). **RHC** (advanced HF, transplant, PH). **CPET** (advanced HF, transplant, peak VO2).
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Cardiorenal syndrome?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Cardiorenal syndrome:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Cardiorenal syndrome:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Cardiorenal syndrome?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Cardiorenal syndrome is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Cardiorenal syndrome. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Cardiorenal syndrome on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Cardiorenal syndrome
-2. Discuss the pathophysiology of Cardiorenal syndrome
-3. What are the diagnostic criteria for Cardiorenal syndrome?
-4. Outline the management approach to Cardiorenal syndrome
-5. What are the complications and prognosis of Cardiorenal syndrome?
-6. What are the latest guidelines for Cardiorenal syndrome?
-7. How is Cardiorenal syndrome managed in special populations?
-8. Compare Cardiorenal syndrome with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Cardiorenal_syndrome.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+# Cardiorenal Syndrome
+
+<callout icon="💧" color="red_bg">
+**Topic:** Cardiorenal Syndrome — Cardiology / Nephrology
+**Style:** Sea Knowledge study note
+**Audience:** FCPS / MRCP exam prep
+</callout>
+
+## 1. Definition
+**Disordered heart-kidney interaction** in which acute or chronic dysfunction in one organ induces acute or chronic dysfunction in the other. Classified into 5 types (Ronco classification).
+
+## 2. Classification (Ronco)
+
+| Type | Direction | Acute/Chronic | Mechanism |
+|---|---|---|---|
+| **1 — Acute CRS** | AHF → AKI | Acute | Worsening CO, venous congestion |
+| **2 — Chronic CRS** | CHF → CKD | Chronic | Chronic hypoperfusion, RAAS activation |
+| **3 — Acute renocardiac** | AKI → AHF | Acute | Volume overload, uraemia, acidosis |
+| **4 — Chronic renocardiac** | CKD → CHF | Chronic | LVH, vascular calcification, anaemia |
+| **5 — Secondary CRS** | Systemic disease → both | Variable | Sepsis, amyloidosis, cirrhosis |
+
+## 3. Pathophysiology
+- **Low cardiac output** → reduced renal perfusion → AKI
+- **Venous congestion** — central venous pressure is the **strongest haemodynamic predictor** of AKI in HF
+- **RAAS / SNS activation** — vasoconstriction, sodium retention
+- **Inflammatory cytokines** — IL-6, TNF-α
+- **Anaemia** — "cardio-renal-anaemia syndrome"
+
+## 4. Clinical Features
+- **Worsening renal function** (creatinine rise, ↓urine output) during HF decompensation
+- **Diuretic resistance**
+- **Volume overload** — pulmonary oedema, peripheral oedema, ascites
+- **Electrolyte disturbance** — hyponatraemia, hyperkalaemia
+
+## 5. Diagnosis & Monitoring
+- **Serum creatinine, urea, eGFR**
+- **Cystatin C** — earlier marker of GFR decline
+- **Urinalysis** — usually bland; tubular casts if pre-renal
+- **NGAL, KIM-1** — early tubular injury markers (limited clinical use)
+- **FENa** — <1% suggests pre-renal
+- **Ultrasound** — exclude obstruction
+
+## 6. Management
+### General
+- **Treat congestion** — paradoxically aggressive diuresis often improves renal function
+- **Avoid nephrotoxins** — NSAIDs, iodinated contrast, aminoglycosides
+- **Optimise GDMT** — RAAS inhibitors (cautious), SGLT2i (renoprotective)
+
+### Diuretic Strategies
+- **Loop diuretics** (frusemide, bumetanide) — high dose IV
+- **Sequential nephron blockade** — add thiazide (metolazone) for diuretic resistance
+- **Continuous infusion** — equivalent to bolus in DOSE trial
+- **Ultrafiltration** — limited benefit (UNLOAD, CARRESS-HF)
+
+### Vasoactive Therapies
+- **Inotropes** (dobutamine, milrinone) — improve CO and renal perfusion if low output
+- **Vasodilators** (nitroglycerin, nesiritide) — reduce preload/afterload
+- **Vasopressors** (noradrenaline) — maintain MAP >65 mmHg
+
+### Advanced
+- **Renal replacement therapy** — refractory acidosis, hyperkalaemia, volume overload
+- **LVAD** — improves renal perfusion in advanced HF
+- **Heart transplant** — restores cardiac output, may improve renal function
+
+## 7. SGLT2 Inhibitors
+- **Renoprotective** in HF — **DAPA-CKD, EMPEROR-Reduced, DELIVER**
+- Reduce hyperfiltration, lower intraglomerular pressure
+- Continue in CRS — often **improves renal outcomes** despite initial eGFR dip
+
+## 8. Prognosis
+- **AKI during AHF** — increases mortality 2–3× and rehospitalisation
+- **Worsening renal function** during diuresis doesn't always portend worse outcome if decongestion achieved (clinical decongestion > WRF)
+
+> **Pearls**
+> - **Type 1 (acute CRS)** — AHF → AKI; most common in hospital
+> - **CVP is the strongest predictor** of AKI in HF — venous congestion > low output
+> - **Aggressive diuresis** can improve renal function by decongesting kidneys
+> - **SGLT2 inhibitors** are renoprotective — **continue** in CRS
+> - **Diuretic resistance** — add thiazide (metolazone), use continuous infusion
+> - **WRF with decongestion** is acceptable; persistent congestion is not
+> - **Ultrafiltration** — no outcome benefit in CARRESS-HF
+> - **Avoid NSAIDs** — worsen CRS
+
+<callout icon="🎯" color="rose_bg">
+**CLINICAL SIGNIFICANCE —** CRS is common in advanced HF — occurs in 30–60% of AHF admissions. **Venous congestion** (not low output) is the primary driver. **Aggressive decongestion** improves renal function. **SGLT2i** are renoprotective. **WRF with successful decongestion** is acceptable and shouldn't stop diuresis.
+</callout>

@@ -1,204 +1,52 @@
----
-davidson_chapter: "Chapter 16: Cardiology"
-davidson_topic_id: "16.3.173"
-topic: "Sinus_node_dysfunction_sick_sinus_syndrome"
-status: full-fcps-mrcp-note
-priority: critical
-cards: 20-25
-created: 2026-06-20
-modified: 2026-06-20
-exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
-source: "/mnt/tb/Medicine/Cardiology/08_Arrhythmias/Sinus_node_dysfunction_sick_sinus_syndrome.md"
-tags: [medicine, cardiology, davidson, fcps, mrcp]
----
+# Sinus node dysfunction
 
-# Sinus node dysfunction sick sinus syndrome
 
-> [!info] **Topic Classification**
-> **Section:** 08_Arrhythmias | **Category:** Cardiology
+## 1. Definition & Background
+
+
+**Sinus node dysfunction** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (08 Arrhythmias). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
 
 ---
 
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Sinus node dysfunction sick sinus syndrome**: Bradycardia — heart rate <60 bpm in adults. **Sinus** (sinus node dysfunction, vagal, drugs) vs **AV block** (1st, 2nd Mobitz I/II, 3rd, high-grade). **Significant** if symptomatic (syncope, fatigue, dyspnoea, HF) or pauses >3s (awake) or >5s (asleep). **Chronotropic incompetence**: HR fails to rise with exertion. **Sick sinus syndrome**: combination of SSS components.
+## 2. Etiology & Pathophysiology
 
 
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-**Sinus node dysfunction**: idiopathic fibrosis (ageing, ~70%), ischaemia (RCA, sinus node artery), infiltrative (amyloid, sarcoid), surgical (transplant, Mustard, Senning), drugs (beta-blocker, CCB, digoxin, amiodarone, clonidine, ivabradine), autonomic (vagal — cough, micturition, sleep, athletes), familial (HCN4, SCN5A). **AV block**: idiopathic fibrosis (Lev disease, Lenegre), ischaemia (inferior MI — RCA, AV node artery), drugs (beta-blocker, CCB, digoxin, amiodarone), vagal, infiltrative, infection (Lyme, Chagas, diphtheria, endocarditis), iatrogenic (post-TAVI, post-ablation, post-CABG, post-MI), congenital, neuromuscular (myotonic dystrophy, Kearns-Sayre), autoimmune (SLE, RA).
+### Etiology & Pathophysiology
 
 
-## 3. CLINICAL FEATURES
-
-Asymptomatic (incidental). **Symptoms**: fatigue, exercise intolerance, dyspnoea, syncope/pre-syncope (Stokes-Adams attacks), confusion, cognitive decline, HF, AF with slow ventricular response, bradycardia-dependent VT (pause-dependent torsades). **Examination**: bradycardia, cannon A waves (3rd degree AV block, AV dissociation), variable S1 intensity (AV block), JVP with intermittent a wave (cannon).
-
-
-## 4. DIAGNOSTIC APPROACH
-
-**12-lead ECG**: sinus bradycardia, sinus arrest/pause, sinoatrial block, junctional escape, AF with slow response, AV block. **24h Holter** for paroxysmal. **Event recorder/ILR** for infrequent. **Stress test** for chronotropic incompetence. **EP study** (sinus node recovery time >1500ms, AV Wenckebach <120bpm, HV interval >70ms, infra-Hisian block). **Echo** (structural, infiltrative). **TFT** (hypothyroidism), electrolyte, drug levels, troponin (ischaemia), coronary angio if ischaemic, Lyme serology.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-**Pauses >3s awake, >5s asleep** = significant. **Mobitz II, high-grade, 3rd degree** = unstable, may progress to asystole. **SCD** in untreated complete heart block (high if LV dysfunction). **Syncope** = high risk for SCD if underlying structural disease. **Symptoms** dictate treatment.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-**Acute symptomatic**: atropine 0.5-1mg IV (max 3mg), isoprenaline/aminophylline (if atropine fails), transcutaneous pacing (bridge), transvenous pacing, adrenaline (cardiac arrest). **Permanent pacemaker** (PPM) for: (1) **Symptomatic sinus bradycardia/pauses**, (2) **Sick sinus syndrome** (3) **3rd degree AV block** (any), (4) **Mobitz II** (2nd degree), (5) **High-grade AV block** (≥2 consecutive P waves blocked), (6) **Mobitz I** if symptomatic or bifascicular block, (7) **Post-MI** (Mobitz II, 3rd, alternating BBB), (8) **Post-cardiac surgery** (if persists 5-7d), (9) **Chronotropic incompetence** (if symptomatic). **Choice**: **DDD** (dual chamber, AV synchrony, preferred in sinus rhythm, AV block), **VVI** (single chamber, AF, infrequent), **AAI** (rare, pure sinus dysfunction). **CRT** if LVEF≤35%, LBBB, QRS>150ms, NYHA II-IV.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-**Syncope**, **HF** (loss of AV synchrony, ↑LV filling pressure), **Pacemaker syndrome** (loss of AV synchrony in VVI mode — fatigue, syncope, hypotension), **Battery depletion** (5-10y), **Lead complications** (dislodgement 1-5%, fracture, infection 0.5-2%, pneumothorax 1%), **Infections** (endocarditis 0.5-2%), **Twiddler syndrome** (patient manipulates), **Failure to capture/sense** (high threshold, lead fracture, EMI), **SCD** in untreated.
-
-
-## 8. SPECIAL POPULATIONS
-
-**Elderly**: more common, more sick sinus, more iatrogenic. **Athletes**: vagal bradycardia, AV block (1st, Mobitz I) at rest, normal physiology. **Pregnancy**: rarely requires PPM, prefer temporary if needed. **Inferior MI**: AV node ischaemia, usually transient, atropine. **Anterior MI**: infranodal block, complete heart block, requires PPM, often permanent. **Post-TAVI**: conduction injury (10-25%), especially with pre-existing RBBB. **Lyme**: AV block, may be transient, treat with antibiotics.
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**ESC 2021 Bradycardia (EHJ)**: PPM class IA for symptomatic, Mobitz II, 3rd degree, high-grade. **AHA/ACC/HRS 2018 Bradycardia**: similar. **NICE NG155 (2017)**: bradycardia. **Post-MI**: ESC 2017 STEMI, 2013 ACC/AHA. **Post-TAVI**: ESC 2021 VHD.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Vagally-mediated bradycardia**: don't pace (inappropriate). **Athletes**: bradycardia 30-40bpm normal, AV block 1st, Mobitz I normal at rest. **Drug-induced**: stop/reduce drug. **Post-MI AV block**: differentiate AV node (inferior) vs infranodal (anterior). **Sick sinus**: avoid rate control drugs in AF, will worsen bradycardia. **Caffeine, smoking**: withdrawal. **Hypothyroidism**. **Sleep apnoea**. **Post-TAVI**: pre-existing RBBB = high risk for AV block.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Mobitz I** (Wenckebach): progressive PR until dropped beat, narrow QRS, AV node, usually benign. **Mobitz II**: fixed PR, sudden dropped beat, infranodal, often wide, needs PPM. **3rd degree**: complete AV dissociation, escape rhythm (junctional narrow 40-60, ventricular wide 20-40). **DDD**: dual chamber, AV synchrony. **VVI**: single ventricle, no AV synchrony. **Pacemaker syndrome**: VVI in sinus rhythm. **Twiddler**: manipulation. **Stokes-Adams**: syncope in complete heart block. **NGB code**: N (chamber paced), 0/1/2/3/4 (chamber sensed), A/V/D/Du (response to sensing), 0/1/2/3/4 (rate modulation), 0/M (multisite).
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-Vasovagal syncope, orthostatic hypotension, reflex syncope, neurocardiogenic, carotid sinus hypersensitivity, seizures, hypoglycaemia, drug toxicity, hypothyroidism, hypothermia, raised ICP, MI, electrolyte, aortic stenosis.
-
-
-## 13. INVESTIGATIONS
-
-12-lead ECG, 24h Holter, event recorder/ILR, echo, TFT, electrolyte, drug levels, troponin, coronary angio (if ischaemic), EP study (selected), tilt-table test (vasovagal), sleep study, Lyme serology.
-
+The pathophysiology of Sinus node dysfunction involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inf
 
 ---
 
-## 14. EXAM DRILLS
+## 3. Classification
 
-### 14.1 MCQs
 
-**Q1.** What is the most common aetiology of Sinus node dysfunction sick sinus syndrome?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
+### Clinical Features
 
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
 
-**Q2.** First-line investigation for Sinus node dysfunction sick sinus syndrome:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Sinus node dysfunction sick sinus syndrome:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Sinus node dysfunction sick sinus syndrome?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Sinus node dysfunction sick sinus syndrome is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Sinus node dysfunction sick sinus syndrome. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Sinus node dysfunction sick sinus syndrome on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Sinus node dysfunction sick sinus syndrome
-2. Discuss the pathophysiology of Sinus node dysfunction sick sinus syndrome
-3. What are the diagnostic criteria for Sinus node dysfunction sick sinus syndrome?
-4. Outline the management approach to Sinus node dysfunction sick sinus syndrome
-5. What are the complications and prognosis of Sinus node dysfunction sick sinus syndrome?
-6. What are the latest guidelines for Sinus node dysfunction sick sinus syndrome?
-7. How is Sinus node dysfunction sick sinus syndrome managed in special populations?
-8. Compare Sinus node dysfunction sick sinus syndrome with related conditions
+Clinical presentation of Sinus node dysfunction varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough.
 
 ---
 
-## 15. SPACED REPETITION TRACKER
+## 4. Clinical Features
 
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
+
+### Diagnostic Approach
+
+
+Diagnostic approach to Sinus node dysfunction includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior.
 
 ---
 
-## 16. CROSS-REFERENCES & NAVIGATION
+## 5. Diagnosis & Investigations
 
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
 
----
+### Severity Assessment & Risk Stratification
 
-## 17. METADATA & TRACKING
 
-**File:** Sinus_node_dysfunction_sick_sinus_syndrome.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class).
 
----
+### Differential Diagnosis
+
+
+**Differential diagnosis of Sinus node dysfunction** includes related cardiovascular conditions and non-cardiac mimics.

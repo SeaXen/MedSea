@@ -1,204 +1,80 @@
----
-davidson_chapter: "Chapter 16: Cardiology"
-davidson_topic_id: "16.3.205"
-topic: "Catheter_ablation_AV_node_ablation_+_pacemaker"
-status: full-fcps-mrcp-note
-priority: critical
-cards: 20-25
-created: 2026-06-20
-modified: 2026-06-20
-exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
-source: "/mnt/tb/Medicine/Cardiology/08_Arrhythmias/Catheter_ablation_AV_node_ablation_+_pacemaker.md"
-tags: [medicine, cardiology, davidson, fcps, mrcp]
----
-
-# Catheter ablation AV node ablation + pacemaker
-
-> [!info] **Topic Classification**
-> **Section:** 08_Arrhythmias | **Category:** Cardiology
-
----
-
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Catheter ablation AV node ablation + pacemaker**: Bradycardia — heart rate <60 bpm in adults. **Sinus** (sinus node dysfunction, vagal, drugs) vs **AV block** (1st, 2nd Mobitz I/II, 3rd, high-grade). **Significant** if symptomatic (syncope, fatigue, dyspnoea, HF) or pauses >3s (awake) or >5s (asleep). **Chronotropic incompetence**: HR fails to rise with exertion. **Sick sinus syndrome**: combination of SSS components.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-**Sinus node dysfunction**: idiopathic fibrosis (ageing, ~70%), ischaemia (RCA, sinus node artery), infiltrative (amyloid, sarcoid), surgical (transplant, Mustard, Senning), drugs (beta-blocker, CCB, digoxin, amiodarone, clonidine, ivabradine), autonomic (vagal — cough, micturition, sleep, athletes), familial (HCN4, SCN5A). **AV block**: idiopathic fibrosis (Lev disease, Lenegre), ischaemia (inferior MI — RCA, AV node artery), drugs (beta-blocker, CCB, digoxin, amiodarone), vagal, infiltrative, infection (Lyme, Chagas, diphtheria, endocarditis), iatrogenic (post-TAVI, post-ablation, post-CABG, post-MI), congenital, neuromuscular (myotonic dystrophy, Kearns-Sayre), autoimmune (SLE, RA).
-
-
-## 3. CLINICAL FEATURES
-
-Asymptomatic (incidental). **Symptoms**: fatigue, exercise intolerance, dyspnoea, syncope/pre-syncope (Stokes-Adams attacks), confusion, cognitive decline, HF, AF with slow ventricular response, bradycardia-dependent VT (pause-dependent torsades). **Examination**: bradycardia, cannon A waves (3rd degree AV block, AV dissociation), variable S1 intensity (AV block), JVP with intermittent a wave (cannon).
-
-
-## 4. DIAGNOSTIC APPROACH
-
-**12-lead ECG**: sinus bradycardia, sinus arrest/pause, sinoatrial block, junctional escape, AF with slow response, AV block. **24h Holter** for paroxysmal. **Event recorder/ILR** for infrequent. **Stress test** for chronotropic incompetence. **EP study** (sinus node recovery time >1500ms, AV Wenckebach <120bpm, HV interval >70ms, infra-Hisian block). **Echo** (structural, infiltrative). **TFT** (hypothyroidism), electrolyte, drug levels, troponin (ischaemia), coronary angio if ischaemic, Lyme serology.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-**Pauses >3s awake, >5s asleep** = significant. **Mobitz II, high-grade, 3rd degree** = unstable, may progress to asystole. **SCD** in untreated complete heart block (high if LV dysfunction). **Syncope** = high risk for SCD if underlying structural disease. **Symptoms** dictate treatment.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-**Acute symptomatic**: atropine 0.5-1mg IV (max 3mg), isoprenaline/aminophylline (if atropine fails), transcutaneous pacing (bridge), transvenous pacing, adrenaline (cardiac arrest). **Permanent pacemaker** (PPM) for: (1) **Symptomatic sinus bradycardia/pauses**, (2) **Sick sinus syndrome** (3) **3rd degree AV block** (any), (4) **Mobitz II** (2nd degree), (5) **High-grade AV block** (≥2 consecutive P waves blocked), (6) **Mobitz I** if symptomatic or bifascicular block, (7) **Post-MI** (Mobitz II, 3rd, alternating BBB), (8) **Post-cardiac surgery** (if persists 5-7d), (9) **Chronotropic incompetence** (if symptomatic). **Choice**: **DDD** (dual chamber, AV synchrony, preferred in sinus rhythm, AV block), **VVI** (single chamber, AF, infrequent), **AAI** (rare, pure sinus dysfunction). **CRT** if LVEF≤35%, LBBB, QRS>150ms, NYHA II-IV.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-**Syncope**, **HF** (loss of AV synchrony, ↑LV filling pressure), **Pacemaker syndrome** (loss of AV synchrony in VVI mode — fatigue, syncope, hypotension), **Battery depletion** (5-10y), **Lead complications** (dislodgement 1-5%, fracture, infection 0.5-2%, pneumothorax 1%), **Infections** (endocarditis 0.5-2%), **Twiddler syndrome** (patient manipulates), **Failure to capture/sense** (high threshold, lead fracture, EMI), **SCD** in untreated.
-
-
-## 8. SPECIAL POPULATIONS
-
-**Elderly**: more common, more sick sinus, more iatrogenic. **Athletes**: vagal bradycardia, AV block (1st, Mobitz I) at rest, normal physiology. **Pregnancy**: rarely requires PPM, prefer temporary if needed. **Inferior MI**: AV node ischaemia, usually transient, atropine. **Anterior MI**: infranodal block, complete heart block, requires PPM, often permanent. **Post-TAVI**: conduction injury (10-25%), especially with pre-existing RBBB. **Lyme**: AV block, may be transient, treat with antibiotics.
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**ESC 2021 Bradycardia (EHJ)**: PPM class IA for symptomatic, Mobitz II, 3rd degree, high-grade. **AHA/ACC/HRS 2018 Bradycardia**: similar. **NICE NG155 (2017)**: bradycardia. **Post-MI**: ESC 2017 STEMI, 2013 ACC/AHA. **Post-TAVI**: ESC 2021 VHD.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Vagally-mediated bradycardia**: don't pace (inappropriate). **Athletes**: bradycardia 30-40bpm normal, AV block 1st, Mobitz I normal at rest. **Drug-induced**: stop/reduce drug. **Post-MI AV block**: differentiate AV node (inferior) vs infranodal (anterior). **Sick sinus**: avoid rate control drugs in AF, will worsen bradycardia. **Caffeine, smoking**: withdrawal. **Hypothyroidism**. **Sleep apnoea**. **Post-TAVI**: pre-existing RBBB = high risk for AV block.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Mobitz I** (Wenckebach): progressive PR until dropped beat, narrow QRS, AV node, usually benign. **Mobitz II**: fixed PR, sudden dropped beat, infranodal, often wide, needs PPM. **3rd degree**: complete AV dissociation, escape rhythm (junctional narrow 40-60, ventricular wide 20-40). **DDD**: dual chamber, AV synchrony. **VVI**: single ventricle, no AV synchrony. **Pacemaker syndrome**: VVI in sinus rhythm. **Twiddler**: manipulation. **Stokes-Adams**: syncope in complete heart block. **NGB code**: N (chamber paced), 0/1/2/3/4 (chamber sensed), A/V/D/Du (response to sensing), 0/1/2/3/4 (rate modulation), 0/M (multisite).
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-Vasovagal syncope, orthostatic hypotension, reflex syncope, neurocardiogenic, carotid sinus hypersensitivity, seizures, hypoglycaemia, drug toxicity, hypothyroidism, hypothermia, raised ICP, MI, electrolyte, aortic stenosis.
-
-
-## 13. INVESTIGATIONS
-
-12-lead ECG, 24h Holter, event recorder/ILR, echo, TFT, electrolyte, drug levels, troponin, coronary angio (if ischaemic), EP study (selected), tilt-table test (vasovagal), sleep study, Lyme serology.
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Catheter ablation AV node ablation + pacemaker?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Catheter ablation AV node ablation + pacemaker:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Catheter ablation AV node ablation + pacemaker:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Catheter ablation AV node ablation + pacemaker?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Catheter ablation AV node ablation + pacemaker is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Catheter ablation AV node ablation + pacemaker. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Catheter ablation AV node ablation + pacemaker on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Catheter ablation AV node ablation + pacemaker
-2. Discuss the pathophysiology of Catheter ablation AV node ablation + pacemaker
-3. What are the diagnostic criteria for Catheter ablation AV node ablation + pacemaker?
-4. Outline the management approach to Catheter ablation AV node ablation + pacemaker
-5. What are the complications and prognosis of Catheter ablation AV node ablation + pacemaker?
-6. What are the latest guidelines for Catheter ablation AV node ablation + pacemaker?
-7. How is Catheter ablation AV node ablation + pacemaker managed in special populations?
-8. Compare Catheter ablation AV node ablation + pacemaker with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Catheter_ablation_AV_node_ablation_+_pacemaker.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+# AV Node Ablation + Pacemaker — "Ablate and Pace" Strategy in AF
+
+## 1. Concept
+**Ablate and pace** = catheter ablation of the AV node + permanent pacemaker implantation. Achieves **rate control** when:
+- Pharmacological rate control fails
+- AF is permanent and refractory to rhythm control
+- Patient is symptomatic, elderly, or unsuitable for complex ablation (PVI)
+
+> **Key point:** This is **rate control of last resort** — patient becomes **pacemaker-dependent**.
+
+## 2. Indications
+- **Symptomatic permanent AF** with inadequate rate control despite maximally tolerated drug therapy (β-blocker, CCB, digoxin ± amiodarone)
+- **Refractory AF** unsuitable for catheter ablation of AF (PVI) due to:
+  - Severely dilated LA (>55 mm)
+  - Long-standing persistent AF with extensive fibrosis
+  - Multiple prior failed ablations
+  - Severe comorbidity making repeated procedures unsafe
+- **Tachycardia-induced cardiomyopathy** from poorly controlled AF
+- **HF with permanent AF** where CRT indicated (biventricular pacing needed)
+
+## 3. Procedure
+### Step 1: AV Node Ablation
+- Catheter via femoral vein to right heart
+- Map AV node / compact AV node region (typically slow pathway zone)
+- **Radiofrequency ablation** (or cryoablation) — complete heart block targeted
+- Endpoint: complete AV block with junctional escape rhythm <40 bpm
+- Success rate: **>97%** for complete AV block
+- Complication rate: <2% (cardiac tamponade, vascular access, AV block failure)
+
+### Step 2: Pacemaker Implantation
+- **Single-chamber (VVIR)** — for sedentary patients
+- **Dual-chamber (DDDR)** — for sinus rhythm patients (rare)
+- **CRT-P / CRT-D** — if HFrEF + LBBB (CRT upgrade later if needed)
+- **His-bundle pacing (HBP)** / **Left bundle branch area pacing (LBBAP)** — preserves ventricular synchrony, emerging as preferred over RV-only pacing
+
+> ⚠️ **Order matters:** Ablate AV node FIRST → wait 4–6 weeks for ventricular remodelling → THEN implant pacemaker (reduces lead-related complications, allows RV function assessment).
+
+## 4. Pacemaker Choice (2023 ESC Guidelines)
+
+| Scenario                                  | Recommended Pacemaker |
+|-------------------------------------------|------------------------|
+| Permanent AF + preserved EF + sedentary   | **VVIR**               |
+| Permanent AF + preserved EF + active      | **DDDR** (rare)        |
+| Permanent AF + **HFrEF** (LVEF ≤35%) + LBBB | **CRT-P / CRT-D** (or HBP-CRT) |
+| Permanent AF + any LV dysfunction         | **Conduction system pacing (HBP/LBBAP)** if available |
+| Young patient (avoid long-term RV pacing) | **HBP or LBBAP**       |
+
+## 5. Outcomes
+- **Highly effective rate control** — exercise tolerance improves
+- **Quality of life**: improves significantly (AIRCARE, APAF-CRT trials)
+- **EF recovery** in tachycardia-induced cardiomyopathy (~50% cases)
+- **No atrial kick** — minor reduction in CO (15–20%), but most patients asymptomatic
+- **No need for rate-control drugs** post-procedure
+- **Risk**: lifelong pacemaker dependency, RV pacing-induced cardiomyopathy (mitigated by HBP/LBBAP)
+
+## 6. Comparison with AF Catheter Ablation (PVI)
+
+| Aspect              | AV Node Ablation + PM     | AF Catheter Ablation (PVI) |
+|---------------------|---------------------------|----------------------------|
+| Goal                | Rate control              | Rhythm control (sinus rhythm) |
+| Maintains SR        | No                        | Yes                        |
+| Repeat procedure    | Rare                      | 20–40% need redo over 5y   |
+| Pacemaker dependency | 100%                      | <2%                        |
+| LV function impact  | Depends on pacing site     | Preserved / improved       |
+| Suitable for        | Elderly, refractory, unsuitable for PVI | First-line for symptomatic paroxysmal/persistent AF |
+| Long-term outcome   | Stable (pace-dependent)   | Variable (AF recurrence)   |
+
+## 7. Complications & Long-term Concerns
+- **Pacemaker-related**: lead dislodgement, infection (1–2%), battery depletion
+- **RV pacing-induced cardiomyopathy**: 10–20% over 5+ years (reduced by HBP/LBBAP)
+- **Persistent AF-related stroke risk** unchanged — anticoagulation still required per CHA2DS2-VASc
+- **No escape rhythm if pacemaker fails** — patient dependent; close follow-up essential
+
+> **Pearls**
+> - **Ablate and pace** = rate control of last resort, not first-line.
+> - **Patient becomes 100% pacemaker-dependent** — counsel thoroughly before procedure.
+> - **HBP / LBBAP preferred** over RV pacing to preserve ventricular synchrony (avoid pacing-induced cardiomyopathy).
+> - **CRT indicated** if HFrEF + LBBB + permanent AF.
+> - **Continue anticoagulation** indefinitely per CHA2DS2-VASc — ablation does not eliminate stroke risk.
+> - **Wait 4–6 weeks between AV node ablation and pacemaker** if doing staged procedure.
