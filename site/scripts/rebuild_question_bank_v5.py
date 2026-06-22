@@ -389,6 +389,9 @@ def parse_flashcards(section: str) -> list[dict]:
         a2 = strip_md(a)
         if len(q2.split()) < 3 or len(a2.split()) < 2:
             continue
+        # Reject pipe / wikilink leakage (markdown table cells or MOC links)
+        if '|' in q2 or '|' in a2 or '[[' in a2 or a2.startswith('|') or a2.endswith('|'):
+            continue
         key = (q2.lower(), a2.lower())
         if key in seen:
             continue
@@ -702,6 +705,27 @@ def main() -> None:
     print('  MCQ      :', stats(mcq, 'mcq'))
     print('  SBA      :', stats(sba, 'sba'))
     print('  Flashcard:', stats(flash, 'flashcard'))
+
+    # Final flashcard filter — drop rows with pipe-leakage, wikilinks, or
+    # placeholder junk in the back. These come from autogen and authored
+    # factoid blocks where the first table cell or MOC link is misinterpreted
+    # as the definition.
+    def flash_ok(c):
+        f = (c.get('front') or '').strip()
+        b = (c.get('back') or '').strip()
+        if not f or not b:
+            return False
+        if '|' in f or '|' in b:
+            return False
+        if '[[' in f or '[[' in b:
+            return False
+        if b.startswith('|') or b.endswith('|'):
+            return False
+        if len(f.split()) < 3 or len(b.split()) < 2:
+            return False
+        return True
+    flash = [c for c in flash if flash_ok(c)]
+    print(f'  Flashcard after final filter: {len(flash)}')
 
     # Write
     (SITE / 'questions-mcq.json').write_text(
