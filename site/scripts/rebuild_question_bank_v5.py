@@ -593,24 +593,12 @@ def build() -> tuple[list, list, list, dict]:
                         best = item
                 if best is not None:
                     if not best.get('answer') and len(best.get('options') or {}) >= 4:
-                        fact = parse_mcq_as_factoid_block(b) or {
-                            'q': best['stem'] if best['stem'].endswith('?') else f"{best['stem']}?",
-                            'a': next(iter(best['options'].values()), ''),
-                        }
-                        if fact.get('q') and fact.get('a'):
-                            flash_rows.append({
-                                'id': qid('fc', ch_num, topic_slug,
-                                          len(flash_rows) + 1, fact['q']),
-                                'chapter_num': ch_num,
-                                'chapter_name': ch_label,
-                                'chapter_slug': ch_dirname,
-                                'topic_slug': topic_slug,
-                                'topic_title': topic_title,
-                                'front': fact['q'],
-                                'back': fact['a'],
-                                'source': 'authored-factoid',
-                            })
-                            counts['flashcard_count'] += 1
+                        # SBA without answer key — DO NOT route to flashcards with
+                        # option A as the answer (it would be a wrong, misleading
+                        # card). Skip these blocks entirely. Authored SBAs without
+                        # answer keys are an authoring gap, not a content we can
+                        # honestly re-purpose.
+                        pass
                     elif quality_ok(best, need_options=4, min_stem_words=10,
                                     need_scenario=True):
                         sba_rows.append({
