@@ -1,5 +1,5 @@
 /* MedSea Service Worker - aggressive caching for fast repeat visits */
-const CACHE_VERSION = 'medsea-v4';
+const CACHE_VERSION = 'medsea-v5';
 const CORE_ASSETS = [
   '/',
   '/index.html',

@@ -316,7 +316,7 @@
   function initSW() {
     if ('serviceWorker' in navigator && location.protocol !== 'file:') {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/sw.js?v=v4').catch(function (e) { /* silent */ });
+        navigator.serviceWorker.register('/sw.js?v=v5').catch(function (e) { /* silent */ });
       });
     }
   }

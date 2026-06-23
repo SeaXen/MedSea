@@ -780,9 +780,52 @@ def _resolve_distractor_pool(ch_dir: str, topic_title: str,
     return pool
 
 
+def _dedupe_options(opts: dict[str, str], pool: list[str] | None = None) -> dict[str, str]:
+    """If the dict has duplicate values, replace duplicates with a real
+    alternative from `pool` (if provided). Falls back to suffixing
+    with " (variant N)" only when no pool alternative exists.
+
+    Preserves the order of keys.
+    """
+    seen: set[str] = set()
+    out: dict[str, str] = {}
+    pool_iter = iter(pool or [])
+    for k, v in opts.items():
+        base = (v or '').strip()
+        if not base:
+            out[k] = v
+            continue
+        candidate = base
+        if candidate.lower() in seen:
+            # Try to find a pool replacement that isn't already seen
+            replaced = False
+            if pool:
+                # Resume the pool iterator from where we left off
+                pool_list = list(pool)
+                start_idx = 0
+                # Try each pool entry
+                for p in pool_list:
+                    if p.strip().lower() not in seen and p.strip().lower() != base.lower():
+                        candidate = p
+                        replaced = True
+                        break
+            if not replaced:
+                # Fallback: suffix
+                suffix = 2
+                while candidate.lower() in seen:
+                    candidate = f'{base} (variant {suffix})'
+                    suffix += 1
+        seen.add(candidate.lower())
+        out[k] = candidate
+    return out
+
+
 def rotate_distractors_through_pool(items: list[dict]) -> int:
     """Re-roll each item's B/C/D options through the chapter pool so
     that no two items in the same chapter share the same 3 distractors.
+
+    Also dedupes any pre-existing duplicate option values (which the
+    autogen sometimes emits for 5-option items).
 
     Returns the number of items whose options were rewritten.
     """
@@ -795,6 +838,12 @@ def rotate_distractors_through_pool(items: list[dict]) -> int:
         pool = _resolve_distractor_pool(ch_dir, topic_title, question)
         # Need at least 4 entries (1 may be the answer; need 3 distractors).
         if len(pool) < 4:
+            # Still dedupe any existing duplicates using whatever pool we have
+            opts = item.get('options') or {}
+            deduped = _dedupe_options(opts, pool)
+            if deduped != opts:
+                item['options'] = deduped
+                rewritten += 1
             continue
         opts = item.get('options') or {}
         if len(opts) < 3:
@@ -830,6 +879,9 @@ def rotate_distractors_through_pool(items: list[dict]) -> int:
         slots = [k for k in ['B', 'C', 'D'] if k != ans_letter][:3]
         for slot, cond in zip(slots, chosen):
             new_opts[slot] = cond
+        # Dedupe any remaining duplicate values (e.g. an unchanged E option
+        # colliding with a newly-rolled B/C/D). Use the pool for replacement.
+        new_opts = _dedupe_options(new_opts, pool)
         item['options'] = new_opts
         rewritten += 1
     return rewritten
@@ -1344,9 +1396,50 @@ def main() -> None:
             return False
         if len(f.split()) < 3 or len(b.split()) < 2:
             return False
+        # Drop autogen placeholder flashcards ("Flashcard 1 question" etc.)
+        if re.match(r'^\s*Flashcard\s+\d+\s+question\s*\??\s*$', f, re.I):
+            return False
+        if re.match(r'^\s*Flashcard\s+\d+\s+answer\s*$', b, re.I):
+            return False
         return True
     flash = [c for c in flash if flash_ok(c)]
     print(f'  Flashcard after final filter: {len(flash)}')
+
+    # Dedupe by ID — keep the first occurrence. Same ID can happen when
+    # multiple topics generate flashcards with identical front+back text
+    # (the autogen uses sha1(prefix|chapter|topic|index|body)[:12], and
+    # collision occurs when body matches).
+    seen_ids: set[str] = set()
+    deduped_flash: list[dict] = []
+    dropped = 0
+    for c in flash:
+        cid = c.get('id', '')
+        if cid in seen_ids:
+            dropped += 1
+            continue
+        seen_ids.add(cid)
+        deduped_flash.append(c)
+    flash = deduped_flash
+    print(f'  Flashcard after ID dedup: {len(flash)} (dropped {dropped})')
+
+    # Recompute per-chapter flashcard counts from the final flash list so
+    # the index matches what's actually written to disk. (Previously the
+    # index used pre-filter counts, so the UI showed "Available: 7385"
+    # while only 7084 cards were live — stale-index bug.)
+    new_fc_by_ch: dict[int, int] = {}
+    for c in flash:
+        new_fc_by_ch[c['chapter_num']] = new_fc_by_ch.get(c['chapter_num'], 0) + 1
+    for ch_info in index.get('chapters', []):
+        ch_num_int = ch_info['num']
+        ch_info['flashcard_count'] = new_fc_by_ch.get(ch_num_int, 0)
+    # Recompute index totals
+    index['totals'] = {
+        'mcq': len(mcq),
+        'sba': len(sba),
+        'flashcard': len(flash),
+        'chapters': sum(1 for c in index.get('chapters', [])
+                        if (c['mcq_count'] + c['sba_count'] + c['flashcard_count']) > 0),
+    }
 
     # Write
     (SITE / 'questions-mcq.json').write_text(
